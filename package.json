@@ -1,0 +1,53 @@
+{
+  "name": "recosante-site",
+  "private": true,
+  "version": "1.0.0",
+  "author": "Recosante",
+  "dependencies": {
+    "@mdx-js/mdx": "^1.5.1",
+    "@mdx-js/react": "^1.5.1",
+    "babel-plugin-styled-components": "^1.10.0",
+    "gatsby": "^2.24.47",
+    "gatsby-image": "^2.0.39",
+    "gatsby-plugin-feed-mdx": "^1.0.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-local-search": "^1.1.1",
+    "gatsby-plugin-manifest": "^2.0.29",
+    "gatsby-plugin-matomo": "^0.9.0",
+    "gatsby-plugin-mdx": "^1.2.14",
+    "gatsby-plugin-offline": "^3.2.23",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sharp": "^2.0.35",
+    "gatsby-plugin-sitemap": "^2.12.0",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-plugin-use-query-params": "^1.0.1",
+    "gatsby-remark-copy-linked-files": "^2.0.11",
+    "gatsby-remark-external-links": "^0.0.4",
+    "gatsby-remark-images": "^3.3.9",
+    "gatsby-remark-smartypants": "^2.0.9",
+    "gatsby-remark-vscode": "^2.1.2",
+    "gatsby-source-filesystem": "^2.0.29",
+    "gatsby-transformer-sharp": "^2.1.18",
+    "query-string": "^6.13.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
+    "styled-components": "^4.2.0",
+    "styled-normalize": "^8.0.7",
+    "use-query-params": "^1.1.9"
+  },
+  "devDependencies": {
+    "gatsby-cli": "^2.12.66",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "prettier": "^1.17.0"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  }
+}
