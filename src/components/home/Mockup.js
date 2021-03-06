@@ -59,7 +59,7 @@ const Step = styled.div`
     background-color: ${(props) => props.theme.colors.text};
     transform: scaleX(${(props) => (props.isOnScreen ? 1 : 0)});
     transform-origin: right;
-    transition: transform 400ms ease-out ${(props) => props.index * 600 + 300}ms;
+    transition: transform 400ms ease-out ${(props) => props.index * 600}ms;
 
     ${(props) => props.theme.mq.small} {
       display: none;
@@ -89,7 +89,7 @@ const Text = styled.p`
   padding-bottom: 0.75rem;
   transform: translateY(${(props) => (props.isOnScreen ? 0 : '100%')});
   transition: transform ${(props) => (props.index === 1 ? 500 : 700)}ms ease-out
-    ${(props) => props.index * 600 + 600}ms;
+    ${(props) => props.index * 600 + 300}ms;
 
   ${(props) => props.theme.mq.medium} {
     font-size: 1rem;
