@@ -25,10 +25,11 @@ const Wrapper = styled(MagicLink)`
   color: ${(props) => (props.hollow ? props.theme.colors.main : 'white')};
   text-decoration: none;
   background-color: ${(props) =>
-    props.hollow ? 'transparent' : props.theme.colors.main};
+    props.hollow
+      ? 'transparent'
+      : props.theme.colors[props.disabled ? 'disabled' : 'main']};
   border: ${(props) => (props.thick ? '2px' : '1px')} solid
-    ${(props) => props.theme.colors.main};
-  opacity: ${(props) => (props.disabled ? 0.6 : 1)};
+    ${(props) => props.theme.colors[props.disabled ? 'disabled' : 'main']};
   pointer-events: ${(props) =>
     props.disabled || props.fetching ? 'none' : 'inherit'};
   cursor: pointer;
@@ -51,15 +52,15 @@ const Wrapper = styled(MagicLink)`
     animation: ${fetching} ${(props) => (props.fetching ? '600ms' : '0')}
       infinite;
   }
-  &:hover {
-  }
 
+  ${(props) => props.theme.mq.small} {
+    padding: 0.75em;
+  }
   & span {
     position: relative;
   }
 `
 export default function Button(props) {
-  console.log(props.fetching)
   return (
     <Wrapper
       className={props.className}
@@ -72,9 +73,6 @@ export default function Button(props) {
       expand={props.expand ? 1 : 0}
       noExpand={props.noExpand ? 1 : 0}
       color={props.color}
-      animationSpeed={
-        props.children.length * 20 > 450 ? props.children.length * 25 : 450
-      }
     >
       <span>{props.children}</span>
     </Wrapper>

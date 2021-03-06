@@ -4,8 +4,9 @@ import styled from 'styled-components'
 import api from 'src/utils/api'
 import ProfileContext from 'src/utils/ProfileContext'
 import useDebounce from 'src/hooks/useDebounce'
-import Wrapper from './Wrapper'
 import TextInput from 'src/components/base/TextInput'
+import Wrapper from './Wrapper'
+import Answer from './Answer'
 import Suggestions from './address/Suggestions'
 
 const Input = styled(TextInput)`
@@ -18,6 +19,7 @@ const Code = styled.div`
   margin: 2px 0;
   padding: calc(0.5em - 2px);
   background-color: ${(props) => props.theme.colors.input};
+  pointer-events: none;
 `
 
 export default function Address(props) {
@@ -46,9 +48,31 @@ export default function Address(props) {
   const [focus, setFocus] = useState(false)
 
   return (
-    <Wrapper className={props.className}>
+    <Wrapper
+      className={props.className}
+      mounted={true}
+      onSubmit={(e) => {
+        e.preventDefault()
+        e.stopPropagation()
+
+        if (code) {
+          setFetching(true)
+          setTimeout(() => {
+            setFetching(false)
+            setAddress({ name: search, code })
+          }, 1000)
+        }
+      }}
+    >
       <Wrapper.Label htmlFor={'address'}>
-        J'habite à <Wrapper.Answer>{address.name}</Wrapper.Answer>
+        J'habite à{' '}
+        {address.name ? (
+          <Answer
+            answers={[address.name]}
+            options={[{ value: address.name, label: address.name }]}
+            onClick={() => setAddress({ name: '', code: null })}
+          />
+        ) : null}
       </Wrapper.Label>
       {!address.code && (
         <>
@@ -68,6 +92,7 @@ export default function Address(props) {
             <Suggestions
               suggestions={suggestions}
               focus={focus}
+              setFocus={setFocus}
               setSearch={setSearch}
               setCode={setCode}
             />
@@ -75,12 +100,7 @@ export default function Address(props) {
           <Wrapper.Submit
             disabled={!code}
             fetching={fetching}
-            onClick={() => {
-              setFetching(true)
-              setTimeout(() => {
-                setAddress({ name: search, code })
-              }, 1000)
-            }}
+            onClick={() => {}}
           >
             Valider
           </Wrapper.Submit>

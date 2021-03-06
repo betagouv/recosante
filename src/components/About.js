@@ -7,6 +7,10 @@ import Section from 'src/components/layout/Section'
 
 const Big = styled.div`
   font-size: 1.125rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1rem;
+  }
 `
 export default function About() {
   const data = useStaticQuery(

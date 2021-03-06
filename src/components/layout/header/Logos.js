@@ -30,7 +30,7 @@ const StyledLink = styled(Link)`
 `
 const StyledLogo = styled(Logo)`
   ${(props) => props.theme.mq.small} {
-    width: 4rem;
+    width: 6.5rem;
     height: auto;
   }
 `

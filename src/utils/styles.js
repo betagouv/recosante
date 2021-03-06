@@ -15,11 +15,12 @@ export const themes = {
       footer: '#6a6a6a',
       success: '#008941',
       error: '#e10600',
+      disabled: '#BFBFE3',
     },
     fonts: '"Marianne", Arial, sans-serif',
     mq: {
-      small: `@media screen and (max-width: ${730}px)`,
-      medium: `@media screen and (max-width: ${1200}px)`,
+      small: `@media screen and (max-width: ${41}rem)`,
+      medium: `@media screen and (max-width: ${55}rem)`,
       mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${1260}px)`,
       mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${1260}px)`,
       large: `@media screen and (min-width: ${1800}px)`,
@@ -41,14 +42,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
     line-height: 1.4;
-
-    ${(props) => props.theme.mq.medium} {
-      padding-top: 10em;
-    }
-    ${(props) => props.theme.mq.small} {
-      padding-top: 5.5em;
-    }
-  
+    overflow-x: hidden;
   } 
 
   *, *:before, *:after {
@@ -65,14 +59,14 @@ export const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-size: 3em;
-    margin-bottom: 0.5em;
+    margin-bottom: 2rem;
 
     ${(props) => props.theme.mq.small} {
       font-size: 1.75em;
     }
   }
   h2 {
-    font-size: 2em;
+    font-size: 2.3125rem;
     margin-bottom: 0.8em;
 
     ${(props) => props.theme.mq.small} {

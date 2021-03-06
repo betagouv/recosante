@@ -7,12 +7,12 @@ import Form from './profile/Form'
 
 export default function Profile(props) {
   return (
-    <Web title={'Profil'}>
-      <ProfileProvider>
+    <ProfileProvider>
+      <Web title={'Profil'}>
         <Section tiny>
           <Form />
         </Section>
-      </ProfileProvider>
-    </Web>
+      </Web>
+    </ProfileProvider>
   )
 }

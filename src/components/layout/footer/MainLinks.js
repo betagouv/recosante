@@ -6,11 +6,20 @@ import MagicLink from 'src/components/base/MagicLink'
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const Item = styled(MagicLink)`
   font-weight: bold;
   color: ${(props) => props.theme.colors.text};
   text-decoration: none;
+
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 1rem;
+  }
 `
 export default function MainLinks() {
   return (

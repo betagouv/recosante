@@ -16,12 +16,18 @@ const Wrapper = styled.div`
   visibility: ${(props) => (props.focus ? 'inherit' : 'hidden')};
   transition: visibility 0ms 200ms;
 `
-const Suggestion = styled.div`
+const Suggestion = styled.button`
+  display: block;
+  width: 100%;
   padding: 0.2em 0.75em;
-  cursor: pointer;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  //cursor: pointer;
   transition: background-color 200ms ease-out;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: ${(props) => props.theme.colors.tile};
   }
 
@@ -43,10 +49,15 @@ export default function Suggestions(props) {
           (index < 10 || scrolled) &&
           index < 100 && (
             <Suggestion
+              key={suggestion.code}
               onClick={() => {
                 props.setSearch(suggestion.nom)
                 props.setCode(suggestion.code)
+                props.setFocus(false)
               }}
+              onFocus={() => props.setFocus(true)}
+              onBlur={() => props.setFocus(false)}
+              type='button'
             >
               <span>
                 {suggestion.nom} ({suggestion.code})

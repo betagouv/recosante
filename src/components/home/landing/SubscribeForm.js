@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { navigate } from 'gatsby'
 
 import Checkbox from 'src/components/base/Checkbox'
 import Button from 'src/components/base/Button'
+import Alert from 'src/components/base/Alert'
 import MailInput from './subscribeForm/MailInput'
 
 const Wrapper = styled.form`
@@ -18,17 +20,39 @@ const Optin = styled(Checkbox)`
 const Submit = styled(Button)`
   align-self: flex-end;
   font-size: 1.375rem;
+
+  ${(props) => props.theme.mq.medium} {
+    font-size: 1.25rem;
+  }
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1rem;
+  }
 `
 export default function SubscribeForm() {
   const [email, setEmail] = useState('')
   const [optin, setOptin] = useState(false)
+  const [error, setError] = useState(null)
+  const [fetching, setFetching] = useState(false)
+
   return (
     <Wrapper
       method='post'
       onSubmit={(e) => {
-        console.log('submit')
         e.preventDefault()
         e.stopPropagation()
+
+        if (optin) {
+          setFetching(true)
+          setTimeout(() => {
+            setFetching(false)
+            navigate('/user/uid')
+          }, 1000)
+        } else {
+          setError(
+            `Vous devez accepter de partager vos données pour vous inscrire`
+          )
+        }
       }}
     >
       <MailInput
@@ -44,7 +68,10 @@ export default function SubscribeForm() {
         onChange={(checked) => setOptin(checked)}
         small
       />
-      <Submit submit>Créer mon profil</Submit>
+      <Submit submit fetching={fetching}>
+        Créer mon profil
+      </Submit>
+      {error ? <Alert error={error}>{error}</Alert> : null}
     </Wrapper>
   )
 }

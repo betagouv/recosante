@@ -43,9 +43,16 @@ const Input = styled.input`
   opacity: 0;
   pointer-events: none;
 `
+const LabelWrapper = styled.div``
 const Label = styled.label`
   color: ${(props) =>
     props.focus ? props.theme.colors.main : props.theme.colors.text};
+`
+const Detail = styled.div`
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  color: ${(props) => props.theme.colors[props.interactive ? 'main' : 'text']};
+  cursor: ${(props) => (props.interactive ? 'pointer' : 'inherit')};
 `
 export default function Checkbox(props) {
   const [focus, setFocus] = useState(false)
@@ -79,12 +86,28 @@ export default function Checkbox(props) {
         onBlur={() => setFocus(false)}
       />
       {(props.children || props.label) && (
-        <Label
-          focus={focus}
-          dangerouslySetInnerHTML={{
-            __html: props.children || props.label,
-          }}
-        />
+        <LabelWrapper>
+          <Label
+            focus={focus}
+            dangerouslySetInnerHTML={{
+              __html: props.children || props.label,
+            }}
+          />
+          {props.detail && (
+            <Detail
+              onClick={(e) => {
+                if (props.detail.onClick) {
+                  e.stopPropagation()
+                  props.detail.onClick(e)
+                }
+              }}
+              interactive={props.detail.onClick}
+              dangerouslySetInnerHTML={{
+                __html: props.detail.label,
+              }}
+            />
+          )}
+        </LabelWrapper>
       )}
     </Wrapper>
   )

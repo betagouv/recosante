@@ -8,6 +8,10 @@ const Wrapper = styled.div`
   margin-bottom: 1.5rem;
   padding-top: 1.4em;
   font-size: 1.375rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1rem;
+  }
 `
 const Label = styled.label`
   position: absolute;
@@ -19,6 +23,9 @@ const Label = styled.label`
   pointer-events: ${(props) => (props.small ? 'inherit' : 'none')};
   transition: all 200ms ease-out;
 `
+const Input = styled(TextInput)`
+  margin: 0;
+`
 export default function MailInput(props) {
   const [focus, setFocus] = useState(false)
   return (
@@ -28,7 +35,7 @@ export default function MailInput(props) {
           {props.label}
         </Label>
       )}
-      <TextInput
+      <Input
         type={'email'}
         name={props.name}
         value={props.value}

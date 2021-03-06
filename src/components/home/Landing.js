@@ -10,6 +10,13 @@ const Title = styled.h1`
   span {
     font-weight: 800;
   }
+
+  ${(props) => props.theme.mq.medium} {
+    font-size: 2.18rem;
+  }
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.5rem;
+  }
 `
 const Color = styled.span`
   color: ${(props) => props.theme.colors.main};
@@ -17,6 +24,14 @@ const Color = styled.span`
 `
 const Text = styled.p`
   font-size: 1.375rem;
+
+  ${(props) => props.theme.mq.medium} {
+    font-size: 1.25rem;
+  }
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1rem;
+  }
 `
 export default function Landing() {
   return (
