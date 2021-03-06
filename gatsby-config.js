@@ -12,7 +12,6 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-use-query-params',
-    `gatsby-plugin-feed-mdx`,
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sitemap`,
     {

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 
 export default function useWindowSize() {
+  const isSSR = typeof window === 'undefined'
+
   const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: isSSR ? 1200 : window.innerWidth,
+    height: isSSR ? 800 : window.innerHeight,
   })
 
   useEffect(() => {
