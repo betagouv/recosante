@@ -25,6 +25,10 @@ const Label = styled.label`
 `
 const Input = styled(TextInput)`
   margin: 0;
+
+  ${(props) => props.theme.mq.small} {
+    background-color: ${(props) => props.theme.colors.background};
+  }
 `
 export default function MailInput(props) {
   const [focus, setFocus] = useState(false)

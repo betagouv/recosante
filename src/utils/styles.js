@@ -7,7 +7,7 @@ export const themes = {
     colors: {
       main: '#000091',
       background: '#fff',
-      tile: '#F9F8F6',
+      tile: '#f9f8f6',
       input: '#F0F0F0',
       title: '#1E1E1E',
       text: '#383838',
@@ -15,7 +15,7 @@ export const themes = {
       footer: '#6a6a6a',
       success: '#008941',
       error: '#e10600',
-      disabled: '#BFBFE3',
+      disabled: '#d5dbef',
     },
     fonts: '"Marianne", Arial, sans-serif',
     mq: {

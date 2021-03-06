@@ -12,6 +12,11 @@ const Wrapper = styled.form`
   flex-direction: column;
   max-width: 36.5rem;
   margin: 0 auto;
+
+  ${(props) => props.theme.mq.small} {
+    background-color: ${(props) => props.theme.colors.disabled};
+    padding: 1rem;
+  }
 `
 const Optin = styled(Checkbox)`
   margin-bottom: 1.5rem;

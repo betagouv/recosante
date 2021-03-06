@@ -46,8 +46,7 @@ export default function Suggestions(props) {
     <Wrapper focus={props.focus} onScroll={() => setScrolled(true)}>
       {props.suggestions.map(
         (suggestion, index) =>
-          (index < 10 || scrolled) &&
-          index < 100 && (
+          (index < 10 || scrolled) && (
             <Suggestion
               key={suggestion.code}
               onClick={() => {

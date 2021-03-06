@@ -18,7 +18,8 @@ const StyledSection = styled(Section)`
       font-size: 2.18rem;
     }
     ${(props) => props.theme.mq.small} {
-      font-size: 1.5rem;
+      font-size: 1.73rem;
+      text-align: center;
     }
   }
 

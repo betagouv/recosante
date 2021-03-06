@@ -35,7 +35,7 @@ export default function Address(props) {
     if (debouncedSearch && debouncedSearch.length > 2) {
       api
         .get(
-          `https://geo.api.gouv.fr/communes?&boost=population&fields=nom,code&format=json&nom=${debouncedSearch}`
+          `https://geo.api.gouv.fr/communes?&boost=population&limit=100&fields=nom,code&format=json&nom=${debouncedSearch}`
         )
         .then((res) => setSuggestions(res))
     } else {
