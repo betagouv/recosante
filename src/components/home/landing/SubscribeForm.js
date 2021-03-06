@@ -47,17 +47,22 @@ export default function SubscribeForm() {
         e.preventDefault()
         e.stopPropagation()
 
-        if (optin) {
-          setFetching(true)
-          setTimeout(() => {
-            setFetching(false)
-            navigate('/user/uid')
-          }, 1000)
-        } else {
+        if (!email) {
+          setError(`Vous devez entrer votre email pour vous inscrire`)
+          return
+        }
+        if (!optin) {
           setError(
             `Vous devez accepter de partager vos données pour vous inscrire`
           )
+          return
         }
+
+        setFetching(true)
+        setTimeout(() => {
+          setFetching(false)
+          navigate('/user/uid')
+        }, 1000)
       }}
     >
       <MailInput

@@ -13,6 +13,8 @@ import Footer from './Footer'
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+`
+const Fullscreen = styled.div`
   min-height: ${(props) => props.windowHeight}px;
 `
 const Content = styled.div`
@@ -22,12 +24,14 @@ const Content = styled.div`
 export default function Web(props) {
   const { height } = useWindowSize()
   return (
-    <Wrapper windowHeight={height}>
+    <Wrapper>
       <SEO title={props.title} />
       <StyleProvider>
         <GlobalStyle />
-        <Header />
-        <Content>{props.children}</Content>
+        <Fullscreen windowHeight={height}>
+          <Header />
+          <Content>{props.children}</Content>
+        </Fullscreen>
         <Footer />
       </StyleProvider>
     </Wrapper>
