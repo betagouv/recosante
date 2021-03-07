@@ -61,7 +61,7 @@ export default function SubscribeForm() {
         setFetching(true)
         setTimeout(() => {
           setFetching(false)
-          navigate('/user/uid')
+          navigate('/profil/?user=uid')
         }, 1000)
       }}
     >

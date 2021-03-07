@@ -6,11 +6,12 @@ import Images from './mockup/Images'
 
 const Wrapper = styled.div`
   position: relative;
-  height: 35rem;
-  margin-bottom: 5.5rem;
+  height: 40.5rem;
+  padding-bottom: 5.5rem;
 
   ${(props) => props.theme.mq.medium} {
-    height: 21rem;
+    height: 26.5rem;
+    overflow-x: hidden;
   }
 
   ${(props) => props.theme.mq.small} {

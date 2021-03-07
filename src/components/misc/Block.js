@@ -8,7 +8,7 @@ export default styled.div`
   background-color: ${(props) => props.theme.colors.background};
 
   ${(props) => props.theme.mq.medium} {
-    width: 50%;
+    width: 36.5rem;
   }
 
   ${(props) => props.theme.mq.small} {

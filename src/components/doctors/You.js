@@ -17,6 +17,8 @@ const StyledBlock = styled(Block)`
   width: 36.5rem;
   margin: 0 -16.75rem 0 0;
   font-size: 1.125rem;
+  opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
+  transition: opacity 1200ms;
 
   ul {
     margin: 0;
@@ -36,9 +38,9 @@ const StyledBlock = styled(Block)`
       left: 0.5rem;
       width: 2rem;
       height: 2rem;
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 52 52" style="enable-background:new 0 0 52 52;" xml:space="preserve"><path fill="%23000091" d="M26,0C11.664,0,0,11.663,0,26s11.664,26,26,26s26-11.663,26-26S40.336,0,26,0z M40.495,17.329l-16,18   C24.101,35.772,23.552,36,22.999,36c-0.439,0-0.88-0.144-1.249-0.438l-10-8c-0.862-0.689-1.002-1.948-0.312-2.811   c0.689-0.863,1.949-1.003,2.811-0.313l8.517,6.813l14.739-16.581c0.732-0.826,1.998-0.9,2.823-0.166   C41.154,15.239,41.229,16.503,40.495,17.329z"/></svg>');
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.05 490.05" style="enable-background:new 0 0 490.05 490.05;" xml:space="preserve"><path fill="%23000091" d="M418.275,418.275c95.7-95.7,95.7-250.8,0-346.5s-250.8-95.7-346.5,0s-95.7,250.8,0,346.5S322.675,513.975,418.275,418.275    z M157.175,207.575l55.1,55.1l120.7-120.6l42.7,42.7l-120.6,120.6l-42.8,42.7l-42.7-42.7l-55.1-55.1L157.175,207.575z"/></svg>');
       background-size: 2rem;
-      opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
+      opacity: ${(props) => (props.animationIsOnScreen ? 1 : 0)};
       transition: opacity 1000ms;
     }
 
@@ -76,11 +78,16 @@ export default function You() {
   )
 
   const ref = useRef()
-  const isOnScreen = useOnScreen(ref)
+  const isOnScreen = useOnScreen(ref, '-100px', 0)
+  const animationIsOnScreen = useOnScreen(ref)
 
   return (
     <StyledSection large>
-      <StyledBlock ref={ref} isOnScreen={isOnScreen}>
+      <StyledBlock
+        ref={ref}
+        isOnScreen={isOnScreen}
+        animationIsOnScreen={animationIsOnScreen}
+      >
         <MDXRenderer>{data.content.body}</MDXRenderer>
         <Button.Wrapper>
           <Button>Prendre rendez-vous</Button>
