@@ -25,7 +25,7 @@ export default function Step(props) {
             if (props.setComplete) {
               props.setComplete(true)
             }
-          }, 1000)
+          }, 400)
         }
       }}
     >

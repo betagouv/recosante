@@ -20,7 +20,7 @@ const Wrapper = styled(MagicLink)`
   justify-content: center;
   align-items: center;
   width: ${(props) => (props.expand ? '100%' : 'auto')};
-  padding: 0.5em 1.5em;
+  padding: 0.625em 1.5em;
   font-weight: bold;
   color: ${(props) => (props.hollow ? props.theme.colors.main : 'white')};
   text-decoration: none;
@@ -78,3 +78,14 @@ export default function Button(props) {
     </Wrapper>
   )
 }
+
+Button.Wrapper = styled.div`
+  display: flex;
+  justify-content: ${(props) =>
+    props.left ? 'flex-start' : props.right ? 'flex-end' : 'center'};
+  margin: 0 -0.5rem;
+
+  > * {
+    margin: 0 0.5rem;
+  }
+`

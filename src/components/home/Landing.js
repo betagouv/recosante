@@ -34,10 +34,6 @@ const StyledSection = styled(Section)`
       font-size: 1rem;
     }
   }
-
-  strong {
-    color: ${(props) => props.theme.colors.main};
-  }
 `
 export default function Landing(props) {
   const data = useStaticQuery(

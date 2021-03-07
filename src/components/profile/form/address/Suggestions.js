@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 const Suggestion = styled.button`
   display: block;
   width: 100%;
-  padding: 0.2em 0.75em;
+  padding: 0.5em 0.75em;
   text-align: left;
   background-color: transparent;
   border: none;

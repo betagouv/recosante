@@ -20,6 +20,10 @@ const Fullscreen = styled.div`
 const Content = styled.div`
   flex: 1;
   padding: 0 0.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    padding: 0 1rem;
+  }
 `
 export default function Web(props) {
   const { height } = useWindowSize()

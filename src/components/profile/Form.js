@@ -78,7 +78,7 @@ export default function Form(props) {
             label={['Je suis ', 'Je ne suis pas ']}
           />
         ) : null}
-        {vulnerabilities.length ? (
+        {address.code && vulnerabilities.length ? (
           <Step
             options={[
               {
@@ -111,7 +111,7 @@ export default function Form(props) {
             label={['Je fais du ', 'Je ne fait ']}
           />
         ) : null}
-        {vulnerabilities.length && hobbies.length ? (
+        {address.code && vulnerabilities.length && hobbies.length ? (
           <Step
             options={[
               {
@@ -137,7 +137,10 @@ export default function Form(props) {
             label={['Je me chauffe avec ', 'Je me chauffe ']}
           />
         ) : null}
-        {vulnerabilities.length && hobbies.length && heating.length ? (
+        {address.code &&
+        vulnerabilities.length &&
+        hobbies.length &&
+        heating.length ? (
           <Step
             options={[
               {
@@ -163,7 +166,8 @@ export default function Form(props) {
             label={['Je me déplace ', 'Je ne me déplace ']}
           />
         ) : null}
-        {vulnerabilities.length &&
+        {address.code &&
+        vulnerabilities.length &&
         hobbies.length &&
         heating.length &&
         transportations.length ? (

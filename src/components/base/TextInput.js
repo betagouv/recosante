@@ -19,6 +19,7 @@ export default function TextInput(props) {
       type={props.type || 'text'}
       id={props.name}
       name={props.name}
+      list={props.list}
       value={props.value}
       onChange={(e) => {
         props.onChange({ value: e.currentTarget.value, name: props.name })

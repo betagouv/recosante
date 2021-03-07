@@ -58,7 +58,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 3em;
+    font-size: 2.37500rem;
     margin-bottom: 2rem;
 
     ${(props) => props.theme.mq.small} {
@@ -66,8 +66,8 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   h2 {
-    font-size: 2.3125rem;
-    margin-bottom: 0.8em;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
 
     ${(props) => props.theme.mq.small} {
       font-size: 1.5em;
@@ -88,5 +88,9 @@ export const GlobalStyle = createGlobalStyle`
 
   input, select, textarea {
     color: ${(props) => props.theme.colors.text};
+  }
+
+  strong {
+    color: ${(props) => props.theme.colors.main};
   }
 `

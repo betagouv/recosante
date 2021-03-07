@@ -11,7 +11,6 @@ const Wrapper = styled.header`
   max-width: 75rem;
   margin: 0 auto 4rem;
   padding: 0.5rem 0.5rem 0;
-  background-color: white;
 
   ${(props) => props.theme.mq.small} {
     margin: 0 auto 2rem;
