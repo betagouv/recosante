@@ -104,7 +104,9 @@ export default function You() {
       >
         <MDXRenderer>{data.content.body}</MDXRenderer>
         <Button.Wrapper>
-          <Button>Prendre rendez-vous</Button>
+          <Button to='https://www.vyte.in/ecosante/rendez-vous-medecin'>
+            Prendre rendez-vous
+          </Button>
         </Button.Wrapper>
       </StyledBlock>
       <StyledImg fluid={data.image.childrenImageSharp[0].fluid} />

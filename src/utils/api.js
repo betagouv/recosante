@@ -18,4 +18,18 @@ export default {
       .then(this.handleErrors)
       .then((res) => res.json())
   },
+  post(endpoint, body) {
+    let headers = new Headers()
+    return fetch(
+      endpoint,
+
+      {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(body),
+      }
+    )
+      .then(this.handleErrors)
+      .then((res) => res.json())
+  },
 }

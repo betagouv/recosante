@@ -60,7 +60,7 @@ export default function Address(props) {
           setTimeout(() => {
             setFetching(false)
             setAddress({ name: search, code })
-          }, 1000)
+          }, 400)
         }
       }}
     >

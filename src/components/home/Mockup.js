@@ -108,7 +108,7 @@ const Color = styled.span`
 export default function Mockup() {
   const ref = useRef()
 
-  const isOnScreen = useOnScreen(ref, '0px', 0.8)
+  const isOnScreen = useOnScreen(ref, '0px', 0.7)
   return (
     <Wrapper ref={ref}>
       <Images isOnScreen={isOnScreen} />

@@ -62,7 +62,7 @@ export default function SubscribeForm() {
         setTimeout(() => {
           setFetching(false)
           navigate('/profil/?user=uid')
-        }, 1000)
+        }, 400)
       }}
     >
       <MailInput

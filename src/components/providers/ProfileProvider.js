@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
+import api from 'src/utils/api'
 import ProfileContext from 'src/utils/ProfileContext'
 
 export default function ProfileProvider(props) {

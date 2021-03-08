@@ -77,8 +77,12 @@ export default function What() {
       <StyledBlock ref={ref} isOnScreen={isOnScreen}>
         <MDXRenderer>{data.content.body}</MDXRenderer>
         <Button.Wrapper>
-          <Button>Prendre rendez-vous</Button>
-          <Button hollow>S'inscrire à Recosanté</Button>
+          <Button to='https://www.vyte.in/ecosante/rendez-vous-medecin'>
+            Prendre rendez-vous
+          </Button>
+          <Button hollow to='/'>
+            S'inscrire à Recosanté
+          </Button>
         </Button.Wrapper>
       </StyledBlock>
       <StyledImg
