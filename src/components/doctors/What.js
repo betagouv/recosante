@@ -17,9 +17,10 @@ const Wrapper = styled.div`
   font-size: 1.125rem;
 
   ${(props) => props.theme.mq.medium} {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
-    margin: 0 0 5.5rem;
+    margin: 0 0 2.5rem;
+    font-size: 1rem;
   }
 `
 const StyledBlock = styled(Block)`
@@ -31,13 +32,6 @@ const StyledBlock = styled(Block)`
   width: 42.75rem;
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
   transition: opacity 1200ms;
-
-  ${(props) => props.theme.mq.medium} {
-    position: relative;
-    top: auto;
-    right: auto;
-    transform: none;
-  }
 `
 const StyledImg = styled(Img)`
   width: calc(50vw + 12rem);
@@ -45,9 +39,14 @@ const StyledImg = styled(Img)`
   min-height: 46vw;
 
   ${(props) => props.theme.mq.medium} {
-    width: 100%;
-    height: auto;
-    min-height: none;
+    width: 36.5rem;
+    height: 30rem;
+    margin-bottom: 2rem;
+    min-height: auto;
+  }
+
+  ${(props) => props.theme.mq.small} {
+    display: none;
   }
 `
 export default function What() {

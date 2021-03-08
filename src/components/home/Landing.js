@@ -24,10 +24,16 @@ const StyledSection = styled(Section)`
   }
 
   p {
-    font-size: 1.375rem;
+    font-size: 1.335rem;
+    text-align: justify;
+
+    &:nth-child(2) {
+      font-size: 1.43rem;
+    }
 
     ${(props) => props.theme.mq.medium} {
       font-size: 1.25rem;
+      text-align: left;
     }
 
     ${(props) => props.theme.mq.small} {

@@ -41,7 +41,7 @@ function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
       }}
       title={title}
       titleTemplate={
-        title === 'Datagir' ? 'Datagir' : `%s | ${site.siteMetadata.title}`
+        title === 'Recosanté' ? 'Recosanté' : `%s | ${site.siteMetadata.title}`
       }
       link={
         canonical

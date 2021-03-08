@@ -8,7 +8,16 @@ export default styled.div`
   background-color: ${(props) => props.theme.colors.background};
 
   ${(props) => props.theme.mq.medium} {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    right: auto;
+    transform: none;
     width: 36.5rem;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    font-size: 1rem;
+    opacity: 1;
   }
 
   ${(props) => props.theme.mq.small} {
@@ -24,5 +33,9 @@ export default styled.div`
     height: 0.3125rem;
     background-color: ${(props) =>
       props.theme.colors[props.color] || props.theme.colors.main};
+
+    ${(props) => props.theme.mq.medium} {
+      display: none;
+    }
   }
 `

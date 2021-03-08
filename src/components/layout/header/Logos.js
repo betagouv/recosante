@@ -29,9 +29,11 @@ const StyledLink = styled(Link)`
   }
 `
 const StyledLogo = styled(Logo)`
+  width: auto;
+  height: 4rem;
   ${(props) => props.theme.mq.small} {
-    width: 6.5rem;
-    height: auto;
+    width: auto;
+    height: 2.4rem;
   }
 `
 export default function Logos() {

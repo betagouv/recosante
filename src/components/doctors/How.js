@@ -13,6 +13,12 @@ const StyledSection = styled(Section)`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
+
+  ${(props) => props.theme.mq.medium} {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
 `
 const StyledBlock = styled(Block)`
   width: 30.25rem;
@@ -23,6 +29,11 @@ const StyledBlock = styled(Block)`
 `
 const StyledImg = styled(Img)`
   width: 49rem;
+
+  ${(props) => props.theme.mq.medium} {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 `
 export default function How() {
   const data = useStaticQuery(

@@ -61,8 +61,12 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 2.37500rem;
     margin-bottom: 2rem;
 
+    ${(props) => props.theme.mq.medium} {
+      font-size: 2rem;
+    }
     ${(props) => props.theme.mq.small} {
-      font-size: 1.75em;
+      font-size: 1.5rem;
+      text-align: center;
     }
   }
   h2 {

@@ -11,6 +11,10 @@ import Block from 'src/components/misc/Block'
 const StyledSection = styled(Section)`
   display: flex;
   flex-direction: column;
+
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 3rem;
+  }
 `
 const StyledBlock = styled(Block)`
   ${(props) => (props.index === 1 ? 'margin-top' : 'margin-bottom')}: 2.5rem;
@@ -26,6 +30,20 @@ const StyledImg = styled(Img)`
   transform: translateX(-50%);
   width: 36.5rem;
   height: 100%;
+
+  ${(props) => props.theme.mq.medium} {
+    position: relative !important;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    height: 25rem;
+    margin-bottom: 2rem;
+  }
+
+  ${(props) => props.theme.mq.small} {
+    height: 70vw;
+  }
 `
 export default function Why() {
   const data = useStaticQuery(
@@ -59,13 +77,13 @@ export default function Why() {
       <StyledBlock index={1} ref={ref1} isOnScreen={isOnScreen1}>
         <MDXRenderer>{data.first.body}</MDXRenderer>
       </StyledBlock>
-      <StyledBlock index={2} ref={ref2} isOnScreen={isOnScreen2}>
-        <MDXRenderer>{data.second.body}</MDXRenderer>
-      </StyledBlock>
       <StyledImg
         imgStyle={{ objectFit: 'cover' }}
         fluid={data.image.childrenImageSharp[0].fluid}
       />
+      <StyledBlock index={2} ref={ref2} isOnScreen={isOnScreen2}>
+        <MDXRenderer>{data.second.body}</MDXRenderer>
+      </StyledBlock>
     </StyledSection>
   )
 }

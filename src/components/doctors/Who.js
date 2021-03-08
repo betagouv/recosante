@@ -11,6 +11,11 @@ const StyledSection = styled(Section)`
   transform: translateY(${(props) => (props.isOnScreen ? 0 : '25%')});
   transition: opacity 600ms, transform 900ms ease-out;
 
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 5rem;
+    transform: none;
+    opacity: 1;
+  }
   ul {
     margin: 0;
     padding: 0;

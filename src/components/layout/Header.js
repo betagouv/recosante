@@ -9,12 +9,11 @@ const Wrapper = styled.header`
   z-index: 100;
   width: 100%;
   max-width: 75rem;
-  margin: 0 auto 4rem;
-  padding: 0.5rem 0.5rem 0;
+  margin: 0 auto 3.5rem;
+  padding: 1rem 0.5rem 0;
 
   ${(props) => props.theme.mq.small} {
     margin: 0 auto 2rem;
-    padding: 1rem 0.5rem 0;
   }
 `
 export default function Header() {
