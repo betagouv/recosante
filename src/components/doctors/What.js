@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import useOnScreen from 'src/hooks/useOnScreen'
-import useWindowSize from 'src/hooks/useWindowSize'
 import Block from 'src/components/misc/Block'
 import Button from 'src/components/base/Button'
 
@@ -35,7 +34,7 @@ const StyledBlock = styled(Block)`
 `
 const StyledImg = styled(Img)`
   width: calc(50vw + 12rem);
-  height: ${(props) => props.windowHeight}px;
+  height: 100vh;
   min-height: 46vw;
 
   ${(props) => props.theme.mq.medium} {
@@ -67,8 +66,6 @@ export default function What() {
     `
   )
 
-  const { height } = useWindowSize()
-
   const ref = useRef()
   const isOnScreen = useOnScreen(ref, '-100px', 0)
 
@@ -86,7 +83,6 @@ export default function What() {
         </Button.Wrapper>
       </StyledBlock>
       <StyledImg
-        windowHeight={height}
         imgStyle={{ objectFit: 'cover' }}
         fluid={data.image.childrenImageSharp[0].fluid}
       />

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import useWindowSize from 'src/hooks/useWindowSize'
 import { GlobalStyle } from 'src/utils/styles'
 import 'src/utils/fonts.css'
 import StyleProvider from 'src/components/providers/StyleProvider'
@@ -17,7 +16,7 @@ const Wrapper = styled.div`
   flex-direction: column;
 `
 const Fullscreen = styled.div`
-  min-height: ${(props) => props.windowHeight}px;
+  min-height: 100vh;
 `
 const Content = styled.div`
   flex: 1;
@@ -28,14 +27,13 @@ const Content = styled.div`
   }
 `
 export default function Web(props) {
-  const { height } = useWindowSize()
   return (
     <Wrapper>
       <SEO title={props.title} />
       <StyleProvider>
         <ModalProvider>
           <GlobalStyle />
-          <Fullscreen windowHeight={height}>
+          <Fullscreen>
             <Header />
             <Content>{props.children}</Content>
           </Fullscreen>
