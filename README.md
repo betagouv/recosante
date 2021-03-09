@@ -1,8 +1,8 @@
-# Site Datagir
+# Site Recosante
 
-Site vitrine de la startup d'état Datagir
+Site vitrine de la startup d'état Recosante
 
-https://datagir.ademe.fr/
+https://recosante.beta.gouv.fr/
 
 ## Développement
 

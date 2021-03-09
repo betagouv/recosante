@@ -6,7 +6,7 @@ import useMounted from 'src/hooks/useMounted'
 const Wrapper = styled.span`
   font-weight: 700;
   color: ${(props) => props.theme.colors.main};
-  text-transform: lowercase;
+  text-transform: ${(props) => (props.capital ? 'inherit' : 'lowercase')};
   cursor: pointer;
 `
 const Letter = styled.span`
@@ -34,7 +34,7 @@ export default function Answer(props) {
     )
   }, [props.answers, props.options])
   return (
-    <Wrapper onClick={props.onClick}>
+    <Wrapper onClick={props.onClick} capital={props.capital}>
       {sentence.map((letter, index) => (
         <Letter
           key={index}

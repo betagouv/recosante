@@ -19,13 +19,12 @@ export default function Step(props) {
 
         if (answers.length) {
           setFetching(true)
-          setTimeout(() => {
+          props.setAnswers(answers).then(() => {
             setFetching(false)
-            props.setAnswers(answers)
             if (props.setComplete) {
               props.setComplete(true)
             }
-          }, 400)
+          })
         }
       }}
     >

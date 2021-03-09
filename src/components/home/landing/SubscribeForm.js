@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { navigate } from 'gatsby'
 
+import api from 'src/utils/api'
 import Checkbox from 'src/components/base/Checkbox'
 import Button from 'src/components/base/Button'
 import Alert from 'src/components/base/Alert'
@@ -47,6 +48,13 @@ export default function SubscribeForm() {
         e.preventDefault()
         e.stopPropagation()
 
+        api
+          .post('https://reqres.in/api/users', {
+            name: 'morpheus',
+            job: 'leader',
+          })
+          .then((json) => console.log(json))
+
         if (!email) {
           setError(`Vous devez entrer votre email pour vous inscrire`)
           return
@@ -59,10 +67,15 @@ export default function SubscribeForm() {
         }
 
         setFetching(true)
-        setTimeout(() => {
-          setFetching(false)
-          navigate('/profil/?user=uid')
-        }, 400)
+        api
+          .post(`https://ecosante.beta.gouv.fr/inscription/premiere-etape`, {
+            mail: email,
+          })
+          .then((res) => {
+            setFetching(false)
+            navigate(`/profil/?user=${res.uid}`)
+          })
+          .catch((error) => setError(error.message))
       }}
     >
       <MailInput
@@ -81,7 +94,7 @@ export default function SubscribeForm() {
       <Submit submit fetching={fetching}>
         Créer mon profil
       </Submit>
-      {error ? <Alert error={error}>{error}</Alert> : null}
+      {error ? <Alert error>{error}</Alert> : null}
     </Wrapper>
   )
 }

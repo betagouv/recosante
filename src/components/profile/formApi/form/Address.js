@@ -35,7 +35,7 @@ export default function Address(props) {
     if (debouncedSearch && debouncedSearch.length > 2) {
       api
         .get(
-          `https://geo.api.gouv.fr/communes?&boost=population&limit=100&fields=nom,code&format=json&nom=${debouncedSearch}`
+          `https://geo.api.gouv.fr/communes?&boost=population&limit=100&fields=nom,code&nom=${debouncedSearch}`
         )
         .then((res) => setSuggestions(res))
     } else {
@@ -57,20 +57,20 @@ export default function Address(props) {
 
         if (code) {
           setFetching(true)
-          setTimeout(() => {
-            setFetching(false)
-            setAddress({ name: search, code })
-          }, 400)
+          setAddress({ name: search, code }).then(() => setFetching(false))
         }
       }}
     >
       <Wrapper.Label htmlFor={'address'}>
         J'habite à{' '}
-        {address.name ? (
+        {address.code ? (
           <Answer
-            answers={[address.name]}
-            options={[{ value: address.name, label: address.name }]}
+            answers={[address.code]}
+            options={[
+              { value: address.code, label: address.name || address.code },
+            ]}
             onClick={() => setAddress({ name: '', code: null })}
+            capital
           />
         ) : null}
       </Wrapper.Label>

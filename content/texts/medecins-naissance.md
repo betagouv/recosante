@@ -1,4 +1,4 @@
-## Comment est né **Recosanté** ?
+## Comment est né **Recosanté**&#8239;?
 
 Les Français·e·s sont de plus en plus préoccupé·e·s par le **lien entre la santé et l’environnement**, et plus particulièrement la qualité de l’air.
 

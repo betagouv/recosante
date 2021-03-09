@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect, useContext, useRef } from 'react'
 import styled from 'styled-components'
 
 import ProfileContext from 'src/utils/ProfileContext'
+import ModalContext from 'src/utils/ModalContext'
 import Title from './form/Title'
 import Address from './form/Address'
 import Step from './form/Step'
@@ -36,15 +37,17 @@ export default function Form(props) {
     creation,
     complete,
     setComplete,
-    found,
-    setFound,
+    source,
+    setSource,
   } = useContext(ProfileContext)
+
+  const { setSensible } = useContext(ModalContext)
 
   const ref = useRef()
   const [minHeight, setMinHeight] = useState(0)
   useLayoutEffect(() => {
     setMinHeight(ref.current.clientHeight)
-  }, [complete, found])
+  }, [complete, source])
 
   return (
     <Wrapper minHeight={minHeight}>
@@ -60,11 +63,11 @@ export default function Form(props) {
                 answer: `vulnérable ou sensible à la qualité de l’air`,
                 detail: {
                   label: `Qu'est ce qu'une personne sensible<br/>à la qualité de l'air ?`,
-                  onClick: () => console.log('modal'),
+                  onClick: () => setSensible(true),
                 },
               },
               {
-                value: 'allergic',
+                value: 'pollens',
                 label: `Allergique aux pollens`,
               },
               {
@@ -82,15 +85,15 @@ export default function Form(props) {
           <Step
             options={[
               {
-                value: 'gardening',
+                value: 'jardinage',
                 label: `Jardinage`,
               },
               {
-                value: 'diy',
+                value: 'bricolage',
                 label: `Bricolage`,
               },
               {
-                value: 'cleaning',
+                value: 'menage',
                 label: `Ménage`,
               },
               {
@@ -115,19 +118,19 @@ export default function Form(props) {
           <Step
             options={[
               {
-                value: 'wood',
+                value: 'bois',
                 label: `Une cheminée ou poêle à bois`,
               },
               {
-                value: 'gaz',
+                value: 'chaudiere',
                 label: `Une chaudière au gaz ou au fioul`,
               },
               {
-                value: 'mobile',
+                value: 'appoint',
                 label: `Un chauffage mobile d'appoint`,
               },
               {
-                value: 'none',
+                value: 'autre',
                 label: `Autrement / Je ne sais pas`,
                 answer: `Autrement`,
               },
@@ -144,15 +147,15 @@ export default function Form(props) {
           <Step
             options={[
               {
-                value: 'bicycle',
+                value: 'velo',
                 label: `À vélo`,
               },
               {
-                value: 'public',
+                value: 'tec',
                 label: 'En transport en commun',
               },
               {
-                value: 'car',
+                value: 'voiture',
                 label: `En voiture`,
               },
               {
@@ -174,14 +177,14 @@ export default function Form(props) {
           <Step
             options={[
               {
-                value: 'cat',
+                value: 'chat',
                 label: `Un chat`,
                 detail: {
                   label: `(ou plusieurs)`,
                 },
               },
               {
-                value: 'dog',
+                value: 'chien',
                 label: 'Un chien',
                 detail: {
                   label: `(ou plusieurs)`,
@@ -207,7 +210,7 @@ export default function Form(props) {
             <Step
               options={[
                 {
-                  value: 'doctor',
+                  value: 'mdecin',
                   label: `Par le biais de mon médecin`,
                 },
                 {
@@ -219,11 +222,11 @@ export default function Form(props) {
                   label: `Via les réseaux sociaux`,
                 },
                 {
-                  value: 'ads',
+                  value: 'publicite',
                   label: 'Par la publicité',
                 },
                 {
-                  value: 'friends',
+                  value: 'amis',
                   label: 'Grâce à un·e ami·e',
                 },
                 {
@@ -231,8 +234,8 @@ export default function Form(props) {
                   label: `Autrement`,
                 },
               ]}
-              answers={found}
-              setAnswers={setFound}
+              answers={source}
+              setAnswers={setSource}
               label={[`J’ai connu Recosanté `, `J’ai connu Recosanté `]}
             />
           )}

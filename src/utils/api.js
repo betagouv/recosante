@@ -6,29 +6,20 @@ export default {
     return response
   },
   get(endpoint) {
-    let headers = new Headers()
-    return fetch(
-      endpoint,
-
-      {
-        method: 'GET',
-        headers: headers,
-      }
-    )
+    return fetch(endpoint)
       .then(this.handleErrors)
       .then((res) => res.json())
   },
   post(endpoint, body) {
-    let headers = new Headers()
-    return fetch(
-      endpoint,
-
-      {
-        method: 'POST',
-        headers: headers,
-        body: JSON.stringify(body),
-      }
-    )
+    console.log(body)
+    return fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
       .then(this.handleErrors)
       .then((res) => res.json())
   },

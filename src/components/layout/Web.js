@@ -5,10 +5,12 @@ import useWindowSize from 'src/hooks/useWindowSize'
 import { GlobalStyle } from 'src/utils/styles'
 import 'src/utils/fonts.css'
 import StyleProvider from 'src/components/providers/StyleProvider'
+import ModalProvider from 'src/components/providers/ModalProvider'
 
 import SEO from './web/SEO'
 import Header from './Header'
 import Footer from './Footer'
+import SensibleModal from 'src/components/modals/SensibleModal'
 
 const Wrapper = styled.div`
   display: flex;
@@ -31,12 +33,15 @@ export default function Web(props) {
     <Wrapper>
       <SEO title={props.title} />
       <StyleProvider>
-        <GlobalStyle />
-        <Fullscreen windowHeight={height}>
-          <Header />
-          <Content>{props.children}</Content>
-        </Fullscreen>
-        <Footer />
+        <ModalProvider>
+          <GlobalStyle />
+          <Fullscreen windowHeight={height}>
+            <Header />
+            <Content>{props.children}</Content>
+          </Fullscreen>
+          <Footer />
+          <SensibleModal />
+        </ModalProvider>
       </StyleProvider>
     </Wrapper>
   )

@@ -3,7 +3,7 @@ import React from 'react'
 import ProfileProvider from 'src/components/providers/ProfileProvider'
 import Web from 'src/components/layout/Web'
 import Section from 'src/components/layout/Section'
-import Form from 'src/components/profile/Form'
+import FormApi from 'src/components/profile/FormApi'
 
 export default function Profile(props) {
   console.log(props)
@@ -11,7 +11,7 @@ export default function Profile(props) {
     <ProfileProvider>
       <Web title={'Profil'}>
         <Section tiny>
-          <Form />
+          <FormApi />
         </Section>
       </Web>
     </ProfileProvider>
