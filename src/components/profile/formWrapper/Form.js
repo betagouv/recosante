@@ -11,13 +11,13 @@ const Wrapper = styled.div`
   min-height: ${(props) => props.minHeight}px;
 `
 const Start = styled.div`
-  opacity: ${(props) => (props.complete && !props.inscription ? 0 : 1)};
+  opacity: ${(props) => (props.complete && props.inscription ? 0 : 1)};
   transition: opacity 500ms ${(props) => (props.complete ? '1200ms' : '0ms')};
 `
 const End = styled.div`
   position: absolute;
   top: 0;
-  opacity: ${(props) => (props.complete && !props.inscription ? 1 : 0)};
+  opacity: ${(props) => (props.complete && props.inscription ? 1 : 0)};
   transition: opacity 500ms 1600ms;
 `
 export default function Form(props) {
@@ -45,6 +45,7 @@ export default function Form(props) {
                 key={step.name}
                 step={step}
                 last={index === form.length - 1}
+                inscription={props.inscription}
               />
             )
           ) : null

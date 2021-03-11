@@ -25,7 +25,6 @@ export default function Step(props) {
     )
   }, [profile, props.step, current])
 
-  console.log(props.step, props.step.name)
   return (
     <Wrapper
       mounted={mounted}
@@ -39,8 +38,17 @@ export default function Step(props) {
             [props.step.name]: answers,
           }).then(() => {
             setFetching(false)
-            if (props.last) {
+            if (props.last && props.inscription) {
               setComplete(true)
+              setTimeout(
+                () =>
+                  window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth',
+                  }),
+                1000
+              )
             }
           })
         }

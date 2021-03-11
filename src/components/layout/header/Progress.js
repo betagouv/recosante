@@ -31,48 +31,20 @@ const Wrapper = styled.div`
     left: 0;
     right: 0;
     background-color: ${(props) => props.theme.colors.main};
-    transform: scaleX(${(props) => props.current() / props.total});
+    transform: scaleX(${(props) => props.current / props.total});
     transform-origin: left;
     transition: transform 600ms ease-in-out;
   }
 `
 export default function Progress() {
-  const {
-    address,
-    vulnerabilities,
-    hobbies,
-    heating,
-    transportations,
-    pets,
-  } = useContext(ProfileContext)
+  const { form, profile } = useContext(ProfileContext)
 
   return (
     <Wrapper
-      current={() => {
-        if (!address) {
-          return 6
-        }
-        if (!address.code) {
-          return 0
-        }
-        if (!vulnerabilities.length) {
-          return 1
-        }
-        if (!hobbies.length) {
-          return 2
-        }
-        if (!heating.length) {
-          return 3
-        }
-        if (!transportations.length) {
-          return 4
-        }
-        if (!pets.length) {
-          return 5
-        }
-        return 6
-      }}
-      total={6}
+      current={
+        form ? form.filter((step) => profile && profile[step.name]).length : 10
+      }
+      total={form ? form.length : 10}
     />
   )
 }
