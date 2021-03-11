@@ -73,7 +73,7 @@ export default function SubscribeForm() {
           })
           .then((res) => {
             setFetching(false)
-            navigate(`/profil/?user=${res.uid}`)
+            navigate(`/inscription/?user=${res.uid}`)
           })
           .catch((error) => setError(error.message))
       }}
