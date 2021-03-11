@@ -8,6 +8,10 @@ import Logo from 'src/components/misc/Logo'
 const Wrapper = styled.div`
   display: flex;
   align-items: flex-start;
+
+  ${(props) => props.theme.mq.small} {
+    align-items: center;
+  }
 `
 const Small = styled(Img)`
   display: none !important;
@@ -31,6 +35,7 @@ const StyledLogo = styled(Logo)`
   ${(props) => props.theme.mq.small} {
     width: auto;
     height: 2.4rem;
+    margin-top: 0;
   }
 `
 export default function Logos() {

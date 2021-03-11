@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Logos from './header/Logos'
-import MainLinks from './footer/MainLinks'
+import Partners from './footer/Partners'
 import Links from './footer/Links'
 
 const Wrapper = styled.footer`
@@ -16,7 +16,7 @@ const Content = styled.div`
   align-items: flex-start;
   max-width: 75em;
   margin: 0 auto 2rem;
-  padding: 0 0.5em;
+  padding: 0 1rem;
 
   ${(props) => props.theme.mq.medium} {
     flex-direction: column;
@@ -41,7 +41,7 @@ export default function Header() {
             Recosanté est une lettre d’information numérique qui vous aide à
             vous protéger des impacts de la qualité de l'air sur votre santé.
           </Description>
-          <MainLinks />
+          <Partners />
         </Right>
       </Content>
       <Links />

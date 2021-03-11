@@ -11,7 +11,6 @@ export default {
       .then((res) => res.json())
   },
   post(endpoint, body) {
-    console.log(body)
     return fetch(endpoint, {
       method: 'POST',
       headers: {

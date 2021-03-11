@@ -47,7 +47,8 @@ const Step = styled.div`
     left: auto;
     width: auto;
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
   }
 
   &:before {
@@ -69,11 +70,9 @@ const Step = styled.div`
 `
 const Icon = styled.svg`
   display: none;
-  width: ${(props) => (props.index === 1 ? '1.5rem' : '2rem')};
+  width: ${(props) => (props.index === 1 ? '1.9rem' : '2.5rem')};
   height: auto;
-  margin: ${(props) =>
-    props.index === 1 ? '0.3rem 0.5rem 0 0.3rem' : '0.2rem 0.3rem 0 0'};
-
+  margin-bottom: 0.5rem;
   ${(props) => props.theme.mq.small} {
     display: block;
   }
@@ -96,9 +95,11 @@ const Text = styled.p`
     font-size: 1rem;
   }
   ${(props) => props.theme.mq.small} {
+    width: auto;
     transform: none;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     padding-bottom: 0;
+    text-align: center;
   }
 `
 const Color = styled.span`

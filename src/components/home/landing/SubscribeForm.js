@@ -48,13 +48,6 @@ export default function SubscribeForm() {
         e.preventDefault()
         e.stopPropagation()
 
-        api
-          .post('https://reqres.in/api/users', {
-            name: 'morpheus',
-            job: 'leader',
-          })
-          .then((json) => console.log(json))
-
         if (!email) {
           setError(`Vous devez entrer votre email pour vous inscrire`)
           return
