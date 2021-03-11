@@ -74,10 +74,32 @@ export default function What() {
       <StyledBlock ref={ref} isOnScreen={isOnScreen}>
         <MDXRenderer>{data.content.body}</MDXRenderer>
         <Button.Wrapper>
-          <Button to='https://www.vyte.in/ecosante/rendez-vous-medecin'>
+          <Button
+            to='https://www.vyte.in/ecosante/rendez-vous-medecin'
+            onClick={() =>
+              window &&
+              window._paq.push([
+                'trackEvent',
+                'Doctors',
+                'Navigate',
+                'Appointment',
+              ])
+            }
+          >
             Prendre rendez-vous
           </Button>
-          <Button hollow to='/'>
+          <Button
+            hollow
+            to='/'
+            onClick={() =>
+              window._paq.push([
+                'trackEvent',
+                'Doctors',
+                'Navigate',
+                'Appointment',
+              ])
+            }
+          >
             S'inscrire à Recosanté
           </Button>
         </Button.Wrapper>

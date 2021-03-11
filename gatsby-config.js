@@ -54,14 +54,15 @@ module.exports = {
         plugins: [`gatsby-remark-images`],
       },
     },
-    /* {
+    {
       resolve: 'gatsby-plugin-matomo',
       options: {
-        siteId: '128',
+        siteId: '157',
         matomoUrl: 'https://stats.data.gouv.fr',
         siteUrl: 'https://recosante.beta.gouv.fr',
+        dev: true,
       },
-    },*/
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

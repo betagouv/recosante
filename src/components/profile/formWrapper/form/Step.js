@@ -33,6 +33,14 @@ export default function Step(props) {
         e.stopPropagation()
 
         if (answers.length) {
+          window &&
+            window._paq.push([
+              'trackEvent',
+              'Subscription',
+              'Submit',
+              props.step.name,
+            ])
+
           setFetching(true)
           setProfile({
             [props.step.name]: answers,
@@ -64,7 +72,15 @@ export default function Step(props) {
           <Answer
             answers={profile[props.step.name]}
             options={props.step.options}
-            onClick={() => setCurrent(props.step.index)}
+            onClick={() => {
+              window._paq.push([
+                'trackEvent',
+                'Subscription',
+                'Edit',
+                props.step.name,
+              ])
+              setCurrent(props.step.index)
+            }}
           />
         ) : null}
       </Wrapper.Label>

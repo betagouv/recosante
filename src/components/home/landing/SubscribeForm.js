@@ -40,7 +40,6 @@ export default function SubscribeForm() {
   const [optin, setOptin] = useState(false)
   const [error, setError] = useState(null)
   const [fetching, setFetching] = useState(false)
-
   return (
     <Wrapper
       method='post'
@@ -50,14 +49,36 @@ export default function SubscribeForm() {
 
         if (!email) {
           setError(`Vous devez entrer votre email pour vous inscrire`)
+          window &&
+            window._paq.push([
+              'trackEvent',
+              'Subscription',
+              'Landing',
+              'No mail',
+            ])
           return
         }
         if (!optin) {
           setError(
             `Vous devez accepter de partager vos données pour vous inscrire`
           )
+          window &&
+            window._paq.push([
+              'trackEvent',
+              'Subscription',
+              'Landing',
+              'No optin',
+            ])
           return
         }
+
+        window &&
+          window._paq.push([
+            'trackEvent',
+            'Subscription',
+            'Landing',
+            'Submit Mail',
+          ])
 
         setFetching(true)
         api

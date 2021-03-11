@@ -49,6 +49,9 @@ export default function How() {
             }
           }
         }
+        flyer: file(relativePath: { eq: "recosante.pdf" }) {
+          publicURL
+        }
       }
     `
   )
@@ -61,7 +64,16 @@ export default function How() {
       <StyledBlock ref={ref} isOnScreen={isOnScreen}>
         <MDXRenderer>{data.content.body}</MDXRenderer>
         <Button.Wrapper>
-          <Button hollow>Télecharger le flyer d'inscription</Button>
+          <Button
+            hollow
+            to={window.location.origin + data.flyer.publicURL}
+            onClick={() =>
+              window &&
+              window._paq.push(['trackEvent', 'Doctors', 'Navigate', 'Flyer'])
+            }
+          >
+            Télecharger le flyer d'inscription
+          </Button>
         </Button.Wrapper>
       </StyledBlock>
       <StyledImg fluid={data.image.childrenImageSharp[0].fluid} />

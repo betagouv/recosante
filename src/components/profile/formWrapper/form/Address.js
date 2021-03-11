@@ -64,6 +64,14 @@ export default function Address(props) {
         e.stopPropagation()
 
         if (insee) {
+          window &&
+            window._paq.push([
+              'trackEvent',
+              'Subscription',
+              'Submit',
+              props.step.name,
+            ])
+
           setFetching(true)
           setProfile({
             [props.step.name]: insee,
@@ -82,7 +90,15 @@ export default function Address(props) {
                 label: profile.ville_nom || profile[props.step.name],
               },
             ]}
-            onClick={() => setCurrent(props.step.index)}
+            onClick={() => {
+              window._paq.push([
+                'trackEvent',
+                'Subscription',
+                'Modify',
+                props.step.name,
+              ])
+              setCurrent(props.step.index)
+            }}
             capital
           />
         ) : null}
