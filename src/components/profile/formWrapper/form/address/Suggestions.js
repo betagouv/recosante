@@ -51,7 +51,8 @@ export default function Suggestions(props) {
               key={suggestion.code}
               onClick={() => {
                 props.setSearch(suggestion.nom)
-                props.setCode(suggestion.code)
+                props.setInsee(suggestion.code)
+                props.setCode(suggestion.codesPostaux[0])
                 props.setFocus(false)
               }}
               onFocus={() => props.setFocus(true)}
@@ -59,7 +60,10 @@ export default function Suggestions(props) {
               type='button'
             >
               <span>
-                {suggestion.nom} ({suggestion.code})
+                {suggestion.nom} ({suggestion.codesPostaux[0]}
+                {suggestion.codesPostaux[1] &&
+                  ', ' + suggestion.codesPostaux[1]}
+                {suggestion.codesPostaux[2] && ', ...'})
               </span>
             </Suggestion>
           )

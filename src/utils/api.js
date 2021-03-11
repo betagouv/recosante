@@ -23,4 +23,7 @@ export default {
       .then(this.handleErrors)
       .then((res) => res.json())
   },
+  fetch(endpoint, body) {
+    return body ? this.post(endpoint, body) : this.get(endpoint)
+  },
 }

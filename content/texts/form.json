@@ -1,0 +1,140 @@
+[
+  {
+    "index": 1,
+    "name": "ville_insee",
+    "address": true,
+    "label": ["J'habite à "]
+  },
+  {
+    "index": 2,
+    "name": "population",
+    "options": [
+      {
+        "value": "pathologie_respiratoire",
+        "label": "Vulnérable ou sensible<br/>à la qualité de l’air",
+        "answer": "vulnérable ou sensible à la qualité de l’air",
+        "detail": {
+          "label": "Qu'est ce qu'une personne sensible<br/>à la qualité de l'air ?",
+          "modal": true
+        }
+      },
+      {
+        "value": "allergie_pollens",
+        "label": "Allergique aux pollens"
+      },
+      {
+        "value": "aucun",
+        "label": "Aucun des deux",
+        "answer": "vulnérable, allergique ou sensible"
+      }
+    ],
+    "label": ["Je suis ", "Je ne suis pas "]
+  },
+
+  {
+    "index": 3,
+    "name": "activites",
+    "options": [
+      {
+        "value": "jardinage",
+        "label": "Jardinage"
+      },
+      {
+        "value": "bricolage",
+        "label": "Bricolage"
+      },
+      {
+        "value": "menage",
+        "label": "Ménage"
+      },
+      {
+        "value": "sport",
+        "label": "Sport",
+        "detail": {
+          "label": "(et activité physique adaptée)"
+        }
+      },
+      {
+        "value": "aucun",
+        "label": "Aucun",
+        "answer": "ni jardinage, ni bricolage, ni ménage, ni sport"
+      }
+    ],
+    "detail": "(au moins une fois par semaine)",
+    "label": ["Je fais du ", "Je ne fait "]
+  },
+  {
+    "index": 4,
+    "name": "chauffage",
+    "options": [
+      {
+        "value": "bois",
+        "label": "Une cheminée ou poêle à bois"
+      },
+      {
+        "value": "fioul",
+        "label": "Une chaudière au gaz, fioul ou électrique"
+      },
+      {
+        "value": "appoint",
+        "label": "Un chauffage mobile d'appoint"
+      },
+      {
+        "value": "aucun",
+        "label": "Autrement / Je ne sais pas",
+        "answer": "Autrement"
+      }
+    ],
+    "label": ["Je me chauffe avec ", "Je me chauffe "]
+  },
+  {
+    "index": 5,
+    "name": "deplacement",
+    "options": [
+      {
+        "value": "velo",
+        "label": "À vélo"
+      },
+      {
+        "value": "tec",
+        "label": "En transport en commun"
+      },
+      {
+        "value": "voiture",
+        "label": "En voiture"
+      },
+      {
+        "value": "aucun",
+        "label": "Aucun de ceux la",
+        "answer": "ni à vélo, ni en transport en commun, ni en voiture"
+      }
+    ],
+    "label": ["Je me déplace ", "Je ne me déplace "]
+  },
+  {
+    "index": 6,
+    "name": "animaux_domestiques",
+    "options": [
+      {
+        "value": "chat",
+        "label": "Un chat",
+        "detail": {
+          "label": "(ou plusieurs)"
+        }
+      },
+      {
+        "value": "chien",
+        "label": "Un chien",
+        "detail": {
+          "label": "(ou plusieurs)"
+        }
+      },
+      {
+        "value": "aucun",
+        "label": "Aucun des deux",
+        "answer": "de chien ou de chat"
+      }
+    ],
+    "label": ["J'ai ", "Je n'ai pas "]
+  }
+]

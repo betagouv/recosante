@@ -32,7 +32,8 @@ export default function Answer(props) {
         .join('')
         .split('')
     )
-  }, [props.answers, props.options])
+  }, [props.answers, props.options, mounted])
+
   return (
     <Wrapper onClick={props.onClick} capital={props.capital}>
       {sentence.map((letter, index) => (

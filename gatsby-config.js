@@ -14,6 +14,7 @@ module.exports = {
     'gatsby-plugin-use-query-params',
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sitemap`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

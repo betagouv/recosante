@@ -1,15 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
+import ProfileContext from 'src/utils/ProfileContext'
 import useMounted from 'src/hooks/useMounted'
 import Wrapper from './Wrapper'
 import Answer from './Answer'
 
 export default function Step(props) {
+  const { profile, setProfile, current, setCurrent, setComplete } = useContext(
+    ProfileContext
+  )
+
   const [answers, setAnswers] = useState([])
 
   const [fetching, setFetching] = useState(false)
 
   const mounted = useMounted()
+
+  const [active, setActive] = useState(
+    (!profile[props.step.name] && !current) || current === props.step.index
+  )
+  useEffect(() => {
+    setActive(
+      (!profile[props.step.name] && !current) || current === props.step.index
+    )
+  }, [profile, props.step, current])
+
+  console.log(props.step, props.step.name)
   return (
     <Wrapper
       mounted={mounted}
@@ -19,29 +35,35 @@ export default function Step(props) {
 
         if (answers.length) {
           setFetching(true)
-          props.setAnswers(answers).then(() => {
+          setProfile({
+            [props.step.name]: answers,
+          }).then(() => {
             setFetching(false)
-            if (props.setComplete) {
-              props.setComplete(true)
+            if (props.last) {
+              setComplete(true)
             }
           })
         }
       }}
     >
       <Wrapper.Label>
-        {props.answers[0] !== 'none' ? props.label[0] : props.label[1]}
-        {props.answers.length ? (
+        {active ||
+        !profile[props.step.name] ||
+        profile[props.step.name][0] !== 'aucun'
+          ? props.step.label[0]
+          : props.step.label[1]}
+        {!active ? (
           <Answer
-            answers={props.answers}
-            options={props.options}
-            onClick={() => props.setAnswers([])}
+            answers={profile[props.step.name]}
+            options={props.step.options}
+            onClick={() => setCurrent(props.step.index)}
           />
         ) : null}
       </Wrapper.Label>
-      {!props.answers.length && (
+      {active && (
         <>
           <Wrapper.Answers>
-            {props.options.map((option) => (
+            {props.step.options.map((option) => (
               <Wrapper.Checkbox
                 key={option.value}
                 label={option.label}
@@ -49,12 +71,12 @@ export default function Step(props) {
                 checked={answers.includes(option.value)}
                 onChange={(checked) =>
                   setAnswers((prevAnswers) => {
-                    if (option.value === 'none') {
+                    if (option.value === 'aucun') {
                       return checked ? [option.value] : []
                     }
                     const tempAnswers = prevAnswers.filter(
                       (prevAnswer) =>
-                        prevAnswer !== option.value && prevAnswer !== 'none'
+                        prevAnswer !== option.value && prevAnswer !== 'aucun'
                     )
                     return checked
                       ? [...tempAnswers, option.value]
@@ -64,6 +86,13 @@ export default function Step(props) {
               />
             ))}
           </Wrapper.Answers>
+          {props.step.detail && (
+            <Wrapper.Detail
+              dangerouslySetInnerHTML={{
+                __html: props.step.detail,
+              }}
+            />
+          )}
           <Wrapper.Submit disabled={!answers.length} fetching={fetching}>
             Valider
           </Wrapper.Submit>

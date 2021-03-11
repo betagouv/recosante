@@ -1,28 +1,12 @@
-import React, { useState /*useEffect*/ } from 'react'
-//import { navigate } from 'gatsby'
-//import queryString from 'query-string'
+import React, { useState, useEffect, useCallback } from 'react'
+import { useStaticQuery, graphql, navigate } from 'gatsby'
+import queryString from 'query-string'
 
 import ProfileContext from 'src/utils/ProfileContext'
-//import api from 'src/utils/api'
+import api from 'src/utils/api'
 
 export default function ProfileProvider(props) {
-  const [address, setAddress] = useState({
-    name: '',
-    code: null,
-  })
-  const [vulnerabilities, setVulnerabilities] = useState([])
-  const [hobbies, setHobbies] = useState([])
-  const [heating, setHeating] = useState([])
-  const [transportations, setTransportations] = useState([])
-  const [pets, setPets] = useState([])
-  const [source, setSource] = useState([])
-
-  const [creation, setCreation] = useState(true)
-  const [complete, setComplete] = useState(false)
-
-  const [error, setError] = useState(null)
-
-  /*const [uid, setUid] = useState(null)
+  const [uid, setUid] = useState(null)
   useEffect(() => {
     if (queryString.parse(window.location.search).user) {
       setUid(queryString.parse(window.location.search).user)
@@ -31,139 +15,69 @@ export default function ProfileProvider(props) {
     }
   }, [])
 
+  const data = useStaticQuery(
+    graphql`
+      query {
+        allFormJson {
+          nodes {
+            name
+            index
+            address
+            label
+            options {
+              answer
+              detail {
+                label
+                modal
+              }
+              label
+              value
+            }
+            detail
+          }
+        }
+      }
+    `
+  )
+
+  const [profile, setProfile] = useState(null)
+
+  const fetchProfile = useCallback(
+    (body) =>
+      api
+        .fetch(`https://ecosante.beta.gouv.fr/inscription/${uid}`, body)
+        .then(setProfile)
+        .catch(setError),
+    [uid]
+  )
+
   useEffect(() => {
     if (uid) {
-      api
-        .get(`https://ecosante.beta.gouv.fr/inscription/${uid}`)
-        .then((res) => {
-          if (res.ville_insee) {
-            api
-              .get(
-                `https://geo.api.gouv.fr/communes?&boost=population&limit=100&fields=nom&code=${res.ville_insee}`
-              )
-              .then((city) =>
-                setAddress({
-                  name: city[0] ? city[0].nom : '',
-                  code: res.ville_insee,
-                })
-              )
-          } else {
-            setAddress({ name: '', code: null })
-          }
-          setHobbies(res.activites || [])
-          setHeating(res.chauffage || [])
-          setTransportations(res.deplacement || [])
-          setPets(res.animaux || [])
-          setSource(res.source || [])
-        })
-        .catch(setError)
+      fetchProfile()
     }
-  }, [uid])
-  */
+  }, [uid, fetchProfile])
 
-  /*const sendProfileToApi = (body) => console.log('fake call')
-  api
-    .post(`https://ecosante.beta.gouv.fr/inscription/o96mGLm8/`, body)
-    .then((res) => {
-      if (res.ville_insee) {
-        api
-          .get(
-            `https://geo.api.gouv.fr/communes?&boost=population&limit=100&fields=nom&code=${res.ville_insee}`
-          )
-          .then((city) =>
-            setAddress({ name: city[0].nom, code: res.ville_insee })
-          )
-      } else {
-        setAddress({ name: '', code: null })
-      }
-      setVulnerabilities(['pollens'])
-      setHobbies(res.activites || [])
-      setHeating(res.chauffage || [])
-      setTransportations(res.deplacement || [])
-      setPets(res.animaux || [])
-      setSource(res.source || [])
-    })
-    .catch(setError)*/
+  const [error, setError] = useState(null)
+
+  const [current, setCurrent] = useState(null)
+
+  const [complete, setComplete] = useState(false)
 
   return (
     <ProfileContext.Provider
       value={{
-        address,
-        setAddress: (value) => {
-          setComplete(false)
-          return Promise.resolve(setAddress(value))
-          /*return sendProfileToApi({
-            ville_insee: value.code,
-          })*/
+        form: data.allFormJson.nodes,
+        profile,
+        setProfile: (value) => {
+          return fetchProfile(value).then(() => setCurrent(null))
         },
-        vulnerabilities,
-        setVulnerabilities: (value) => {
-          setComplete(false)
-          return Promise.resolve(setVulnerabilities(value))
-          /*return sendProfileToApi({
-            allergie_pollen: value.includes('pollens'),
-            pathologie_respiratoire: value.includes('vulnerable'),
-          })*/
-        },
-        hobbies,
-        setHobbies: (value) => {
-          setComplete(false)
-          return Promise.resolve(setHobbies(value))
-          /*return sendProfileToApi({
-            activites: value,
-          })*/
-        },
-        heating,
-        setHeating: (value) => {
-          setComplete(false)
-          return Promise.resolve(setHeating(value))
-          /*return sendProfileToApi({
-            chauffage: value,
-          })*/
-        },
-        transportations,
-        setTransportations: (value) => {
-          setComplete(false)
-          return Promise.resolve(setTransportations(value))
-          /*return sendProfileToApi({
-            deplacement: value,
-          })*/
-        },
-        pets,
-        setPets: (value) => {
-          setComplete(false)
-          return Promise.resolve(setPets(value))
-          /*return sendProfileToApi({
-            animaux: value,
-          })*/
-        },
-        complete,
-        setComplete: (value) => {
-          setComplete(value)
-          if (value) {
-            setCreation(false)
-            setTimeout(
-              () =>
-                window.scrollTo({
-                  top: 0,
-                  left: 0,
-                  behavior: 'smooth',
-                }),
-              1000
-            )
-          }
-        },
-        source,
-        setSource: (value) => {
-          return Promise.resolve(setSource(value))
-          /*return sendProfileToApi({
-            source: value,
-          })*/
-        },
-        creation,
-        setCreation,
+
+        current,
+        setCurrent,
         error,
         setError,
+        complete,
+        setComplete,
       }}
     >
       {props.children}

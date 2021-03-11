@@ -14,7 +14,7 @@ const Color = styled.span`
 export default function Title(props) {
   return (
     <Wrapper>
-      {props.creation ? 'Créer mon' : 'Mon'} <Color>Profil</Color>
+      {props.inscription ? 'Créer mon' : 'Mon'} <Color>Profil</Color>
     </Wrapper>
   )
 }

@@ -8,9 +8,9 @@ import FormWrapper from 'src/components/profile/FormWrapper'
 export default function Profile(props) {
   return (
     <ProfileProvider>
-      <Web title={'Profil'}>
+      <Web title={'Inscription'}>
         <Section tiny>
-          <FormWrapper />
+          <FormWrapper inscription />
         </Section>
       </Web>
     </ProfileProvider>

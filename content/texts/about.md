@@ -6,4 +6,4 @@ Les recommandations sont issues de sources fiables et officielles telles que le 
 
 Les données collectées lors de l'inscription sont utilisées exclusivement pour personnaliser les recommandations envoyées.
 
-Recosanté est développé de manière ouverte. L'ensemble du code est [disponible librement](https://github.com/betagouv/ecosante). Vous pouvez aussi [suivre l'ensemble des avancées de l'équipe](https://github.com/betagouv/ecosante/wiki).
+Recosanté est développé de manière ouverte. L'ensemble du code est [disponible librement](https://github.com/betagouv/ecosante).

@@ -23,19 +23,22 @@ const Code = styled.div`
 `
 
 export default function Address(props) {
+  const { profile, setProfile, current, setCurrent } = useContext(
+    ProfileContext
+  )
+
   const [search, setSearch] = useState('')
   const debouncedSearch = useDebounce(search)
 
-  const { address, setAddress } = useContext(ProfileContext)
-
   const [code, setCode] = useState(null)
+  const [insee, setInsee] = useState(null)
 
   const [suggestions, setSuggestions] = useState([])
   useEffect(() => {
     if (debouncedSearch && debouncedSearch.length > 2) {
       api
         .get(
-          `https://geo.api.gouv.fr/communes?&boost=population&limit=100&fields=nom,code&nom=${debouncedSearch}`
+          `https://geo.api.gouv.fr/communes?&boost=population&limit=100&fields=nom,code,codesPostaux&nom=${debouncedSearch}`
         )
         .then((res) => setSuggestions(res))
     } else {
@@ -47,6 +50,11 @@ export default function Address(props) {
 
   const [focus, setFocus] = useState(false)
 
+  const [active, setActive] = useState(false)
+  useEffect(() => {
+    setActive(!profile[props.step.name] || current === props.step.index)
+  }, [profile, props.step, current])
+
   return (
     <Wrapper
       className={props.className}
@@ -55,26 +63,31 @@ export default function Address(props) {
         e.preventDefault()
         e.stopPropagation()
 
-        if (code) {
+        if (insee) {
           setFetching(true)
-          setAddress({ name: search, code }).then(() => setFetching(false))
+          setProfile({
+            [props.step.name]: insee,
+          }).then(() => setFetching(false))
         }
       }}
     >
       <Wrapper.Label htmlFor={'address'}>
         J'habite à{' '}
-        {address.code ? (
+        {!active ? (
           <Answer
-            answers={[address.code]}
+            answers={[profile[props.step.name]]}
             options={[
-              { value: address.code, label: address.name || address.code },
+              {
+                value: profile[props.step.name],
+                label: profile.ville_nom || profile[props.step.name],
+              },
             ]}
-            onClick={() => setAddress({ name: '', code: null })}
+            onClick={() => setCurrent(props.step.index)}
             capital
           />
         ) : null}
       </Wrapper.Label>
-      {!address.code && (
+      {active && (
         <>
           <Wrapper.Answers>
             <Input
@@ -84,6 +97,7 @@ export default function Address(props) {
               onChange={({ value }) => {
                 setSearch(value)
                 setCode(null)
+                setInsee(null)
               }}
               onFocus={() => setFocus(true)}
               onBlur={() => setFocus(false)}
@@ -95,10 +109,11 @@ export default function Address(props) {
               setFocus={setFocus}
               setSearch={setSearch}
               setCode={setCode}
+              setInsee={setInsee}
             />
           </Wrapper.Answers>
           <Wrapper.Submit
-            disabled={!code}
+            disabled={!insee}
             fetching={fetching}
             onClick={() => {}}
           >

@@ -35,6 +35,10 @@ Wrapper.Checkbox = styled(Checkbox)`
     font-size: 1rem;
   }
 `
+Wrapper.Detail = styled.div`
+  margin: -1.5rem 0 1.5rem;
+  font-size: 0.875rem;
+`
 Wrapper.Submit = styled(Button)`
   align-self: flex-end;
 `
