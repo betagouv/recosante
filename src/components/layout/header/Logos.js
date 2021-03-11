@@ -7,7 +7,7 @@ import Logo from 'src/components/misc/Logo'
 
 const Wrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 `
 const Small = styled(Img)`
   display: none !important;
@@ -21,16 +21,12 @@ const Large = styled(Img)`
     display: none !important;
   }
 `
-const StyledLink = styled(Link)`
-  margin-left: 1rem;
-
-  ${(props) => props.theme.mq.small} {
-    margin-left: 0.5rem;
-  }
-`
+const StyledLink = styled(Link)``
 const StyledLogo = styled(Logo)`
   width: auto;
-  height: 2.75rem;
+  height: 2.95rem;
+  margin-left: 0.5rem;
+  margin-top: 1.8rem;
 
   ${(props) => props.theme.mq.small} {
     width: auto;
