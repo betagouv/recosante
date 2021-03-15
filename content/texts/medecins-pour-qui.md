@@ -2,4 +2,4 @@
 
 - **Pour tous les citoyen·ne·s qui souhaitent se protéger des impacts de la qualité de l’air sur leur santé** et contribuer à réduire la pollution de l’air.
 
-- Mais aussi **pour les personnes ayant une pathologie respiratoire et/ou des allergies**, car ils sont ceux pour qui la qualité de l’air a un impact direct sur la santé.
+- **Pour les personnes ayant une pathologie respiratoire et/ou des allergies**, car ils sont ceux pour qui la qualité de l’air a un impact direct sur la santé.
