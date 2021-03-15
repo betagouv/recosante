@@ -67,9 +67,9 @@ export default function How() {
           <Button
             hollow
             to={
-              (window
-                ? window.location.origin
-                : 'https://recosante.beta.gouv.fr/') + data.flyer.publicURL
+              (typeof window === 'undefined'
+                ? 'https://recosante.beta.gouv.fr/'
+                : window.location.origin) + data.flyer.publicURL
             }
             onClick={() =>
               window &&
