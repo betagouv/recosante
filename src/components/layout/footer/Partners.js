@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
+import MagicLink from 'src/components/base/MagicLink'
+
 const Wrapper = styled.div``
 const Title = styled.h4`
   margin-bottom: 1rem;
@@ -63,13 +65,21 @@ export default function Partners() {
     <Wrapper>
       <Title>Ils nous accompagnent</Title>
       <Logos>
-        <StyledImg fixed={data.atmo.childImageSharp.fixed} alt='Atmo' />
-        <StyledImg fixed={data.rnsa.childImageSharp.fixed} alt='RNSA' />
-        <StyledImg fixed={data.srf.childImageSharp.fixed} alt='SRF' />
-        <StyledImg
-          fixed={data.pollinariums.childImageSharp.fixed}
-          alt='Pollinariums'
-        />
+        <MagicLink to='https://atmo-france.org/'>
+          <StyledImg fixed={data.atmo.childImageSharp.fixed} alt='Atmo' />
+        </MagicLink>
+        <MagicLink to='https://www.pollens.fr/'>
+          <StyledImg fixed={data.rnsa.childImageSharp.fixed} alt='RNSA' />
+        </MagicLink>
+        <MagicLink to='https://sante-respiratoire.com/'>
+          <StyledImg fixed={data.srf.childImageSharp.fixed} alt='SRF' />
+        </MagicLink>
+        <MagicLink to='https://www.alertepollens.org/'>
+          <StyledImg
+            fixed={data.pollinariums.childImageSharp.fixed}
+            alt='Pollinariums'
+          />
+        </MagicLink>
       </Logos>
     </Wrapper>
   )
