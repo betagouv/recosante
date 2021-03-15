@@ -66,7 +66,11 @@ export default function How() {
         <Button.Wrapper>
           <Button
             hollow
-            to={window.location.origin + data.flyer.publicURL}
+            to={
+              (window
+                ? window.location.origin
+                : 'https://recosante.beta.gouv.fr/') + data.flyer.publicURL
+            }
             onClick={() =>
               window &&
               window._paq.push(['trackEvent', 'Doctors', 'Navigate', 'Flyer'])

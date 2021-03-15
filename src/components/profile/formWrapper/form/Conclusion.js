@@ -32,10 +32,6 @@ export default function Conclusion(props) {
         <Color>recommandation personnalisée</Color> et les{' '}
         <Color>indicateurs environnementaux</Color> liés à votre localisation.
       </Text>
-      <Text>
-        N’oubliez pas de <Color>valider votre inscription</Color> en{' '}
-        <Color>cliquant sur le lien dans le mail</Color> que vous avez reçu.
-      </Text>
       <StyledButton onClick={() => props.setComplete(false)} hollow>
         Modifier mon profil
       </StyledButton>
