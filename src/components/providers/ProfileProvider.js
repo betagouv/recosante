@@ -62,7 +62,13 @@ export default function ProfileProvider(props) {
   const [current, setCurrent] = useState(null)
 
   const [complete, setComplete] = useState(false)
-
+  useEffect(() => {
+    complete &&
+      api
+        .fetch(`https://ecosante.beta.gouv.fr/inscription/${uid}/_confirm`)
+        .then((res) => console.log(res))
+        .catch(setError)
+  }, [uid, complete])
   return (
     <ProfileContext.Provider
       value={{
