@@ -21,9 +21,11 @@ export default function Step(props) {
   )
   useEffect(() => {
     setActive(
-      (!profile[props.step.name] && !current) || current === props.step.index
+      props.active ||
+        (!profile[props.step.name] && !current) ||
+        current === props.step.index
     )
-  }, [profile, props.step, current])
+  }, [profile, props.step, current, props.active])
 
   return (
     <Wrapper

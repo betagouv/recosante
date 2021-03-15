@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Button from 'src/components/base/Button'
+import Step from './Step'
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,6 +19,7 @@ const Color = styled.span`
 `
 const StyledButton = styled(Button)`
   align-self: center;
+  margin-bottom: 1.5rem;
 `
 export default function Conclusion(props) {
   return (
@@ -35,6 +37,41 @@ export default function Conclusion(props) {
       <StyledButton onClick={() => props.setComplete(false)} hollow>
         Modifier mon profil
       </StyledButton>
+      <Step
+        step={{
+          index: 7,
+          name: 'connaissance_produit',
+          options: [
+            {
+              value: 'medecin',
+              label: `Par le biais de mon médecin`,
+            },
+            {
+              value: 'association',
+              label: 'Par une association',
+            },
+            {
+              value: 'reseaux_sociaux',
+              label: `Via les réseaux sociaux`,
+            },
+            {
+              value: 'publicite',
+              label: 'Par la publicité',
+            },
+            {
+              value: 'ami',
+              label: 'Grâce à un·e ami·e',
+            },
+            {
+              value: 'autrement',
+              label: `Autrement`,
+            },
+          ],
+          label: [`J’ai connu Recosanté `, `J’ai connu Recosanté `],
+          active: true,
+        }}
+        last={false}
+      />
     </Wrapper>
   )
 }
