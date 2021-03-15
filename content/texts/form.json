@@ -30,7 +30,6 @@
     ],
     "label": ["Je suis ", "Je ne suis pas "]
   },
-
   {
     "index": 3,
     "name": "activites",
@@ -65,6 +64,25 @@
   },
   {
     "index": 4,
+    "name": "enfants",
+    "options": [
+      {
+        "value": "oui",
+        "label": "Avec un enfant",
+        "detail": {
+          "label": "(ou plusieurs)"
+        }
+      },
+      {
+        "value": "aucun",
+        "label": "Sans enfant",
+        "answer": "ni jardinage, ni bricolage, ni ménage, ni sport"
+      }
+    ],
+    "label": ["Je vis ", "Je vis "]
+  },
+  {
+    "index": 5,
     "name": "chauffage",
     "options": [
       {
@@ -88,7 +106,7 @@
     "label": ["Je me chauffe avec ", "Je me chauffe "]
   },
   {
-    "index": 5,
+    "index": 6,
     "name": "deplacement",
     "options": [
       {
@@ -112,7 +130,7 @@
     "label": ["Je me déplace ", "Je ne me déplace "]
   },
   {
-    "index": 6,
+    "index": 7,
     "name": "animaux_domestiques",
     "options": [
       {

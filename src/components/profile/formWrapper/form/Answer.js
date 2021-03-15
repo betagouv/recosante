@@ -16,6 +16,8 @@ const Letter = styled.span`
 export default function Answer(props) {
   const mounted = useMounted()
   const [sentence, setSentence] = useState([])
+
+  console.log(props.answers)
   useEffect(() => {
     setSentence(
       props.answers
