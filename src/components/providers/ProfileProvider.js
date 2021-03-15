@@ -69,6 +69,7 @@ export default function ProfileProvider(props) {
         .then((res) => console.log(res))
         .catch(setError)
   }, [uid, complete])
+
   return (
     <ProfileContext.Provider
       value={{
