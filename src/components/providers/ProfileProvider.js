@@ -47,7 +47,12 @@ export default function ProfileProvider(props) {
       api
         .fetch(`https://ecosante.beta.gouv.fr/inscription/${uid}`, body)
         .then((res) =>
-          setProfile({ ...res, enfants: res.enfants ? [res.enfants] : null })
+          setProfile({
+            ...res,
+            enfants: res.enfants
+              ? [res.enfants === 'non' ? 'aucun' : res.enfants]
+              : null,
+          })
         )
         .catch(setError),
     [uid]
