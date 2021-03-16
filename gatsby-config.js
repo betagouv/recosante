@@ -60,7 +60,6 @@ module.exports = {
         siteId: '157',
         matomoUrl: 'https://stats.data.gouv.fr',
         siteUrl: 'https://recosante.beta.gouv.fr',
-        dev: true,
       },
     },
     {

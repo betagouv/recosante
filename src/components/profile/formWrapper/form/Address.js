@@ -64,7 +64,7 @@ export default function Address(props) {
         e.stopPropagation()
 
         if (insee) {
-          window &&
+          window._paq &&
             window._paq.push([
               'trackEvent',
               'Subscription',
@@ -91,12 +91,13 @@ export default function Address(props) {
               },
             ]}
             onClick={() => {
-              window._paq.push([
-                'trackEvent',
-                'Subscription',
-                'Modify',
-                props.step.name,
-              ])
+              window._paq &&
+                window._paq.push([
+                  'trackEvent',
+                  'Subscription',
+                  'Modify',
+                  props.step.name,
+                ])
               setCurrent(props.step.index)
             }}
             capital

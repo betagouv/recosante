@@ -77,7 +77,7 @@ export default function What() {
           <Button
             to='https://www.vyte.in/ecosante/rendez-vous-medecin'
             onClick={() =>
-              window &&
+              window._paq &&
               window._paq.push([
                 'trackEvent',
                 'Doctors',
@@ -92,6 +92,7 @@ export default function What() {
             hollow
             to='/'
             onClick={() =>
+              window._paq &&
               window._paq.push([
                 'trackEvent',
                 'Doctors',

@@ -35,7 +35,7 @@ export default function Step(props) {
         e.stopPropagation()
 
         if (answers.length) {
-          window &&
+          window._paq &&
             window._paq.push([
               'trackEvent',
               'Subscription',
@@ -75,12 +75,13 @@ export default function Step(props) {
             answers={profile[props.step.name]}
             options={props.step.options}
             onClick={() => {
-              window._paq.push([
-                'trackEvent',
-                'Subscription',
-                'Edit',
-                props.step.name,
-              ])
+              window._paq &&
+                window._paq.push([
+                  'trackEvent',
+                  'Subscription',
+                  'Edit',
+                  props.step.name,
+                ])
               setCurrent(props.step.index)
             }}
           />

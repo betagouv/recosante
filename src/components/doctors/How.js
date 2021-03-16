@@ -72,7 +72,7 @@ export default function How() {
                 : window.location.origin) + data.flyer.publicURL
             }
             onClick={() =>
-              window &&
+              window._paq &&
               window._paq.push(['trackEvent', 'Doctors', 'Navigate', 'Flyer'])
             }
           >

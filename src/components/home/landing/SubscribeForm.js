@@ -49,7 +49,7 @@ export default function SubscribeForm() {
 
         if (!email) {
           setError(`Vous devez entrer votre email pour vous inscrire`)
-          window &&
+          window._paq &&
             window._paq.push([
               'trackEvent',
               'Subscription',
@@ -62,7 +62,7 @@ export default function SubscribeForm() {
           setError(
             `Vous devez accepter de partager vos données pour vous inscrire`
           )
-          window &&
+          window._paq &&
             window._paq.push([
               'trackEvent',
               'Subscription',
@@ -72,7 +72,7 @@ export default function SubscribeForm() {
           return
         }
 
-        window &&
+        window._paq &&
           window._paq.push([
             'trackEvent',
             'Subscription',
