@@ -16,6 +16,13 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-json`,
     {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options: {
+        features: [`IntersectionObserver`],
+      },
+    },
+
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/texts`,
