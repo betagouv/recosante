@@ -49,6 +49,13 @@ export default function Step(props) {
           }).then(() => {
             setFetching(false)
             if (props.last && props.inscription) {
+              window._paq &&
+                window._paq.push([
+                  'trackEvent',
+                  'Subscription',
+                  'Complete',
+                  props.step.name,
+                ])
               setComplete(true)
               setTimeout(
                 () =>
