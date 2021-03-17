@@ -9,7 +9,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-use-query-params',
     `gatsby-plugin-root-import`,
