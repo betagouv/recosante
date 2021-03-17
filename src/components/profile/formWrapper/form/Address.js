@@ -95,7 +95,7 @@ export default function Address(props) {
                 window._paq.push([
                   'trackEvent',
                   'Subscription',
-                  'Modify',
+                  'Edit',
                   props.step.name,
                 ])
               setCurrent(props.step.index)
