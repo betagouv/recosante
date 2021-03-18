@@ -24,7 +24,7 @@ export default function Step(props) {
   const [active, setActive] = useState(false)
   useEffect(() => {
     setActive(
-      props.step.active ||
+      (props.step.active && !profile[props.step.name]) ||
         current === props.step.index - 1 ||
         edit === props.step.index - 1
     )
