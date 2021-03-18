@@ -17,22 +17,24 @@ export default function Answer(props) {
   const mounted = useMounted()
   const [sentence, setSentence] = useState([])
 
-  console.log(props.answers)
   useEffect(() => {
     setSentence(
       props.answers
-        .map((answer, index) => {
-          const sentence =
-            props.options.find((option) => option.value === answer).answer ||
-            props.options.find((option) => option.value === answer).label
-          return index === 0
-            ? sentence + (index === props.answers.length - 1 ? '.' : '')
-            : index > 0 && index < props.answers.length - 1
-            ? `, ${sentence}`
-            : ` et ${sentence}.`
-        })
-        .join('')
-        .split('')
+        ? props.answers
+            .map((answer, index) => {
+              const sentence =
+                props.options.find((option) => option.value === answer)
+                  .answer ||
+                props.options.find((option) => option.value === answer).label
+              return index === 0
+                ? sentence + (index === props.answers.length - 1 ? '.' : '')
+                : index > 0 && index < props.answers.length - 1
+                ? `, ${sentence}`
+                : ` et ${sentence}.`
+            })
+            .join('')
+            .split('')
+        : []
     )
   }, [props.answers, props.options, mounted])
 

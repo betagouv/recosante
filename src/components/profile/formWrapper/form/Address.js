@@ -23,7 +23,7 @@ const Code = styled.div`
 `
 
 export default function Address(props) {
-  const { profile, setProfile, current, setCurrent } = useContext(
+  const { profile, setProfile, current, edit, setEdit } = useContext(
     ProfileContext
   )
 
@@ -52,8 +52,8 @@ export default function Address(props) {
 
   const [active, setActive] = useState(false)
   useEffect(() => {
-    setActive(!profile[props.step.name] || current === props.step.index)
-  }, [profile, props.step, current])
+    setActive(current === props.step.index - 1 || edit === props.step.index - 1)
+  }, [profile, props.step, current, edit])
 
   return (
     <Wrapper
@@ -98,7 +98,7 @@ export default function Address(props) {
                   'Edit',
                   props.step.name,
                 ])
-              setCurrent(props.step.index)
+              setEdit(props.step.index - 1)
             }}
             capital
           />

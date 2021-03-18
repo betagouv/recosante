@@ -6,9 +6,14 @@ import Wrapper from './Wrapper'
 import Answer from './Answer'
 
 export default function Step(props) {
-  const { profile, setProfile, current, setCurrent, setComplete } = useContext(
-    ProfileContext
-  )
+  const {
+    profile,
+    setProfile,
+    setComplete,
+    current,
+    edit,
+    setEdit,
+  } = useContext(ProfileContext)
 
   const [answers, setAnswers] = useState([])
 
@@ -16,16 +21,14 @@ export default function Step(props) {
 
   const mounted = useMounted()
 
-  const [active, setActive] = useState(
-    (!profile[props.step.name] && !current) || current === props.step.index
-  )
+  const [active, setActive] = useState(false)
   useEffect(() => {
     setActive(
-      props.active ||
-        (!profile[props.step.name] && !current) ||
-        current === props.step.index
+      props.step.active ||
+        current === props.step.index - 1 ||
+        edit === props.step.index - 1
     )
-  }, [profile, props.step, current, props.active])
+  }, [profile, props.step, current, edit])
 
   return (
     <Wrapper
@@ -89,7 +92,7 @@ export default function Step(props) {
                   'Edit',
                   props.step.name,
                 ])
-              setCurrent(props.step.index)
+              setEdit(props.step.index - 1)
             }}
           />
         ) : null}

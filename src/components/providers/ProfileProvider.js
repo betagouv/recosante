@@ -41,7 +41,6 @@ export default function ProfileProvider(props) {
   )
 
   const [profile, setProfile] = useState(null)
-
   const fetchProfile = useCallback(
     (body) =>
       api
@@ -58,6 +57,24 @@ export default function ProfileProvider(props) {
     [uid]
   )
 
+  const [current, setCurrent] = useState(0)
+  useEffect(() => {
+    if (profile) {
+      for (let i = 0; i < data.allFormJson.nodes.length; i++) {
+        if (
+          !profile[data.allFormJson.nodes[i].name] ||
+          profile[data.allFormJson.nodes[i].name] === []
+        ) {
+          setCurrent(i)
+          return
+        }
+      }
+      setCurrent(data.allFormJson.nodes.length)
+    }
+  }, [current, data.allFormJson.nodes, profile])
+
+  const [edit, setEdit] = useState(null)
+
   useEffect(() => {
     if (uid) {
       fetchProfile()
@@ -65,8 +82,6 @@ export default function ProfileProvider(props) {
   }, [uid, fetchProfile])
 
   const [error, setError] = useState(null)
-
-  const [current, setCurrent] = useState(null)
 
   const [complete, setComplete] = useState(false)
   useEffect(() => {
@@ -76,18 +91,18 @@ export default function ProfileProvider(props) {
         .then((res) => console.log(res))
         .catch(setError)
   }, [uid, complete])
-
+  console.log(edit)
   return (
     <ProfileContext.Provider
       value={{
         form: data.allFormJson.nodes,
         profile,
         setProfile: (value) => {
-          return fetchProfile(value).then(() => setCurrent(null))
+          return fetchProfile(value).then(() => setEdit(null))
         },
-
         current,
-        setCurrent,
+        edit,
+        setEdit,
         error,
         setError,
         complete,

@@ -21,7 +21,7 @@ const End = styled.div`
   transition: opacity 500ms 1600ms;
 `
 export default function Form(props) {
-  const { form, profile, current, complete, setComplete } = useContext(
+  const { form, current, edit, complete, setComplete } = useContext(
     ProfileContext
   )
 
@@ -36,8 +36,7 @@ export default function Form(props) {
       <Start complete={complete} inscription={props.inscription}>
         <Title inscription={props.inscription} />
         {form.map((step, index) =>
-          (index === 0 || profile[form[index - 1].name]) &&
-          (!current || current > index) ? (
+          index <= current && (!edit || index <= edit) ? (
             step.address ? (
               <Address key={step.name} step={step} />
             ) : (
