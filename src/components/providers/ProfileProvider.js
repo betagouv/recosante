@@ -63,8 +63,9 @@ export default function ProfileProvider(props) {
       for (let i = 0; i < data.allFormJson.nodes.length; i++) {
         if (
           !profile[data.allFormJson.nodes[i].name] ||
-          profile[data.allFormJson.nodes[i].name] === []
+          profile[data.allFormJson.nodes[i].name].length === 0
         ) {
+          console.log('wtf')
           setCurrent(i)
           return
         }
