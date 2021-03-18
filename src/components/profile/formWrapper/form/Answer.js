@@ -22,10 +22,13 @@ export default function Answer(props) {
       props.answers
         ? props.answers
             .map((answer, index) => {
-              const sentence =
-                props.options.find((option) => option.value === answer)
-                  .answer ||
-                props.options.find((option) => option.value === answer).label
+              const sentence = props.options.find(
+                (option) => option.value === answer
+              )
+                ? props.options.find((option) => option.value === answer)
+                    .answer ||
+                  props.options.find((option) => option.value === answer).label
+                : ''
               return index === 0
                 ? sentence + (index === props.answers.length - 1 ? '.' : '')
                 : index > 0 && index < props.answers.length - 1
