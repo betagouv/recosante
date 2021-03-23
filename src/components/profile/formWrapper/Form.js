@@ -1,7 +1,8 @@
-import React, { useState, useLayoutEffect, useContext, useRef } from 'react'
+import React, { useState, useLayoutEffect, useContext, useRef, useEffect } from 'react'
 import styled from 'styled-components'
 
 import ProfileContext from 'src/utils/ProfileContext'
+import { sendEvent } from 'src/utils/lumiere'
 import Title from './form/Title'
 import Address from './form/Address'
 import Step from './form/Step'
@@ -30,6 +31,12 @@ export default function Form(props) {
   useLayoutEffect(() => {
     setMinHeight(ref.current.clientHeight)
   }, [complete])
+
+  useEffect(() => {
+    if (form[current]) {
+      sendEvent(['inscription', 'open_step', { step: form[current].name }])
+    }
+  }, [current])
 
   return (
     <Wrapper minHeight={minHeight}>

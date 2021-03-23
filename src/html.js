@@ -16,6 +16,24 @@ export default function HTML(props) {
           rel='search'
           href='opensearch.xml'
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            var isProduction = window.location.href.indexOf("recosante.beta.gouv.fr") !== -1;
+            (function (l, u, m, i, E, r, e, s) {
+              l[m] = function () {
+                (l[m].q = l[m].q || []).push(arguments);
+              };
+              var c = u.createElement("script"),
+                h = u.getElementsByTagName("head")[0];
+              c.type = "text/javascript";
+              c.async = true;
+              c.crossorigin = true;
+              c.src = "https://lumiere.cleverapps.io/lib.js?a=" + i + "&n=" + E + "&e=" + r + "&d=" + e + "&b=" + s + "&t=" + Date.now();
+              h.appendChild(c);
+            })(window, document, "lumiere", isProduction ? "app_OhCe2M7kNRcXu5Fuueff2" : "app_OhCe2M7kNRcXu5Fuueff2", "app", isProduction, !isProduction, !isProduction);`,
+          }}
+        />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
