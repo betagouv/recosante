@@ -36,7 +36,7 @@ export default function Form(props) {
     if (form[current]) {
       sendEvent(['inscription', 'open_step', { step: form[current].name }])
     }
-  }, [current])
+  }, [current, form])
 
   return (
     <Wrapper minHeight={minHeight}>

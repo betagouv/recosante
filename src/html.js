@@ -31,7 +31,7 @@ export default function HTML(props) {
               c.crossorigin = true;
               c.src = "https://lumiere.cleverapps.io/lib.js?a=" + i + "&n=" + E + "&e=" + r + "&d=" + e + "&b=" + s + "&t=" + Date.now();
               h.appendChild(c);
-            })(window, document, "lumiere", isProduction ? "app_OhCe2M7kNRcXu5Fuueff2" : "app_OhCe2M7kNRcXu5Fuueff2", "app", isProduction, !isProduction, !isProduction);`,
+            })(window, document, "lumiere", isProduction ? "app_z_8CdZLKpTtXQR6RcvgVC" : "none", "default", isProduction, !isProduction, !isProduction);`,
           }}
         />
         {props.headComponents}
