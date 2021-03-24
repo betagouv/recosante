@@ -1,4 +1,4 @@
-# Une **recommandation quotidienne** pour protéger vos patient·e·s des impacts de la **qualité de l'air**
+# Une **recommandation quotidienne** pour protéger vos patient·e·s de la **pollution de l'air**
 
 **Recosanté** est une **lettre d’information numérique**, qui propose des **recommandations personnalisées** à vos patient·e·s en fonction de la qualité de l’air, des épisodes de pollution et du risque pollinique.
 
