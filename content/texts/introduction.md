@@ -1,4 +1,4 @@
-# Une **recommandation quotidienne** pour vous protéger des impacts de la **qualité de l'air**
+# Une **recommandation quotidienne** pour vous protéger de la **pollution de l'air**
 
 **Recosanté** est une **lettre d’information numérique** qui vous aide à vous protéger des **impacts de la qualité de l'air** sur votre santé.
 
