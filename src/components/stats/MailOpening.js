@@ -48,7 +48,7 @@ export default function Opening(props) {
               dx={-25}
               dy={25}
             />
-            <YAxis />
+            <YAxis unit='%' ticks={[0, 20, 40, 60, 80, 100]} />
             <Tooltip />
             <Area
               dataKey={`taux d'ouverture`}
