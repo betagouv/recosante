@@ -17,11 +17,11 @@ const Wrapper = styled.div`
   width: 100%;
   height: 25rem;
 `
-export default function Subscriptions(props) {
+export default function ActiveUsers(props) {
   const { themes, theme } = useContext(StyleContext)
-  const data = Object.keys(props.subscriptions).map((key) => ({
+  const data = Object.keys(props.activeUsers).map((key) => ({
     date: key,
-    inscriptions: props.subscriptions[key],
+    inscriptions: props.activeUsers[key],
   }))
 
   const [width, setWidth] = useState(null)
@@ -32,7 +32,7 @@ export default function Subscriptions(props) {
   return (
     <Section xlarge>
       <Section.Title center>
-        <strong>{props.totalSubscriptions}</strong> abonné·e·s
+        <strong>{props.totalActifs}</strong> abonné·e·s
       </Section.Title>
       <Wrapper>
         <ResponsiveContainer>
