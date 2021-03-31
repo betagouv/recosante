@@ -1,5 +1,5 @@
-# Une **recommandation quotidienne** pour vous protéger des **émission de pollens** et d'autre impacts de la qualité de l’air
+# **Vous êtes allergique aux pollens ?** Recevez chaque jour une recommandation pour réduire les effets des **pollens** sur votre santé
 
-**Recosanté** est une **lettre d’information numérique** qui vous aide à vous protéger des **impacts de la qualité de l'air** sur votre santé.
+Recosanté est une **lettre d’information numérique** qui vous aide à vous protéger de l’impact des **polluants** et des **pollens** présents dans l’air.
 
-Créez votre profil pour recevoir **chaque jour** par **email** une **recommandation personnalisée**, comme des alertes polliniques, selon votre profil et les **indicateurs environnementaux** liés à votre localisation.
+Inscrivez-vous pour recevoir **chaque jour** par email une **recommandation personnalisée** selon votre profil et selon le risque d'allergie aux pollens mesuré dans votre département.
