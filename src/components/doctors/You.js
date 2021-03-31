@@ -29,7 +29,7 @@ const StyledBlock = styled(Block)`
   ul {
     margin: 0 1rem;
     padding: 0;
-    width: 23.5rem;
+    max-width: 23.5rem;
 }
   }
   li {

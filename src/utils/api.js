@@ -6,7 +6,11 @@ export default {
     return response
   },
   get(endpoint) {
-    return fetch(endpoint)
+    return fetch(endpoint, {
+      headers: {
+        Accept: 'application/json',
+      },
+    })
       .then(this.handleErrors)
       .then((res) => res.json())
   },

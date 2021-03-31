@@ -9,6 +9,8 @@ const Section = styled.section`
       ? '24rem'
       : props.large
       ? '61.5rem'
+      : props.xlarge
+      ? '73rem'
       : '49rem'};
   margin: 0 auto 5.5rem;
 
@@ -20,8 +22,8 @@ const Section = styled.section`
 
 Section.Title = styled.h2`
   font-size: 2.5em;
-
-  ${(props) => props.theme.mq.small}  {
+  text-align: ${(props) => (props.center ? 'center' : 'left')};
+  ${(props) => props.theme.mq.small} {
     font-size: 1.5em;
   }
 `

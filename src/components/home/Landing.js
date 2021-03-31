@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Section from 'src/components/layout/Section'
 import SubscribeForm from './landing/SubscribeForm'
+import { sendEvent, setUserProperties } from 'src/utils/lumiere'
+import queryString from 'query-string'
 
 const StyledSection = styled(Section)`
   h1 {
@@ -50,6 +52,11 @@ const StyledSection = styled(Section)`
   }
 `
 export default function Landing(props) {
+  useEffect(() => {
+    setUserProperties({ qs: queryString.parse(window.location.search) })
+    sendEvent(['landing', 'open'])
+  }, [props])
+  
   const data = useStaticQuery(
     graphql`
       query {

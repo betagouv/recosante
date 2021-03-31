@@ -3,7 +3,7 @@ module.exports = {
     title: `Recosante`,
     author: `Recosante`,
     description: `Une recommandation quotidienne pour vous protéger des impacts de la qualité de l'air sur votre santé.`,
-    siteUrl: `https://recosante.netlify.app`,
+    siteUrl: `https://recosante.beta.gouv.fr`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
