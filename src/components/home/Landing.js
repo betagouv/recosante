@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Section from 'src/components/layout/Section'
@@ -10,7 +9,7 @@ import queryString from 'query-string'
 
 const StyledSection = styled(Section)`
   h1 {
-    font-size: 2.9375rem;
+    font-size: ${(props) => (props.main ? '2.9375rem' : '2.25rem')};
 
     span {
       font-weight: 800;
@@ -56,19 +55,10 @@ export default function Landing(props) {
     setUserProperties({ qs: queryString.parse(window.location.search) })
     sendEvent(['landing', 'open'])
   }, [props])
-  
-  const data = useStaticQuery(
-    graphql`
-      query {
-        mdx(slug: { eq: "introduction" }) {
-          body
-        }
-      }
-    `
-  )
+
   return (
-    <StyledSection>
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+    <StyledSection main={props.main}>
+      <MDXRenderer>{props.content}</MDXRenderer>
       <SubscribeForm />
     </StyledSection>
   )

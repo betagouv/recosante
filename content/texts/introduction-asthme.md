@@ -1,4 +1,4 @@
-# **Vous êtes asthmatique ?** Recevez une recommandation quotidienne pour vous protéger des impacts de la la **pollution de l'air** sur votre santé
+# **Vous êtes asthmatique ?**<br/>Recevez une recommandation quotidienne pour vous protéger des impacts de la la **pollution de l'air** sur votre santé
 
 **Recosanté** est une **lettre d’information numérique** qui vous aide à réduire l'impact des **polluants atmosphériques** sur votre santé.
 

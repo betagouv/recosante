@@ -1,4 +1,4 @@
-# **Vous êtes allergique aux pollens ?** Recevez chaque jour une recommandation pour réduire les effets des **pollens** sur votre santé
+# **Vous êtes allergique aux pollens ?**<br/>Recevez chaque jour une recommandation pour réduire les effets des **pollens** sur votre santé
 
 Recosanté est une **lettre d’information numérique** qui vous aide à vous protéger de l’impact des **polluants** et des **pollens** présents dans l’air.
 
