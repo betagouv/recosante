@@ -22,12 +22,12 @@ export default function Profile(props) {
   return (
     <StyledSection xlarge>
       <Text center>
-        <strong>{Math.round((props.nb_allergies / props.total) * 100)}%</strong>
+        <strong>{Math.round((props.total_allergies / props.total) * 100)}%</strong>
         <br /> des utilisateurs se déclarent allergiques aux pollens.
       </Text>
       <Text center>
         <strong>
-          {Math.round((props.nb_pathologie_respiratoire / props.total) * 100)}%
+          {Math.round((props.total_pathologie_respiratoire / props.total) * 100)}%
         </strong>
         <br /> des utilisateurs déclarent avoir une pathologie respiratoire.
       </Text>

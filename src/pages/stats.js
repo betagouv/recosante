@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 
 import api from 'src/utils/api'
 import Web from 'src/components/layout/Web'
-import Subscriptions from 'src/components/stats/Subscriptions'
+import ActiveUsers from 'src/components/stats/ActiveUsers'
+import CurrentMonth from 'src/components/stats/CurrentMonth'
 import Profile from 'src/components/stats/Profile'
 import Satisfaction from 'src/components/stats/Satisfaction'
 import MailOpening from 'src/components/stats/MailOpening'
@@ -20,16 +21,20 @@ export default function Stats(props) {
     <Web title={'Statistiques'}>
       {data && (
         <>
-          {data.subscriptions && (
-            <Subscriptions
-              subscriptions={JSON.parse(data.subscriptions)}
-              totalSubscriptions={data.nb_inscriptions}
+          {data.total_actifs && (
+            <ActiveUsers
+              activeUsers={JSON.parse(data.active_users)}
+              totalActifs={data.total_actifs}
             />
           )}
+          <CurrentMonth
+            inscriptions={data.inscriptions}
+            desinscriptions={data.desinscriptions}
+          />
           <Profile
-            nb_allergies={data.nb_allergies}
-            nb_pathologie_respiratoire={data.nb_pathologie_respiratoire}
-            total={data.nb_inscriptions}
+            total_allergies={data.total_allergies}
+            total_pathologie_respiratoire={data.total_pathologie_respiratoire}
+            total={data.total_actifs}
           />
           {data.decouverte && (
             <Satisfaction satisfaction={JSON.parse(data.decouverte)} />
