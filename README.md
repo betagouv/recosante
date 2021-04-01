@@ -12,4 +12,4 @@ https://recosante.beta.gouv.fr/
 
 ## Déploiement
 
-Hébergement via Netlify. Il suffit de push sur ce repo (branche master) pour déployer.
+Hébergement via Clever Cloud. Il suffit de push sur ce repo (branche master) pour déployer.

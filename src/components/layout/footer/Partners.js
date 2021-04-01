@@ -44,13 +44,6 @@ export default function Partners() {
             }
           }
         }
-        srf: file(relativePath: { eq: "logos/logo-srf.jpg" }) {
-          childImageSharp {
-            fixed(width: 90, quality: 100) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
-          }
-        }
         pollinariums: file(relativePath: { eq: "logos/pollinariums.png" }) {
           childImageSharp {
             fixed(width: 75, quality: 100) {
@@ -70,9 +63,6 @@ export default function Partners() {
         </MagicLink>
         <MagicLink to='https://www.pollens.fr/'>
           <StyledImg fixed={data.rnsa.childImageSharp.fixed} alt='RNSA' />
-        </MagicLink>
-        <MagicLink to='https://sante-respiratoire.com/'>
-          <StyledImg fixed={data.srf.childImageSharp.fixed} alt='SRF' />
         </MagicLink>
         <MagicLink to='https://www.alertepollens.org/'>
           <StyledImg
