@@ -29,10 +29,7 @@ export default function InscriptionPatients(props) {
   const createHeaders = () => {
     let headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    headers.append(
-      'api-key',
-      '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'
-    )
+
     return headers
   }
   const createContact = ({ patient, user }) =>
