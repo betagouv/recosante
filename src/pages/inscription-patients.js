@@ -29,7 +29,7 @@ export default function InscriptionPatients(props) {
   const createHeaders = () => {
     let headers = new Headers()
     headers.append('Content-Type', 'application/json')
-
+    headers.append('api-key', process.env.GATSBY_SENDINBLUE_API_KEY)
     return headers
   }
   const createContact = ({ patient, user }) =>
