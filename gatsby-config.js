@@ -14,6 +14,7 @@ module.exports = {
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-json`,
+    'gatsby-plugin-remove-serviceworker',
     {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
