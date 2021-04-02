@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { sendEvent } from 'src/utils/lumiere'
 import Button from 'src/components/base/Button'
 import Step from './Step'
+import Share from './conclusion/Share'
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,7 +14,9 @@ const Wrapper = styled.div`
   font-size: 1.125rem;
 `
 const Title = styled.h2``
-const Text = styled.p``
+const Text = styled.p`
+  margin-bottom: 3rem;
+`
 const Color = styled.span`
   font-weight: 700;
   color: ${(props) => props.theme.colors.main};
@@ -38,6 +41,7 @@ export default function Conclusion(props) {
         <Color>recommandation personnalisée</Color> et les{' '}
         <Color>indicateurs environnementaux</Color> liés à votre localisation.
       </Text>
+      <Share />
       <StyledButton onClick={() => props.setComplete(false)} hollow>
         Modifier mon profil
       </StyledButton>

@@ -1,4 +1,10 @@
-import React, { useState, useLayoutEffect, useContext, useRef, useEffect } from 'react'
+import React, {
+  useState,
+  useLayoutEffect,
+  useContext,
+  useRef,
+  useEffect,
+} from 'react'
 import styled from 'styled-components'
 
 import ProfileContext from 'src/utils/ProfileContext'

@@ -92,7 +92,7 @@ export default function ProfileProvider(props) {
         .then((res) => console.log(res))
         .catch(setError)
   }, [uid, complete])
-  console.log(edit)
+
   return (
     <ProfileContext.Provider
       value={{
