@@ -56,7 +56,7 @@ export default function Partners() {
   )
   return (
     <Wrapper>
-      <Title>Ils nous accompagnent</Title>
+      <Title>Les données sont fournies par</Title>
       <Logos>
         <MagicLink to='https://atmo-france.org/'>
           <StyledImg fixed={data.atmo.childImageSharp.fixed} alt='Atmo' />
