@@ -14,7 +14,7 @@ export default function InfoPollen() {
 
   return (
     <Section id='alertepollen' small>
-      <Section.Title>Le saviez vous ?</Section.Title>
+      <Section.Title>Le saviez-vous ?</Section.Title>
       <Big>
       Les symptômes de l’asthme peuvent se manifester ou s’aggraver lorsque la qualité de l’air se dégrade.
       </Big>
