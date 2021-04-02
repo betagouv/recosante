@@ -63,7 +63,8 @@ export default function How() {
     <StyledSection large>
       <StyledBlock ref={ref} isOnScreen={isOnScreen}>
         <MDXRenderer>{data.content.body}</MDXRenderer>
-        <Button.Wrapper>
+        <Button.Wrapper vertical>
+          <Button to='/inscription-patients'>Inscrire vos patients</Button>
           <Button
             hollow
             to={
