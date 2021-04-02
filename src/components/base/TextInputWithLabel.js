@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import TextInput from 'src/components/base/TextInput'
 
 const Wrapper = styled.div`
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 `
 const Label = styled.label`
   display: block;
