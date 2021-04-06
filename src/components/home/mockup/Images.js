@@ -41,6 +41,7 @@ const Mobile = styled(Img)`
 
   ${(props) => props.theme.mq.small} {
     display: block;
+    width: 100%;
   }
 `
 export default function Mockup(props) {
@@ -63,7 +64,7 @@ export default function Mockup(props) {
         }
         mobile: file(relativePath: { eq: "mobile.png" }) {
           childrenImageSharp {
-            fluid(maxWidth: 600, quality: 90) {
+            fluid(maxWidth: 400, quality: 90) {
               ...GatsbyImageSharpFluid
             }
           }
