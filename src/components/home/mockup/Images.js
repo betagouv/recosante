@@ -50,21 +50,21 @@ export default function Mockup(props) {
       query {
         background: file(relativePath: { eq: "background.jpg" }) {
           childrenImageSharp {
-            fluid(maxWidth: 1177, quality: 90) {
+            fluid(maxWidth: 1177) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
         tablet: file(relativePath: { eq: "tablet.png" }) {
           childrenImageSharp {
-            fluid(maxWidth: 1177, quality: 90) {
+            fluid(maxWidth: 1177) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
         mobile: file(relativePath: { eq: "mobile.png" }) {
           childrenImageSharp {
-            fluid(maxWidth: 400, quality: 90) {
+            fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid
             }
           }

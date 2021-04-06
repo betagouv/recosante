@@ -82,7 +82,7 @@ export default function You() {
         }
         image: file(relativePath: { eq: "medecins-vous.jpg" }) {
           childrenImageSharp {
-            fluid(maxWidth: 2000, quality: 90) {
+            fluid(maxWidth: 2000) {
               ...GatsbyImageSharpFluid
             }
           }

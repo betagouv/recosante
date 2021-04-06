@@ -44,7 +44,7 @@ export default function How() {
         }
         image: file(relativePath: { eq: "medecins-comment.jpg" }) {
           childrenImageSharp {
-            fluid(maxWidth: 2000, quality: 90) {
+            fluid(maxWidth: 2000) {
               ...GatsbyImageSharpFluid
             }
           }

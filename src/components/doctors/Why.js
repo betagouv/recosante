@@ -57,7 +57,7 @@ export default function Why() {
         }
         image: file(relativePath: { eq: "medecins-naissance.jpg" }) {
           childrenImageSharp {
-            fluid(maxWidth: 2000, quality: 90) {
+            fluid(maxWidth: 2000) {
               ...GatsbyImageSharpFluid
             }
           }
