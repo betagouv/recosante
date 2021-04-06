@@ -39,7 +39,7 @@ export default function Header() {
         <Right>
           <Description>
             Recosanté est une lettre d’information numérique qui vous aide à
-            vous protéger des impacts de la qualité de l'air sur votre santé.
+            vous protéger des impacts de la pollution de l'air sur votre santé.
           </Description>
           <Partners />
         </Right>
