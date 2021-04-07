@@ -1,21 +1,40 @@
-# Mentions Légales et cookies
+# Mentions Légales et accessibilité
 
-## Données personnelles
+## Éditeur de la Plateforme
+Le service Recosanté est éditée par l'Incubateur de services numériques de la Direction interministérielle du numérique (DINUM).
 
-Les données collectées ont exclusivement pour but de personnaliser les recommandations envoyées. Elles ne sont accessibles que par l’équipe Recosanté et les services que l'équipe utilise.
+Coordonnées :
+Adresse : DINUM, 20 avenue de Ségur, 75007 Paris
+SIRET : 12000101100010 (secrétariat général du gouvernement)
+SIREN : 120 001 011
 
-Conformément à la réglementation en matière de données personnelles, vous disposez d'un droit d'accès, de rectification, d'opposition, d'effacement et de portabilité de vos données que vous pouvez exercer par courrier électronique à l'adresse : contact@recosante.beta.gouv.fr
+## Directeur de la publication
+MINISTÈRE DES SOLIDARITÉS ET DE LA SANTÉ
 
-## Cookies
+14 Avenue Duquesne, 75350 Paris
 
-Ce site dépose un petit fichier texte (un « cookie ») sur votre ordinateur lorsque vous le consultez. Cela nous permet de mesurer le nombre de visites et de comprendre quelles sont les pages les plus consultées.
+MINISTÈRE DE LA TRANSITION ÉCOLOGIQUE
 
-Nous n'affichons pas de banière de consentement aux cookies car nos outils de suivi d'audience sont correctement configurés pour respecter la vie privée des utilisateurs. Selon la loi, notre site internet est donc exempté d’autorisation préalable.
+Grande Arche de La Défense - paroi sud / Tour Sequoia, 92055 La Défense
 
-L'outil que nous utilisons est [Matomo](https://matomo.org/), un outil libre, paramétré pour être en conformité avec la recommandation « Cookies » de la CNIL. Cela signifie que votre adresse IP, par exemple, est anonymisée avant d’être enregistrée. Il est donc impossible d’associer les visites sur ce site à une personne.
+## Hébergement de la Plateforme
+Ce site est hébergé en propre par CLEVERCLOUD, 3 rue de l'Allier, 44000 Nantes, France.
 
-Les statistiques d’usage sont disponibles en accès libre [ici](https://stats.data.gouv.fr/index.php?module=CoreHome&action=index&date=yesterday&period=day&idSite=157&updated=1#?idSite=157&period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1)
 
-## Crédit photo
+## Accessibilité
+La conformité aux normes d’accessibilité numérique est un objectif ultérieur. En attendant, nous tâchons de rendre ce site accessible à toutes et à tous :
 
-[Freepik](https://freepik.com)
+- Utilisation de composants accessibles (design system de l'État)
+- Respect des bonnes pratiques (Pilida, Opquast...)
+- Tests manuels
+
+## Signaler un dysfonctionnement
+Si vous rencontrez un défaut d’accessibilité vous empêchant d’accéder à un contenu ou une fonctionnalité du site, merci de nous en faire part en nous contactant à l'adresse contact@recosante.beta.gouv.fr.
+
+Si vous n’obtenez pas de réponse rapide de notre part, vous êtes en droit de faire parvenir vos doléances ou une demande de saisine au Défenseur des droits.
+
+## En savoir plus
+Pour en savoir plus sur la politique d’accessibilité numérique de l’État : http://references.modernisation.gouv.fr/accessibilite-numerique
+
+## Sécurité
+Le site est protégé par un certificat électronique, matérialisé pour la grande majorité des navigateurs par un cadenas. Cette protection participe à la confidentialité des échanges. En aucun cas les services associés à la plateforme ne seront à l’origine d’envoi de courriels pour demander la saisie d’informations personnelles.
