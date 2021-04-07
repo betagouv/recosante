@@ -100,7 +100,7 @@ export default function SubscribeForm() {
         onChange={({ value }) => setEmail(value)}
       />
       <Optin
-        label={`Je consens à partager mes données personnelles avec l'équipe Recosanté`}
+        label={`J'accepte de recevoir des courriers électroniques de la part de Recosanté`}
         checked={optin}
         onChange={(checked) => setOptin(checked)}
         small
