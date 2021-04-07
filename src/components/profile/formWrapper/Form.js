@@ -35,7 +35,7 @@ export default function Form(props) {
   const ref = useRef()
   const [minHeight, setMinHeight] = useState(0)
   useLayoutEffect(() => {
-    setMinHeight(ref.current.clientHeight)
+    setTimeout(() => setMinHeight(ref.current.clientHeight), 100)
   }, [complete])
 
   useEffect(() => {
