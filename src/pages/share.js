@@ -17,12 +17,19 @@ export default function Index() {
       <Section>
         Link =
         <Wrapper
+          target='_top'
           className='fb-send-to-messenger'
           messenger_app_id='537843153878579'
           page_id='100297338851041'
         >
           Test
         </Wrapper>
+        <div
+          class='fb-like'
+          data-share='true'
+          data-width='450'
+          data-show-faces='true'
+        ></div>
       </Section>
     </Web>
   )
