@@ -15,21 +15,16 @@ export default function Index() {
   return (
     <Web title={'Mentions Légales'}>
       <Section>
-        Link =
-        <Wrapper
-          target='_top'
-          className='fb-send-to-messenger'
-          messenger_app_id='537843153878579'
-          page_id='100297338851041'
-        >
-          Test
-        </Wrapper>
+        Link =<Wrapper className='fb-send-to-messenger'>Test</Wrapper>
         <div
-          class='fb-like'
+          className='fb-like'
           data-share='true'
           data-width='450'
           data-show-faces='true'
         ></div>
+        <a href='fb-messenger://share?link=http://recosante.beta.gouv.fr/'>
+          Another Link
+        </a>
       </Section>
     </Web>
   )
