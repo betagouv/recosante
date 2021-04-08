@@ -65,7 +65,6 @@ export default function ProfileProvider(props) {
           !profile[data.allFormJson.nodes[i].name] ||
           profile[data.allFormJson.nodes[i].name].length === 0
         ) {
-          console.log('wtf')
           setCurrent(i)
           return
         }
