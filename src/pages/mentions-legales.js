@@ -7,9 +7,6 @@ import Web from 'src/components/layout/Web'
 import Section from 'src/components/layout/Section'
 
 export default function Index(props) {
-  useEffect(() => {
-    window.FB.XFBML.parse()
-  }, [])
   return (
     <Web title={'Mentions Légales'}>
       <Section>
