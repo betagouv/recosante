@@ -39,8 +39,8 @@ export default function Links() {
       <ItemWrapper>
         <Item to='/mentions-legales'>accessibilité : non conforme</Item>
         <Item to='/mentions-legales'>mentions légales</Item>
-        <Item to='/mentions-legales'>données personnelles</Item>
-        <Item to='/mentions-legales'>gestion des cookies</Item>
+        <Item to='/cookies'>données personnelles</Item>
+        <Item to='/cookies'>gestion des cookies</Item>
         <Item to='/asthme'>asthme</Item>
         <Item to='/pollen'>pollen</Item>
         <Item to='/stats'>statistiques</Item>
