@@ -10,26 +10,27 @@ const StyledSection = styled(Section)`
     flex-direction: column;
   }
 `
-const Text = styled.h2`
+const Text = styled.h3`
   flex: 1;
   text-align: center;
 
   strong {
     font-size: 4rem;
   }
+
 `
 export default function Profile(props) {
   return (
     <StyledSection xlarge>
       <Text center>
         <strong>{Math.round((props.total_allergies / props.total) * 100)}%</strong>
-        <br /> des utilisateurs se déclarent allergiques aux pollens.
+        <br /> des utilisateurs souhaitent recevoir des recommandations destinées aux personnes allergiques aux pollens.
       </Text>
       <Text center>
         <strong>
           {Math.round((props.total_pathologie_respiratoire / props.total) * 100)}%
         </strong>
-        <br /> des utilisateurs déclarent avoir une pathologie respiratoire.
+        <br /> des utilisateurs souhaitent recevoir des recommandations destinées aux personnes ayant une pathologie respiratoire.
       </Text>
     </StyledSection>
   )

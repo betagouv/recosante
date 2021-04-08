@@ -21,7 +21,7 @@ const Section = styled.section`
 `
 
 Section.Title = styled.h2`
-  font-size: 2.5em;
+  font-size: ${(props) => (props.tiny ? '1.5em' : '2.5em')};
   text-align: ${(props) => (props.center ? 'center' : 'left')};
   ${(props) => props.theme.mq.small} {
     font-size: 1.5em;
