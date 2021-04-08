@@ -20,7 +20,7 @@ export default function InscriptionPatients(props) {
 
   const [error, setError] = useState(false)
   const [code, setCode] = useState(null)
-  console.log(code)
+
   return (
     <Wrapper
       onSubmit={(e) => {

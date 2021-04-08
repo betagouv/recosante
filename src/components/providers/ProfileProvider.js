@@ -88,7 +88,6 @@ export default function ProfileProvider(props) {
     complete &&
       api
         .fetch(`https://ecosante.beta.gouv.fr/inscription/${uid}/_confirm`)
-        .then((res) => console.log(res))
         .catch(setError)
   }, [uid, complete])
 

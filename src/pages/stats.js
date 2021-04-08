@@ -16,7 +16,7 @@ export default function Stats(props) {
       .then((res) => setData(res))
       .catch((error) => console.log(error))
   }, [])
-  console.log(data)
+
   return (
     <Web title={'Statistiques'}>
       {data && (

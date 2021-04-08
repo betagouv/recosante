@@ -21,13 +21,17 @@ const Wrapper = styled.div`
 export default function CurrentMonth(props) {
   const { themes, theme } = useContext(StyleContext)
 
-  const weeks = new Set([...Object.keys(props.inscriptions), ...Object.keys(props.desinscriptions)])
-  const data = Array.from(weeks).map((key) => ({
-    semaine: `Semaine ${key}`,
-    inscriptions: props.inscriptions[key],
-    desinscriptions: -props.desinscriptions[key]
-  })).filter(d => !isNaN(d.inscriptions) && !isNaN(d.desinscriptions))
-  console.log(themes[theme].colors)
+  const weeks = new Set([
+    ...Object.keys(props.inscriptions),
+    ...Object.keys(props.desinscriptions),
+  ])
+  const data = Array.from(weeks)
+    .map((key) => ({
+      semaine: `Semaine ${key}`,
+      inscriptions: props.inscriptions[key],
+      desinscriptions: -props.desinscriptions[key],
+    }))
+    .filter((d) => !isNaN(d.inscriptions) && !isNaN(d.desinscriptions))
 
   const [width, setWidth] = useState(null)
   useEffect(() => {
@@ -35,24 +39,24 @@ export default function CurrentMonth(props) {
   }, [])
 
   return (
-      <Section xlarge>
-          <Section.Title center>Évolution des inscriptions</Section.Title>
-          <Wrapper>
-              <ResponsiveContainer>
-                  <BarChart data={data}>
-                      <XAxis
-                        dataKey="semaine"
-                        tick={{ fontSize: 12 }}
-                        interval={width < 1200 ? 'preserveStartEnd' : 0}
-                        />
-                        <YAxis/>
-                        <Tooltip />
-                        <Legend />
-                        <Bar dataKey='inscriptions' fill={themes[theme].colors.main} />
-                        <Bar dataKey='desinscriptions' fill={themes[theme].colors.error} />
-                  </BarChart>
-              </ResponsiveContainer>
-          </Wrapper>
-      </Section>
+    <Section xlarge>
+      <Section.Title center>Évolution des inscriptions</Section.Title>
+      <Wrapper>
+        <ResponsiveContainer>
+          <BarChart data={data}>
+            <XAxis
+              dataKey='semaine'
+              tick={{ fontSize: 12 }}
+              interval={width < 1200 ? 'preserveStartEnd' : 0}
+            />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey='inscriptions' fill={themes[theme].colors.main} />
+            <Bar dataKey='desinscriptions' fill={themes[theme].colors.error} />
+          </BarChart>
+        </ResponsiveContainer>
+      </Wrapper>
+    </Section>
   )
 }
