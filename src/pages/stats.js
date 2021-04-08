@@ -31,11 +31,11 @@ export default function Stats(props) {
             inscriptions={data.inscriptions}
             desinscriptions={data.desinscriptions}
           />
-          <Profile
+          {/*<Profile
             total_allergies={data.total_allergies}
             total_pathologie_respiratoire={data.total_pathologie_respiratoire}
             total={data.total_actifs}
-          />
+          />*/}
           {data.decouverte && (
             <Satisfaction satisfaction={JSON.parse(data.decouverte)} />
           )}
