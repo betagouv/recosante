@@ -4,7 +4,7 @@ import api from 'src/utils/api'
 import Web from 'src/components/layout/Web'
 import ActiveUsers from 'src/components/stats/ActiveUsers'
 import CurrentMonth from 'src/components/stats/CurrentMonth'
-import Profile from 'src/components/stats/Profile'
+//import Profile from 'src/components/stats/Profile'
 import Satisfaction from 'src/components/stats/Satisfaction'
 import MailOpening from 'src/components/stats/MailOpening'
 
