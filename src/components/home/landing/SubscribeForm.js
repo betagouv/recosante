@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { navigate } from 'gatsby'
+import { useLocation } from '@reach/router'
+import queryString from 'query-string'
 
 import api from 'src/utils/api'
 import Checkbox from 'src/components/base/Checkbox'
@@ -40,6 +42,11 @@ export default function SubscribeForm() {
   const [optin, setOptin] = useState(false)
   const [error, setError] = useState(null)
   const [fetching, setFetching] = useState(false)
+
+  const location = useLocation()
+  useEffect(() => {
+    setEmail(queryString.parse(location.search).email)
+  }, [location])
   return (
     <Wrapper
       method='post'
