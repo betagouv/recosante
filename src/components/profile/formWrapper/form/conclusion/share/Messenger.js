@@ -5,7 +5,19 @@ import { FacebookMessengerShareButton } from 'react-share'
 const Svg = styled.svg``
 export default function Messenger(props) {
   return (
-    <FacebookMessengerShareButton url={props.url} appId='537843153878579'>
+    <FacebookMessengerShareButton
+      url={props.url}
+      appId='537843153878579'
+      onClick={() => {
+        window._paq &&
+          window._paq.push([
+            'trackEvent',
+            'Subscription',
+            'Complete',
+            'Messenger',
+          ])
+      }}
+    >
       <Svg x='0px' y='0px' viewBox='0 0 512 512'>
         <path
           fill='#1E88E5'

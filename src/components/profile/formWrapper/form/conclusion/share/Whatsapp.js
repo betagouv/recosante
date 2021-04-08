@@ -5,7 +5,19 @@ import { WhatsappShareButton } from 'react-share'
 const Svg = styled.svg``
 export default function Whatsapp(props) {
   return (
-    <WhatsappShareButton url={props.url} title={props.title}>
+    <WhatsappShareButton
+      url={props.url}
+      title={props.title}
+      onClick={() => {
+        window._paq &&
+          window._paq.push([
+            'trackEvent',
+            'Subscription',
+            'Complete',
+            'Messenger',
+          ])
+      }}
+    >
       <Svg x='0px' y='0px' viewBox='0 0 512 512'>
         <path
           fill='#4CAF50'
