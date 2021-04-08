@@ -49,7 +49,11 @@ export default function How() {
             }
           }
         }
-        flyer: file(relativePath: { eq: "recosante.pdf" }) {
+        kit: file(
+          relativePath: {
+            eq: "Recosante_Kit.communication.professionnel.de.sante.zip"
+          }
+        ) {
           publicURL
         }
       }
@@ -70,14 +74,14 @@ export default function How() {
             to={
               (typeof window === 'undefined'
                 ? 'https://recosante.beta.gouv.fr/'
-                : window.location.origin) + data.flyer.publicURL
+                : window.location.origin) + data.kit.publicURL
             }
             onClick={() =>
               window._paq &&
-              window._paq.push(['trackEvent', 'Doctors', 'Navigate', 'Flyer'])
+              window._paq.push(['trackEvent', 'Doctors', 'Navigate', 'Kit'])
             }
           >
-            Télecharger le flyer d'inscription
+            Télécharger le kit de communication
           </Button>
         </Button.Wrapper>
       </StyledBlock>
