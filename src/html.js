@@ -37,6 +37,25 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
+        <span
+          dangerouslySetInnerHTML={{
+            __html: `<script>
+                window.fbAsyncInit = function()
+                {FB.init({
+                  appId: '537843153878579',
+                  autoLogAppEvents: true,
+                  xfbml: true,
+                  version: 'v10.0',
+                })}
+              </script>
+              <script
+                async
+                defer
+                crossorigin='anonymous'
+                src='https://connect.facebook.net/en_US/sdk.js'
+              ></script>`,
+          }}
+        />
         {props.preBodyComponents}
         <div
           key={`body`}
