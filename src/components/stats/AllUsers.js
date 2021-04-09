@@ -31,12 +31,10 @@ export default function AllUsers(props) {
 
   return (
     <Section xlarge>
-        <Section.Title center>
-          Inscriptions depuis le lancement du service Recosanté
-        </Section.Title>
-        <Section.Title center tiny>
-          (hors désinscriptions)
-        </Section.Title>
+      <Section.Title center>
+        Inscriptions depuis le lancement du service Recosanté
+      </Section.Title>
+      <Section.Subtitle center>(hors désinscriptions)</Section.Subtitle>
       <Wrapper>
         <ResponsiveContainer>
           <LineChart data={data}>
@@ -48,7 +46,11 @@ export default function AllUsers(props) {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line dataKey='inscriptions' stroke={themes[theme].colors.main} strokeWidth={3} />
+            <Line
+              dataKey='inscriptions'
+              stroke={themes[theme].colors.main}
+              strokeWidth={3}
+            />
           </LineChart>
         </ResponsiveContainer>
       </Wrapper>
