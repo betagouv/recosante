@@ -29,7 +29,7 @@ Ce site est hébergé en propre par CLEVERCLOUD, 3 rue de l'Allier, 44000 Nantes
 La conformité aux normes d’accessibilité numérique est un objectif ultérieur. En attendant, nous tâchons de rendre ce site accessible à toutes et à tous :
 
 - Utilisation de composants accessibles (design system de l'État)
-- Respect des bonnes pratiques (Pilida, Opquast...)
+- Respect des bonnes pratiques
 - Tests manuels
 
 
