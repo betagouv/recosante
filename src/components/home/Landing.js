@@ -53,6 +53,13 @@ const StyledSection = styled(Section)`
 const Title = styled.h1`
   margin: 0 -0.5rem 3rem;
   text-align: center;
+
+  ${(props) => props.theme.mq.medium} {
+    margin-bottom: 2.5rem;
+  }
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 2rem;
+  }
 `
 const Line1 = styled.span`
   display: block;
