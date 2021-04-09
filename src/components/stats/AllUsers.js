@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import {
-  BarChart,
-  Bar,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   Tooltip,
@@ -17,11 +17,11 @@ const Wrapper = styled.div`
   width: 100%;
   height: 25rem;
 `
-export default function ActiveUsers(props) {
+export default function AllUsers(props) {
   const { themes, theme } = useContext(StyleContext)
-  const data = Object.keys(props.activeUsers).map((key) => ({
+  const data = Object.keys(props.allUsers).map((key) => ({
     date: key,
-    inscriptions: props.activeUsers[key],
+    inscriptions: props.allUsers[key],
   }))
 
   const [width, setWidth] = useState(null)
@@ -32,11 +32,12 @@ export default function ActiveUsers(props) {
   return (
     <Section xlarge>
       <Section.Title center>
-        <strong>{props.totalActifs}</strong> abonné·e·s
+        Inscriptions depuis le lancement du service Recosanté
       </Section.Title>
+      <Section.Subtitle center>(hors désinscriptions)</Section.Subtitle>
       <Wrapper>
         <ResponsiveContainer>
-          <BarChart data={data}>
+          <LineChart data={data}>
             <XAxis
               dataKey='date'
               tick={{ fontSize: 12 }}
@@ -45,8 +46,12 @@ export default function ActiveUsers(props) {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey='inscriptions' fill={themes[theme].colors.main} />
-          </BarChart>
+            <Line
+              dataKey='inscriptions'
+              stroke={themes[theme].colors.main}
+              strokeWidth={3}
+            />
+          </LineChart>
         </ResponsiveContainer>
       </Wrapper>
     </Section>

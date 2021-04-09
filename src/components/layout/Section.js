@@ -27,5 +27,13 @@ Section.Title = styled.h2`
     font-size: 1.5em;
   }
 `
+Section.Subtitle = styled.h3`
+  margin-top: -1rem;
+  font-size: 1.5em;
+  text-align: ${(props) => (props.center ? 'center' : 'left')};
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.5em;
+  }
+`
 
 export default Section

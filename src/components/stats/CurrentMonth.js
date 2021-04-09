@@ -38,9 +38,15 @@ export default function CurrentMonth(props) {
     setTimeout(() => setWidth(window.innerWidth), 100)
   }, [])
 
+  const today = new Date()
   return (
     <Section xlarge>
-      <Section.Title center>Évolution des inscriptions</Section.Title>
+      <Section.Title center>
+        <strong>{props.totalActifs}</strong>&nbsp; abonné·e·s
+      </Section.Title>
+      <Section.Subtitle center>
+        (au {today.toLocaleDateString()})
+      </Section.Subtitle>
       <Wrapper>
         <ResponsiveContainer>
           <BarChart data={data}>
