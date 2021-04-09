@@ -27,12 +27,7 @@ export default function Messenger(props) {
         appId='537843153878579'
         onClick={() => {
           window._paq &&
-            window._paq.push([
-              'trackEvent',
-              'Subscription',
-              'Complete',
-              'Messenger',
-            ])
+            window._paq.push(['trackEvent', 'Social', 'Share', 'Messenger'])
         }}
       >
         <Icon />

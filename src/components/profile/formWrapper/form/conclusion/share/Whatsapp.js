@@ -10,12 +10,7 @@ export default function Whatsapp(props) {
       title={props.title}
       onClick={() => {
         window._paq &&
-          window._paq.push([
-            'trackEvent',
-            'Subscription',
-            'Complete',
-            'Messenger',
-          ])
+          window._paq.push(['trackEvent', 'Social', 'Share', 'Whatsapp'])
       }}
     >
       <Svg x='0px' y='0px' viewBox='0 0 512 512'>
