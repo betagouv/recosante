@@ -37,6 +37,9 @@ export default function InscriptionPatients(props) {
             })
             .then(setCode)
             .catch(setCode)
+
+          window._paq &&
+            window._paq.push(['trackEvent', 'Doctors', 'Mail', user])
         }
       }}
     >
