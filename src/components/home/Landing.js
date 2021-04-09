@@ -50,6 +50,36 @@ const StyledSection = styled(Section)`
     }
   }
 `
+const Title = styled.h1`
+  margin: 0 -0.5rem 3rem;
+  text-align: center;
+`
+const Line1 = styled.span`
+  display: block;
+  ${(props) => props.theme.mq.small} {
+    font-size: 5.4vw;
+  }
+`
+const Line2 = styled.span`
+  display: block;
+  font-size: 4.12rem;
+  ${(props) => props.theme.mq.medium} {
+    font-size: 3.07rem;
+  }
+  ${(props) => props.theme.mq.small} {
+    font-size: 7.6vw;
+  }
+`
+const Line3 = styled.span`
+  display: block;
+  font-size: 6.12rem;
+  ${(props) => props.theme.mq.medium} {
+    font-size: 4.55rem;
+  }
+  ${(props) => props.theme.mq.small} {
+    font-size: 11.33vw;
+  }
+`
 export default function Landing(props) {
   useEffect(() => {
     setUserProperties({ qs: queryString.parse(window.location.search) })
@@ -58,6 +88,17 @@ export default function Landing(props) {
 
   return (
     <StyledSection main={props.main}>
+      {props.main && (
+        <Title>
+          <Line1>
+            Une <strong>recommandation quotidienne</strong>
+          </Line1>
+          <Line2>pour vous protéger de la</Line2>
+          <Line3>
+            <strong>pollution de l’air</strong>
+          </Line3>
+        </Title>
+      )}
       <MDXRenderer>{props.content}</MDXRenderer>
       <SubscribeForm />
     </StyledSection>
