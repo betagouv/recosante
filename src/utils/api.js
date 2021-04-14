@@ -1,7 +1,12 @@
 export default {
-  handleErrors(response) {
+  async handleErrors(response) {
     if (!response.ok) {
-      throw Error(response.statusText)
+      let error = new Error(response.statusText)
+      if (response.headers.get('Content-Type') === "application/json") {
+        let json = await response.json()
+        error.json = json
+      }
+      throw error
     }
     return response
   },
