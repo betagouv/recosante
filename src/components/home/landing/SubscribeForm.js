@@ -96,7 +96,21 @@ export default function SubscribeForm() {
             setFetching(false)
             navigate(`/inscription/?user=${res.uid}`)
           })
-          .catch((error) => setError(error.message))
+          .catch((error) => {
+            if ("mail" in error.json) {
+              setError(error.json.mail[0])
+            } else {
+              setError(error.message)
+            }
+            window._paq &&
+              window._paq.push([
+                'trackEvent',
+                'Subscription',
+                'Landing',
+                'Api error',
+              ])
+            setFetching(false)
+          })
       }}
     >
       <MailInput
