@@ -12,7 +12,7 @@ export default function Stats(props) {
   const [data, setData] = useState(null)
   useEffect(() => {
     api
-      .fetch(`https://ecosante.beta.gouv.fr/stats/`)
+      .fetch(`/stats/`)
       .then((res) => setData(res))
       .catch((error) => console.log(error))
   }, [])

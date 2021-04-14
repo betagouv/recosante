@@ -89,7 +89,7 @@ export default function SubscribeForm() {
 
         setFetching(true)
         api
-          .post(`https://ecosante.beta.gouv.fr/inscription/premiere-etape`, {
+          .post(`/inscription/premiere-etape`, {
             mail: email,
           })
           .then((res) => {

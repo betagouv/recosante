@@ -44,7 +44,7 @@ export default function ProfileProvider(props) {
   const fetchProfile = useCallback(
     (body) =>
       api
-        .fetch(`https://ecosante.beta.gouv.fr/inscription/${uid}`, body)
+        .fetch(`/inscription/${uid}`, body)
         .then((res) =>
           setProfile({
             ...res,
@@ -87,7 +87,7 @@ export default function ProfileProvider(props) {
   useEffect(() => {
     complete &&
       api
-        .fetch(`https://ecosante.beta.gouv.fr/inscription/${uid}/_confirm`)
+        .fetch(`/inscription/${uid}/_confirm`)
         .catch(setError)
   }, [uid, complete])
 

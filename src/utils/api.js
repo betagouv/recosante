@@ -5,8 +5,11 @@ export default {
     }
     return response
   },
+  makeEndpointURL(endpoint) {
+    return (process.env.GATSBY_API_BASE_URL || 'https://ecosante.beta.gouv.fr') + endpoint
+  },
   get(endpoint) {
-    return fetch(endpoint, {
+    return fetch(this.makeEndpointURL(endpoint), {
       headers: {
         Accept: 'application/json',
       },
@@ -15,7 +18,7 @@ export default {
       .then((res) => res.json())
   },
   post(endpoint, body) {
-    return fetch(endpoint, {
+    return fetch(this.makeEndpointURL(endpoint), {
       method: 'POST',
       headers: {
         Accept: 'application/json',
