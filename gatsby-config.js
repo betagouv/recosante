@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://recosante.beta.gouv.fr`,
   },
   plugins: [
+    `gatsby-plugin-preact`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
