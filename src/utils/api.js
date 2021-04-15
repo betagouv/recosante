@@ -11,6 +11,9 @@ export default {
     return response
   },
   makeEndpointURL(endpoint) {
+    if (endpoint.startsWith("https")) {
+      return endpoint;
+    }
     return (process.env.GATSBY_API_BASE_URL || 'https://ecosante.beta.gouv.fr') + endpoint
   },
   get(endpoint) {
