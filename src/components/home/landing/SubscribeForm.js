@@ -89,14 +89,28 @@ export default function SubscribeForm() {
 
         setFetching(true)
         api
-          .post(`https://ecosante.beta.gouv.fr/inscription/premiere-etape`, {
+          .post(`/inscription/premiere-etape`, {
             mail: email,
           })
           .then((res) => {
             setFetching(false)
             navigate(`/inscription/?user=${res.uid}`)
           })
-          .catch((error) => setError(error.message))
+          .catch((error) => {
+            if ("mail" in error.json) {
+              setError(error.json.mail[0])
+            } else {
+              setError(error.message)
+            }
+            window._paq &&
+              window._paq.push([
+                'trackEvent',
+                'Subscription',
+                'Landing',
+                'Api error',
+              ])
+            setFetching(false)
+          })
       }}
     >
       <MailInput

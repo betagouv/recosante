@@ -31,7 +31,7 @@ export default function InscriptionPatients(props) {
         } else {
           const patientsArray = patients.replaceAll(', ', ',').split(',')
           api
-            .fetch(`https://ecosante.beta.gouv.fr/inscription-patients`, {
+            .fetch(`/inscription-patients`, {
               nom_medecin: user,
               mails: patientsArray,
             })

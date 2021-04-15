@@ -1,12 +1,20 @@
 export default {
-  handleErrors(response) {
+  async handleErrors(response) {
     if (!response.ok) {
-      throw Error(response.statusText)
+      let error = new Error(response.statusText)
+      if (response.headers.get('Content-Type') === "application/json") {
+        let json = await response.json()
+        error.json = json
+      }
+      throw error
     }
     return response
   },
+  makeEndpointURL(endpoint) {
+    return (process.env.GATSBY_API_BASE_URL || 'https://ecosante.beta.gouv.fr') + endpoint
+  },
   get(endpoint) {
-    return fetch(endpoint, {
+    return fetch(this.makeEndpointURL(endpoint), {
       headers: {
         Accept: 'application/json',
       },
@@ -15,7 +23,7 @@ export default {
       .then((res) => res.json())
   },
   post(endpoint, body) {
-    return fetch(endpoint, {
+    return fetch(this.makeEndpointURL(endpoint), {
       method: 'POST',
       headers: {
         Accept: 'application/json',
