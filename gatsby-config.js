@@ -16,6 +16,15 @@ module.exports = {
     `gatsby-transformer-json`,
     'gatsby-plugin-remove-serviceworker',
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        custom: {
+          families: ['Marianne:n4,n7,n8'],
+          urls: ['fonts/fonts.css'],
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
         features: [`IntersectionObserver`],

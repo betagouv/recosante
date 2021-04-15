@@ -22,6 +22,7 @@
     "gatsby-plugin-sitemap": "^2.12.0",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-plugin-use-query-params": "^1.0.1",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-copy-linked-files": "^2.0.11",
     "gatsby-remark-external-links": "^0.0.4",
     "gatsby-remark-images": "^3.3.9",

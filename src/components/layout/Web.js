@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { GlobalStyle } from 'src/utils/styles'
-import 'src/utils/fonts.css'
 import StyleProvider from 'src/components/providers/StyleProvider'
 import ModalProvider from 'src/components/providers/ModalProvider'
 
