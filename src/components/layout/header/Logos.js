@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql, Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Logo from 'src/components/misc/Logo'
@@ -25,7 +25,7 @@ const Large = styled(Img)`
     display: none !important;
   }
 `
-const StyledLink = styled(Link)``
+const StyledLink = styled.a``
 const StyledLogo = styled(Logo)`
   width: auto;
   height: 2.95rem;
@@ -44,14 +44,14 @@ export default function Logos() {
       query {
         repusmall: file(relativePath: { eq: "logos/repufrancaise.jpg" }) {
           childImageSharp {
-            fixed(height: 50, quality: 100) {
+            fixed(height: 50) {
               ...GatsbyImageSharpFixed_noBase64
             }
           }
         }
         repu: file(relativePath: { eq: "logos/repufrancaise.jpg" }) {
           childImageSharp {
-            fixed(height: 90, quality: 100) {
+            fixed(height: 90) {
               ...GatsbyImageSharpFixed_noBase64
             }
           }
@@ -61,19 +61,19 @@ export default function Logos() {
   )
   return (
     <Wrapper>
-      <Link to='/'>
+      <a href='/'>
         <Large
           fixed={data.repu.childImageSharp.fixed}
           alt='République Française'
         />
-      </Link>
-      <Link to='/'>
+      </a>
+      <a href='/'>
         <Small
           fixed={data.repusmall.childImageSharp.fixed}
           alt='République Française'
         />
-      </Link>
-      <StyledLink to='/'>
+      </a>
+      <StyledLink href='/'>
         <StyledLogo link />
       </StyledLink>
     </Wrapper>

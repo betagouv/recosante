@@ -32,21 +32,21 @@ export default function Partners() {
       query {
         atmo: file(relativePath: { eq: "logos/atmo-france.png" }) {
           childImageSharp {
-            fixed(width: 70, quality: 100) {
+            fixed(width: 70) {
               ...GatsbyImageSharpFixed_noBase64
             }
           }
         }
         rnsa: file(relativePath: { eq: "logos/logo-rnsa.png" }) {
           childImageSharp {
-            fixed(width: 100, quality: 100) {
+            fixed(width: 100) {
               ...GatsbyImageSharpFixed_noBase64
             }
           }
         }
         pollinariums: file(relativePath: { eq: "logos/pollinariums.png" }) {
           childImageSharp {
-            fixed(width: 75, quality: 100) {
+            fixed(width: 75) {
               ...GatsbyImageSharpFixed_noBase64
             }
           }
