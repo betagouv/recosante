@@ -21,6 +21,7 @@ module.exports = {
       options: {
         custom: {
           families: ['Marianne:n4,n7,n8'],
+          urls: ['fonts/fonts.css'],
         },
       },
     },

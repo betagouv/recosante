@@ -31,33 +31,7 @@ export const themes = {
 
 export const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
-
-  @font-face {
-  font-family: 'Marianne';
-  src: url('/fonts/Marianne-Bold.woff2') format('woff2'),
-    url('/fonts/Marianne-Bold.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Marianne';
-  src: url('/fonts/Marianne-ExtraBold.woff2') format('woff2'),
-    url('/fonts/Marianne-ExtraBold.woff') format('woff');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Marianne';
-  src: url('/fonts/Marianne-Regular.woff2') format('woff2'),
-    url('/fonts/Marianne-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-
+    
   html {
     box-sizing: border-box;
     font-family: ${(props) => props.theme.fonts};
