@@ -42,9 +42,11 @@ const StyledSection = styled(Section)`
     }
 
     ${(props) => props.theme.mq.small} {
+      min-height: ${(props) => (props.main ? '4.125rem' : 'auto')};
       font-size: 1rem;
 
       &:nth-child(2) {
+        min-height: ${(props) => (props.main ? '8.25rem' : 'auto')};
         font-size: 1rem;
       }
     }
@@ -58,6 +60,7 @@ const Title = styled.h1`
     margin-bottom: 2.5rem;
   }
   ${(props) => props.theme.mq.small} {
+    min-height: 28.6vw;
     margin-bottom: 2rem;
   }
 `
