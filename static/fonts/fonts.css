@@ -4,7 +4,7 @@
     url('./Marianne-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: 'Marianne';
@@ -12,7 +12,7 @@
     url('./Marianne-ExtraBold.woff') format('woff');
   font-weight: 800;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 @font-face {
   font-family: 'Marianne';
@@ -20,5 +20,5 @@
     url('./Marianne-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
