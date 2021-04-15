@@ -6,6 +6,8 @@ import StyleProvider from 'src/components/providers/StyleProvider'
 import ModalProvider from 'src/components/providers/ModalProvider'
 
 import SEO from './web/SEO'
+import Header from './Header'
+import Footer from './Footer'
 import SensibleModal from 'src/components/modals/SensibleModal'
 
 const Wrapper = styled.div`
@@ -31,8 +33,10 @@ export default function Web(props) {
         <ModalProvider>
           <GlobalStyle />
           <Fullscreen>
+            <Header />
             <Content>{props.children}</Content>
           </Fullscreen>
+          <Footer />
           <SensibleModal />
         </ModalProvider>
       </StyleProvider>
