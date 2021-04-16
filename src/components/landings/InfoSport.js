@@ -17,8 +17,8 @@ export default function InfoPollen() {
       <Section.Title>Le saviez-vous ?</Section.Title>
       <Big>
        Lorsque vous pratiquez un effort physique, la quantité d'air inhalé est 7 à 8 fois plus importante qu'au repos. Vous êtes donc plus exposé à la pollution de l'air.
-
-    Même si les bénéfices de l'activité physique pour la santé sont largement supérieurs aux risques induits par la pollution de l'air, il existe des conseils simples à mettre en oeuvre au quotidien pour réduire son exposition aux polluants atmosphériques lors de ses activités physiques à l’extérieur.
+      </Big>
+       Même si les bénéfices de l'activité physique pour la santé sont largement supérieurs aux risques induits par la pollution de l'air, il existe des conseils simples à mettre en oeuvre au quotidien pour réduire son exposition aux polluants atmosphériques lors de ses activités physiques à l’extérieur.
       </Big>
     </Section>
   )
