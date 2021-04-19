@@ -75,7 +75,7 @@ export default function What() {
         <MDXRenderer>{data.content.body}</MDXRenderer>
         <Button.Wrapper>
           <Button
-            to='https://www.vyte.in/recosante/rendez-vous-medecin'
+            to='https://www.vyte.in/recosante/rendez-vous-professionnelsante'
             onClick={() =>
               window._paq &&
               window._paq.push([
