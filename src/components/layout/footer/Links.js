@@ -43,6 +43,7 @@ export default function Links() {
         <Item to='/cookies'>gestion des cookies</Item>
         <Item to='/asthme'>asthme</Item>
         <Item to='/pollen'>pollen</Item>
+        <Item to='/sport'>sport</Item>
         <Item to='/stats'>statistiques</Item>
       </ItemWrapper>
     </Wrapper>
