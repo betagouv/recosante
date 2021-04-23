@@ -2,4 +2,4 @@
 
 Recosanté est une **lettre d’information numérique** qui vous aide à vous protéger de l’impact des **polluants atmosphériques** et des **pollens** lorsque vous faites du vélo, de la course à pied, ou toute autre **activité physique en extérieur**.
 
-Inscrivez-vous pour recevoir **chaque jour** par email une **recommandation personnalisée** en fonction de votre profil et de la qualité de l'air autour de chez vous.
+Inscrivez-vous pour recevoir **chaque jour** par **email** votre lettre d’information.
