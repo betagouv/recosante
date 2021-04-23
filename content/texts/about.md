@@ -4,6 +4,6 @@ Le service est en phase de construction, il évolue de façon continue selon les
 
 Les recommandations sont issues de sources fiables et officielles telles que le ministère des Solidarités et de la Santé, l’Ademe, l’Observatoire de la qualité de l’air intérieur, etc.
 
-Les données collectées lors de l'inscription sont utilisées exclusivement pour personnaliser les recommandations envoyées.
+Les données collectées lors de l'inscription sont utilisées exclusivement pour envoyer les recommandations.
 
 Recosanté est développé de manière ouverte. L'ensemble du code est [disponible librement](https://github.com/betagouv/ecosante).
