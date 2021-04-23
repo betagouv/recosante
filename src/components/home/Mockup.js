@@ -135,7 +135,7 @@ export default function Mockup() {
 
           <Text index={1} isOnScreen={isOnScreen}>
             Recevez chaque jour par <Color>email</Color> une{' '}
-            <Color>recommandation</Color> adaptée à votre profil.
+            <Color>recommandation</Color> pour adapter vos habitudes.
           </Text>
         </Step>
         <Step index={2} isOnScreen={isOnScreen}>
@@ -149,7 +149,7 @@ export default function Mockup() {
           <Text index={2} isOnScreen={isOnScreen}>
             Consultez les <Color>indicateurs environnementaux</Color> (qualité
             de l’air, épisodes de pollution et risque pollinique) liés à votre
-            localisation afin d’adapter vos habitudes.
+            localisation.
           </Text>
         </Step>
       </Steps>
