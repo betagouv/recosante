@@ -127,7 +127,7 @@ export default function SubscribeForm() {
         small
       />
       <Submit submit fetching={fetching}>
-        Créer mon profil
+        S'inscrire
       </Submit>
       {error ? <Alert error>{error}</Alert> : null}
     </Wrapper>
