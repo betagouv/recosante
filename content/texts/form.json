@@ -11,8 +11,8 @@
     "options": [
       {
         "value": "pathologie_respiratoire",
-        "label": "Vulnérable ou sensible<br/>à la qualité de l’air",
-        "answer": "vulnérable ou sensible à la qualité de l’air",
+        "label": "Aux personnes vulnérable ou sensible<br/>à la qualité de l’air",
+        "answer": "Aux personnes vulnérables ou sensibles à la qualité de l’air",
         "detail": {
           "label": "Qu'est ce qu'une personne sensible<br/>à la qualité de l'air ?",
           "modal": true
@@ -20,15 +20,18 @@
       },
       {
         "value": "allergie_pollens",
-        "label": "Allergique aux pollens"
+        "label": "Aux personnes allergiques aux pollens"
       },
       {
         "value": "aucun",
         "label": "Aucun des deux",
-        "answer": "vulnérable, allergique ou sensible"
+        "answer": "Aux personnes vulnérables, allergiques ou sensibles"
       }
     ],
-    "label": ["Je suis ", "Je ne suis pas "]
+    "label": [
+      "Je souhaite recevoir des informations destinées ",
+      "Je ne souhaite pas recevoir d’informations destinées "
+    ]
   },
   {
     "index": 3,

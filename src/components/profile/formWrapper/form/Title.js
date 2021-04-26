@@ -8,13 +8,10 @@ const Wrapper = styled.h1`
     font-size: 2rem;
   }
 `
-const Color = styled.span`
-  color: ${(props) => props.theme.colors.main};
-`
 export default function Title(props) {
   return (
     <Wrapper>
-      {props.inscription ? 'Créer mon' : 'Mon'} <Color>Profil</Color>
+      {props.inscription ? 'S’inscrire' : 'Mes préférences'}
     </Wrapper>
   )
 }
