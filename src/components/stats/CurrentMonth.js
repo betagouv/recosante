@@ -27,7 +27,7 @@ export default function CurrentMonth(props) {
   ])
   const data = Array.from(weeks)
     .map((key) => ({
-      semaine: `Semaine ${key}`,
+      semaine: `Du ${key}`,
       inscriptions: props.inscriptions[key],
       desinscriptions: -props.desinscriptions[key],
     }))
