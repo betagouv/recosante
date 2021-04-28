@@ -20,19 +20,14 @@ const Wrapper = styled.div`
 
 export default function CurrentMonth(props) {
   const { themes, theme } = useContext(StyleContext)
-
-  const weeks = new Set([
-    ...Object.keys(props.inscriptions),
-    ...Object.keys(props.desinscriptions),
-  ])
-  const data = Array.from(weeks)
-    .map((key) => ({
-      semaine: `Du ${key}`,
-      inscriptions: props.inscriptions[key],
-      desinscriptions: -props.desinscriptions[key],
-    }))
-    .filter((d) => !isNaN(d.inscriptions) && !isNaN(d.desinscriptions))
-
+  const data = props.inscriptions_desinscriptions.map(
+    v => ({
+      semaine: `du ${v[0]}`,
+      inscriptions: v[1][0],
+      desinscriptions: -v[1][1]
+    })
+  )
+  console.log(data)
   const [width, setWidth] = useState(null)
   useEffect(() => {
     setTimeout(() => setWidth(window.innerWidth), 100)

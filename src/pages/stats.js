@@ -22,8 +22,7 @@ export default function Stats(props) {
       {data && (
         <>
           <CurrentMonth
-            inscriptions={data.inscriptions}
-            desinscriptions={data.desinscriptions}
+            inscriptions_desinscriptions={data.inscriptions_desinscriptions}
             totalActifs={data.total_actifs}
           />
           {data.total_actifs && (
