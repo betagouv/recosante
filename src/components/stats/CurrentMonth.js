@@ -27,7 +27,6 @@ export default function CurrentMonth(props) {
       desinscriptions: -v[1][1]
     })
   )
-  console.log(data)
   const [width, setWidth] = useState(null)
   useEffect(() => {
     setTimeout(() => setWidth(window.innerWidth), 100)
