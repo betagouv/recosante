@@ -11,7 +11,7 @@
     "options": [
       {
         "value": "pathologie_respiratoire",
-        "label": "Aux personnes vulnérables ou sensibles<br/>à la qualité de l’air",
+        "label": "Aux personnes vulnérables ou sensibles à la qualité de l’air",
         "answer": "Aux personnes vulnérables ou sensibles à la qualité de l’air",
         "detail": {
           "label": "Qu'est ce qu'une personne sensible<br/>à la qualité de l'air ?",
