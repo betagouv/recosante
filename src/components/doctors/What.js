@@ -75,21 +75,6 @@ export default function What() {
         <MDXRenderer>{data.content.body}</MDXRenderer>
         <Button.Wrapper>
           <Button
-            to='https://www.vyte.in/recosante/rendez-vous-professionnelsante'
-            onClick={() =>
-              window._paq &&
-              window._paq.push([
-                'trackEvent',
-                'Doctors',
-                'Navigate',
-                'Appointment',
-              ])
-            }
-          >
-            Prendre rendez-vous
-          </Button>
-          <Button
-            hollow
             to='/'
             onClick={() =>
               window._paq &&
@@ -102,6 +87,21 @@ export default function What() {
             }
           >
             S'inscrire à Recosanté
+          </Button>
+          <Button
+            hollow
+            to='https://www.vyte.in/recosante/rendez-vous-professionnelsante'
+            onClick={() =>
+              window._paq &&
+              window._paq.push([
+                'trackEvent',
+                'Doctors',
+                'Navigate',
+                'Appointment',
+              ])
+            }
+          >
+            Prendre rendez-vous
           </Button>
         </Button.Wrapper>
       </StyledBlock>
