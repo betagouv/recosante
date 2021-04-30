@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import queryString from 'query-string'
 
 import Section from 'src/components/layout/Section'
 import SubscribeForm from './landing/SubscribeForm'
 import { sendEvent, setUserProperties } from 'src/utils/lumiere'
-import queryString from 'query-string'
 
 const StyledSection = styled(Section)`
   h1 {
