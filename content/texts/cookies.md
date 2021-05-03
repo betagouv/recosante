@@ -1,21 +1,18 @@
-# Suivi des audiences et données personnelles
+# Suivi des audiences et cookies
 
-## Données personnelles
 
-Les données collectées ont exclusivement pour but de personnaliser les recommandations envoyées. Elles ne sont accessibles que par l’équipe Recosanté et les services que l'équipe utilise.
-
-Conformément à la réglementation en matière de données personnelles, vous disposez d'un droit d'accès, de rectification, d'opposition, d'effacement et de portabilité de vos données que vous pouvez exercer par courrier électronique à l'adresse : contact@recosante.beta.gouv.fr
-
-## Cookies
+### Cookies
 
 Ce site dépose un petit fichier texte (un « cookie ») sur votre ordinateur lorsque vous le consultez. Cela nous permet de mesurer le nombre de visites et de comprendre quelles sont les pages les plus consultées.
 
-Nous n'affichons pas de banière de consentement aux cookies car nos outils de suivi d'audience sont correctement configurés pour respecter la vie privée des utilisateurs. Selon la loi, notre site internet est donc exempté d’autorisation préalable.
+Nous n'affichons pas de banière de consentement aux cookies car nos outils de suivi d'audience sont correctement configurés pour respecter la vie privée des utilisateurs. Certains cookies sont dispensés du recueil préalable de votre consentement dans la mesure où ils sont strictement nécessaires à la fourniture du service. Les traceurs ont vocation à être conservés sur le poste informatique de l'internaute pour une durée allant jusqu'à 13 mois.
 
-Les outils que nous utilisons sont [Matomo](https://matomo.org/) et [Lumiere](https://lumiere.cleverapps.io/), des outils libres, paramétrés pour être en conformité avec la recommandation « Cookies » de la CNIL. Cela signifie que votre adresse IP, par exemple, est anonymisée avant d’être enregistrée. Il est donc impossible d’associer les visites sur ce site à une personne.
+#### Mesure d’audience
+Certains cookies permettent d’établir des mesures statistiques de fréquentation et d’utilisation du site pouvant être utilisées à des fins de suivi et d’amélioration du service :
+- Les données collectées ne sont pas recoupées avec d’autres traitements.
+- Le cookie déposé sert uniquement à la production de statistiques anonymes.
+- Le cookie ne permet pas de suivre la navigation de l’internaute sur d’autres sites.
+
+La mesure d’audience (nombre de visites, pages consultées) est réalisée via deux outils libres intitulés [Matomo](https://matomo.org/) et [Lumiere](https://lumiere.cleverapps.io/) spécifiquement paramétré, respectant les conditions d’exemption du consentement de l’internaute définies par la recommandation « Cookies » de la Commission nationale informatique et libertés (CNIL). Cela signifie que votre adresse IP, par exemple, est anonymisée avant d’être enregistrée. Il est donc impossible d’associer les visites sur ce site à une personne.
 
 Les statistiques d’usage sont disponibles en accès libre [ici](https://stats.data.gouv.fr/index.php?module=CoreHome&action=index&date=yesterday&period=day&idSite=157&updated=1#?idSite=157&period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1)
-
-## Crédit photo
-
-[Freepik](https://freepik.com)
