@@ -39,11 +39,12 @@ export default function Links() {
       <ItemWrapper>
         <Item to='/mentions-legales'>accessibilité : non conforme</Item>
         <Item to='/mentions-legales'>mentions légales</Item>
-        <Item to='/cookies'>données personnelles</Item>
+        <Item to='/politiquedeconfidentialite'>données personnelles</Item>
         <Item to='/cookies'>gestion des cookies</Item>
         <Item to='/asthme'>asthme</Item>
         <Item to='/pollen'>pollen</Item>
         <Item to='/sport'>sport</Item>
+        <Item to='/partenaires'>ils parlent de nous</Item>
         <Item to='/stats'>statistiques</Item>
       </ItemWrapper>
     </Wrapper>
