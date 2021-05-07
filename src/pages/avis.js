@@ -11,14 +11,13 @@ const Text = styled.p`
   font-size: 1.25rem;
 `
 export default function Index(props) {
-  const avis = queryString.parse(window.location.search).avis
-  const short_id = queryString.parse(window.location.search).short_id
-
   useEffect(() => {
+    const avis = queryString.parse(window.location.search).avis
+    const short_id = queryString.parse(window.location.search).short_id
     if (avis && short_id) {
       api.post(`/newsletter/${short_id}/avis/?appliquee=${avis}/`)
     }
-  }, [avis, short_id])
+  }, [])
   return (
     <Web title={'Je donne mon avis'}>
       <Section small>
