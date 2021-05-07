@@ -24,5 +24,9 @@ const Wrapper = styled.div`
   }
 `
 export default function Alert(props) {
-  return <Wrapper error={props.error}>{props.children}</Wrapper>
+  return (
+    <Wrapper className={props.className} error={props.error}>
+      {props.children}
+    </Wrapper>
+  )
 }

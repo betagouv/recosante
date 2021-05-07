@@ -5,6 +5,7 @@ import api from 'src/utils/api'
 import ProfileContext from 'src/utils/ProfileContext'
 import useDebounce from 'src/hooks/useDebounce'
 import TextInput from 'src/components/base/TextInput'
+import Alert from 'src/components/base/Alert'
 import Wrapper from './Wrapper'
 import Answer from './Answer'
 import Suggestions from './address/Suggestions'
@@ -21,7 +22,9 @@ const Code = styled.div`
   background-color: ${(props) => props.theme.colors.input};
   pointer-events: none;
 `
-
+const StyledAlert = styled(Alert)`
+  font-size: 1rem;
+`
 export default function Address(props) {
   const { profile, setProfile, current, edit, setEdit } = useContext(
     ProfileContext
@@ -55,6 +58,14 @@ export default function Address(props) {
     setActive(current === props.step.index - 1 || edit === props.step.index - 1)
   }, [profile, props.step, current, edit])
 
+  const [available, setAvailable] = useState(true)
+  useEffect(() => {
+    insee &&
+      api
+        .fetch(`/city-availability?insee=${insee}`)
+        .then((res) => setAvailable(res.availability))
+  }, [insee])
+
   return (
     <Wrapper
       className={props.className}
@@ -63,7 +74,7 @@ export default function Address(props) {
         e.preventDefault()
         e.stopPropagation()
 
-        if (insee) {
+        if (insee && available) {
           window._paq &&
             window._paq.push([
               'trackEvent',
@@ -130,12 +141,18 @@ export default function Address(props) {
             />
           </Wrapper.Answers>
           <Wrapper.Submit
-            disabled={!insee}
+            disabled={!insee || !available}
             fetching={fetching}
             onClick={() => {}}
           >
             Valider
           </Wrapper.Submit>
+          {!available && (
+            <StyledAlert error>
+              Malheureusement Recosanté n'est pas encore disponible pour ce lieu
+              :(
+            </StyledAlert>
+          )}
         </>
       )}
     </Wrapper>
