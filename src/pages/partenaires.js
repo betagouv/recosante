@@ -20,7 +20,7 @@ const Partner = styled(MagicLink)`
 `
 export default function Partners(props) {
   return (
-    <Web title={'Politique de Confidentialité'}>
+    <Web title={'Ils parlent de nous'}>
       <Section>
         <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
         <Wrapper>
