@@ -84,11 +84,6 @@ Certaines des données sont envoyées à des sous-traitants pour réaliser certa
 **Traitement réalisé** : hébergement du site
 **Garanties** : https://www.clever-cloud.com/en/privacy-policy
 
-**Partenaire** : Google Adwords
-**Pays destinataire** : Etats-Unis
-**Traitement réalisé** : réalisation de publicité en ligne
-**Garanties** : https://privacy.google.com/intl/fr_fr/businesses/compliance/
-
 **Partenaire** : Scopyleft
 **Pays destinataire** : France
 **Traitement réalisé** : accès aux infrastructures de production pour leur gestion et leur administration ; accès et consultation des données de production pour analyser et corriger d’éventuelles anomalies ou évolutions demandées par les responsables de traitement
