@@ -17,24 +17,24 @@ Tour Séquoia
 
 ## Destinataires et sous-traitants
 
-La Direction Interministérielle du Numérique (DINUM) assure, pour le compte de la DGS et de la DGPR, la supervision de l’équipe produit (produit « Recosanté » conçu selon l'approche Startup d’Etat dans le cadre du programme beta.gouv.fr) qui gère et déploie le service. 
+La Direction interministérielle du numérique (DINUM) assure, pour le compte de la DGS et de la DGPR, la supervision de l’équipe produit (produit « Recosanté » conçu selon l'approche Startup d’Etat dans le cadre du programme beta.gouv.fr) qui gère et déploie le service. 
 
 Les sociétés CleverCloud (hébergeur), Scopyleft et Sendinblue interviennent également en tant que sous-traitants. Recosanté s’est assurée de la mise en œuvre par ses sous-traitants de garanties adéquates et du respect de conditions strictes de confidentialité, d’usage et de protection des données.
 
 - **Partenaire** : Sendinblue
-- **Pays destinataire** : France	
+- **Pays destinataire** : France
 - **Traitement réalisé** : envoi des lettres d'information aux utilisateurs
-- **Garanties** : https://fr.sendinblue.com/legal/privacypolicy/
+- **Garanties** : https://fr.sendinblue.com/legal/privacypolicy/  
 
 - **Partenaire** : CleverCloud
-- **Pays destinataire** : France	
-- **Traitement réalisé** : hébergement du site	
-- **Garanties** : https://www.clever-cloud.com/en/privacy-policy
+- **Pays destinataire** : France
+- **Traitement réalisé** : hébergement du site
+- **Garanties** : https://www.clever-cloud.com/en/privacy-policy  
 
 - **Partenaire** : Scopyleft
 - **Pays destinataire** : France
 - **Traitement réalisé** : accès aux infrastructures de production pour leur gestion et leur administration ;  accès et consultation des données de production pour analyser et corriger d’éventuelles anomalies ou évolutions demandées par les responsables de traitement
-- **Garanties** : supports contractuels liés au marché public de la DINUM pour le développement et le design de services publics numériques en mode agile
+- **Garanties** : supports contractuels liés au marché public de la DINUM pour le développement et le design de services publics numériques en mode agile  
 
 ## Données collectées
 
@@ -53,7 +53,8 @@ Les données collectées lors de l’inscription sont utilisées exclusivement p
 
 ## Base légale du traitement
 
-La base légale du traitement est l'exercice d'une mission d'intérêt public, basée sur l'article L. 1411-1 du Code de la santé publique qui dispose que la politique de santé relève de la responsabilité de l’Etat et comprend la promotion de la santé dans tous les milieux de vie ainsi que la prévention collective et individuelle tout au long de la vie ; 
+La base légale du traitement est l'exercice d'une mission d'intérêt public, fondée sur :
+- l'article L. 1411-1 du Code de la santé publique qui dispose que la politique de santé relève de la responsabilité de l’Etat et comprend la promotion de la santé dans tous les milieux de vie ainsi que la prévention collective et individuelle tout au long de la vie ; 
 - l’article 7 de la Charte de l’environnement, inscrite dans la Constitution, qui dispose que toute personne a le droit, dans les conditions et les limites définies par la loi, d'accéder aux informations relatives à l'environnement détenues par les autorités publiques.
 
 ## Finalités du traitement
