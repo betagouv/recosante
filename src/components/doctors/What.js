@@ -86,7 +86,7 @@ export default function What() {
               ])
             }
           >
-            S'inscrire à Recosanté
+            Tester Recosanté
           </Button>
           <Button
             hollow
