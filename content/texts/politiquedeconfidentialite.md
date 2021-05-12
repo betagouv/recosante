@@ -21,20 +21,20 @@ La Direction Interministérielle du Numérique (DINUM) assure, pour le compte de
 
 Les sociétés CleverCloud (hébergeur), Scopyleft et Sendinblue interviennent également en tant que sous-traitants. Recosanté s’est assurée de la mise en œuvre par ses sous-traitants de garanties adéquates et du respect de conditions strictes de confidentialité, d’usage et de protection des données.
 
-**Partenaire** : Sendinblue
-**Pays destinataire** : France	
-**Traitement réalisé** : envoi des lettres d'information aux utilisateurs
-**Garanties** : https://fr.sendinblue.com/legal/privacypolicy/
+- **Partenaire** : Sendinblue
+- **Pays destinataire** : France	
+- **Traitement réalisé** : envoi des lettres d'information aux utilisateurs
+- **Garanties** : https://fr.sendinblue.com/legal/privacypolicy/
 
-**Partenaire** : CleverCloud
-**Pays destinataire** : France	
-**Traitement réalisé** : hébergement du site	
-**Garanties** : https://www.clever-cloud.com/en/privacy-policy
+- **Partenaire** : CleverCloud
+- **Pays destinataire** : France	
+- **Traitement réalisé** : hébergement du site	
+- **Garanties** : https://www.clever-cloud.com/en/privacy-policy
 
-**Partenaire** : Scopyleft
-**Pays destinataire** : France
-**Traitement réalisé** : accès aux infrastructures de production pour leur gestion et leur administration ;  accès et consultation des données de production pour analyser et corriger d’éventuelles anomalies ou évolutions demandées par les responsables de traitement
-**Garanties** : supports contractuels liés au marché public de la DINUM pour le développement et le design de services publics numériques en mode agile
+- **Partenaire** : Scopyleft
+- **Pays destinataire** : France
+- **Traitement réalisé** : accès aux infrastructures de production pour leur gestion et leur administration ;  accès et consultation des données de production pour analyser et corriger d’éventuelles anomalies ou évolutions demandées par les responsables de traitement
+- **Garanties** : supports contractuels liés au marché public de la DINUM pour le développement et le design de services publics numériques en mode agile
 
 ## Données collectées
 
