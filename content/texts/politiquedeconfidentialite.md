@@ -75,7 +75,7 @@ Les moyens de sécurisation suivants ont notamment été mis en œuvre :
 - Sauvegarde des données : les sauvegardes sont assurées par l'hébergeur CleverCloud ;
 - Chiffrement des données : site uniquement accessible en HTTPS.
 
-### Droits des personnes
+## Droits des personnes
 
 Vous disposez des droits suivants concernant vos données à caractère personnel :
 - Droit d’information, d’accès et de communication des données ;
