@@ -67,7 +67,7 @@ export default function SubscribeForm() {
         }
         if (!optin) {
           setError(
-            `Vous devez accepter de recevoir des courriers électroniques de la part de Recosanté pour vous inscrire`
+            `Vous devez accepter de recevoir des emails de la part de Recosanté pour vous abonner`
           )
           window._paq &&
             window._paq.push([
