@@ -2,27 +2,23 @@
 
 
 ## Éditeur de la Plateforme
-Le service Recosanté est édité par l'Incubateur de services numériques de la Direction interministérielle du numérique (DINUM).
+Ce site est édité par la Direction interministérielle du numérique au sein de l’Incubateur des services numériques de la DINUM
 
-Coordonnées :
-Adresse : DINUM, 20 avenue de Ségur, 75007 Paris
-SIRET : 12000101100010 (secrétariat général du gouvernement)
-SIREN : 120 001 011
+Direction interministérielle du numérique
+20 avenue de Ségur
+75007 Paris
 
 
 ## Directeur de la publication
 
-MINISTÈRE DES SOLIDARITÉS ET DE LA SANTÉ
-
-14 Avenue Duquesne, 75350 Paris
-
-MINISTÈRE DE LA TRANSITION ÉCOLOGIQUE
-
-246 boulevard Saint-Germain, 75007 Paris
+Monsieur Nadi Bou Hanna, directeur interministériel du numérique.
 
 
 ## Hébergement de la Plateforme
-Ce site est hébergé en propre par CLEVERCLOUD, 3 rue de l'Allier, 44000 Nantes, France.
+Ce site est hébergé par :
+CLEVERCLOUD
+3 rue de l'Allier
+44000 Nantes
 
 
 ## Accessibilité
@@ -34,7 +30,7 @@ La conformité aux normes d’accessibilité numérique est un objectif ultérie
 
 
 ## Signaler un dysfonctionnement
-Si vous rencontrez un défaut d’accessibilité vous empêchant d’accéder à un contenu ou une fonctionnalité du site, merci de nous en faire part en nous contactant à l'adresse contact@recosante.beta.gouv.fr.
+Si vous rencontrez un défaut d’accessibilité vous empêchant d’accéder à un contenu ou une fonctionnalité du site, merci de nous en faire part à l’adresse : contact@recosanté.beta.gouv.fr.
 
 Si vous n’obtenez pas de réponse rapide de notre part, vous êtes en droit de faire parvenir vos doléances ou une demande de saisine au Défenseur des droits.
 
