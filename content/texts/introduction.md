@@ -1,3 +1,1 @@
-**Recosanté** est une **lettre d’information numérique** qui vous propose chaque jour une **recommandation** pour vous aider à réduire les impacts **des polluants atmosphériques et des pollens** sur votre santé.
-
-Inscrivez-vous pour recevoir **tous les matins** par **email** votre lettre d'information.
+**Recosanté** vous envoie **tous les matins**, **par email**, une recommandation pour vous aider à réduire les impacts **des polluants atmosphériques et des pollens** sur votre santé.
