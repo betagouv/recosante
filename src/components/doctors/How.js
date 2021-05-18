@@ -67,23 +67,6 @@ export default function How() {
     <StyledSection large>
       <StyledBlock ref={ref} isOnScreen={isOnScreen}>
         <MDXRenderer>{data.content.body}</MDXRenderer>
-        <Button.Wrapper vertical>
-          <Button to='/inscription-patients'>Inscrire vos patients</Button>
-          <Button
-            hollow
-            to={
-              (typeof window === 'undefined'
-                ? 'https://recosante.beta.gouv.fr/'
-                : window.location.origin) + data.kit.publicURL
-            }
-            onClick={() =>
-              window._paq &&
-              window._paq.push(['trackEvent', 'Doctors', 'Navigate', 'Kit'])
-            }
-          >
-            Télécharger le kit de communication
-          </Button>
-        </Button.Wrapper>
       </StyledBlock>
       <StyledImg fluid={data.image.childrenImageSharp[0].fluid} />
     </StyledSection>
