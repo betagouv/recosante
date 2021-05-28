@@ -12,6 +12,9 @@ partners:
   - title: Santé Respiratoire France
     image: ../assets/logos/logo-srf.jpg
     link: https://sante-respiratoire.com/
+  - title: FFAIR
+    image: ../assets/logos/logoFFAAIR_bleu.jpg
+    link: https://www.ffaair.org/ 
  
 ---
 
