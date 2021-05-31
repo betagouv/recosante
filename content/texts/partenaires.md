@@ -15,7 +15,9 @@ partners:
   - title: FFAIR
     image: ../assets/logos/logoFFAAIR_bleu.jpg
     link: https://www.ffaair.org/ 
- 
+  - title: SPLF
+    image: ../assets/logos/LOGO_SPLF_CMJN_SMAL.jpg
+    link: https://splf.fr/
 ---
 
 # Ils parlent de nous
