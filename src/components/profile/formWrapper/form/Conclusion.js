@@ -68,7 +68,7 @@ export default function Conclusion(props) {
             },
             {
               value: 'ami',
-              label: 'Grâce à un·e ami·e',
+              label: 'Grâce à un·e proche',
             },
             {
               value: 'autrement',
