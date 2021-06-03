@@ -13,7 +13,7 @@ const Label = styled.label`
 `
 export default function TextInputWithLabel(props) {
   return (
-    <Wrapper>
+    <Wrapper className={props.className}>
       {props.label && (
         <Label htmlFor={props.name} error={props.error}>
           {props.label}

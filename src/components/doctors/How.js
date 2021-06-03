@@ -7,7 +7,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import useOnScreen from 'src/hooks/useOnScreen'
 import Section from 'src/components/layout/Section'
 import Block from 'src/components/misc/Block'
-import Button from 'src/components/base/Button'
 
 const StyledSection = styled(Section)`
   display: flex;
