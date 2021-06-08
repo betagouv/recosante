@@ -41,7 +41,7 @@ export default function Widget() {
       <StyledSection xlarge>
         <Configurator>
           <Title>
-            Intégrer le widget <strong>Recosanté</strong>
+            Intégrez <strong>Recosanté</strong> sur votre site.
           </Title>
           <Code size={size} insee={insee} url={url} />
           <Options
