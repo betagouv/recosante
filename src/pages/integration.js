@@ -35,9 +35,9 @@ export default function Widget() {
   const [size, setSize] = useState(16)
   const [insee, setInsee] = useState(null)
 
-  const url = 'https://recosante-widget.netlify.app'
+  const url = 'https://app-2d038a1f-472c-4979-90c5-67a8998be924.cleverapps.io'
   return (
-    <Web title={'Widget'}>
+    <Web title={'Intégration'}>
       <StyledSection xlarge>
         <Configurator>
           <Title>
