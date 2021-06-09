@@ -36,6 +36,7 @@ export default function Widget() {
   const [insee, setInsee] = useState(null)
 
   const url = 'https://app.recosante.beta.gouv.fr'
+
   return (
     <Web title={'Intégration'}>
       <StyledSection xlarge>
