@@ -35,7 +35,7 @@ export default function Widget() {
   const [size, setSize] = useState(16)
   const [insee, setInsee] = useState(null)
 
-  const url = 'https://app-2d038a1f-472c-4979-90c5-67a8998be924.cleverapps.io'
+  const url = 'https://app.recosante.beta.gouv.fr'
   return (
     <Web title={'Intégration'}>
       <StyledSection xlarge>
