@@ -18,8 +18,11 @@ partners:
   - title: SPLF
     image: ../assets/logos/LOGO_SPLF_CMJN_SMAL.jpg
     link: https://splf.fr/
+  - title: Le magazine de la santé
+    image: ../assets/logos/LOGO_MLS_2L .png
+    link: https://www.france.tv/france-5/le-magazine-de-la-sante/
 ---
 
 # Ils parlent de nous
 
-Nous travaillons chaque jour avec différents organismes qui nous aident à améliorer et diffuser le service Recosanté. 
+Nous travaillons chaque jour avec différents partenaires qui nous aident à améliorer et diffuser le service Recosanté. 
