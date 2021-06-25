@@ -34,6 +34,19 @@ export default function Partners(props) {
           ))}
         </Wrapper>
       </Section>
+      <Section>
+        <Section.Title>Ils parlent de nous</Section.Title>
+        <Wrapper>
+          {props.data.mdx.frontmatter.press.map((press) => (
+            <Partner to={press.link}>
+              <Img
+                fluid={press.image.childrenImageSharp[0].fluid}
+                alt={press.title}
+              />
+            </Partner>
+          ))}
+        </Wrapper>
+      </Section>
     </Web>
   )
 }
@@ -43,6 +56,17 @@ export const pageQuery = graphql`
       body
       frontmatter {
         partners {
+          title
+          image {
+            childrenImageSharp {
+              fluid(maxWidth: 84, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          link
+        }
+        press {
           title
           image {
             childrenImageSharp {

@@ -44,7 +44,7 @@ export default function Links() {
         <Item to='/asthme'>asthme</Item>
         <Item to='/pollen'>pollen</Item>
         <Item to='/sport'>sport</Item>
-        <Item to='/partenaires'>ils parlent de nous</Item>
+        <Item to='/partenaires'>partenaires</Item>
         <Item to='/stats'>statistiques</Item>
       </ItemWrapper>
     </Wrapper>
