@@ -22,6 +22,12 @@ press:
   - title: Le magazine de la santé
     image: ../assets/logos/LOGO_MLS_2L .png
     link: https://www.france.tv/france-5/le-magazine-de-la-sante/
+  - title: ARCAA
+    image: ../assets/logos/ARCAA.jpg
+    link: https://arcaa.info/
+  - title: R-lab
+    image: ../assets/logos/logo R lab.jpg
+    link: https://rlabconseil.com/  
 ---
 
 # Partenaires
