@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
-import { sendEvent } from 'src/utils/lumiere'
 import Button from 'src/components/base/Button'
 import Step from './Step'
 import Share from './conclusion/Share'
@@ -26,9 +25,6 @@ const StyledButton = styled(Button)`
   margin-bottom: 1.5rem;
 `
 export default function Conclusion(props) {
-  useEffect(() => {
-    sendEvent(['inscription', 'open_step', { step: 'connaissance_produit' }])
-  }, [])
   return (
     <Wrapper>
       <Title

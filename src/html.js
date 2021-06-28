@@ -16,29 +16,6 @@ export default function HTML(props) {
           rel='search'
           href='opensearch.xml'
         />
-       <script
-          dangerouslySetInnerHTML={{
-            __html: 
-            `
-            var isProduction = window.location.href.indexOf("recosante.beta.gouv.fr") !== -1;
-            (function (l, u, m, i, E, r, e) {
-              l[m] = function () {
-                (l[m].q = l[m].q || []).push(arguments);
-              };
-              var c = u.createElement("script"),
-                h = u.getElementsByTagName("head")[0];
-              c.type = "text/javascript";
-              c.async = true;
-              c.src = "https://lumiere.cleverapps.io/lib.js?a=" + i + "&n=" + E + "&c=" + JSON.stringify(r) + "&t=" + Date.now();
-              h.appendChild(c);
-            })(window, document, "lumiere", "app_z_8CdZLKpTtXQR6RcvgVC", "default", {
-              disable: !isProduction,
-              recordNavigation: false,
-              recordUX: true,
-            });
-            `
-          }}
-        />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
