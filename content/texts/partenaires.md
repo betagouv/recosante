@@ -29,7 +29,7 @@ press:
     image: ../assets/logos/logo R lab.jpg
     link: https://rlabconseil.com/  
   - titre: Centre de lutte contre le cancer Léon Bérard
-    image: .../assets/logos/Logo-centre-leon-berard-lyon.jpg
+    image: ../assets/logos/Logo-centre-leon-berard-lyon.jpg
     link: https://www.centreleonberard.fr/
 ---
 
