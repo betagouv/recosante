@@ -19,7 +19,7 @@ export default function Index() {
   )
   return (
     <Web title={'Recosanté'}>
-      <Landing content={data.mdx.body} main />
+      <h1>Dashboard</h1>
       <Mockup />
       <Integration />
       <About />
