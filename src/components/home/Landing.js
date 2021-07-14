@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import queryString from 'query-string'
 
 import Section from 'src/components/layout/Section'
 import SubscribeForm from './landing/SubscribeForm'
-import { sendEvent, setUserProperties } from 'src/utils/lumiere'
 
 const StyledSection = styled(Section)`
   h1 {
@@ -91,11 +89,6 @@ const Line3 = styled.span`
   }
 `
 export default function Landing(props) {
-  useEffect(() => {
-    setUserProperties({ qs: queryString.parse(window.location.search) })
-    sendEvent(['landing', 'open'])
-  }, [props])
-
   return (
     <StyledSection main={props.main}>
       {props.main && (
