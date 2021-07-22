@@ -6,20 +6,27 @@ module.exports = {
     siteUrl: `https://recosante.beta.gouv.fr`,
   },
   plugins: [
-    `gatsby-plugin-styled-components`,
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-external-links' }],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     'gatsby-plugin-use-query-params',
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-json`,
-    'gatsby-plugin-remove-serviceworker',
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: {
-          families: ['Marianne:n4,n7,n8'],
+          families: ['Marianne:n3,n5,n7,n8'],
           urls: ['/fonts/fonts.css'],
         },
       },
@@ -45,31 +52,7 @@ module.exports = {
         name: `assets`,
       },
     },
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: ['.mdx', '.md'],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 784,
-            },
-          },
-          {
-            resolve: `gatsby-remark-vscode`,
-          },
-          {
-            resolve: `gatsby-remark-copy-linked-files`,
-          },
-          {
-            resolve: `gatsby-remark-smartypants`,
-          },
-          { resolve: 'gatsby-remark-external-links' },
-        ],
-        plugins: [`gatsby-remark-images`],
-      },
-    },
+
     {
       resolve: 'gatsby-plugin-matomo',
       options: {

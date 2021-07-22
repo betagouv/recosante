@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
@@ -65,7 +65,7 @@ const StyledBlock = styled(Block)`
     }
   }
 `
-const StyledImg = styled(Img)`
+const StyledImg = styled(GatsbyImage)`
   width: 49rem;
 
   ${(props) => props.theme.mq.medium} {

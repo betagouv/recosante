@@ -1,26 +1,48 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useLocation } from '@reach/router'
 
 import Logos from './header/Logos'
-import Progress from './header/Progress'
+import SearchBar from 'src/components/misc/SearchBar'
 
 const Wrapper = styled.header`
-  position: relative;
-  z-index: 100;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
+`
+const Content = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 75rem;
-  margin: 0 auto 3.5rem;
-  padding: 1rem 0.5rem 0;
-
-  ${(props) => props.theme.mq.small} {
-    margin: 0 auto 2rem;
-  }
+  margin: 0 auto;
+  padding: 0.5rem;
+`
+const SearchWrapper = styled.div`
+  position: relative;
+`
+const StyledSearchBar = styled(SearchBar)`
+  top: -1rem;
+  left: auto;
+  right: 0;
+  font-size: 1rem;
 `
 export default function Header() {
+  const location = useLocation()
+
+  console.log(location)
   return (
     <Wrapper>
-      <Progress />
-      <Logos />
+      <Content>
+        <Logos />
+        <SearchWrapper>
+          {location.pathname !== '/' && (
+            <StyledSearchBar placeholder='Entrez une ville' />
+          )}
+        </SearchWrapper>
+      </Content>
     </Wrapper>
   )
 }

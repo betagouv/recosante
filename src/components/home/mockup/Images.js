@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const Wrapper = styled.div`
   position: absolute;
@@ -20,12 +19,12 @@ const Wrapper = styled.div`
     display: none;
   }
 `
-const Background = styled(Img)`
+const Background = styled.div`
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
   transform: translateY(${(props) => (props.isOnScreen ? 0 : '3rem')});
   transition: transform 800ms ease-out, opacity 800ms;
 `
-const Tablet = styled(Img)`
+const Tablet = styled.div`
   position: absolute !important;
   top: 0;
   left: 0;
@@ -35,7 +34,7 @@ const Tablet = styled(Img)`
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
   transition: transform 800ms ease-out, opacity 800ms;
 `
-const Mobile = styled(Img)`
+const Mobile = styled.div`
   display: none;
   margin-bottom: 1.5rem;
 
@@ -45,49 +44,23 @@ const Mobile = styled(Img)`
   }
 `
 export default function Mockup(props) {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        background: file(relativePath: { eq: "background.jpg" }) {
-          childrenImageSharp {
-            fluid(maxWidth: 1177) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
-        tablet: file(relativePath: { eq: "tablet.png" }) {
-          childrenImageSharp {
-            fluid(maxWidth: 1177) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
-        mobile: file(relativePath: { eq: "mobile.png" }) {
-          childrenImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    `
-  )
-
   return (
     <>
       <Wrapper>
-        <Background
-          isOnScreen={props.isOnScreen}
-          fluid={data.background.childrenImageSharp[0].fluid}
-          alt='Ombre'
-        />
-        <Tablet
-          isOnScreen={props.isOnScreen}
-          fluid={data.tablet.childrenImageSharp[0].fluid}
-          alt='Tablette'
-        />
+        <Background isOnScreen={props.isOnScreen}>
+          <StaticImage src={'./images/background.jpg'} alt='Ombre' />
+        </Background>
+        <Tablet isOnScreen={props.isOnScreen}>
+          <StaticImage
+            isOnScreen={props.isOnScreen}
+            src={'./images/tablet.png'}
+            alt='Tablette'
+          />
+        </Tablet>
       </Wrapper>
-      <Mobile fluid={data.mobile.childrenImageSharp[0].fluid} alt='Tablette' />
+      <Mobile isOnScreen={props.isOnScreen}>
+        <StaticImage src={'./images/mobile.png'} alt='Tablette' />
+      </Mobile>
     </>
   )
 }

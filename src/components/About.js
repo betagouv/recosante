@@ -22,6 +22,7 @@ export default function About() {
       }
     `
   )
+
   return (
     <Section id='about' small>
       <Section.Title>Qui sommes-nous ?</Section.Title>

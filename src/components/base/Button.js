@@ -28,8 +28,9 @@ const Wrapper = styled(MagicLink)`
     props.hollow
       ? 'transparent'
       : props.theme.colors[props.disabled ? 'disabled' : 'main']};
-  border: ${(props) => (props.thick ? '2px' : '1px')} solid
+  border: 0.125rem solid
     ${(props) => props.theme.colors[props.disabled ? 'disabled' : 'main']};
+  border-radius: 1.5em;
   pointer-events: ${(props) =>
     props.disabled || props.fetching ? 'none' : 'inherit'};
   cursor: pointer;
@@ -69,7 +70,6 @@ export default function Button(props) {
       disabled={props.disabled}
       fetching={props.fetching}
       hollow={props.hollow ? 1 : 0}
-      thick={props.thick ? 1 : 0}
       expand={props.expand ? 1 : 0}
       noExpand={props.noExpand ? 1 : 0}
       color={props.color}

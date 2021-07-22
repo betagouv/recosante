@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
@@ -32,7 +32,7 @@ const StyledBlock = styled(Block)`
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
   transition: opacity 1200ms;
 `
-const StyledImg = styled(Img)`
+const StyledImg = styled(GatsbyImage)`
   width: calc(50vw + 12rem);
   height: 100vh;
   min-height: 46vw;

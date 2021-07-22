@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
@@ -26,7 +26,7 @@ export default function Partners(props) {
         <Wrapper>
           {props.data.mdx.frontmatter.partners.map((partner) => (
             <Partner to={partner.link}>
-              <Img
+              <GatsbyImage
                 fluid={partner.image.childrenImageSharp[0].fluid}
                 alt={partner.title}
               />
@@ -39,7 +39,7 @@ export default function Partners(props) {
         <Wrapper>
           {props.data.mdx.frontmatter.press.map((press) => (
             <Partner to={press.link}>
-              <Img
+              <GatsbyImage
                 fluid={press.image.childrenImageSharp[0].fluid}
                 alt={press.title}
               />

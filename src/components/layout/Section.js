@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Section = styled.section`
   position: relative;
-  max-width: ${(props) =>
+  width: ${(props) =>
     props.small
       ? '36.5rem'
       : props.tiny
@@ -10,12 +10,13 @@ const Section = styled.section`
       : props.large
       ? '61.5rem'
       : props.xlarge
-      ? '73rem'
+      ? '74rem'
       : '49rem'};
+  max-width: 100%;
   margin: 0 auto 5.5rem;
 
   ${(props) => props.theme.mq.medium} {
-    max-width: ${(props) =>
+    width: ${(props) =>
       props.small ? '36.5rem' : props.tiny ? '24rem' : '36.5rem'};
   }
 `

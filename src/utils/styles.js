@@ -6,7 +6,9 @@ export const themes = {
     name: 'Défaut',
     colors: {
       main: '#000091',
+      mainAlpha: '0, 0, 145',
       background: '#fff',
+      backgroundAlpha: '255, 255, 255',
       tile: '#f9f8f6',
       input: '#F0F0F0',
       title: '#1E1E1E',
@@ -16,6 +18,26 @@ export const themes = {
       success: '#008941',
       error: '#e10600',
       disabled: '#d5dbef',
+      atmo: {
+        bon: '#4BF0E6',
+        moyen: '#4FCBAD',
+        degrade: '#F0E65F',
+        mauvais: '#FF5354',
+        'tres-mauvais': '#A83559',
+        'extremement-mauvais': '#7D237D',
+      },
+      raep: {
+        1: '#75F94C',
+        2: '#387C21',
+        3: '#FFFD53',
+        4: '#EF8541',
+        5: '#EA3421',
+      },
+      radon: {
+        1: '#F0E65F',
+        2: '#FFFD53',
+        3: '#EA3421',
+      },
     },
     fonts: '"Marianne", Arial, sans-serif',
     mq: {
@@ -34,8 +56,9 @@ export const GlobalStyle = createGlobalStyle`
     
   html {
     box-sizing: border-box;
+    font-weight: 500;
     font-family: ${(props) => props.theme.fonts};
-    text-rendering: optimizeSpeed;
+    text-rendering: geometricPrecision;
   }
 
   body {
