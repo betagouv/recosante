@@ -49,7 +49,9 @@ export default function Integration() {
         />
       </Configurator>
       <StyledIframe
-        src={`${url}/${insee || ''}?size=${size}`}
+        src={`${url}/${
+          insee || ''
+        }?size=${size}&source=https://recosante.beta.gouv.fr`}
         allowfullscreen={true}
         webkitallowfullscreen={true}
         mozallowfullscreen={true}
