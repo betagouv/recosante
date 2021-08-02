@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
-import { navigate } from 'gatsby'
 
 import { useSearch } from 'src/utils/api'
 import useDebounce from 'src/hooks/useDebounce'
@@ -40,26 +39,14 @@ export default function SearchBar(props) {
     }
   }, [focus])
 
-  const navigateToPlace = (place) => {
-    console.log(place)
-    navigate(
-      `/place/${place.code}/${place.nom
-        .toLowerCase()
-        .replace(' ', '-')
-        .replace(`'`, '-')
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')}/`
-    )
-    setFocus(false)
-  }
-
   return (
     <Wrapper
       focus={focus}
       onSubmit={(e) => {
         e.preventDefault()
         if (current > -1) {
-          navigateToPlace(data[current])
+          props.handlePlaceSelection(data[current])
+          setFocus(false)
         }
       }}
       className={props.className}
@@ -82,7 +69,10 @@ export default function SearchBar(props) {
           current={current}
           isFetching={isFetching}
           setCurrent={setCurrent}
-          handleSuggestionClick={navigateToPlace}
+          handleSuggestionClick={(place) => {
+            props.handlePlaceSelection(place)
+            setFocus(false)
+          }}
         />
       )}
     </Wrapper>

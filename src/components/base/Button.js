@@ -20,7 +20,7 @@ const Wrapper = styled(MagicLink)`
   justify-content: center;
   align-items: center;
   width: ${(props) => (props.expand ? '100%' : 'auto')};
-  padding: 0.625em 1.5em;
+  padding: 0.5em 1.25em;
   font-weight: bold;
   color: ${(props) => (props.hollow ? props.theme.colors.main : 'white')};
   text-decoration: none;

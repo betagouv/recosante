@@ -1,7 +1,8 @@
 /*eslint-disable eqeqeq*/
 
-import { useQuery } from 'react-query'
+import { useQuery, useMutation, useQueryClient } from 'react-query'
 import axios from 'axios'
+import queryString from 'query-string'
 
 export function useSearch(search) {
   return useQuery(
@@ -81,6 +82,34 @@ export function useRecommandations() {
       keepPreviousData: true,
       retryDelay: 500,
       refetchOnWindowFocus: false,
+    }
+  )
+}
+export function useProfile(location) {
+  const uid = location && queryString.parse(location.search).user
+  return useQuery(
+    ['profile', uid],
+    () =>
+      axios
+        .get(`https://ecosante.beta.gouv.fr/inscription/${uid}`)
+        .then((res) => res.data),
+    {
+      enabled: uid ? true : false,
+    }
+  )
+}
+export function useProfileMutation(location) {
+  const uid = location && queryString.parse(location.search).user
+  const queryClient = useQueryClient()
+  return useMutation(
+    (profile) =>
+      axios.post(`https://ecosante.beta.gouv.fr/inscription/${uid}`, profile, {
+        headers: { Accept: ' application/json' },
+      }),
+    {
+      onSettled: () => {
+        queryClient.invalidateQueries(['profile', uid])
+      },
     }
   )
 }

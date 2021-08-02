@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 const StyledButton = styled(Button)`
   margin-right: 1rem;
   margin-bottom: 1rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
 `
 export default function Suggestions() {
   return (

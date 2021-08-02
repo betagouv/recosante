@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { navigate } from 'gatsby'
 
 import Section from 'src/components/layout/Section'
 import Background from 'src/components/place/dashboard/Background'
@@ -36,7 +37,18 @@ export default function Search() {
           près de chez vous
         </Title>
         <SearchBarSizer>
-          <SearchBar />
+          <SearchBar
+            handlePlaceSelection={(place) => {
+              navigate(
+                `/place/${place.code}/${place.nom
+                  .toLowerCase()
+                  .replace(' ', '-')
+                  .replace(`'`, '-')
+                  .normalize('NFD')
+                  .replace(/[\u0300-\u036f]/g, '')}/`
+              )
+            }}
+          />
         </SearchBarSizer>
         <Suggestions />
       </StyledSection>

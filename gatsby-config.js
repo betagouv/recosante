@@ -31,12 +31,12 @@ module.exports = {
         },
       },
     },
-    {
+    /* {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {
         features: [`IntersectionObserver`],
       },
-    },
+    },*/
 
     {
       resolve: `gatsby-source-filesystem`,

@@ -14,7 +14,7 @@ const Section = styled.section`
       : '49rem'};
   max-width: 100%;
   margin: 0 auto 5.5rem;
-
+  padding-top: ${(props) => (props.first ? '12rem' : 0)};
   ${(props) => props.theme.mq.medium} {
     width: ${(props) =>
       props.small ? '36.5rem' : props.tiny ? '24rem' : '36.5rem'};
