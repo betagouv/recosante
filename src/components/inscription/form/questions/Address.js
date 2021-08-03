@@ -20,7 +20,6 @@ export default function Address() {
   const mutation = useProfileMutation(location)
   return data ? (
     <Wrapper>
-      {data.ville_nom} ({data.ville_codes_postaux[0]})
       <SearchWrapper>
         <StyledSearchBar
           handlePlaceSelection={(place) =>

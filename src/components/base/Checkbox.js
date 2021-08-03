@@ -1,7 +1,5 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-
-import ModalContext from 'src/utils/ModalContext'
 
 const Wrapper = styled.div`
   position: relative;
@@ -57,8 +55,6 @@ const Detail = styled.div`
   cursor: ${(props) => (props.interactive ? 'pointer' : 'inherit')};
 `
 export default function Checkbox(props) {
-  const { setSensible } = useContext(ModalContext)
-
   const [focus, setFocus] = useState(false)
   return (
     <Wrapper
@@ -88,28 +84,9 @@ export default function Checkbox(props) {
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
       />
-      {(props.children || props.label) && (
+      {props.children && (
         <LabelWrapper>
-          <Label
-            focus={focus}
-            dangerouslySetInnerHTML={{
-              __html: props.children || props.label,
-            }}
-          />
-          {props.detail && (
-            <Detail
-              onClick={(e) => {
-                if (props.detail.modal) {
-                  e.stopPropagation()
-                  setSensible(true)
-                }
-              }}
-              interactive={props.detail.modal}
-              dangerouslySetInnerHTML={{
-                __html: props.detail.label,
-              }}
-            />
-          )}
+          <Label focus={focus}>{props.children}</Label>
         </LabelWrapper>
       )}
     </Wrapper>
