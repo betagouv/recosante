@@ -95,6 +95,7 @@ export function useProfile(location) {
         .then((res) => res.data),
     {
       enabled: uid ? true : false,
+      refetchOnWindowFocus: false,
     }
   )
 }

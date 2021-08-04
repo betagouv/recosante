@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useLocation } from '@reach/router'
+import { useQueryParam, StringParam } from 'use-query-params'
 
 import { useProfile } from 'src/utils/api'
 import Questions from './form/Questions'
@@ -11,28 +12,28 @@ const Wrapper = styled.div``
 export default function Form() {
   const location = useLocation()
 
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useQueryParam('step', StringParam)
 
-  const { data } = useProfile(location)
+  const { data, isFetching } = useProfile(location)
   useEffect(() => {
     if (data) {
       const steps = [
         'ville_insee',
         'population',
         'activites',
-        'connaissance_produit',
         'enfants',
+        'chauffage',
         'deplacement',
         'animaux_domestiques',
-        'chauffage',
+        'connaissance_produit',
       ]
       setCurrent(steps.filter((step) => !data[step])[0])
     }
-  }, [data])
+  }, [data, isFetching])
 
   return (
     <Wrapper>
-      <Questions current={current} />
+      <Questions />
       {true ? <Illustrations /> : <RecommandationList />}
     </Wrapper>
   )
