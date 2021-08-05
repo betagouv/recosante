@@ -81,8 +81,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: 4rem;
+    line-height: 1.1;
 
     ${(props) => props.theme.mq.medium} {
       font-size: 2rem;

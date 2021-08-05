@@ -13,7 +13,7 @@ const Section = styled.section`
       ? '74rem'
       : '73rem'};
   max-width: 100%;
-  margin: 0 auto 5.5rem;
+  margin: 0 auto 6.5rem;
   padding-top: ${(props) => (props.first ? '12rem' : 0)};
   ${(props) => props.theme.mq.medium} {
     width: ${(props) =>

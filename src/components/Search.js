@@ -9,16 +9,14 @@ import Suggestions from './search/Suggestions'
 
 const Wrapper = styled.div`
   position: relative;
+  margin: 0 auto 6.5rem;
   padding: 10.75rem 0 6.5rem;
 `
 const StyledSection = styled(Section)`
   position: relative;
   margin: 0 auto;
 `
-const Title = styled.h1`
-  font-size: 4rem;
-  line-height: 1.1;
-`
+const Title = styled.h1``
 const SearchBarSizer = styled.div`
   position: relative;
   height: 4.5rem;

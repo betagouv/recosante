@@ -11,6 +11,7 @@ const Wrapper = styled.div`
 const Title = styled.h2``
 const Text = styled.p`
   margin-bottom: 3rem;
+  font-size: 1.125rem;
 `
 export default function RecommandationList() {
   return (

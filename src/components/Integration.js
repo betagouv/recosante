@@ -15,6 +15,11 @@ const StyledSection = styled(Section)`
     align-items: center;
   }
 `
+const Title = styled.h2`
+  width: 29.25rem;
+  font-size: 4rem;
+  line-height: 1.1;
+`
 const StyledIframe = styled(IframeResizer)`
   display: block;
   width: 36rem;
@@ -35,11 +40,12 @@ export default function Integration() {
   const url = 'https://app.recosante.beta.gouv.fr'
 
   return (
-    <StyledSection large>
+    <StyledSection>
       <Configurator>
-        <Section.Title>
-          Intégrez <strong>Recosanté</strong> sur votre site.
-        </Section.Title>
+        <Title>
+          Intégrez <strong>Recosanté</strong>
+          <br /> sur votre site
+        </Title>
         <Code size={size} insee={insee} url={url} />
         <Options
           insee={insee}
