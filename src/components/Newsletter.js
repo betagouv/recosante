@@ -6,12 +6,14 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Section from 'src/components/layout/Section'
 import SubscribeForm from './newsletter/SubscribeForm'
 import Mockup from './newsletter/Mockup'
+import Notifications from './newsletter/Notifications'
 
 const StyledSection = styled(Section)`
   display: flex;
 `
 const Content = styled.div`
   width: 41.75rem;
+  margin-right: 2rem;
 
   p {
     max-width: 35.5rem;
@@ -35,14 +37,17 @@ export default function Newsletter() {
   )
 
   return (
-    <StyledSection>
-      <Content>
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
-        <SubscribeForm />
-      </Content>
-      <MockupWrapper>
-        <Mockup isOnScreen={true} />
-      </MockupWrapper>
-    </StyledSection>
+    <>
+      <StyledSection>
+        <Content>
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+          <SubscribeForm />
+        </Content>
+        <MockupWrapper>
+          <Mockup isOnScreen={true} />
+        </MockupWrapper>
+      </StyledSection>
+      <Notifications />
+    </>
   )
 }
