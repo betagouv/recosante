@@ -4,7 +4,7 @@ import { navigate } from 'gatsby'
 import { useLocation } from '@reach/router'
 import queryString from 'query-string'
 
-import api from 'src/utils/api'
+import { useSubscribe } from 'src/utils/api'
 import Checkbox from 'src/components/base/Checkbox'
 import Button from 'src/components/base/Button'
 import Alert from 'src/components/base/Alert'
@@ -13,7 +13,7 @@ import MailInput from './subscribeForm/MailInput'
 const Wrapper = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 36.5rem;
+  width: 29.25rem;
   margin: 0 auto;
 
   ${(props) => props.theme.mq.small} {
@@ -41,76 +41,45 @@ export default function SubscribeForm() {
   const [email, setEmail] = useState('')
   const [optin, setOptin] = useState(false)
   const [error, setError] = useState(null)
-  const [fetching, setFetching] = useState(false)
 
   const location = useLocation()
   useEffect(() => {
     setEmail(queryString.parse(location.search).email)
   }, [location])
+
+  const mutation = useSubscribe()
+
   return (
     <Wrapper
-      method='post'
       onSubmit={(e) => {
         e.preventDefault()
-        e.stopPropagation()
 
         if (!email) {
           setError(`Vous devez entrer votre email pour vous inscrire`)
-          window._paq &&
-            window._paq.push([
-              'trackEvent',
-              'Subscription',
-              'Landing',
-              'No mail',
-            ])
           return
         }
         if (!optin) {
           setError(
             `Vous devez accepter de recevoir des emails de la part de Recosanté pour vous abonner`
           )
-          window._paq &&
-            window._paq.push([
-              'trackEvent',
-              'Subscription',
-              'Landing',
-              'No optin',
-            ])
           return
         }
 
-        window._paq &&
-          window._paq.push([
-            'trackEvent',
-            'Subscription',
-            'Landing',
-            'Submit Mail',
-          ])
-
-        setFetching(true)
-        api
-          .post(`/inscription/premiere-etape`, {
-            mail: email,
-          })
-          .then((res) => {
-            setFetching(false)
-            navigate(`/inscription/?user=${res.uid}`)
-          })
-          .catch((error) => {
-            if ("mail" in error.json) {
-              setError(error.json.mail[0])
-            } else {
-              setError(error.message)
-            }
-            window._paq &&
-              window._paq.push([
-                'trackEvent',
-                'Subscription',
-                'Landing',
-                'Api error',
-              ])
-            setFetching(false)
-          })
+        mutation.mutate(
+          { mail: email },
+          {
+            onSuccess: (data) => {
+              if (data && data.data && data.data.uid) {
+                navigate(`/profil/?user=${data.data.uid}`)
+              } else {
+                setError('Une erreur est survenue')
+              }
+            },
+            onError: () => {
+              setError('Une erreur est survenue')
+            },
+          }
+        )
       }}
     >
       <MailInput
@@ -120,15 +89,11 @@ export default function SubscribeForm() {
         value={email}
         onChange={({ value }) => setEmail(value)}
       />
-      <Optin
-        label={`J'accepte de recevoir des emails de la part de Recosanté (pas de publicité)`}
-        checked={optin}
-        onChange={(checked) => setOptin(checked)}
-        small
-      />
-      <Submit submit fetching={fetching}>
-        S’inscrire
-      </Submit>
+      <Optin checked={optin} onChange={(checked) => setOptin(checked)} small>
+        J'accepte de recevoir des emails de la part de Recosanté (pas de
+        publicité)
+      </Optin>
+      <Submit fetching={mutation.isLoading}>S’inscrire</Submit>
       {error ? <Alert error>{error}</Alert> : null}
     </Wrapper>
   )

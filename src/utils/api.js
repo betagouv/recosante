@@ -114,3 +114,14 @@ export function useProfileMutation(location) {
     }
   )
 }
+export function useSubscribe() {
+  return useMutation((mail) =>
+    axios.post(
+      `https://ecosante.beta.gouv.fr//inscription/premiere-etape`,
+      mail,
+      {
+        headers: { Accept: ' application/json' },
+      }
+    )
+  )
+}

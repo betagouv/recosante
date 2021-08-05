@@ -9,11 +9,9 @@ const Section = styled.section`
       ? '24rem'
       : props.large
       ? '61.5rem'
-      : props.xlarge
-      ? '74rem'
       : '73rem'};
   max-width: 100%;
-  margin: 0 auto 6.5rem;
+  margin: 0 auto 10rem;
   padding-top: ${(props) => (props.first ? '12rem' : 0)};
   ${(props) => props.theme.mq.medium} {
     width: ${(props) =>
