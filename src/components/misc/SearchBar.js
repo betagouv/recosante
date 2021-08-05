@@ -45,6 +45,7 @@ export default function SearchBar(props) {
       onSubmit={(e) => {
         e.preventDefault()
         if (current > -1) {
+          setSearch(data[current].nom)
           props.handlePlaceSelection(data[current])
           setFocus(false)
         }

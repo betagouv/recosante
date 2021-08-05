@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Step from './Step'
+import Question from '../Question'
 
 export default function Family(props) {
   const name = 'enfants'
@@ -18,5 +18,5 @@ export default function Family(props) {
       label: 'Sans enfant',
     },
   ]
-  return <Step name={name} label={label} options={options} />
+  return <Question name={name} label={label} options={options} />
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Step from './Step'
+import Question from '../Question'
 
 export default function Heating(props) {
   const name = 'chauffage'
@@ -24,5 +24,5 @@ export default function Heating(props) {
       answer: 'Autrement',
     },
   ]
-  return <Step name={name} label={label} options={options} />
+  return <Question name={name} label={label} options={options} />
 }

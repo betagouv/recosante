@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Step from './Step'
+import Question from '../Question'
 
 export default function Animals(props) {
   const name = 'animaux_domestiques'
@@ -26,5 +26,5 @@ export default function Animals(props) {
       answer: 'de chien ou de chat',
     },
   ]
-  return <Step name={name} label={label} options={options} />
+  return <Question name={name} label={label} options={options} />
 }

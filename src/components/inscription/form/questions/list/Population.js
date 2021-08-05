@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Step from './Step'
+import Question from '../Question'
 
 export default function Population(props) {
   const name = 'population'
@@ -24,9 +24,8 @@ export default function Population(props) {
     {
       value: 'aucun',
       label: 'Aucun des deux',
+      answer: 'Aux personnes vulnérables, allergiques ou sensibles',
     },
   ]
-  return (
-    <Step name={name} label={label} options={options} current={props.current} />
-  )
+  return <Question name={name} label={label} options={options} />
 }

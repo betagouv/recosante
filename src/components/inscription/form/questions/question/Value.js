@@ -16,41 +16,16 @@ const Letter = styled.span`
 `
 export default function Value(props) {
   const mounted = useMounted()
-  const [sentence, setSentence] = useState([])
 
   const [current, setCurrent] = useQueryParam('step', StringParam)
 
-  useEffect(() => {
-    setSentence(
-      props.answers
-        ? props.answers
-            .map((answer, index) => {
-              const sentence = props.options.find(
-                (option) => option.value === answer
-              )
-                ? props.options.find((option) => option.value === answer)
-                    .answer ||
-                  props.options.find((option) => option.value === answer).label
-                : ''
-              return index === 0
-                ? sentence + (index === props.answers.length - 1 ? '.' : '')
-                : index > 0 && index < props.answers.length - 1
-                ? `, ${sentence}`
-                : ` et ${sentence}.`
-            })
-            .join('')
-            .split('')
-        : []
-    )
-  }, [props.answers, props.options, mounted])
-
   return current !== props.name ? (
     <Wrapper onClick={() => setCurrent(props.name)} capital={props.capital}>
-      {sentence.map((letter, index) => (
+      {props.sentence.map((letter, index) => (
         <Letter
           key={index}
           index={index}
-          total={sentence.length}
+          total={props.sentence.length}
           mounted={mounted}
         >
           {letter}

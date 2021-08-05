@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Step from './Step'
+import Question from '../Question'
 
 export default function Hobbies(props) {
   const name = 'activites'
@@ -31,5 +31,5 @@ export default function Hobbies(props) {
       answer: 'ni jardinage, ni bricolage, ni ménage, ni sport',
     },
   ]
-  return <Step name={name} label={label} options={options} />
+  return <Question name={name} label={label} options={options} />
 }

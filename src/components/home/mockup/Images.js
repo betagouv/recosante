@@ -43,10 +43,10 @@ const Mobile = styled.div`
     width: 100%;
   }
 `
-export default function Mockup(props) {
+export default function Images(props) {
   return (
     <>
-      <Wrapper>
+      <Wrapper className={props.className}>
         <Background isOnScreen={props.isOnScreen}>
           <StaticImage src={'./images/background.jpg'} alt='Ombre' />
         </Background>

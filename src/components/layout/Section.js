@@ -11,7 +11,7 @@ const Section = styled.section`
       ? '61.5rem'
       : props.xlarge
       ? '74rem'
-      : '49rem'};
+      : '73rem'};
   max-width: 100%;
   margin: 0 auto 5.5rem;
   padding-top: ${(props) => (props.first ? '12rem' : 0)};
