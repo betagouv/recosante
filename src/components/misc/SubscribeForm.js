@@ -24,7 +24,7 @@ const Wrapper = styled.form`
   ${(props) => props.theme.mq.small} {
     width: auto;
     margin: 0 -1rem;
-    padding: 1rem;
+    padding: 2rem 1rem;
     background-color: ${(props) => props.theme.colors.disabled};
   }
 `

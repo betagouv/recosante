@@ -41,7 +41,7 @@ export const themes = {
     },
     fonts: '"Marianne", Arial, sans-serif',
     mq: {
-      small: `@media screen and (max-width: ${41}rem)`,
+      small: `@media screen and (max-width: ${47}rem)`,
       medium: `@media screen and (max-width: ${75}rem)`,
     },
   },

@@ -28,10 +28,11 @@ const Content = styled.div`
     margin: 0 0 1rem;
   }
   h2 {
-    font-size: 4rem;
     margin-bottom: 2rem;
+    font-size: 4rem;
 
-    ${(props) => props.theme.mq.medium} {
+    ${(props) => props.theme.mq.small} {
+      margin-bottom: 1.5rem;
       font-size: 2rem;
     }
   }
