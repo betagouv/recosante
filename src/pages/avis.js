@@ -4,7 +4,7 @@ import queryString from 'query-string'
 
 import api from 'src/utils/api'
 import Web from 'src/components/layout/Web'
-import Section from 'src/components/layout/Section'
+import Section from 'src/components/base/Section'
 import TextArea from 'src/components/base/TextArea'
 import Button from 'src/components/base/Button'
 import Alert from 'src/components/base/Alert'

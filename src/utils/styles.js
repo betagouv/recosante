@@ -76,13 +76,13 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     font-weight: 800;
-    line-height: 1.2;
+    line-height: 1.1;
     color: ${(props) => props.theme.colors.title};
   }
 
   h1 {
     font-size: 4rem;
-    line-height: 1.1;
+    margin-bottom: 2rem;
 
     ${(props) => props.theme.mq.medium} {
       font-size: 2rem;
@@ -93,22 +93,30 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 1.5rem;
 
     ${(props) => props.theme.mq.small} {
-      font-size: 1.5em;
+      font-size: 1.5rem;
     }
   }
   h3 {
-    font-size: 1.5em;
-    margin-bottom: 1em;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 
     ${(props) => props.theme.mq.small} {
-      font-size: 1.125em;
+      font-size: 1.125rem;
     }
   }
 
+  p {
+    font-size: 1.125rem;
+
+    ${(props) => props.theme.mq.small} {
+      font-size: 1rem;
+    }
+  }
+  
   a {
     color: ${(props) => props.theme.colors.main};
   }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Section from 'src/components/layout/Section'
+import Section from 'src/components/base/Section'
 import SubscribeForm from './landing/SubscribeForm'
 
 const StyledSection = styled(Section)`

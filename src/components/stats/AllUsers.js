@@ -11,7 +11,7 @@ import {
 } from 'recharts'
 
 import StyleContext from 'src/utils/StyleContext'
-import Section from 'src/components/layout/Section'
+import Section from 'src/components/base/Section'
 
 const Wrapper = styled.div`
   width: 100%;

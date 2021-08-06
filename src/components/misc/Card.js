@@ -10,8 +10,8 @@ const Card = styled.div`
 Card.Content = styled.div`
   margin-bottom: 0.5rem;
   padding: 2rem 2rem 1.5rem;
-  background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 0.7);
-  border: 1px solid rgba(${(props) => props.theme.colors.backgroundAlpha}, 0.9);
+  background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
+  border: 1px solid rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
   border-radius: 1.5rem;
   box-shadow: 0.25rem 0.25rem 1rem 0
     rgba(${(props) => props.theme.colors.backgroundAlpha}, 0.25);

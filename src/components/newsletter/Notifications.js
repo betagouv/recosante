@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Button from 'src/components/base/Button'
-import Section from 'src/components/layout/Section'
+import Section from 'src/components/base/Section'
 import Images from './notifications/Images'
+
+import useOnScreen from 'src/hooks/useOnScreen'
 
 const StyledSection = styled(Section)`
   display: flex;
@@ -39,16 +41,20 @@ export default function Notifications() {
   const data = useStaticQuery(
     graphql`
       query {
-        mdx(slug: { eq: "notifications" }) {
+        mdx(slug: { eq: "introduction-notifications" }) {
           body
         }
       }
     `
   )
+
+  const ref = useRef()
+  const isOnScreen = useOnScreen(ref)
+
   return (
-    <StyledSection>
+    <StyledSection ref={ref}>
       <MockupWrapper>
-        <Images isOnScreen={true} />
+        <Images isOnScreen={isOnScreen} />
       </MockupWrapper>
       <Content>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>

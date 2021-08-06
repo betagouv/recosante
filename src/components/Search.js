@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { navigate } from 'gatsby'
 
-import Section from 'src/components/layout/Section'
-import Background from 'src/components/place/dashboard/Background'
+import Section from 'src/components/base/Section'
+import Background from 'src/components/misc/Background'
 import SearchBar from 'src/components/misc/SearchBar'
 import Suggestions from './search/Suggestions'
 
@@ -16,24 +16,37 @@ const StyledSection = styled(Section)`
   position: relative;
   margin: 0 auto;
 `
-const Title = styled.h1``
+const MainTitle = styled.h1``
+const Title = styled.h2`
+  font-size: 4rem;
+`
 const SearchBarSizer = styled.div`
   position: relative;
   height: 4.5rem;
   margin-bottom: 2.5rem;
 `
-export default function Search() {
+export default function Search(props) {
   return (
     <Wrapper>
       <Background />
       <StyledSection xlarge>
-        <Title>
-          Découvrez
-          <br />
-          la <strong>qualité de l’air</strong>
-          <br />
-          près de chez vous
-        </Title>
+        {props.main ? (
+          <MainTitle>
+            Découvrez
+            <br />
+            la <strong>qualité de l’air</strong>
+            <br />
+            près de chez vous
+          </MainTitle>
+        ) : (
+          <Title>
+            Découvrez
+            <br />
+            la <strong>qualité de l’air</strong>
+            <br />
+            près de chez vous
+          </Title>
+        )}
         <SearchBarSizer>
           <SearchBar
             handlePlaceSelection={(place) => {

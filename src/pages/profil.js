@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Web from 'src/components/layout/Web'
-import Section from 'src/components/layout/Section'
+import Section from 'src/components/base/Section'
 import Form from 'src/components/inscription/Form'
 
 export default function Profile(props) {

@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Section from 'src/components/layout/Section'
-import SubscribeForm from './newsletter/SubscribeForm'
+import useOnScreen from 'src/hooks/useOnScreen'
+import Section from 'src/components/base/Section'
+import SubscribeForm from 'src/components/misc/SubscribeForm'
 import Mockup from './newsletter/Mockup'
 import Notifications from './newsletter/Notifications'
 
@@ -15,6 +16,10 @@ const Content = styled.div`
   width: 41.75rem;
   margin-right: 2rem;
 
+  h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
   p {
     max-width: 35.5rem;
     margin-bottom: 2.5rem;
@@ -36,15 +41,19 @@ export default function Newsletter() {
     `
   )
 
+  const ref = useRef()
+
+  const isOnScreen = useOnScreen(ref, '0px', 0.7)
+
   return (
     <>
       <StyledSection>
-        <Content>
+        <Content ref={ref}>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>
           <SubscribeForm />
         </Content>
         <MockupWrapper>
-          <Mockup isOnScreen={true} />
+          <Mockup isOnScreen={isOnScreen} />
         </MockupWrapper>
       </StyledSection>
       <Notifications />

@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import useOnScreen from 'src/hooks/useOnScreen'
-import Section from 'src/components/layout/Section'
+import Section from 'src/components/base/Section'
 import Block from 'src/components/misc/Block'
 
 const StyledSection = styled(Section)`

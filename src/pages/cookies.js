@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Web from 'src/components/layout/Web'
-import Section from 'src/components/layout/Section'
+import Section from 'src/components/base/Section'
 
 export default function Index(props) {
   return (

@@ -21,8 +21,8 @@ const Wrapper = styled.div`
 `
 const Background = styled.div`
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
-  transform: translateY(${(props) => (props.isOnScreen ? 0 : '3rem')});
-  transition: transform 800ms ease-out, opacity 800ms;
+  transform: translateY(${(props) => (props.isOnScreen ? 0 : '9rem')});
+  transition: transform 600ms ease-out, opacity 600ms;
 `
 const Tablet = styled.div`
   position: absolute !important;
@@ -30,9 +30,9 @@ const Tablet = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  transform: translateY(${(props) => (props.isOnScreen ? 0 : '6rem')});
+  transform: translateY(${(props) => (props.isOnScreen ? 0 : '12rem')});
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
-  transition: transform 800ms ease-out, opacity 800ms;
+  transition: transform 600ms ease-out, opacity 600ms;
 `
 const Mobile = styled.div`
   display: none;

@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Web from 'src/components/layout/Web'
 import Landing from 'src/components/home/Landing'
 import Mockup from 'src/components/home/Mockup'
-import Integration from 'src/components/Integration'
+import Widget from 'src/components/Widget'
 import About from 'src/components/About'
 
 export default function Index() {
@@ -21,7 +21,7 @@ export default function Index() {
     <Web title={`Lettre d'information`}>
       <Landing content={data.mdx.body} main />
       <Mockup />
-      <Integration />
+      <Widget />
       <About />
     </Web>
   )

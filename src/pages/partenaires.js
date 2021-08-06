@@ -6,7 +6,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import MagicLink from 'src/components/base/MagicLink'
 import Web from 'src/components/layout/Web'
-import Section from 'src/components/layout/Section'
+import Section from 'src/components/base/Section'
 
 const Wrapper = styled.div`
   display: flex;
