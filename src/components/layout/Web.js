@@ -6,7 +6,7 @@ import { GlobalStyle } from 'src/utils/styles'
 import StyleProvider from 'src/components/providers/StyleProvider'
 import ModalProvider from 'src/components/providers/ModalProvider'
 
-import SEO from './web/SEO'
+import Seo from './web/SEO'
 import Header from './Header'
 import Footer from './Footer'
 import SensibleModal from 'src/components/modals/SensibleModal'
@@ -22,16 +22,12 @@ const Fullscreen = styled.div`
 `
 const Content = styled.div`
   flex: 1;
-  padding: 0 0.5rem;
-
-  ${(props) => props.theme.mq.small} {
-    padding: 0 1rem;
-  }
+  padding: 0 1rem;
 `
 export default function Web(props) {
   return (
     <Wrapper>
-      <SEO title={props.title} />
+      <Seo title={props.title} />
       <QueryClientProvider client={queryClient}>
         <StyleProvider>
           <ModalProvider>

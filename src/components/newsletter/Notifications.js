@@ -12,11 +12,24 @@ import useOnScreen from 'src/hooks/useOnScreen'
 const StyledSection = styled(Section)`
   display: flex;
   width: 60.5rem;
+
+  ${(props) => props.theme.mq.medium} {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 `
 const Content = styled.div`
   width: 29.25rem;
   margin-left: 2rem;
 
+  ${(props) => props.theme.mq.medium} {
+    width: 31rem;
+    margin: 0 0 2rem;
+  }
+  ${(props) => props.theme.mq.small} {
+    width: auto;
+    margin: 0 0 1rem;
+  }
   h2 {
     padding-left: 2.2rem;
     color: ${(props) => props.theme.colors.main};
@@ -33,6 +46,14 @@ const Content = styled.div`
 const MockupWrapper = styled.div`
   flex: 1;
   position: relative;
+
+  ${(props) => props.theme.mq.medium} {
+    min-height: 14rem;
+  }
+
+  ${(props) => props.theme.mq.small} {
+    min-height: auto;
+  }
 `
 const StyledButton = styled(Button)`
   font-size: 1.125rem;

@@ -10,6 +10,10 @@ const Wrapper = styled.header`
   width: 100%;
   z-index: 1000;
   background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
+
+  ${(props) => props.theme.mq.medium} {
+    position: absolute;
+  }
 `
 const Content = styled.div`
   display: flex;
@@ -18,7 +22,6 @@ const Content = styled.div`
   width: 100%;
   max-width: 75rem;
   margin: 0 auto;
-  padding: 0.5rem;
 `
 const SearchWrapper = styled.div`
   position: relative;

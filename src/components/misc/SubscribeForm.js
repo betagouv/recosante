@@ -11,14 +11,21 @@ import Alert from 'src/components/base/Alert'
 import MailInput from './subscribeForm/MailInput'
 
 const Wrapper = styled.form`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 29.25rem;
   margin: 0 auto;
+  padding-top: 1.5rem;
 
+  ${(props) => props.theme.mq.medium} {
+    width: 31rem;
+  }
   ${(props) => props.theme.mq.small} {
-    background-color: ${(props) => props.theme.colors.disabled};
+    width: auto;
+    margin: 0 -1rem;
     padding: 1rem;
+    background-color: ${(props) => props.theme.colors.disabled};
   }
 `
 const Optin = styled(Checkbox)`
@@ -27,15 +34,12 @@ const Optin = styled(Checkbox)`
 `
 const Submit = styled(Button)`
   align-self: flex-end;
-  font-size: 1.375rem;
-
-  ${(props) => props.theme.mq.medium} {
-    font-size: 1.25rem;
-  }
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 1rem;
-  }
+  font-size: 1.25rem;
+`
+const StyledAlert = styled(Alert)`
+  position: absolute;
+  top: 100%;
+  width: 100%;
 `
 export default function SubscribeForm() {
   const [email, setEmail] = useState('')
@@ -93,8 +97,8 @@ export default function SubscribeForm() {
         J'accepte de recevoir des emails de la part de Recosanté (pas de
         publicité)
       </Optin>
-      <Submit fetching={mutation.isLoading}>S’inscrire</Submit>
-      {error ? <Alert error>{error}</Alert> : null}
+      <Submit fetching={mutation.isLoading}>M'abonner</Submit>
+      {error ? <StyledAlert error>{error}</StyledAlert> : null}
     </Wrapper>
   )
 }

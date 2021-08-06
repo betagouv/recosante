@@ -22,6 +22,15 @@ const Wrapper = styled.form`
   border-bottom: none;
   box-shadow: inset 0 -0.125rem 0 0 ${(props) => props.theme.colors.main};
   overflow: hidden;
+
+  ${(props) => props.theme.mq.medium} {
+    max-width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.25rem;
+  }
 `
 export default function SearchBar(props) {
   const [search, setSearch] = useState('')

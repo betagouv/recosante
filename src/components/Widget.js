@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import IframeResizer from 'iframe-resizer-react'
 
+import useWindowSize from 'src/hooks/useWindowSize'
 import Section from 'src/components/base/Section'
 import Code from 'src/components/widget/Code'
 import Options from 'src/components/widget/Options'
@@ -39,7 +40,9 @@ export default function Widget(props) {
 
   const url = 'https://app.recosante.beta.gouv.fr'
 
-  return (
+  const { width } = useWindowSize()
+
+  return !props.home || width > 700 ? (
     <StyledSection first={props.first}>
       <Configurator>
         <Title>
@@ -62,5 +65,5 @@ export default function Widget(props) {
         allow='geolocation'
       />
     </StyledSection>
-  )
+  ) : null
 }

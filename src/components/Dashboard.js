@@ -10,6 +10,10 @@ const Wrapper = styled.div`
   position: relative;
   margin: 0 auto 10rem;
   padding: 10.75rem 0 6.5rem;
+
+  ${(props) => props.theme.mq.medium} {
+    margin-bottom: 5rem;
+  }
 `
 const StyledSection = styled(Section)`
   position: relative;

@@ -10,13 +10,8 @@ const Wrapper = styled.div`
   transform: translate(-50%, -50%);
   width: 80rem;
 
-  ${(props) => props.theme.mq.medium} {
-    top: -7rem;
-    left: calc(50% + 12rem);
-    width: 50rem;
-  }
   ${(props) => props.theme.mq.small} {
-    display: none;
+    width: 175vw;
   }
 `
 const Background = styled.div`
@@ -34,15 +29,6 @@ const Tablet = styled.div`
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
   transition: transform 600ms ease-out, opacity 600ms;
 `
-const Mobile = styled.div`
-  display: none;
-  margin-bottom: 1.5rem;
-
-  ${(props) => props.theme.mq.small} {
-    display: block;
-    width: 100%;
-  }
-`
 export default function Mockup(props) {
   return (
     <>
@@ -58,9 +44,6 @@ export default function Mockup(props) {
           />
         </Tablet>
       </Wrapper>
-      <Mobile isOnScreen={props.isOnScreen}>
-        <StaticImage src={'./images/mobile.png'} alt='Tablette' />
-      </Mobile>
     </>
   )
 }

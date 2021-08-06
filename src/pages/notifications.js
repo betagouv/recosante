@@ -21,7 +21,6 @@ const Content = styled.div`
   }
   p {
     max-width: 35.5rem;
-    margin-bottom: 2.5rem;
     font-size: 1.25rem;
   }
 `

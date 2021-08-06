@@ -7,6 +7,14 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   max-width: 35rem;
+
+  ${(props) => props.theme.mq.medium} {
+    justify-content: center;
+    margin: 0 auto;
+  }
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
 `
 const StyledButton = styled(Button)`
   margin-right: 1rem;

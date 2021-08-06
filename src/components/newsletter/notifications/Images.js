@@ -16,6 +16,14 @@ const Ios = styled.div`
   );
   width: 21.5rem;
   transition: transform 600ms ease-out, opacity 600ms;
+
+  ${(props) => props.theme.mq.small} {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+  }
 `
 const Macos = styled.div`
   position: absolute;
@@ -28,6 +36,10 @@ const Macos = styled.div`
   width: 22.5rem;
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
   transition: transform 600ms ease-out 100ms, opacity 600ms 100ms;
+
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
 `
 export default function Images(props) {
   return (

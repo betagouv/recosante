@@ -4,11 +4,6 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   padding: 1em;
   font-size: 0.75rem;
-  //background-color: #fff;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 0.45rem;
-  }
 
   &:before {
     content: '';

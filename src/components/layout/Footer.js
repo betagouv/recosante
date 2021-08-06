@@ -31,7 +31,7 @@ const Description = styled.p`
   }
 `
 
-export default function Header() {
+export default function Footer() {
   return (
     <Wrapper>
       <Content>

@@ -12,7 +12,7 @@ export default function Index() {
     <Web title={`Recosanté`}>
       <Search main />
       <Newsletter />
-      <Widget />
+      <Widget home />
       <Data />
       <About />
     </Web>

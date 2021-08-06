@@ -42,11 +42,7 @@ export const themes = {
     fonts: '"Marianne", Arial, sans-serif',
     mq: {
       small: `@media screen and (max-width: ${41}rem)`,
-      medium: `@media screen and (max-width: ${55}rem)`,
-      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${1260}px)`,
-      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${1260}px)`,
-      large: `@media screen and (min-width: ${1800}px)`,
-      xlarge: `@media screen and (min-width: ${2000}px)`,
+      medium: `@media screen and (max-width: ${75}rem)`,
     },
   },
 }
@@ -81,15 +77,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 4rem;
     margin-bottom: 2rem;
+    font-size: 4rem;
 
     ${(props) => props.theme.mq.medium} {
-      font-size: 2rem;
+      text-align: center;
     }
     ${(props) => props.theme.mq.small} {
-      font-size: 1.5rem;
-      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
     }
   }
   h2 {
