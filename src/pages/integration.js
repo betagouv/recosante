@@ -6,7 +6,7 @@ import Widget from 'src/components/Widget'
 export default function Integration() {
   return (
     <Web title={'Intégration'}>
-      <Widget />
+      <Widget first />
     </Web>
   )
 }

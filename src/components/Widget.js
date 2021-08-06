@@ -33,14 +33,14 @@ const Configurator = styled.div`
   max-width: 400px;
   margin-top: 2rem;
 `
-export default function Widget() {
+export default function Widget(props) {
   const [size, setSize] = useState(16)
   const [insee, setInsee] = useState(null)
 
   const url = 'https://app.recosante.beta.gouv.fr'
 
   return (
-    <StyledSection>
+    <StyledSection first={props.first}>
       <Configurator>
         <Title>
           Intégrez <strong>Recosanté</strong>

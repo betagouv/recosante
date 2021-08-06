@@ -30,7 +30,7 @@ const MockupWrapper = styled.div`
   flex: 1;
   position: relative;
 `
-export default function Newsletter() {
+export default function Newsletter(props) {
   const data = useStaticQuery(
     graphql`
       query {
@@ -47,9 +47,9 @@ export default function Newsletter() {
 
   return (
     <>
-      <StyledSection>
+      <StyledSection first={props.first}>
         <Content ref={ref}>
-          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+          <MDXRenderer>{(props.data || data).mdx.body}</MDXRenderer>
           <SubscribeForm />
         </Content>
         <MockupWrapper>

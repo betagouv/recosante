@@ -13,7 +13,7 @@ export default function Mail(props) {
   return (
     <Wrapper
       to={`mailto:?subject=Tu%20connais%20Recosant%C3%A9%20%3F&body=Tu%20connais%20Recosant%C3%A9%20%3F%20C'est%20une%20lettre%20d'information%20quotidienne%20qui%20te%20donne%20des%20conseils%20personnalis%C3%A9s%20en%20fonction%20de%20tes%20habitudes%20pour%20te%20prot%C3%A9ger%20des%20impacts%20de%20la%20qualit%C3%A9%20de%20l%E2%80%99air%20sur%20ta%20sant%C3%A9.%20Tous%20les%20matins%2C%20tu%20re%C3%A7ois%20un%20mail%20qui%20t'informe%20de%20la%20qualit%C3%A9%20de%20l'air%20autour%20de%20chez%20toi%20et%20une%20recommandation%20pour%20adapter%20ton%20comportement%20et%2Fou%20tes%20activit%C3%A9s%20en%20fonction.Pour%20t'inscrire%20%3A%20http%3A%2F%2Frecosante.beta.gouv.fr%2F`}
-      onClick={
+      onClick={() =>
         window._paq &&
         window._paq.push(['trackEvent', 'Social', 'Share', 'Mail'])
       }
