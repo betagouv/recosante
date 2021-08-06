@@ -41,10 +41,10 @@ export default function Questions() {
       ]
       setCurrent(steps.filter((step) => !data[step])[0] || 'end')
     }
-  }, [data, isFetching])
+  }, [data, isFetching, setCurrent])
 
   return (
-    <Wrapper>
+    <Wrapper current={current}>
       <Mail />
       <Address />
       <Frequency />

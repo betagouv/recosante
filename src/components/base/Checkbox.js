@@ -48,12 +48,6 @@ const Label = styled.label`
   color: ${(props) =>
     props.focus ? props.theme.colors.main : props.theme.colors.text};
 `
-const Detail = styled.div`
-  margin-left: 0.5rem;
-  font-size: 0.75rem;
-  color: ${(props) => props.theme.colors[props.interactive ? 'main' : 'text']};
-  cursor: ${(props) => (props.interactive ? 'pointer' : 'inherit')};
-`
 export default function Checkbox(props) {
   const [focus, setFocus] = useState(false)
   return (

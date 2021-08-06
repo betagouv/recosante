@@ -35,6 +35,10 @@ const Optin = styled(Checkbox)`
 const Submit = styled(Button)`
   align-self: flex-end;
   font-size: 1.25rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.125rem;
+  }
 `
 const StyledAlert = styled(Alert)`
   position: absolute;

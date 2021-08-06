@@ -45,7 +45,7 @@ const Content = styled.div`
     }
 
     ${(props) => props.theme.mq.small} {
-      font-size: 1.125rem;
+      font-size: 1rem;
     }
   }
 `

@@ -85,6 +85,11 @@ export function useRecommandations() {
     }
   )
 }
+export function useStatistiques() {
+  return useQuery(['statistiques'], () =>
+    axios.get(`https://ecosante.beta.gouv.fr/stats/`).then((res) => res.data)
+  )
+}
 export function useProfile(location) {
   const uid = location && queryString.parse(location.search).user
   return useQuery(

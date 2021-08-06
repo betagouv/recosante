@@ -18,10 +18,8 @@ const StyledMasonry = styled(Masonry)`
   }
 `
 export default function Indicators(props) {
-  const { data, isFetching, isFetched, isError } = useIndicators(
-    props.place.code
-  )
-  console.log(data)
+  const { data } = useIndicators(props.place.code)
+
   return (
     <StyledMasonry breakpointCols={2} columnClassName='my-masonry-grid_column'>
       <AirQuality data={data} place={props.place} />

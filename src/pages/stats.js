@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-import api from 'src/utils/api'
+import { useStatistiques } from 'src/utils/api'
 import Web from 'src/components/layout/Web'
 import AllUsers from 'src/components/stats/AllUsers'
 import CurrentMonth from 'src/components/stats/CurrentMonth'
@@ -8,14 +8,8 @@ import Profile from 'src/components/stats/Profile'
 import Satisfaction from 'src/components/stats/Satisfaction'
 import MailOpening from 'src/components/stats/MailOpening'
 
-export default function Stats(props) {
-  const [data, setData] = useState(null)
-  useEffect(() => {
-    api
-      .fetch(`/stats/`)
-      .then((res) => setData(res))
-      .catch((error) => console.log(error))
-  }, [])
+export default function Stats() {
+  const { data } = useStatistiques()
 
   return (
     <Web title={'Statistiques'}>

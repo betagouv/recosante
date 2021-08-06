@@ -46,6 +46,10 @@ const Content = styled.div`
     max-width: 35.5rem;
     margin-bottom: 2.5rem;
     font-size: 1.125rem;
+
+    ${(props) => props.theme.mq.small} {
+      font-size: 1rem;
+    }
   }
 `
 const MockupWrapper = styled.div`
@@ -62,6 +66,10 @@ const MockupWrapper = styled.div`
 `
 const StyledButton = styled(Button)`
   font-size: 1.125rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1rem;
+  }
 `
 export default function Notifications() {
   const data = useStaticQuery(

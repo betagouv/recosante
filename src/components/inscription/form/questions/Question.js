@@ -21,7 +21,7 @@ export default function Step(props) {
           : data[props.name]
         : []
     )
-  }, [data])
+  }, [data, props.name])
 
   const [sentence, setSentence] = useState([])
   useEffect(() => {
