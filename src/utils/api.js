@@ -122,10 +122,61 @@ export function useProfileMutation(location) {
 export function useSubscribe() {
   return useMutation((mail) =>
     axios.post(
-      `https://ecosante.beta.gouv.fr//inscription/premiere-etape`,
+      `https://ecosante.beta.gouv.fr/inscription/premiere-etape`,
       mail,
       {
         headers: { Accept: ' application/json' },
+      }
+    )
+  )
+}
+export function useAvis(location) {
+  const short_id = location && queryString.parse(location.search).short_id
+  const appliquee = location && queryString.parse(location.search).avis
+  return useQuery(
+    ['profile', short_id, appliquee],
+    () =>
+      axios
+        .post(
+          `https://ecosante.beta.gouv.fr/newsletter/${short_id}/avis?appliquee=${appliquee}`,
+          null,
+          {
+            headers: { Accept: ' application/json' },
+          }
+        )
+        .then((res) => res.data),
+    {
+      enabled: short_id && appliquee ? true : false,
+      refetchOnWindowFocus: false,
+    }
+  )
+}
+export function useAvisMutation(location) {
+  const short_id = location && queryString.parse(location.search).short_id
+  const appliquee = location && queryString.parse(location.search).avis
+  return useMutation((avis) =>
+    axios.post(
+      `https://ecosante.beta.gouv.fr/newsletter/${short_id}/avis?appliquee=${appliquee}`,
+      avis,
+      {
+        headers: {
+          Accept: ' application/json',
+          'Content-Type': 'application/json',
+        },
+      }
+    )
+  )
+}
+export function useInscriptionPatients() {
+  return useMutation((nom_medecin, mails) =>
+    axios.post(
+      `https://ecosante.beta.gouv.fr/inscription-patients`,
+      { nom_medecin, mails },
+      {
+        headers: {
+          Accept: ' application/json',
+          'Content-Type': 'application/json',
+        },
       }
     )
   )

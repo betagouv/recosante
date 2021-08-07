@@ -5,7 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Web from 'src/components/layout/Web'
 import Section from 'src/components/base/Section'
-import Form from 'src/components/referral/Form'
+import Referral from 'src/components/Referral'
 
 const StyledSection = styled(Section)`
   font-size: 1.125rem;
@@ -23,9 +23,9 @@ export default function InscriptionPatients() {
 
   return (
     <Web title={'Recommander Recosanté'}>
-      <StyledSection small>
+      <StyledSection small first>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
-        <Form />
+        <Referral />
       </StyledSection>
     </Web>
   )
