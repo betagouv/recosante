@@ -81,7 +81,7 @@ export default function Newsletter(props) {
 
   return (
     <>
-      <StyledSection first={props.first}>
+      <StyledSection first={props.first} id='newsletter'>
         <Content ref={ref}>
           <MDXRenderer>{(props.data || data).mdx.body}</MDXRenderer>
           <SubscribeForm />
