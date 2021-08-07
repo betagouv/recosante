@@ -49,6 +49,11 @@ const LearnMore = styled.div`
     width: 23.5rem;
     margin: 0 auto 0.75rem;
     text-align: center;
+
+    ${(props) => props.theme.mq.small} {
+      width: auto;
+      margin-bottom: 1rem;
+    }
   }
 `
 export default function Recommandation(props) {

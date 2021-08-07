@@ -21,7 +21,7 @@ const Partner = styled(MagicLink)`
 export default function Partners(props) {
   return (
     <Web title={'Ils parlent de nous'}>
-      <Section>
+      <Section first>
         <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
         <Wrapper>
           {props.data.mdx.frontmatter.partners.map((partner) => (

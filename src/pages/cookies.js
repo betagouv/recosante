@@ -8,7 +8,7 @@ import Section from 'src/components/base/Section'
 export default function Index(props) {
   return (
     <Web title={'Suivi des audiences et données personnelles'}>
-      <Section>
+      <Section first>
         <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
       </Section>
     </Web>

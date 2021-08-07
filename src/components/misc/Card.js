@@ -4,7 +4,7 @@ import Recommandation from './card/Recommandation'
 
 const Card = styled.div`
   position: relative;
-  width: ${(props) => (props.columns === 6 ? 'auto' : '23rem')};
+  width: 100%;
   margin-bottom: 2rem;
 `
 Card.Content = styled.div`
@@ -15,17 +15,31 @@ Card.Content = styled.div`
   border-radius: 1.5rem;
   box-shadow: 0.25rem 0.25rem 1rem 0
     rgba(${(props) => props.theme.colors.backgroundAlpha}, 0.25);
+
+  ${(props) => props.theme.mq.small} {
+    padding: 1.5rem;
+  }
 `
 Card.Header = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 Card.Info = styled.div``
 Card.Title = styled.h6`
   margin-bottom: 1.5rem;
   font-size: 1.125rem;
   font-weight: 500;
+
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
 `
 Card.Value = styled.div`
   margin-left: -0.1rem;
@@ -33,6 +47,12 @@ Card.Value = styled.div`
   font-weight: 800;
   line-height: 1;
   color: ${(props) => props.theme.colors.main};
+
+  ${(props) => props.theme.mq.small} {
+    margin: 0 0 1.5rem;
+    font-size: 2.25rem;
+    text-align: center;
+  }
 `
 Card.Details = styled.div`
   margin-bottom: 2rem;

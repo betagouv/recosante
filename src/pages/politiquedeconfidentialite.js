@@ -9,7 +9,7 @@ import Section from 'src/components/base/Section'
 export default function Confidentiality(props) {
   return (
     <Web title={'Politique de Confidentialité'}>
-      <Section>
+      <Section first>
         <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
       </Section>
     </Web>

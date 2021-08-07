@@ -9,6 +9,11 @@ const Wrapper = styled.div`
   line-height: 1.5;
   text-align: right;
 
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 1rem;
+    padding-right: 7rem;
+  }
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -24,6 +29,10 @@ const Wrapper = styled.div`
     background-color: ${(props) => props.theme.colors.main};
     border-radius: 0.5rem;
     opacity: 0.15;
+
+    ${(props) => props.theme.mq.small} {
+      width: 6rem;
+    }
   }
   &:after {
     content: '';
@@ -39,6 +48,11 @@ const Wrapper = styled.div`
       props.value < 5 ? '0.5rem 0 0 0.5rem' : '0.5rem'};
     transition: transform ${(props) => (props.open ? 150 * props.value : 0)}ms
       ${(props) => (props.open ? props.index * 100 : 0)}ms ease-out;
+
+    ${(props) => props.theme.mq.small} {
+      right: ${(props) => 6 - (props.value / 5) * 6}rem;
+      width: ${(props) => (props.value / 5) * 6}rem;
+    }
   }
 `
 export default function Element(props) {

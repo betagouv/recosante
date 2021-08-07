@@ -25,7 +25,12 @@ const Wrapper = styled.form`
     width: auto;
     margin: 0 -1rem;
     padding: 2rem 1rem;
-    background-color: ${(props) => props.theme.colors.disabled};
+    background: linear-gradient(
+      90deg,
+      #e9f5fd 0%,
+      #f8fafd 49.48%,
+      #e0f0fb 100%
+    );
   }
 `
 const Optin = styled(Checkbox)`

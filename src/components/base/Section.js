@@ -13,6 +13,7 @@ const Section = styled.section`
   ${(props) => props.theme.mq.small} {
     width: 100%;
     margin-bottom: 5rem;
+    padding-top: ${(props) => (props.first ? '9rem' : 0)};
   }
 `
 

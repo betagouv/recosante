@@ -40,7 +40,7 @@ export default function Search(props) {
   return (
     <Wrapper>
       <Background />
-      <StyledSection xlarge>
+      <StyledSection>
         {props.main ? (
           <MainTitle>
             Découvrez

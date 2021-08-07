@@ -6,6 +6,11 @@ import Element from './details/Element'
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 export default function Details(props) {
   return props.data ? (

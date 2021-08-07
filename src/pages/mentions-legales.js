@@ -9,7 +9,7 @@ import Section from 'src/components/base/Section'
 export default function Index(props) {
   return (
     <Web title={'Mentions Légales'}>
-      <Section>
+      <Section first>
         <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
       </Section>
     </Web>

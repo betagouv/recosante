@@ -10,6 +10,11 @@ const Wrapper = styled.div`
   cursor: pointer;
   transition: color 300ms ease-out;
 
+  ${(props) => props.theme.mq.small} {
+    width: 6rem;
+    margin: 0 0 1rem 1rem;
+  }
+
   &:before {
     content: '';
     position: absolute;

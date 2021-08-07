@@ -12,7 +12,7 @@ export default function Place(props) {
     <Web title={props.pageContext.place.nom}>
       <Dashboard place={props.pageContext.place} />
       <Newsletter />
-      <Widget />
+      <Widget home />
       <Data />
       <About />
     </Web>
