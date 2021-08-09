@@ -12,8 +12,14 @@ const Phone = styled.div`
   ${(props) => props.theme.mq.medium} {
     top: 0;
     left: -40vw;
-    transform: translate(0, 0);
+    transform: none;
     width: 130vw;
+  }
+  ${(props) => props.theme.mq.small} {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250vw;
   }
 `
 const Laptop = styled.div`
@@ -27,6 +33,9 @@ const Laptop = styled.div`
     top: 0;
     transform: translate(calc(-50% + 5vw));
     width: 100vw;
+  }
+  ${(props) => props.theme.mq.small} {
+    display: none;
   }
 `
 export default function Mockup(props) {

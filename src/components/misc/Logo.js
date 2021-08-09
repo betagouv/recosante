@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 const Wrapper = styled.svg`
   display: block;
+  width: 5.5rem;
+  margin: 0.75rem;
 `
 const Text = styled.path`
   fill: ${(props) => props.theme.colors.title};

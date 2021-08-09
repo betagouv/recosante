@@ -50,9 +50,8 @@ const MockupWrapper = styled.div`
     margin: -3rem 0;
   }
   ${(props) => props.theme.mq.small} {
-    min-height: 100vw;
+    min-height: 165vw;
     overflow: hidden;
-    margin: -10vw 0;
   }
 `
 export default function Notifications() {
