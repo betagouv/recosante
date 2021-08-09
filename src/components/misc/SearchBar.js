@@ -12,8 +12,8 @@ const Wrapper = styled.form`
   top: 0;
   width: 21em;
   font-size: 2rem;
-  background-color: rgba(${(props) => props.theme.colors.backgroundAlpha}, 0.6);
-  backdrop-filter: blur(1rem);
+  background-color: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
+  //backdrop-filter: blur(1rem);
   border: solid 1px
     rgba(
       ${(props) => props.theme.colors.mainAlpha},

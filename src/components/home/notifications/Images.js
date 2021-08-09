@@ -40,7 +40,6 @@ export default function Images(props) {
       </Ios>
       <Macos isOnScreen={props.isOnScreen}>
         <StaticImage
-          isOnScreen={props.isOnScreen}
           src={'./images/macos.png'}
           alt='Notification macOS'
           layout='fixed'

@@ -27,6 +27,10 @@ const Content = styled.div`
   ${(props) => props.theme.mq.small} {
     margin: 0 0 1rem;
   }
+
+  h1 {
+    font-size: ${(props) => (props.seo ? 2 : 4)}rem;
+  }
   h2 {
     margin-bottom: 2rem;
     font-size: 4rem;
@@ -82,7 +86,7 @@ export default function Newsletter(props) {
   return (
     <>
       <StyledSection first={props.first} id='newsletter'>
-        <Content ref={ref}>
+        <Content ref={ref} seo={props.seo}>
           <MDXRenderer>{(props.data || data).mdx.body}</MDXRenderer>
           <SubscribeForm />
         </Content>

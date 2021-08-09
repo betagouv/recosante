@@ -1,12 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useQueryParam } from 'use-query-params'
 
 import Share from './recommandationList/Share'
 import Acquisition from './recommandationList/Acquisition'
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.colors.tile};
   padding: 2rem;
+  background-color: ${(props) => props.theme.colors.tile};
+
+  ${(props) => props.theme.mq.medium} {
+    padding: 0;
+    background-color: transparent;
+  }
 `
 const Title = styled.h2``
 const Text = styled.p`
@@ -14,7 +20,8 @@ const Text = styled.p`
   font-size: 1.125rem;
 `
 export default function RecommandationList() {
-  return (
+  const [current] = useQueryParam('step')
+  return current === 'end' ? (
     <Wrapper>
       <Title>Votre profil est créé !</Title>
       <Text>
@@ -24,5 +31,5 @@ export default function RecommandationList() {
       <Share />
       <Acquisition />
     </Wrapper>
-  )
+  ) : null
 }

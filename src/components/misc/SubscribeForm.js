@@ -52,7 +52,7 @@ export default function SubscribeForm() {
 
   const location = useLocation()
   useEffect(() => {
-    setEmail(queryString.parse(location.search).email)
+    setEmail(queryString.parse(location.search).email || '')
   }, [location])
 
   const mutation = useSubscribe()

@@ -4,6 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 const Wrapper = styled.div`
   position: relative;
+  pointer-events: none;
 `
 const Ios = styled.div`
   position: absolute;
@@ -48,11 +49,7 @@ export default function Images(props) {
         <StaticImage src={'./images/ios.png'} alt='Notification iOS' />
       </Ios>
       <Macos isOnScreen={props.isOnScreen}>
-        <StaticImage
-          isOnScreen={props.isOnScreen}
-          src={'./images/macos.png'}
-          alt='Notification macOS'
-        />
+        <StaticImage src={'./images/macos.png'} alt='Notification macOS' />
       </Macos>
     </Wrapper>
   )

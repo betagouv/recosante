@@ -1,24 +1,27 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Web from 'src/components/layout/Web'
 import Section from 'src/components/base/Section'
 
-export default function Index(props) {
+export default function Index() {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        mdx(slug: { eq: "mentions-legales" }) {
+          body
+        }
+      }
+    `
+  )
+
   return (
     <Web title={'Mentions Légales'}>
-      <Section first>
-        <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
+      <Section first small>
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </Section>
     </Web>
   )
 }
-export const pageQuery = graphql`
-  query terms {
-    mdx(slug: { eq: "mentions-legales" }) {
-      body
-    }
-  }
-`

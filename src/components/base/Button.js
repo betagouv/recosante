@@ -55,7 +55,7 @@ const Wrapper = styled(MagicLink)`
   }
 
   ${(props) => props.theme.mq.small} {
-    padding: 0.75em;
+    padding: 0.75em 1.25em;
   }
   & span {
     position: relative;

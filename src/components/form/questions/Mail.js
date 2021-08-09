@@ -6,6 +6,7 @@ import { useQueryParam, StringParam } from 'use-query-params'
 import { useProfile, useProfileMutation } from 'src/utils/api'
 import TextInput from 'src/components/base/TextInput'
 import Wrapper from './question/Wrapper'
+import Submit from './question/Submit'
 
 const Email = styled.h3`
   font-size: 1.75rem;
@@ -44,7 +45,7 @@ export default function Mail() {
           value={answer}
           onChange={(e) => setAnswer(e.value)}
         />
-        <Wrapper.Submit>Valider</Wrapper.Submit>
+        <Submit />
       </Wrapper.Response>
     </Wrapper>
   ) : null

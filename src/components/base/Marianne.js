@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  padding: 1em;
+  padding: 1em 1em 1em 0;
   font-size: 0.75rem;
 
   &:before {

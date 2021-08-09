@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Question from 'src/components/inscription/form/questions/Question'
+import Question from 'src/components/form/questions/Question'
 
 export default function Animals(props) {
   const name = 'connaissance_produit'

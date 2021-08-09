@@ -18,6 +18,10 @@ import Animals from './questions/list/Animals'
 const Wrapper = styled.div`
   width: 29.25rem;
   margin-right: 2rem;
+
+  ${(props) => props.theme.mq.medium} {
+    width: 100%;
+  }
 `
 export default function Questions() {
   const location = useLocation()
@@ -29,7 +33,7 @@ export default function Questions() {
     if (data) {
       const steps = [
         'ville_insee',
-        // 'frequence',
+        //'frequence',
         //'notifications',
         'population',
         'activites',
@@ -37,9 +41,8 @@ export default function Questions() {
         'chauffage',
         'deplacement',
         'animaux_domestiques',
-        'connaissance_produit',
       ]
-      setCurrent(steps.filter((step) => !data[step])[0] || 'end')
+      setCurrent(steps.find((step) => !data[step]) || 'end')
     }
   }, [data, isFetching, setCurrent])
 

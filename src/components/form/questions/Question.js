@@ -6,6 +6,7 @@ import { useProfile, useProfileMutation } from 'src/utils/api'
 import Wrapper from './question/Wrapper'
 import Value from './question/Value'
 import Answers from './question/Answers'
+import Submit from './question/Submit'
 
 export default function Step(props) {
   const location = useLocation()
@@ -58,6 +59,7 @@ export default function Step(props) {
         mutation.mutate({ [props.name]: answers })
       }}
       visible={answers.length || isCurrent}
+      isCurrent={isCurrent}
     >
       <Wrapper.Label>
         {answers[0] === 'aucun' && !isCurrent ? props.label[1] : props.label[0]}
@@ -70,7 +72,7 @@ export default function Step(props) {
           answers={answers}
           setAnswers={setAnswers}
         />
-        <Wrapper.Submit>Valider</Wrapper.Submit>
+        <Submit />
       </Wrapper.Response>
     </Wrapper>
   ) : null

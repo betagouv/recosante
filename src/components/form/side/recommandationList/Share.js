@@ -7,10 +7,12 @@ import Whatsapp from './share/Whatsapp'
 
 const Wrapper = styled.div`
   width: 100%;
-  margin-bottom: 3rem;
+  max-width: 18rem;
+  margin: 0 auto 3rem;
 `
 const Title = styled.h3`
   text-align: center;
+  margin-bottom: 1rem;
 `
 const Buttons = styled.div`
   display: flex;

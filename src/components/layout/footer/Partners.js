@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import MagicLink from 'src/components/base/MagicLink'
 
@@ -21,15 +23,40 @@ const Logos = styled.div`
     justify-content: center;
   }
 `
-
+const Logo = styled(MagicLink)`
+  width: 5rem;
+  margin: 1rem;
+`
 export default function Partners() {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        mdx(slug: { eq: "partenaires" }) {
+          body
+          frontmatter {
+            partners {
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData(width: 108)
+                }
+              }
+              link
+            }
+          }
+        }
+      }
+    `
+  )
   return (
     <Wrapper>
       <Title>Les données sont fournies par</Title>
       <Logos>
-        <MagicLink to='https://atmo-france.org/'>atmo</MagicLink>
-        <MagicLink to='https://www.pollens.fr/'>rnsa</MagicLink>
-        <MagicLink to='https://www.alertepollens.org/'>pollens</MagicLink>
+        {data.mdx.frontmatter.partners.map((logo) => (
+          <Logo to={logo.link} key={logo.link}>
+            <GatsbyImage image={getImage(logo.image)} alt={logo.title} />
+          </Logo>
+        ))}
       </Logos>
     </Wrapper>
   )

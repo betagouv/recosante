@@ -8,6 +8,7 @@ import SearchBar from 'src/components/misc/SearchBar'
 const Wrapper = styled.header`
   position: fixed;
   width: 100%;
+  padding: 0 1rem;
   z-index: 1000;
   background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
 

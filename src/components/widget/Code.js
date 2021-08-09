@@ -59,7 +59,7 @@ const Check = styled.svg`
   }
 `
 export default function Code(props) {
-  const [script, setScript] = useState(null)
+  const [script, setScript] = useState('')
 
   useEffect(() => {
     setScript(

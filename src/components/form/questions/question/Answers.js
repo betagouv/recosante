@@ -25,6 +25,7 @@ export default function Answers(props) {
       {props.options.map((option) =>
         option.value !== 'aucun' && !option.exclusive ? (
           <StyledCheckbox
+            key={option.value}
             checked={props.answers.includes(option.value)}
             onChange={(checked) =>
               props.setAnswers((prevAnswers) =>
@@ -47,6 +48,7 @@ export default function Answers(props) {
           </StyledCheckbox>
         ) : (
           <StyledCheckbox
+            key={option.value}
             checked={props.answers.includes(option.value)}
             onChange={(checked) =>
               props.setAnswers(checked ? [option.value] : [])

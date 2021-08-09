@@ -62,9 +62,11 @@ export default function Widget(props) {
         {props.main ? (
           <MainTitle>
             Intégrez <strong>Recosanté</strong>
+            <br /> sur votre site
           </MainTitle>
         ) : (
           <Title large>
+            Intégrez <strong>Recosanté</strong>
             <br /> sur votre site
           </Title>
         )}
@@ -78,9 +80,7 @@ export default function Widget(props) {
       </Configurator>
       <StyledIframe
         src={`${url}/${insee || ''}?size=${size}`}
-        allowfullscreen={true}
-        webkitallowfullscreen={true}
-        mozallowfullscreen={true}
+        allowFullScreen={true}
         allow='geolocation'
       />
     </StyledSection>

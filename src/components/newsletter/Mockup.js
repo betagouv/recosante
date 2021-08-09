@@ -5,6 +5,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 const Wrapper = styled.div`
   position: absolute;
   z-index: -1;
+  pointer-events: none;
   top: 50%;
   left: calc(50%);
   transform: translate(-50%, -50%);
@@ -37,11 +38,7 @@ export default function Mockup(props) {
           <StaticImage src={'./images/background.jpg'} alt='Ombre' />
         </Background>
         <Tablet isOnScreen={props.isOnScreen}>
-          <StaticImage
-            isOnScreen={props.isOnScreen}
-            src={'./images/tablet.png'}
-            alt='Tablette'
-          />
+          <StaticImage src={'./images/tablet.png'} alt='Tablette' />
         </Tablet>
       </Wrapper>
     </>

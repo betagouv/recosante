@@ -6,15 +6,18 @@ import queryString from 'query-string'
 import { useProfile, useProfileMutation } from 'src/utils/api'
 import Wrapper from './question/Wrapper'
 import Value from './question/Value'
+import Submit from './question/Submit'
 import SearchBar from 'src/components/misc/SearchBar'
 
 const SearchBarWrapper = styled.div`
   position: relative;
   height: 4rem;
-  margin-top: 2rem;
+  width: 100%;
+  margin: 2rem 0 1rem;
 `
 const StyledSearchBar = styled(SearchBar)`
-  font-size: 1rem;
+  width: 100%;
+  font-size: 1.5rem;
 `
 export default function Address() {
   const location = useLocation()
@@ -28,14 +31,14 @@ export default function Address() {
 
   const [sentence, setSentence] = useState([])
   useEffect(() => {
-    setSentence(data ? data.ville_nom.split('') : [])
+    setSentence(data && data.ville_nom ? data.ville_nom.split('') : [])
   }, [data])
 
   const isCurrent =
     location && queryString.parse(location.search).step === 'ville_insee'
 
   return data ? (
-    <Wrapper.NoForm visible={answer || isCurrent}>
+    <Wrapper.NoForm visible={answer || isCurrent} isCurrent={isCurrent}>
       <Wrapper.Label>
         J'habite à <Value capital name={'ville_insee'} sentence={sentence} />
       </Wrapper.Label>
@@ -45,11 +48,7 @@ export default function Address() {
             handlePlaceSelection={(place) => setAnswer(place.code)}
           />
         </SearchBarWrapper>
-        <Wrapper.Submit
-          onClick={() => mutation.mutate({ ville_insee: answer })}
-        >
-          Valider
-        </Wrapper.Submit>
+        <Submit onClick={() => mutation.mutate({ ville_insee: answer })} />
       </Wrapper.Response>
     </Wrapper.NoForm>
   ) : null

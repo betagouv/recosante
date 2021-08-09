@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { GatsbyImage } from 'gatsby-plugin-image'
-import { graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import MagicLink from 'src/components/base/MagicLink'
@@ -14,70 +14,62 @@ const Wrapper = styled.div`
   align-items: center;
   margin: 0 -0.5rem;
 `
-const Partner = styled(MagicLink)`
-  width: 5.25rem;
+const Logo = styled(MagicLink)`
+  width: 7rem;
   margin: 0.5rem;
 `
 export default function Partners(props) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        mdx(slug: { eq: "partenaires" }) {
+          body
+          frontmatter {
+            partners {
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData(width: 108)
+                }
+              }
+              link
+            }
+            press {
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData(width: 108)
+                }
+              }
+              link
+            }
+          }
+        }
+      }
+    `
+  )
   return (
     <Web title={'Ils parlent de nous'}>
-      <Section first>
-        <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
+      <Section first small>
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
         <Wrapper>
-          {props.data.mdx.frontmatter.partners.map((partner) => (
-            <Partner to={partner.link}>
-              <GatsbyImage
-                fluid={partner.image.childrenImageSharp[0].fluid}
-                alt={partner.title}
-              />
-            </Partner>
+          {data.mdx.frontmatter.partners.map((logo) => (
+            <Logo to={logo.link} key={logo.link}>
+              <GatsbyImage image={getImage(logo.image)} alt={logo.title} />
+            </Logo>
           ))}
         </Wrapper>
       </Section>
-      <Section>
+      <Section small>
         <Section.Title>Ils parlent de nous</Section.Title>
         <Wrapper>
-          {props.data.mdx.frontmatter.press.map((press) => (
-            <Partner to={press.link}>
-              <GatsbyImage
-                fluid={press.image.childrenImageSharp[0].fluid}
-                alt={press.title}
-              />
-            </Partner>
+          {data.mdx.frontmatter.press.map((logo) => (
+            <Logo to={logo.link} key={logo.link}>
+              <GatsbyImage image={getImage(logo.image)} alt={logo.title} />
+            </Logo>
           ))}
         </Wrapper>
       </Section>
     </Web>
   )
 }
-export const pageQuery = graphql`
-  query partners {
-    mdx(slug: { eq: "partenaires" }) {
-      body
-      frontmatter {
-        partners {
-          title
-          image {
-            childrenImageSharp {
-              fluid(maxWidth: 84, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          link
-        }
-        press {
-          title
-          image {
-            childrenImageSharp {
-              fluid(maxWidth: 84, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          link
-        }
-      }
-    }
-  }
-`

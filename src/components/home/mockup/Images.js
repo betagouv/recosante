@@ -51,11 +51,7 @@ export default function Images(props) {
           <StaticImage src={'./images/background.jpg'} alt='Ombre' />
         </Background>
         <Tablet isOnScreen={props.isOnScreen}>
-          <StaticImage
-            isOnScreen={props.isOnScreen}
-            src={'./images/tablet.png'}
-            alt='Tablette'
-          />
+          <StaticImage src={'./images/tablet.png'} alt='Tablette' />
         </Tablet>
       </Wrapper>
       <Mobile isOnScreen={props.isOnScreen}>
