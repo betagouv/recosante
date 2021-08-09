@@ -79,21 +79,19 @@ export const GlobalStyle = createGlobalStyle`
   h1 {
     margin-bottom: 2rem;
     font-size: 4rem;
-
-    ${(props) => props.theme.mq.medium} {
-      text-align: center;
-    }
+    
     ${(props) => props.theme.mq.small} {
       margin-bottom: 1.5rem;
       font-size: 2rem;
     }
   }
   h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: ${(props) => (props.large ? 2 : 1.5)}rem;
+    font-size: ${(props) => (props.large ? 4 : 2.5)}rem;
 
     ${(props) => props.theme.mq.small} {
-      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-size: ${(props) => (props.large ? 2 : 1.5)}rem;
     }
   }
   h3 {

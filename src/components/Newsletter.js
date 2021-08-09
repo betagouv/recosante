@@ -24,7 +24,7 @@ const Content = styled.div`
     width: auto;
     margin: 0 0 2rem;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     margin: 0 0 1rem;
   }
   h2 {
@@ -58,7 +58,7 @@ const MockupWrapper = styled.div`
     overflow: hidden;
     margin: -3rem 0;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     min-height: 100vw;
     overflow: hidden;
     margin: -10vw 0;

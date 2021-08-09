@@ -1,4 +1,4 @@
-## Abonnez-vous aux **notifications web** Recosanté
+# Abonnez-vous aux **notifications web** Recosanté
 
 Recevez **chaque jour** une notification avec les **indicateurs environnementaux** (qualité de l’air, épisodes de pollution et risque pollinique).
 

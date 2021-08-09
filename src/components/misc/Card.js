@@ -31,7 +31,7 @@ Card.Header = styled.div`
   }
 `
 Card.Info = styled.div``
-Card.Title = styled.h6`
+Card.Title = styled.h2`
   margin-bottom: 1.5rem;
   font-size: 1.125rem;
   font-weight: 500;

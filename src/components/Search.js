@@ -27,7 +27,11 @@ const StyledSection = styled(Section)`
   position: relative;
   margin: 0 auto;
 `
-const MainTitle = styled.h1``
+const MainTitle = styled.h1`
+  ${(props) => props.theme.mq.medium} {
+    text-align: center;
+  }
+`
 const Title = styled.h2`
   font-size: 4rem;
 `

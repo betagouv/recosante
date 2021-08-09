@@ -8,6 +8,13 @@ const Phone = styled.div`
   left: 50%;
   transform: translate(calc(-50% - 12rem), calc(-50% + 4.5rem));
   width: 50.5rem;
+
+  ${(props) => props.theme.mq.medium} {
+    top: 0;
+    left: -40vw;
+    transform: translate(0, 0);
+    width: 130vw;
+  }
 `
 const Laptop = styled.div`
   position: absolute;
@@ -15,6 +22,12 @@ const Laptop = styled.div`
   left: 50%;
   transform: translate(calc(-50% - 2.2rem), calc(-50% - 6rem));
   width: 42rem;
+
+  ${(props) => props.theme.mq.medium} {
+    top: 0;
+    transform: translate(calc(-50% + 5vw));
+    width: 100vw;
+  }
 `
 export default function Mockup(props) {
   return (

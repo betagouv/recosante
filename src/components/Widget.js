@@ -16,10 +16,27 @@ const StyledSection = styled(Section)`
     align-items: center;
   }
 `
+const Configurator = styled.div`
+  max-width: 25rem;
+  margin-top: 2rem;
+
+  ${(props) => props.theme.mq.medium} {
+    margin-top: 0;
+  }
+`
+const MainTitle = styled.h1`
+  width: 29.25rem;
+
+  ${(props) => props.theme.mq.medium} {
+    width: auto;
+  }
+`
 const Title = styled.h2`
   width: 29.25rem;
-  font-size: 4rem;
-  line-height: 1.1;
+
+  ${(props) => props.theme.mq.medium} {
+    width: auto;
+  }
 `
 const StyledIframe = styled(IframeResizer)`
   display: block;
@@ -30,10 +47,7 @@ const StyledIframe = styled(IframeResizer)`
     width: 100%;
   }
 `
-const Configurator = styled.div`
-  max-width: 400px;
-  margin-top: 2rem;
-`
+
 export default function Widget(props) {
   const [size, setSize] = useState(16)
   const [insee, setInsee] = useState(null)
@@ -43,12 +57,17 @@ export default function Widget(props) {
   const { width } = useWindowSize()
 
   return !props.home || width > 700 ? (
-    <StyledSection first={props.first}>
+    <StyledSection first={props.main}>
       <Configurator>
-        <Title>
-          Intégrez <strong>Recosanté</strong>
-          <br /> sur votre site
-        </Title>
+        {props.main ? (
+          <MainTitle>
+            Intégrez <strong>Recosanté</strong>
+          </MainTitle>
+        ) : (
+          <Title large>
+            <br /> sur votre site
+          </Title>
+        )}
         <Code size={size} insee={insee} url={url} />
         <Options
           insee={insee}
