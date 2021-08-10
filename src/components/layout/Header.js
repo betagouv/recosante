@@ -20,7 +20,7 @@ const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 75rem;
+  max-width: 73rem;
   margin: 0 auto;
 `
 export default function Header() {

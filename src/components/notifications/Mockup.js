@@ -42,10 +42,18 @@ export default function Mockup(props) {
   return (
     <>
       <Laptop>
-        <StaticImage src={'./mockup/laptop.png'} alt='Laptop' />
+        <StaticImage
+          src={'./mockup/laptop.png'}
+          alt='Laptop'
+          placeholder='none'
+        />
       </Laptop>
       <Phone>
-        <StaticImage src={'./mockup/phone.png'} alt='Téléphone' />
+        <StaticImage
+          src={'./mockup/phone.png'}
+          alt='Téléphone'
+          placeholder='none'
+        />
       </Phone>
     </>
   )

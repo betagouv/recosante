@@ -45,10 +45,18 @@ export default function Mockup(props) {
     <>
       <Wrapper className={props.className}>
         <Background isOnScreen={props.isOnScreen}>
-          <StaticImage src={'./images/background.jpg'} alt='Ombre' />
+          <StaticImage
+            src={'./mockup/background.jpg'}
+            alt='Ombre'
+            placeholder='none'
+          />
         </Background>
         <Tablet isOnScreen={props.isOnScreen}>
-          <StaticImage src={'./images/tablet.png'} alt='Tablette' />
+          <StaticImage
+            src={'./mockup/tablet.png'}
+            alt='Tablette'
+            placeholder='none'
+          />
         </Tablet>
       </Wrapper>
     </>

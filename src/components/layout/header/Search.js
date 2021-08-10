@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useLocation } from '@reach/router'
 import { navigate } from 'gatsby'
 
-import SearchBar from 'src/components/misc/SearchBar'
+import SearchBar from 'src/components/search/SearchBar'
 
 const Large = styled.div`
   position: relative;

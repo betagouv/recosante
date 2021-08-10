@@ -4,7 +4,7 @@ import { navigate } from 'gatsby'
 
 import Section from 'src/components/base/Section'
 import Background from 'src/components/misc/Background'
-import SearchBar from 'src/components/misc/SearchBar'
+import SearchBar from 'src/components/search/SearchBar'
 import Suggestions from './search/Suggestions'
 
 const Wrapper = styled.div`

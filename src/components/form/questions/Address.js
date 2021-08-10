@@ -7,7 +7,7 @@ import { useProfile, useProfileMutation } from 'src/utils/api'
 import Wrapper from './question/Wrapper'
 import Value from './question/Value'
 import Submit from './question/Submit'
-import SearchBar from 'src/components/misc/SearchBar'
+import SearchBar from 'src/components/search/SearchBar'
 
 const SearchBarWrapper = styled.div`
   position: relative;

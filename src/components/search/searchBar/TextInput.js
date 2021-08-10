@@ -55,7 +55,6 @@ const Visible = styled.div`
     position: absolute;
     top: 50%;
     left: 0.1em;
-    transform: translateY(0);
     width: 0.5em;
     height: 1px;
     background-color: ${(props) => props.theme.colors.text};

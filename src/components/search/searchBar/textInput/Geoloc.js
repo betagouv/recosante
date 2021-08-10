@@ -57,15 +57,16 @@ export default function Submit(props) {
 
   const { data, isFetching, isError } = usePosition(position)
 
+  const handlePlaceSelection = props.handlePlaceSelection
   useEffect(() => {
     if (data) {
       if (data[0]) {
-        props.handlePlaceSelection(data[0])
+        handlePlaceSelection(data[0])
       } else {
         setError(true)
       }
     }
-  }, [data, props.handlePlaceSelection])
+  }, [data, handlePlaceSelection])
 
   const [error, setError] = useState(false)
 
