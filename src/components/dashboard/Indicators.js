@@ -23,7 +23,7 @@ export default function Indicators(props) {
     <StyledMasonry
       breakpointCols={{
         default: 2,
-        1100: 1,
+        1200: 1,
       }}
       columnClassName='my-masonry-grid_column'
     >

@@ -35,7 +35,7 @@ export function usePosition(position, pathname) {
         )
         .then((res) => res.data),
     {
-      enabled: position && pathname === '/' ? true : false,
+      enabled: position ? true : false,
       refetchOnWindowFocus: false,
     }
   )

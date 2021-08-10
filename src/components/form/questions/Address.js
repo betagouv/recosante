@@ -18,6 +18,10 @@ const SearchBarWrapper = styled.div`
 const StyledSearchBar = styled(SearchBar)`
   width: 100%;
   font-size: 1.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.125rem;
+  }
 `
 export default function Address() {
   const location = useLocation()

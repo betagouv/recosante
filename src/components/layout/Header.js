@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useLocation } from '@reach/router'
 
 import Logos from './header/Logos'
-import SearchBar from 'src/components/misc/SearchBar'
+import Search from './header/Search'
 
 const Wrapper = styled.header`
   position: fixed;
@@ -24,27 +23,12 @@ const Content = styled.div`
   max-width: 75rem;
   margin: 0 auto;
 `
-const SearchWrapper = styled.div`
-  position: relative;
-`
-const StyledSearchBar = styled(SearchBar)`
-  top: -1rem;
-  left: auto;
-  right: 0;
-  font-size: 1rem;
-`
 export default function Header() {
-  const location = useLocation()
-
   return (
     <Wrapper>
       <Content>
         <Logos />
-        <SearchWrapper>
-          {location.pathname !== '/' && (
-            <StyledSearchBar placeholder='Entrez une ville' />
-          )}
-        </SearchWrapper>
+        <Search />
       </Content>
     </Wrapper>
   )

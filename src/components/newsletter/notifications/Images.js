@@ -24,6 +24,8 @@ const Ios = styled.div`
     left: auto;
     transform: none;
     width: 100%;
+    transform: none;
+    opacity: 1;
   }
 `
 const Macos = styled.div`

@@ -10,6 +10,10 @@ const Wrapper = styled.div`
 `
 const Title = styled.h1`
   margin: 0 0 0 -0.15rem;
+
+  ${(props) => props.theme.mq.small} {
+    text-align: center;
+  }
 `
 const Name = styled.span`
   color: ${(props) => props.theme.colors.main};

@@ -21,7 +21,6 @@ const Wrapper = styled.form`
     );
   border-bottom: none;
   box-shadow: inset 0 -0.125rem 0 0 ${(props) => props.theme.colors.main};
-  overflow: hidden;
 
   ${(props) => props.theme.mq.medium} {
     max-width: 100%;
@@ -70,6 +69,10 @@ export default function SearchBar(props) {
         setSearch={setSearch}
         setFocus={setFocus}
         placeholder={props.placeholder}
+        handlePlaceSelection={(place) => {
+          props.handlePlaceSelection(place)
+          setFocus(false)
+        }}
       />
       {data && focus && (
         <Suggestions

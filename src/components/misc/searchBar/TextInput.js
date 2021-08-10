@@ -47,15 +47,16 @@ const Invisible = styled.div`
 const Visible = styled.div`
   position: relative;
   margin-top: 0.1em;
-  padding-left: 0.625em;
+  padding-left: 1em;
+  font-size: 0.875rem;
 
   &:before {
     content: '';
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translateY(-150%);
-    width: 0.375em;
+    left: 0.1em;
+    transform: translateY(0);
+    width: 0.5em;
     height: 1px;
     background-color: ${(props) => props.theme.colors.text};
   }
@@ -85,6 +86,7 @@ export default React.forwardRef(function TextInput(props, ref) {
       />
       <Geoloc
         visible={!(props.suggestion && props.suggestionVisible && props.search)}
+        handlePlaceSelection={props.handlePlaceSelection}
       />
     </Wrapper>
   )

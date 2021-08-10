@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components'
 
 import { usePosition } from 'src/utils/api'
 import MagicLink from 'src/components/base/MagicLink'
+import Alert from 'src/components/base/Alert'
 
 const fetching = keyframes`
   from {
@@ -40,19 +41,13 @@ const Wrapper = styled.button`
     }
   }
 `
-const Error = styled.div`
+const Error = styled(Alert)`
   position: fixed;
-  left: 50%;
-  transform: translate(-50%, 0.5em);
-  max-width: 12.5em;
-  padding: 0.5em 1.25em;
-  background: ${(props) => props.theme.colors.error};
-  border-radius: 0.75em;
-  box-shadow: 0 0.125em 0.25em #e3e8f2;
-
+  z-index: -1;
+  left: 0;
+  right: 0;
   p {
     margin: 0;
-    text-align: center;
   }
 `
 export default function Submit(props) {
@@ -63,9 +58,14 @@ export default function Submit(props) {
   const { data, isFetching, isError } = usePosition(position)
 
   useEffect(() => {
-    if (data && data[0]) {
+    if (data) {
+      if (data[0]) {
+        props.handlePlaceSelection(data[0])
+      } else {
+        setError(true)
+      }
     }
-  }, [data])
+  }, [data, props.handlePlaceSelection])
 
   const [error, setError] = useState(false)
 
@@ -90,8 +90,8 @@ export default function Submit(props) {
           <path d='M23 11H20.941C20.478 6.8355 17.1645 3.522 13 3.059V1C13 0.448 12.552 0 12 0C11.448 0 11 0.448 11 1V3.059C6.8355 3.522 3.522 6.8355 3.059 11H1C0.448 11 0 11.448 0 12C0 12.552 0.448 13 1 13H3.059C3.522 17.1645 6.8355 20.478 11 20.941V23C11 23.552 11.448 24 12 24C12.552 24 13 23.552 13 23V20.941C17.1645 20.478 20.478 17.1645 20.941 13H23C23.552 13 24 12.552 24 12C24 11.448 23.552 11 23 11ZM12 19C8.14 19 5 15.86 5 12C5 8.14 8.14 5 12 5C15.86 5 19 8.14 19 12C19 15.86 15.86 19 12 19Z' />
         </svg>
       </Wrapper>
-      {(isError || error) && (
-        <Error>
+      {(isError || error || data === []) && (
+        <Error error>
           {error.code === 1 ? (
             <p>
               Il semblerait que vous n'avez pas activé la géolocalisation sur

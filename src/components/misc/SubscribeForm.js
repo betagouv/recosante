@@ -43,7 +43,8 @@ const Submit = styled(Button)`
 const StyledAlert = styled(Alert)`
   position: absolute;
   top: 100%;
-  width: 100%;
+  left: 0;
+  right: 0;
 `
 export default function SubscribeForm() {
   const [email, setEmail] = useState('')

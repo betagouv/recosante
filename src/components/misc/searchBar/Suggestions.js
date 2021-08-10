@@ -5,7 +5,9 @@ import Highlighter from 'react-highlight-words'
 
 const Wrapper = styled.div`
   max-height: 21em;
+  margin-bottom: 0.125rem;
   overflow-y: scroll;
+  background-color: ${(props) => props.theme.colors.background};
 `
 const Suggestion = styled.div`
   padding: 0.75em 0.75em 0.75em 2em;

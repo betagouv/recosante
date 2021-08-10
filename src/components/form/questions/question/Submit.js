@@ -30,7 +30,7 @@ const Wrapper = styled.div`
     display: none;
     height: 0.25rem;
     background-color: ${(props) => props.theme.colors.main};
-    opacity: 0;
+    opacity: 0.2;
 
     ${(props) => props.theme.mq.medium} {
       display: block;
@@ -46,7 +46,7 @@ const Wrapper = styled.div`
     display: none;
     height: 0.25rem;
     background-color: ${(props) => props.theme.colors.main};
-    transform: scaleX(${(props) => props.current / props.total});
+    transform: scaleX(${(props) => props.percent});
     transform-origin: left;
     transition: transform 600ms ease-in-out;
 
@@ -57,6 +57,8 @@ const Wrapper = styled.div`
 `
 const Previous = styled(Button)`
   display: none;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  pointer-events: ${(props) => (props.visible ? 'inherit' : 'none')};
   ${(props) => props.theme.mq.medium} {
     display: block;
   }
@@ -67,8 +69,8 @@ export default function Submit(props) {
 
   const steps = [
     'ville_insee',
-    //'frequence',
-    //'notifications',
+    'frequence',
+    'notifications',
     'population',
     'activites',
     'enfants',
@@ -78,12 +80,17 @@ export default function Submit(props) {
     'connaissance_produit',
   ]
   return (
-    <Wrapper>
+    <Wrapper percent={steps.indexOf(current) / steps.length}>
       <Previous
         onClick={(e) => {
           e.preventDefault()
-          setCurrent(steps[steps.indexOf(current) - 1])
+          setCurrent(
+            steps.indexOf(current) > 0
+              ? steps[steps.indexOf(current) - 1]
+              : steps[0]
+          )
         }}
+        visible={steps.indexOf(current) > 0}
         type='button'
         hollow
         noExpand

@@ -19,6 +19,11 @@ const Background = styled.div`
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
   transform: translateY(${(props) => (props.isOnScreen ? 0 : '9rem')});
   transition: transform 600ms ease-out, opacity 600ms;
+
+  ${(props) => props.theme.mq.small} {
+    transform: none;
+    opacity: 1;
+  }
 `
 const Tablet = styled.div`
   position: absolute !important;
@@ -29,6 +34,11 @@ const Tablet = styled.div`
   transform: translateY(${(props) => (props.isOnScreen ? 0 : '12rem')});
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
   transition: transform 600ms ease-out, opacity 600ms;
+
+  ${(props) => props.theme.mq.small} {
+    transform: none;
+    opacity: 1;
+  }
 `
 export default function Mockup(props) {
   return (
