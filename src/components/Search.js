@@ -10,7 +10,7 @@ import Suggestions from './search/Suggestions'
 const Wrapper = styled.div`
   position: relative;
   margin: 0 auto 10rem;
-  padding: 10.75rem 0 6.5rem;
+  padding: 0 0 6.5rem;
 
   ${(props) => props.theme.mq.medium} {
     min-height: 100vh;
@@ -26,6 +26,10 @@ const Wrapper = styled.div`
 const StyledSection = styled(Section)`
   position: relative;
   margin: 0 auto;
+
+  ${(props) => props.theme.mq.medium} {
+    padding: 0;
+  }
 `
 const MainTitle = styled.h1`
   ${(props) => props.theme.mq.medium} {
@@ -44,7 +48,7 @@ export default function Search(props) {
   return (
     <Wrapper>
       <Background />
-      <StyledSection>
+      <StyledSection first>
         {props.main ? (
           <MainTitle>
             Découvrez
