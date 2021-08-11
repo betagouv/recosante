@@ -128,6 +128,7 @@ export default function Search() {
         <MobileSearchBar
           placeholder='Entrez votre ville'
           handlePlaceSelection={(place) => {
+            setOpen(false)
             navigate(
               `/place/${place.code}/${place.nom
                 .toLowerCase()
