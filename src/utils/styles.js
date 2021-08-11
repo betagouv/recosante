@@ -104,7 +104,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    margin-bottom: 2em;
+    margin-bottom: 1.75em;
     font-size: 1.125rem;
 
     ${(props) => props.theme.mq.small} {

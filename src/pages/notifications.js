@@ -29,6 +29,7 @@ const Content = styled.div`
   }
   p {
     max-width: 35.5rem;
+    margin-bottom: 1em;
     font-size: 1.25rem;
 
     ${(props) => props.theme.mq.medium} {

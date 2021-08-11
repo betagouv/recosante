@@ -34,10 +34,12 @@ const Arrow = styled.svg`
 `
 const Introduction = styled.p`
   font-weight: 300;
+  margin-bottom: 1em;
 `
 const Text = styled.p`
   margin-bottom: 1.5rem;
   font-weight: 300;
+  margin-bottom: 1em;
 `
 const LearnMore = styled.div`
   position: relative;
