@@ -18,9 +18,11 @@ export default function Radon(props) {
           </Card.Info>
           <Chart data={props.data} />
         </Card.Header>
-        <Card.Recommandation
-          intro={`Le radon est un gaz radioactif naturel présent dans le sol et les roches. Le potentiel radon fournit un niveau de risque relatif à l’échelle d’une commune. Il ne présage en rien des concentrations présentes dans votre habitation. Seul un mesurage vous permettra de savoir si du radon est présent dans votre habitation.`}
-        />
+        <Card.Mobile>
+          <Card.Recommandation
+            intro={`Le radon est un gaz radioactif naturel présent dans le sol et les roches. Le potentiel radon fournit un niveau de risque relatif à l’échelle d’une commune. Il ne présage en rien des concentrations présentes dans votre habitation. Seul un mesurage vous permettra de savoir si du radon est présent dans votre habitation.`}
+          />
+        </Card.Mobile>
       </Card.Content>
       {props.data && (
         <Card.Source>

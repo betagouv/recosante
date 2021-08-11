@@ -14,18 +14,21 @@ const Wrapper = styled.form`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 29.25rem;
+  width: ${(props) => (props.dashboard ? '100%' : '29.25rem')};
   margin: 0 auto;
   padding-top: 1.5rem;
 
   ${(props) => props.theme.mq.medium} {
-    width: 31rem;
+    width: ${(props) => (props.dashboard ? '100%' : '31rem')};
   }
   ${(props) => props.theme.mq.small} {
     width: auto;
     margin: 0 -1rem;
     padding: 2rem 1rem;
-    background: linear-gradient(90deg, #d1edff 0%, #f8fafd 50%, #d6eeff 100%);
+    background: ${(props) =>
+      props.dashboard
+        ? 'none'
+        : 'linear-gradient(90deg, #d1edff 0%, #f8fafd 50%, #d6eeff 100%)'};
   }
 `
 const Optin = styled(Checkbox)`
@@ -46,7 +49,7 @@ const StyledAlert = styled(Alert)`
   left: 0;
   right: 0;
 `
-export default function SubscribeForm() {
+export default function SubscribeForm(props) {
   const [email, setEmail] = useState('')
   const [optin, setOptin] = useState(false)
   const [error, setError] = useState(null)
@@ -60,6 +63,7 @@ export default function SubscribeForm() {
 
   return (
     <Wrapper
+      dashboard={props.dashboard}
       onSubmit={(e) => {
         e.preventDefault()
 

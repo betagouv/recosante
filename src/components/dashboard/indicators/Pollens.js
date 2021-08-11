@@ -26,26 +26,30 @@ export default function AirQualityIndex(props) {
           </Card.Info>
           <Chart data={props.data} />
         </Card.Header>
-        <Card.Details>
-          <Details data={props.data} open={true} />
-        </Card.Details>
-        <Card.Recommandation
-          intro={`En cas de gêne répétitive et saisonnière liée aux symptômes ci-dessous, et dans un contexte de fatigue inhabituelle, vous souffrez peut être d’une allergie aux pollens. Prendre conseil auprès d’un professionnel.`}
-        >
-          ℹ️ Les symptômes en cas d’allergie aux pollens sont :
-          <ul>
-            <li>crises d’éternuement ;</li>
-            <li>nez qui gratte, parfois bouché ou qui coule clair ;</li>
-            <li>yeux rouges, qui démangent ou qui larmoient ;</li>
-            <li>
-              en association éventuelle avec une respiration sifflante ou une
-              toux.
-            </li>
-          </ul>
-          💡L’allergie peut bénéficier de mesures de prévention et de soins.
-          Pour cela demandez conseil à votre pharmacien ou consultez votre
-          médecin.
-        </Card.Recommandation>
+        <Card.Mobile>
+          <Card.Details>
+            <Details data={props.data} open={true} />
+          </Card.Details>
+          <Card.Recommandation
+            intro={`En cas de gêne répétitive et saisonnière liée aux symptômes ci-dessous, et dans un contexte de fatigue inhabituelle, vous souffrez peut être d’une allergie aux pollens. Prendre conseil auprès d’un professionnel.`}
+          >
+            <p>ℹ️ Les symptômes en cas d’allergie aux pollens sont :</p>
+            <ul>
+              <li>crises d’éternuement ;</li>
+              <li>nez qui gratte, parfois bouché ou qui coule clair ;</li>
+              <li>yeux rouges, qui démangent ou qui larmoient ;</li>
+              <li>
+                en association éventuelle avec une respiration sifflante ou une
+                toux.
+              </li>
+            </ul>
+            <p>
+              💡L’allergie peut bénéficier de mesures de prévention et de soins.
+              Pour cela demandez conseil à votre pharmacien ou consultez votre
+              médecin.
+            </p>
+          </Card.Recommandation>
+        </Card.Mobile>
       </Card.Content>
       {props.data && (
         <Card.Source>

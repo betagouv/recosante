@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+import Mobile from './card/Mobile'
 import Recommandation from './card/Recommandation'
 
 const Card = styled.div`
@@ -54,6 +55,7 @@ Card.Value = styled.div`
     text-align: center;
   }
 `
+Card.Mobile = Mobile
 Card.Details = styled.div`
   margin-bottom: 2rem;
 `

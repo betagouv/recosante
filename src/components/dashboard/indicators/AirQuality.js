@@ -16,17 +16,21 @@ export default function AirQuality(props) {
           </Card.Info>
           <Chart data={props.data} />
         </Card.Header>
-        <Card.Details>
-          <Details data={props.data} />
-        </Card.Details>
-        <Card.Recommandation
-          intro={`Même lorsque la qualité de l'air est dégradé comme aujourd’hui, il est nécessaire d'aérer son logement pour faire circuler l'air.`}
-        >
-          ℹ️ Ouvrir les fenêtres au moins 10 minutes, de préférence tôt le matin
-          et tard le soir, en dehors des heures de pointe. Les heures de pointe
-          où les taux de pollution sont les plus élevés sont généralement entre
-          7h-10h et entre 17h-20h.
-        </Card.Recommandation>
+        <Card.Mobile>
+          <Card.Details>
+            <Details data={props.data} />
+          </Card.Details>
+          <Card.Recommandation
+            intro={`Même lorsque la qualité de l'air est dégradé comme aujourd’hui, il est nécessaire d'aérer son logement pour faire circuler l'air.`}
+          >
+            <p>
+              ℹ️ Ouvrir les fenêtres au moins 10 minutes, de préférence tôt le
+              matin et tard le soir, en dehors des heures de pointe. Les heures
+              de pointe où les taux de pollution sont les plus élevés sont
+              généralement entre 7h-10h et entre 17h-20h.
+            </p>
+          </Card.Recommandation>
+        </Card.Mobile>
       </Card.Content>
       {props.data && (
         <Card.Source>

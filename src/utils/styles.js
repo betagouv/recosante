@@ -103,7 +103,7 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  p {
+  p, ul {
     margin-bottom: 1.75em;
     font-size: 1.125rem;
 
