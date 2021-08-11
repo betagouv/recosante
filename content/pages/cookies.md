@@ -1,14 +1,17 @@
-# Suivi des audiences et cookies
+---
+title: Cookies et mesure d’audience
+---
 
-
-### Cookies
+## Cookies
 
 Ce site dépose un petit fichier texte (un « cookie ») sur votre ordinateur lorsque vous le consultez. Cela nous permet de mesurer le nombre de visites et de comprendre quelles sont les pages les plus consultées.
 
 Nous n'affichons pas de banière de consentement aux cookies car nos outils de suivi d'audience sont correctement configurés pour respecter la vie privée des utilisateurs. Certains cookies sont dispensés du recueil préalable de votre consentement dans la mesure où ils sont strictement nécessaires à la fourniture du service. Les traceurs ont vocation à être conservés sur le poste informatique de l'internaute pour une durée allant jusqu'à 13 mois.
 
-#### Mesure d’audience
-Certains cookies permettent d’établir des mesures statistiques de fréquentation et d’utilisation du site pouvant être utilisées à des fins de suivi et d’amélioration du service :
+## Mesure d’audience
+
+Certains cookies permettent d’établir des mesures statistiques de fréquentation et d’utilisation du site pouvant être utilisées à des fins de suivi et d’amélioration du service&#8239;:
+
 - Les données collectées ne sont pas recoupées avec d’autres traitements.
 - Le cookie déposé sert uniquement à la production de statistiques anonymes.
 - Le cookie ne permet pas de suivre la navigation de l’internaute sur d’autres sites.

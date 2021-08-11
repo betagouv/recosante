@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Section = styled.section`
   position: relative;
-  width: ${(props) => (props.small ? '35.5rem' : '73rem')};
+  width: ${(props) => (props.small ? 35.5 : props.medium ? 48 : 73)}rem;
   max-width: 100%;
   margin: 0 auto 10rem;
   padding-top: ${(props) => (props.first ? '12rem' : 0)};
@@ -14,14 +14,6 @@ const Section = styled.section`
     width: 100%;
     margin-bottom: 5rem;
     padding-top: ${(props) => (props.first ? '9rem' : 0)};
-  }
-`
-
-Section.Title = styled.h2`
-  font-size: 2.5em;
-  text-align: ${(props) => (props.center ? 'center' : 'left')};
-  ${(props) => props.theme.mq.small} {
-    font-size: 1.5em;
   }
 `
 Section.Subtitle = styled.h3`

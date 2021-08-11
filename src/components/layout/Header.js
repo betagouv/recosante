@@ -5,15 +5,11 @@ import Logos from './header/Logos'
 import Search from './header/Search'
 
 const Wrapper = styled.header`
-  position: fixed;
+  position: absolute;
   width: 100%;
   padding: 0 1rem;
   z-index: 1000;
   background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
-
-  ${(props) => props.theme.mq.medium} {
-    position: absolute;
-  }
 `
 const Content = styled.div`
   display: flex;

@@ -11,6 +11,8 @@ const Wrapper = styled.div`
 const Detail = styled.div`
   font-size: 0.875rem;
   font-weight: 300;
+  color: ${(props) => props.theme.colors[props.link ? 'main' : 'text']};
+  text-decoration: ${(props) => (props.link ? 'underline' : 'none')};
 `
 const StyledCheckbox = styled(Checkbox)`
   margin-left: 1.5rem;
@@ -39,6 +41,7 @@ export default function Answers(props) {
             {option.label}
             {option.detail && (
               <Detail
+                link={option.detail.onClick}
                 onClick={option.detail.onClick}
                 dangerouslySetInnerHTML={{
                   __html: option.detail.label,

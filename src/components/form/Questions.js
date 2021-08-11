@@ -33,8 +33,8 @@ export default function Questions() {
     if (data) {
       const steps = [
         'ville_insee',
-        //'frequence',
-        //'notifications',
+        'frequence',
+        'notifications',
         'population',
         'activites',
         'enfants',

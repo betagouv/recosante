@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
+import ModalContext from 'src/utils/ModalContext'
 import Question from '../Question'
 
 export default function Notifications() {
+  const { setModal } = useContext(ModalContext)
+
   const name = 'notifications'
   const label = [
     'Je veux aussi recevoir les indicateurs sous forme de notifications web quotidiennes',
@@ -16,7 +19,10 @@ export default function Notifications() {
       exclusive: true,
       detail: {
         label: `qu'est ce que c'est ?`,
-        onClick: () => console.log('click'),
+        onClick: (e) => {
+          e.stopPropagation()
+          setModal('notifications')
+        },
       },
     },
     {

@@ -3,15 +3,10 @@ import React, { useState } from 'react'
 import ModalContext from 'src/utils/ModalContext'
 
 export default function ModalProvider(props) {
-  const [sensible, setSensible] = useState(false)
+  const [modal, setModal] = useState(false)
 
   return (
-    <ModalContext.Provider
-      value={{
-        sensible,
-        setSensible,
-      }}
-    >
+    <ModalContext.Provider value={{ modal, setModal }}>
       {props.children}
     </ModalContext.Provider>
   )

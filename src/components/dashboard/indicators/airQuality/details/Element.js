@@ -35,9 +35,9 @@ const Superscript = styled.sup`
   color: ${(props) => props.theme.colors.main};
 `
 export default function Element(props) {
-  const { setElement } = useContext(ModalContext)
+  const { setModal } = useContext(ModalContext)
   return props.value ? (
-    <Wrapper index={props.value.indice} onClick={() => setElement(props.label)}>
+    <Wrapper index={props.value.indice} onClick={() => setModal(props.label)}>
       {props.label}
       <Superscript> (?)</Superscript>
     </Wrapper>

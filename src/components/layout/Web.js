@@ -9,7 +9,7 @@ import ModalProvider from 'src/components/providers/ModalProvider'
 import Seo from './web/SEO'
 import Header from './Header'
 import Footer from './Footer'
-import SensibleModal from 'src/components/modals/SensibleModal'
+import WrapperModal from 'src/components/modals/WrapperModal'
 
 const queryClient = new QueryClient()
 
@@ -37,7 +37,7 @@ export default function Web(props) {
               <Content>{props.children}</Content>
             </Fullscreen>
             <Footer />
-            <SensibleModal />
+            <WrapperModal />
           </ModalProvider>
         </StyleProvider>
       </QueryClientProvider>

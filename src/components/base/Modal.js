@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   position: fixed;
-  z-index: 900;
+  z-index: 1900;
   top: 0;
   left: 0;
   width: 100%;
@@ -28,12 +28,17 @@ const Content = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: ${(props) => props.width || '30em'};
+  width: ${(props) => props.width || '35.5rem'};
   max-width: 90vw;
   max-height: 90vh;
   margin: 2rem;
-  background-color: ${(props) => props.theme.colors.background};
-  box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
+
+  background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
+  border: 1px solid rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
+  border-radius: 1.5rem;
+  box-shadow: 0.25rem 0.25rem 1rem 0
+    rgba(${(props) => props.theme.colors.backgroundAlpha}, 0.4);
+
   opacity: ${(props) => (props.open ? 1 : 0)};
   transform: scale(${(props) => (props.open ? 1 : 0.7)})
     translateY(${(props) => (props.open ? 0 : '10em')});
@@ -52,7 +57,11 @@ const ButtonClose = styled.div`
 const Scroll = styled.div`
   height: 100%;
   overflow-y: scroll;
-  padding: 2rem;
+  padding: 2rem 2rem 1.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    padding: 1.5rem;
+  }
 `
 export default function Modal(props) {
   return (

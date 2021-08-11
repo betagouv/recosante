@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
+import ModalContext from 'src/utils/ModalContext'
 import Question from '../Question'
 
 export default function Population(props) {
+  const { setModal } = useContext(ModalContext)
+
   const name = 'population'
   const label = [
     'Je souhaite recevoir des informations destinées ',
@@ -14,7 +17,10 @@ export default function Population(props) {
       label: 'Aux personnes vulnérables ou sensibles à la qualité de l’air',
       detail: {
         label: `Qu'est ce qu'une personne sensible<br />à la qualité de l'air ?`,
-        onClick: () => console.log('click'),
+        onClick: (e) => {
+          e.stopPropagation()
+          setModal('sensible')
+        },
       },
     },
     {
@@ -27,5 +33,6 @@ export default function Population(props) {
       answer: 'Aux personnes vulnérables, allergiques ou sensibles',
     },
   ]
+
   return <Question name={name} label={label} options={options} />
 }

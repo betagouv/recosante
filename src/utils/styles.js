@@ -86,24 +86,25 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
   h2 {
-    margin-bottom: ${(props) => (props.large ? 2 : 1.5)}rem;
+    margin-bottom: ${(props) => (props.large ? 2 : 1)}rem;
     font-size: ${(props) => (props.large ? 4 : 2.5)}rem;
 
     ${(props) => props.theme.mq.small} {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       font-size: ${(props) => (props.large ? 2 : 1.5)}rem;
     }
   }
   h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
 
     ${(props) => props.theme.mq.small} {
-      font-size: 1.125rem;
+      font-size: 1.5rem;
     }
   }
 
   p {
+    margin-bottom: 2em;
     font-size: 1.125rem;
 
     ${(props) => props.theme.mq.small} {
