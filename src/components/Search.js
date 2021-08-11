@@ -19,7 +19,7 @@ const Wrapper = styled.div`
     align-items: center;
     padding: 0;
   }
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     margin-bottom: 5rem;
   }
 `

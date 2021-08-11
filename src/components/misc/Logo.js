@@ -5,8 +5,14 @@ const hover = keyframes`
   from {
     opacity: 1;
   }
+  1% {
+    opacity: 0;
+  }
   50% {
     opacity: 0;
+  }
+  51% {
+    opacity: 1;
   }
   to {
     opacity: 1;

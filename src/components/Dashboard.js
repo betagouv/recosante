@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   margin: 0 auto 10rem;
   padding: 0 0 6.5rem;
 
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     margin-bottom: 5rem;
   }
 `
