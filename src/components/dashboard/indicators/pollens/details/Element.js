@@ -57,6 +57,7 @@ const Wrapper = styled.div`
 `
 export default function Element(props) {
   const labels = {
+    ambroisies: 'Ambroisies',
     cypres: 'Cyprès',
     noisetier: 'Noisetier',
     aulne: 'Aulne',

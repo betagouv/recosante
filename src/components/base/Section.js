@@ -16,6 +16,7 @@ const Section = styled.section`
     padding-top: ${(props) => (props.first ? '9rem' : 0)};
   }
 `
+Section.Title = styled.h2``
 Section.Subtitle = styled.h3`
   margin-top: -1rem;
   font-size: 1.5em;

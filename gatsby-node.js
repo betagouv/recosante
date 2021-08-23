@@ -32,12 +32,10 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
   })
 
   const places = axios
-    .get(
-      'https://geo.api.gouv.fr/communes/75056?fields=departement,codesPostaux'
-    )
+    .get('https://geo.api.gouv.fr/communes?fields=departement,codesPostaux')
     .then((res) => res.data)
     .then((res) =>
-      [res].forEach((place) => {
+      res.forEach((place) => {
         createPage({
           path: `/place/${place.code}/${place.nom
             .toLowerCase()

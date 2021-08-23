@@ -3,7 +3,7 @@ import React from 'react'
 import Question from '../Question'
 
 export default function Frequency() {
-  const name = 'frequence'
+  const name = 'recommandations'
   const label = ['Je veux recevoir une recommandation par mail ']
   const options = [
     {
