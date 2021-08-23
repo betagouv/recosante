@@ -21,7 +21,7 @@ export default function Circle(props) {
       cx='7'
       cy='66'
       r='15.6471'
-      stroke='#F4F7FC'
+      stroke='#fff'
       strokeWidth='3'
     />
   )
