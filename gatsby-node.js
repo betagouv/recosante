@@ -36,16 +36,17 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
     .then((res) => res.data)
     .then((res) =>
       res.forEach((place) => {
-        createPage({
-          path: `/place/${place.code}/${place.nom
-            .toLowerCase()
-            .replace(' ', '-')
-            .replace(`'`, '-')
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '')}/`,
-          component: require.resolve('./src/templates/place.js'),
-          context: { place },
-        })
+        place.departement &&
+          createPage({
+            path: `/place/${place.code}/${place.nom
+              .toLowerCase()
+              .replace(' ', '-')
+              .replace(`'`, '-')
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '')}/`,
+            component: require.resolve('./src/templates/place.js'),
+            context: { place },
+          })
       })
     )
 
