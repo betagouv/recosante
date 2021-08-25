@@ -4,7 +4,7 @@ import Question from '../Question'
 
 export default function Frequency() {
   const name = 'recommandations'
-  const label = ['Je veux recevoir une recommandation par mail ']
+  const label = ['Je veux recevoir une recommandation par email ']
   const options = [
     {
       value: 'hebdomadaire',

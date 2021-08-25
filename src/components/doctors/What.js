@@ -1,93 +1,71 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { GatsbyImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import useOnScreen from 'src/hooks/useOnScreen'
-import Block from 'src/components/misc/Block'
+import Section from 'src/components/base/Section'
 import Button from 'src/components/base/Button'
+import Mockup from 'src/components/newsletter/Mockup'
 
-const Wrapper = styled.div`
-  position: relative;
+const StyledSection = styled(Section)`
   display: flex;
-  justify-content: flex-end;
-  margin: -9.6rem -0.5rem 5.5rem;
-  font-size: 1.125rem;
 
   ${(props) => props.theme.mq.medium} {
-    flex-direction: column-reverse;
-    align-items: center;
-    margin: 0 0 2.5rem;
-    font-size: 1rem;
+    flex-direction: column;
   }
 `
-const StyledBlock = styled(Block)`
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  right: calc(50% - 5.25rem);
-  transform: translateY(-50%);
-  width: 42.75rem;
-  opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
-  transition: opacity 1200ms;
-`
-const StyledImg = styled(GatsbyImage)`
-  width: calc(50vw + 12rem);
-  height: 100vh;
-  min-height: 46vw;
+const Content = styled.div`
+  width: 41.75rem;
+  margin-right: 2rem;
 
   ${(props) => props.theme.mq.medium} {
-    width: 36.5rem;
-    height: 30rem;
-    margin-bottom: 2rem;
-    min-height: auto;
+    width: auto;
+    margin: 0 0 2rem;
   }
-
   ${(props) => props.theme.mq.small} {
-    display: none;
+    margin: 0 0 1rem;
+  }
+
+  h1 {
+    font-size: 3rem;
   }
 `
-export default function What() {
+const MockupWrapper = styled.div`
+  flex: 1;
+  position: relative;
+
+  ${(props) => props.theme.mq.medium} {
+    min-height: 40rem;
+    overflow: hidden;
+    margin: -3rem 0;
+  }
+  ${(props) => props.theme.mq.small} {
+    min-height: 100vw;
+    overflow: hidden;
+    margin: -10vw 0;
+  }
+`
+export default function What(props) {
   const data = useStaticQuery(
     graphql`
       query {
-        content: mdx(slug: { eq: "medecins-introduction" }) {
+        mdx(slug: { eq: "medecins-introduction" }) {
           body
-        }
-        image: file(relativePath: { eq: "medecins-introduction.jpg" }) {
-          childrenImageSharp {
-            fluid(maxWidth: 2000) {
-              ...GatsbyImageSharpFluid
-            }
-          }
         }
       }
     `
   )
 
   const ref = useRef()
-  const isOnScreen = useOnScreen(ref, '-100px', 0)
+
+  const isOnScreen = useOnScreen(ref, '0px', 0.7)
 
   return (
-    <Wrapper>
-      <StyledBlock ref={ref} isOnScreen={isOnScreen}>
-        <MDXRenderer>{data.content.body}</MDXRenderer>
-        <Button.Wrapper>
-          <Button
-            to='/'
-            onClick={() =>
-              window._paq &&
-              window._paq.push([
-                'trackEvent',
-                'Doctors',
-                'Navigate',
-                'Appointment',
-              ])
-            }
-          >
-            Tester Recosanté
-          </Button>
+    <StyledSection first>
+      <Content ref={ref}>
+        <MDXRenderer>{(props.data || data).mdx.body}</MDXRenderer>
+        <Button.Wrapper right>
           <Button
             hollow
             to='https://www.vyte.in/recosante/rendez-vous-professionnelsante'
@@ -103,12 +81,25 @@ export default function What() {
           >
             Prendre rendez-vous
           </Button>
+          <Button
+            to='/'
+            onClick={() =>
+              window._paq &&
+              window._paq.push([
+                'trackEvent',
+                'Doctors',
+                'Navigate',
+                'Appointment',
+              ])
+            }
+          >
+            Tester Recosanté
+          </Button>
         </Button.Wrapper>
-      </StyledBlock>
-      <StyledImg
-        imgStyle={{ objectFit: 'cover' }}
-        fluid={data.image.childrenImageSharp[0].fluid}
-      />
-    </Wrapper>
+      </Content>
+      <MockupWrapper>
+        <Mockup isOnScreen={isOnScreen} />
+      </MockupWrapper>
+    </StyledSection>
   )
 }

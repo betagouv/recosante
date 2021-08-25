@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
@@ -26,7 +26,7 @@ const StyledBlock = styled(Block)`
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
   transition: opacity 1200ms;
 `
-const StyledImg = styled(GatsbyImage)`
+const StyledImg = styled.div`
   width: 49rem;
 
   ${(props) => props.theme.mq.medium} {
@@ -41,20 +41,6 @@ export default function How() {
         content: mdx(slug: { eq: "medecins-comment" }) {
           body
         }
-        image: file(relativePath: { eq: "medecins-comment.jpg" }) {
-          childrenImageSharp {
-            fluid(maxWidth: 2000) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        kit: file(
-          relativePath: {
-            eq: "Recosante_Kit.communication.professionnel.de.sante.zip"
-          }
-        ) {
-          publicURL
-        }
       }
     `
   )
@@ -63,11 +49,13 @@ export default function How() {
   const isOnScreen = useOnScreen(ref, '-100px', 0)
 
   return (
-    <StyledSection large>
+    <StyledSection>
       <StyledBlock ref={ref} isOnScreen={isOnScreen}>
         <MDXRenderer>{data.content.body}</MDXRenderer>
       </StyledBlock>
-      <StyledImg fluid={data.image.childrenImageSharp[0].fluid} />
+      <StyledImg>
+        <StaticImage src={'./how/medecins-comment.jpg'} alt='Comment' />
+      </StyledImg>
     </StyledSection>
   )
 }

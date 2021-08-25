@@ -12,7 +12,6 @@ const StyledSection = styled(Section)`
   transition: opacity 600ms, transform 900ms ease-out;
 
   ${(props) => props.theme.mq.small} {
-    margin-bottom: 5rem;
     transform: none;
     opacity: 1;
   }

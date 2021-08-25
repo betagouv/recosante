@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
@@ -23,7 +23,7 @@ const StyledBlock = styled(Block)`
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};
   transition: opacity 1200ms;
 `
-const StyledImg = styled(GatsbyImage)`
+const StyledImg = styled.div`
   position: absolute !important;
   top: 0;
   left: 50%;
@@ -55,13 +55,6 @@ export default function Why() {
         second: mdx(slug: { eq: "medecins-naissance-2" }) {
           body
         }
-        image: file(relativePath: { eq: "medecins-naissance.jpg" }) {
-          childrenImageSharp {
-            fluid(maxWidth: 2000) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
       }
     `
   )
@@ -77,10 +70,9 @@ export default function Why() {
       <StyledBlock index={1} ref={ref1} isOnScreen={isOnScreen1}>
         <MDXRenderer>{data.first.body}</MDXRenderer>
       </StyledBlock>
-      <StyledImg
-        imgStyle={{ objectFit: 'cover' }}
-        fluid={data.image.childrenImageSharp[0].fluid}
-      />
+      <StyledImg>
+        <StaticImage src={'./why/medecins-naissance.jpg'} alt='Pourquoi' />
+      </StyledImg>
       <StyledBlock index={2} ref={ref2} isOnScreen={isOnScreen2}>
         <MDXRenderer>{data.second.body}</MDXRenderer>
       </StyledBlock>

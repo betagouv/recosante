@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { StaticImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
@@ -65,7 +65,7 @@ const StyledBlock = styled(Block)`
     }
   }
 `
-const StyledImg = styled(GatsbyImage)`
+const StyledImg = styled.div`
   width: 49rem;
 
   ${(props) => props.theme.mq.medium} {
@@ -79,13 +79,6 @@ export default function You() {
       query {
         content: mdx(slug: { eq: "medecins-vous" }) {
           body
-        }
-        image: file(relativePath: { eq: "medecins-vous.jpg" }) {
-          childrenImageSharp {
-            fluid(maxWidth: 2000) {
-              ...GatsbyImageSharpFluid
-            }
-          }
         }
       }
     `
@@ -109,7 +102,9 @@ export default function You() {
           </Button>
         </Button.Wrapper>
       </StyledBlock>
-      <StyledImg fluid={data.image.childrenImageSharp[0].fluid} />
+      <StyledImg>
+        <StaticImage src={'./you/medecins-vous.jpg'} alt='Vous' />
+      </StyledImg>
     </StyledSection>
   )
 }

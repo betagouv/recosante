@@ -35,7 +35,12 @@ export default function Step(props) {
               )
                 ? props.options.find((option) => option.value === answer)
                     .answer ||
-                  props.options.find((option) => option.value === answer).label
+                  props.options.find((option) => option.value === answer)
+                    .answer === ''
+                  ? props.options.find((option) => option.value === answer)
+                      .answer
+                  : props.options.find((option) => option.value === answer)
+                      .label
                 : ''
               return index === 0
                 ? sentence + (index === answers.length - 1 ? '.' : '')
