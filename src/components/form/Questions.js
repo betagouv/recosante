@@ -32,6 +32,7 @@ export default function Questions() {
   useEffect(() => {
     if (data) {
       const steps = [
+        'mail',
         'ville_insee',
         'recommandations',
         'notifications',

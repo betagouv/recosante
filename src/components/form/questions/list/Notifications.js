@@ -13,10 +13,9 @@ export default function Notifications() {
   ]
   const options = [
     {
-      value: 'oui',
+      value: 'quotidien',
       label: 'Oui',
       answer: '',
-      exclusive: true,
       detail: {
         label: `qu'est ce que c'est ?`,
         onClick: (e) => {
@@ -26,10 +25,9 @@ export default function Notifications() {
       },
     },
     {
-      value: 'non',
+      value: 'aucun',
       label: 'Non',
       answer: '',
-      exclusive: true,
     },
   ]
   return <Question name={name} label={label} options={options} />

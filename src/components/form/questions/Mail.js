@@ -23,7 +23,7 @@ export default function Mail() {
 
   const [answer, setAnswer] = useState([])
   useEffect(() => {
-    setAnswer(data && (data.email ? data.email : 'test@test.com'))
+    setAnswer(data && (data.mail ? data.mail : ''))
   }, [data])
 
   const [current, setCurrent] = useQueryParam('step', StringParam)
@@ -32,14 +32,14 @@ export default function Mail() {
     <Wrapper
       onSubmit={(e) => {
         e.preventDefault()
-        mutation.mutate({ email: answer })
+        mutation.mutate({ mail: answer })
       }}
       visible={true}
     >
-      {current !== 'email' && (
-        <Email onClick={() => setCurrent('email')}>{answer}</Email>
+      {current !== 'mail' && (
+        <Email onClick={() => setCurrent('mail')}>{answer}</Email>
       )}
-      <Wrapper.Response visible={current === 'email'}>
+      <Wrapper.Response visible={current === 'mail'}>
         <StyledTextInput
           name={'email'}
           value={answer}
