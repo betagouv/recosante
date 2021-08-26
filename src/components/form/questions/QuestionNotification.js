@@ -4,6 +4,7 @@ import { useQueryParam } from 'use-query-params'
 
 import useSentence from 'src/hooks/useSentence'
 import { useProfile, useProfileMutation } from 'src/utils/api'
+import Alert from 'src/components/base/Alert'
 import Wrapper from './question/Wrapper'
 import Value from './question/Value'
 import Answers from './question/Answers'
@@ -30,33 +31,32 @@ export default function QuestionNotification(props) {
   const [current, setCurrent] = useQueryParam('step')
   const isCurrent = current === props.name
 
-  function subscribeUserToPush() {
-    return navigator.serviceWorker
-      .register('/sw.js')
-      .then(function (registration) {
-        const subscribeOptions = {
-          userVisibleOnly: true,
-          applicationServerKey:
-            'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U',
-        }
-
-        return registration.pushManager.subscribe(subscribeOptions)
-      })
-      .then(function (pushSubscription) {
-        console.log(
-          'Received PushSubscription: ',
-          JSON.stringify(pushSubscription)
-        )
-        return pushSubscription
-      })
-  }
+  const [error, setError] = useState(false)
 
   return data ? (
     <Wrapper
       onSubmit={(e) => {
         e.preventDefault()
         if (answers.length && answers[0] !== 'aucun') {
-          subscribeUserToPush()
+          navigator.serviceWorker
+            .register('/sw.js')
+            .then((registration) => {
+              const subscribeOptions = {
+                userVisibleOnly: true,
+                applicationServerKey:
+                  'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U',
+              }
+
+              return registration.pushManager.subscribe(subscribeOptions)
+            })
+            .then((pushSubscription) => {
+              console.log(
+                'Received PushSubscription: ',
+                JSON.stringify(pushSubscription)
+              )
+              return pushSubscription
+            })
+            .catch(setError)
         } else {
           mutation.mutate({ [props.name]: answers })
         }
@@ -77,6 +77,7 @@ export default function QuestionNotification(props) {
         />
         <Submit />
       </Wrapper.Response>
+      {error && isCurrent && <Alert error>{error.message}</Alert>}
     </Wrapper>
   ) : null
 }
