@@ -32,7 +32,7 @@ export default function QuestionNotification(props) {
 
   function subscribeUserToPush() {
     return navigator.serviceWorker
-      .register('/service-worker.js')
+      .register('/sw.js')
       .then(function (registration) {
         const subscribeOptions = {
           userVisibleOnly: true,
