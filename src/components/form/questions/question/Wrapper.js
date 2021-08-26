@@ -35,7 +35,8 @@ Wrapper.Response = styled.div`
 
 Wrapper.Label = styled.div`
   display: block;
-  color: ${(props) => props.theme.colors.title};
+  color: ${(props) => props.theme.colors[props.blue ? 'main' : 'title']};
+  cursor: pointer;
 `
 
 export default Wrapper

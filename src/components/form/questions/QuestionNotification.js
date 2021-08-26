@@ -9,7 +9,7 @@ import Value from './question/Value'
 import Answers from './question/Answers'
 import Submit from './question/Submit'
 
-export default function Step(props) {
+export default function QuestionNotification(props) {
   const location = useLocation()
   const { data } = useProfile(location)
   const mutation = useProfileMutation(location)
@@ -30,16 +30,41 @@ export default function Step(props) {
   const [current, setCurrent] = useQueryParam('step')
   const isCurrent = current === props.name
 
+  function subscribeUserToPush() {
+    return navigator.serviceWorker
+      .register('/service-worker.js')
+      .then(function (registration) {
+        const subscribeOptions = {
+          userVisibleOnly: true,
+          applicationServerKey:
+            'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U',
+        }
+
+        return registration.pushManager.subscribe(subscribeOptions)
+      })
+      .then(function (pushSubscription) {
+        console.log(
+          'Received PushSubscription: ',
+          JSON.stringify(pushSubscription)
+        )
+        return pushSubscription
+      })
+  }
+
   return data ? (
     <Wrapper
       onSubmit={(e) => {
         e.preventDefault()
-        mutation.mutate({ [props.name]: answers })
+        if (answers.length && answers[0] !== 'aucun') {
+          subscribeUserToPush()
+        } else {
+          mutation.mutate({ [props.name]: answers })
+        }
       }}
       visible={answers.length || isCurrent}
       isCurrent={isCurrent}
     >
-      <Wrapper.Label onClick={() => setCurrent(props.name)}>
+      <Wrapper.Label onClick={() => setCurrent(props.name)} blue={!isCurrent}>
         {answers[0] === 'aucun' && !isCurrent ? props.label[1] : props.label[0]}
         <Value name={props.name} sentence={sentence} />
       </Wrapper.Label>

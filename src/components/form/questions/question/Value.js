@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useQueryParam, StringParam } from 'use-query-params'
+import { useQueryParam } from 'use-query-params'
 
 import useMounted from 'src/hooks/useMounted'
 
@@ -17,10 +17,10 @@ const Letter = styled.span`
 export default function Value(props) {
   const mounted = useMounted()
 
-  const [current, setCurrent] = useQueryParam('step', StringParam)
+  const [current] = useQueryParam('step')
 
   return current !== props.name ? (
-    <Wrapper onClick={() => setCurrent(props.name)} capital={props.capital}>
+    <Wrapper capital={props.capital}>
       {props.sentence.map((letter, index) => (
         <Letter
           key={index}

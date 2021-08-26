@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useLocation } from '@reach/router'
-import queryString from 'query-string'
+import { useQueryParam } from 'use-query-params'
 
 import { useProfile, useProfileMutation } from 'src/utils/api'
 import Wrapper from './question/Wrapper'
@@ -38,12 +38,12 @@ export default function Address() {
     setSentence(data && data.ville_nom ? data.ville_nom.split('') : [])
   }, [data])
 
-  const isCurrent =
-    location && queryString.parse(location.search).step === 'ville_insee'
+  const [current, setCurrent] = useQueryParam('step')
+  const isCurrent = current === 'ville_insee'
 
   return data ? (
     <Wrapper.NoForm visible={answer || isCurrent} isCurrent={isCurrent}>
-      <Wrapper.Label>
+      <Wrapper.Label onClick={() => setCurrent('ville_insee')}>
         J'habite à <Value capital name={'ville_insee'} sentence={sentence} />
       </Wrapper.Label>
       <Wrapper.Response visible={isCurrent}>

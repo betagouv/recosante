@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
 import ModalContext from 'src/utils/ModalContext'
-import Question from '../Question'
+import QuestionNotification from '../QuestionNotification'
 
 export default function Notifications() {
   const { setModal } = useContext(ModalContext)
@@ -30,5 +30,6 @@ export default function Notifications() {
       answer: '',
     },
   ]
-  return <Question name={name} label={label} options={options} />
+
+  return <QuestionNotification name={name} label={label} options={options} />
 }
