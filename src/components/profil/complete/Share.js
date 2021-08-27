@@ -7,8 +7,8 @@ import Whatsapp from './share/Whatsapp'
 
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 18rem;
-  margin: 0 auto 3rem;
+  max-width: 25rem;
+  margin: 3rem auto 3rem;
 `
 const Title = styled.h3`
   text-align: center;

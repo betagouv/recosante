@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { useLocation } from '@reach/router'
-import { useQueryParam, StringParam } from 'use-query-params'
+import { navigate } from 'gatsby'
+import { useQueryParam, StringParam, BooleanParam } from 'use-query-params'
 
 import { useProfile } from 'src/utils/api'
 import Mail from './questions/Mail'
@@ -14,6 +14,7 @@ import Family from './questions/list/Family'
 import Heating from './questions/list/Heating'
 import Transportation from './questions/list/Transportation'
 import Animals from './questions/list/Animals'
+import Acquisition from './questions/list/Acquisition'
 
 const Wrapper = styled.div`
   width: 29.25rem;
@@ -24,11 +25,11 @@ const Wrapper = styled.div`
   }
 `
 export default function Questions() {
-  const location = useLocation()
-
+  const [user] = useQueryParam('user')
   const [current, setCurrent] = useQueryParam('step', StringParam)
+  const [subscription] = useQueryParam('subscription', BooleanParam)
 
-  const { data, isFetching } = useProfile(location)
+  const { data, isFetching } = useProfile()
   useEffect(() => {
     if (data) {
       const steps = [
@@ -42,21 +43,17 @@ export default function Questions() {
         'chauffage',
         'deplacement',
         'animaux_domestiques',
+        'connaissance_produit',
       ]
-
-      setCurrent((prevCurrent) => {
-        const next = steps.find((step) => !data[step]) || 'end'
-        if (prevCurrent && prevCurrent !== 'end' && next === 'end') {
-          setTimeout(
-            () => document.getElementById('end')?.scrollIntoView(),
-            100
-          )
-        }
-        return next
-      })
+      setCurrent(steps.find((step) => !data[step]) || 'end')
     }
   }, [data, isFetching, setCurrent])
 
+  useEffect(() => {
+    if (subscription && current === 'end') {
+      navigate(`/profil/complete?user=${user}`)
+    }
+  }, [subscription, current, user])
   return (
     <Wrapper current={current}>
       <Mail />
@@ -69,6 +66,7 @@ export default function Questions() {
       <Heating />
       <Transportation />
       <Animals />
+      <Acquisition />
     </Wrapper>
   )
 }

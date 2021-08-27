@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { useQueryParam } from 'use-query-params'
 
+import useStepPosition from 'src/hooks/useStepPosition'
 import { useProfile, useProfileMutation } from 'src/utils/api'
 import TextInput from 'src/components/base/TextInput'
 import Wrapper from './question/Wrapper'
@@ -32,8 +32,7 @@ export default function Mail() {
     setAnswer(data && (data.mail ? data.mail : ''))
   }, [data])
 
-  const [current, setCurrent] = useQueryParam('step')
-  const isCurrent = current === 'mail'
+  const { setCurrent, isCurrent, isEnd } = useStepPosition('mail')
 
   return data ? (
     <Wrapper
@@ -43,11 +42,9 @@ export default function Mail() {
       }}
       visible
       isCurrent={isCurrent}
-      isEnd={current === 'end'}
+      isEnd={isEnd}
     >
-      {current !== 'mail' && (
-        <Email onClick={() => setCurrent('mail')}>{answer}</Email>
-      )}
+      {!isCurrent && <Email onClick={() => setCurrent('mail')}>{answer}</Email>}
       <Wrapper.Response visible={isCurrent}>
         <StyledTextInput
           name={'email'}

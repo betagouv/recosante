@@ -3,8 +3,7 @@ import styled from 'styled-components'
 
 import Web from 'src/components/layout/Web'
 import Section from 'src/components/base/Section'
-import Questions from 'src/components/form/Questions'
-import Side from 'src/components/form/Side'
+import Questions from 'src/components/profil/Questions'
 
 const StyledSection = styled(Section)`
   display: flex;

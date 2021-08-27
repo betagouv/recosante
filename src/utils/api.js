@@ -2,8 +2,7 @@
 
 import { useQuery, useMutation, useQueryClient } from 'react-query'
 import axios from 'axios'
-import queryString from 'query-string'
-import { useLocation } from '@reach/router'
+import { useQueryParam } from 'use-query-params'
 
 export function useSearch(search) {
   return useQuery(
@@ -92,8 +91,7 @@ export function useStatistiques() {
   )
 }
 export function useProfile() {
-  const location = useLocation()
-  const uid = location && queryString.parse(location.search).user
+  const [uid] = useQueryParam('user')
   return useQuery(
     ['profile', uid],
     () =>
@@ -107,8 +105,7 @@ export function useProfile() {
   )
 }
 export function useProfileMutation() {
-  const location = useLocation()
-  const uid = location && queryString.parse(location.search).user
+  const [uid] = useQueryParam('user')
   const queryClient = useQueryClient()
   return useMutation(
     (profile) =>
@@ -133,9 +130,23 @@ export function useSubscribe() {
     )
   )
 }
+export function useCompleteSubscription() {
+  const [uid] = useQueryParam('user')
+  return useQuery(
+    ['complete', uid],
+    () =>
+      axios
+        .get(`https://ecosante.beta.gouv.fr/inscription/${uid}/_confirm`)
+        .then((res) => res.data),
+    {
+      enabled: uid ? true : false,
+      refetchOnWindowFocus: false,
+    }
+  )
+}
 export function useAvis(location) {
-  const short_id = location && queryString.parse(location.search).short_id
-  const appliquee = location && queryString.parse(location.search).avis
+  const [short_id] = useQueryParam('short_id')
+  const [appliquee] = useQueryParam('avis')
   return useQuery(
     ['profile', short_id, appliquee],
     () =>
@@ -154,9 +165,9 @@ export function useAvis(location) {
     }
   )
 }
-export function useAvisMutation(location) {
-  const short_id = location && queryString.parse(location.search).short_id
-  const appliquee = location && queryString.parse(location.search).avis
+export function useAvisMutation() {
+  const [short_id] = useQueryParam('short_id')
+  const [appliquee] = useQueryParam('avis')
   return useMutation((avis) =>
     axios.post(
       `https://ecosante.beta.gouv.fr/newsletter/${short_id}/avis?appliquee=${appliquee}`,

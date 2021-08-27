@@ -83,7 +83,7 @@ export default function SubscribeForm(props) {
           {
             onSuccess: (data) => {
               if (data && data.data && data.data.uid) {
-                navigate(`/profil/?user=${data.data.uid}`)
+                navigate(`/profil/?user=${data.data.uid}&subscription=1`)
               } else {
                 setError('Une erreur est survenue')
               }
