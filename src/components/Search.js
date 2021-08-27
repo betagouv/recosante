@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { navigate } from 'gatsby'
 
+import formatPlaceUrl from 'src/utils/formatPlaceUrl'
 import Section from 'src/components/base/Section'
 import Background from 'src/components/misc/Background'
 import SearchBar from 'src/components/search/SearchBar'
@@ -38,6 +39,15 @@ const MainTitle = styled.h1`
 `
 const Title = styled.h2`
   font-size: 4rem;
+
+  ${(props) => props.theme.mq.medium} {
+    text-align: center;
+  }
+
+  ${(props) => props.theme.mq.small}  {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
 `
 const SearchBarSizer = styled.div`
   position: relative;
@@ -68,16 +78,12 @@ export default function Search(props) {
         )}
         <SearchBarSizer>
           <SearchBar
-            handlePlaceSelection={(place) => {
-              navigate(
-                `/place/${place.code}/${place.nom
-                  .toLowerCase()
-                  .replace(' ', '-')
-                  .replace(`'`, '-')
-                  .normalize('NFD')
-                  .replace(/[\u0300-\u036f]/g, '')}/`
-              )
-            }}
+            handlePlaceSelection={
+              props.handlePlaceSelection ||
+              ((place) => {
+                navigate(formatPlaceUrl(place))
+              })
+            }
           />
         </SearchBarSizer>
         <Suggestions />

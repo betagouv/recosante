@@ -12,7 +12,6 @@ const Input = styled.input`
   width: 100%;
   padding: 0.375em 2.25em 0.375em 0.75em;
   font-size: 1em;
-  font-weight: 500;
   line-height: 1.55;
   color: ${(props) => props.theme.colors.text};
   background: transparent;
@@ -41,7 +40,6 @@ const Invisible = styled.div`
   opacity: 0;
   padding: 0.375em 0.25em 0.375em 0.75em;
   font-size: 1em;
-  font-weight: 500;
   line-height: 1.55;
 `
 const Visible = styled.div`

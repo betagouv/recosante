@@ -3,21 +3,9 @@ import styled from 'styled-components'
 import { useLocation } from '@reach/router'
 import { navigate } from 'gatsby'
 
-import SearchBar from 'src/components/search/SearchBar'
+import formatPlaceUrl from 'src/utils/formatPlaceUrl'
+import Search from 'src/components/Search'
 
-const Large = styled.div`
-  position: relative;
-
-  ${(props) => props.theme.mq.medium} {
-    display: none;
-  }
-`
-const StyledSearchBar = styled(SearchBar)`
-  top: -1rem;
-  left: auto;
-  right: 0;
-  font-size: 1rem;
-`
 const Open = styled.button`
   display: none;
   background: none;
@@ -37,26 +25,16 @@ const Open = styled.button`
     display: block;
   }
 `
-const Small = styled.div`
+const Wrapper = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: ${(props) => props.theme.colors.background};
+  padding: 0 1rem;
   opacity: ${(props) => (props.open ? 1 : 0)};
   pointer-events: ${(props) => (props.open ? 'inherit' : 'none')};
   transition: opacity 600ms;
-`
-const MobileSearchBar = styled(SearchBar)`
-  top: 10rem;
-  left: 50%;
-  width: calc(100vw - 2rem);
-  font-size: 2rem;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 1.125rem;
-  }
 `
 const Close = styled.button`
   position: absolute;
@@ -75,28 +53,13 @@ const Close = styled.button`
     }
   }
 `
-export default function Search() {
+export default function MobileSearch() {
   const location = useLocation()
 
   const [open, setOpen] = useState(false)
 
   return location.pathname !== '/' ? (
     <>
-      <Large>
-        <StyledSearchBar
-          placeholder='Entrez une ville'
-          handlePlaceSelection={(place) => {
-            navigate(
-              `/place/${place.code}/${place.nom
-                .toLowerCase()
-                .replace(' ', '-')
-                .replace(`'`, '-')
-                .normalize('NFD')
-                .replace(/[\u0300-\u036f]/g, '')}/`
-            )
-          }}
-        />
-      </Large>
       <Open onClick={() => setOpen(true)}>
         <svg x='0px' y='0px' viewBox='0 0 512.005 512.005'>
           <path
@@ -107,7 +70,14 @@ export default function Search() {
           />
         </svg>
       </Open>
-      <Small open={open}>
+      <Wrapper open={open}>
+        <Search
+          handlePlaceSelection={(place) => {
+            console.log('handle')
+            setOpen(false)
+            navigate(formatPlaceUrl(place))
+          }}
+        />
         <Close onClick={() => setOpen(false)}>
           <svg
             x='0px'
@@ -124,22 +94,7 @@ export default function Search() {
             />
           </svg>
         </Close>
-
-        <MobileSearchBar
-          placeholder='Entrez votre ville'
-          handlePlaceSelection={(place) => {
-            setOpen(false)
-            navigate(
-              `/place/${place.code}/${place.nom
-                .toLowerCase()
-                .replace(' ', '-')
-                .replace(`'`, '-')
-                .normalize('NFD')
-                .replace(/[\u0300-\u036f]/g, '')}/`
-            )
-          }}
-        />
-      </Small>
+      </Wrapper>
     </>
   ) : null
 }

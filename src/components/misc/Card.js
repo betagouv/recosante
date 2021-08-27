@@ -35,7 +35,6 @@ Card.Info = styled.div``
 Card.Title = styled.h2`
   margin-bottom: 1.5rem;
   font-size: 1.125rem;
-  font-weight: 500;
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 1rem;
@@ -45,7 +44,7 @@ Card.Title = styled.h2`
 Card.Value = styled.div`
   margin-left: -0.1rem;
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: bold;
   line-height: 1;
   color: ${(props) => props.theme.colors.main};
 

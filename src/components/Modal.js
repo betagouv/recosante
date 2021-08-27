@@ -54,7 +54,7 @@ const ButtonClose = styled.div`
   top: 0.5em;
   right: 0.5em;
   font-size: 2em;
-  font-weight: 700;
+  font-weight: bold;
   transform: rotate(45deg);
   cursor: pointer;
   line-height: 0.5;

@@ -5,7 +5,7 @@ import { useQueryParam } from 'use-query-params'
 //import useMounted from 'src/hooks/useMounted'
 
 const Wrapper = styled.span`
-  font-weight: 700;
+  font-weight: bold;
   color: ${(props) => props.theme.colors.main};
   text-transform: ${(props) => (props.capital ? 'inherit' : 'lowercase')};
   cursor: pointer;

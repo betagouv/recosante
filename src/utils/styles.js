@@ -52,7 +52,6 @@ export const GlobalStyle = createGlobalStyle`
     
   html {
     box-sizing: border-box;
-    font-weight: 500;
     font-family: ${(props) => props.theme.fonts};
     text-rendering: geometricPrecision;
   }
@@ -71,7 +70,7 @@ export const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
-    font-weight: 800;
+    font-weight: bold;
     line-height: 1.1;
     color: ${(props) => props.theme.colors.title};
   }

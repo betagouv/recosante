@@ -5,7 +5,6 @@ const Wrapper = styled.div`
   position: relative;
   margin-bottom: 1.5rem;
   padding-right: 13.25rem;
-  font-weight: 500;
   line-height: 1.5;
   text-align: right;
 
