@@ -35,6 +35,7 @@ Wrapper.Response = styled.div`
 
 Wrapper.Label = styled.div`
   display: block;
+  font-weight: ${(props) => (props.blue ? 'bold' : 'normal')};
   color: ${(props) => props.theme.colors[props.blue ? 'main' : 'title']};
   cursor: pointer;
 `

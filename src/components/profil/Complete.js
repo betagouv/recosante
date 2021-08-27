@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useQueryParam } from 'use-query-params'
 
 import { useCompleteSubscription } from 'src/utils/api'
 import Alert from 'src/components/base/Alert'
+import Button from 'src/components/base/Button'
 import Section from 'src/components/base/Section'
 import Mockup from 'src/components/newsletter/Mockup'
 import Share from 'src/components/profil/complete/Share'
@@ -61,14 +63,14 @@ const MockupWrapper = styled.div`
   }
 `
 export default function Complete(props) {
+  const [uid] = useQueryParam('user')
   const { data } = useCompleteSubscription()
-  console.log(data)
   return (
     <StyledSection first>
       <Content>
         <h1>
-          Félicitation vous êtes maintenant inscrit à <strong>Recosanté</strong>{' '}
-          !
+          Félicitation vous êtes maintenant inscrit à <strong>Recosanté</strong>
+          &#8239;!
         </h1>
         <p>
           Vous recevrez maintenant nos{' '}
@@ -80,6 +82,12 @@ export default function Complete(props) {
           <Alert error>Une erreur est survenue :(</Alert>
         )}
         <Share />
+        <Button.Wrapper>
+          <Button to={`/profil?user=${uid}`} hollow>
+            Éditer mon profil
+          </Button>
+          <Button to='/'>Revenir à l'accueil</Button>
+        </Button.Wrapper>
       </Content>
       <MockupWrapper>
         <Mockup isOnScreen={true} />
