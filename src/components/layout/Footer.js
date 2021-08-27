@@ -7,8 +7,9 @@ import Links from './footer/Links'
 
 const Wrapper = styled.footer`
   position: relative;
-  border-top: 2px solid ${(props) => props.theme.colors.main};
   padding-top: 2rem;
+  background-color: ${(props) => props.theme.colors.background};
+  border-top: 2px solid ${(props) => props.theme.colors.main};
 `
 const Content = styled.div`
   display: flex;

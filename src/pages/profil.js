@@ -18,7 +18,6 @@ export default function Profile(props) {
     <Web title={'Profil'}>
       <StyledSection first>
         <Questions />
-        <Side />
       </StyledSection>
     </Web>
   )
