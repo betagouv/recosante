@@ -43,7 +43,17 @@ export default function Questions() {
         'deplacement',
         'animaux_domestiques',
       ]
-      setCurrent(steps.find((step) => !data[step]) || 'end')
+
+      setCurrent((prevCurrent) => {
+        const next = steps.find((step) => !data[step]) || 'end'
+        if (prevCurrent && prevCurrent !== 'end' && next === 'end') {
+          setTimeout(
+            () => document.getElementById('end')?.scrollIntoView(),
+            100
+          )
+        }
+        return next
+      })
     }
   }, [data, isFetching, setCurrent])
 

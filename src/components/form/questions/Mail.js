@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { useLocation } from '@reach/router'
-import { useQueryParam, StringParam } from 'use-query-params'
+import { useQueryParam } from 'use-query-params'
 
 import { useProfile, useProfileMutation } from 'src/utils/api'
 import TextInput from 'src/components/base/TextInput'
@@ -12,21 +11,29 @@ const Email = styled.h3`
   font-size: 1.75rem;
   color: ${(props) => props.theme.colors.main};
   cursor: pointer;
+  word-break: break-all;
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.25rem;
+  }
 `
 const StyledTextInput = styled(TextInput)`
   font-size: 1.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.125rem;
+  }
 `
 export default function Mail() {
-  const location = useLocation()
-  const { data } = useProfile(location)
-  const mutation = useProfileMutation(location)
+  const { data } = useProfile()
+  const mutation = useProfileMutation()
 
   const [answer, setAnswer] = useState([])
   useEffect(() => {
     setAnswer(data && (data.mail ? data.mail : ''))
   }, [data])
 
-  const [current, setCurrent] = useQueryParam('step', StringParam)
+  const [current, setCurrent] = useQueryParam('step')
+  const isCurrent = current === 'mail'
 
   return data ? (
     <Wrapper
@@ -34,12 +41,14 @@ export default function Mail() {
         e.preventDefault()
         mutation.mutate({ mail: answer })
       }}
-      visible={true}
+      visible
+      isCurrent={isCurrent}
+      isEnd={current === 'end'}
     >
       {current !== 'mail' && (
         <Email onClick={() => setCurrent('mail')}>{answer}</Email>
       )}
-      <Wrapper.Response visible={current === 'mail'}>
+      <Wrapper.Response visible={isCurrent}>
         <StyledTextInput
           name={'email'}
           value={answer}

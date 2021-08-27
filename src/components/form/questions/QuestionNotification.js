@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation } from '@reach/router'
-import { useQueryParam } from 'use-query-params'
 
+import useStepPosition from 'src/hooks/useStepPosition'
 import useNotificationsPrompt from 'src/hooks/useNotificationsPrompt'
 import useSentence from 'src/hooks/useSentence'
 import { useProfile, useProfileMutation } from 'src/utils/api'
@@ -12,9 +11,8 @@ import Answers from './question/Answers'
 import Submit from './question/Submit'
 
 export default function QuestionNotification(props) {
-  const location = useLocation()
-  const { data } = useProfile(location)
-  const mutation = useProfileMutation(location)
+  const { data } = useProfile()
+  const mutation = useProfileMutation()
 
   const [answers, setAnswers] = useState([])
   useEffect(() => {
@@ -29,17 +27,17 @@ export default function QuestionNotification(props) {
 
   const sentence = useSentence(answers, props.options)
 
-  const [current, setCurrent] = useQueryParam('step')
-  const isCurrent = current === props.name
+  const { setCurrent, isCurrent, isEnd } = useStepPosition(props.name)
 
   const notifications = useNotificationsPrompt(
     '/sw.js',
     'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U'
   )
 
+  const clear = notifications.clear
   useEffect(() => {
-    notifications.clear()
-  }, [answers])
+    clear()
+  }, [answers, clear])
 
   return data ? (
     <Wrapper
@@ -61,6 +59,7 @@ export default function QuestionNotification(props) {
       }}
       visible={answers.length || isCurrent}
       isCurrent={isCurrent}
+      isEnd={isEnd}
     >
       <Wrapper.Label onClick={() => setCurrent(props.name)} blue={!isCurrent}>
         {answers[0] === 'aucun' && !isCurrent ? props.label[1] : props.label[0]}

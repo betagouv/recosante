@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { useLocation } from '@reach/router'
-import { useQueryParam } from 'use-query-params'
 
+import useStepPosition from 'src/hooks/useStepPosition'
 import { useProfile, useProfileMutation } from 'src/utils/api'
 import Wrapper from './question/Wrapper'
 import Value from './question/Value'
@@ -24,9 +23,8 @@ const StyledSearchBar = styled(SearchBar)`
   }
 `
 export default function Address() {
-  const location = useLocation()
-  const { data } = useProfile(location)
-  const mutation = useProfileMutation(location)
+  const { data } = useProfile()
+  const mutation = useProfileMutation()
 
   const [answer, setAnswer] = useState()
   useEffect(() => {
@@ -38,11 +36,14 @@ export default function Address() {
     setSentence(data && data.ville_nom ? data.ville_nom.split('') : [])
   }, [data])
 
-  const [current, setCurrent] = useQueryParam('step')
-  const isCurrent = current === 'ville_insee'
+  const { setCurrent, isCurrent, isEnd } = useStepPosition('ville_insee')
 
   return data ? (
-    <Wrapper.NoForm visible={answer || isCurrent} isCurrent={isCurrent}>
+    <Wrapper.NoForm
+      visible={answer || isCurrent}
+      isCurrent={isCurrent}
+      isEnd={isEnd}
+    >
       <Wrapper.Label onClick={() => setCurrent('ville_insee')}>
         J'habite à <Value capital name={'ville_insee'} sentence={sentence} />
       </Wrapper.Label>

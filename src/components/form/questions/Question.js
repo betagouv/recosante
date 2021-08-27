@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation } from '@reach/router'
-import { useQueryParam } from 'use-query-params'
 
+import useStepPosition from 'src/hooks/useStepPosition'
 import useSentence from 'src/hooks/useSentence'
 import { useProfile, useProfileMutation } from 'src/utils/api'
 import Wrapper from './question/Wrapper'
@@ -10,9 +9,8 @@ import Answers from './question/Answers'
 import Submit from './question/Submit'
 
 export default function Step(props) {
-  const location = useLocation()
-  const { data } = useProfile(location)
-  const mutation = useProfileMutation(location)
+  const { data } = useProfile()
+  const mutation = useProfileMutation()
 
   const [answers, setAnswers] = useState([])
   useEffect(() => {
@@ -27,8 +25,7 @@ export default function Step(props) {
 
   const sentence = useSentence(answers, props.options)
 
-  const [current, setCurrent] = useQueryParam('step')
-  const isCurrent = current === props.name
+  const { setCurrent, isCurrent, isEnd } = useStepPosition(props.name)
 
   return data ? (
     <Wrapper
@@ -38,6 +35,7 @@ export default function Step(props) {
       }}
       visible={answers.length || isCurrent}
       isCurrent={isCurrent}
+      isEnd={isEnd}
     >
       <Wrapper.Label onClick={() => setCurrent(props.name)}>
         {answers[0] === 'aucun' && !isCurrent ? props.label[1] : props.label[0]}

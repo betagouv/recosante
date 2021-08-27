@@ -6,11 +6,13 @@ import Share from './recommandationList/Share'
 import Acquisition from './recommandationList/Acquisition'
 
 const Wrapper = styled.div`
+  max-width: 35.5rem;
+  margin: 0 auto;
   padding: 2rem;
   background-color: ${(props) => props.theme.colors.tile};
 
   ${(props) => props.theme.mq.medium} {
-    padding: 0;
+    padding: 2rem 0 0;
     background-color: transparent;
   }
 `
@@ -22,7 +24,7 @@ const Text = styled.p`
 export default function RecommandationList() {
   const [current] = useQueryParam('step')
   return current === 'end' ? (
-    <Wrapper>
+    <Wrapper id='end'>
       <Title>Votre profil est créé !</Title>
       <Text>
         Vous recevrez maintenant nos recommandations personnalisées et les

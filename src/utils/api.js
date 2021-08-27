@@ -3,6 +3,7 @@
 import { useQuery, useMutation, useQueryClient } from 'react-query'
 import axios from 'axios'
 import queryString from 'query-string'
+import { useLocation } from '@reach/router'
 
 export function useSearch(search) {
   return useQuery(
@@ -90,7 +91,8 @@ export function useStatistiques() {
     axios.get(`https://ecosante.beta.gouv.fr/stats/`).then((res) => res.data)
   )
 }
-export function useProfile(location) {
+export function useProfile() {
+  const location = useLocation()
   const uid = location && queryString.parse(location.search).user
   return useQuery(
     ['profile', uid],
@@ -104,7 +106,8 @@ export function useProfile(location) {
     }
   )
 }
-export function useProfileMutation(location) {
+export function useProfileMutation() {
+  const location = useLocation()
   const uid = location && queryString.parse(location.search).user
   const queryClient = useQueryClient()
   return useMutation(

@@ -68,8 +68,9 @@ export default function Submit(props) {
   const [current, setCurrent] = useQueryParam('step')
 
   const steps = [
+    'mail',
     'ville_insee',
-    'frequence',
+    'recommandations',
     'notifications',
     'population',
     'activites',

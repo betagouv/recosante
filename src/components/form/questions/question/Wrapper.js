@@ -7,7 +7,7 @@ const Wrapper = styled.form`
   font-size: 1.125rem;
 
   ${(props) => props.theme.mq.medium} {
-    display: ${(props) => (props.isCurrent ? 'block' : 'none')};
+    display: ${(props) => (props.isCurrent || props.isEnd ? 'block' : 'none')};
   }
   ${(props) => props.theme.mq.small} {
     font-size: 1rem;
@@ -20,7 +20,7 @@ Wrapper.NoForm = styled.div`
   font-size: 1.125rem;
 
   ${(props) => props.theme.mq.medium} {
-    display: ${(props) => (props.isCurrent ? 'block' : 'none')};
+    display: ${(props) => (props.isCurrent || props.isEnd ? 'block' : 'none')};
   }
   ${(props) => props.theme.mq.small} {
     font-size: 1rem;
