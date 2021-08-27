@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useLocation } from '@reach/router'
 import { useQueryParam } from 'use-query-params'
 
+import useNotificationsPrompt from 'src/hooks/useNotificationsPrompt'
 import useSentence from 'src/hooks/useSentence'
 import { useProfile, useProfileMutation } from 'src/utils/api'
 import Alert from 'src/components/base/Alert'
@@ -31,33 +32,30 @@ export default function QuestionNotification(props) {
   const [current, setCurrent] = useQueryParam('step')
   const isCurrent = current === props.name
 
-  const [error, setError] = useState(false)
+  const notifications = useNotificationsPrompt(
+    '/sw.js',
+    'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U'
+  )
+
+  useEffect(() => {
+    notifications.clear()
+  }, [answers])
 
   return data ? (
     <Wrapper
       onSubmit={(e) => {
         e.preventDefault()
         if (answers.length && answers[0] !== 'aucun') {
-          navigator.serviceWorker
-            .register('/sw.js')
-            .then((registration) => {
-              const subscribeOptions = {
-                userVisibleOnly: true,
-                applicationServerKey:
-                  'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U',
-              }
-
-              return registration.pushManager.subscribe(subscribeOptions)
-            })
-            .then((pushSubscription) => {
-              console.log(
-                'Received PushSubscription: ',
-                JSON.stringify(pushSubscription)
-              )
-              return pushSubscription
-            })
-            .catch(setError)
+          notifications.subscribe().then(
+            (pushSubscription) =>
+              pushSubscription &&
+              mutation.mutate({
+                [props.name]: answers,
+                pushSubscription,
+              })
+          )
         } else {
+          notifications.clear()
           mutation.mutate({ [props.name]: answers })
         }
       }}
@@ -77,7 +75,27 @@ export default function QuestionNotification(props) {
         />
         <Submit />
       </Wrapper.Response>
-      {error && isCurrent && <Alert error>{error.message}</Alert>}
+      {notifications.error && isCurrent && (
+        <Alert error>
+          {notifications.error === 'Registration failed - permission denied' ? (
+            <p>
+              Il semblerait que vous n'avez pas accepté les notifications sur
+              votre appareil :(
+            </p>
+          ) : (
+            <p>
+              Votre navigateur ne semble pas compatible avec les notifications
+              web :(
+            </p>
+          )}
+        </Alert>
+      )}
+      {notifications.prompting && isCurrent && (
+        <Alert>
+          Merci d'accepter la demande d'autorisation de votre navigateur pour
+          activer les notifications :)
+        </Alert>
+      )}
     </Wrapper>
   ) : null
 }
