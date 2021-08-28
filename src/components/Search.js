@@ -5,6 +5,7 @@ import { navigate } from 'gatsby'
 import formatPlaceUrl from 'src/utils/formatPlaceUrl'
 import Section from 'src/components/base/Section'
 import Background from 'src/components/misc/Background'
+import Cloud from 'src/components/search/Cloud'
 import SearchBar from 'src/components/search/SearchBar'
 import Suggestions from './search/Suggestions'
 
@@ -58,7 +59,9 @@ export default function Search(props) {
   return (
     <Wrapper>
       <Background />
+
       <StyledSection first>
+        <Cloud />
         {props.main ? (
           <MainTitle>
             Découvrez

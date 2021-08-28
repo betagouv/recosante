@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `
 const Title = styled.h3`
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 `
 const Buttons = styled.div`
   display: flex;
