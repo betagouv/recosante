@@ -42,12 +42,13 @@ const Wrapper = styled.button`
   }
 `
 const Error = styled(Alert)`
-  position: fixed;
+  position: absolute;
   z-index: -1;
   left: 0;
   right: 0;
+
   p {
-    margin: 0;
+    font-size: 0.75em;
   }
 `
 export default function Submit(props) {

@@ -8,6 +8,7 @@ const Phone = styled.div`
   left: 50%;
   transform: translate(calc(-50% - 12rem), calc(-50% + 4.5rem));
   width: 50.5rem;
+  pointer-events: none;
 
   ${(props) => props.theme.mq.medium} {
     top: 0;

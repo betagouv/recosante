@@ -80,7 +80,7 @@ export default function Notifications() {
   const isOnScreen = useOnScreen(ref)
 
   return (
-    <StyledSection ref={ref}>
+    <StyledSection ref={ref} id='notifications'>
       <MockupWrapper>
         <Images isOnScreen={isOnScreen} />
       </MockupWrapper>
