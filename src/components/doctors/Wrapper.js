@@ -42,8 +42,8 @@ Wrapper.Image = styled.div`
   box-shadow: 1rem 1rem 4rem rgba(0, 0, 0, 0.2);
   overflow: hidden;
   opacity: 0;
-  transform: translateY(50%);
-  transition: opacity 600ms, transform 600ms ease-out;
+  transform: translateY(80%);
+  transition: opacity 600ms, transform 600ms ease-in-out;
 
   .onScreen & {
     opacity: 1;
