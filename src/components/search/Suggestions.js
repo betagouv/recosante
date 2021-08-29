@@ -27,7 +27,25 @@ export default function Suggestions() {
       <StyledButton hollow to='/place/75056/paris/'>
         Paris
       </StyledButton>
-      <StyledButton hollow to='/place/31555/toulouse/'>
+      <StyledButton hollow to='/place/75056/paris/'>
+        Toulouse
+      </StyledButton>
+      <StyledButton hollow to='/place/75056/paris/'>
+        Lyon
+      </StyledButton>
+      <StyledButton hollow to='/place/75056/paris/'>
+        Nantes
+      </StyledButton>
+      <StyledButton hollow to='/place/75056/paris/'>
+        Marseille
+      </StyledButton>
+      <StyledButton hollow to='/place/75056/paris/'>
+        Besançon
+      </StyledButton>
+      <StyledButton hollow to='/place/75056/paris/'>
+        Bordeaux
+      </StyledButton>
+      {/*<StyledButton hollow to='/place/31555/toulouse/'>
         Toulouse
       </StyledButton>
       <StyledButton hollow to='/place/69123/lyon/'>
@@ -44,7 +62,7 @@ export default function Suggestions() {
       </StyledButton>
       <StyledButton hollow to='/place/33063/bordeaux/'>
         Bordeaux
-      </StyledButton>
+  </StyledButton>*/}
     </Wrapper>
   )
 }
