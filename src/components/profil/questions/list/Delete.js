@@ -1,0 +1,28 @@
+import React, { useContext } from 'react'
+import styled from 'styled-components'
+
+import ModalContext from 'src/utils/ModalContext'
+import useStepPosition from 'src/hooks/useStepPosition'
+
+const Wrapper = styled.button`
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: ${(props) => props.theme.colors.main};
+  text-decoration: underline;
+  border: none;
+  background: none;
+  cursor: pointer;
+`
+export default function Delete() {
+  const { setModal } = useContext(ModalContext)
+
+  const { isEnd } = useStepPosition()
+
+  return isEnd ? (
+    <Wrapper role='button' onClick={() => setModal('suppressioncompte')}>
+      Supprimer mon compte
+    </Wrapper>
+  ) : null
+}

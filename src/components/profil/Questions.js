@@ -15,6 +15,7 @@ import Heating from './questions/list/Heating'
 import Transportation from './questions/list/Transportation'
 import Animals from './questions/list/Animals'
 import Acquisition from './questions/list/Acquisition'
+import Delete from './questions/list/Delete'
 
 const Wrapper = styled.div`
   width: 29.25rem;
@@ -67,6 +68,7 @@ export default function Questions() {
       <Transportation />
       <Animals />
       <Acquisition />
+      <Delete />
     </Wrapper>
   )
 }

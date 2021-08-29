@@ -51,6 +51,12 @@ export default function WrapperModal() {
             title
           }
         }
+        suppressioncompte: mdx(slug: { eq: "suppressioncompte" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
       }
     `
   )
@@ -59,7 +65,7 @@ export default function WrapperModal() {
 
   return (
     <Modal open={modal} setOpen={setModal}>
-      {modal && (
+      {modal && data[modal.replaceAll('.', '')] && (
         <>
           <h3>{data[modal.replaceAll('.', '')].frontmatter.title}</h3>
           <MDXRenderer>{data[modal.replaceAll('.', '')].body}</MDXRenderer>

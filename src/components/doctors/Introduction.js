@@ -29,6 +29,10 @@ const Content = styled.div`
 
   h1 {
     font-size: 3rem;
+
+    ${(props) => props.theme.mq.small} {
+      font-size: 1.5rem;
+    }
   }
 `
 const MockupWrapper = styled.div`
