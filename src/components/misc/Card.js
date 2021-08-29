@@ -1,8 +1,26 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import Mobile from './card/Mobile'
 import Recommandation from './card/Recommandation'
 
+const fetching = keyframes`
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.1% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  to {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+`
 const Card = styled.div`
   position: relative;
   width: 100%;
@@ -33,8 +51,21 @@ Card.Header = styled.div`
 `
 Card.Info = styled.div``
 Card.Title = styled.h2`
+  position: relative;
   margin-bottom: 1.5rem;
   font-size: 1.125rem;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: ${(props) => props.theme.colors.background};
+    opacity: 0.7;
+    animation: ${(props) => (props.isFetching ? fetching : '')} 1000ms infinite;
+  }
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 1rem;
@@ -46,7 +77,7 @@ Card.Value = styled.div`
   font-size: 3rem;
   font-weight: bold;
   line-height: 1;
-  color: ${(props) => props.theme.colors.main};
+  color: ${(props) => props.theme.colors[props.isError ? 'error' : 'main']};
 
   ${(props) => props.theme.mq.small} {
     margin: 0 0 1.5rem;

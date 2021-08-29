@@ -1,11 +1,14 @@
 import React from 'react'
 
+import { useIndicators } from 'src/utils/api'
 import MagicLink from 'src/components/base/MagicLink'
 import Card from 'src/components/misc/Card'
 import Chart from './pollens/Chart'
 import Details from './pollens/Details'
 
 export default function AirQualityIndex(props) {
+  const { data, isError, isFetching } = useIndicators(props.place.code)
+
   const labels = [
     'Nul',
     'Très faible',
@@ -19,16 +22,18 @@ export default function AirQualityIndex(props) {
       <Card.Content>
         <Card.Header>
           <Card.Info>
-            <Card.Title>Risque d’allergie aux pollens</Card.Title>
-            <Card.Value>
-              {props.data && labels[props.data.raep.total]}
+            <Card.Title isFetching={isFetching}>
+              Risque d’allergie aux pollens
+            </Card.Title>
+            <Card.Value isError={isError}>
+              {isError ? 'Zut 🦙' : data && labels[data.raep.total]}
             </Card.Value>
           </Card.Info>
-          <Chart data={props.data} />
+          <Chart data={data} />
         </Card.Header>
         <Card.Mobile>
           <Card.Details>
-            <Details data={props.data} open={true} />
+            <Details data={data} open={true} />
           </Card.Details>
           <Card.Recommandation
             intro={`En cas de gêne répétitive et saisonnière liée aux symptômes ci-dessous, et dans un contexte de fatigue inhabituelle, vous souffrez peut être d’une allergie aux pollens. Prendre conseil auprès d’un professionnel.`}
@@ -51,10 +56,10 @@ export default function AirQualityIndex(props) {
           </Card.Recommandation>
         </Card.Mobile>
       </Card.Content>
-      {props.data && (
+      {data && (
         <Card.Source>
-          Prévision du {props.data.raep.periode_validite.debut} au{' '}
-          {props.data.raep.periode_validite.fin} à {props.place.nom}
+          Prévision du {data.raep.periode_validite.debut} au{' '}
+          {data.raep.periode_validite.fin} à {props.place.nom}
           <br />
           Données fournies par{' '}
           <MagicLink to='https://www.pollens.fr'>

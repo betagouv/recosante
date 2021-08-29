@@ -1,22 +1,25 @@
 import React from 'react'
 
+import { useIndicators } from 'src/utils/api'
 import MagicLink from 'src/components/base/MagicLink'
 import Card from 'src/components/misc/Card'
 import Chart from './radon/Chart'
 
 export default function Radon(props) {
+  const { data, isError, isFetching } = useIndicators(props.place.code)
+
   const labels = ['Nul', 'Faible', 'Moyen', 'Élevé']
   return (
     <Card columns={6}>
       <Card.Content>
         <Card.Header>
           <Card.Info>
-            <Card.Title>Potentiel Radon</Card.Title>
-            <Card.Value>
-              {props.data && labels[props.data.potentiel_radon]}
+            <Card.Title isFetching={isFetching}>Potentiel Radon</Card.Title>
+            <Card.Value isError={isError}>
+              {isError ? 'Arf 🦖' : data && labels[data.potentiel_radon]}
             </Card.Value>
           </Card.Info>
-          <Chart data={props.data} />
+          <Chart data={data} />
         </Card.Header>
         <Card.Mobile>
           <Card.Recommandation
@@ -24,7 +27,7 @@ export default function Radon(props) {
           />
         </Card.Mobile>
       </Card.Content>
-      {props.data && (
+      {data && (
         <Card.Source>
           Mesures valides pour {props.place.nom}
           <br />
