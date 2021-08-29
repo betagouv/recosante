@@ -43,6 +43,7 @@ export default function Subscribe() {
                   })
               )
             }
+            fetching={mutation.isLoading}
           >
             J'active les notifications web
           </Button>

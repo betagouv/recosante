@@ -72,7 +72,7 @@ export default function QuestionNotification(props) {
           answers={answers}
           setAnswers={setAnswers}
         />
-        <Submit />
+        <Submit fetching={mutation.isLoading} />
       </Wrapper.Response>
       {notifications.error && isCurrent && (
         <Alert error>

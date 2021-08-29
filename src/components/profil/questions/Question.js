@@ -26,7 +26,7 @@ export default function Step(props) {
   const sentence = useSentence(answers, props.options)
 
   const { setCurrent, isCurrent, isEnd } = useStepPosition(props.name)
-
+  console.log(mutation.isLoading)
   return data ? (
     <Wrapper
       onSubmit={(e) => {
@@ -48,7 +48,7 @@ export default function Step(props) {
           answers={answers}
           setAnswers={setAnswers}
         />
-        <Submit />
+        <Submit fetching={mutation.isLoading} />
       </Wrapper.Response>
     </Wrapper>
   ) : null

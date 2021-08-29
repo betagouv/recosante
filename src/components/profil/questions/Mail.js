@@ -51,7 +51,7 @@ export default function Mail() {
           value={answer}
           onChange={(e) => setAnswer(e.value)}
         />
-        <Submit />
+        <Submit fetching={mutation.isLoading} />
       </Wrapper.Response>
     </Wrapper>
   ) : null

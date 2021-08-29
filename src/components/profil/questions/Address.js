@@ -53,7 +53,10 @@ export default function Address() {
             handlePlaceSelection={(place) => setAnswer(place.code)}
           />
         </SearchBarWrapper>
-        <Submit onClick={() => mutation.mutate({ ville_insee: answer })} />
+        <Submit
+          onClick={() => mutation.mutate({ ville_insee: answer })}
+          fetching={mutation.isLoading}
+        />
       </Wrapper.Response>
     </Wrapper.NoForm>
   ) : null

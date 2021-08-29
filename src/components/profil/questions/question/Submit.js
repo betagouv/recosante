@@ -98,7 +98,7 @@ export default function Submit(props) {
       >
         Précédent
       </Previous>
-      <Next onClick={props.onClick} noExpand>
+      <Next onClick={props.onClick} fetching={props.fetching} noExpand>
         Valider
       </Next>
     </Wrapper>
