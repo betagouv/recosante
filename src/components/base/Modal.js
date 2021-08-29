@@ -29,10 +29,8 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: ${(props) => props.width || '35.5rem'};
-  max-width: 90vw;
   max-height: 90vh;
-  margin: 2rem;
-
+  margin: 0.5rem;
   background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
   border: 1px solid rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
   border-radius: 1.5rem;
