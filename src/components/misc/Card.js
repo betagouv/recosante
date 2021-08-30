@@ -64,6 +64,7 @@ Card.Title = styled.h2`
     width: 100%;
     background-color: ${(props) => props.theme.colors.background};
     opacity: 0.7;
+    transform: scaleX(0);
     animation: ${(props) => (props.isFetching ? fetching : '')} 1000ms infinite;
   }
 
