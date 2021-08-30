@@ -14,7 +14,7 @@ export default function AirQuality(props) {
       <Card.Content>
         <Card.Header>
           <Card.Info>
-            <Card.Title isFetching={isFetching}>
+            <Card.Title isFetching={isFetching} data={data}>
               Indice de qualité de l'air
             </Card.Title>
             <Card.Value isError={isError}>

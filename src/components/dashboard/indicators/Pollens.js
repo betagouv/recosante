@@ -22,7 +22,7 @@ export default function AirQualityIndex(props) {
       <Card.Content>
         <Card.Header>
           <Card.Info>
-            <Card.Title isFetching={isFetching}>
+            <Card.Title isFetching={isFetching} data={data}>
               Risque d’allergie aux pollens
             </Card.Title>
             <Card.Value isError={isError}>

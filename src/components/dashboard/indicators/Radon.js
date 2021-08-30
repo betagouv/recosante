@@ -14,7 +14,9 @@ export default function Radon(props) {
       <Card.Content>
         <Card.Header>
           <Card.Info>
-            <Card.Title isFetching={isFetching}>Potentiel Radon</Card.Title>
+            <Card.Title isFetching={isFetching} data={data}>
+              Potentiel Radon
+            </Card.Title>
             <Card.Value isError={isError}>
               {isError ? 'Arf 🦖' : data && labels[data.potentiel_radon]}
             </Card.Value>
