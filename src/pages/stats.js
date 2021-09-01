@@ -27,7 +27,7 @@ export default function Stats(props) {
 
   return (
     <Web title={'Statistiques'}>
-      {data && data_openings && (
+      {data && (
         <>
           <CurrentMonth
             inscriptions_desinscriptions={data.inscriptions_desinscriptions}
@@ -47,12 +47,14 @@ export default function Stats(props) {
           {data.decouverte && (
             <Satisfaction satisfaction={JSON.parse(data.decouverte)} />
           )}
-          {data_openings.openings && data_openings.opening_yesterday && (
-            <MailOpening
-              openings={JSON.parse(data_openings.openings)}
-              yesterday={data_openings.opening_yesterday}
-            />
-          )}
+          {data_openings &&
+            data_openings.openings &&
+            data_openings.opening_yesterday && (
+              <MailOpening
+                openings={JSON.parse(data_openings.openings)}
+                yesterday={data_openings.opening_yesterday}
+              />
+            )}
         </>
       )}
     </Web>
