@@ -42,8 +42,8 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           createPage({
             path: `/place/${place.code}/${place.nom
               .toLowerCase()
-              .replace(' ', '-')
-              .replace(`'`, '-')
+              .replaceAll(' ', '-')
+              .replaceAll(`'`, '-')
               .normalize('NFD')
               .replace(/[\u0300-\u036f]/g, '')}/`,
             component: require.resolve('./src/templates/place.js'),
