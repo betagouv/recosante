@@ -18,7 +18,7 @@ const Label = styled.label`
   padding: 0.5em 0.75em;
   transform: translateY(${(props) => (props.small ? '-100%' : 0)});
   font-size: ${(props) => (props.small ? '0.6em' : '1em')};
-  opacity: ${(props) => (props.small ? '1' : '0.6')};
+  opacity: ${(props) => (props.small ? '1' : '0.7')};
   pointer-events: ${(props) => (props.small ? 'inherit' : 'none')};
   transition: all 200ms ease-out;
 `

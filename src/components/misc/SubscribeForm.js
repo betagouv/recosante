@@ -102,7 +102,12 @@ export default function SubscribeForm(props) {
         value={email}
         onChange={({ value }) => setEmail(value)}
       />
-      <Optin checked={optin} onChange={(checked) => setOptin(checked)} small>
+      <Optin
+        name='conditions'
+        checked={optin}
+        onChange={(checked) => setOptin(checked)}
+        small
+      >
         J'accepte de recevoir des emails de la part de Recosanté (pas de
         publicité)
       </Optin>

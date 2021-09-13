@@ -86,6 +86,7 @@ export default function Submit(props) {
             setPosition(position)
           }, setError)
         }}
+        aria-label='Géolocalisation'
       >
         <svg width='24' height='24' viewBox='0 0 24 24' fill='none'>
           <path d='M12 8.5C10.0705 8.5 8.5 10.07 8.5 12C8.5 13.93 10.0705 15.5 12 15.5C13.9295 15.5 15.5 13.93 15.5 12C15.5 10.07 13.9295 8.5 12 8.5ZM12 13.5C11.173 13.5 10.5 12.827 10.5 12C10.5 11.173 11.173 10.5 12 10.5C12.827 10.5 13.5 11.173 13.5 12C13.5 12.827 12.827 13.5 12 13.5Z' />

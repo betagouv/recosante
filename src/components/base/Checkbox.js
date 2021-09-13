@@ -71,6 +71,8 @@ export default function Checkbox(props) {
       <Input
         checked={props.checked}
         type='checkbox'
+        id={props.name}
+        name={props.name}
         label={props.children || props.label}
         onChange={(e) => {
           props.onChange(e.target.checked)
@@ -80,7 +82,13 @@ export default function Checkbox(props) {
       />
       {props.children && (
         <LabelWrapper>
-          <Label focus={focus}>{props.children}</Label>
+          <Label
+            focus={focus}
+            for={props.name}
+            onClick={(e) => e.preventDefault()}
+          >
+            {props.children}
+          </Label>
         </LabelWrapper>
       )}
     </Wrapper>

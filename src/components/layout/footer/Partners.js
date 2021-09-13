@@ -6,8 +6,9 @@ import { useStaticQuery, graphql } from 'gatsby'
 import MagicLink from 'src/components/base/MagicLink'
 
 const Wrapper = styled.div``
-const Title = styled.h4`
+const Title = styled.div`
   margin-bottom: 1rem;
+  font-weight: bold;
 
   ${(props) => props.theme.mq.small} {
     text-align: center;
