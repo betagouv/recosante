@@ -11,7 +11,7 @@ const Wrapper = styled(Link)`
 `
 export default function Logos() {
   return (
-    <Wrapper to='/'>
+    <Wrapper to='/' aria-label='Accueil'>
       <Marianne />
       <Logo link />
     </Wrapper>
