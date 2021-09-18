@@ -22,7 +22,7 @@ const Wrapper = styled.div`
     left: 0;
     width: 1.5rem;
     height: 1.5rem;
-    background-color: ${(props) => props.theme.colors.atmo[props.index]};
+    background-color: ${(props) => props.theme.colors.atmo[props.value]};
     border-radius: 0.25rem;
   }
 
@@ -36,8 +36,9 @@ const Superscript = styled.sup`
 `
 export default function Element(props) {
   const { setModal } = useContext(ModalContext)
+
   return props.value ? (
-    <Wrapper index={props.value.indice} onClick={() => setModal(props.label)}>
+    <Wrapper value={props.value} onClick={() => setModal(props.label)}>
       {props.label}
       <Superscript> (?)</Superscript>
     </Wrapper>

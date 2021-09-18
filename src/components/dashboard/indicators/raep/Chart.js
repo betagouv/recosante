@@ -23,7 +23,7 @@ export default function Chart(props) {
     <Wrapper width='77' height='111' viewBox='0 0 77 111'>
       <Circle
         visible={props.data}
-        value={props.data ? props.data.raep.total : 0}
+        value={props.data ? props.data.raep.indice.value : 0}
         index={0}
         cx='23'
         cy='98'
@@ -31,7 +31,7 @@ export default function Chart(props) {
       />
       <Circle
         visible={props.data}
-        value={props.data ? props.data.raep.total : 0}
+        value={props.data ? props.data.raep.indice.value : 0}
         index={1}
         cx='50'
         cy='78'
@@ -39,7 +39,7 @@ export default function Chart(props) {
       />
       <Circle
         visible={props.data}
-        value={props.data ? props.data.raep.total : 0}
+        value={props.data ? props.data.raep.indice.value : 0}
         index={2}
         cx='16.5'
         cy='59.5'
@@ -47,7 +47,7 @@ export default function Chart(props) {
       />
       <Circle
         visible={props.data}
-        value={props.data ? props.data.raep.total : 0}
+        value={props.data ? props.data.raep.indice.value : 0}
         index={3}
         cx='60.5'
         cy='45.5'
@@ -55,7 +55,7 @@ export default function Chart(props) {
       />
       <Circle
         visible={props.data}
-        value={props.data ? props.data.raep.total : 0}
+        value={props.data ? props.data.raep.indice.value : 0}
         index={4}
         cx='25'
         cy='19'

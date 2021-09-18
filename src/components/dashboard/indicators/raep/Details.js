@@ -14,16 +14,16 @@ export default function Details(props) {
     <Wrapper open={props.open}>
       <Elements>
         {props.data &&
-          Object.entries(props.data.raep.allergenes)
-            .filter((key) => key[1] > 0)
-            .sort((a, b) => (a[0] > b[0] ? 1 : -1))
-            .map((key, index) => (
+          props.data.raep.indice.details
+            .filter((allergen) => allergen.indice.value)
+            .sort((a, b) => (a.indice.value > b.indice.value ? 1 : -1))
+            .map((allergen, index) => (
               <Element
-                key={key[0]}
+                key={allergen.label}
                 index={index}
                 open={props.open}
-                label={key[0]}
-                value={key[1]}
+                label={allergen.label}
+                value={allergen.indice.value}
               />
             ))}
       </Elements>

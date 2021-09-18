@@ -60,12 +60,12 @@ export function useIndicators(code) {
     ['indicators', code],
     () =>
       axios
-        .get(`https://ecosante.beta.gouv.fr/data?insee=${code}`)
+        .get(`https://api.recosante.beta.gouv.fr/v1/?insee=${code}`)
         .then((res) => res.data),
     {
       enabled: code ? true : false,
       keepPreviousData: code ? false : true,
-      retryDelay: 500,
+      refetchOnWindowFocus: false,
     }
   )
 }

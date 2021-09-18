@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import Masonry from 'react-masonry-css'
 
-import AirQuality from './indicators/AirQuality'
-import Pollens from './indicators/Pollens'
-import Radon from './indicators/Radon'
+import IndiceAtmo from './indicators/IndiceAtmo'
+import Raep from './indicators/Raep'
+import PotentielRadon from './indicators/PotentielRadon'
 
 const StyledMasonry = styled(Masonry)`
   display: flex;
@@ -24,9 +24,9 @@ export default function Indicators(props) {
       }}
       columnClassName='my-masonry-grid_column'
     >
-      <AirQuality place={props.place} />
-      <Pollens place={props.place} />
-      <Radon place={props.place} />
+      <IndiceAtmo place={props.place} />
+      <Raep place={props.place} />
+      <PotentielRadon place={props.place} />
     </StyledMasonry>
   )
 }

@@ -19,12 +19,12 @@ export const themes = {
       error: '#e10600',
       disabled: '#d5dbef',
       atmo: {
-        bon: '#4BF0E6',
-        moyen: '#4FCBAD',
-        degrade: '#F0E65F',
-        mauvais: '#FF5354',
-        'tres-mauvais': '#A83559',
-        'extremement-mauvais': '#7D237D',
+        1: '#4BF0E6',
+        2: '#4FCBAD',
+        3: '#F0E65F',
+        4: '#FF5354',
+        5: '#A83559',
+        6: '#7D237D',
       },
       raep: {
         1: '#75F94C',
