@@ -4,10 +4,12 @@ module.exports = {
     author: `Recosante`,
     description: `Une recommandation quotidienne pour vous protéger des impacts de la qualité de l'air sur votre santé.`,
     siteUrl: `https://recosante.beta.gouv.fr`,
+    image: 'metaimage.jpg',
+    twitterUsername: 'recosante',
   },
   plugins: [
-    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     {
@@ -77,7 +79,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#000091`,
         display: `minimal-ui`,
-        icon: `content/assets/favicon.png`,
+        icon: 'src/images/favicon.png',
       },
     },
     'gatsby-plugin-offline',

@@ -1,141 +1,75 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
+import { useLocation } from '@reach/router'
 import { useStaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, image: metaImage, title, pathname }) {
-  const { site, file } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-            siteUrl
-          }
-        }
-        file(relativePath: { eq: "metaimage.jpg" }) {
-          childImageSharp {
-            resize(width: 1200) {
-              src
-              height
-              width
-            }
-          }
+const SEO = (props) => {
+  const { pathname } = useLocation()
+  const { site } = useStaticQuery(graphql`
+    query SEO {
+      site {
+        siteMetadata {
+          defaultTitle: title
+          defaultDescription: description
+          siteUrl
+          defaultImage: image
+          twitterUsername
         }
       }
-    `
-  )
+    }
+  `)
 
-  const metaDescription = description || site.siteMetadata.description
+  const {
+    defaultTitle,
+    defaultDescription,
+    siteUrl,
+    defaultImage,
+    twitterUsername,
+  } = site.siteMetadata
 
-  const image = metaImage || file ? file.childImageSharp.resize : null
+  const seo = {
+    title: props.title ? `${props.title} | ${defaultTitle}` : defaultTitle,
+    description: props.description || defaultDescription,
+    image: `${siteUrl}/${props.image || defaultImage}`,
+    url: `${siteUrl}${pathname}`,
+  }
 
-  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
+  console.log('image', seo.image)
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={
-        title === 'Recosanté' ? 'Recosanté' : `%s | ${site.siteMetadata.title}`
-      }
-      link={
-        canonical
-          ? [
-              {
-                rel: 'canonical',
-                href: canonical,
-              },
-            ]
-          : []
-      }
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ]
-        .concat(
-          image
-            ? [
-                {
-                  property: 'og:image',
-                  content: `${site.siteMetadata.siteUrl}${image.src}`,
-                },
-                {
-                  property: 'og:image:width',
-                  content: image.width,
-                },
-                {
-                  property: 'og:image:height',
-                  content: image.height,
-                },
-                {
-                  name: 'twitter:card',
-                  content: 'summary_large_image',
-                },
-                {
-                  name: 'twitter:image',
-                  content: `${site.siteMetadata.siteUrl}${image.src}`,
-                },
-              ]
-            : [
-                {
-                  name: 'twitter:card',
-                  content: 'summary',
-                },
-              ]
-        )
-        .concat(meta)}
-    />
+    <Helmet title={seo.title}>
+      <meta name='description' content={seo.description} />
+      <meta name='image' content={seo.image} />
+
+      {seo.url && <meta property='og:url' content={seo.url} />}
+
+      {(props.article ? true : null) && (
+        <meta property='og:type' content='article' />
+      )}
+
+      {seo.title && <meta property='og:title' content={seo.title} />}
+
+      {seo.description && (
+        <meta property='og:description' content={seo.description} />
+      )}
+
+      {seo.image && <meta property='og:image' content={seo.image} />}
+
+      <meta name='twitter:card' content='summary_large_image' />
+
+      {twitterUsername && (
+        <meta name='twitter:creator' content={twitterUsername} />
+      )}
+
+      {seo.title && <meta name='twitter:title' content={seo.title} />}
+
+      {seo.description && (
+        <meta name='twitter:description' content={seo.description} />
+      )}
+
+      {seo.image && <meta name='twitter:image' content={seo.image} />}
+    </Helmet>
   )
-}
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-  image: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
-  }),
-  pathname: PropTypes.string,
 }
 
 export default SEO

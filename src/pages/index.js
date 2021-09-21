@@ -9,10 +9,9 @@ import About from 'src/components/About'
 
 export default function Index() {
   return (
-    <Web title={`Recosanté`}>
+    <Web>
       <Search main />
       <Newsletter />
-      <Widget home />
       <Data />
       <About />
     </Web>

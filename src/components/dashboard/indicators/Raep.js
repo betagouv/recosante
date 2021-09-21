@@ -27,21 +27,21 @@ export default function Raep(props) {
           <Card.Details>
             <Details data={data} open={true} />
           </Card.Details>
-          {data && data.raep.advice && (
-            <Card.Recommandation intro={data.raep.advice.main} />
-          )}
+          <Card.Recommandation>
+            {data && data.raep.advice && data.raep.advice.main}
+          </Card.Recommandation>
         </Card.Mobile>
       </Card.Content>
       {data && data.raep && data.raep.validity && data.raep.sources && (
         <Card.Source>
           Prévision du{' '}
-          {new Date(data.indice_atmo.validity.start).toLocaleDateString('fr', {
+          {new Date(data.raep.validity.start).toLocaleDateString('fr', {
             year: 'numeric',
             month: 'long',
             day: 'numeric',
           })}{' '}
           au{' '}
-          {new Date(data.indice_atmo.validity.end).toLocaleDateString('fr', {
+          {new Date(data.raep.validity.end).toLocaleDateString('fr', {
             year: 'numeric',
             month: 'long',
             day: 'numeric',

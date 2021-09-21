@@ -6,7 +6,7 @@ import { GlobalStyle } from 'src/utils/styles'
 import StyleProvider from 'src/components/providers/StyleProvider'
 import ModalProvider from 'src/components/providers/ModalProvider'
 
-import Seo from './web/SEO'
+import Seo from './web/Seo'
 import Header from './Header'
 import Footer from './Footer'
 import WrapperModal from 'src/components/modals/WrapperModal'

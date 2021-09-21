@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 
 import Mobile from './card/Mobile'
-import Recommandation from './card/Recommandation'
+import Subscribe from './card/Subscribe'
 
 const fetching = keyframes`
   from {
@@ -90,7 +90,12 @@ Card.Mobile = Mobile
 Card.Details = styled.div`
   margin-bottom: 2rem;
 `
-Card.Recommandation = Recommandation
+Card.Recommandation = styled.div`
+  font-weight: 300;
+  margin-bottom: 1rem;
+`
+Card.Subscribe = Subscribe
+
 Card.Source = styled.div`
   margin-right: 0.5rem;
   font-size: 0.625rem;

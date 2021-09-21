@@ -23,9 +23,11 @@ export default function PotentielRadon(props) {
           <Chart data={data} />
         </Card.Header>
         <Card.Mobile>
-          {data && data.potentiel_radon.advice ? (
-            <Card.Recommandation intro={data.potentiel_radon.advice.main} />
-          ) : null}
+          <Card.Recommandation>
+            {data &&
+              data.potentiel_radon.advice &&
+              data.potentiel_radon.advice.main}
+          </Card.Recommandation>
         </Card.Mobile>
       </Card.Content>
       {data &&
