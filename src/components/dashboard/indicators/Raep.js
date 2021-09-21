@@ -34,8 +34,19 @@ export default function Raep(props) {
       </Card.Content>
       {data && data.raep && data.raep.validity && data.raep.sources && (
         <Card.Source>
-          Prévision du {data.raep.validity.start} au {data.raep.validity.end} à{' '}
-          {data.raep.validity.area}
+          Prévision du{' '}
+          {new Date(data.indice_atmo.validity.start).toLocaleDateString('fr', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}{' '}
+          au{' '}
+          {new Date(data.indice_atmo.validity.end).toLocaleDateString('fr', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}{' '}
+          à {data.raep.validity.area}
           <br />
           Données fournies par{' '}
           <MagicLink to={data.raep.sources[0].url}>

@@ -32,8 +32,13 @@ export default function AirQuality(props) {
       </Card.Content>
       {data && (
         <Card.Source>
-          Prévision pour le {data.indice_atmo.validity.start} à{' '}
-          {data.indice_atmo.validity.area}
+          Prévision pour le{' '}
+          {new Date(data.indice_atmo.validity.start).toLocaleDateString('fr', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}{' '}
+          à {data.indice_atmo.validity.area}
           <br />
           Données fournies par{' '}
           <MagicLink to={data.indice_atmo.sources[0].url}>
