@@ -31,6 +31,9 @@ press:
   - titre: Centre de lutte contre le cancer Léon Bérard
     image: ../assets/logos/Logo-centre-leon-berard-lyon.jpg
     link: https://www.centreleonberard.fr/
+  - titre: Utrail
+    image: ../assets/logos/logoutrail.png
+    link: https://www2.u-trail.com/
 ---
 
 # Partenaires
