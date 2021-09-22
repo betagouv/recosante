@@ -1,14 +1,9 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 
-export default function useUser() {
-  const [user, setUser] = useState({})
+import UserContext from 'utils/UserContext'
 
-  const mutateUser = (mutation) => {
-    setUser({
-      ...user,
-      ...mutation,
-    })
-  }
+export default function useWindowSize() {
+  const { user, mutateUser } = useContext(UserContext)
 
   return { user, mutateUser }
 }

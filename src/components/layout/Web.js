@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 
 import { GlobalStyle } from 'src/utils/styles'
 import StyleProvider from 'src/components/providers/StyleProvider'
+import UserProvider from 'src/components/providers/UserProvider'
 import ModalProvider from 'src/components/providers/ModalProvider'
 
 import Seo from './web/Seo'
@@ -30,15 +31,17 @@ export default function Web(props) {
       <Seo title={props.title} />
       <QueryClientProvider client={queryClient}>
         <StyleProvider>
-          <ModalProvider>
-            <GlobalStyle />
-            <Fullscreen>
-              <Header />
-              <Content>{props.children}</Content>
-            </Fullscreen>
-            <Footer />
-            <WrapperModal />
-          </ModalProvider>
+          <UserProvider>
+            <ModalProvider>
+              <GlobalStyle />
+              <Fullscreen>
+                <Header />
+                <Content>{props.children}</Content>
+              </Fullscreen>
+              <Footer />
+              <WrapperModal />
+            </ModalProvider>
+          </UserProvider>
         </StyleProvider>
       </QueryClientProvider>
     </Wrapper>

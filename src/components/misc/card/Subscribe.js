@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import useUser from 'src/hooks/useUser'
 import ModalContext from 'src/utils/ModalContext'
+import UserContext from 'src/utils/UserContext'
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ const Link = styled.button`
 `
 export default function Subscribe(props) {
   const { setModal } = useContext(ModalContext)
-  const { mutateUser } = useUser()
+  const { mutateUser } = useContext(UserContext)
   return (
     <Wrapper>
       <Link

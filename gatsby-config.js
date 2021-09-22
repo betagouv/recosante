@@ -8,9 +8,9 @@ module.exports = {
     twitterUsername: 'recosante',
   },
   plugins: [
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-mdx`,
@@ -61,7 +61,6 @@ module.exports = {
         name: `assets`,
       },
     },
-
     {
       resolve: 'gatsby-plugin-matomo',
       options: {
