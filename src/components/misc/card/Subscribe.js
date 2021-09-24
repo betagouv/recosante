@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'src/utils/ModalContext'
-import UserContext from 'src/utils/UserContext'
+import useUser from 'hooks/useUser'
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,12 +22,12 @@ const Link = styled.button`
 `
 export default function Subscribe(props) {
   const { setModal } = useContext(ModalContext)
-  const { mutateUser } = useContext(UserContext)
+  const { mutateUser } = useUser()
   return (
     <Wrapper>
       <Link
         onClick={() => {
-          mutateUser({ indicators: ['indice_atmo'] })
+          mutateUser({ indicateurs: ['indice_atmo'] })
           setModal('inscription')
         }}
       >

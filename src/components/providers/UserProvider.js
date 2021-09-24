@@ -3,7 +3,11 @@ import React, { useState } from 'react'
 import UserContext from 'src/utils/UserContext'
 
 export default function ModalProvider(props) {
-  const [user, setUser] = useState(false)
+  const [user, setUser] = useState({
+    indicateurs_frequence: ['alerte'],
+    indicateurs_media: ['email'],
+    recommandations: ['oui'],
+  })
 
   return (
     <UserContext.Provider

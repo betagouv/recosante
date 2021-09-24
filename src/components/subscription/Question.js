@@ -15,20 +15,24 @@ export default function Question(props) {
 
   return (
     <Wrapper>
-      <Label>{props.label}</Label>
+      <Label>{props.step.label}</Label>
       <Options>
-        {props.options.map((option) => (
+        {props.step.options.map((option) => (
           <Option
-            active={user[props.name] && user[props.name].includes(option.value)}
+            active={
+              user[props.step.name] &&
+              user[props.step.name].includes(option.value)
+            }
             onClick={() => {
               mutateUser({
-                [props.name]: props.exclusive
-                  ? option.value
-                  : user[props.name] && user[props.name].includes(option.value)
-                  ? user[props.name].filter(
+                [props.step.name]: props.step.exclusive
+                  ? [option.value]
+                  : user[props.step.name] &&
+                    user[props.step.name].includes(option.value)
+                  ? user[props.step.name].filter(
                       (userOption) => userOption !== option.value
                     )
-                  : [...(user[props.name] || []), option.value],
+                  : [...(user[props.step.name] || []), option.value],
               })
             }}
           >

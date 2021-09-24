@@ -1,30 +1,42 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+import steps from 'utils/indicateursSteps'
 import Progress from './subscription/Progress'
+import Question from './subscription/Question'
 import Navigation from './subscription/Navigation'
-import Indicators from './subscription/list/Indicators'
-import IndicatorsFrequency from './subscription/list/IndicatorsFrequency'
-import IndicatorsMedia from './subscription/list/IndicatorsMedia'
+import Recommandations from './subscription/Recommandations'
 
 const Wrapper = styled.div``
 export default function Subscription() {
   const [currentStep, setCurrentStep] = useState(0)
 
-  const steps = [
-    { title: 'Indicateurs', question: <Indicators /> },
-    { title: 'Fréquence', question: <IndicatorsFrequency /> },
-    { title: 'Média', question: <IndicatorsMedia /> },
-  ]
+  console.log(currentStep)
   return (
     <Wrapper>
       <Progress currentStep={currentStep} steps={steps} />
-      {steps[currentStep].question}
-      <Navigation
-        currentStep={currentStep}
-        setCurrentStep={setCurrentStep}
-        totalSteps={steps.length}
-      />
+      {steps[currentStep] ? (
+        <>
+          <Question step={steps[currentStep]} />
+          <Navigation
+            currentStep={currentStep}
+            setCurrentStep={setCurrentStep}
+            steps={steps}
+          />
+        </>
+      ) : currentStep === 'end' ? (
+        'End'
+      ) : currentStep === 'identity' ? (
+        'Identity'
+      ) : (
+        <Recommandations
+          setCurrentStep={setCurrentStep}
+          gotoDeepLastStep={() =>
+            setCurrentStep((prevCurrentStep) => prevCurrentStep - 1)
+          }
+          small
+        />
+      )}
     </Wrapper>
   )
 }
