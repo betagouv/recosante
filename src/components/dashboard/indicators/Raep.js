@@ -27,10 +27,13 @@ export default function Raep(props) {
           <Card.Details>
             <Details data={data} open={true} />
           </Card.Details>
-          <Card.Recommandation>
-            {data && data.raep.advice && data.raep.advice.main}
-          </Card.Recommandation>
+          <Card.Recommandation
+            dangerouslySetInnerHTML={{
+              __html: data && data.raep.advice && data.raep.advice.main,
+            }}
+          />
         </Card.Mobile>
+        <Card.Subscribe indicateur='raep' place={props.place} />
       </Card.Content>
       {data && data.raep && data.raep.validity && data.raep.sources && (
         <Card.Source>

@@ -27,9 +27,12 @@ export default function AirQuality(props) {
           <Card.Details>
             <Details data={data} />
           </Card.Details>
-          <Card.Recommandation>
-            {data && data.indice_atmo.advice && data.indice_atmo.advice.main}
-          </Card.Recommandation>
+          <Card.Recommandation
+            dangerouslySetInnerHTML={{
+              __html:
+                data && data.indice_atmo.advice && data.indice_atmo.advice.main,
+            }}
+          />
         </Card.Mobile>
         <Card.Subscribe indicateur='indice_atmo' place={props.place} />
       </Card.Content>
