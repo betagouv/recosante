@@ -39,6 +39,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
     .then((res) =>
       res.forEach((place) => {
         place.departement &&
+          place.population > 20000 &&
           createPage({
             path: `/place/${place.code}/${place.nom
               .toLowerCase()
@@ -48,7 +49,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
               .replace(/[\u0300-\u036f]/g, '')}/`,
             component: require.resolve('./src/templates/place.js'),
             context: { place },
-            defer: place.population < 2000000,
+            defer: place.population < 20000,
           })
       })
     )
