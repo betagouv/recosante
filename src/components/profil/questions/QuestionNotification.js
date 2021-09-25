@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import useStepPosition from 'src/hooks/useStepPosition'
 import useNotificationsPrompt from 'src/hooks/useNotificationsPrompt'
 import useSentence from 'src/hooks/useSentence'
-import { useProfile, useProfileMutation } from 'src/utils/api'
+import { useProfile, useUserMutation } from 'src/utils/api'
 import Alert from 'src/components/base/Alert'
 import Wrapper from './question/Wrapper'
 import Value from './question/Value'
@@ -12,7 +12,7 @@ import Submit from './question/Submit'
 
 export default function QuestionNotification(props) {
   const { data } = useProfile()
-  const mutation = useProfileMutation()
+  const mutation = useUserMutation()
 
   const [answers, setAnswers] = useState([])
   useEffect(() => {

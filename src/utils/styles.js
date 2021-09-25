@@ -120,5 +120,6 @@ export const GlobalStyle = createGlobalStyle`
 
   strong {
     color: ${(props) => props.theme.colors.main};
+    font-weight: inherit;
   }
 `

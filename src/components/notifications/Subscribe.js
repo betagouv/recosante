@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useQueryParam } from 'use-query-params'
 
-import { useProfileMutation } from 'src/utils/api'
+import { useUserMutation } from 'src/utils/api'
 import useNotificationsPrompt from 'src/hooks/useNotificationsPrompt'
 import SubscribeForm from 'src/components/misc/SubscribeForm'
 import Button from 'src/components/base/Button'
@@ -17,7 +17,7 @@ const StyledAlert = styled(Alert)`
 `
 export default function Subscribe() {
   const [user] = useQueryParam('user')
-  const mutation = useProfileMutation()
+  const mutation = useUserMutation()
 
   const notifications = useNotificationsPrompt(
     '/sw.js',

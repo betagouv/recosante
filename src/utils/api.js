@@ -96,7 +96,7 @@ export function useProfile() {
     ['profile', uid],
     () =>
       axios
-        .get(`https://ecosante.beta.gouv.fr/inscription/${uid}`)
+        .get(`https://staging.api.recosante.beta.gouv.fr/users/${uid}`)
         .then((res) => res.data),
     {
       enabled: uid ? true : false,
@@ -104,17 +104,21 @@ export function useProfile() {
     }
   )
 }
-export function useProfileMutation() {
+export function useUserMutation() {
   const [uid] = useQueryParam('user')
   const queryClient = useQueryClient()
   return useMutation(
-    (profile) =>
-      axios.post(`https://ecosante.beta.gouv.fr/inscription/${uid}`, profile, {
-        headers: { Accept: ' application/json' },
-      }),
+    (user) =>
+      axios.post(
+        `https://staging.api.recosante.beta.gouv.fr/users`,
+        { ...user, commune: user.commune?.code },
+        {
+          headers: { Accept: ' application/json' },
+        }
+      ),
     {
       onSettled: () => {
-        queryClient.invalidateQueries(['profile', uid])
+        queryClient.invalidateQueries(['user', uid])
       },
     }
   )

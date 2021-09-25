@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import useUser from 'hooks/useUser'
+import useLocalUser from 'hooks/useLocalUser'
 
 const Wrapper = styled.div`
   padding-top: 2rem;
@@ -33,7 +33,7 @@ const Option = styled.button`
   }
 `
 export default function Question(props) {
-  const { user, mutateUser } = useUser()
+  const { user, mutateUser } = useLocalUser()
 
   return (
     <Wrapper>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import steps from 'utils/recommandationsSteps'
-import useUser from 'hooks/useUser'
+import useLocalUser from 'hooks/useLocalUser'
 import Progress from './Progress'
 import Question from './Question'
 import Navigation from './Navigation'
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   position: relative;
 `
 export default function Recommandations(props) {
-  const { user } = useUser()
+  const { user } = useLocalUser()
 
   const [currentStep, setCurrentStep] = useState(0)
 

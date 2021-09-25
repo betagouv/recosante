@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import useUser from 'hooks/useUser'
+import useLocalUser from 'hooks/useLocalUser'
+import { useUserMutation } from 'utils/api'
 import TextInput from 'src/components/base/TextInput'
 import SearchBar from 'src/components/search/SearchBar'
 import NavigationIdentity from './identity/NavigationIdentity'
@@ -28,6 +29,7 @@ const StyledSearchBar = styled(SearchBar)`
   right: 0;
   width: 100%;
   font-size: 1.25rem;
+  ${(props) => props.error && `border-color: ${props.theme.colors.error}`}
 `
 const MailInput = styled(TextInput)`
   display: block;
@@ -36,7 +38,9 @@ const MailInput = styled(TextInput)`
   font-size: 1.25rem;
 `
 export default function Identity(props) {
-  const { user, mutateUser } = useUser()
+  const { user, mutateUser } = useLocalUser()
+
+  const mutation = useUserMutation()
 
   const [error, setError] = useState(false)
   return (
@@ -58,7 +62,8 @@ export default function Identity(props) {
             setError(true)
           } else {
             setError(false)
-            console.log(user)
+            console.log(JSON.stringify(user))
+            mutation.mutate(user)
           }
         }}
       >

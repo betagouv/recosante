@@ -7,6 +7,7 @@ export default function ModalProvider(props) {
     indicateurs_frequence: ['alerte'],
     indicateurs_media: ['email'],
     recommandations: ['oui'],
+    mail: '',
   })
 
   return (

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Button from 'components/base/Button'
-import useUser from 'hooks/useUser'
+import useLocalUser from 'hooks/useLocalUser'
 
 const Wrapper = styled.div`
   display: flex;
@@ -36,7 +36,7 @@ const NextButton = styled(Button)`
   }
 `
 export default function Navigation(props) {
-  const { user } = useUser()
+  const { user } = useLocalUser()
 
   const prevButtonVisible = props.currentStep > 0 || props.gotoDeepLastStep
   return (

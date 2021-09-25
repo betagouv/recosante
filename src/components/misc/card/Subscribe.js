@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'src/utils/ModalContext'
-import useUser from 'hooks/useUser'
+import useLocalUser from 'hooks/useLocalUser'
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,13 +22,13 @@ const Link = styled.button`
 `
 export default function Subscribe(props) {
   const { setModal } = useContext(ModalContext)
-  const { mutateUser } = useUser()
+  const { mutateUser } = useLocalUser()
 
   return (
     <Wrapper>
       <Link
         onClick={() => {
-          mutateUser({ indicateurs: props.indicateur, commune: props.place })
+          mutateUser({ indicateurs: [props.indicateur], commune: props.place })
           setModal('indicators')
         }}
       >

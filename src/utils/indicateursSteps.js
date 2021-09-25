@@ -66,12 +66,12 @@ const steps = [
     label: 'Je choisis de quelle façon je souhaite recevoir ces indicateurs.',
     options: [
       {
-        value: 'email',
+        value: 'mail',
         label: `Email`,
         icon: <Email />,
       },
       {
-        value: 'notifications',
+        value: 'notifications_web',
         label: `Notification`,
         icon: <Notification />,
       },

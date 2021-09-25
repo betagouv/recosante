@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'src/utils/ModalContext'
-import useUser from 'hooks/useUser'
+import useLocalUser from 'hooks/useLocalUser'
 import Button from 'src/components/base/Button'
 import MailInput from './subscribeForm/MailInput'
 
@@ -37,7 +37,7 @@ const Submit = styled(Button)`
 `
 
 export default function SubscribeForm(props) {
-  const { user, mutateUser } = useUser()
+  const { user, mutateUser } = useLocalUser()
   const { setModal } = useContext(ModalContext)
 
   return (
