@@ -48,7 +48,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
               .replace(/[\u0300-\u036f]/g, '')}/`,
             component: require.resolve('./src/templates/place.js'),
             context: { place },
-            defer: place.population < 100000,
+            defer: place.population < 20000,
           })
       })
     )
