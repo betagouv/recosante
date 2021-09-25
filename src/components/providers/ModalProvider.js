@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import ModalContext from 'src/utils/ModalContext'
 
 export default function ModalProvider(props) {
-  const [modal, setModal] = useState('inscription')
+  const [modal, setModal] = useState('indicators')
 
   return (
     <ModalContext.Provider value={{ modal, setModal }}>

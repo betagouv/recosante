@@ -31,6 +31,7 @@ const Input = styled(TextInput)`
 `
 export default function MailInput(props) {
   const [focus, setFocus] = useState(false)
+
   return (
     <Wrapper className={props.className}>
       {props.label && (
@@ -45,6 +46,7 @@ export default function MailInput(props) {
         onChange={props.onChange}
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
+        required
       />
     </Wrapper>
   )

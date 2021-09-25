@@ -54,17 +54,17 @@ const steps = [
     label: 'Je renseigne le mode de chauffage de mon foyer.',
     options: [
       {
-        value: 'oui',
+        value: 'bois',
         label: `Cheminée ou poêle à bois`,
         icon: <IndiceAtmo />,
       },
       {
-        value: 'non',
+        value: 'chaudiere',
         label: `Chaudière au gaz, fioul ou électrique`,
         icon: <IndiceAtmo />,
       },
       {
-        value: 'yep',
+        value: 'appoint',
         label: `Chauffage mobile d’appoint`,
         icon: <IndiceAtmo />,
       },
@@ -81,12 +81,12 @@ const steps = [
         icon: <IndiceAtmo />,
       },
       {
-        value: 'non',
+        value: 'tec',
         label: `Transport en commun`,
         icon: <IndiceAtmo />,
       },
       {
-        value: 'non',
+        value: 'voiture',
         label: `Voiture`,
         icon: <IndiceAtmo />,
       },

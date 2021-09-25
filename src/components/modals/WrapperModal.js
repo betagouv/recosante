@@ -4,7 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import ModalContext from 'src/utils/ModalContext'
 import Modal from 'src/components/base/Modal'
-import Subscription from 'src/components/Subscription'
+import Indicators from 'src/components/Indicators'
 
 export default function WrapperModal() {
   const data = useStaticQuery(
@@ -65,14 +65,14 @@ export default function WrapperModal() {
   const { modal, setModal } = useContext(ModalContext)
 
   return (
-    <Modal open={modal} setOpen={setModal}>
+    <Modal open={modal} setOpen={setModal} large={modal === 'indicators'}>
       {modal && data[modal.replaceAll('.', '')] ? (
         <>
           <h3>{data[modal.replaceAll('.', '')].frontmatter.title}</h3>
           <MDXRenderer>{data[modal.replaceAll('.', '')].body}</MDXRenderer>
         </>
       ) : (
-        modal === 'inscription' && <Subscription />
+        modal === 'indicators' && <Indicators />
       )}
     </Modal>
   )

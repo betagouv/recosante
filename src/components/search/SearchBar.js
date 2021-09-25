@@ -32,7 +32,8 @@ const Wrapper = styled.form`
   }
 `
 export default function SearchBar(props) {
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState(props.initialValue || '')
+
   const debouncedSearch = useDebounce(search)
 
   const { data, isFetching } = useSearch(debouncedSearch)
@@ -73,6 +74,7 @@ export default function SearchBar(props) {
           props.handlePlaceSelection(place)
           setFocus(false)
         }}
+        required={props.required}
       />
       {data && focus && (
         <Suggestions
@@ -83,6 +85,7 @@ export default function SearchBar(props) {
           isFetching={isFetching}
           setCurrent={setCurrent}
           handleSuggestionClick={(place) => {
+            setSearch(place.nom)
             props.handlePlaceSelection(place)
             setFocus(false)
           }}

@@ -23,12 +23,13 @@ const Link = styled.button`
 export default function Subscribe(props) {
   const { setModal } = useContext(ModalContext)
   const { mutateUser } = useUser()
+
   return (
     <Wrapper>
       <Link
         onClick={() => {
-          mutateUser({ indicateurs: ['indice_atmo'] })
-          setModal('inscription')
+          mutateUser({ indicateurs: props.indicateur, commune: props.place })
+          setModal('indicators')
         }}
       >
         M’abonner à cet indicateur

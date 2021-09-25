@@ -1,13 +1,13 @@
 import React from 'react'
 
 import IndiceAtmo from './icons/IndiceAtmo'
-import Raep from './icons/Raep'
-import IndiceUv from './icons/IndiceUv'
-import VigilanceMeteorologique from './icons/VigilanceMeteorologique'
-import Daily from './icons/Daily'
-import Alert from './icons/Alert'
-import Email from './icons/Email'
-import Notification from './icons/Notification'
+import Raep from './icons/IndiceAtmo'
+import IndiceUv from './icons/IndiceAtmo'
+import VigilanceMeteorologique from './icons/IndiceAtmo'
+import Daily from './icons/IndiceAtmo'
+import Alert from './icons/IndiceAtmo'
+import Email from './icons/IndiceAtmo'
+import Notification from './icons/IndiceAtmo'
 
 const steps = [
   {

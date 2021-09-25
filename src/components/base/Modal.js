@@ -28,7 +28,7 @@ const Content = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: ${(props) => props.width || '35.5rem'};
+  width: ${(props) => (props.large ? '48rem' : '35.5rem')};
   max-height: 90vh;
   margin: 0.5rem;
   background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
@@ -67,7 +67,7 @@ export default function Modal(props) {
       <Background open={props.open} onClick={() => props.setOpen(false)} />
       <Content
         open={props.open}
-        width={props.width}
+        large={props.large}
         textColor={props.textColor}
         backgroundColor={props.backgroundColor}
       >

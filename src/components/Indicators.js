@@ -6,12 +6,12 @@ import Progress from './subscription/Progress'
 import Question from './subscription/Question'
 import Navigation from './subscription/Navigation'
 import Recommandations from './subscription/Recommandations'
+import Identity from './subscription/Identity'
 
 const Wrapper = styled.div``
-export default function Subscription() {
+export default function Indicators(props) {
   const [currentStep, setCurrentStep] = useState(0)
 
-  console.log(currentStep)
   return (
     <Wrapper>
       <Progress currentStep={currentStep} steps={steps} />
@@ -27,7 +27,7 @@ export default function Subscription() {
       ) : currentStep === 'end' ? (
         'End'
       ) : currentStep === 'identity' ? (
-        'Identity'
+        <Identity setPreviousStep={() => setCurrentStep(3)} />
       ) : (
         <Recommandations
           setCurrentStep={setCurrentStep}

@@ -84,7 +84,7 @@ export default function Checkbox(props) {
         <LabelWrapper>
           <Label
             focus={focus}
-            for={props.name}
+            htmlFor={props.name}
             onClick={(e) => e.preventDefault()}
           >
             {props.children}

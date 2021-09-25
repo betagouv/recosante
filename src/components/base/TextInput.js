@@ -21,6 +21,8 @@ export default function TextInput(props) {
       name={props.name}
       list={props.list}
       value={props.value}
+      placeholder={props.placeholder}
+      required={props.required}
       onChange={(e) => {
         props.onChange({ value: e.currentTarget.value, name: props.name })
       }}

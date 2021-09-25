@@ -7,7 +7,9 @@ import Progress from './Progress'
 import Question from './Question'
 import Navigation from './Navigation'
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  position: relative;
+`
 export default function Recommandations(props) {
   const { user } = useUser()
 
