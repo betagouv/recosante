@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import useStepPosition from 'src/hooks/useStepPosition'
-import { useProfile, useUserMutation } from 'src/utils/api'
+import { useUser, useUserMutation } from 'hooks/useUser'
 import Wrapper from './question/Wrapper'
 import Value from './question/Value'
 import Submit from './question/Submit'
@@ -23,7 +23,7 @@ const StyledSearchBar = styled(SearchBar)`
   }
 `
 export default function Address() {
-  const { data } = useProfile()
+  const { data } = useUser()
   const mutation = useUserMutation()
 
   const [answer, setAnswer] = useState()

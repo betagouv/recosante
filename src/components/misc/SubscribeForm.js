@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 
 import ModalContext from 'src/utils/ModalContext'
-import useLocalUser from 'hooks/useLocalUser'
+import { useLocalUser } from 'hooks/useUser'
 import Button from 'src/components/base/Button'
 import MailInput from './subscribeForm/MailInput'
 

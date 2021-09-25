@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import useStepPosition from 'src/hooks/useStepPosition'
-import { useProfile, useUserMutation } from 'src/utils/api'
+import { useUser, useUserMutation } from 'hooks/useUser'
 import TextInput from 'src/components/base/TextInput'
 import Wrapper from './question/Wrapper'
 import Submit from './question/Submit'
@@ -24,7 +24,7 @@ const StyledTextInput = styled(TextInput)`
   }
 `
 export default function Mail() {
-  const { data } = useProfile()
+  const { data } = useUser()
   const mutation = useUserMutation()
 
   const [answer, setAnswer] = useState([])

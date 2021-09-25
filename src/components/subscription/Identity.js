@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import useLocalUser from 'hooks/useLocalUser'
-import { useUserMutation } from 'utils/api'
+import { useLocalUser, useUserMutation } from 'hooks/useUser'
 import TextInput from 'src/components/base/TextInput'
 import SearchBar from 'src/components/search/SearchBar'
 import NavigationIdentity from './identity/NavigationIdentity'

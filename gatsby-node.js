@@ -32,7 +32,9 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
   })
 
   const places = axios
-    .get('https://geo.api.gouv.fr/communes/?fields=departement,codesPostaux')
+    .get(
+      'https://geo.api.gouv.fr/communes/?fields=departement,codesPostaux,population'
+    )
     .then((res) => res.data)
     .then((res) =>
       res.forEach((place) => {
@@ -46,6 +48,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
               .replace(/[\u0300-\u036f]/g, '')}/`,
             component: require.resolve('./src/templates/place.js'),
             context: { place },
+            defer: place.population < 100000,
           })
       })
     )

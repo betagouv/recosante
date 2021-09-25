@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import useLocalUser from 'hooks/useLocalUser'
+import { useLocalUser } from 'hooks/useUser'
 
 const Wrapper = styled.div`
   padding-top: 2rem;

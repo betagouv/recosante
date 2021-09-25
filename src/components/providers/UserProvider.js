@@ -5,7 +5,7 @@ import UserContext from 'src/utils/UserContext'
 export default function ModalProvider(props) {
   const [user, setUser] = useState({
     indicateurs_frequence: ['alerte'],
-    indicateurs_media: ['email'],
+    indicateurs_media: ['mail'],
     recommandations: ['oui'],
     mail: '',
   })

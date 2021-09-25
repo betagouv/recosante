@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react'
 
 import useStepPosition from 'src/hooks/useStepPosition'
 import useSentence from 'src/hooks/useSentence'
-import { useProfile, useUserMutation } from 'src/utils/api'
+import { useUser, useUserMutation } from 'hooks/useUser'
 import Wrapper from './question/Wrapper'
 import Value from './question/Value'
 import Answers from './question/Answers'
 import Submit from './question/Submit'
 
 export default function Step(props) {
-  const { data } = useProfile()
+  const { data } = useUser()
   const mutation = useUserMutation()
 
   const [answers, setAnswers] = useState([])

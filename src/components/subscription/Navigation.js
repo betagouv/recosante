@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Button from 'components/base/Button'
-import useLocalUser from 'hooks/useLocalUser'
+import { useLocalUser } from 'hooks/useUser'
 
 const Wrapper = styled.div`
   display: flex;

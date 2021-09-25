@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import steps from 'utils/recommandationsSteps'
-import useLocalUser from 'hooks/useLocalUser'
+import { useLocalUser } from 'hooks/useUser'
 import Progress from './Progress'
 import Question from './Question'
 import Navigation from './Navigation'

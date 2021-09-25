@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { navigate } from 'gatsby'
 import { useQueryParam, StringParam, BooleanParam } from 'use-query-params'
 
-import { useProfile } from 'src/utils/api'
+import { useUser } from 'hooks/useUser'
 import Mail from './questions/Mail'
 import Address from './questions/Address'
 import Frequency from './questions/list/Frequency'
@@ -30,7 +30,7 @@ export default function Questions() {
   const [current, setCurrent] = useQueryParam('step', StringParam)
   const [subscription] = useQueryParam('subscription', BooleanParam)
 
-  const { data, isFetching } = useProfile()
+  const { data, isFetching } = useUser()
   useEffect(() => {
     if (data) {
       const steps = [

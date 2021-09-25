@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useQueryParam } from 'use-query-params'
 
-import { useUserMutation } from 'src/utils/api'
+import { useUserMutation } from 'hooks/useUser'
 import useNotificationsPrompt from 'src/hooks/useNotificationsPrompt'
 import SubscribeForm from 'src/components/misc/SubscribeForm'
 import Button from 'src/components/base/Button'

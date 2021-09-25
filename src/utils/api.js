@@ -1,6 +1,6 @@
 /*eslint-disable eqeqeq*/
 
-import { useQuery, useMutation, useQueryClient } from 'react-query'
+import { useQuery, useMutation } from 'react-query'
 import axios from 'axios'
 import { useQueryParam } from 'use-query-params'
 
@@ -88,39 +88,6 @@ export function useRecommandations() {
 export function useStatistiques() {
   return useQuery(['statistiques'], () =>
     axios.get(`https://ecosante.beta.gouv.fr/stats/`).then((res) => res.data)
-  )
-}
-export function useProfile() {
-  const [uid] = useQueryParam('user')
-  return useQuery(
-    ['profile', uid],
-    () =>
-      axios
-        .get(`https://staging.api.recosante.beta.gouv.fr/users/${uid}`)
-        .then((res) => res.data),
-    {
-      enabled: uid ? true : false,
-      refetchOnWindowFocus: false,
-    }
-  )
-}
-export function useUserMutation() {
-  const [uid] = useQueryParam('user')
-  const queryClient = useQueryClient()
-  return useMutation(
-    (user) =>
-      axios.post(
-        `https://staging.api.recosante.beta.gouv.fr/users`,
-        { ...user, commune: user.commune?.code },
-        {
-          headers: { Accept: ' application/json' },
-        }
-      ),
-    {
-      onSettled: () => {
-        queryClient.invalidateQueries(['user', uid])
-      },
-    }
   )
 }
 export function useSubscribe() {
