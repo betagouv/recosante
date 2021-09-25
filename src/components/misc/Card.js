@@ -50,10 +50,11 @@ Card.Header = styled.div`
   }
 `
 Card.Info = styled.div``
-Card.Title = styled.h2`
+Card.Title = styled.h4`
   position: relative;
   margin-bottom: 1.5rem;
   font-size: 1.125rem;
+  font-weight: normal;
 
   &:after {
     content: '';

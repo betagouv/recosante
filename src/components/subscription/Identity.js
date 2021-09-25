@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import useUser from 'hooks/useUser'
 import TextInput from 'src/components/base/TextInput'
-import Alert from 'src/components/base/Alert'
 import SearchBar from 'src/components/search/SearchBar'
 import NavigationIdentity from './identity/NavigationIdentity'
 
-const Wrapper = styled.form`
+const Wrapper = styled.div`
   padding-top: 2rem;
 `
 const Label = styled.label`
@@ -16,14 +15,12 @@ const Label = styled.label`
   font-weight: 300;
   text-align: center;
 `
-const InputsWrapper = styled.div`
-  width: 22.25rem;
-  margin: 0 auto 4rem;
-`
+
 const SearchBarWrapper = styled.div`
   position: relative;
+  width: 22.25rem;
   height: 3rem;
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem;
 `
 const StyledSearchBar = styled(SearchBar)`
   top: 0;
@@ -33,40 +30,48 @@ const StyledSearchBar = styled(SearchBar)`
   font-size: 1.25rem;
 `
 const MailInput = styled(TextInput)`
-  margin: 0;
+  display: block;
+  width: 22.25rem;
+  margin: 0 auto 4rem;
   font-size: 1.25rem;
 `
 export default function Identity(props) {
   const { user, mutateUser } = useUser()
 
+  const [error, setError] = useState(false)
   return (
-    <Wrapper
-      onSubmit={(e) => {
-        e.preventDefault()
-        console.log(user)
-      }}
-    >
+    <Wrapper>
       <Label>Je valide mes informations personnelles.</Label>
-      <InputsWrapper>
-        <SearchBarWrapper>
-          <StyledSearchBar
-            initialValue={user.commune && user.commune.nom}
-            handlePlaceSelection={(place) => {
-              mutateUser({ commune: place })
-            }}
-            required
-          />
-        </SearchBarWrapper>
+      <SearchBarWrapper>
+        <StyledSearchBar
+          initialValue={user.commune && user.commune.nom}
+          handlePlaceSelection={(place) => {
+            mutateUser({ commune: place })
+          }}
+          error={error && !user.commune}
+        />
+      </SearchBarWrapper>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault()
+          if (!user.commune) {
+            setError(true)
+          } else {
+            setError(false)
+            console.log(user)
+          }
+        }}
+      >
         <MailInput
           type='email'
           name='email'
-          placeholder='Votre email'
+          placeholder='Entrez votre email'
           value={user.mail}
           onChange={({ value }) => mutateUser({ mail: value })}
           required
         />
-      </InputsWrapper>
-      <NavigationIdentity setPreviousStep={props.setPreviousStep} />
+        <NavigationIdentity setPreviousStep={props.setPreviousStep} />
+      </form>
     </Wrapper>
   )
 }

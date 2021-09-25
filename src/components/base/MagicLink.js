@@ -3,7 +3,11 @@ import { Link } from 'gatsby'
 
 export default function MagicLink(props) {
   return !props.to ? (
-    <button className={props.className} onClick={props.onClick}>
+    <button
+      className={props.className}
+      onClick={props.onClick}
+      type={props.type}
+    >
       {props.children}
     </button>
   ) : props.to.includes('http') || props.to.includes('mailto') ? (

@@ -50,16 +50,17 @@ export default function SearchBar(props) {
 
   return (
     <Wrapper
+      className={props.className}
       focus={focus}
       onSubmit={(e) => {
         e.preventDefault()
+        e.stopPropagation()
         if (current > -1) {
           setSearch(data[current].nom)
           props.handlePlaceSelection(data[current])
           setFocus(false)
         }
       }}
-      className={props.className}
     >
       <TextInput
         ref={input}
@@ -74,7 +75,6 @@ export default function SearchBar(props) {
           props.handlePlaceSelection(place)
           setFocus(false)
         }}
-        required={props.required}
       />
       {data && focus && (
         <Suggestions

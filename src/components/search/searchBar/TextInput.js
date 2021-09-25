@@ -66,7 +66,6 @@ export default React.forwardRef(function TextInput(props, ref) {
         type='text'
         placeholder={props.placeholder || 'Entrez votre ville'}
         value={props.search}
-        required={props.required}
         onChange={(e) => props.setSearch(e.target.value)}
         onFocus={() => props.setFocus(true)}
         onBlur={() => props.setFocus(false)}

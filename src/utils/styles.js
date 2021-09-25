@@ -53,7 +53,6 @@ export const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-family: ${(props) => props.theme.fonts};
-    text-rendering: geometricPrecision;
   }
 
   body {

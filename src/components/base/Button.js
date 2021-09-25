@@ -73,6 +73,7 @@ export default function Button(props) {
       expand={props.expand ? 1 : 0}
       noExpand={props.noExpand ? 1 : 0}
       color={props.color}
+      type={props.type}
     >
       <span>{props.children}</span>
     </Wrapper>
