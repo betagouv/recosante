@@ -30,12 +30,18 @@ const steps = [
         label: `Indice UV`,
         icon: <IndiceUv />,
         disabled: true,
+        detail: {
+          label: '(Bientôt disponible)',
+        },
       },
       {
         value: 'vigilance_meteorologique',
         label: `Vigilance météorologique`,
         icon: <VigilanceMeteorologique />,
         disabled: true,
+        detail: {
+          label: '(Bientôt disponible)',
+        },
       },
     ],
     mandatory: true,
