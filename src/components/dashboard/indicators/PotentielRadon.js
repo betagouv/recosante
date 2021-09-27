@@ -32,15 +32,18 @@ export default function PotentielRadon(props) {
             }}
           />
         </Card.Mobile>
+        <Card.Subscribe
+          indicateur='potentiel_radon'
+          place={props.place}
+          disabled
+        />
       </Card.Content>
       {data &&
         data.potentiel_radon &&
         data.potentiel_radon.validity &&
         data.potentiel_radon.sources && (
           <Card.Source>
-            Prévision du {data.potentiel_radon.validity.start} au{' '}
-            {data.potentiel_radon.validity.end} à{' '}
-            {data.potentiel_radon.validity.area}
+            Mesures fixes valides pour {data.potentiel_radon.validity.area}
             <br />
             Données fournies par{' '}
             <MagicLink to={data.potentiel_radon.sources[0].url}>

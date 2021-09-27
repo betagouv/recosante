@@ -15,10 +15,11 @@ const Wrapper = styled.div`
 const Link = styled.button`
   padding: 0;
   color: ${(props) => props.theme.colors.main};
+  text-decoration: underline;
   background: transparent;
   border: none;
-  text-decoration: underline;
-  cursor: pointer;
+  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
+  cursor: ${(props) => (props.disabled ? 'normal' : 'pointer')};
 `
 export default function Subscribe(props) {
   const { setModal } = useContext(ModalContext)
@@ -31,8 +32,9 @@ export default function Subscribe(props) {
           mutateUser({ indicateurs: [props.indicateur], commune: props.place })
           setModal('indicators')
         }}
+        disabled={props.disabled}
       >
-        M’abonner à cet indicateur
+        {props.disabled ? `Données fixes` : `M’abonner à cet indicateur`}
       </Link>
     </Wrapper>
   )
