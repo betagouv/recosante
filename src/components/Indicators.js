@@ -15,7 +15,7 @@ export default function Indicators(props) {
   const [currentStep, setCurrentStep] = useState(0)
 
   const [modal, setModal] = useState(false)
-  console.log(modal)
+
   return (
     <Wrapper>
       <Progress currentStep={currentStep} steps={steps} />

@@ -5,6 +5,8 @@ import { useLocalUser, useUserMutation } from 'hooks/useUser'
 import TextInput from 'src/components/base/TextInput'
 import SearchBar from 'src/components/search/SearchBar'
 import NavigationIdentity from './identity/NavigationIdentity'
+import Error from './identity/Error'
+import Success from './identity/Success'
 
 const Wrapper = styled.div`
   padding-top: 2rem;
@@ -42,6 +44,8 @@ export default function Identity(props) {
   const mutation = useUserMutation()
 
   const [error, setError] = useState(false)
+
+  console.log(mutation)
   return (
     <Wrapper>
       <Label>Je valide mes informations personnelles.</Label>
@@ -74,8 +78,13 @@ export default function Identity(props) {
           onChange={({ value }) => mutateUser({ mail: value })}
           required
         />
-        <NavigationIdentity setPreviousStep={props.setPreviousStep} />
+        <NavigationIdentity
+          setPreviousStep={props.setPreviousStep}
+          fetching={mutation.isLoading}
+        />
       </form>
+      <Error error={mutation.error} reset={mutation.reset} />
+      <Success data={mutation.data} />
     </Wrapper>
   )
 }

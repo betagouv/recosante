@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Button from 'components/base/Button'
-import { StaticImage } from 'gatsby-plugin-image'
 
 const Wrapper = styled.div`
   position: absolute;

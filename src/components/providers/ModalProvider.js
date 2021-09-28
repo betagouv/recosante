@@ -7,7 +7,22 @@ export default function ModalProvider(props) {
   const [subscription, setSubscription] = useState()
   return (
     <ModalContext.Provider
-      value={{ modal, setModal, subscription, setSubscription }}
+      value={{
+        modal,
+        setModal,
+        subscription,
+        setSubscription: (value, force) => {
+          if (
+            value ||
+            force ||
+            window.confirm(
+              'Souhaitez-vous vraiment abandonner votre inscription ?'
+            )
+          ) {
+            setSubscription(value)
+          }
+        },
+      }}
     >
       {props.children}
     </ModalContext.Provider>
