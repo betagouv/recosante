@@ -59,7 +59,7 @@ export default function Navigation(props) {
       {props.currentStep < props.steps.length && (
         <NextButton
           disabled={
-            !user[props.steps[props.currentStep].name] &&
+            !user[props.steps[props.currentStep].name]?.length &&
             props.steps[props.currentStep].mandatory
           }
           onClick={() =>

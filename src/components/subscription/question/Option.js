@@ -58,9 +58,9 @@ const Detail = styled.div`
   font-size: 0.75rem;
   font-weight: 300;
   text-align: center;
-  color: ${(props) => props.theme.colors[props.onClick ? 'main' : 'text']};
-  text-decoration: ${(props) => (props.onClick ? 'underline' : 'none')};
-  cursor: ${(props) => (props.onClick ? 'pointer' : 'normal')};
+  color: ${(props) => props.theme.colors[props.modal ? 'main' : 'text']};
+  text-decoration: ${(props) => (props.modal ? 'underline' : 'none')};
+  cursor: ${(props) => (props.modal ? 'pointer' : 'normal')};
 `
 export default function Option(props) {
   return (
@@ -79,7 +79,13 @@ export default function Option(props) {
         <Checkbox checkbox={props.checkbox} active={props.active} />
       </Button>
       {props.option.detail && (
-        <Detail onClick={props.option.detail.onClick}>
+        <Detail
+          onClick={() =>
+            props.option.detail.modal &&
+            props.setModal(props.option.detail.modal)
+          }
+          modal={props.option.detail.modal}
+        >
           {props.option.detail.label}
         </Detail>
       )}

@@ -33,7 +33,7 @@ const StyledSearchBar = styled(SearchBar)`
 const MailInput = styled(TextInput)`
   display: block;
   width: 22.25rem;
-  margin: 0 auto 4rem;
+  margin: 0 auto 5.5rem;
   font-size: 1.25rem;
 `
 export default function Identity(props) {

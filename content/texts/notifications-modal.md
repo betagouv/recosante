@@ -2,6 +2,5 @@
 title: Notifications Web
 ---
 
-Recevez **chaque jour** une notification avec les **indicateurs environnementaux** (qualité de l’air, épisodes de pollution et risque pollinique).
-
-Vous pouvez activer les notifications sur n’importe quel appareil (**ordinateur**, **téléphone**, **tablette**...).
+Recosanté vous permet de recevoir des **notifications via votre navigateur web**. Cela vous évite d'encombrer votre boite mail **:)**<br/>
+Vous pouvez les activer indépendamment sur n’importe lequel de vos appareils (**ordinateur**, **téléphone**, **tablette**...).

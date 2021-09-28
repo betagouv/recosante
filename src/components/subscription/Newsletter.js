@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Button from 'components/base/Button'
-import Images from 'components/newsletter/notifications/Images'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const Wrapper = styled.div`
   position: absolute;
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
   background: ${(props) => props.theme.colors.background};
@@ -22,28 +22,40 @@ const Wrapper = styled.div`
   pointer-events: ${(props) => (props.visible ? 'inherit' : 'none')};
   transition: opacity 300ms;
 `
-const ImagesWrapper = styled.div`
-  height: 15.1rem;
+const Image = styled.div`
+  flex: 1;
+  margin: 0 1rem;
+`
+const Content = styled.div`
+  flex: 1;
 `
 const StyledButton = styled(Button)`
-  align-self: flex-end;
+  position: absolute;
+  bottom: 1.5rem;
+  right: 2rem;
 `
 export default function Notifications(props) {
   const data = useStaticQuery(
     graphql`
       query {
-        mdx(slug: { eq: "notifications-modal" }) {
+        mdx(slug: { eq: "newsletter-modal" }) {
           body
         }
       }
     `
   )
   return (
-    <Wrapper visible={props.modal === 'notifications'}>
-      <ImagesWrapper>
-        <Images isOnScreen={true} />
-      </ImagesWrapper>
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+    <Wrapper visible={props.modal === 'newsletter'}>
+      <Image>
+        <StaticImage
+          src={'./newsletter/newsletter-preview.png'}
+          alt='Newsletter'
+          height={400}
+        />
+      </Image>
+      <Content>
+        <MDXRenderer>{data.mdx.body}</MDXRenderer>
+      </Content>
       <StyledButton onClick={() => props.setModal(false)}>
         J'ai compris
       </StyledButton>

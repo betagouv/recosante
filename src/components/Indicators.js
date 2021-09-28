@@ -8,13 +8,14 @@ import Navigation from './subscription/Navigation'
 import Recommandations from './subscription/Recommandations'
 import Identity from './subscription/Identity'
 import Notifications from './subscription/Notifications'
+import Newsletter from './subscription/Newsletter'
 
 const Wrapper = styled.div``
 export default function Indicators(props) {
   const [currentStep, setCurrentStep] = useState(0)
 
   const [modal, setModal] = useState(false)
-
+  console.log(modal)
   return (
     <Wrapper>
       <Progress currentStep={currentStep} steps={steps} />
@@ -40,7 +41,8 @@ export default function Indicators(props) {
           small
         />
       )}
-      <Notifications modal={modal} />
+      <Notifications modal={modal} setModal={setModal} />
+      <Newsletter modal={modal} setModal={setModal} />
     </Wrapper>
   )
 }

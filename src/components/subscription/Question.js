@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { useLocalUser } from 'hooks/useUser'
 import Option from './question/Option'
+import Disclaimer from './question/Disclaimer'
 
 const Wrapper = styled.div`
   padding-top: 2rem;
@@ -14,6 +15,7 @@ const Label = styled.label`
   text-align: center;
 `
 const Options = styled.div`
+  position: relative;
   display: flex;
   justify-content: ${(props) =>
     props.options.length === 4 ? 'space-between' : 'space-around'};
@@ -47,8 +49,12 @@ export default function Question(props) {
                   : [...(user[props.step.name] || []), option.value],
               })
             }}
+            setModal={props.setModal}
           />
         ))}
+        {props.step.name === 'recommandations' && (
+          <Disclaimer setModal={props.setModal} />
+        )}
       </Options>
     </Wrapper>
   )
