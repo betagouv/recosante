@@ -6,17 +6,17 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2rem;
-  width: 2rem;
+  height: 1.75rem;
+  width: 1.75rem;
   background-color: ${(props) => props.theme.colors.background};
   border: 0.125rem solid
     ${(props) => props.theme.colors[props.active ? 'background' : 'main']};
-  border-radius: ${(props) => (props.checkbox ? 0.5 : 1)}rem;
+  border-radius: ${(props) => (props.checkbox ? 0.5 : 0.875)}rem;
   transition: border 200ms ease-out, background-color 300ms ease-out;
 `
 const Check = styled.svg`
   width: auto;
-  height: 1.4em;
+  height: 1.2rem;
 
   path {
     fill: none;

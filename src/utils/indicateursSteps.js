@@ -1,13 +1,15 @@
 import React from 'react'
 
 import IndiceAtmo from './icons/IndiceAtmo'
-import Raep from './icons/IndiceAtmo'
-import IndiceUv from './icons/IndiceAtmo'
+import Raep from './icons/Raep'
+import IndiceUv from './icons/IndiceUv'
 import VigilanceMeteorologique from './icons/IndiceAtmo'
-import Daily from './icons/IndiceAtmo'
-import Alert from './icons/IndiceAtmo'
-import Email from './icons/IndiceAtmo'
-import Notification from './icons/IndiceAtmo'
+import Quotidien from './icons/Quotidien'
+import Alerte from './icons/Alerte'
+import Email from './icons/Email'
+import Notification from './icons/Notification'
+import Newsletter from './icons/Newsletter'
+import NoNewsletter from './icons/NoNewsletter'
 
 const steps = [
   {
@@ -55,12 +57,12 @@ const steps = [
       {
         value: 'alerte',
         label: `En cas d'alerte`,
-        icon: <Alert />,
+        icon: <Alerte />,
       },
       {
         value: 'quotidien',
         label: `Tous les jours`,
-        icon: <Daily />,
+        icon: <Quotidien />,
       },
     ],
     exclusive: true,
@@ -98,12 +100,12 @@ const steps = [
       {
         value: 'oui',
         label: `M’abonner aux recommandations`,
-        icon: <Email />,
+        icon: <Newsletter />,
       },
       {
         value: 'non',
         label: `Peut être plus tard`,
-        icon: <Notification />,
+        icon: <NoNewsletter />,
       },
     ],
     exclusive: true,

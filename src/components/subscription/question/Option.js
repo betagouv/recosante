@@ -15,7 +15,7 @@ const Button = styled.button`
   overflow: hidden;
   width: 10rem;
   height: 10rem;
-  padding: 0.75rem 0.5rem 0.5rem;
+  padding: 0.6875rem 0.5rem 0.5rem;
   color: ${(props) => props.theme.colors[props.active ? 'background' : 'main']};
   border: 0.25rem solid ${(props) => props.theme.colors.main};
   border-radius: 2rem;
@@ -34,6 +34,19 @@ const Button = styled.button`
       );
     }
   }
+
+  .fill {
+    fill: ${(props) =>
+      props.theme.colors[props.active ? 'background' : 'main']};
+  }
+  .stroke {
+    stroke: ${(props) =>
+      props.theme.colors[props.active ? 'background' : 'main']};
+  }
+  .antifill {
+    fill: ${(props) =>
+      props.theme.colors[props.active ? 'main' : 'background']};
+  }
 `
 const Icon = styled.div`
   width: 2.75rem;
@@ -49,6 +62,7 @@ const Icon = styled.div`
 const Label = styled.span`
   display: block;
   text-align: center;
+  line-height: 1.2;
 `
 const Detail = styled.div`
   position: absolute;
@@ -70,7 +84,7 @@ export default function Option(props) {
         onClick={props.onClick}
         disabled={props.option.disabled}
       >
-        <Icon active={props.active}>{props.option.icon}</Icon>
+        {props.option.icon}
         <Label
           dangerouslySetInnerHTML={{
             __html: props.option.label,
