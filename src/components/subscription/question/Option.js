@@ -15,7 +15,7 @@ const Button = styled.button`
   overflow: hidden;
   width: 10rem;
   height: 10rem;
-  padding: 0.6875rem 0.5rem 0.5rem;
+  padding: 0.6875rem 0.25rem 0.5rem;
   color: ${(props) => props.theme.colors[props.active ? 'background' : 'main']};
   border: 0.25rem solid ${(props) => props.theme.colors.main};
   border-radius: 2rem;
@@ -47,17 +47,6 @@ const Button = styled.button`
     fill: ${(props) =>
       props.theme.colors[props.active ? 'main' : 'background']};
   }
-`
-const Icon = styled.div`
-  width: 2.75rem;
-  height: 2.75rem;
-  margin: 0 auto;
-  line-height: 2.75rem;
-  text-align: center;
-  color: ${(props) => props.theme.colors[props.active ? 'main' : 'background']};
-  background-color: ${(props) =>
-    props.theme.colors[props.active ? 'background' : 'main']};
-  border-radius: 0.25rem;
 `
 const Label = styled.span`
   display: block;

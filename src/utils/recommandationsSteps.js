@@ -1,6 +1,19 @@
 import React from 'react'
 
-import IndiceAtmo from './icons/IndiceAtmo'
+import Jardinage from './icons/Jardinage'
+import Bricolage from './icons/Bricolage'
+import Menage from './icons/Menage'
+import Sport from './icons/Sport'
+import Enfant from './icons/Enfant'
+import NoEnfant from './icons/NoEnfant'
+import Bois from './icons/Bois'
+import Chaudiere from './icons/Chaudiere'
+import Appoint from './icons/Appoint'
+import Velo from './icons/Velo'
+import Tec from './icons/Tec'
+import Voiture from './icons/Voiture'
+import Chat from './icons/Chat'
+import Chien from './icons/Chien'
 
 const steps = [
   {
@@ -12,22 +25,22 @@ const steps = [
       {
         value: 'jardinage',
         label: `Jardinage`,
-        icon: <IndiceAtmo />,
+        icon: <Jardinage />,
       },
       {
         value: 'bricolage',
         label: `Bricolage`,
-        icon: <IndiceAtmo />,
+        icon: <Bricolage />,
       },
       {
         value: 'menage',
         label: `Ménage`,
-        icon: <IndiceAtmo />,
+        icon: <Menage />,
       },
       {
         value: 'sport',
         label: `Sport`,
-        icon: <IndiceAtmo />,
+        icon: <Sport />,
       },
     ],
   },
@@ -39,14 +52,15 @@ const steps = [
       {
         value: 'oui',
         label: `Un ou plusieurs enfants`,
-        icon: <IndiceAtmo />,
+        icon: <Enfant />,
       },
       {
         value: 'non',
-        label: `Pas d'enfant`,
-        icon: <IndiceAtmo />,
+        label: `Pas<br/>d'enfant`,
+        icon: <NoEnfant />,
       },
     ],
+    exclusive: true,
   },
   {
     name: 'chauffage',
@@ -56,56 +70,56 @@ const steps = [
       {
         value: 'bois',
         label: `Cheminée ou poêle à bois`,
-        icon: <IndiceAtmo />,
+        icon: <Bois />,
       },
       {
         value: 'chaudiere',
         label: `Chaudière au gaz, fioul ou électrique`,
-        icon: <IndiceAtmo />,
+        icon: <Chaudiere />,
       },
       {
         value: 'appoint',
         label: `Chauffage mobile d’appoint`,
-        icon: <IndiceAtmo />,
+        icon: <Appoint />,
       },
     ],
   },
   {
-    name: 'transport',
+    name: 'deplacement',
     title: 'Transport',
     label: 'Je renseigne les modes de transport que j’utilise.',
     options: [
       {
-        value: 'oui',
+        value: 'velo',
         label: `Vélo`,
-        icon: <IndiceAtmo />,
+        icon: <Velo />,
       },
       {
         value: 'tec',
         label: `Transport en commun`,
-        icon: <IndiceAtmo />,
+        icon: <Tec />,
       },
       {
         value: 'voiture',
         label: `Voiture`,
-        icon: <IndiceAtmo />,
+        icon: <Voiture />,
       },
     ],
   },
   {
-    name: 'animaux',
+    name: 'animaux_domestiques',
     title: 'Animaux',
     label: 'Je renseigne si je vis avec des animaux.',
     options: [
       {
-        value: 'oui',
+        value: 'chat',
         label: `Chat`,
-        icon: <IndiceAtmo />,
+        icon: <Chat />,
       },
       {
-        value: 'non',
+        value: 'chien',
         label: `Chien`,
-        icon: <IndiceAtmo />,
+        icon: <Chien />,
       },
     ],
   },

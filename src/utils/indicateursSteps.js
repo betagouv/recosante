@@ -56,12 +56,12 @@ const steps = [
     options: [
       {
         value: 'alerte',
-        label: `En cas d'alerte`,
+        label: `En cas<br/>d'alerte`,
         icon: <Alerte />,
       },
       {
         value: 'quotidien',
-        label: `Tous les jours`,
+        label: `Tous les<br/>jours`,
         icon: <Quotidien />,
       },
     ],
@@ -104,7 +104,7 @@ const steps = [
       },
       {
         value: 'non',
-        label: `Peut être plus tard`,
+        label: `Peut être<br/>plus tard`,
         icon: <NoNewsletter />,
       },
     ],
