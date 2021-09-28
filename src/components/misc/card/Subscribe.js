@@ -22,7 +22,7 @@ const Link = styled.button`
   cursor: ${(props) => (props.disabled ? 'normal' : 'pointer')};
 `
 export default function Subscribe(props) {
-  const { setModal } = useContext(ModalContext)
+  const { setSubscription } = useContext(ModalContext)
   const { mutateUser } = useLocalUser()
 
   return (
@@ -30,7 +30,7 @@ export default function Subscribe(props) {
       <Link
         onClick={() => {
           mutateUser({ indicateurs: [props.indicateur], commune: props.place })
-          setModal('indicators')
+          setSubscription('indicators')
         }}
         disabled={props.disabled}
       >

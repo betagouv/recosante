@@ -80,6 +80,10 @@ const steps = [
         value: 'notifications_web',
         label: `Notification`,
         icon: <Notification />,
+        detail: {
+          label: `Qu'est ce que c'est ?`,
+          onClick: () => console.log('notifications'),
+        },
       },
     ],
     exclusive: true,

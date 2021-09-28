@@ -11,6 +11,7 @@ import Seo from './web/Seo'
 import Header from './Header'
 import Footer from './Footer'
 import WrapperModal from 'src/components/modals/WrapperModal'
+import SubscriptionModal from 'src/components/modals/SubscriptionModal'
 
 const queryClient = new QueryClient()
 
@@ -40,6 +41,7 @@ export default function Web(props) {
               </Fullscreen>
               <Footer />
               <WrapperModal />
+              <SubscriptionModal />
             </ModalProvider>
           </UserProvider>
         </StyleProvider>

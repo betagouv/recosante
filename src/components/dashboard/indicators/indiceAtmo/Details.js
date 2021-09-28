@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 export default function Details(props) {
   return props.data ? (
     <Wrapper>
-      {props.data.indice_atmo.indice.details.reverse().map((element) => (
+      {props.data.indice_atmo.indice.details.map((element) => (
         <Element
           key={element.label}
           label={element.label}

@@ -7,17 +7,20 @@ import Question from './subscription/Question'
 import Navigation from './subscription/Navigation'
 import Recommandations from './subscription/Recommandations'
 import Identity from './subscription/Identity'
+import Notifications from './subscription/Notifications'
 
 const Wrapper = styled.div``
 export default function Indicators(props) {
   const [currentStep, setCurrentStep] = useState(0)
+
+  const [modal, setModal] = useState(false)
 
   return (
     <Wrapper>
       <Progress currentStep={currentStep} steps={steps} />
       {steps[currentStep] ? (
         <>
-          <Question step={steps[currentStep]} />
+          <Question step={steps[currentStep]} setModal={setModal} />
           <Navigation
             currentStep={currentStep}
             setCurrentStep={setCurrentStep}
@@ -37,6 +40,7 @@ export default function Indicators(props) {
           small
         />
       )}
+      <Notifications modal={modal} />
     </Wrapper>
   )
 }
