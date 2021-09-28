@@ -19,16 +19,12 @@ const Wrapper = styled.div`
   border-radius: 2rem;
   opacity: ${(props) => (props.visible ? 1 : 0)};
   pointer-events: ${(props) => (props.visible ? 'inherit' : 'none')};
-  transition: opacity 300ms;
+  transition: opacity ${(props) => (props.visible ? 300 : 0)}ms;
 `
 const Title = styled.h3`
   max-width: 31.5rem;
   margin: 0 auto;
   font-size: 2.5rem;
-  text-align: center;
-`
-const Text = styled.p`
-  font-size: 1.25rem;
   text-align: center;
 `
 const ButtonWrapper = styled.div`
