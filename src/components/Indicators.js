@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import steps from 'utils/indicateursSteps'
+import { useLocalUser } from 'hooks/useUser'
+import useNotificationsPrompt from 'hooks/useNotificationsPrompt'
 import Progress from './subscription/Progress'
 import Question from './subscription/Question'
 import Navigation from './subscription/Navigation'
@@ -16,6 +18,13 @@ export default function Indicators(props) {
 
   const [modal, setModal] = useState(false)
 
+  const { user, mutateUser } = useLocalUser()
+
+  const notifications = useNotificationsPrompt(
+    '/sw.js',
+    'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U'
+  )
+
   return (
     <Wrapper>
       <Progress currentStep={currentStep} steps={steps} />
@@ -24,7 +33,23 @@ export default function Indicators(props) {
           <Question step={steps[currentStep]} setModal={setModal} />
           <Navigation
             currentStep={currentStep}
-            setCurrentStep={setCurrentStep}
+            setCurrentStep={(newStep) => {
+              if (
+                newStep === 3 &&
+                user['indicateurs_media'][0] === 'notifications_web'
+              ) {
+                notifications.subscribe().then((pushSubscription) => {
+                  pushSubscription &&
+                    mutateUser({
+                      webpush_subscriptions_info:
+                        JSON.stringify(pushSubscription),
+                    })
+                  setCurrentStep(newStep)
+                })
+              } else {
+                setCurrentStep(newStep)
+              }
+            }}
             steps={steps}
           />
         </>

@@ -46,7 +46,7 @@ export default function Navigation(props) {
           hollow
           onClick={() =>
             props.currentStep > 0
-              ? props.setCurrentStep((prevCurrentStep) => prevCurrentStep - 1)
+              ? props.setCurrentStep(props.currentStep - 1)
               : props.gotoDeepLastStep()
           }
         >
@@ -62,9 +62,7 @@ export default function Navigation(props) {
             !user[props.steps[props.currentStep].name]?.length &&
             props.steps[props.currentStep].mandatory
           }
-          onClick={() =>
-            props.setCurrentStep((prevCurrentStep) => prevCurrentStep + 1)
-          }
+          onClick={() => props.setCurrentStep(props.currentStep + 1)}
         >
           Suivant{' '}
           <svg width='15' height='24' viewBox='0 0 15 24'>
