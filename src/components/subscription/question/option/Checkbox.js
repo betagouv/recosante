@@ -17,7 +17,6 @@ const Wrapper = styled.div`
 const Check = styled.svg`
   width: auto;
   height: 1.4em;
-  cursor: pointer;
 
   path {
     fill: none;

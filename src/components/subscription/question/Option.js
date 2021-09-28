@@ -15,7 +15,7 @@ const Button = styled.button`
   overflow: hidden;
   width: 10rem;
   height: 10rem;
-  padding: 0.75rem;
+  padding: 0.75rem 0.5rem 0.5rem;
   color: ${(props) => props.theme.colors[props.active ? 'background' : 'main']};
   border: 0.25rem solid ${(props) => props.theme.colors.main};
   border-radius: 2rem;
@@ -36,28 +36,13 @@ const Button = styled.button`
     transform-origin: top;
     background-color: ${(props) =>
       props.theme.colors[props.active ? 'background' : 'main']};
-    opacity:  ${(props) => (props.active ? 0.2 : 0.1)};
+    opacity: ${(props) => (props.active ? 0.2 : 0.1)};
   }
   &:hover {
     &:before {
       transform: translate(24rem, -4rem) rotate(45deg);
-      transition: transform 400ms ease-out;
+      transition: transform 500ms ease-in-out;
     }
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: ${(props) =>
-      props.theme.colors[props.active ? 'background' : 'main']};
-    opacity: 0.0;
-  }
-  &:focus {
-    &:after {
-      opacity: 0.2;
   }
 `
 const Icon = styled.div`
@@ -69,6 +54,7 @@ const Icon = styled.div`
   color: ${(props) => props.theme.colors[props.active ? 'main' : 'background']};
   background-color: ${(props) =>
     props.theme.colors[props.active ? 'background' : 'main']};
+  border-radius: 0.25rem;
 `
 const Label = styled.span`
   display: block;
