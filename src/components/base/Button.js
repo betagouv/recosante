@@ -47,6 +47,29 @@ const Wrapper = styled(MagicLink)`
     left: 0;
     width: 100%;
     height: 100%;
+    transform: translateX(-100%) rotate(-45deg);
+    background-color: ${(props) =>
+      props.hollow
+        ? props.theme.colors[props.color] ||
+          props.color ||
+          props.theme.colors.main
+        : props.theme.colors.background};
+    opacity: ${(props) => (props.hollow ? 0.1 : 0.2)};
+  }
+  &:hover {
+    &:before {
+      transform: translateX(100%) rotate(-45deg);
+      transition: transform 450ms ease-out;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: ${(props) =>
       props.hollow ? props.theme.colors.main : props.theme.colors.background};
     opacity: ${(props) => (props.fetching ? '0.4' : '0')};

@@ -9,10 +9,10 @@ const Wrapper = styled.div`
   height: 2rem;
   width: 2rem;
   background-color: ${(props) => props.theme.colors.background};
-  border: 2px solid
+  border: 0.125rem solid
     ${(props) => props.theme.colors[props.active ? 'background' : 'main']};
   border-radius: ${(props) => (props.checkbox ? 0.5 : 1)}rem;
-  transition: border 200ms ease-out;
+  transition: border 200ms ease-out, background-color 300ms ease-out;
 `
 const Check = styled.svg`
   width: auto;
@@ -30,7 +30,7 @@ const Check = styled.svg`
 `
 export default function Checkbox(props) {
   return (
-    <Wrapper checkbox={props.checkbox} active={props.active}>
+    <Wrapper checkbox={props.checkbox} active={props.active} className={'box'}>
       <Check
         checked={props.active}
         width='3213'

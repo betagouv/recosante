@@ -25,23 +25,13 @@ const Button = styled.button`
   cursor: ${(props) => (props.disabled ? 'normal' : 'pointer')};
   transition: all 200ms ease-out;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4rem;
-    height: 24rem;
-    transform: translate(-2rem, -4rem) rotate(45deg);
-    transform-origin: top;
-    background-color: ${(props) =>
-      props.theme.colors[props.active ? 'background' : 'main']};
-    opacity: ${(props) => (props.active ? 0.2 : 0.1)};
-  }
   &:hover {
-    &:before {
-      transform: translate(24rem, -4rem) rotate(45deg);
-      transition: transform 500ms ease-in-out;
+    .box {
+      background-color: rgba(
+        ${(props) =>
+          props.theme.colors[props.active ? 'backgroundAlpha' : 'mainAlpha']},
+        ${(props) => (props.active ? 0.8 : 0.1)}
+      );
     }
   }
 `
