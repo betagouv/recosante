@@ -5,13 +5,11 @@ import Web from 'src/components/layout/Web'
 import Section from 'src/components/base/Section'
 import Profile from 'src/components/subscription/Profile'
 
-const StyledSection = styled(Section)`
-  max-width: 21rem;
-`
+const StyledSection = styled(Section)``
 export default function Profil(props) {
   return (
     <Web title={'Profil'}>
-      <StyledSection first>
+      <StyledSection first medium>
         <Profile />
       </StyledSection>
     </Web>
