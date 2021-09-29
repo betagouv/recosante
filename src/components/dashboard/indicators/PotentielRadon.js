@@ -22,7 +22,7 @@ export default function PotentielRadon(props) {
           </Card.Info>
           <Chart data={data} />
         </Card.Header>
-        <Card.Mobile>
+        <Card.Mobile indicateur='potentiel_radon' place={props.place} disabled>
           <Card.Recommandation
             dangerouslySetInnerHTML={{
               __html:
@@ -32,11 +32,13 @@ export default function PotentielRadon(props) {
             }}
           />
         </Card.Mobile>
-        <Card.Subscribe
-          indicateur='potentiel_radon'
-          place={props.place}
-          disabled
-        />
+        <Card.SubscribeWrapper>
+          <Card.Subscribe
+            indicateur='potentiel_radon'
+            place={props.place}
+            disabled
+          />
+        </Card.SubscribeWrapper>
       </Card.Content>
       {data &&
         data.potentiel_radon &&

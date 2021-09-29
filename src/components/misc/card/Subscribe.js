@@ -4,15 +4,7 @@ import styled from 'styled-components'
 import ModalContext from 'src/utils/ModalContext'
 import { useLocalUser } from 'hooks/useUser'
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-
-  ${(props) => props.theme.mq.medium} {
-    justify-content: center;
-  }
-`
-const Link = styled.button`
+const Wrapper = styled.button`
   padding: 0;
   color: ${(props) => props.theme.colors.main};
   text-decoration: underline;
@@ -27,7 +19,7 @@ export default function Subscribe(props) {
 
   return (
     <Wrapper>
-      <Link
+      <Wrapper
         onClick={() => {
           mutateUser({ indicateurs: [props.indicateur], commune: props.place })
           setSubscription('indicators')
@@ -35,7 +27,7 @@ export default function Subscribe(props) {
         disabled={props.disabled}
       >
         {props.disabled ? `Données fixes` : `M’abonner à cet indicateur`}
-      </Link>
+      </Wrapper>
     </Wrapper>
   )
 }

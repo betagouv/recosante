@@ -23,7 +23,7 @@ export default function AirQuality(props) {
           </Card.Info>
           <Chart data={data} />
         </Card.Header>
-        <Card.Mobile>
+        <Card.Mobile indicateur='indice_atmo' place={props.place}>
           <Card.Details>
             <Details data={data} />
           </Card.Details>
@@ -34,7 +34,9 @@ export default function AirQuality(props) {
             }}
           />
         </Card.Mobile>
-        <Card.Subscribe indicateur='indice_atmo' place={props.place} />
+        <Card.SubscribeWrapper>
+          <Card.Subscribe indicateur='indice_atmo' place={props.place} />
+        </Card.SubscribeWrapper>
       </Card.Content>
       {data && (
         <Card.Source>

@@ -29,6 +29,7 @@ const StyledSearchBar = styled(SearchBar)`
   left: 0;
   right: 0;
   width: 100%;
+  transform: none !important;
   font-size: 1.25rem;
   ${(props) => props.error && `border-color: ${props.theme.colors.error}`}
 `

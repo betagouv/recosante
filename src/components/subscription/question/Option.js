@@ -5,7 +5,12 @@ import Checkbox from './option/Checkbox'
 
 const Wrapper = styled.div`
   position: relative;
-  margin: 0 0.5rem 1rem;
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+
+  ${(props) => props.theme.mq.smallish} {
+    flex-basis: 50%;
+  }
 `
 const Button = styled.button`
   position: relative;
@@ -16,6 +21,7 @@ const Button = styled.button`
   overflow: hidden;
   width: 10rem;
   height: 10rem;
+  margin: 0 auto;
   padding: 0.6875rem 0.25rem 0.5rem;
   color: ${(props) => props.theme.colors[props.active ? 'background' : 'main']};
   border: 0.25rem solid ${(props) => props.theme.colors.main};

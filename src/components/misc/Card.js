@@ -37,7 +37,7 @@ Card.Content = styled.div`
     rgba(${(props) => props.theme.colors.backgroundAlpha}, 0.4);
 
   ${(props) => props.theme.mq.small} {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem 1rem;
   }
 `
 Card.Header = styled.div`
@@ -95,6 +95,18 @@ Card.Details = styled.div`
 Card.Recommandation = styled.div`
   font-weight: 300;
   margin-bottom: 1rem;
+`
+Card.SubscribeWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+
+  ${(props) => props.theme.mq.medium} {
+    justify-content: center;
+  }
+
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
 `
 Card.Subscribe = Subscribe
 

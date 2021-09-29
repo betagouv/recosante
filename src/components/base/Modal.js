@@ -31,7 +31,7 @@ const Content = styled.div`
   flex-direction: column;
   width: ${(props) => (props.large ? '48rem' : '35.5rem')};
   max-width: calc(100% - 1rem);
-  max-height: 90vh;
+  max-height: ${(props) => (props.large ? 'calc(100% - 0.5rem)' : '90vh')};
   margin: 0.5rem;
   background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
   border: 1px solid rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);

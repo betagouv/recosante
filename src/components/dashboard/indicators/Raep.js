@@ -23,7 +23,7 @@ export default function Raep(props) {
           </Card.Info>
           <Chart data={data} />
         </Card.Header>
-        <Card.Mobile>
+        <Card.Mobile indicateur='raep' place={props.place}>
           <Card.Details>
             <Details data={data} open={true} />
           </Card.Details>
@@ -33,7 +33,9 @@ export default function Raep(props) {
             }}
           />
         </Card.Mobile>
-        <Card.Subscribe indicateur='raep' place={props.place} />
+        <Card.SubscribeWrapper>
+          <Card.Subscribe indicateur='raep' place={props.place} />
+        </Card.SubscribeWrapper>
       </Card.Content>
       {data && data.raep && data.raep.validity && data.raep.sources && (
         <Card.Source>
