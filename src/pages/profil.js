@@ -3,20 +3,16 @@ import styled from 'styled-components'
 
 import Web from 'src/components/layout/Web'
 import Section from 'src/components/base/Section'
-import Questions from 'src/components/profil/Questions'
+import Profile from 'src/components/subscription/Profile'
 
 const StyledSection = styled(Section)`
-  display: flex;
-
-  ${(props) => props.theme.mq.medium} {
-    flex-direction: column;
-  }
+  max-width: 21rem;
 `
-export default function Profile(props) {
+export default function Profil(props) {
   return (
     <Web title={'Profil'}>
       <StyledSection first>
-        <Questions />
+        <Profile />
       </StyledSection>
     </Web>
   )
