@@ -13,10 +13,19 @@ const Wrapper = styled.div`
     ${(props) => props.theme.colors[props.active ? 'background' : 'main']};
   border-radius: ${(props) => (props.checkbox ? 0.5 : 0.875)}rem;
   transition: border 200ms ease-out, background-color 300ms ease-out;
+
+  ${(props) => props.theme.mq.small} {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
 `
 const Check = styled.svg`
   width: auto;
   height: 1.2rem;
+
+  ${(props) => props.theme.mq.small} {
+    height: 1rem;
+  }
 
   path {
     fill: none;

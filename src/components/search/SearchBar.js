@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styled from 'styled-components'
 
-import { useSearch } from 'src/utils/api'
+import { useSearch } from 'src/hooks/useSearch'
 import useDebounce from 'src/hooks/useDebounce'
 import TextInput from './searchBar/TextInput'
 import Suggestions from './searchBar/Suggestions'

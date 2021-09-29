@@ -46,8 +46,9 @@ const Button = styled.button`
   ${(props) => props.theme.mq.small} {
     flex-direction: row-reverse;
     width: 100%;
-    height: 5rem;
-    padding: 1rem;
+    height: 4.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 1.5rem;
   }
 
   .fill {
