@@ -16,6 +16,10 @@ const Label = styled.label`
   margin-bottom: 3rem;
   font-weight: 300;
   text-align: center;
+
+  ${(props) => props.theme.mq.smallish} {
+    margin-bottom: 6rem;
+  }
 `
 
 const SearchBarWrapper = styled.div`
@@ -23,6 +27,10 @@ const SearchBarWrapper = styled.div`
   width: 22.25rem;
   height: 3rem;
   margin: 0 auto 3rem;
+
+  ${(props) => props.theme.mq.smallish} {
+    margin-bottom: 6rem;
+  }
 `
 const StyledSearchBar = styled(SearchBar)`
   top: 0;
@@ -38,6 +46,10 @@ const MailInput = styled(TextInput)`
   width: 22.25rem;
   margin: 0 auto 5.5rem;
   font-size: 1.25rem;
+
+  ${(props) => props.theme.mq.smallish} {
+    margin-bottom: 7rem;
+  }
 `
 export default function Identity(props) {
   const { user, mutateUser } = useLocalUser()

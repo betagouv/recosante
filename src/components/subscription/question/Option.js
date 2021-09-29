@@ -10,6 +10,7 @@ const Wrapper = styled.div`
 
   ${(props) => props.theme.mq.smallish} {
     flex-basis: 50%;
+    margin-bottom: 1.5rem;
   }
 `
 const Button = styled.button`
@@ -42,6 +43,13 @@ const Button = styled.button`
     }
   }
 
+  ${(props) => props.theme.mq.small} {
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 5rem;
+    padding: 1rem;
+  }
+
   .fill {
     fill: ${(props) =>
       props.theme.colors[props.active ? 'background' : 'main']};
@@ -59,6 +67,12 @@ const Label = styled.span`
   display: block;
   text-align: center;
   line-height: 1.2;
+
+  ${(props) => props.theme.mq.small} {
+    flex: 1;
+    margin: 0 1rem;
+    text-align: left;
+  }
 `
 const Detail = styled.div`
   position: absolute;
@@ -71,6 +85,12 @@ const Detail = styled.div`
   color: ${(props) => props.theme.colors[props.modal ? 'main' : 'text']};
   text-decoration: ${(props) => (props.modal ? 'underline' : 'none')};
   cursor: ${(props) => (props.modal ? 'pointer' : 'normal')};
+
+  ${(props) => props.theme.mq.small} {
+    top: calc(100% + 0.125rem);
+    left: auto;
+    right: 2rem;
+  }
 `
 export default function Option(props) {
   return (

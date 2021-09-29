@@ -45,7 +45,7 @@ const Wrapper = styled(MagicLink)`
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 130%;
     height: 100%;
     transform: translateX(-100%) rotate(-45deg);
     background-color: ${(props) =>
@@ -59,7 +59,7 @@ const Wrapper = styled(MagicLink)`
   &:hover {
     &:before {
       transform: translateX(100%) rotate(-45deg);
-      transition: transform 450ms ease-out;
+      transition: transform 500ms ease-out;
     }
   }
 

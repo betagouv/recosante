@@ -38,7 +38,10 @@ export default function Element(props) {
   const { setModal } = useContext(ModalContext)
 
   return props.value ? (
-    <Wrapper value={props.value} onClick={() => setModal(props.label)}>
+    <Wrapper
+      value={props.value}
+      onClick={() => setModal(props.label.replace(',', ''))}
+    >
       {props.label}
       <Superscript> (?)</Superscript>
     </Wrapper>

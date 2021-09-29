@@ -7,12 +7,21 @@ import Disclaimer from './question/Disclaimer'
 
 const Wrapper = styled.div`
   padding-top: 2rem;
+
+  ${(props) => props.theme.mq.small} {
+    flex: 1;
+    padding-top: 1.5rem;
+  }
 `
 const Label = styled.label`
   display: block;
   margin-bottom: 3rem;
   font-weight: 300;
   text-align: center;
+
+  ${(props) => props.theme.mq.smallish} {
+    margin-bottom: 1.5rem;
+  }
 `
 const Options = styled.div`
   position: relative;
@@ -24,6 +33,15 @@ const Options = styled.div`
 
   ${(props) => props.theme.mq.smallish} {
     justify-content: center;
+    align-items: center;
+    min-height: 22rem;
+    margin-bottom: 1.5rem;
+  }
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin-bottom: 4rem;
   }
 `
 export default function Question(props) {

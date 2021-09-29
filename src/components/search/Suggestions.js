@@ -24,23 +24,29 @@ const StyledButton = styled(Button)`
 export default function Suggestions() {
   return (
     <Wrapper>
-      <StyledButton hollow to='/place/31555/toulouse/'>
-        Toulouse
-      </StyledButton>
-      <StyledButton hollow to='/place/69123/lyon/'>
-        Lyon
-      </StyledButton>
-      <StyledButton hollow to='/place/44109/nantes/'>
-        Nantes
+      <StyledButton hollow to='/place/75056/paris/'>
+        Paris
       </StyledButton>
       <StyledButton hollow to='/place/13055/marseille/'>
         Marseille
       </StyledButton>
-      <StyledButton hollow to='/place/25056/besancon/'>
-        Besançon
+      <StyledButton hollow to='/place/69123/lyon/'>
+        Lyon
       </StyledButton>
-      <StyledButton hollow to='/place/33063/bordeaux/'>
-        Bordeaux
+      <StyledButton hollow to='/place/31555/toulouse/'>
+        Toulouse
+      </StyledButton>
+      <StyledButton hollow to='/place/06088/nice/'>
+        Nice
+      </StyledButton>
+      <StyledButton hollow to='/place/44109/nantes/'>
+        Nantes
+      </StyledButton>
+      <StyledButton hollow to='/place/34172/montpellier/'>
+        Montpellier
+      </StyledButton>
+      <StyledButton hollow to='/place/67482/strasbourg/'>
+        Strasbourg
       </StyledButton>
     </Wrapper>
   )

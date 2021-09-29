@@ -8,6 +8,16 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: ${(props) =>
     props.prevButtonVisible ? 'space-between' : 'flex-end'};
+
+  ${(props) => props.theme.mq.small} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: ${(props) => props.theme.colors.background};
+    border-top: 0.25rem solid ${(props) => props.theme.colors.main};
+  }
 `
 const PreviousButton = styled(Button)`
   padding-left: 2.25rem;

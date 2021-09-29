@@ -9,6 +9,10 @@ import Navigation from './Navigation'
 
 const Wrapper = styled.div`
   position: relative;
+
+  ${(props) => props.theme.mq.small} {
+    position: static;
+  }
 `
 export default function Recommandations(props) {
   const { user } = useLocalUser()

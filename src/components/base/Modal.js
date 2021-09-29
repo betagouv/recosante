@@ -34,7 +34,7 @@ const Content = styled.div`
   max-height: ${(props) => (props.large ? 'calc(100% - 0.5rem)' : '90vh')};
   margin: 0.5rem;
   background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
-  border: 1px solid rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
+  border: 1px solid rgba(${(props) => props.theme.colors.mainAlpha}, 0.1);
   border-radius: 1.5rem;
   box-shadow: 0.25rem 0.25rem 1rem 0
     rgba(${(props) => props.theme.colors.backgroundAlpha}, 0.4);
@@ -43,6 +43,11 @@ const Content = styled.div`
   transform: scale(${(props) => (props.open ? 1 : 0.7)})
     translateY(${(props) => (props.open ? 0 : '10em')});
   transition: all ${(props) => (props.open ? '300ms' : 0)} ease-in-out;
+
+  ${(props) => props.theme.mq.small} {
+    height: ${(props) => (props.large ? 'calc(100% - 0.5rem)' : 'auto')};
+  }
+  overflow: hidden;
 `
 const ButtonClose = styled.div`
   position: absolute;
@@ -60,7 +65,7 @@ const Scroll = styled.div`
   padding: 2rem 2rem 1.5rem;
 
   ${(props) => props.theme.mq.small} {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
   }
 `
 export default function Modal(props) {

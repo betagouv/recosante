@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import useProgressionPercent from 'hooks/useProgressionPercent'
+
 const Wrapper = styled.div`
   position: ${(props) => (props.small ? 'absolute' : 'relative')};
   display: flex;
@@ -29,6 +31,10 @@ const Wrapper = styled.div`
     transform-origin: left;
     transition: transform 300ms ease-out;
   }
+
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
 `
 const Step = styled.div`
   flex: 1;
@@ -39,13 +45,7 @@ const Step = styled.div`
   opacity: ${(props) => (props.current ? 1 : 0.2)};
 `
 export default function Progress(props) {
-  const percent =
-    props.currentStep === 'identity'
-      ? 1
-      : (props.currentStep === props.steps.length
-          ? props.currentStep
-          : props.currentStep + 1) /
-        (props.steps.length + (!props.small ? 1 : 0))
+  const percent = useProgressionPercent(props)
 
   return (
     <Wrapper

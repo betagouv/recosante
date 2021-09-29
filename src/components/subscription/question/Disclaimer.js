@@ -9,6 +9,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${(props) => props.theme.mq.smallish} {
+    top: calc(100% - 4.5rem);
+  }
 `
 const Title = styled.div`
   font-size: 0.875rem;
