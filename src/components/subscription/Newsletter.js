@@ -21,10 +21,19 @@ const Wrapper = styled.div`
   opacity: ${(props) => (props.visible ? 1 : 0)};
   pointer-events: ${(props) => (props.visible ? 'inherit' : 'none')};
   transition: opacity 300ms;
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+    padding: 1rem;
+  }
 `
 const Image = styled.div`
   flex: 1;
   margin: 0 1rem;
+
+  ${(props) => props.theme.mq.small} {
+    margin: 0 3rem 1.5rem;
+  }
 `
 const Content = styled.div`
   flex: 1;
@@ -33,6 +42,11 @@ const StyledButton = styled(Button)`
   position: absolute;
   bottom: 1.5rem;
   right: 2rem;
+
+  ${(props) => props.theme.mq.small} {
+    bottom: 1rem;
+    right: 1rem;
+  }
 `
 export default function Notifications(props) {
   const data = useStaticQuery(
@@ -56,7 +70,7 @@ export default function Notifications(props) {
       <Content>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
       </Content>
-      <StyledButton onClick={() => props.setModal(false)}>
+      <StyledButton onClick={() => props.setModal(false)} noExpand>
         J'ai compris
       </StyledButton>
     </Wrapper>

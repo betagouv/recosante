@@ -32,7 +32,6 @@ const Content = styled.div`
   width: ${(props) => (props.large ? '48rem' : '35.5rem')};
   max-width: calc(100% - 1rem);
   max-height: ${(props) => (props.large ? 'calc(100% - 0.5rem)' : '90vh')};
-  margin: 0.5rem;
   background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
   border: 1px solid rgba(${(props) => props.theme.colors.mainAlpha}, 0.1);
   border-radius: 1.5rem;
@@ -45,7 +44,16 @@ const Content = styled.div`
   transition: all ${(props) => (props.open ? '300ms' : 0)} ease-in-out;
 
   ${(props) => props.theme.mq.small} {
-    height: ${(props) => (props.large ? 'calc(100% - 0.5rem)' : 'auto')};
+    ${(props) =>
+      props.large &&
+      `
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      max-height: none;
+      border: none;
+      border-radius: 0;
+      `}
   }
   overflow: hidden;
 `

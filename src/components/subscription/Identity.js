@@ -10,6 +10,10 @@ import Success from './identity/Success'
 
 const Wrapper = styled.div`
   padding-top: 2rem;
+
+  ${(props) => props.theme.mq.small} {
+    padding-top: 1.5rem;
+  }
 `
 const Label = styled.label`
   display: block;
@@ -31,6 +35,9 @@ const SearchBarWrapper = styled.div`
   ${(props) => props.theme.mq.smallish} {
     margin-bottom: 6rem;
   }
+  ${(props) => props.theme.mq.small} {
+    width: 100%;
+  }
 `
 const StyledSearchBar = styled(SearchBar)`
   top: 0;
@@ -49,6 +56,9 @@ const MailInput = styled(TextInput)`
 
   ${(props) => props.theme.mq.smallish} {
     margin-bottom: 7rem;
+  }
+  ${(props) => props.theme.mq.small} {
+    width: 100%;
   }
 `
 export default function Identity(props) {

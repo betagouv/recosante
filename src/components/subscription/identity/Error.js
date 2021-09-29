@@ -20,20 +20,43 @@ const Wrapper = styled.div`
   opacity: ${(props) => (props.visible ? 1 : 0)};
   pointer-events: ${(props) => (props.visible ? 'inherit' : 'none')};
   transition: opacity ${(props) => (props.visible ? 300 : 0)}ms;
+
+  ${(props) => props.theme.mq.smallish} {
+    justify-content: flex-start;
+  }
 `
 const Title = styled.h3`
   max-width: 31.5rem;
   margin: 0 auto;
   font-size: 2.5rem;
   text-align: center;
+
+  ${(props) => props.theme.mq.smallish} {
+    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+  }
 `
 const Text = styled.p`
   font-size: 1.25rem;
   text-align: center;
+
+  ${(props) => props.theme.mq.smallish} {
+    font-size: 1rem;
+  }
 `
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${(props) => props.theme.mq.small} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background-color: ${(props) => props.theme.colors.background};
+    border-top: 0.25rem solid ${(props) => props.theme.colors.main};
+  }
 `
 export default function Error(props) {
   return (
@@ -46,10 +69,10 @@ export default function Error(props) {
             d'éditer votre compte ?
           </Text>
           <ButtonWrapper>
-            <Button onClick={props.reset} hollow>
+            <Button onClick={props.reset} hollow noExpand>
               Essayer avec une autre adresse
             </Button>
-            <Button>Recevoir un email</Button>
+            <Button noExpand>Recevoir un email</Button>
           </ButtonWrapper>
         </>
       ) : (
@@ -60,10 +83,16 @@ export default function Error(props) {
             persiste, n'hésitez pas à nous contacter pour nous le signaler.
           </Text>
           <ButtonWrapper>
-            <Button to={'mailto:contact@recosante.beta.gouv.fr'} hollow>
+            <Button
+              to={'mailto:contact@recosante.beta.gouv.fr'}
+              hollow
+              noExpand
+            >
               Nous contacter
             </Button>
-            <Button onClick={props.reset}>Réessayer</Button>
+            <Button onClick={props.reset} noExpand>
+              Réessayer
+            </Button>
           </ButtonWrapper>
         </>
       )}
