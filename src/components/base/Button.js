@@ -82,6 +82,7 @@ const Wrapper = styled(MagicLink)`
   }
   & span {
     position: relative;
+    text-align: center;
   }
 `
 export default function Button(props) {

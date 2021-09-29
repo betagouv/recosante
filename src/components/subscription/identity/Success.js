@@ -20,17 +20,38 @@ const Wrapper = styled.div`
   opacity: ${(props) => (props.visible ? 1 : 0)};
   pointer-events: ${(props) => (props.visible ? 'inherit' : 'none')};
   transition: opacity ${(props) => (props.visible ? 300 : 0)}ms;
+
+  ${(props) => props.theme.mq.small} {
+    padding: 1rem 1rem 0;
+  }
 `
 const Title = styled.h3`
   max-width: 31.5rem;
   margin: 0 auto;
   font-size: 2.5rem;
   text-align: center;
+
+  ${(props) => props.theme.mq.smallish} {
+    font-size: 1.5rem;
+  }
 `
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: ${(props) =>
     props.newsletter ? 'center' : 'space-between'};
+
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+
+    button {
+      margin-bottom: 1rem;
+    }
+  }
+`
+const StyledButton = styled(Button)`
+  ${(props) => props.theme.mq.small} {
+    margin-bottom: 1rem;
+  }
 `
 export default function Success(props) {
   const newsletter = props?.data?.data?.recommandations[0] === 'oui'
@@ -50,13 +71,13 @@ export default function Success(props) {
       </Title>
 
       <ButtonWrapper newsletter={newsletter}>
-        <Button to={`/profil?user=${props?.data?.data?.uid}`} hollow>
+        <StyledButton to={`/profil?user=${props?.data?.data?.uid}`} hollow>
           Modifier mes informations
-        </Button>
+        </StyledButton>
         {!newsletter && (
-          <Button to={`/profil?user=${props?.data?.data?.uid}`}>
+          <StyledButton to={`/profil?user=${props?.data?.data?.uid}`}>
             M’abonner aux recommandations
-          </Button>
+          </StyledButton>
         )}
       </ButtonWrapper>
     </Wrapper>
