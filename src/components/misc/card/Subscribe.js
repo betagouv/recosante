@@ -18,16 +18,14 @@ export default function Subscribe(props) {
   const { mutateUser } = useLocalUser()
 
   return (
-    <Wrapper>
-      <Wrapper
-        onClick={() => {
-          mutateUser({ indicateurs: [props.indicateur], commune: props.place })
-          setSubscription('indicators')
-        }}
-        disabled={props.disabled}
-      >
-        {props.disabled ? `Données fixes` : `M’abonner à cet indicateur`}
-      </Wrapper>
+    <Wrapper
+      onClick={() => {
+        mutateUser({ indicateurs: [props.indicateur], commune: props.place })
+        setSubscription('indicators')
+      }}
+      disabled={props.disabled}
+    >
+      {props.disabled ? `Données fixes` : `M’abonner à cet indicateur`}
     </Wrapper>
   )
 }
