@@ -34,6 +34,10 @@ press:
   - titre: Utrail
     image: ../assets/logos/logoutrail.png
     link: https://www2.u-trail.com/
+  - titre: camptocamp
+    image: ../assets/logos/Logo camptocamp.svg
+    link: https://forum.camptocamp.org/
+
 ---
 
 # Partenaires
