@@ -44,7 +44,6 @@ const NextButton = styled(Button)`
   }
 `
 export default function NavigationIdentity(props) {
-  console.log(props.fetching)
   return (
     <Wrapper>
       <PreviousButton

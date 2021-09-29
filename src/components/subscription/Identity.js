@@ -68,7 +68,6 @@ export default function Identity(props) {
 
   const [error, setError] = useState(false)
 
-  console.log(mutation)
   return (
     <Wrapper>
       <Label>Je valide mes informations personnelles.</Label>
