@@ -60,7 +60,7 @@ export function useIndicators(code) {
     ['indicators', code],
     () =>
       axios
-        .get(`https://staging.api.recosante.beta.gouv.fr/v1/?insee=${code}`)
+        .get(`https://api.recosante.beta.gouv.fr/v1/?insee=${code}`)
         .then((res) => res.data),
     {
       enabled: code ? true : false,

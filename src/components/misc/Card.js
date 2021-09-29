@@ -24,7 +24,8 @@ const fetching = keyframes`
 const Card = styled.div`
   position: relative;
   width: 100%;
-  margin-bottom: 2rem;
+  max-width: 35.5rem;
+  margin: 0 auto 2rem;
 `
 Card.Content = styled.div`
   margin-bottom: 0.5rem;

@@ -21,7 +21,7 @@ const Open = styled.button`
     }
   }
 
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     display: block;
   }
 `

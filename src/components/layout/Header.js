@@ -25,7 +25,7 @@ const Content = styled.div`
 const Search = styled.div`
   position: relative;
 
-  ${(props) => props.theme.mq.medium} {
+  ${(props) => props.theme.mq.small} {
     display: none;
   }
 `
@@ -34,6 +34,11 @@ const StyledSearchBar = styled(SearchBar)`
   left: auto;
   right: 0;
   font-size: 1rem;
+
+  ${(props) => props.theme.mq.medium} {
+    max-width: none;
+    transform: none;
+  }
 `
 export default function Header() {
   return (

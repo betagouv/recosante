@@ -20,7 +20,7 @@ export default function Recommandation(props) {
   const [open, setOpen] = useState(false)
 
   const { width } = useWindowSize()
-  return width > 1200 ? (
+  return width > 640 ? (
     props.children
   ) : (
     <>
