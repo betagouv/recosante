@@ -5,6 +5,7 @@ import Checkbox from './option/Checkbox'
 
 const Wrapper = styled.div`
   position: relative;
+  margin: 0 0.5rem 1rem;
 `
 const Button = styled.button`
   position: relative;

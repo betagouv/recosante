@@ -43,12 +43,13 @@ export default function Navigation(props) {
     <Wrapper prevButtonVisible={prevButtonVisible}>
       {prevButtonVisible && (
         <PreviousButton
-          hollow
           onClick={() =>
             props.currentStep > 0
               ? props.setCurrentStep(props.currentStep - 1)
               : props.gotoDeepLastStep()
           }
+          hollow
+          noExpand
         >
           <svg width='14' height='24' viewBox='0 0 14 24'>
             <path d='M0.000966501 11.9999C0.00096652 11.5698 0.1652 11.1397 0.492974 10.8118L10.8125 0.492339C11.469 -0.164113 12.5333 -0.164113 13.1895 0.492339C13.8457 1.14853 13.8457 2.21264 13.1895 2.86914L4.05818 11.9999L13.1892 21.1308C13.8454 21.7872 13.8454 22.8512 13.1892 23.5074C12.533 24.1641 11.4687 24.1641 10.8122 23.5074L0.492654 13.1881C0.164827 12.86 0.000966482 12.4299 0.000966501 11.9999Z' />
@@ -63,6 +64,7 @@ export default function Navigation(props) {
             props.steps[props.currentStep].mandatory
           }
           onClick={() => props.setCurrentStep(props.currentStep + 1)}
+          noExpand
         >
           Suivant{' '}
           <svg width='15' height='24' viewBox='0 0 15 24'>

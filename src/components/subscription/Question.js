@@ -17,9 +17,14 @@ const Label = styled.label`
 const Options = styled.div`
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: ${(props) =>
     props.options.length === 4 ? 'space-between' : 'space-around'};
-  margin-bottom: 4.5rem;
+  margin: 0 -0.5rem 3.5rem;
+
+  ${(props) => props.theme.mq.smallish} {
+    justify-content: center;
+  }
 `
 export default function Question(props) {
   const { user, mutateUser } = useLocalUser()

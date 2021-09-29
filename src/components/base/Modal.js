@@ -20,15 +20,17 @@ const Background = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, ${(props) => (props.open ? 0.6 : 0)});
-  transition: background-color ${(props) => (props.open ? '300ms' : 0)}
-    ease-in-out;
+  background-color: rgba(${(props) => props.theme.colors.background}, 0.2);
+  backdrop-filter: blur(1rem);
+  opacity: ${(props) => (props.open ? 1 : 0)};
+  transition: all ${(props) => (props.open ? '300ms' : 0)};
 `
 const Content = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   width: ${(props) => (props.large ? '48rem' : '35.5rem')};
+  max-width: calc(100% - 1rem);
   max-height: 90vh;
   margin: 0.5rem;
   background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
