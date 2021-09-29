@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-
 export default function useProgressionPercent(props) {
   return props.currentStep === 'identity'
     ? 1
