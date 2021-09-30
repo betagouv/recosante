@@ -9,8 +9,6 @@ const Wrapper = styled.div`
 `
 const Email = styled.h2`
   position: relative;
-  color: ${(props) => props.theme.colors.main};
-  text-align: center;
   cursor: pointer;
   word-break: break-all;
 
@@ -18,10 +16,10 @@ const Email = styled.h2`
     content: 'Éditer';
     position: absolute;
     top: calc(100% + 0.25rem);
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     font-size: 0.875rem;
     font-weight: 300;
+    color: ${(props) => props.theme.colors.main};
     text-decoration: underline;
   }
 `
@@ -30,6 +28,10 @@ const SearchBarWrapper = styled.div`
   width: 22.25rem;
   height: 3rem;
   margin: 0 auto 3rem;
+
+  ${(props) => props.theme.mq.small} {
+    width: 100%;
+  }
 `
 const StyledSearchBar = styled(SearchBar)`
   top: 0;

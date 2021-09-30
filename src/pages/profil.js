@@ -9,7 +9,7 @@ const StyledSection = styled(Section)``
 export default function Profil(props) {
   return (
     <Web title={'Profil'}>
-      <StyledSection first>
+      <StyledSection first medium>
         <Profile />
       </StyledSection>
     </Web>

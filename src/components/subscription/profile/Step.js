@@ -7,17 +7,13 @@ import Option from 'components/subscription/question/Option'
 const Wrapper = styled.div`
   margin-top: ${(props) => (props.large ? 5 : 0)}rem;
 `
-const Title = styled.h3`
-  text-align: center;
-`
-const Text = styled.p`
-  text-align: center;
-`
+const Title = styled.h3``
+const Text = styled.p``
 const Options = styled.div`
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 0 -0.5rem 2rem;
 
   ${(props) => props.theme.mq.small} {

@@ -7,13 +7,10 @@ import Button from 'src/components/base/Button'
 
 const Wrapper = styled.div`
   height: 3.5rem;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 `
-const Email = styled.h1`
+const Email = styled.h2`
   position: relative;
-  font-size: 3rem;
-  color: ${(props) => props.theme.colors.main};
-  text-align: center;
   cursor: pointer;
   word-break: break-all;
 
@@ -21,10 +18,10 @@ const Email = styled.h1`
     content: 'Éditer';
     position: absolute;
     top: calc(100% + 0.25rem);
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     font-size: 0.875rem;
     font-weight: 300;
+    color: ${(props) => props.theme.colors.main};
     text-decoration: underline;
   }
 `
@@ -64,7 +61,9 @@ export default function Mail() {
             value={answer}
             onChange={(e) => setAnswer(e.value)}
           />
-          <Button fetching={mutation.isLoading}>Valider</Button>
+          <Button fetching={mutation.isLoading} noExpand>
+            Valider
+          </Button>
         </Form>
       ) : (
         <Email onClick={() => setActive(true)}>{data.mail}</Email>
