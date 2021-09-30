@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 const Wrapper = styled.svg`
   width: auto;
-  height: 2.75rem;
+  height: 2.625rem;
+  margin-top: 0.125rem;
 `
 export default function Chat() {
   return (
