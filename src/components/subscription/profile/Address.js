@@ -7,7 +7,7 @@ import SearchBar from 'src/components/search/SearchBar'
 const Wrapper = styled.div`
   height: 3.5rem;
 `
-const Email = styled.h2`
+const Email = styled.h3`
   position: relative;
   cursor: pointer;
   word-break: break-all;
@@ -27,7 +27,7 @@ const SearchBarWrapper = styled.div`
   position: relative;
   width: 22.25rem;
   height: 3rem;
-  margin: 0 auto 3rem;
+  margin-bottom: 3rem;
 
   ${(props) => props.theme.mq.small} {
     width: 100%;

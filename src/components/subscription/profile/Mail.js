@@ -30,7 +30,6 @@ const Form = styled.form`
   flex-direction: column;
   align-items: flex-end;
   max-width: 22.25rem;
-  margin: 0 auto;
 `
 const StyledTextInput = styled(TextInput)`
   font-size: 1.25rem;
