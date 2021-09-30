@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import { useUser, useUserMutation } from 'hooks/useUser'
-import TextInput from 'src/components/base/TextInput'
-import Button from 'src/components/base/Button'
+import SearchBar from 'src/components/search/SearchBar'
 
 const Wrapper = styled.div`
   height: 3.5rem;
@@ -26,14 +25,18 @@ const Email = styled.h2`
     text-decoration: underline;
   }
 `
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  max-width: 22.25rem;
-  margin: 0 auto;
+const SearchBarWrapper = styled.div`
+  position: relative;
+  width: 22.25rem;
+  height: 3rem;
+  margin: 0 auto 3rem;
 `
-const StyledTextInput = styled(TextInput)`
+const StyledSearchBar = styled(SearchBar)`
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: none !important;
   font-size: 1.25rem;
 `
 export default function Address() {
@@ -45,14 +48,15 @@ export default function Address() {
   return data ? (
     <Wrapper>
       {active ? (
-        <Form
-          onSubmit={(e) => {
-            setActive(false)
-          }}
-        >
-          <StyledTextInput name={'address'} />
-          <Button fetching={mutation.isLoading}>Valider</Button>
-        </Form>
+        <SearchBarWrapper>
+          <StyledSearchBar
+            initialValue={data.commune && data.commune.nom}
+            handlePlaceSelection={(place) => {
+              mutation.mutate({ commune: place })
+              setActive(false)
+            }}
+          />
+        </SearchBarWrapper>
       ) : (
         <Email onClick={() => setActive(true)}>
           {data.commune && data.commune.nom} (
