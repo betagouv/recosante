@@ -6,6 +6,7 @@ import recommandationsSteps from 'utils/recommandationsSteps'
 import Mail from './profile/Mail'
 import Address from './profile/Address'
 import Step from './profile/Step'
+import Delete from './profile/Delete'
 
 export default function Profile() {
   const { data } = useUser()
@@ -26,6 +27,7 @@ export default function Profile() {
         recommandationsSteps.map((step) => (
           <Step step={step} key={step.name} />
         ))}
+      <Delete />
     </>
   )
 }

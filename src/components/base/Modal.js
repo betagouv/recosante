@@ -35,8 +35,7 @@ const Content = styled.div`
   background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
   border: 1px solid rgba(${(props) => props.theme.colors.mainAlpha}, 0.1);
   border-radius: 1.5rem;
-  box-shadow: 0.25rem 0.25rem 1rem 0
-    rgba(${(props) => props.theme.colors.backgroundAlpha}, 0.4);
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2);
 
   opacity: ${(props) => (props.open ? 1 : 0)};
   transform: scale(${(props) => (props.open ? 1 : 0.7)})
