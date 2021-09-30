@@ -25,11 +25,13 @@ export default function Raep(props) {
         </Card.Header>
         <Card.Mobile indicateur='raep' place={props.place}>
           <Card.Details>
-            <Details data={data} open={true} />
+            <Details data={data} />
           </Card.Details>
           <Card.Recommandation
             dangerouslySetInnerHTML={{
-              __html: data && data.raep.advice && data.raep.advice.main,
+              __html: isError
+                ? `Nous ne sommes malheureusement pas en mesure d'afficher le risque d'allergie aux pollens pour l'instant. Veuillez réessayer dans quelques instants.`
+                : data && data.raep.advice && data.raep.advice.main,
             }}
           />
         </Card.Mobile>

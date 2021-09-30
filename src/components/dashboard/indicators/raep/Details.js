@@ -10,23 +10,22 @@ const Wrapper = styled.div`
 `
 const Elements = styled.div``
 export default function Details(props) {
-  return (
+  return props.data ? (
     <Wrapper open={props.open}>
       <Elements>
-        {props.data &&
-          props.data.raep.indice.details
-            .filter((allergen) => allergen.indice.value)
-            .sort((a, b) => (a.indice.value > b.indice.value ? 1 : -1))
-            .map((allergen, index) => (
-              <Element
-                key={allergen.label}
-                index={index}
-                open={props.open}
-                label={allergen.label}
-                value={allergen.indice.value}
-              />
-            ))}
+        {props.data.raep.indice.details
+          .filter((allergen) => allergen.indice.value)
+          .sort((a, b) => (a.indice.value > b.indice.value ? 1 : -1))
+          .map((allergen, index) => (
+            <Element
+              key={allergen.label}
+              index={index}
+              open={props.open}
+              label={allergen.label}
+              value={allergen.indice.value}
+            />
+          ))}
       </Elements>
     </Wrapper>
-  )
+  ) : null
 }

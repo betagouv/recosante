@@ -29,8 +29,11 @@ export default function AirQuality(props) {
           </Card.Details>
           <Card.Recommandation
             dangerouslySetInnerHTML={{
-              __html:
-                data && data.indice_atmo.advice && data.indice_atmo.advice.main,
+              __html: isError
+                ? `Nous ne sommes malheureusement pas en mesure d'afficher l'indice de qualité de l'air pour l'instant. Veuillez réessayer dans quelques instants.`
+                : data &&
+                  data.indice_atmo.advice &&
+                  data.indice_atmo.advice.main,
             }}
           />
         </Card.Mobile>

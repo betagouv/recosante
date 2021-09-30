@@ -11,6 +11,7 @@ const Email = styled.h2`
   color: ${(props) => props.theme.colors.main};
   text-align: center;
   cursor: pointer;
+  word-break: break-all;
 
   &:before {
     content: 'Éditer';

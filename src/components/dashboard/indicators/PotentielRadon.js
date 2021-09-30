@@ -25,10 +25,11 @@ export default function PotentielRadon(props) {
         <Card.Mobile indicateur='potentiel_radon' place={props.place} disabled>
           <Card.Recommandation
             dangerouslySetInnerHTML={{
-              __html:
-                data &&
-                data.potentiel_radon.advice &&
-                data.potentiel_radon.advice.main,
+              __html: isError
+                ? `Nous ne sommes malheureusement pas en mesure d'afficher le potentiel radon pour l'instant. Veuillez réessayer dans quelques instants.`
+                : data &&
+                  data.potentiel_radon.advice &&
+                  data.potentiel_radon.advice.main,
             }}
           />
         </Card.Mobile>
