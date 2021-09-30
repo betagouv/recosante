@@ -37,6 +37,7 @@ export default function Step(props) {
       <Options>
         {props.step.options.map((option) => (
           <Option
+            key={option.value}
             option={option}
             active={
               data[props.step.name] &&

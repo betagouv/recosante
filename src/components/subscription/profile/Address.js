@@ -7,11 +7,9 @@ import Button from 'src/components/base/Button'
 
 const Wrapper = styled.div`
   height: 3.5rem;
-  margin-bottom: 5rem;
 `
-const Email = styled.h1`
+const Email = styled.h2`
   position: relative;
-  font-size: 3rem;
   color: ${(props) => props.theme.colors.main};
   text-align: center;
   cursor: pointer;
@@ -38,36 +36,28 @@ const Form = styled.form`
 const StyledTextInput = styled(TextInput)`
   font-size: 1.25rem;
 `
-export default function Mail() {
+export default function Address() {
   const { data } = useUser()
   const mutation = useUserMutation()
 
   const [active, setActive] = useState(false)
-
-  const [answer, setAnswer] = useState('')
-  useEffect(() => {
-    setAnswer(data && (data.mail ? data.mail : ''))
-  }, [data])
 
   return data ? (
     <Wrapper>
       {active ? (
         <Form
           onSubmit={(e) => {
-            e.preventDefault()
-            mutation.mutate({ mail: answer })
             setActive(false)
           }}
         >
-          <StyledTextInput
-            name={'email'}
-            value={answer}
-            onChange={(e) => setAnswer(e.value)}
-          />
+          <StyledTextInput name={'address'} />
           <Button fetching={mutation.isLoading}>Valider</Button>
         </Form>
       ) : (
-        <Email onClick={() => setActive(true)}>{data.mail}</Email>
+        <Email onClick={() => setActive(true)}>
+          {data.commune && data.commune.nom} (
+          {data.commune && data.commune.departement.nom})
+        </Email>
       )}
     </Wrapper>
   ) : null
