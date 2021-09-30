@@ -26,7 +26,7 @@ export function useUserMutation() {
   return useMutation(
     (user) =>
       axios.post(
-        `https://staging.api.recosante.beta.gouv.fr/users/${uid}`,
+        `https://staging.api.recosante.beta.gouv.fr/users/${uid || ''}`,
         { ...user, commune: user.commune && { code: user.commune.code } },
         {
           headers: { Accept: ' application/json' },
