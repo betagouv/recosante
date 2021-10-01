@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 const Elements = styled.div``
 export default function Details(props) {
   return props.data ? (
-    <Wrapper open={props.open}>
+    <Wrapper>
       <Elements>
         {props.data.raep.indice.details
           .filter((allergen) => allergen.indice.value)
@@ -20,7 +20,6 @@ export default function Details(props) {
             <Element
               key={allergen.label}
               index={index}
-              open={props.open}
               label={allergen.label}
               value={allergen.indice.value}
             />

@@ -38,15 +38,15 @@ const Wrapper = styled.div`
     position: absolute;
     top: 50%;
     right: ${(props) => 12.5 - (props.value / 5) * 12.5}rem;
-    transform: translateY(-50%) scaleX(${(props) => (props.open ? 1 : 0)});
+    transform: translateY(-50%) scaleX(1);
     transform-origin: left;
     width: ${(props) => (props.value / 5) * 12.5}rem;
     height: 1.125rem;
     background-color: ${(props) => props.theme.colors.raep[props.value]};
     border-radius: ${(props) =>
       props.value < 5 ? '0.5rem 0 0 0.5rem' : '0.5rem'};
-    transition: transform ${(props) => (props.open ? 150 * props.value : 0)}ms
-      ${(props) => (props.open ? props.index * 100 : 0)}ms ease-out;
+    transition: transform ${(props) => 150 * props.value}ms
+      ${(props) => props.index * 100}ms ease-out;
 
     ${(props) => props.theme.mq.small} {
       right: ${(props) => 6 - (props.value / 5) * 6}rem;
@@ -76,13 +76,10 @@ export default function Element(props) {
     urticacees: 'Urticacées',
     armoises: 'Armoises',
   }
+
+  console.log()
   return (
-    <Wrapper
-      index={props.index}
-      open={props.open}
-      visible={props.visible}
-      value={props.value}
-    >
+    <Wrapper index={props.index} visible={props.visible} value={props.value}>
       {labels[props.label]}
     </Wrapper>
   )
