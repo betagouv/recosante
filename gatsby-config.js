@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Recosante`,
+    title: `Recosanté - Connaître son environnement, Agir pour sa santé `,
     author: `Recosante`,
-    description: `Une recommandation quotidienne pour vous protéger des impacts de la qualité de l'air sur votre santé.`,
+    description: `Pollution de l’air, risque d'allergie aux pollens, niveau de risque radon… Découvrez les indicateurs environnementaux liés à votre localisation et des recommandations pratiques à mettre en oeuvre pour mieux vous protéger.`,
     siteUrl: `https://recosante.netlify.app`,
     image: 'metaimage.jpg',
     twitterUsername: 'recosante',
