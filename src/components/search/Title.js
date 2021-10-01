@@ -119,7 +119,9 @@ export default function Title() {
       </Pronouns>
       <Sentences>
         {sentences.map((sentence, index) => (
-          <Sentence index={index}>{sentence}</Sentence>
+          <Sentence key={sentence} index={index}>
+            {sentence}
+          </Sentence>
         ))}
       </Sentences>
       <Words>près de chez vous</Words>
