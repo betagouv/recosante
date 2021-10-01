@@ -1,8 +1,10 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
+import ModalContext from 'src/utils/ModalContext'
+import { useLocalUser } from 'hooks/useUser'
 import Button from 'src/components/base/Button'
 import Section from 'src/components/base/Section'
 import Images from './notifications/Images'
@@ -76,6 +78,9 @@ export default function Notifications() {
     `
   )
 
+  const { setSubscription } = useContext(ModalContext)
+  const { mutateUser } = useLocalUser()
+
   const ref = useRef()
   const isOnScreen = useOnScreen(ref)
 
@@ -87,7 +92,15 @@ export default function Notifications() {
       <Content>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
         <Button.Wrapper right>
-          <StyledButton hollow to='/notifications'>
+          <StyledButton
+            onClick={() => {
+              mutateUser({
+                indicateurs: ['indice_atmo', 'raep'],
+              })
+              setSubscription('indicators')
+            }}
+            hollow
+          >
             Découvrir
           </StyledButton>
         </Button.Wrapper>

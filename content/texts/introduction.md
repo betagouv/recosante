@@ -1,5 +1,5 @@
-## Abonnez-vous à la **lettre d’information** Recosanté
+## Découvrez comment **agir** pour **protéger** votre **santé**
 
-Recevez nos **recommandation personalisées** par email pour vous aider à réduire les impacts des polluants atmosphériques et des pollens sur votre santé.
+Recevez **chaque semaine** nos recommandations par **email** pour vous aider à réduire l’impact de votre environnement (**pollution de l’air**, **qualité de l’eau de boisson**, **rayons UV**, **pollens**, **radon**, etc...) sur votre santé.
 
-Abonnez vous pour **choisir la fréquence** (chaque jour ou chaque semaine) et **les sujets qui vous intéressent**.
+Abonnez-vous pour choisir quels **indicateurs** vous souhaitez recevoir (en cas d'alerte ou quotidiennement) et les **sujets qui vous intéressent**.

@@ -1,11 +1,13 @@
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
+import ModalContext from 'src/utils/ModalContext'
+import { useLocalUser } from 'hooks/useUser'
 import useOnScreen from 'src/hooks/useOnScreen'
 import Section from 'src/components/base/Section'
-import SubscribeForm from 'src/components/misc/SubscribeForm'
+import Button from 'src/components/base/Button'
 import Mockup from './newsletter/Mockup'
 import Notifications from './newsletter/Notifications'
 
@@ -58,6 +60,9 @@ const Content = styled.div`
     }
   }
 `
+const StyledButton = styled(Button)`
+  font-size: 1.25rem;
+`
 const MockupWrapper = styled.div`
   flex: 1;
   position: relative;
@@ -74,6 +79,9 @@ const MockupWrapper = styled.div`
   }
 `
 export default function Newsletter(props) {
+  const { setSubscription } = useContext(ModalContext)
+  const { mutateUser } = useLocalUser()
+
   const data = useStaticQuery(
     graphql`
       query {
@@ -93,7 +101,18 @@ export default function Newsletter(props) {
       <StyledSection first={props.first} id='newsletter'>
         <Content ref={ref} seo={props.seo}>
           <MDXRenderer>{(props.data || data).mdx.body}</MDXRenderer>
-          <SubscribeForm />
+          <Button.Wrapper>
+            <StyledButton
+              onClick={() => {
+                mutateUser({
+                  indicateurs: ['indice_atmo', 'raep'],
+                })
+                setSubscription('indicators')
+              }}
+            >
+              Choisir mes indicateurs
+            </StyledButton>
+          </Button.Wrapper>
         </Content>
         <MockupWrapper>
           <Mockup isOnScreen={isOnScreen} />
