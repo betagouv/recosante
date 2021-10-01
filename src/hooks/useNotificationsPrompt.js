@@ -19,6 +19,7 @@ export default function useNotificationsPrompt(sw, applicationServerKey) {
       })
       .then((pushSubscription) => {
         setPrompting(false)
+        setError(false)
         return pushSubscription
       })
       .catch((error) => {

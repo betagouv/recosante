@@ -109,6 +109,7 @@ Button.Wrapper = styled.div`
   flex-direction: ${(props) => (props.vertical ? 'column' : 'row')};
   justify-content: ${(props) =>
     props.left ? 'flex-start' : props.right ? 'flex-end' : 'center'};
+  align-items: center;
   margin: 0 -0.5rem;
 
   > * {
