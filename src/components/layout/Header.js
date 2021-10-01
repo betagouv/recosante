@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { navigate } from 'gatsby'
+import { useLocation } from '@reach/router'
 
 import formatPlaceUrl from 'src/utils/formatPlaceUrl'
 import Logos from './header/Logos'
@@ -41,18 +42,22 @@ const StyledSearchBar = styled(SearchBar)`
   }
 `
 export default function Header() {
+  const { pathname } = useLocation()
+  console.log(pathname)
   return (
     <Wrapper>
       <Content>
         <Logos />
-        <Search>
-          <StyledSearchBar
-            placeholder='Entrez une ville'
-            handlePlaceSelection={(place) => {
-              navigate(formatPlaceUrl(place))
-            }}
-          />
-        </Search>
+        {pathname !== '/' && (
+          <Search>
+            <StyledSearchBar
+              placeholder='Entrez une ville'
+              handlePlaceSelection={(place) => {
+                navigate(formatPlaceUrl(place))
+              }}
+            />
+          </Search>
+        )}
         <MobileSearch />
       </Content>
     </Wrapper>

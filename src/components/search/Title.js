@@ -95,6 +95,7 @@ const Sentence = styled.span`
   white-space: nowrap;
   opacity: 0;
   animation: ${simple} 15000ms ${(props) => props.index * 5000}ms infinite;
+  will-change: opacity;
 
   ${(props) => props.theme.mq.medium} {
     left: 50%;
