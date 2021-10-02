@@ -115,13 +115,13 @@ export default function Title() {
     `niveau de risque radon`,
   ]
   return (
-    <Wrapper>
-      <Words>Découvrez </Words>
-      <Pronouns>
+    <Wrapper aria-label='Découvrez la qualité de votre environnement'>
+      <Words aria-hidden='true'>Découvrez </Words>
+      <Pronouns aria-hidden='true'>
         <Pronoun>la </Pronoun>
         <Pronoun absolute>le </Pronoun>
       </Pronouns>
-      <Sentences>
+      <Sentences aria-hidden='true'>
         {sentences.map((sentence, index) => (
           <Sentence key={sentence} index={index}>
             {sentence.split('').map((letter, position) => (
@@ -137,7 +137,7 @@ export default function Title() {
           </Sentence>
         ))}
       </Sentences>
-      <Words>près de chez vous</Words>
+      <Words aria-hidden='true'>près de chez vous</Words>
     </Wrapper>
   )
 }
