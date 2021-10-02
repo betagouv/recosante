@@ -11,7 +11,7 @@ const simple = keyframes`
   30% {
     opacity: 1;
   }
-  40% {
+  35% {
     opacity: 0;
   }
   to {
@@ -93,14 +93,17 @@ const Sentences = styled.strong`
 const Sentence = styled.span`
   position: absolute;
   white-space: nowrap;
-  opacity: 0;
-  animation: ${simple} 15000ms ${(props) => props.index * 5000}ms infinite;
-  will-change: opacity;
 
   ${(props) => props.theme.mq.medium} {
     left: 50%;
     transform: translateX(-50%);
   }
+`
+const Letter = styled.span`
+  will-change: opacity;
+  opacity: 0;
+  animation: ${simple} 15000ms
+    ${(props) => props.index * 5000 + props.position * 25}ms infinite;
 `
 export default function Title() {
   const sentences = [
@@ -121,7 +124,16 @@ export default function Title() {
       <Sentences>
         {sentences.map((sentence, index) => (
           <Sentence key={sentence} index={index}>
-            {sentence}
+            {sentence.split('').map((letter, position) => (
+              <Letter
+                key={index}
+                index={index}
+                position={position}
+                total={sentence.length}
+              >
+                {letter}
+              </Letter>
+            ))}
           </Sentence>
         ))}
       </Sentences>

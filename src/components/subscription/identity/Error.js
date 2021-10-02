@@ -72,7 +72,12 @@ export default function Error(props) {
             <Button onClick={props.reset} hollow noExpand>
               Essayer avec une autre adresse
             </Button>
-            <Button noExpand>Recevoir un email</Button>
+            <Button
+              onClick={() => window.alert('Fonction en cours de développement')}
+              noExpand
+            >
+              Recevoir un email
+            </Button>
           </ButtonWrapper>
         </>
       ) : (
