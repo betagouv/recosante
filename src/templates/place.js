@@ -16,3 +16,7 @@ export default function Place(props) {
     </Web>
   )
 }
+
+export async function getServerData() {
+  return { props: {} }
+}
