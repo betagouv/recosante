@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Web from 'src/components/layout/Web'
-import Section from 'src/components/base/Section'
-import Button from 'src/components/base/Button'
+import Web from 'components/layout/Web'
+import Section from 'components/base/Section'
+import Button from 'components/base/Button'
 
 const StyledSection = styled(Section)`
   display: flex;

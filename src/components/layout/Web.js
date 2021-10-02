@@ -2,16 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-import { GlobalStyle } from 'src/utils/styles'
-import StyleProvider from 'src/components/providers/StyleProvider'
-import UserProvider from 'src/components/providers/UserProvider'
-import ModalProvider from 'src/components/providers/ModalProvider'
+import { GlobalStyle } from 'utils/styles'
+import StyleProvider from 'components/providers/StyleProvider'
+import UserProvider from 'components/providers/UserProvider'
+import ModalProvider from 'components/providers/ModalProvider'
 
 import Seo from './web/Seo'
 import Header from './Header'
 import Footer from './Footer'
-import WrapperModal from 'src/components/modals/WrapperModal'
-import SubscriptionModal from 'src/components/modals/SubscriptionModal'
+import WrapperModal from 'components/modals/WrapperModal'
+import SubscriptionModal from 'components/modals/SubscriptionModal'
 
 const queryClient = new QueryClient()
 

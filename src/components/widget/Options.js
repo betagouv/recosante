@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Range from 'src/components/base/Range'
-import SearchBar from 'src/components/search/SearchBar'
+import Range from 'components/base/Range'
+import SearchBar from 'components/search/SearchBar'
 
 const Wrapper = styled.div`
   padding: 1.5rem;

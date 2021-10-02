@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { useUser, useUserMutation } from 'hooks/useUser'
-import SearchBar from 'src/components/search/SearchBar'
+import SearchBar from 'components/search/SearchBar'
 
 const Wrapper = styled.div`
   height: 3.5rem;

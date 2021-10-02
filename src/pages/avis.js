@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Web from 'src/components/layout/Web'
-import Opinion from 'src/components/Opinion'
+import Web from 'components/layout/Web'
+import Opinion from 'components/Opinion'
 
 export default function Avis() {
   return (

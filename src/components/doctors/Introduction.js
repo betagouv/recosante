@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import useOnScreen from 'src/hooks/useOnScreen'
-import Section from 'src/components/base/Section'
-import Button from 'src/components/base/Button'
-import Mockup from 'src/components/newsletter/Mockup'
+import useOnScreen from 'hooks/useOnScreen'
+import Section from 'components/base/Section'
+import Button from 'components/base/Button'
+import Mockup from 'components/newsletter/Mockup'
 
 const StyledSection = styled(Section)`
   display: flex;

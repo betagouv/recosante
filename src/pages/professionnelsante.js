@@ -1,13 +1,13 @@
 import React from 'react'
 
-import Web from 'src/components/layout/Web'
+import Web from 'components/layout/Web'
 
-import Introduction from 'src/components/doctors/Introduction'
-import Section1 from 'src/components/doctors/Section1'
-import Section2 from 'src/components/doctors/Section2'
-import Section3 from 'src/components/doctors/Section3'
-import Section4 from 'src/components/doctors/Section4'
-import About from 'src/components/About'
+import Introduction from 'components/doctors/Introduction'
+import Section1 from 'components/doctors/Section1'
+import Section2 from 'components/doctors/Section2'
+import Section3 from 'components/doctors/Section3'
+import Section4 from 'components/doctors/Section4'
+import About from 'components/About'
 
 export default function Doctors() {
   return (

@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Section from 'src/components/base/Section'
-import Background from 'src/components/misc/Background'
+import Section from 'components/base/Section'
+import Background from 'components/misc/Background'
 import Header from './dashboard/Header'
 import Indicators from './dashboard/Indicators'
 

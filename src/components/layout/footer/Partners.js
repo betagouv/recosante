@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import MagicLink from 'src/components/base/MagicLink'
+import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div``
 const Title = styled.div`

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import UserContext from 'src/utils/UserContext'
+import UserContext from 'utils/UserContext'
 
 export default function ModalProvider(props) {
   const [user, setUser] = useState({

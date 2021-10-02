@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useLocation } from '@reach/router'
 
-import { useAvis, useAvisMutation } from 'src/utils/api'
-import Section from 'src/components/base/Section'
-import TextArea from 'src/components/base/TextArea'
-import Button from 'src/components/base/Button'
-import Alert from 'src/components/base/Alert'
+import { useAvis, useAvisMutation } from 'utils/api'
+import Section from 'components/base/Section'
+import TextArea from 'components/base/TextArea'
+import Button from 'components/base/Button'
+import Alert from 'components/base/Alert'
 
 const Text = styled.p`
   ${(props) => props.theme.mq.small} {

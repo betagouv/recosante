@@ -3,13 +3,13 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import ModalContext from 'src/utils/ModalContext'
+import ModalContext from 'utils/ModalContext'
 import { useLocalUser } from 'hooks/useUser'
-import Button from 'src/components/base/Button'
-import Section from 'src/components/base/Section'
+import Button from 'components/base/Button'
+import Section from 'components/base/Section'
 import Images from './notifications/Images'
 
-import useOnScreen from 'src/hooks/useOnScreen'
+import useOnScreen from 'hooks/useOnScreen'
 
 const StyledSection = styled(Section)`
   display: flex;

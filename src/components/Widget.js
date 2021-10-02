@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import IframeResizer from 'iframe-resizer-react'
 
-import useWindowSize from 'src/hooks/useWindowSize'
-import Section from 'src/components/base/Section'
-import Code from 'src/components/widget/Code'
-import Options from 'src/components/widget/Options'
+import useWindowSize from 'hooks/useWindowSize'
+import Section from 'components/base/Section'
+import Code from 'components/widget/Code'
+import Options from 'components/widget/Options'
 
 const StyledSection = styled(Section)`
   display: flex;

@@ -9,7 +9,7 @@ import {
   Legend,
 } from 'recharts'
 
-import Section from 'src/components/base/Section'
+import Section from 'components/base/Section'
 
 const Wrapper = styled.div`
   width: 100%;

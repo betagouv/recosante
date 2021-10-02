@@ -4,9 +4,9 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import MagicLink from 'src/components/base/MagicLink'
-import Web from 'src/components/layout/Web'
-import Section from 'src/components/base/Section'
+import MagicLink from 'components/base/MagicLink'
+import Web from 'components/layout/Web'
+import Section from 'components/base/Section'
 
 const Wrapper = styled.div`
   display: flex;

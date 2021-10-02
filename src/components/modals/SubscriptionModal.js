@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 
-import ModalContext from 'src/utils/ModalContext'
-import Modal from 'src/components/base/Modal'
-import Indicators from 'src/components/Indicators'
+import ModalContext from 'utils/ModalContext'
+import Modal from 'components/base/Modal'
+import Indicators from 'components/Indicators'
 
 export default function WrapperModal() {
   const { subscription, setSubscription } = useContext(ModalContext)

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import ModalContext from 'src/utils/ModalContext'
+import ModalContext from 'utils/ModalContext'
 import { useLocalUser } from 'hooks/useUser'
 
 const Wrapper = styled.button`

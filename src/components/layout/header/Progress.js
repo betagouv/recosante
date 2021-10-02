@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import ProfileContext from 'src/utils/ProfileContext'
+import ProfileContext from 'utils/ProfileContext'
 
 const Wrapper = styled.div`
   position: fixed;

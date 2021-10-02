@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { navigate } from 'gatsby'
 import { useLocation } from '@reach/router'
 
-import formatPlaceUrl from 'src/utils/formatPlaceUrl'
+import formatPlaceUrl from 'utils/formatPlaceUrl'
 import Logos from './header/Logos'
-import SearchBar from 'src/components/search/SearchBar'
+import SearchBar from 'components/search/SearchBar'
 import MobileSearch from './header/MobileSearch'
 
 const Wrapper = styled.header`

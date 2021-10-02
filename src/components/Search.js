@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import { navigate } from 'gatsby'
 
-import formatPlaceUrl from 'src/utils/formatPlaceUrl'
-import Section from 'src/components/base/Section'
-import Background from 'src/components/misc/Background'
-import Title from 'src/components/search/Title'
-import Cloud from 'src/components/search/Cloud'
-import SearchBar from 'src/components/search/SearchBar'
+import formatPlaceUrl from 'utils/formatPlaceUrl'
+import Section from 'components/base/Section'
+import Background from 'components/misc/Background'
+import Title from 'components/search/Title'
+import Cloud from 'components/search/Cloud'
+import SearchBar from 'components/search/SearchBar'
 import Suggestions from './search/Suggestions'
 
 const Wrapper = styled.div`

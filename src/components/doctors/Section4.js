@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Button from 'src/components/base/Button'
+import Button from 'components/base/Button'
 import Wrapper from './Wrapper'
 
 const StyledContent = styled(Wrapper.Content)`

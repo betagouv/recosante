@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
 
-import useOnScreen from 'src/hooks/useOnScreen'
-import Section from 'src/components/base/Section'
+import useOnScreen from 'hooks/useOnScreen'
+import Section from 'components/base/Section'
 
 const Columns = styled.div`
   display: flex;

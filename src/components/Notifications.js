@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { useQueryParam } from 'use-query-params'
 
 import { useUser, useUserMutation } from 'hooks/useUser'
-import useNotificationsPrompt from 'src/hooks/useNotificationsPrompt'
+import useNotificationsPrompt from 'hooks/useNotificationsPrompt'
 
-import Section from 'src/components/base/Section'
-import Button from 'src/components/base/Button'
-import Alert from 'src/components/base/Alert'
+import Section from 'components/base/Section'
+import Button from 'components/base/Button'
+import Alert from 'components/base/Alert'
+import UnloggedForm from 'components/misc/UnloggedForm'
 
 export default function Notifications() {
   const [user] = useQueryParam('user')
@@ -18,7 +19,7 @@ export default function Notifications() {
     'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U'
   )
 
-  return (
+  return user ? (
     <Section first small>
       <h1>
         Activer les <strong>notifications</strong>
@@ -81,6 +82,10 @@ export default function Notifications() {
           Une erreur est survenue. Vos préférences n'ont pas été mises à jour
         </Alert>
       )}
+    </Section>
+  ) : (
+    <Section first>
+      <UnloggedForm />
     </Section>
   )
 }

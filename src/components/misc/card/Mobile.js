@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import AnimateHeight from 'react-animate-height'
 
-import useWindowSize from 'src/hooks/useWindowSize'
+import useWindowSize from 'hooks/useWindowSize'
 import Subscribe from './Subscribe'
 
 const Wrapper = styled.div`

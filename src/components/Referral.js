@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { useInscriptionPatients } from 'src/utils/api'
-import TextInputWithLabel from 'src/components/base/TextInputWithLabel'
-import TextArea from 'src/components/base/TextArea'
-import Button from 'src/components/base/Button'
-import Alert from 'src/components/base/Alert'
+import { useInscriptionPatients } from 'utils/api'
+import TextInputWithLabel from 'components/base/TextInputWithLabel'
+import TextArea from 'components/base/TextArea'
+import Button from 'components/base/Button'
+import Alert from 'components/base/Alert'
 
 const Wrapper = styled.form`
   display: flex;

@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { useLocation } from '@reach/router'
 import { navigate } from 'gatsby'
 
-import formatPlaceUrl from 'src/utils/formatPlaceUrl'
-import Search from 'src/components/Search'
+import formatPlaceUrl from 'utils/formatPlaceUrl'
+import Search from 'components/Search'
 
 const Open = styled.button`
   display: none;

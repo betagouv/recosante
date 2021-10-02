@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import MagicLink from 'src/components/base/MagicLink'
+import MagicLink from 'components/base/MagicLink'
 
 const fetching = keyframes`
   from {

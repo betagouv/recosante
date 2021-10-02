@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Web from 'src/components/layout/Web'
-import Section from 'src/components/base/Section'
-import Referral from 'src/components/Referral'
+import Web from 'components/layout/Web'
+import Section from 'components/base/Section'
+import Referral from 'components/Referral'
 
 const StyledSection = styled(Section)`
   font-size: 1.125rem;

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Section from 'src/components/base/Section'
+import Section from 'components/base/Section'
 
 const Big = styled.div`
   font-size: 1.125rem;

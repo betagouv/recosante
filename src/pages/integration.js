@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Web from 'src/components/layout/Web'
-import Widget from 'src/components/Widget'
+import Web from 'components/layout/Web'
+import Widget from 'components/Widget'
 
 export default function Integration() {
   return (

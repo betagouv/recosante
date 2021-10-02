@@ -2,8 +2,8 @@ import React, { useContext } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import ModalContext from 'src/utils/ModalContext'
-import Modal from 'src/components/base/Modal'
+import ModalContext from 'utils/ModalContext'
+import Modal from 'components/base/Modal'
 
 export default function WrapperModal() {
   const data = useStaticQuery(

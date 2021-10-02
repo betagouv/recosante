@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import { usePosition } from 'src/hooks/useSearch'
-import MagicLink from 'src/components/base/MagicLink'
-import Alert from 'src/components/base/Alert'
+import { usePosition } from 'hooks/useSearch'
+import MagicLink from 'components/base/MagicLink'
+import Alert from 'components/base/Alert'
 
 const fetching = keyframes`
   from {

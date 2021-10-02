@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Web from 'src/components/layout/Web'
-import Notifications from 'src/components/Notifications'
+import Web from 'components/layout/Web'
+import Notifications from 'components/Notifications'
 
 export default function notifications() {
   return (

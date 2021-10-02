@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Web from 'src/components/layout/Web'
-import Section from 'src/components/base/Section'
+import Web from 'components/layout/Web'
+import Section from 'components/base/Section'
 
 export default function Page(props) {
   console.log(props)

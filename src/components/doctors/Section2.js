@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import useOnScreen from 'src/hooks/useOnScreen'
-import Section from 'src/components/base/Section'
+import useOnScreen from 'hooks/useOnScreen'
+import Section from 'components/base/Section'
 
 const StyledSection = styled(Section)`
   opacity: ${(props) => (props.isOnScreen ? 1 : 0)};

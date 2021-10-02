@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import { useUser, useUserMutation } from 'hooks/useUser'
-import TextInput from 'src/components/base/TextInput'
-import Button from 'src/components/base/Button'
+import TextInput from 'components/base/TextInput'
+import Button from 'components/base/Button'
 
 const Wrapper = styled.div`
   height: 3.5rem;

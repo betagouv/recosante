@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import TextInput from 'src/components/base/TextInput'
+import TextInput from 'components/base/TextInput'
 
 const Wrapper = styled.div`
   margin-bottom: 1rem;
