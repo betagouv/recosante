@@ -41,9 +41,6 @@ export default function Links() {
         <Item to='/mentions-legales'>mentions légales</Item>
         <Item to='/politiquedeconfidentialite'>données personnelles</Item>
         <Item to='/cookies'>gestion des cookies</Item>
-        <Item to='/asthme'>asthme</Item>
-        <Item to='/pollen'>pollen</Item>
-        <Item to='/sport'>sport</Item>
         <Item to='/partenaires'>partenaires</Item>
         <Item to='/stats'>statistiques</Item>
       </ItemWrapper>
