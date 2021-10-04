@@ -15,9 +15,7 @@ export default function PotentielRadon(props) {
           <Card.Info>
             <Card.Title isLoading={isLoading}>Potentiel Radon</Card.Title>
             <Card.Value isError={isError}>
-              {isError
-                ? 'Arf 🦖'
-                : (data && data.potentiel_radon.indice.label) || '...'}
+              {isError ? 'Arf 🦖' : data && data.potentiel_radon.indice.label}
             </Card.Value>
           </Card.Info>
           <Chart data={data} />
