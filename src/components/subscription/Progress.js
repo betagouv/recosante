@@ -65,7 +65,7 @@ export default function Progress(props) {
         </Step>
       ))}
       {!props.small && (
-        <Step current={props.currentStep === 'identity'}>Identité</Step>
+        <Step current={props.currentStep === 'identity'}>Contact</Step>
       )}
     </Wrapper>
   )
