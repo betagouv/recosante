@@ -18,14 +18,14 @@ export default function useNotificationsPrompt(sw) {
   const subscribe = () => {
     //Check if avail
     setPrompting(true)
-    return axios.get(make_api_url('users/_vapid_public_key')).then(
+    return axios.get(make_api_url('_application_server_key')).then(
       response => {
         return navigator.serviceWorker
           .register(sw)
           .then((registration) => {
             const subscribeOptions = {
               userVisibleOnly: true,
-              applicationServerKey: urlB64ToUint8Array(response.data.public_key),
+              applicationServerKey: urlB64ToUint8Array(response.data.application_server_key),
             }
 
             return registration.pushManager.subscribe(subscribeOptions)
