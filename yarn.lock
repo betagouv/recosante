@@ -6003,16 +6003,16 @@ gatsby-page-utils@^2.0.0-zz-next.1:
     lodash "^4.17.21"
     micromatch "^4.0.4"
 
-gatsby-plugin-gatsby-cloud@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-gatsby-cloud/-/gatsby-plugin-gatsby-cloud-3.2.0.tgz#8303d3a7337f621a19689c4a39c3623b634f6c28"
-  integrity sha512-9s6HgwKY1ViLl1Zu5GfEf5lLkSAT2rzieOVnjb7OmId/K1+qzJgpnj2qe+4lMDigfp1hpuDjBmcPJLxfSttHgw==
+gatsby-plugin-gatsby-cloud@^4.0.0-zz-next.1:
+  version "4.0.0-zz-next.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-gatsby-cloud/-/gatsby-plugin-gatsby-cloud-4.0.0-zz-next.1.tgz#09278abef961f563b69488a2c1c007772472f0c2"
+  integrity sha512-xGRTM8AhfMYp7uVa7LrIPZM5OYAzxFM1z18fAee69cXPYh9UxM0zj1CsvpRwtJKAmVKz/hdgnWBoQyHLe3kgKw==
   dependencies:
     "@babel/runtime" "^7.15.4"
     date-fns "^2.23.0"
     fs-extra "^10.0.0"
-    gatsby-core-utils "^2.14.0"
-    gatsby-telemetry "^2.14.0"
+    gatsby-core-utils "^3.0.0-zz-next.1"
+    gatsby-telemetry "^3.0.0-zz-next.1"
     kebab-hash "^0.1.2"
     lodash "^4.17.21"
     webpack-assets-manifest "^5.0.6"
