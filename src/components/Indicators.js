@@ -20,10 +20,7 @@ export default function Indicators(props) {
 
   const { user, mutateUser } = useLocalUser()
 
-  const notifications = useNotificationsPrompt(
-    '/sw.js',
-    'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U'
-  )
+  const notifications = useNotificationsPrompt('/sw.js')
 
   return (
     <Wrapper>
