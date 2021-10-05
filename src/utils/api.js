@@ -2,6 +2,10 @@ import { useQuery, useMutation } from 'react-query'
 import axios from 'axios'
 import { useQueryParam } from 'use-query-params'
 
+export function make_api_url(endpoint) {
+  return `${process.env.GATSBY_API_BASE_URL||'https://api.recosante.beta.gouv.fr'}/${endpoint}`
+}
+
 export function useIndicators(code) {
   return useQuery(
     ['indicators', code],
