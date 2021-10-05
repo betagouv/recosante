@@ -10,61 +10,38 @@ export default function ShareWrapper(props) {
       messages={{
         mail: {
           simulator: {
-            subject: `Découvrez & intégrez le simulateur de l'ADEME Que Faire de mes Déchets !`,
+            subject: `Coucou, tu aimes le radon ?`,
             body: `Bonjour,
-            
-Vous souhaitez aider votre communauté ou collaborateurs à savoir plus facilement où jeter leurs déchets, et comment les limiter ?
-            
-Le site Que Faire de mes Déchets permet de savoir quoi faire de vos déchets, de savoir ce qu'ils vont devenir et comment les éviter. 
-
-Découvrez le ici : `,
+`,
           },
           result: {
-            subject: `Découvre cette fiche résultat sur le site de l'ADEME Que Faire de mes Déchets - ${props.result}`,
+            subject: `Coucou, tu aimes le radon ?`,
             body: `Bonjour,
-
-Voici un résultat de recherche sur le site Que Faire de mes Déchets que je voulais partager avec toi : `,
+`,
           },
         },
         facebook: {
           simulator: {
-            quote:
-              'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Recosanté, retrouvez toutes les réponses à ces questions ! ♻🌍',
+            quote: 'Coucou, tu aimes le radon ?',
           },
           result: {
-            quote: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
+            quote: `${props.result} - Coucou, tu aimes le radon ?`,
           },
         },
         twitter: {
           simulator: {
-            title:
-              'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Recosanté, retrouvez toutes les réponses à ces questions ! ♻🌍',
+            title: 'Coucou, tu aimes le radon ?',
           },
           result: {
-            title: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
-          },
-        },
-        linkedin: {
-          simulator: {
-            source: 'Que Faire de mes Déchets',
-            title:
-              'Retrouvez les consignes de tri de tous les déchets et intégrez cet outil à votre site ! 💻♻🌍',
-            summary:
-              'Vous souhaitez aider votre communauté ou collaborateurs à savoir plus facilement où jeter leurs déchets, et comment les limiter ? Faites-leur découvrir Que faire de mes déchets !  Recosanté aussi intégrable librement en iframe sur vos plateformes web & mobiles, de quoi toucher largement les visiteurs de votre site !',
-          },
-          result: {
-            source: `Que faire de mes Déchets`,
-            title: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
-            summary:
-              'Des questions sur un autre déchet ? Toutes les réponses sont dans Que Faire de mes Déchets !',
+            title: `${props.result} - Coucou, tu aimes le radon ?`,
           },
         },
         whatsapp: {
           simulator: {
-            title: 'Que Faire de mes Déchets ♻🌍',
+            title: 'Coucou, tu aimes le radon ?',
           },
           result: {
-            title: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
+            title: `${props.result} - Coucou, tu aimes le radon ?`,
           },
         },
       }}

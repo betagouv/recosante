@@ -40,7 +40,8 @@ export default function Share(props) {
   const [url, setUrl] = useState()
   useEffect(() => {
     setUrl(
-      `${window.location.origin}/${
+      //`${window.location.origin}/${
+      `https://recosante.gtsb.io/${
         typeShare === 'result' ? location.pathname + location.search : ''
       }`
     )
@@ -79,12 +80,7 @@ export default function Share(props) {
         />
         <Facebook quote={props.messages.facebook[typeShare].quote} url={url} />
         <Twitter title={props.messages.twitter[typeShare].title} url={url} />
-        <Linkedin
-          title={props.messages.linkedin[typeShare].title}
-          summary={props.messages.linkedin[typeShare].summary}
-          source={props.messages.linkedin[typeShare].source}
-          url={url}
-        />
+        <Linkedin url={url} />
         <Whatsapp title={props.messages.whatsapp[typeShare].title} url={url} />
       </ShareButtons>
       <Link url={url} />
