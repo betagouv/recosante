@@ -43,8 +43,8 @@ export default function Embed(props) {
           {props.children}
         </>
       )}
-      <h3>Choisissez un thème</h3>
-      <Themes />
+      {/*<h3>Choisissez un thème</h3>
+      <Themes />*/}
       <ContactPrompt configurator />
     </Panel>
   )
