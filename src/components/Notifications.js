@@ -14,10 +14,7 @@ export default function Notifications() {
   const { data } = useUser()
   const mutation = useUserMutation()
   const [success, setSuccess] = useState(false)
-  const notifications = useNotificationsPrompt(
-    '/sw.js',
-    'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U'
-  )
+  const notifications = useNotificationsPrompt('/sw.js')
 
   return user ? (
     <Section first small>
