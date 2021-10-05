@@ -14,7 +14,6 @@ import WrapperModal from 'components/modals/WrapperModal'
 import SubscriptionModal from 'components/modals/SubscriptionModal'
 import ShareWrapper from 'components/wrappers/ShareWrapper'
 import EmbedWrapper from 'components/wrappers/EmbedWrapper'
-import ContactWrapper from 'components/wrappers/ContactWrapper'
 import InstallButton from 'components/base/InstallButton'
 
 const queryClient = new QueryClient()
@@ -44,7 +43,6 @@ export default function Web(props) {
                 <Footer />
                 <EmbedWrapper place={props.place} />
                 <ShareWrapper place={props.place} />
-                <ContactWrapper />
                 <InstallButton />
                 <WrapperModal />
                 <SubscriptionModal />

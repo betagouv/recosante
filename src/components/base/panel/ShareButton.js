@@ -18,7 +18,7 @@ const hover = keyframes`
 const StyledWrapper = styled(Toggle)`
   transform: translate(
     ${(props) => (props.open ? '-30rem' : '0')},
-    ${(props) => (props.four ? 'calc(-100% - 1rem)' : '-50%')}
+    ${(props) => (props.three ? '-50%' : '1rem')}
   );
 
   &:hover,
@@ -58,7 +58,7 @@ export default function ShareButton(props) {
     <StyledWrapper
       open={props.open}
       onClick={props.onClick}
-      four={installPrompt}
+      three={installPrompt}
       tooltip={'Partager Recosanté'}
     >
       <Share

@@ -21,7 +21,7 @@ const hover = keyframes`
 const StyledWrapper = styled(Toggle)`
   transform: translate(
     ${(props) => (props.open ? '-30rem' : '0')},
-    calc(${(props) => (props.four ? '-200% - 3rem' : '-150% - 2rem')})
+    calc(${(props) => (props.three ? '-150% - 2rem' : '-100% - 1rem')})
   );
 
   &:hover,
@@ -53,7 +53,7 @@ export default function EmbedButton(props) {
     <StyledWrapper
       open={props.open}
       onClick={props.onClick}
-      four={installPrompt}
+      three={installPrompt}
       tooltip={'Intégrer Recosanté'}
     >
       <Embed
