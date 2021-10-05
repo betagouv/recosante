@@ -8,6 +8,12 @@ module.exports = {
     twitterUsername: 'recosante',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-gatsby-cloud`,
+      options: {
+        mergeSecurityHeaders: false,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

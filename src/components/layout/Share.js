@@ -46,7 +46,7 @@ export default function Share(props) {
   useEffect(() => {
     setUrl(
       //`${window.location.origin}/${
-      `https://recosante.gtsb.io/${
+      `https://recosante.gtsb.io${
         typeShare === 'result' ? location.pathname + location.search : ''
       }`
     )
