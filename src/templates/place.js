@@ -8,7 +8,7 @@ import About from 'components/About'
 
 export default function Place(props) {
   return (
-    <Web title={props.pageContext.place.nom}>
+    <Web title={props.pageContext.place.nom} place={props.pageContext.place}>
       <Dashboard place={props.pageContext.place} />
       <Newsletter />
       <Data />

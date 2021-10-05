@@ -7,7 +7,7 @@ const Wrapper = styled.input`
   padding: 0.5em 0.75em;
   line-height: inherit;
   background-color: ${(props) => props.theme.colors.input};
-  box-shadow: inset 0 -2px 0 0 ${(props) => props.theme.colors.main};
+  box-shadow: inset 0 -2px 0 0 ${(props) => props.theme.colors[props.error ? 'error' : 'main']};
   border: none;
   border-radius: 0.25em 0.25em 0 0;
 `
@@ -21,6 +21,7 @@ export default function TextInput(props) {
       name={props.name}
       list={props.list}
       value={props.value}
+      error={props.error}
       placeholder={props.placeholder}
       required={props.required}
       onChange={(e) => {

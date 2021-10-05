@@ -126,7 +126,7 @@ export default function Title() {
           <Sentence key={sentence} index={index}>
             {sentence.split('').map((letter, position) => (
               <Letter
-                key={index}
+                key={position + '_' + index}
                 index={index}
                 position={position}
                 total={sentence.length}

@@ -3,7 +3,7 @@ import styledNormalize from 'styled-normalize'
 
 export const themes = {
   default: {
-    name: 'Défaut',
+    name: 'Clair',
     colors: {
       main: '#000091',
       mainAlpha: '0, 0, 145',
@@ -46,6 +46,50 @@ export const themes = {
       medium: `@media screen and (max-width: ${75}rem)`,
     },
   },
+  /* night: {
+    name: 'Sombre',
+    colors: {
+      main: '#9A9AFF',
+      mainAlpha: '154, 154, 25',
+      background: '#1e1e1e',
+      backgroundAlpha: '0, 0, 0',
+      tile: '#2A2A2A',
+      input: '#2A2A2A',
+      title: '#fff',
+      text: '#fff',
+      border: '#6A6A6A',
+      footer: '#383838',
+      success: '#008941',
+      error: '#e10600',
+      disabled: '#d5dbef',
+      atmo: {
+        1: '#4BF0E6',
+        2: '#4FCBAD',
+        3: '#F0E65F',
+        4: '#FF5354',
+        5: '#A83559',
+        6: '#7D237D',
+      },
+      raep: {
+        1: '#75F94C',
+        2: '#387C21',
+        3: '#FFFD53',
+        4: '#EF8541',
+        5: '#EA3421',
+      },
+      radon: {
+        1: '#F0E65F',
+        2: '#FFFD53',
+        3: '#EA3421',
+      },
+    },
+    fonts: '"Marianne", Arial, sans-serif',
+    mq: {
+      small: `@media screen and (max-width: ${40}rem)`,
+      smallish: `@media screen and (max-width: ${49}rem)`,
+      medium: `@media screen and (max-width: ${75}rem)`,
+    },
+  },*/
 }
 
 export const GlobalStyle = createGlobalStyle`

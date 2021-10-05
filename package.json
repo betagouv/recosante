@@ -36,6 +36,7 @@
     "react-masonry-css": "^1.0.16",
     "react-query": "^3.24.5",
     "react-share": "^4.4.0",
+    "react-tooltip": "^4.2.21",
     "recharts": "^2.1.4",
     "sharp": "^0.29.1",
     "styled-components": "^5.3.1",
