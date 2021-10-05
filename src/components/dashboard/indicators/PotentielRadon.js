@@ -46,7 +46,7 @@ export default function PotentielRadon(props) {
           <Card.Source>
             Mesures fixes valides pour {data.potentiel_radon.validity.area}
             <br />
-            Données fournies par{' '}
+            Données fournies par l'
             <MagicLink to={data.potentiel_radon.sources[0].url}>
               {data.potentiel_radon.sources[0].label}
             </MagicLink>
