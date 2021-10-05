@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   width: ${(props) => (props.open ? '30rem' : 0)};
   transition: width 400ms ease-out;
 
-  ${(props) => props.theme.mq.small} {
+  ${(props) => props.theme.mq.smallish} {
     display: ${(props) => (props.open && props.small ? 'block' : 'none')};
     width: auto;
     border-left: none;
@@ -34,7 +34,7 @@ const Content = styled.div`
   transform: translateX(${(props) => (props.open ? 0 : '100%')});
   transition: transform 400ms ease-out;
 
-  ${(props) => props.theme.mq.small} {
+  ${(props) => props.theme.mq.smallish} {
     position: relative;
     width: auto;
     height: auto;
@@ -64,10 +64,14 @@ const ButtonClose = styled.div`
   transform: rotate(45deg);
   cursor: pointer;
   line-height: 0.5;
+
+  ${(props) => props.theme.mq.smallish} {
+    display: none;
+  }
 `
 export default function Panel(props) {
   const { width } = useWindowSize()
-  return (width > 640 && !props.small) || (width <= 640 && props.small) ? (
+  return (width > 784 && !props.small) || (width <= 784 && props.small) ? (
     <Wrapper open={props.open} small={props.small} id={props.id}>
       {!props.small &&
         (props.index === 0 ? (

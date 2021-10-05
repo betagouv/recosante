@@ -23,31 +23,25 @@ export default function UXProvider(props) {
     <UXContext.Provider
       value={{
         embedOpen,
-        setEmbedOpen: (value) => {
-          if (value) {
-            setShareOpen(false)
-            setContactOpen(false)
-            setTypeShare('simulator')
-          }
-          setEmbedOpen(value)
+        toggleEmbedOpen: () => {
+          setShareOpen(false)
+          setContactOpen(false)
+          setTypeShare('simulator')
+          setEmbedOpen((prevOpen) => !prevOpen)
         },
         shareOpen,
-        setShareOpen: (value) => {
-          if (value) {
-            setEmbedOpen(false)
-            setContactOpen(false)
-            setTypeShare('simulator')
-          }
-          setShareOpen(value)
+        toggleShareOpen: () => {
+          setEmbedOpen(false)
+          setContactOpen(false)
+          setTypeShare('simulator')
+          setShareOpen((prevOpen) => !prevOpen)
         },
         contactOpen,
-        setContactOpen: (value) => {
-          if (value) {
-            setShareOpen(false)
-            setEmbedOpen(false)
-            setTypeShare('simulator')
-          }
-          setContactOpen(value)
+        toggleContactOpen: (value) => {
+          setShareOpen(false)
+          setEmbedOpen(false)
+          setTypeShare('simulator')
+          setContactOpen((prevOpen) => !prevOpen)
         },
         details,
         setDetails,

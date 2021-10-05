@@ -33,8 +33,13 @@ const ShareButtons = styled.div`
   }
 `
 export default function Share(props) {
-  const { shareOpen, setShareOpen, typeShare, setTypeShare, setEmbedOpen } =
-    useContext(UXContext)
+  const {
+    shareOpen,
+    toggleShareOpen,
+    typeShare,
+    setTypeShare,
+    toggleEmbedOpen,
+  } = useContext(UXContext)
 
   let location = useLocation()
   const [url, setUrl] = useState()
@@ -52,7 +57,7 @@ export default function Share(props) {
       small={props.small}
       id={props.small ? 'share-mobile' : null}
       open={shareOpen}
-      toggleClose={() => setShareOpen((prevOpen) => !prevOpen)}
+      toggleClose={toggleShareOpen}
       index={1}
     >
       <h2>
@@ -72,7 +77,7 @@ export default function Share(props) {
         />
       </h2>
       <ShareButtons>
-        <Integration onClick={() => setEmbedOpen(true)} />
+        <Integration onClick={() => toggleEmbedOpen()} />
         <Mail
           subject={props.messages.mail[typeShare].subject}
           body={props.messages.mail[typeShare].body}

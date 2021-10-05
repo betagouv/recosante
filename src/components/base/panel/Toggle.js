@@ -20,7 +20,7 @@ const Wrapper = styled.button`
     outline: none;
   }
 
-  ${(props) => props.theme.mq.small} {
+  ${(props) => props.theme.mq.smallish} {
     display: none;
   }
 `

@@ -26,7 +26,7 @@ const Alert = styled.p`
 `
 
 export default function Contact(props) {
-  const { contactOpen, setContactOpen } = useContext(UXContext)
+  const { contactOpen, toggleContactOpen } = useContext(UXContext)
 
   const [user, setUser] = useState({
     nom: '',
@@ -45,9 +45,7 @@ export default function Contact(props) {
     <Panel
       small={props.small}
       open={contactOpen}
-      toggleClose={() => {
-        setContactOpen((prevOpen) => !prevOpen)
-      }}
+      toggleClose={toggleContactOpen}
       index={2}
     >
       <h2>Nous contacter</h2>
@@ -104,7 +102,9 @@ export default function Contact(props) {
             setUser((prevUser) => ({ ...prevUser, [name]: value }))
           }
         >
-          <option value={null} disabled></option>
+          <option value='' disabled>
+            {' '}
+          </option>
           <option value='integration'>
             Je souhaite obtenir de l'aide pour intégrer Recosanté
           </option>

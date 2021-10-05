@@ -57,7 +57,7 @@ export default function ContactButton(props) {
       open={props.open}
       onClick={props.onClick}
       four={installPrompt}
-      tooltip={'Contact'}
+      tooltip={'Contacter Recosanté'}
     >
       <Mail
         open={props.open}

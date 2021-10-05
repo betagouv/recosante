@@ -17,7 +17,7 @@ const StyledLink = styled.button`
   cursor: pointer;
 `
 export default function ContactPrompt(props) {
-  const { setEmbedOpen } = useContext(UXContext)
+  const { toggleEmbedOpen } = useContext(UXContext)
 
   return false ? (
     <>
@@ -32,7 +32,7 @@ export default function ContactPrompt(props) {
             Personnalisez le et intégrez le facilement grace à{' '}
             <StyledLink
               onClick={() => {
-                setEmbedOpen(true)
+                toggleEmbedOpen()
               }}
             >
               notre configurateur

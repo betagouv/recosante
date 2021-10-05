@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Logos from './header/Logos'
 import Partners from './footer/Partners'
 import Links from './footer/Links'
+import MobileButtons from './footer/MobileButtons'
 
 const Wrapper = styled.footer`
   position: relative;
@@ -36,6 +37,7 @@ export default function Footer() {
   return (
     <Wrapper>
       <Content>
+        <MobileButtons iframe={false} />
         <Logos />
         <Right>
           <Description>
