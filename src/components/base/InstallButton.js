@@ -70,7 +70,7 @@ export default function InstallButton(props) {
       <StyledWrapper
         open={props.open}
         onClick={() => installPrompt.prompt()}
-        tooltip={'Installer ce simulateur'}
+        tooltip={'Installer Recosanté'}
       >
         <Install open={props.open} x='0px' y='0px' viewBox='0 0 512 512'>
           <path
