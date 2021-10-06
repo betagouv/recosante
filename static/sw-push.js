@@ -3,17 +3,23 @@ self.addEventListener('push', function (event) {
     return
   }
 
-  data = event.data ? event.data.json() : {}
+  data = event.data
+    ? event.data.json()
+    : { title: 'Découvrez les données Recosanté' }
 
-  const notification = new Notification(data.title || 'Recosanté', {
-    body: data.message || 'Découvrez les données Recosanté',
-    tag: 'recosante',
+  const promiseChain = self.registration.showNotification(data.title, {
+    body: data.body,
+    link: data.link,
     icon: 'favicon.png',
+    onclick: (event) => {
+      event.preventDefault()
+      window.open(data.link, '_blank')
+    },
+    requireInteraction: true,
   })
 
-  notification.addEventListener('click', function () {
-    if (clients.openWindow) {
-      clients.openWindow(data.link || 'https://recosante.gtsb.io')
-    }
-  })
+  event.waitUntil(promiseChain)
+})
+self.addEventListener('notificationclick', function (event) {
+  self.clients.openWindow(event.notification.data)
 })
