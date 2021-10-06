@@ -35,7 +35,7 @@ press:
     image: ../assets/logos/logoutrail.png
     link: https://www2.u-trail.com/
   - titre: camptocamp
-    image: ../assets/logos/Logo camptocamp.svg
+    image: ../assets/logos/Logo camptocamp.png
     link: https://forum.camptocamp.org/
 
 ---
