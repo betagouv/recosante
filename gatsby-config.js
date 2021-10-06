@@ -84,9 +84,14 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#000091`,
         display: `minimal-ui`,
-        icon: 'src/images/favicon.png',
+        icon: 'static/favicon.png',
       },
     },
-    'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        appendScript: `static/sw-push.js`,
+      },
+    },
   ],
 }

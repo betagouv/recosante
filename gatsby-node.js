@@ -1,5 +1,26 @@
 const axios = require(`axios`)
 
+exports.sourceNodes = async ({
+  actions: { createNode },
+  createContentDigest,
+}) =>
+  axios
+    .get(`https://staging.api.recosante.beta.gouv.fr/_application_server_key`)
+    .then((res) => res.data)
+    .then((data) =>
+      createNode({
+        public_key: data.public_key,
+        url: data.html_url,
+        id: `application-server-key`,
+        parent: null,
+        children: [],
+        internal: {
+          type: `ApplicationServerKey`,
+          contentDigest: createContentDigest(data),
+        },
+      })
+    )
+
 exports.createPages = ({ graphql, actions: { createPage } }) => {
   const pages = graphql(
     `
@@ -17,10 +38,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
     if (result.errors) {
       Promise.reject(result.errors)
     }
-    console.log('result', result)
     result.data.allMdx.edges.forEach((post) => {
-      console.log('post', post)
-      console.log('slug', post.node.slug)
       createPage({
         path: `${post.node.slug}`,
         component: require.resolve('./src/templates/page.js'),

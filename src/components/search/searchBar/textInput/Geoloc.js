@@ -61,7 +61,6 @@ export default function Submit(props) {
   const [done, setDone] = useState(false)
   const handlePlaceSelection = props.handlePlaceSelection
   useEffect(() => {
-    console.log(done, data)
     if (data && !done) {
       setDone(true)
       if (data[0]) {

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import steps from 'utils/indicateursSteps'
+import useUrlB64ToUint8Array from 'hooks/useUrlB64ToUint8Array'
 import { useLocalUser } from 'hooks/useUser'
 import useNotificationsPrompt from 'hooks/useNotificationsPrompt'
 import Progress from './subscription/Progress'
@@ -14,16 +16,24 @@ import Newsletter from './subscription/Newsletter'
 
 const Wrapper = styled.div``
 export default function Indicators(props) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        applicationServerKey {
+          public_key
+        }
+      }
+    `
+  )
+
+  const publicKey = useUrlB64ToUint8Array(data.applicationServerKey.public_key)
   const [currentStep, setCurrentStep] = useState(0)
 
   const [modal, setModal] = useState(false)
 
   const { user, mutateUser } = useLocalUser()
 
-  const notifications = useNotificationsPrompt(
-    '/sw.js',
-    'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U'
-  )
+  const notifications = useNotificationsPrompt('/sw.js', publicKey)
 
   return (
     <Wrapper>

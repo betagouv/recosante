@@ -69,7 +69,7 @@ export default function Success(props) {
   const { setSubscription, setNeedConfirmation } = useContext(ModalContext)
   useEffect(() => {
     setNeedConfirmation(false)
-  }, [])
+  }, [setNeedConfirmation])
   const newsletter = props?.data?.data?.recommandations[0] === 'oui'
   return (
     <Wrapper visible={props.data}>
