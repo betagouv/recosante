@@ -10,6 +10,10 @@ const Wrapper = styled.circle`
       ${(props) => (props.value ? 300 : 0)}ms ease-out,
     opacity ${(props) => (props.value ? 300 : 0)}ms
       ${(props) => (props.value ? 300 : 0)}ms ease-out;
+
+  ${(props) => props.theme.mq.medium} {
+    transition: none;
+  }
 `
 export default function Circle(props) {
   return (

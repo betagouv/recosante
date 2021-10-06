@@ -17,6 +17,10 @@ const Circle = styled.circle`
       ${(props) => (props.visible ? props.index * 300 + 600 : 0)}ms,
     fill ${(props) => (props.visible ? 400 : 0)}ms
       ${(props) => (props.visible ? props.index * 300 + 600 : 0)}ms;
+
+  ${(props) => props.theme.mq.medium} {
+    transition: none;
+  }
 `
 export default function Chart(props) {
   return (
