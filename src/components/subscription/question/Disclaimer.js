@@ -26,6 +26,7 @@ const Link = styled.button`
   padding: 0;
   font-size: 0.75rem;
   font-weight: 300;
+  line-height: 1.4;
   text-align: center;
   color: ${(props) => props.theme.colors.main};
   text-decoration: underline;
@@ -39,9 +40,9 @@ export default function Disclaimer(props) {
       <Title>
         Vous recevrez <strong>un email par semaine</strong>.
       </Title>
-      <Text>(Vous pourrez vous désabonner à tout moment)</Text>
+      <Text>Vous pourrez vous désabonner à tout moment</Text>
       <Link onClick={() => props.setModal('newsletter')}>
-        Voir à quoi ça ressemble
+        Voir un exemple d'email que je recevrai
       </Link>
     </Wrapper>
   )

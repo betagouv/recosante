@@ -65,7 +65,7 @@ const steps = [
   {
     name: 'chauffage',
     title: 'Chauffage',
-    label: 'Je renseigne le mode de chauffage de mon foyer.',
+    label: 'Je renseigne le mode de chauffage de mon logement.',
     options: [
       {
         value: 'bois',
@@ -74,7 +74,7 @@ const steps = [
       },
       {
         value: 'chaudiere',
-        label: `Chaudière au gaz, fioul ou électrique`,
+        label: `Chaudière au fioul, au gaz ou électrique`,
         icon: <Chaudiere />,
       },
       {

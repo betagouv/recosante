@@ -10,22 +10,34 @@ const Wrapper = styled.button`
   text-decoration: underline;
   background: transparent;
   border: none;
-  opacity: ${(props) => (props.disabled ? 0.5 : 1)};
-  cursor: ${(props) => (props.disabled ? 'normal' : 'pointer')};
+  opacity: ${(props) => (props.static ? 0.5 : 1)};
+  cursor: ${(props) => (props.static ? 'normal' : 'pointer')};
+`
+const Superscript = styled.sup`
+  display: inline-block;
+  margin-left: 0.2rem;
+  font-size: 0.625rem;
+  color: ${(props) => props.theme.colors.main};
+  cursor: pointer;
 `
 export default function Subscribe(props) {
-  const { setSubscription } = useContext(ModalContext)
+  const { setSubscription, setModal } = useContext(ModalContext)
   const { mutateUser } = useLocalUser()
 
   return (
     <Wrapper
       onClick={() => {
-        mutateUser({ indicateurs: [props.indicateur], commune: props.place })
-        setSubscription('indicators')
+        if (props.disabled) {
+          setModal('donneesstatiques')
+        } else {
+          mutateUser({ indicateurs: [props.indicateur], commune: props.place })
+          setSubscription('indicators')
+        }
       }}
-      disabled={props.disabled}
+      static={props.disabled}
     >
-      {props.disabled ? `Données fixes` : `M’abonner à cet indicateur`}
+      {props.disabled ? `Données statiques` : `M’abonner à cet indicateur`}
+      {props.disabled && <Superscript>(?)</Superscript>}
     </Wrapper>
   )
 }

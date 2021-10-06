@@ -2,4 +2,4 @@
 title: Recommandations Hebdomadaires
 ---
 
-Recevez **chaque semaine** nos conseils par **email** pour vous aider à réduire l’impact de votre environnement (**pollution de l’air**, **qualité de l’eau**, **rayons UV**, **pollens, radon**, etc...) sur votre santé.
+Recevez **chaque semaine** une lettre d'information par **email** qui vous aide à mieux comprendre les liens entre **santé et environnement** et à agir pour protéger votre santé grâce à des **recommandations**.

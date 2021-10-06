@@ -57,6 +57,12 @@ export default function WrapperModal() {
             title
           }
         }
+        donneesstatiques: mdx(slug: { eq: "donneesstatiques" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
       }
     `
   )
