@@ -65,7 +65,7 @@ export default function Error(props) {
         <>
           <Title>Un compte est déjà associé à cet email</Title>
           <Text>
-            Souhaitez vous recevoir un email à cette adresse pour vous permettre
+            Souhaitez-vous recevoir un email à cette adresse pour vous permettre
             d'éditer votre compte ?
           </Text>
           <ButtonWrapper>

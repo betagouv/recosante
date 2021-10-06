@@ -58,7 +58,7 @@ export default function Success(props) {
   return (
     <Wrapper visible={props.data}>
       <Title>
-        <strong>Félicitation</strong> !<br /> Vous êtes maintenant abonné aux{' '}
+        <strong>Félicitations</strong> !<br /> Vous êtes maintenant abonné·e aux{' '}
         <strong>indicateurs</strong>{' '}
         {newsletter ? (
           <>
