@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useContext } from 'react'
 import styled from 'styled-components'
 
+import ModalContext from 'utils/ModalContext'
 import Button from 'components/base/Button'
 
 const Wrapper = styled.div`
@@ -37,8 +38,7 @@ const Title = styled.h3`
 `
 const ButtonWrapper = styled.div`
   display: flex;
-  justify-content: ${(props) =>
-    props.newsletter ? 'center' : 'space-between'};
+  justify-content: space-between;
 
   ${(props) => props.theme.mq.small} {
     flex-direction: column;
@@ -53,7 +53,23 @@ const StyledButton = styled(Button)`
     margin-bottom: 1rem;
   }
 `
+const Small = styled.span`
+  display: none;
+  ${(props) => props.theme.mq.small} {
+    display: inline;
+  }
+`
+const Large = styled.span`
+  display: inline;
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
+`
 export default function Success(props) {
+  const { setSubscription, setNeedConfirmation } = useContext(ModalContext)
+  useEffect(() => {
+    setNeedConfirmation(false)
+  }, [])
   const newsletter = props?.data?.data?.recommandations[0] === 'oui'
   return (
     <Wrapper visible={props.data}>
@@ -74,7 +90,12 @@ export default function Success(props) {
         <StyledButton to={`/profil?user=${props?.data?.data?.uid}`} hollow>
           Modifier mes informations
         </StyledButton>
-        {!newsletter && (
+        {newsletter ? (
+          <StyledButton onClick={() => setSubscription(null)}>
+            <Small>Revenir à l'accueil</Small>
+            <Large>Fermer cette fenêtre</Large>
+          </StyledButton>
+        ) : (
           <StyledButton to={`/profil?user=${props?.data?.data?.uid}`}>
             M’abonner aux recommandations
           </StyledButton>
