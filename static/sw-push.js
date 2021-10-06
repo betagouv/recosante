@@ -9,12 +9,14 @@ self.addEventListener('push', function (event) {
 
   const promiseChain = self.registration.showNotification(data.title, {
     body: data.body,
-    link: data.link,
+    data: data.link,
     icon: 'favicon.png',
-    onclick: (event) => {
-      event.preventDefault()
-      window.open(data.link, '_blank')
-    },
+    actions: [
+      {
+        action: data.link,
+        title: 'Voir tous les indicateurs',
+      },
+    ],
     requireInteraction: true,
   })
 
