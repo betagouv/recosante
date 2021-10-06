@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   padding: 0 0 6.5rem;
 
   ${(props) => props.theme.mq.medium} {
-    min-height: 100vh;
+    min-height: ${(props) => (props.iframe ? '50rem' : '100vh')};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +41,7 @@ const SearchBarSizer = styled.div`
 `
 export default function Search(props) {
   return (
-    <Wrapper>
+    <Wrapper iframe={props.iframe}>
       <Background />
 
       <StyledSection first>
