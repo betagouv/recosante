@@ -67,7 +67,11 @@ export default function WrapperModal() {
     <Modal open={modal} setOpen={setModal}>
       {modal && data[modal.replaceAll('.', '')] && (
         <>
-          <h3>{data[modal.replaceAll('.', '')].frontmatter.title}</h3>
+          <h3
+            dangerouslySetInnerHTML={{
+              __html: data[modal.replaceAll('.', '')].frontmatter.title,
+            }}
+          />
           <MDXRenderer>{data[modal.replaceAll('.', '')].body}</MDXRenderer>
         </>
       )}

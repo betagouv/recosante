@@ -41,8 +41,8 @@ export default function Footer() {
         <Logos />
         <Right>
           <Description>
-            Recosanté est une lettre d’information numérique qui vous aide à
-            vous protéger des impacts de la pollution de l'air sur votre santé.
+            Recosanté est un service public qui vous aide à connaître votre
+            environnement et à agir pour protéger votre santé.
           </Description>
           <Partners />
         </Right>
