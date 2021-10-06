@@ -58,16 +58,19 @@ export default function Submit(props) {
 
   const { data, isFetching, isError } = usePosition(position)
 
+  const [done, setDone] = useState(false)
   const handlePlaceSelection = props.handlePlaceSelection
   useEffect(() => {
-    if (data) {
+    console.log(done, data)
+    if (data && !done) {
+      setDone(true)
       if (data[0]) {
         handlePlaceSelection(data[0])
       } else {
         setError(true)
       }
     }
-  }, [data, handlePlaceSelection])
+  }, [data, done, handlePlaceSelection])
 
   const [error, setError] = useState(false)
 
@@ -81,6 +84,7 @@ export default function Submit(props) {
         type='button'
         onClick={() => {
           if (!isFetching && !isGeolocating) setIsGeolocating(true)
+          setDone(false)
           navigator.geolocation.getCurrentPosition((position) => {
             setIsGeolocating(false)
             setPosition(position)

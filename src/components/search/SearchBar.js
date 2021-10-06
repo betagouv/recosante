@@ -72,6 +72,7 @@ export default function SearchBar(props) {
         setFocus={setFocus}
         placeholder={props.placeholder}
         handlePlaceSelection={(place) => {
+          setSearch(place.nom)
           props.handlePlaceSelection(place)
           setFocus(false)
         }}
