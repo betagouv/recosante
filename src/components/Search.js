@@ -52,7 +52,7 @@ export default function Search(props) {
             handlePlaceSelection={
               props.handlePlaceSelection ||
               ((place) => {
-                navigate(formatPlaceUrl(place))
+                navigate(formatPlaceUrl(place) + window.location.search)
               })
             }
           />
