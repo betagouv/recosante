@@ -35,7 +35,7 @@ export default function Partners() {
         mdx(slug: { eq: "partenaires" }) {
           body
           frontmatter {
-            partners {
+            data {
               title
               image {
                 childImageSharp {
@@ -53,7 +53,7 @@ export default function Partners() {
     <Wrapper>
       <Title>Les données sont fournies par</Title>
       <Logos>
-        {data.mdx.frontmatter.partners.map((logo) => (
+        {data.mdx.frontmatter.data.map((logo) => (
           <Logo to={logo.link} key={logo.link}>
             <GatsbyImage image={getImage(logo.image)} alt={logo.title} />
           </Logo>
