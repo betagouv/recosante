@@ -1,6 +1,6 @@
 ## Qui sommes-nous&#8239;?
 
-Recosanté est un service public numérique porté par le ministère des Solidarités et de la Santé et le ministère de la Transition écologique. Il est construit en partenariat avec la Direction interministérielle du numérique dans le cadre du programme [beta.gouv.fr](https://beta.gouv.fr/).
+Recosanté est un service public numérique porté par le ministère des Solidarités et de la Santé, et le ministère de la Transition écologique. Il est construit en partenariat avec la Direction interministérielle du numérique dans le cadre du programme [beta.gouv.fr](https://beta.gouv.fr/).
 
 Le service est en phase de construction, il évolue de façon continue selon les retours des utilisateurs.
 
