@@ -87,7 +87,6 @@ export default function Identity(props) {
             setError(true)
           } else {
             setError(false)
-            console.log(JSON.stringify(user))
             mutation.mutate(user)
           }
         }}

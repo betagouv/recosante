@@ -6,7 +6,6 @@ import Web from 'components/layout/Web'
 import Section from 'components/base/Section'
 
 export default function Page(props) {
-  console.log(props)
   return (
     <Web>
       <Section first medium>

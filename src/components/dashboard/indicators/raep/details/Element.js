@@ -77,7 +77,6 @@ export default function Element(props) {
     armoises: 'Armoises',
   }
 
-  console.log()
   return (
     <Wrapper index={props.index} visible={props.visible} value={props.value}>
       {labels[props.label]}

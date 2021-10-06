@@ -43,7 +43,7 @@ const StyledSearchBar = styled(SearchBar)`
 `
 export default function Header() {
   const { pathname } = useLocation()
-  console.log(pathname)
+
   return (
     <Wrapper>
       <Content>

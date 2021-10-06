@@ -25,7 +25,7 @@ export default function Opinion() {
   const mutation = useAvisMutation(location)
 
   const [message, setMessage] = useState('')
-  console.log(mutation)
+
   return (
     <Section small first>
       <Section.Title>

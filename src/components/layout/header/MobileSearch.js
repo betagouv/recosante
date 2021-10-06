@@ -73,7 +73,6 @@ export default function MobileSearch() {
       <Wrapper open={open}>
         <Search
           handlePlaceSelection={(place) => {
-            console.log('handle')
             setOpen(false)
             navigate(formatPlaceUrl(place))
           }}
