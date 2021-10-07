@@ -5,6 +5,7 @@ import Button from 'components/base/Button'
 import { useLocalUser } from 'hooks/useUser'
 
 const Wrapper = styled.div`
+  position: relative;
   display: flex;
   justify-content: ${(props) =>
     props.prevButtonVisible ? 'space-between' : 'flex-end'};
@@ -45,6 +46,24 @@ const NextButton = styled(Button)`
     fill: ${(props) => props.theme.colors.background};
   }
 `
+const Bypass = styled.div`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: ${(props) => props.theme.colors.main};
+  text-decoration: underline;
+  cursor: pointer;
+
+  ${(props) => props.theme.mq.small} {
+    top: auto;
+    bottom: 0rem;
+    width: 100%;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+`
 export default function Navigation(props) {
   const { user } = useLocalUser()
 
@@ -74,6 +93,7 @@ export default function Navigation(props) {
             props.steps[props.currentStep].mandatory
           }
           onClick={() => props.setCurrentStep(props.currentStep + 1)}
+          fetching={props.prompting}
           noExpand
         >
           Suivant{' '}
@@ -81,6 +101,11 @@ export default function Navigation(props) {
             <path d='M14.6416 12.0001C14.6416 12.4302 14.4774 12.8603 14.1496 13.1882L3.83004 23.5077C3.17359 24.1641 2.10926 24.1641 1.45308 23.5077C0.796891 22.8515 0.796891 21.7874 1.45308 21.1309L10.5844 12.0001L1.4534 2.86922C0.79721 2.21277 0.79721 1.14876 1.4534 0.49263C2.10958 -0.164141 3.17391 -0.164141 3.83036 0.49263L14.1499 10.8119C14.4778 11.14 14.6416 11.5701 14.6416 12.0001Z' />
           </svg>
         </NextButton>
+      )}
+      {props.prompting && (
+        <Bypass onClick={() => props.forceCurrentStep(props.currentStep + 1)}>
+          Passer sans accepter les notifications sur cet appareil
+        </Bypass>
       )}
     </Wrapper>
   )

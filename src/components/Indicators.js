@@ -43,6 +43,7 @@ export default function Indicators(props) {
           <Question step={steps[currentStep]} setModal={setModal} />
           <Navigation
             currentStep={currentStep}
+            prompting={notifications.prompting}
             setCurrentStep={(newStep) => {
               if (
                 newStep === 3 &&
@@ -59,6 +60,10 @@ export default function Indicators(props) {
               } else {
                 setCurrentStep(newStep)
               }
+            }}
+            forceCurrentStep={(newStep) => {
+              notifications.clear()
+              setCurrentStep(newStep)
             }}
             steps={steps}
           />
