@@ -39,6 +39,24 @@ export default function WrapperModal() {
             title
           }
         }
+        indice_atmo: mdx(slug: { eq: "indiceatmo" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        raep: mdx(slug: { eq: "raep" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        potentiel_radon: mdx(slug: { eq: "potentielradon" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
         sensible: mdx(slug: { eq: "populationvulnerablesensible" }) {
           body
           frontmatter {

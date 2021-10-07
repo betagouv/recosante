@@ -13,7 +13,9 @@ export default function PotentielRadon(props) {
       <Card.Content>
         <Card.Header>
           <Card.Info>
-            <Card.Title isLoading={isLoading}>Potentiel Radon</Card.Title>
+            <Card.Title isLoading={isLoading} indicateur='potentiel_radon'>
+              Potentiel Radon
+            </Card.Title>
             <Card.Value isError={isError}>
               {isError ? 'Arf 🦖' : data && data.potentiel_radon.indice.label}
             </Card.Value>

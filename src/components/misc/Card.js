@@ -1,26 +1,9 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
+import Title from './card/Title'
 import Mobile from './card/Mobile'
 import Subscribe from './card/Subscribe'
 
-const fetching = keyframes`
-  from {
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-  50% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  50.1% {
-    transform: scaleX(1);
-    transform-origin: right;
-  }
-  to {
-    transform: scaleX(0);
-    transform-origin: right;
-  }
-`
 const Card = styled.div`
   position: relative;
   width: 100%;
@@ -51,30 +34,7 @@ Card.Header = styled.div`
   }
 `
 Card.Info = styled.div``
-Card.Title = styled.h4`
-  position: relative;
-  margin-bottom: 1.5rem;
-  font-size: 1.125rem;
-  font-weight: normal;
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: ${(props) => props.theme.colors.background};
-    opacity: 0.7;
-    transform: scaleX(0);
-    animation: ${(props) => (props.isLoading ? fetching : '')} 1000ms infinite;
-  }
-
-  ${(props) => props.theme.mq.small} {
-    margin-bottom: 1rem;
-    font-size: 1rem;
-  }
-`
+Card.Title = Title
 Card.Value = styled.div`
   margin-left: -0.1rem;
   font-size: 3rem;

@@ -14,7 +14,7 @@ export default function Raep(props) {
       <Card.Content>
         <Card.Header>
           <Card.Info>
-            <Card.Title isLoading={isLoading}>
+            <Card.Title isLoading={isLoading} indicateur='raep'>
               Risque d’allergie aux pollens
             </Card.Title>
             <Card.Value isError={isError}>
