@@ -26,7 +26,7 @@ export default function MagicLink(props) {
   ) : (
     <Link
       className={props.className}
-      to={props.to + (!props.to.includes('?') && search)}
+      to={props.to + (!props.to.includes('?') ? search : '')}
       onClick={props.onClick || null}
       aria-label={props['aria-label']}
     >

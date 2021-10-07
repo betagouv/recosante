@@ -71,6 +71,7 @@ export default function Success(props) {
     setNeedConfirmation(false)
   }, [setNeedConfirmation])
   const newsletter = props?.data?.data?.recommandations[0] === 'oui'
+
   return (
     <Wrapper visible={props.data}>
       <Title>
