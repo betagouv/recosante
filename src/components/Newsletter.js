@@ -110,7 +110,7 @@ export default function Newsletter(props) {
                 setSubscription('indicators')
               }}
             >
-              Choisir mes indicateurs
+              M'abonner à Recosanté
             </StyledButton>
           </Button.Wrapper>
         </Content>
