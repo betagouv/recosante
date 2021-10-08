@@ -4,15 +4,13 @@ import axios from 'axios'
 import { useQueryParam } from 'use-query-params'
 
 import UserContext from 'utils/UserContext'
+import apiUrl from 'utils/apiUrl'
 
 export function useUser() {
   const [uid] = useQueryParam('user')
   return useQuery(
     ['user', uid],
-    () =>
-      axios
-        .get(`https://staging.api.recosante.beta.gouv.fr/users/${uid}`)
-        .then((res) => res.data),
+    () => axios.get(`${apiUrl}/users/${uid}`).then((res) => res.data),
     {
       enabled: uid ? true : false,
       refetchOnWindowFocus: false,
@@ -26,7 +24,7 @@ export function useUserMutation() {
   return useMutation(
     (user) =>
       axios.post(
-        `https://staging.api.recosante.beta.gouv.fr/users/${uid || ''}`,
+        `${apiUrl}/users/${uid || ''}`,
         { ...user, commune: user.commune && { code: user.commune.code } },
         {
           headers: { Accept: ' application/json' },

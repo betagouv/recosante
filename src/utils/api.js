@@ -2,23 +2,11 @@ import { useQuery, useMutation } from 'react-query'
 import axios from 'axios'
 import { useQueryParam } from 'use-query-params'
 
-export function useIndicators(code) {
-  return useQuery(
-    ['indicators', code],
-    () =>
-      axios
-        .get(`https://api.recosante.beta.gouv.fr/v1/?insee=${code}`)
-        .then((res) => res.data),
-    {
-      enabled: code ? true : false,
-      keepPreviousData: code ? false : true,
-      refetchOnWindowFocus: false,
-    }
-  )
-}
+import apiUrl from 'utils/apiUrl'
+
 export function useStatistiques() {
   return useQuery(['statistiques'], () =>
-    axios.get(`https://ecosante.beta.gouv.fr/stats/`).then((res) => res.data)
+    axios.get(`${apiUrl}/stats/`).then((res) => res.data)
   )
 }
 export function useAvis(location) {
@@ -29,7 +17,7 @@ export function useAvis(location) {
     () =>
       axios
         .post(
-          `https://ecosante.beta.gouv.fr/newsletter/${short_id}/avis?appliquee=${appliquee}`,
+          `${apiUrl}/newsletter/${short_id}/avis?appliquee=${appliquee}`,
           null,
           {
             headers: { Accept: ' application/json' },
@@ -47,7 +35,7 @@ export function useAvisMutation() {
   const [appliquee] = useQueryParam('avis')
   return useMutation((avis) =>
     axios.post(
-      `https://ecosante.beta.gouv.fr/newsletter/${short_id}/avis?appliquee=${appliquee}`,
+      `${apiUrl}/newsletter/${short_id}/avis?appliquee=${appliquee}`,
       avis,
       {
         headers: {
@@ -61,7 +49,7 @@ export function useAvisMutation() {
 export function useInscriptionPatients() {
   return useMutation((nom_medecin, mails) =>
     axios.post(
-      `https://ecosante.beta.gouv.fr/inscription-patients`,
+      `${apiUrl}/inscription-patients`,
       { nom_medecin, mails },
       {
         headers: {

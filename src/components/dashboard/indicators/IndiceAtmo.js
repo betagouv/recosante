@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useIndicators } from 'utils/api'
+import useIndicators from 'hooks/useIndicators'
 import MagicLink from 'components/base/MagicLink'
 import Card from 'components/misc/Card'
 import Chart from './indiceAtmo/Chart'
