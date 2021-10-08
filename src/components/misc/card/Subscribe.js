@@ -36,7 +36,9 @@ export default function Subscribe(props) {
       }}
       static={props.disabled}
     >
-      {props.disabled ? `Données statiques` : `M’abonner à cet indicateur`}
+      {props.disabled
+        ? `Pas d'abonnement disponible`
+        : `M’abonner à cet indicateur`}
       {props.disabled && <Superscript>(?)</Superscript>}
     </Wrapper>
   )

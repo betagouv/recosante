@@ -42,7 +42,7 @@ const Wrapper = styled.h4`
   }
 
   ${(props) => props.theme.mq.small} {
-    margin-bottom: 1rem;
+    margin: 0 -1rem 1rem;
     font-size: 1rem;
   }
 `

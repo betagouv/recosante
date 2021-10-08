@@ -1,5 +1,5 @@
 ---
-title: Données statiques
+title: Donnée statique
 ---
 
-Le potentiel radon des communes est une donnée statique. Il a été cartographié en 2010 par l'Institut de Radioprotection et de Sûreté Nucléaire. Cette cartographie a servi à classer les communes de chaque département en fonction du potentiel radon des roches caractérisant leur sous-sol.
+Le potentiel radon a été cartographié en 2010 par l'Institut de Radioprotection et de Sûreté Nucléaire. La donnée est statique. [En savoir plus](https://solidarites-sante.gouv.fr/sante-et-environnement/batiments/article/radon)

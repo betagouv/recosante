@@ -15,7 +15,7 @@ export default function AirQuality(props) {
         <Card.Header>
           <Card.Info>
             <Card.Title isLoading={isLoading} indicateur='indice_atmo'>
-              Indice de qualité de l'air
+              Indice ATMO de la qualité de l'air
             </Card.Title>
             <Card.Value isError={isError}>
               {isError ? 'Oups 🦔' : data && data.indice_atmo.indice.label}
