@@ -9,7 +9,11 @@ export default function Page(props) {
   return (
     <Web>
       <Section first medium>
-        <h1>{props.data.mdx.frontmatter.title}</h1>
+        <h1
+          dangerouslySetInnerHTML={{
+            __html: props.data.mdx.frontmatter.title,
+          }}
+        />
         <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
       </Section>
     </Web>
