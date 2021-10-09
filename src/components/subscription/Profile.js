@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useQueryParam } from 'use-query-params'
+import { ToastContainer, Slide } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 
 import { useUser } from 'hooks/useUser'
 import indicateursSteps from 'utils/indicateursSteps'
@@ -40,11 +42,21 @@ export default function Profile() {
             recommandationsSteps.map((step) => (
               <Step step={step} key={step.name} />
             ))}
+
           <Delete />
         </>
       ) : (
         <UnloggedForm />
       )}
+      <ToastContainer
+        position='bottom-left'
+        transition={Slide}
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        limit={2}
+      />
     </>
   )
 }

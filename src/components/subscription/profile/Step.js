@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import { toast } from 'react-toastify'
 
 import { useUser, useUserMutation } from 'hooks/useUser'
 import Option from 'components/subscription/question/Option'
@@ -28,6 +29,19 @@ const Options = styled.div`
 export default function Step(props) {
   const { data } = useUser()
   const mutation = useUserMutation()
+
+  useEffect(() => {
+    if (mutation.isSuccess) {
+      toast.dismiss()
+      toast.success('Informations mises à jour.')
+    }
+  }, [mutation.isSuccess])
+  useEffect(() => {
+    if (mutation.isError) {
+      toast.dismiss()
+      toast.error(`Vos modifications n'ont pas été sauvegardées.`)
+    }
+  }, [mutation.isError])
 
   return (
     <Wrapper large={props.large} id={props.step.name}>
