@@ -5,18 +5,20 @@ import { useUser, useUserMutation } from 'hooks/useUser'
 import SearchBar from 'components/search/SearchBar'
 
 const Wrapper = styled.div`
-  height: 3.5rem;
+  height: 5.5rem;
+  margin-bottom: 3rem;
 `
-const Email = styled.h3`
+const Title = styled.h3``
+
+const Email = styled.p`
   position: relative;
+  color: ${(props) => props.theme.colors.main};
   cursor: pointer;
   word-break: break-all;
 
-  &:before {
-    content: 'Éditer';
-    position: absolute;
-    top: calc(100% + 0.25rem);
-    left: 0;
+  &:after {
+    content: '(Éditer)';
+    margin-left: 0.5rem;
     font-size: 0.875rem;
     font-weight: 300;
     color: ${(props) => props.theme.colors.main};
@@ -39,7 +41,7 @@ const StyledSearchBar = styled(SearchBar)`
   right: 0;
   width: 100%;
   transform: none !important;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 `
 export default function Address() {
   const { data } = useUser()
@@ -49,6 +51,7 @@ export default function Address() {
 
   return data ? (
     <Wrapper>
+      <Title>Ville</Title>
       {active ? (
         <SearchBarWrapper>
           <StyledSearchBar

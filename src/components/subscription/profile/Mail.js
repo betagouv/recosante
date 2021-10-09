@@ -7,18 +7,18 @@ import Button from 'components/base/Button'
 
 const Wrapper = styled.div`
   height: 3.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 6rem;
 `
-const Email = styled.h2`
+const Title = styled.h3``
+const Email = styled.p`
   position: relative;
+  color: ${(props) => props.theme.colors.main};
   cursor: pointer;
   word-break: break-all;
 
-  &:before {
-    content: 'Éditer';
-    position: absolute;
-    top: calc(100% + 0.25rem);
-    left: 0;
+  &:after {
+    content: '(Éditer)';
+    margin-left: 0.5rem;
     font-size: 0.875rem;
     font-weight: 300;
     color: ${(props) => props.theme.colors.main};
@@ -32,7 +32,7 @@ const Form = styled.form`
   max-width: 22.25rem;
 `
 const StyledTextInput = styled(TextInput)`
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 `
 export default function Mail() {
   const { data } = useUser()
@@ -47,6 +47,7 @@ export default function Mail() {
 
   return data ? (
     <Wrapper>
+      <Title>Email</Title>
       {active ? (
         <Form
           onSubmit={(e) => {
