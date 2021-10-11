@@ -1,7 +1,5 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
 
-import useUrlB64ToUint8Array from 'hooks/useUrlB64ToUint8Array'
 import useNotificationsPrompt from 'hooks/useNotificationsPrompt'
 import Web from 'components/layout/Web'
 import Section from 'components/base/Section'

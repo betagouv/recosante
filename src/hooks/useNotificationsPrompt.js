@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import useUrlB64ToUint8Array from 'hooks/useUrlB64ToUint8Array'
+import { useStaticQuery, graphql } from 'gatsby'
 
 export default function useNotificationsPrompt(sw) {
   const data = useStaticQuery(

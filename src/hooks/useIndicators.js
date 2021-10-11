@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query'
 import axios from 'axios'
 
-import apiUrl from 'utils/apiUrl'
+import { apiUrl } from 'utils/apiUrl'
 
 export default function useIndicators(code) {
   return useQuery(

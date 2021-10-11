@@ -2,7 +2,7 @@ import { useQuery, useMutation } from 'react-query'
 import axios from 'axios'
 import { useQueryParam } from 'use-query-params'
 
-import apiUrl from 'utils/apiUrl'
+import { apiUrl } from 'utils/apiUrl'
 
 export function useStatistiques() {
   return useQuery(['statistiques'], () =>

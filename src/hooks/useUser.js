@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useQueryParam } from 'use-query-params'
 
 import UserContext from 'utils/UserContext'
-import apiUrl from 'utils/apiUrl'
+import { apiUrl } from 'utils/apiUrl'
 
 export function useUser() {
   const [uid] = useQueryParam('user')

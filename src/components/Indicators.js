@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
 
 import steps from 'utils/indicateursSteps'
-import useUrlB64ToUint8Array from 'hooks/useUrlB64ToUint8Array'
 import { useLocalUser } from 'hooks/useUser'
 import useNotificationsPrompt from 'hooks/useNotificationsPrompt'
 import Progress from './subscription/Progress'
