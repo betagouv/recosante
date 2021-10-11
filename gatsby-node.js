@@ -1,15 +1,16 @@
 const axios = require(`axios`)
+const { apiUrl } = require("./src/utils/apiUrl")
 
 exports.sourceNodes = async ({
   actions: { createNode },
   createContentDigest,
 }) =>
   axios
-    .get(`https://staging.api.recosante.beta.gouv.fr/_application_server_key`)
+    .get(`${apiUrl}/_application_server_key`)
     .then((res) => res.data)
     .then((data) =>
       createNode({
-        public_key: data.public_key,
+        application_server_key: data.application_server_key,
         url: data.html_url,
         id: `application-server-key`,
         parent: null,

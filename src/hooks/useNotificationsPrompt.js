@@ -1,6 +1,17 @@
 import { useState } from 'react'
 
-export default function useNotificationsPrompt(sw, applicationServerKey) {
+export default function useNotificationsPrompt(sw) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        applicationServerKey {
+          application_server_key
+        }
+      }
+    `
+  )
+
+  const applicationServerKey = useUrlB64ToUint8Array(data.applicationServerKey.application_server_key)
   const [error, setError] = useState(false)
   const [prompting, setPrompting] = useState(false)
   const subscribe = () => {
