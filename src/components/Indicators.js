@@ -20,13 +20,15 @@ export default function Indicators(props) {
     graphql`
       query {
         applicationServerKey {
-          public_key
+          application_server_key
         }
       }
     `
   )
 
-  const publicKey = useUrlB64ToUint8Array(data.applicationServerKey.public_key)
+  const publicKey = useUrlB64ToUint8Array(
+    data.applicationServerKey.application_server_key
+  )
   const [currentStep, setCurrentStep] = useState(0)
 
   const [modal, setModal] = useState(false)

@@ -32,6 +32,10 @@ function Wrapper(props) {
 Wrapper.Content = styled.div`
   flex: 1;
   margin: 0 1rem;
+
+  p {
+    margin-bottom: 1rem;
+  }
 `
 Wrapper.Image = styled.div`
   position: relative;

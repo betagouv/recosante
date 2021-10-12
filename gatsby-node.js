@@ -4,13 +4,12 @@ exports.sourceNodes = async ({
   actions: { createNode },
   createContentDigest,
 }) =>
-  axios
+  /*axios
     .get(`https://staging.api.recosante.beta.gouv.fr/_application_server_key`)
     .then((res) => res.data)
     .then((data) =>
       createNode({
-        public_key: data.public_key,
-        url: data.html_url,
+        application_server_key: data.application_server_key,
         id: `application-server-key`,
         parent: null,
         children: [],
@@ -20,6 +19,18 @@ exports.sourceNodes = async ({
         },
       })
     )
+    .catch(() => {*/
+  createNode({
+    application_server_key: 12,
+    id: `application-server-key`,
+    parent: null,
+    children: [],
+    internal: {
+      type: `ApplicationServerKey`,
+      contentDigest: createContentDigest('12'),
+    },
+  })
+// })
 
 exports.createPages = ({ graphql, actions: { createPage } }) => {
   const pages = graphql(

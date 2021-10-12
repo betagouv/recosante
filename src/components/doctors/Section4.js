@@ -11,7 +11,6 @@ const StyledContent = styled(Wrapper.Content)`
   ul {
     margin: 0 1rem;
     padding: 0;
-    max-width: 23.5rem;
   }
 
   li {
@@ -50,13 +49,16 @@ export default function You() {
       <StyledContent>
         <MDXRenderer>{data.content.body}</MDXRenderer>
         <Button.Wrapper>
+          <Button onClick={() => alert('Kit kit kit')} hollow>
+            Télecharger le kit de communication
+          </Button>
           <Button to='https://www.vyte.in/recosante/rendez-vous-professionnelsante'>
             Prendre rendez-vous
           </Button>
         </Button.Wrapper>
       </StyledContent>
       <Wrapper.Image width='35.5rem'>
-        <StaticImage src={'./images/section3.jpg'} alt='Pourquoi' />
+        <StaticImage src={'./images/section4.jpg'} alt='Pourquoi' />
       </Wrapper.Image>
     </Wrapper>
   )

@@ -1,5 +1,3 @@
-# Des **recommandations** pour protéger vos patient·e·s de la&#160;**pollution&#160;de&#160;l'air**
+# **Connaître** son environnement,<br/>**agir** pour sa santé&#160;:<br/>découvrez le service **Recosanté**
 
-**Recosanté** est une **lettre d’information numérique**, qui propose des **recommandations** à vos patient·e·s en fonction de la qualité de l’air, des épisodes de pollution et du risque pollinique.
-
-Pour en apprendre davantage sur le service Recosanté, **réservez un créneau** pour échanger avec l'équipe ou **inscrivez-vous** pour tester le service !
+Recosanté est un service public numérique qui permet de connaître la qualité de son environnement direct et qui propose des recommandations pour agir au quotidien pour protéger sa santé.

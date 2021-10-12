@@ -28,7 +28,7 @@ const Content = styled.div`
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
 
     ${(props) => props.theme.mq.small} {
       font-size: 1.5rem;
@@ -97,7 +97,7 @@ export default function What(props) {
               ])
             }
           >
-            Tester Recosanté
+            Découvrir Recosanté
           </Button>
         </Button.Wrapper>
       </Content>
