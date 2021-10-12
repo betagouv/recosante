@@ -1,3 +1,4 @@
-RedirectPermanent /medecins https://recosante.beta.gouv.fr/professionnelsante/
-RedirectPermanent /professionnelsanté https://recosante.beta.gouv.fr/professionnelsante/
+RedirectPermanent /medecins https://recosante.beta.gouv.fr/presentation/
+RedirectPermanent /professionnelsanté https://recosante.beta.gouv.fr/presentation/
 
+RedirectPermanent /présentation https://recosante.beta.gouv.fr/presentation/
