@@ -58,6 +58,7 @@ const Content = styled.div`
 `
 const ButtonClose = styled.div`
   position: absolute;
+  z-index: 10000;
   top: 0.5em;
   right: 0.5em;
   font-size: 2em;
