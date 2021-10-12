@@ -1,18 +1,17 @@
 import React from 'react'
+import styled from 'styled-components'
 
-import ProfileProvider from 'src/components/providers/ProfileProvider'
-import Web from 'src/components/layout/Web'
-import Section from 'src/components/layout/Section'
-import FormWrapper from 'src/components/profile/FormWrapper'
+import Web from 'components/layout/Web'
+import Section from 'components/base/Section'
+import Profile from 'components/subscription/Profile'
 
-export default function Profile(props) {
+const StyledSection = styled(Section)``
+export default function Profil(props) {
   return (
-    <ProfileProvider>
-      <Web title={'Profil'}>
-        <Section tiny>
-          <FormWrapper />
-        </Section>
-      </Web>
-    </ProfileProvider>
+    <Web title={'Profil'}>
+      <StyledSection first medium>
+        <Profile />
+      </StyledSection>
+    </Web>
   )
 }

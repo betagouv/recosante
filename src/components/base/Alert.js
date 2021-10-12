@@ -22,6 +22,10 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.medium} {
     padding: 1rem 1rem 1rem calc(1rem + 0.3125rem);
   }
+
+  p:last-child {
+    margin: 0;
+  }
 `
 export default function Alert(props) {
   return (

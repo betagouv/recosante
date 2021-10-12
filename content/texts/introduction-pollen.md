@@ -1,5 +1,5 @@
-# **Vous souhaitez savoir s'il y a des pollens autour de chez vous ?**<br/>Soyez informés quotidiennement du **risque d'allergie** et des bons geste à adopter pour vous protéger.
+# **Vous souhaitez savoir s'il y a des pollens autour de chez vous&#8239;?**<br/>Soyez informés quotidiennement du **risque d'allergie** et des bons geste à adopter pour vous protéger.
 
-Recosanté est une **lettre d’information numérique** qui vous aide à vous protéger de l’impact des **polluants** et des **pollens** présents dans l’air.
+Recevez nos **recommandation personalisées** par email pour vous aider à réduire les impacts des polluants atmosphériques et des pollens sur votre santé.
 
-Inscrivez-vous pour recevoir **chaque jour** par email une **recommandation personnalisée** selon votre profil et selon le risque d'allergie aux pollens mesuré dans votre département.
+Abonnez vous pour **choisir la fréquence** (chaque jour ou chaque semaine) et **les sujets qui vous intéressent**.

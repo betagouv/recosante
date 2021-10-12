@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import ProfileContext from 'src/utils/ProfileContext'
+import ProfileContext from 'utils/ProfileContext'
 
 const Wrapper = styled.div`
   position: fixed;
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
     left: 0;
     right: 0;
     background-color: ${(props) => props.theme.colors.main};
-    opacity: 0.3;
+    opacity: 0;
   }
 
   &:after {
@@ -42,7 +42,7 @@ export default function Progress() {
   return (
     <Wrapper
       current={
-        form ? form.filter((step) => profile && profile[step.name]).length : 10
+        form ? form.filter((step) => profile && profile[step.name]).length : 0
       }
       total={form ? form.length : 10}
     />

@@ -8,7 +8,12 @@ const Wrapper = styled.div`
 `
 const Label = styled.label`
   display: block;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1em;
+  font-size: 1.125rem;
+
+  ${(props) => props.theme.mq.small}  {
+    font-size: 1rem;
+  }
 `
 const Text = styled.textarea`
   position: relative;
@@ -54,7 +59,7 @@ const Check = styled.svg`
   }
 `
 export default function Code(props) {
-  const [script, setScript] = useState(null)
+  const [script, setScript] = useState('')
 
   useEffect(() => {
     setScript(

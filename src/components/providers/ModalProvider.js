@@ -1,15 +1,34 @@
 import React, { useState } from 'react'
 
-import ModalContext from 'src/utils/ModalContext'
+import ModalContext from 'utils/ModalContext'
 
 export default function ModalProvider(props) {
-  const [sensible, setSensible] = useState(false)
-
+  const [modal, setModal] = useState()
+  const [subscription, setSubscription] = useState()
+  const [needConfirmation, setNeedConfirmation] = useState(true)
   return (
     <ModalContext.Provider
       value={{
-        sensible,
-        setSensible,
+        modal,
+        setModal,
+        subscription,
+        setSubscription: (value) => {
+          if (value) {
+            setNeedConfirmation(true)
+            setSubscription(value)
+          } else {
+            if (
+              !needConfirmation ||
+              window.confirm(
+                'Souhaitez-vous vraiment abandonner votre inscription ?'
+              )
+            ) {
+              setSubscription(value)
+            }
+          }
+        },
+        needConfirmation,
+        setNeedConfirmation,
       }}
     >
       {props.children}

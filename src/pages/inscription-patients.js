@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Web from 'src/components/layout/Web'
-import Section from 'src/components/layout/Section'
-import Form from 'src/components/referral/Form'
+import Web from 'components/layout/Web'
+import Section from 'components/base/Section'
+import Referral from 'components/Referral'
 
 const StyledSection = styled(Section)`
   font-size: 1.125rem;
@@ -23,9 +23,9 @@ export default function InscriptionPatients() {
 
   return (
     <Web title={'Recommander Recosanté'}>
-      <StyledSection small>
+      <StyledSection small first>
         <MDXRenderer>{data.mdx.body}</MDXRenderer>
-        <Form />
+        <Referral />
       </StyledSection>
     </Web>
   )

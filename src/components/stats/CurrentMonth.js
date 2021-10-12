@@ -10,8 +10,8 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-import StyleContext from 'src/utils/StyleContext'
-import Section from 'src/components/layout/Section'
+import StyleContext from 'utils/StyleContext'
+import Section from 'components/base/Section'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -20,13 +20,11 @@ const Wrapper = styled.div`
 
 export default function CurrentMonth(props) {
   const { themes, theme } = useContext(StyleContext)
-  const data = props.inscriptions_desinscriptions.map(
-    v => ({
-      semaine: `du ${v[0]}`,
-      inscriptions: v[1][0],
-      desinscriptions: -v[1][1]
-    })
-  )
+  const data = props.inscriptions_desinscriptions.map((v) => ({
+    semaine: `du ${v[0]}`,
+    inscriptions: v[1][0],
+    desinscriptions: -v[1][1],
+  }))
   const [width, setWidth] = useState(null)
   useEffect(() => {
     setTimeout(() => setWidth(window.innerWidth), 100)

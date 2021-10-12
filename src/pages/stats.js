@@ -1,13 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
-import api from 'src/utils/api'
-import Web from 'src/components/layout/Web'
-import AllUsers from 'src/components/stats/AllUsers'
-import CurrentMonth from 'src/components/stats/CurrentMonth'
-import Profile from 'src/components/stats/Profile'
-import Satisfaction from 'src/components/stats/Satisfaction'
-import MailOpening from 'src/components/stats/MailOpening'
+import Web from 'components/layout/Web'
 
+<<<<<<< HEAD
 export default function Stats(props) {
   const [data, setData] = useState(null)
   const [data_openings, setDataOpenings] = useState(null)
@@ -59,4 +54,8 @@ export default function Stats(props) {
       )}
     </Web>
   )
+=======
+export default function Stats() {
+  return <Web title={'Statistiques'}>TO DO</Web>
+>>>>>>> dashboard
 }

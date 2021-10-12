@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Web from 'src/components/layout/Web'
-import Integration from 'src/components/Integration'
+import Web from 'components/layout/Web'
+import Widget from 'components/Widget'
 
-export default function Widget() {
+export default function Integration() {
   return (
     <Web title={'Intégration'}>
-      <Integration />
+      <Widget main />
     </Web>
   )
 }

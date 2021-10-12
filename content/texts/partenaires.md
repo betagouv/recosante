@@ -1,4 +1,14 @@
 ---
+data:
+  - title: ATMO France
+    image: ../assets/logos/atmo-france.png
+    link: https://atmo-france.org/
+  - title: RNSA
+    image: ../assets/logos/logo-rnsa.png
+    link: https://www.pollens.fr/
+  - title: APSF
+    image: ../assets/logos/pollinariums.png
+    link: https://www.alertepollens.org/
 partners:
   - title: ATMO France
     image: ../assets/logos/atmo-france.png
@@ -27,7 +37,7 @@ press:
     link: https://arcaa.info/
   - title: R-lab
     image: ../assets/logos/logo R lab.jpg
-    link: https://rlabconseil.com/  
+    link: https://rlabconseil.com/
   - titre: Centre de lutte contre le cancer Léon Bérard
     image: ../assets/logos/Logo-centre-leon-berard-lyon.jpg
     link: https://www.centreleonberard.fr/

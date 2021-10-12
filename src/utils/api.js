@@ -1,46 +1,62 @@
-export default {
-  async handleErrors(response) {
-    if (!response.ok) {
-      let error = new Error(response.statusText)
-      if (response.headers.get('Content-Type') === 'application/json') {
-        let json = await response.json()
-        error.json = json
+import { useQuery, useMutation } from 'react-query'
+import axios from 'axios'
+import { useQueryParam } from 'use-query-params'
+
+import apiUrl from 'utils/apiUrl'
+
+export function useStatistiques() {
+  return useQuery(['statistiques'], () =>
+    axios.get(`${apiUrl}/stats/`).then((res) => res.data)
+  )
+}
+export function useAvis(location) {
+  const [short_id] = useQueryParam('short_id')
+  const [appliquee] = useQueryParam('avis')
+  return useQuery(
+    ['profile', short_id, appliquee],
+    () =>
+      axios
+        .post(
+          `${apiUrl}/newsletter/${short_id}/avis?appliquee=${appliquee}`,
+          null,
+          {
+            headers: { Accept: ' application/json' },
+          }
+        )
+        .then((res) => res.data),
+    {
+      enabled: short_id && appliquee ? true : false,
+      refetchOnWindowFocus: false,
+    }
+  )
+}
+export function useAvisMutation() {
+  const [short_id] = useQueryParam('short_id')
+  const [appliquee] = useQueryParam('avis')
+  return useMutation((avis) =>
+    axios.post(
+      `${apiUrl}/newsletter/${short_id}/avis?appliquee=${appliquee}`,
+      avis,
+      {
+        headers: {
+          Accept: ' application/json',
+          'Content-Type': 'application/json',
+        },
       }
-      throw error
-    }
-    return response
-  },
-  makeEndpointURL(endpoint) {
-    if (endpoint.startsWith('https')) {
-      return endpoint
-    }
-    return (
-      (process.env.GATSBY_API_BASE_URL || 'https://ecosante.beta.gouv.fr') +
-      endpoint
     )
-  },
-  get(endpoint) {
-    return fetch(this.makeEndpointURL(endpoint), {
-      headers: {
-        Accept: 'application/json',
-      },
-    })
-      .then(this.handleErrors)
-      .then((res) => res.json())
-  },
-  post(endpoint, body, noContent) {
-    return fetch(this.makeEndpointURL(endpoint), {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': !noContent && 'application/json',
-      },
-      body: JSON.stringify(body),
-    })
-      .then(this.handleErrors)
-      .then((res) => res.json())
-  },
-  fetch(endpoint, body) {
-    return body ? this.post(endpoint, body) : this.get(endpoint)
-  },
+  )
+}
+export function useInscriptionPatients() {
+  return useMutation((nom_medecin, mails) =>
+    axios.post(
+      `${apiUrl}/inscription-patients`,
+      { nom_medecin, mails },
+      {
+        headers: {
+          Accept: ' application/json',
+          'Content-Type': 'application/json',
+        },
+      }
+    )
+  )
 }

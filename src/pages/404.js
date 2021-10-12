@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Web from 'src/components/layout/Web'
-import Section from 'src/components/layout/Section'
-import Button from 'src/components/base/Button'
+import Web from 'components/layout/Web'
+import Section from 'components/base/Section'
+import Button from 'components/base/Button'
 
 const StyledSection = styled(Section)`
   display: flex;
@@ -13,10 +13,10 @@ const StyledSection = styled(Section)`
 export default function NotFound() {
   return (
     <Web title={'404'}>
-      <StyledSection tiny>
+      <StyledSection first tiny>
         <h1>404</h1>
-        <p>Cette page n’existe pas (plus).</p>
-        <Button to='/'>Retour à l'accueil</Button>
+        <p>Cette page n’existe pas (ou plus).</p>
+        <Button to='/'>Retourner à l'accueil</Button>
       </StyledSection>
     </Web>
   )

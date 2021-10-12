@@ -1,13 +1,12 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Web from 'src/components/layout/Web'
-import Landing from 'src/components/home/Landing'
-import Mockup from 'src/components/home/Mockup'
-import About from 'src/components/About'
-import InfoSport from 'src/components/landings/InfoSport'
+import Web from 'components/layout/Web'
+import Newsletter from '../components/Newsletter'
+import Data from 'components/Data'
+import About from 'components/About'
 
-export default function Index() {
+export default function Asthme() {
   const data = useStaticQuery(
     graphql`
       query {
@@ -17,11 +16,11 @@ export default function Index() {
       }
     `
   )
+
   return (
-    <Web title={'Sport'}>
-      <Landing content={data.mdx.body} />
-      <Mockup />
-      <InfoSport />
+    <Web title={`Sport`}>
+      <Newsletter first data={data} seo />
+      <Data />
       <About />
     </Web>
   )

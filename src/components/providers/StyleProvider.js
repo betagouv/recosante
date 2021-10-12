@@ -2,8 +2,8 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { useQueryParam, StringParam, withDefault } from 'use-query-params'
 
-import StyleContext from 'src/utils/StyleContext'
-import { themes } from 'src/utils/styles'
+import StyleContext from 'utils/StyleContext'
+import { themes } from 'utils/styles'
 
 export default function StyleProvider(props) {
   const [theme, setTheme] = useQueryParam(

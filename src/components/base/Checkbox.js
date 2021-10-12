@@ -1,7 +1,5 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-
-import ModalContext from 'src/utils/ModalContext'
 
 const Wrapper = styled.div`
   position: relative;
@@ -50,15 +48,7 @@ const Label = styled.label`
   color: ${(props) =>
     props.focus ? props.theme.colors.main : props.theme.colors.text};
 `
-const Detail = styled.div`
-  margin-left: 0.5rem;
-  font-size: 0.75rem;
-  color: ${(props) => props.theme.colors[props.interactive ? 'main' : 'text']};
-  cursor: ${(props) => (props.interactive ? 'pointer' : 'inherit')};
-`
 export default function Checkbox(props) {
-  const { setSensible } = useContext(ModalContext)
-
   const [focus, setFocus] = useState(false)
   return (
     <Wrapper
@@ -81,6 +71,8 @@ export default function Checkbox(props) {
       <Input
         checked={props.checked}
         type='checkbox'
+        id={props.name}
+        name={props.name}
         label={props.children || props.label}
         onChange={(e) => {
           props.onChange(e.target.checked)
@@ -88,28 +80,15 @@ export default function Checkbox(props) {
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
       />
-      {(props.children || props.label) && (
+      {props.children && (
         <LabelWrapper>
           <Label
             focus={focus}
-            dangerouslySetInnerHTML={{
-              __html: props.children || props.label,
-            }}
-          />
-          {props.detail && (
-            <Detail
-              onClick={(e) => {
-                if (props.detail.modal) {
-                  e.stopPropagation()
-                  setSensible(true)
-                }
-              }}
-              interactive={props.detail.modal}
-              dangerouslySetInnerHTML={{
-                __html: props.detail.label,
-              }}
-            />
-          )}
+            htmlFor={props.name}
+            onClick={(e) => e.preventDefault()}
+          >
+            {props.children}
+          </Label>
         </LabelWrapper>
       )}
     </Wrapper>

@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 
-import MagicLink from 'src/components/base/MagicLink'
+import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div``
-const Title = styled.h4`
+const Title = styled.div`
   margin-bottom: 1rem;
+  font-weight: bold;
 
   ${(props) => props.theme.mq.small} {
     text-align: center;
@@ -23,31 +24,25 @@ const Logos = styled.div`
     justify-content: center;
   }
 `
-const StyledImg = styled(Img)`
-  margin: 0 1rem;
+const Logo = styled(MagicLink)`
+  width: 5rem;
+  margin: 1rem;
 `
 export default function Partners() {
   const data = useStaticQuery(
     graphql`
       query {
-        atmo: file(relativePath: { eq: "logos/atmo-france.png" }) {
-          childImageSharp {
-            fixed(width: 70) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
-          }
-        }
-        rnsa: file(relativePath: { eq: "logos/logo-rnsa.png" }) {
-          childImageSharp {
-            fixed(width: 100) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
-          }
-        }
-        pollinariums: file(relativePath: { eq: "logos/pollinariums.png" }) {
-          childImageSharp {
-            fixed(width: 75) {
-              ...GatsbyImageSharpFixed_noBase64
+        mdx(slug: { eq: "partenaires" }) {
+          body
+          frontmatter {
+            data {
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData(width: 108)
+                }
+              }
+              link
             }
           }
         }
@@ -58,18 +53,11 @@ export default function Partners() {
     <Wrapper>
       <Title>Les données sont fournies par</Title>
       <Logos>
-        <MagicLink to='https://atmo-france.org/'>
-          <StyledImg fixed={data.atmo.childImageSharp.fixed} alt='Atmo' />
-        </MagicLink>
-        <MagicLink to='https://www.pollens.fr/'>
-          <StyledImg fixed={data.rnsa.childImageSharp.fixed} alt='RNSA' />
-        </MagicLink>
-        <MagicLink to='https://www.alertepollens.org/'>
-          <StyledImg
-            fixed={data.pollinariums.childImageSharp.fixed}
-            alt='Pollinariums'
-          />
-        </MagicLink>
+        {data.mdx.frontmatter.data.map((logo) => (
+          <Logo to={logo.link} key={logo.link}>
+            <GatsbyImage image={getImage(logo.image)} alt={logo.title} />
+          </Logo>
+        ))}
       </Logos>
     </Wrapper>
   )

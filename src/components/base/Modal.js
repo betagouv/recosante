@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   position: fixed;
-  z-index: 900;
+  z-index: 1900;
   top: 0;
   left: 0;
   width: 100%;
@@ -20,31 +20,49 @@ const Background = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, ${(props) => (props.open ? 0.6 : 0)});
-  transition: background-color ${(props) => (props.open ? '300ms' : 0)}
-    ease-in-out;
+  background-color: rgba(${(props) => props.theme.colors.background}, 0.2);
+  backdrop-filter: blur(1rem);
+  opacity: ${(props) => (props.open ? 1 : 0)};
+  transition: all ${(props) => (props.open ? '300ms' : 0)};
 `
 const Content = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: ${(props) => props.width || '30em'};
-  max-width: 90vw;
-  max-height: 90vh;
-  margin: 2rem;
-  background-color: ${(props) => props.theme.colors.background};
-  box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
+  width: ${(props) => (props.large ? '48rem' : '35.5rem')};
+  max-width: calc(100% - 1rem);
+  max-height: ${(props) => (props.large ? 'calc(100% - 0.5rem)' : '90vh')};
+  background: rgba(${(props) => props.theme.colors.backgroundAlpha}, 1);
+  border: 1px solid rgba(${(props) => props.theme.colors.mainAlpha}, 0.1);
+  border-radius: 1.5rem;
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2);
+
   opacity: ${(props) => (props.open ? 1 : 0)};
   transform: scale(${(props) => (props.open ? 1 : 0.7)})
     translateY(${(props) => (props.open ? 0 : '10em')});
   transition: all ${(props) => (props.open ? '300ms' : 0)} ease-in-out;
+
+  ${(props) => props.theme.mq.small} {
+    ${(props) =>
+      props.large &&
+      `
+      width: 100%;
+      max-width: none;
+      height: 100%;
+      max-height: none;
+      border: none;
+      border-radius: 0;
+      `}
+  }
+  overflow: hidden;
 `
 const ButtonClose = styled.div`
   position: absolute;
+  z-index: 10000;
   top: 0.5em;
   right: 0.5em;
   font-size: 2em;
-  font-weight: 700;
+  font-weight: bold;
   transform: rotate(45deg);
   cursor: pointer;
   line-height: 0.5;
@@ -52,7 +70,11 @@ const ButtonClose = styled.div`
 const Scroll = styled.div`
   height: 100%;
   overflow-y: scroll;
-  padding: 2rem;
+  padding: 2rem 2rem 1.5rem;
+
+  ${(props) => props.theme.mq.small} {
+    padding: 1.5rem 1rem;
+  }
 `
 export default function Modal(props) {
   return (
@@ -60,7 +82,7 @@ export default function Modal(props) {
       <Background open={props.open} onClick={() => props.setOpen(false)} />
       <Content
         open={props.open}
-        width={props.width}
+        large={props.large}
         textColor={props.textColor}
         backgroundColor={props.backgroundColor}
       >

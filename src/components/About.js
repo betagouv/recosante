@@ -1,17 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import Section from 'src/components/layout/Section'
+import Section from 'components/base/Section'
 
-const Big = styled.div`
-  font-size: 1.125rem;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 1rem;
-  }
-`
 export default function About() {
   const data = useStaticQuery(
     graphql`
@@ -22,12 +14,10 @@ export default function About() {
       }
     `
   )
+
   return (
     <Section id='about' small>
-      <Section.Title>Qui sommes-nous ?</Section.Title>
-      <Big>
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
-      </Big>
+      <MDXRenderer>{data.mdx.body}</MDXRenderer>
     </Section>
   )
 }

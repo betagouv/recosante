@@ -4,11 +4,13 @@ import styled from 'styled-components'
 import Logos from './header/Logos'
 import Partners from './footer/Partners'
 import Links from './footer/Links'
+import MobileButtons from './footer/MobileButtons'
 
 const Wrapper = styled.footer`
   position: relative;
-  border-top: 2px solid ${(props) => props.theme.colors.main};
   padding-top: 2rem;
+  background-color: ${(props) => props.theme.colors.background};
+  border-top: 2px solid ${(props) => props.theme.colors.main};
 `
 const Content = styled.div`
   display: flex;
@@ -31,15 +33,16 @@ const Description = styled.p`
   }
 `
 
-export default function Header() {
+export default function Footer() {
   return (
     <Wrapper>
       <Content>
+        <MobileButtons iframe={false} />
         <Logos />
         <Right>
           <Description>
-            Recosanté est une lettre d’information numérique qui vous aide à
-            vous protéger des impacts de la pollution de l'air sur votre santé.
+            Recosanté est un service public qui vous aide à connaître votre
+            environnement et à agir pour protéger votre santé.
           </Description>
           <Partners />
         </Right>

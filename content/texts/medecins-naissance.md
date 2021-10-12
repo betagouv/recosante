@@ -1,5 +1,7 @@
-## Comment est né **Recosanté**&#8239;?
+## Dans quel contexte a été créé **Recosanté**&#8239;?
 
-Les Français·e·s sont de plus en plus préoccupé·e·s par le **lien entre la santé et l’environnement**, et plus particulièrement la qualité de l’air.
+Le service Recosanté est une action phare du 4e plan national santé environnement (PNSE 4).
 
-De ce constat est venu l’ambition de créer un service public numérique, à l’échelle nationale, qui permette aux citoyen·ne·s d’**être informé·e·s et de se protéger** des impacts de la qualité de l’air sur leur santé.
+Sa création repose sur un constat : les Français·e·s sont de plus en plus préoccupé·e·s par le lien entre la santé et l’environnement.
+
+Il a donc pour objectif de permettre au plus grand nombre, partout sur le territoire français, d’accéder simplement à de l’information fiable sur la qualité de son environnement et à des conseils pratiques pour limiter les situations d’exposition.

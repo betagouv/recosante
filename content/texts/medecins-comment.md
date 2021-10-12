@@ -1,5 +1,11 @@
-## **Recosanté**,<br/>comment ça marche&#8239;?
+## **Recosanté**,<br/>qu’est-ce que c’est&#8239;?
 
-L’inscription est **simple et gratuite**. Aucune information médicale n'est demandée.
+Recosanté agrège des données environnementales telles que l’**indice national de qualité de l’air**, le **risque d’allergie aux pollens**, le **potentiel radon** ou encore l’**indice UV** (à venir).
 
-Recosanté envoie **tous les matins**, par email, les **indicateurs de la qualité de l’air** (indice ATMO, risque d’allergie aux pollens, alertes aux épisodes de pollutions) et des **recommandations** pour s’y adapter.
+Le service propose également des **recommandations associées à ces indicateurs** et adaptées à la situation du jour. Ces indicateurs et ces recommandations sont enrichies de façon continue.
+
+Concrètement, le service Recosanté se déploie en **trois outils** :
+
+- un **tableau de bord** disponible en ligne qui permet d’accéder à l’ensemble des indicateurs pour une commune ;
+- un service d’abonnement aux **indicateurs environnementaux**, avec la possibilité de choisir la fréquence et le média d’envoi ;
+- une **lettre d’information hedbomadaire** qui propose des recommandations approfondie sur une thématique pour mieux comprendre les effets de l’environnement sur la santé.
