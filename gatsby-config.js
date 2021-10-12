@@ -7,7 +7,7 @@ module.exports = {
     title: `Recosanté - Connaître son environnement. Agir pour sa santé `,
     author: `Recosante`,
     description: `Pollution de l’air, risque d'allergie aux pollens, niveau de risque radon… Découvrez les indicateurs environnementaux liés à votre localisation et des recommandations pratiques à mettre en oeuvre pour mieux vous protéger.`,
-    siteUrl: `https://recosante.gtsb.io`,
+    siteUrl: `https://recosante.beta.gouv.fr`,
     image: 'metaimage.jpg',
     twitterUsername: 'recosante',
   },

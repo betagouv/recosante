@@ -16,10 +16,17 @@ const StyledSection = styled(Section)`
       text-align: left;
     }
   }
+  h2 {
+    text-align: center;
+
+    ${(props) => props.theme.mq.small} {
+      text-align: left;
+    }
+  }
 `
 const Title = styled.h1`
   font-size: 3rem;
-
+  margin-bottom: 3rem;
   ${(props) => props.theme.mq.medium} {
     text-align: center;
   }
@@ -43,14 +50,6 @@ const Right = styled.span`
     margin: 0;
   }
 `
-const Center = styled.span`
-  display: block;
-  text-align: center;
-
-  ${(props) => props.theme.mq.medium} {
-    text-align: inherit;
-  }
-`
 export default function What(props) {
   const data = useStaticQuery(
     graphql`
@@ -71,11 +70,6 @@ export default function What(props) {
         <Right>
           <strong>Agir</strong> pour sa santé
         </Right>
-        <Center>
-          Découvrez le service
-          <br />
-          <strong>Recosanté</strong>
-        </Center>
       </Title>
       <MDXRenderer>{(props.data || data).mdx.body}</MDXRenderer>
       <Button.Wrapper center>
