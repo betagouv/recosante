@@ -4,7 +4,6 @@ import Masonry from 'react-masonry-css'
 
 import IndiceAtmo from './indicators/IndiceAtmo'
 import Raep from './indicators/Raep'
-import PotentielRadon from './indicators/PotentielRadon'
 
 const StyledMasonry = styled(Masonry)`
   display: flex;
@@ -26,7 +25,6 @@ export default function Indicators(props) {
     >
       <IndiceAtmo place={props.place} />
       <Raep place={props.place} />
-      <PotentielRadon place={props.place} />
     </StyledMasonry>
   )
 }
