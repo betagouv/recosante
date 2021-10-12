@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+import { useSendProfileLink } from 'hooks/useUser'
 import Button from 'components/base/Button'
+import Alert from 'components/base/Alert'
 import MailInput from './unloggedForm/MailInput'
 
 const Wrapper = styled.form`
@@ -22,13 +24,15 @@ const Submit = styled(Button)`
 `
 const Text = styled.p``
 export default function UnloggedForm(props) {
+  const mutation = useSendProfileLink()
+
   const [mail, setMail] = useState('')
   return (
     <Wrapper
       modal={props.modal}
       onSubmit={(e) => {
         e.preventDefault()
-        window.alert('Fonction en cours de développement : ' + mail)
+        mutation.mutate(mail)
       }}
     >
       <Text>
@@ -44,6 +48,13 @@ export default function UnloggedForm(props) {
       />
 
       <Submit>M'abonner</Submit>
+      {mutation.isError && <Alert error>Une erreur est survenue</Alert>}
+      {mutation.isSuccess && (
+        <Alert>
+          Vous avez reçu un email contenant un lien pour modifier vos
+          préférences
+        </Alert>
+      )}
     </Wrapper>
   )
 }
