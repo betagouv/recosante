@@ -52,7 +52,7 @@ export default function You() {
           <Button onClick={() => alert('Kit kit kit')} hollow>
             Télecharger le kit de communication
           </Button>
-          <Button to='https://www.vyte.in/recosante/rendez-vous-professionnelsante'>
+          <Button to='mailto:contact@recosante.beta.gouv.fr'>
             Prendre rendez-vous
           </Button>
         </Button.Wrapper>

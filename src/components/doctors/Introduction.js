@@ -1,53 +1,54 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-import useOnScreen from 'hooks/useOnScreen'
 import Section from 'components/base/Section'
 import Button from 'components/base/Button'
-import Mockup from 'components/newsletter/Mockup'
 
 const StyledSection = styled(Section)`
-  display: flex;
-
-  ${(props) => props.theme.mq.medium} {
-    flex-direction: column;
-  }
-`
-const Content = styled.div`
-  width: 41.75rem;
-  margin-right: 2rem;
-
-  ${(props) => props.theme.mq.medium} {
-    width: auto;
-    margin: 0 0 2rem;
-  }
-  ${(props) => props.theme.mq.small} {
-    margin: 0 0 1rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
+  p {
+    font-size: 1.25rem;
+    text-align: center;
 
     ${(props) => props.theme.mq.small} {
-      font-size: 1.5rem;
+      font-size: 1rem;
+      text-align: left;
     }
   }
 `
-const MockupWrapper = styled.div`
-  flex: 1;
-  position: relative;
+const Title = styled.h1`
+  font-size: 3rem;
 
   ${(props) => props.theme.mq.medium} {
-    min-height: 40rem;
-    overflow: hidden;
-    margin: -3rem 0;
+    text-align: center;
   }
   ${(props) => props.theme.mq.small} {
-    min-height: 100vw;
-    overflow: hidden;
-    margin: -10vw 0;
+    font-size: 1.5rem;
+    text-align: left;
+  }
+`
+const Left = styled.span`
+  display: block;
+`
+const Right = styled.span`
+  display: block;
+  margin-bottom: 1rem;
+  text-align: right;
+
+  ${(props) => props.theme.mq.medium} {
+    text-align: inherit;
+  }
+  ${(props) => props.theme.mq.small} {
+    margin: 0;
+  }
+`
+const Center = styled.span`
+  display: block;
+  text-align: center;
+
+  ${(props) => props.theme.mq.medium} {
+    text-align: inherit;
   }
 `
 export default function What(props) {
@@ -61,49 +62,53 @@ export default function What(props) {
     `
   )
 
-  const ref = useRef()
-
-  const isOnScreen = useOnScreen(ref, '0px', 0.7)
-
   return (
-    <StyledSection first>
-      <Content ref={ref}>
-        <MDXRenderer>{(props.data || data).mdx.body}</MDXRenderer>
-        <Button.Wrapper right>
-          <Button
-            hollow
-            to='https://www.vyte.in/recosante/rendez-vous-professionnelsante'
-            onClick={() =>
-              window._paq &&
-              window._paq.push([
-                'trackEvent',
-                'Doctors',
-                'Navigate',
-                'Appointment',
-              ])
-            }
-          >
-            Prendre rendez-vous
-          </Button>
-          <Button
-            to='/'
-            onClick={() =>
-              window._paq &&
-              window._paq.push([
-                'trackEvent',
-                'Doctors',
-                'Navigate',
-                'Appointment',
-              ])
-            }
-          >
-            Découvrir Recosanté
-          </Button>
-        </Button.Wrapper>
-      </Content>
-      <MockupWrapper>
-        <Mockup isOnScreen={isOnScreen} />
-      </MockupWrapper>
+    <StyledSection first medium>
+      <Title>
+        <Left>
+          <strong>Connaître</strong> son environnement,
+        </Left>
+        <Right>
+          <strong>Agir</strong> pour sa santé
+        </Right>
+        <Center>
+          Découvrez le service
+          <br />
+          <strong>Recosanté</strong>
+        </Center>
+      </Title>
+      <MDXRenderer>{(props.data || data).mdx.body}</MDXRenderer>
+      <Button.Wrapper center>
+        <Button
+          hollow
+          to='mailto:contact@recosante.beta.gouv.fr'
+          onClick={() =>
+            window._paq &&
+            window._paq.push([
+              'trackEvent',
+              'Doctors',
+              'Navigate',
+              'Appointment',
+            ])
+          }
+        >
+          Prendre rendez-vous
+        </Button>
+        <Button
+          to='/'
+          onClick={() =>
+            window._paq &&
+            window._paq.push([
+              'trackEvent',
+              'Doctors',
+              'Navigate',
+              'Appointment',
+            ])
+          }
+        >
+          Découvrir Recosanté
+        </Button>
+      </Button.Wrapper>
     </StyledSection>
   )
 }
