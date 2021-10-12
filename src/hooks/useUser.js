@@ -38,6 +38,18 @@ export function useUserMutation() {
   )
 }
 
+export function useSendProfileLink() {
+  return useMutation((mail) =>
+    axios.post(
+      `${apiUrl}/users/_send_update_profile`,
+      { mail },
+      {
+        headers: { Accept: ' application/json' },
+      }
+    )
+  )
+}
+
 export function useLocalUser() {
   const { user, mutateUser } = useContext(UserContext)
 

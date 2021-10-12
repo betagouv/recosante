@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { useLocalUser, useSendProfileLink } from 'hooks/useUser'
 import Button from 'components/base/Button'
 
 const Wrapper = styled.div`
@@ -59,27 +60,42 @@ const ButtonWrapper = styled.div`
   }
 `
 export default function Error(props) {
+  const mutation = useSendProfileLink()
+  const { user } = useLocalUser()
+
   return (
     <Wrapper visible={props.error}>
       {props?.error?.response?.data?.errors?.mail === 'mail already used' ? (
-        <>
-          <Title>Un compte est déjà associé à cet email</Title>
-          <Text>
-            Souhaitez-vous recevoir un email à cette adresse pour vous permettre
-            d'éditer votre compte ?
-          </Text>
-          <ButtonWrapper>
-            <Button onClick={props.reset} hollow noExpand>
-              Essayer avec une autre adresse
-            </Button>
-            <Button
-              onClick={() => window.alert('Fonction en cours de développement')}
-              noExpand
-            >
-              Recevoir un email
-            </Button>
-          </ButtonWrapper>
-        </>
+        mutation.isSuccess ? (
+          <>
+            <Title>Un compte est déjà associé à cet email</Title>
+            <Text>
+              Vous avez reçu un email contenant un lien pour modifier vos
+              préférences à l'adresse : {user.mail}
+            </Text>
+            <ButtonWrapper></ButtonWrapper>
+          </>
+        ) : (
+          <>
+            <Title>Un compte est déjà associé à cet email</Title>
+            <Text>
+              Souhaitez-vous recevoir un email à cette adresse pour vous
+              permettre d'éditer votre compte ?
+            </Text>
+            <ButtonWrapper>
+              <Button onClick={props.reset} hollow noExpand>
+                Essayer avec une autre adresse
+              </Button>
+              <Button
+                onClick={() => mutation.mutate(user.mail)}
+                fetching={mutation.isLoading}
+                noExpand
+              >
+                Recevoir un email
+              </Button>
+            </ButtonWrapper>
+          </>
+        )
       ) : (
         <>
           <Title>Une erreur est survenue :(</Title>
