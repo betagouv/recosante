@@ -29,7 +29,7 @@ export default function Opening(props) {
   }, [])
 
   return (
-    <Section xlarge>
+    <Section>
       <Section.Title center>
         <strong>{Math.round(props.yesterday[1])}%</strong> d’ouverture de mail
         (le {props.yesterday[0]})

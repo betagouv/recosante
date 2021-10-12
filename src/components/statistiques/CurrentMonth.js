@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
   XAxis,
   YAxis,
   Tooltip,
@@ -17,41 +17,42 @@ const Wrapper = styled.div`
   width: 100%;
   height: 25rem;
 `
-export default function AllUsers(props) {
-  const { themes, theme } = useContext(StyleContext)
-  const data = Object.keys(props.allUsers).map((key) => ({
-    date: key,
-    inscriptions: props.allUsers[key],
-  }))
 
+export default function CurrentMonth(props) {
+  const { themes, theme } = useContext(StyleContext)
+  const data = props.inscriptions_desinscriptions.map((v) => ({
+    semaine: `du ${v[0]}`,
+    inscriptions: v[1][0],
+    desinscriptions: -v[1][1],
+  }))
   const [width, setWidth] = useState(null)
   useEffect(() => {
     setTimeout(() => setWidth(window.innerWidth), 100)
   }, [])
 
+  const today = new Date()
   return (
-    <Section xlarge>
+    <Section first>
       <Section.Title center>
-        Inscriptions depuis le lancement du service Recosanté
+        <strong>{props.totalActifs}</strong>&nbsp; abonné·e·s
       </Section.Title>
-      <Section.Subtitle center>(hors désinscriptions)</Section.Subtitle>
+      <Section.Subtitle center>
+        (au {today.toLocaleDateString()})
+      </Section.Subtitle>
       <Wrapper>
         <ResponsiveContainer>
-          <LineChart data={data}>
+          <BarChart data={data}>
             <XAxis
-              dataKey='date'
+              dataKey='semaine'
               tick={{ fontSize: 12 }}
               interval={width < 1200 ? 'preserveStartEnd' : 0}
             />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Line
-              dataKey='inscriptions'
-              stroke={themes[theme].colors.main}
-              strokeWidth={3}
-            />
-          </LineChart>
+            <Bar dataKey='inscriptions' fill={themes[theme].colors.main} />
+            <Bar dataKey='desinscriptions' fill={themes[theme].colors.error} />
+          </BarChart>
         </ResponsiveContainer>
       </Wrapper>
     </Section>

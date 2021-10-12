@@ -16,7 +16,9 @@ const Section = styled.section`
     padding-top: ${(props) => (props.first ? '9rem' : 0)};
   }
 `
-Section.Title = styled.h2``
+Section.Title = styled.h2`
+  text-align: ${(props) => (props.center ? 'center' : 'left')};
+`
 Section.Subtitle = styled.h3`
   margin-top: -1rem;
   font-size: 1.5em;

@@ -83,6 +83,7 @@ export default function Identity(props) {
       <form
         onSubmit={(e) => {
           e.preventDefault()
+          e.stopPropagation()
           if (!user.commune) {
             setError(true)
           } else {

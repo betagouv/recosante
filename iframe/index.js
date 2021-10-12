@@ -5,7 +5,7 @@ const script = document.getElementById('recosante')
 const search = script.dataset.search
 const source = window.location.href.toString()
 
-const src = `https://recosante.gtsb.io/${search}&source=${source}&iframe=1`
+const src = `https://recosante.beta.gouv.fr/${search}&source=${source}&iframe=1`
 
 const iframe = document.createElement('iframe')
 

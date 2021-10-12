@@ -22,7 +22,7 @@ export default function Subscriptions(props) {
   }))
   const colors = ['#FFCD56', '#FFA726', '#2FA0F2', '#4BC0C0']
   return (
-    <Section xlarge>
+    <Section>
       <Section.Title center>Satisfaction des utilisateurs</Section.Title>
       <Wrapper>
         <ResponsiveContainer>

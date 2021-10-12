@@ -20,7 +20,7 @@ const Text = styled.h3`
 `
 export default function Profile(props) {
   return (
-    <StyledSection xlarge>
+    <StyledSection>
       <Text center>
         <strong>
           {Math.round((props.total_allergies / props.total) * 100)}%

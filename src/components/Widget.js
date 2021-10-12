@@ -79,17 +79,8 @@ export default function Widget(props) {
         />
       </Configurator>
       <StyledIframe
-<<<<<<< HEAD:src/components/Integration.js
-        src={`${url}/${
-          insee || ''
-        }?size=${size}&source=https://recosante.beta.gouv.fr`}
-        allowfullscreen={true}
-        webkitallowfullscreen={true}
-        mozallowfullscreen={true}
-=======
         src={`${url}/${insee || ''}?size=${size}`}
         allowFullScreen={true}
->>>>>>> dashboard:src/components/Widget.js
         allow='geolocation'
       />
     </StyledSection>
