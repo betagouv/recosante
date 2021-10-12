@@ -79,7 +79,7 @@ export default function What(props) {
       </Title>
       <MDXRenderer>{(props.data || data).mdx.body}</MDXRenderer>
       <Button.Wrapper center>
-        <Button onClick={() => alert('Kit kit kit')} hollow>
+        <Button to={'/kit_de_communication.zip'} hollow>
           Télecharger le kit de communication
         </Button>
         <Button

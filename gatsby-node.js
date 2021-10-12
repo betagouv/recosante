@@ -5,7 +5,12 @@ exports.sourceNodes = async ({
   createContentDigest,
 }) =>
   axios
-    .get(`https://staging.api.recosante.beta.gouv.fr/_application_server_key`)
+    .get(
+      `${
+        process.env.GATSBY_API_BASE_URL ||
+        'https://staging.api.recosante.beta.gouv.fr'
+      }/_application_server_key`
+    )
     .then((res) => res.data)
     .then((data) =>
       createNode({
