@@ -3,7 +3,7 @@ self.addEventListener('push', function (event) {
     return
   }
 
-  data = event.data
+  const data = event.data
     ? event.data.json()
     : { title: 'Découvrez les données Recosanté' }
 
