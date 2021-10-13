@@ -1,5 +1,7 @@
 self.addEventListener('push', function (event) {
-  if (!(self.Notification && self.notification.permission === 'granted')) {
+  console.log('push', event)
+
+  if (!(self.Notification && self.Notification.permission === 'granted')) {
     return
   }
 
@@ -29,5 +31,6 @@ self.addEventListener('push', function (event) {
   event.waitUntil(promiseChain)
 })
 self.addEventListener('notificationclick', function (event) {
+  console.log('notificationclick')
   self.clients.openWindow(event.notification.data)
 })
