@@ -108,6 +108,7 @@ export default function Newsletter(props) {
                   indicateurs: ['indice_atmo', 'raep'],
                 })
                 setSubscription('indicators')
+                window?._paq?.push(['trackEvent', 'Subscription', 'Infolettre'])
               }}
             >
               M'abonner à Recosanté

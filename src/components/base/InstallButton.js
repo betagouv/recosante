@@ -69,7 +69,10 @@ export default function InstallButton(props) {
     installPrompt && (
       <StyledWrapper
         open={props.open}
-        onClick={() => installPrompt.prompt()}
+        onClick={() => {
+          installPrompt.prompt()
+          window?._paq?.push(['trackEvent', 'Misc', 'Install'])
+        }}
         tooltip={'Installer Recosanté'}
       >
         <Install open={props.open} x='0px' y='0px' viewBox='0 0 512 512'>

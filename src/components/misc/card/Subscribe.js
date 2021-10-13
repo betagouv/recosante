@@ -33,6 +33,12 @@ export default function Subscribe(props) {
           mutateUser({ indicateurs: [props.indicateur], commune: props.place })
           setSubscription('indicators')
         }
+        window?._paq?.push([
+          'trackEvent',
+          'Subscription',
+          'Indicateur',
+          props.indicateur,
+        ])
       }}
       static={props.disabled}
     >

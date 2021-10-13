@@ -86,6 +86,12 @@ export default function Notifications() {
                 indicateurs: ['indice_atmo', 'raep'],
               })
               setSubscription('indicators')
+              window?._paq?.push([
+                'trackEvent',
+                'Subscription',
+                'Indicateur',
+                'Tous',
+              ])
             }}
             hollow
           >
