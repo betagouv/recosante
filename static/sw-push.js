@@ -5,15 +5,9 @@ self.addEventListener('push', function (event) {
     return
   }
 
-  /*const data = event.data
+  const data = event.data
     ? event.data.json()
-    : { title: 'Découvrez les données Recosanté' }*/
-
-  const data = {
-    title: 'Découvrez les données Recosanté',
-    body: `Indice de qualité de l'air : Moyen`,
-    link: 'https://recosante.beta.gouv.fr',
-  }
+    : { title: 'Découvrez les données Recosanté' }
 
   const promiseChain = self.registration.showNotification(data.title, {
     body: data.body,
