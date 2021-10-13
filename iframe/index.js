@@ -2,7 +2,7 @@ import { iframeResize } from 'iframe-resizer'
 
 const script = document.getElementById('recosante')
 
-const search = script.dataset.search || '?theme=default'
+const search = script.dataset.search ? script.dataset.search : '?theme=default'
 const source = window.location.href.toString()
 
 const src = `https://recosante.beta.gouv.fr/${search}&source=${source}&iframe=1`
