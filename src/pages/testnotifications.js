@@ -59,6 +59,19 @@ export default function TestNotifications() {
           >
             Notifie moi !
           </Button>
+          <Button
+            onClick={() => {
+              const title = 'Toulouse, le vendredi 23 juin'
+              const options = {}
+              navigator.serviceWorker.ready.then(function (serviceWorker) {
+                console.log('serviceWorker is ready')
+                serviceWorker.showNotification(title, options)
+              })
+              console.log('notified')
+            }}
+          >
+            Notifie moi, mais mal
+          </Button>
         </Button.Wrapper>
       </Section>
     </Web>
