@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { toast } from 'react-toastify'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import useUrlB64ToUint8Array from 'hooks/useUrlB64ToUint8Array'
 import { useUser, useUserMutation } from 'hooks/useUser'
 import useNotificationsPrompt from 'hooks/useNotificationsPrompt'
 import Option from 'components/subscription/question/Option'
@@ -30,7 +29,7 @@ const Options = styled.div`
   }
 `
 export default function Step(props) {
-  const applicationServerKey = useStaticQuery(
+  const { applicationServerKey } = useStaticQuery(
     graphql`
       query {
         applicationServerKey {
@@ -39,10 +38,10 @@ export default function Step(props) {
       }
     `
   )
-  const publicKey = useUrlB64ToUint8Array(
-    applicationServerKey.applicationServerKey.application_server_key
+  const notifications = useNotificationsPrompt(
+    '/sw.js',
+    applicationServerKey.application_server_key
   )
-  const notifications = useNotificationsPrompt('/sw.js', publicKey)
 
   const { data } = useUser()
   const mutation = useUserMutation()
@@ -74,7 +73,7 @@ export default function Step(props) {
                 data[props.step.name] &&
                 data[props.step.name].includes(option.value)
               }
-              onClick={() =>
+              onClick={() => {
                 mutation.mutate({
                   [props.step.name]: props.step.exclusive
                     ? [option.value]
@@ -85,7 +84,16 @@ export default function Step(props) {
                       )
                     : [...(data[props.step.name] || []), option.value],
                 })
-              }
+                if (option.value === 'notifications_web') {
+                  notifications.subscribe().then((pushSubscription) => {
+                    pushSubscription &&
+                      mutation.mutate({
+                        webpush_subscriptions_info:
+                          JSON.stringify(pushSubscription),
+                      })
+                  })
+                }
+              }}
               checkbox={!props.step.exclusive}
             />
           ))}

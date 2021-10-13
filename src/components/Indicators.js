@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import steps from 'utils/indicateursSteps'
-import useUrlB64ToUint8Array from 'hooks/useUrlB64ToUint8Array'
 import { useLocalUser } from 'hooks/useUser'
 import useNotificationsPrompt from 'hooks/useNotificationsPrompt'
 import Progress from './subscription/Progress'
@@ -16,7 +15,7 @@ import Newsletter from './subscription/Newsletter'
 
 const Wrapper = styled.div``
 export default function Indicators(props) {
-  const applicationServerKey = useStaticQuery(
+  const { applicationServerKey } = useStaticQuery(
     graphql`
       query {
         applicationServerKey {
@@ -25,10 +24,10 @@ export default function Indicators(props) {
       }
     `
   )
-  const publicKey = useUrlB64ToUint8Array(
-    applicationServerKey.applicationServerKey.application_server_key
+  const notifications = useNotificationsPrompt(
+    '/sw.js',
+    applicationServerKey.application_server_key
   )
-  const notifications = useNotificationsPrompt('/sw.js', publicKey)
 
   const [currentStep, setCurrentStep] = useState(0)
 
