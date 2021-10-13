@@ -81,6 +81,7 @@ export default function Cloud() {
   return (
     <Wrapper
       onClick={() => {
+        window._paq?.push(['trackEvent', 'Misc', 'Nuage'])
         if (!animated) {
           setAnimation((prevAnimation) =>
             prevAnimation < 3 ? prevAnimation + 1 : 1
