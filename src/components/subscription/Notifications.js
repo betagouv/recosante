@@ -8,6 +8,7 @@ import Images from 'components/newsletter/notifications/Images'
 
 const Wrapper = styled.div`
   position: absolute;
+  z-index: 3;
   top: 0;
   bottom: 0;
   left: 0;

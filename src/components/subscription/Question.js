@@ -6,6 +6,8 @@ import Option from './question/Option'
 import Disclaimer from './question/Disclaimer'
 
 const Wrapper = styled.div`
+  position: relative;
+  z-index: 2;
   padding-top: 2rem;
 
   ${(props) => props.theme.mq.small} {
