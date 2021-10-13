@@ -79,6 +79,7 @@ const Pronouns = styled.span`
 `
 const Pronoun = styled.span`
   position: ${(props) => (props.absolute ? 'absolute' : 'static')};
+  top: 0;
   left: 0;
   animation: ${(props) => (props.absolute ? le : la)} 15000ms infinite;
 `
