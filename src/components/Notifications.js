@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useQueryParam } from 'use-query-params'
+import { useStaticQuery, graphql } from 'gatsby'
 
+import useUrlB64ToUint8Array from 'hooks/useUrlB64ToUint8Array'
 import { useUser, useUserMutation } from 'hooks/useUser'
 import useNotificationsPrompt from 'hooks/useNotificationsPrompt'
 
@@ -10,14 +12,24 @@ import Alert from 'components/base/Alert'
 import UnloggedForm from 'components/misc/UnloggedForm'
 
 export default function Notifications() {
+  const applicationServerKey = useStaticQuery(
+    graphql`
+      query {
+        applicationServerKey {
+          application_server_key
+        }
+      }
+    `
+  )
+  const publicKey = useUrlB64ToUint8Array(
+    applicationServerKey.applicationServerKey.application_server_key
+  )
+  const notifications = useNotificationsPrompt('/sw.js', publicKey)
+
   const [user] = useQueryParam('user')
   const { data } = useUser()
   const mutation = useUserMutation()
   const [success, setSuccess] = useState(false)
-  const notifications = useNotificationsPrompt(
-    '/sw.js',
-    'BEl62iUYgUivxIkv69yViEuiBIa-Ib9-SkvMeAtA3LFgDzkrxZJjSgSnfckjBJuBkr3qBUYIHBQFLXYp5Nksh8U'
-  )
 
   return user ? (
     <Section first small>

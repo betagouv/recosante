@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { toast } from 'react-toastify'
+import { useStaticQuery, graphql } from 'gatsby'
 
+import useUrlB64ToUint8Array from 'hooks/useUrlB64ToUint8Array'
 import { useUser, useUserMutation } from 'hooks/useUser'
+import useNotificationsPrompt from 'hooks/useNotificationsPrompt'
 import Option from 'components/subscription/question/Option'
 
 const Wrapper = styled.div`
@@ -27,6 +30,20 @@ const Options = styled.div`
   }
 `
 export default function Step(props) {
+  const applicationServerKey = useStaticQuery(
+    graphql`
+      query {
+        applicationServerKey {
+          application_server_key
+        }
+      }
+    `
+  )
+  const publicKey = useUrlB64ToUint8Array(
+    applicationServerKey.applicationServerKey.application_server_key
+  )
+  const notifications = useNotificationsPrompt('/sw.js', publicKey)
+
   const { data } = useUser()
   const mutation = useUserMutation()
 

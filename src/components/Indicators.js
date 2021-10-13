@@ -16,7 +16,7 @@ import Newsletter from './subscription/Newsletter'
 
 const Wrapper = styled.div``
 export default function Indicators(props) {
-  const data = useStaticQuery(
+  const applicationServerKey = useStaticQuery(
     graphql`
       query {
         applicationServerKey {
@@ -25,17 +25,16 @@ export default function Indicators(props) {
       }
     `
   )
-
   const publicKey = useUrlB64ToUint8Array(
-    data.applicationServerKey.application_server_key
+    applicationServerKey.applicationServerKey.application_server_key
   )
+  const notifications = useNotificationsPrompt('/sw.js', publicKey)
+
   const [currentStep, setCurrentStep] = useState(0)
 
   const [modal, setModal] = useState(false)
 
   const { user, mutateUser } = useLocalUser()
-
-  const notifications = useNotificationsPrompt('/sw.js', publicKey)
 
   return (
     <Wrapper>
