@@ -1,6 +1,6 @@
 import { iframeResize } from 'iframe-resizer'
 
-const script = document.getElementById('recosante')
+const script = document.getElementById('widget-recosante')
 
 const search = script.dataset.search ? script.dataset.search : '?theme=default'
 const source = window.location.href.toString()
