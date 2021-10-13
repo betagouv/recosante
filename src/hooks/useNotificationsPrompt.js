@@ -7,6 +7,7 @@ export default function useNotificationsPrompt(sw, applicationServerKey) {
 
   const applicationServerKeyAsUint8Array =
     useUrlB64ToUint8Array(applicationServerKey)
+
   const subscribe = () => {
     console.log(applicationServerKeyAsUint8Array)
     setPrompting(true)
