@@ -6,7 +6,9 @@ self.addEventListener('push', function (event) {
   }
 
   const data = event.data
-    ? event.data.json()
+    ? typeof event.data === 'string'
+      ? { title: event.data }
+      : event.data.json()
     : { title: 'Découvrez les données Recosanté' }
 
   const promiseChain = self.registration.showNotification(data.title, {
