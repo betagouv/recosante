@@ -69,7 +69,7 @@ const ButtonClose = styled.div`
 `
 const Scroll = styled.div`
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 2rem 2rem 1.5rem;
 
   ${(props) => props.theme.mq.small} {
