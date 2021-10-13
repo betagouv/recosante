@@ -7,9 +7,12 @@ self.addEventListener('push', function (event) {
 
   const data = event.data
     ? typeof event.data === 'string'
-      ? { title: event.data }
+      ? { title: event.data, link: 'https://recosante.beta.gouv.fr/' }
       : event.data.json()
-    : { title: 'Découvrez les données Recosanté' }
+    : {
+        title: 'Découvrez les données Recosanté',
+        link: 'https://recosante.beta.gouv.fr/',
+      }
 
   const promiseChain = self.registration.showNotification(data.title, {
     body: data.body,
