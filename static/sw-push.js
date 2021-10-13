@@ -16,11 +16,11 @@ self.addEventListener('push', function (event) {
 
   const promiseChain = self.registration.showNotification(data.title, {
     body: data.body,
-    data: data.link,
+    data: data.link.toLowerCase(),
     icon: '/favicon.png',
     actions: [
       {
-        action: data.link,
+        action: data.link.toLowerCase(),
         title: 'Voir tous les indicateurs',
       },
     ],
