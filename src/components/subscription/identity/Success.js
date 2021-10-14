@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import styled from 'styled-components'
 
+import useIframe from 'hooks/useIframe'
 import ModalContext from 'utils/ModalContext'
 import Button from 'components/base/Button'
 
@@ -66,7 +67,10 @@ const Large = styled.span`
   }
 `
 export default function Success(props) {
+  const iframe = useIframe()
+
   const { setSubscription, setNeedConfirmation } = useContext(ModalContext)
+
   useEffect(() => {
     setNeedConfirmation(false)
   }, [setNeedConfirmation])
@@ -88,7 +92,12 @@ export default function Success(props) {
       </Title>
 
       <ButtonWrapper newsletter={newsletter}>
-        <StyledButton to={`/profil?user=${props?.data?.data?.uid}`} hollow>
+        <StyledButton
+          to={`/profil?user=${props?.data?.data?.uid}${
+            props.iframe ? '&iframe=1' : ''
+          }`}
+          hollow
+        >
           Modifier mes informations
         </StyledButton>
         {newsletter ? (
