@@ -106,7 +106,11 @@ export default function Success(props) {
             <Large>Fermer cette fenêtre</Large>
           </StyledButton>
         ) : (
-          <StyledButton to={`/profil?user=${props?.data?.data?.uid}`}>
+          <StyledButton
+            to={`/profil?user=${props?.data?.data?.uid}${
+              props.iframe ? '&iframe=1' : ''
+            }`}
+          >
             M’abonner aux recommandations
           </StyledButton>
         )}
