@@ -94,7 +94,7 @@ export default function Success(props) {
       <ButtonWrapper newsletter={newsletter}>
         <StyledButton
           to={`/profil?user=${props?.data?.data?.uid}${
-            props.iframe ? '&iframe=1' : ''
+            iframe ? '&iframe=1' : ''
           }`}
           hollow
         >
@@ -108,7 +108,7 @@ export default function Success(props) {
         ) : (
           <StyledButton
             to={`/profil?user=${props?.data?.data?.uid}${
-              props.iframe ? '&iframe=1' : ''
+              iframe ? '&iframe=1' : ''
             }`}
           >
             M’abonner aux recommandations
