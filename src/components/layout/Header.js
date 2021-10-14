@@ -53,7 +53,7 @@ export default function Header() {
             <StyledSearchBar
               placeholder='Entrez une ville'
               handlePlaceSelection={(place) => {
-                navigate(formatPlaceUrl(place))
+                navigate(formatPlaceUrl(place) + window.location.search)
               }}
             />
           </Search>

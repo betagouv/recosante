@@ -74,7 +74,7 @@ export default function MobileSearch() {
         <Search
           handlePlaceSelection={(place) => {
             setOpen(false)
-            navigate(formatPlaceUrl(place))
+            navigate(formatPlaceUrl(place) + window.location.search)
           }}
         />
         <Close onClick={() => setOpen(false)}>
