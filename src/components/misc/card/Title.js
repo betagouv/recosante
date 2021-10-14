@@ -21,7 +21,7 @@ const fetching = keyframes`
     transform-origin: right;
   }
 `
-const Wrapper = styled.h4`
+const Wrapper = styled.h2`
   position: relative;
   margin-bottom: 1.5rem;
   font-size: 1.125rem;
