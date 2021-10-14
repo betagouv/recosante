@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
@@ -29,6 +29,10 @@ const Content = styled.div`
 `
 export default function Web(props) {
   const iframe = useIframe()
+
+  useEffect(() => {
+    window?._paq?.push(['setCookieSameSite', 'None'])
+  }, [])
 
   return (
     <Wrapper>
