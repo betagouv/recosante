@@ -5,7 +5,7 @@ const script = document.getElementById('widget-recosante')
 const search = script.dataset.search ? script.dataset.search : '?theme=default'
 const source = window.location.href.toString()
 
-const src = `https://recosante.beta.gouv.fr/${search}&source=${source}&iframe=1`
+const src = `https://recosante.beta.gouv.fr/${search}&iframe=1&source=${source}`
 
 const iframe = document.createElement('iframe')
 
