@@ -18,22 +18,25 @@ export default function AirQuality(props) {
               Indice ATMO de la qualité de l'air
             </Card.Title>
             <Card.Value isError={isError}>
-              {isError ? 'Oups 🦔' : data && data.indice_atmo.indice.label}
+              {isError
+                ? 'Oups 🦔'
+                : data && (data.indice_atmo.indice?.label || 'Pas de données')}
             </Card.Value>
           </Card.Info>
-          <Chart data={data} />
+          <Chart data={data && !data.indice_atmo.error && data} />
         </Card.Header>
         <Card.Mobile indicateur='indice_atmo' place={props.place}>
           <Card.Details>
-            <Details data={data} />
+            <Details data={data && !data.indice_atmo.error && data} />
           </Card.Details>
           <Card.Recommandation
             dangerouslySetInnerHTML={{
               __html: isError
                 ? `Nous ne sommes malheureusement pas en mesure d'afficher l'indice de qualité de l'air pour l'instant. Veuillez réessayer dans quelques instants.`
                 : data &&
-                  data.indice_atmo.advice &&
-                  data.indice_atmo.advice.main,
+                  (data.indice_atmo.error
+                    ? `Les données ne sont pas disponibles pour cette commune`
+                    : data.indice_atmo.advice && data.indice_atmo.advice.main),
             }}
           />
         </Card.Mobile>
@@ -41,7 +44,7 @@ export default function AirQuality(props) {
           <Card.Subscribe indicateur='indice_atmo' place={props.place} />
         </Card.SubscribeWrapper>
       </Card.Content>
-      {data && (
+      {data && !data.indice_atmo.error && (
         <Card.Source>
           Prévision pour le{' '}
           {new Date(data.indice_atmo.validity.start).toLocaleDateString('fr', {

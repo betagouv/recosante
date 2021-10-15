@@ -18,20 +18,25 @@ export default function Raep(props) {
               Risque d’allergie aux pollens
             </Card.Title>
             <Card.Value isError={isError}>
-              {isError ? 'Zut 🦙' : data && data.raep.indice.label}
+              {isError
+                ? 'Zut 🦙'
+                : data && (data.raep.indice?.label || 'Pas de données')}
             </Card.Value>
           </Card.Info>
-          <Chart data={data} />
+          <Chart data={data && !data.raep.error && data} />
         </Card.Header>
         <Card.Mobile indicateur='raep' place={props.place}>
           <Card.Details>
-            <Details data={data} />
+            <Details data={data && !data.raep.error && data} />
           </Card.Details>
           <Card.Recommandation
             dangerouslySetInnerHTML={{
               __html: isError
                 ? `Nous ne sommes malheureusement pas en mesure d'afficher le risque d'allergie aux pollens pour l'instant. Veuillez réessayer dans quelques instants.`
-                : data && data.raep.advice && data.raep.advice.main,
+                : data &&
+                  (data.raep.error
+                    ? `Les données ne sont pas disponibles pour cette commune`
+                    : data.raep.advice && data.raep.advice.main),
             }}
           />
         </Card.Mobile>
