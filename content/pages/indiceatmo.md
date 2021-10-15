@@ -1,5 +1,5 @@
 ---
-title: Indice Atmo
+title: Indice ATMO
 ---
 
 L’indice ATMO est un indicateur journalier de la qualité de l’air calculé à partir des concentrations dans l’air de polluants réglementés tels que le dioxyde de soufre (SO2), dioxyde d’azote (NO2), ozone (O3) et les particules fines... Il qualifie la
