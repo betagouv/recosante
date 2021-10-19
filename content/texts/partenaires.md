@@ -50,6 +50,9 @@ press:
   - titre: doctissimo
     image: ../assets/logos/Doctissimo_Logo_RVB.png
     link: https://www.doctissimo.fr/sante/news/pollution-de-l-air-nouvel-outil-pour-apprendre-a-mieux-s-en-proteger
+  - titre: journal des femmes
+    image: ../assets/logos/logo-jdfsante.png
+    link: https://sante.journaldesfemmes.fr/
 
 ---
 
