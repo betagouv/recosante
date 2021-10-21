@@ -53,6 +53,9 @@ press:
   - titre: journal des femmes
     image: ../assets/logos/logo-jdfsante.png
     link: https://sante.journaldesfemmes.fr/
+  - titre: Agence régionale de santé PACA
+    image: ../assets/logos/logo ARS PACA.jpg
+    link: https://www.paca.ars.sante.fr/
 
 ---
 
