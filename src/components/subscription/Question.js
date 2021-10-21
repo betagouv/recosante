@@ -17,7 +17,8 @@ const Wrapper = styled.div`
 `
 const Label = styled.label`
   display: block;
-  margin-bottom: 3rem;
+  min-height: 2.75rem;
+  margin-bottom: 1.625rem;
   font-weight: 300;
   text-align: center;
 
@@ -51,7 +52,11 @@ export default function Question(props) {
 
   return (
     <Wrapper>
-      <Label>{props.step.label}</Label>
+      <Label
+        dangerouslySetInnerHTML={{
+          __html: props.step.label,
+        }}
+      />
       <Options options={props.step.options}>
         {props.step.options.map((option) => (
           <Option

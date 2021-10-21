@@ -11,11 +11,15 @@ const Wrapper = styled.div`
   align-items: center;
 
   ${(props) => props.theme.mq.smallish} {
-    top: calc(100% - 4.5rem);
+    top: calc(100% - 8rem);
   }
 `
 const Title = styled.div`
   font-size: 0.875rem;
+
+  strong {
+    font-weight: 700;
+  }
 `
 const Text = styled.div`
   font-size: 0.75rem;
@@ -38,7 +42,7 @@ export default function Disclaimer(props) {
   return (
     <Wrapper>
       <Title>
-        Vous recevrez <strong>un email par semaine</strong>.
+        Vous recevrez <strong>prochainement</strong> un email par semaine.
       </Title>
       <Text>Vous pourrez vous désabonner à tout moment</Text>
       <Link onClick={() => props.setModal('newsletter')}>

@@ -95,12 +95,16 @@ const steps = [
     name: 'recommandations',
     title: 'Recommandations',
     label:
-      'Je choisis si je souhaite aussi recevoir des conseils pour m’aider à agir pour ma santé.',
+      'Je choisis si je souhaite aussi recevoir des conseils adaptés à mes habitudes pour m’aider&#160;à&#160;agir.',
     options: [
       {
         value: 'oui',
-        label: `M’abonner aux recommandations`,
+        label: `M’abonner à la lettre d'information`,
+        small: true,
         icon: <Newsletter />,
+        detail: {
+          label: `(Bientôt disponible)`,
+        },
       },
       {
         value: 'non',

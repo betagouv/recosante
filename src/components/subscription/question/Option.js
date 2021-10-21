@@ -67,6 +67,7 @@ const Button = styled.button`
 `
 const Label = styled.span`
   display: block;
+  font-size: ${(props) => (props.small ? 0.875 : 1)}rem;
   text-align: center;
   line-height: 1.2;
 
@@ -104,6 +105,7 @@ export default function Option(props) {
       >
         {props.option.icon}
         <Label
+          small={props.option.small}
           dangerouslySetInnerHTML={{
             __html: props.option.label,
           }}
