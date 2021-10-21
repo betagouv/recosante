@@ -56,6 +56,9 @@ press:
   - titre: Datagir
     image: ../assets/logos/datagir.jpg
     link: https://datagir.ademe.fr/
+  - titre: Agence régionale de santé PACA
+    image: ../assets/logos/logo ARS PACA.jpg
+    link: https://www.paca.ars.sante.fr/
 ---
 
 # Partenaires
