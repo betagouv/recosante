@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import styled from 'styled-components'
 import { toast } from 'react-toastify'
 import { useStaticQuery, graphql } from 'gatsby'
 
+import ModalContext from 'utils/ModalContext'
 import { useUser, useUserMutation } from 'hooks/useUser'
 import useNotificationsPrompt from 'hooks/useNotificationsPrompt'
 import Option from 'components/subscription/question/Option'
@@ -43,6 +44,8 @@ export default function Step(props) {
     applicationServerKey.application_server_key
   )
 
+  const { setModal } = useContext(ModalContext)
+
   const { data } = useUser()
   const mutation = useUserMutation()
 
@@ -62,7 +65,11 @@ export default function Step(props) {
   return (
     <Wrapper large={props.large} id={props.step.name}>
       <Title as={props.large ? 'h2' : 'h3'}>{props.step.title}</Title>
-      <Text>{props.step.label}</Text>
+      <Text
+        dangerouslySetInnerHTML={{
+          __html: props.step.label,
+        }}
+      />
       {data && (
         <Options>
           {props.step.options.map((option) => (
@@ -94,6 +101,7 @@ export default function Step(props) {
                   })
                 }
               }}
+              setModal={setModal}
               checkbox={!props.step.exclusive}
             />
           ))}
