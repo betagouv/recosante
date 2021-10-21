@@ -63,11 +63,15 @@ export default function Partners(props) {
       <Section small>
         <Section.Title>Ils parlent de nous</Section.Title>
         <Wrapper>
-          {data.mdx.frontmatter.press.map((logo) => (
-            <Logo to={logo.link} key={logo.link}>
-              <GatsbyImage image={getImage(logo.image)} alt={logo.title} />
-            </Logo>
-          ))}
+          {data.mdx.frontmatter.press
+            .sort((a, b) =>
+              a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1
+            )
+            .map((logo) => (
+              <Logo to={logo.link} key={logo.link}>
+                <GatsbyImage image={getImage(logo.image)} alt={logo.title} />
+              </Logo>
+            ))}
         </Wrapper>
       </Section>
     </Web>

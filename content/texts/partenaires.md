@@ -38,25 +38,25 @@ press:
   - title: R-lab
     image: ../assets/logos/logo R lab.jpg
     link: https://rlabconseil.com/
-  - titre: Centre de lutte contre le cancer Léon Bérard
+  - title: Centre de lutte contre le cancer Léon Bérard
     image: ../assets/logos/Logo-centre-leon-berard-lyon.jpg
     link: https://www.centreleonberard.fr/
-  - titre: Utrail
+  - title: Utrail
     image: ../assets/logos/logoutrail.png
     link: https://www2.u-trail.com/
-  - titre: camptocamp
+  - title: camptocamp
     image: ../assets/logos/Logo camptocamp.png
     link: https://forum.camptocamp.org/
-  - titre: doctissimo
+  - title: doctissimo
     image: ../assets/logos/Doctissimo_Logo_RVB.png
     link: https://www.doctissimo.fr/sante/news/pollution-de-l-air-nouvel-outil-pour-apprendre-a-mieux-s-en-proteger
-  - titre: Journal des femmes
+  - title: Journal des femmes
     image: ../assets/logos/logo-jdfsante.png
     link: https://sante.journaldesfemmes.fr/
-  - titre: Datagir
+  - title: Datagir
     image: ../assets/logos/datagir.jpg
     link: https://datagir.ademe.fr/
-  - titre: Agence régionale de santé PACA
+  - title: Agence régionale de santé PACA
     image: ../assets/logos/logo ARS PACA.jpg
     link: https://www.paca.ars.sante.fr/
 ---
