@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { useLocalUser } from 'hooks/useUser'
 import Option from './question/Option'
 import Disclaimer from './question/Disclaimer'
+import DisclaimerIos from './question/DisclaimerIos'
 
 const Wrapper = styled.div`
   position: relative;
@@ -85,6 +86,7 @@ export default function Question(props) {
         {props.step.name === 'recommandations' && (
           <Disclaimer setModal={props.setModal} />
         )}
+        {props.step.name === 'indicateurs_media' && <DisclaimerIos />}
       </Options>
     </Wrapper>
   )
