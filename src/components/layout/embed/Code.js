@@ -41,7 +41,7 @@ export default function Code(props) {
 
   useEffect(() => {
     setScript(
-      `<script id="${props.id || 'recosante'}" src="${
+      `<script id="${props.id || 'widget-recosante'}" src="${
         window.location.origin
       }/iframe.js" data-search="${
         props.typeShare === 'result' ? location.pathname : ''

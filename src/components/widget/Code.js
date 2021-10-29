@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
+import { useLocation } from '@reach/router'
 import copy from 'copy-to-clipboard'
+
+import StyleContext from 'utils/StyleContext'
+import formatPlaceUrl from 'utils/formatPlaceUrl'
 
 const Wrapper = styled.div`
   position: relative;
@@ -59,15 +63,20 @@ const Check = styled.svg`
   }
 `
 export default function Code(props) {
+  let location = useLocation()
+  const { theme } = useContext(StyleContext)
+
   const [script, setScript] = useState('')
 
   useEffect(() => {
     setScript(
-      `<script id="widget-recosante" src="${props.url}/iframe.js" data-size="${
-        props.size
-      }" data-insee="${props.insee || ''}"></script>`
+      `<script id="widget-recosante" src="${
+        window.location.origin
+      }/iframe.js" data-search="${
+        props.defaultPlace ? formatPlaceUrl(props.defaultPlace) : ''
+      }?theme=${theme}"></script>`
     )
-  }, [props.url, props.size, props.insee])
+  }, [location.pathname, props.defaultPlace, theme])
 
   const [copied, setCopied] = useState(false)
   useEffect(() => {

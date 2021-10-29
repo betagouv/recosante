@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import IframeResizer from 'iframe-resizer-react'
 
+import formatPlaceUrl from 'utils/formatPlaceUrl'
 import useWindowSize from 'hooks/useWindowSize'
 import Section from 'components/base/Section'
 import Code from 'components/widget/Code'
@@ -49,10 +50,9 @@ const StyledIframe = styled(IframeResizer)`
 `
 
 export default function Widget(props) {
-  const [size, setSize] = useState(16)
-  const [insee, setInsee] = useState(null)
+  const [defaultPlace, setDefaultPlace] = useState(null)
 
-  const url = 'https://app.recosante.beta.gouv.fr'
+  const url = 'https://recosante.beta.gouv.fr'
 
   const { width } = useWindowSize()
 
@@ -70,16 +70,13 @@ export default function Widget(props) {
             <br /> sur votre site
           </Title>
         )}
-        <Code size={size} insee={insee} url={url} />
-        <Options
-          insee={insee}
-          setInsee={setInsee}
-          size={size}
-          setSize={setSize}
-        />
+        <Code defaultPlace={defaultPlace} url={url} />
+        <Options setDefaultPlace={setDefaultPlace} />
       </Configurator>
       <StyledIframe
-        src={`${url}/${insee || ''}?size=${size}`}
+        src={`${url}/${
+          defaultPlace ? formatPlaceUrl(defaultPlace) : ''
+        }?iframe=1`}
         allowFullScreen={true}
         allow='geolocation'
       />
