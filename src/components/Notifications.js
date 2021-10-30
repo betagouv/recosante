@@ -4,13 +4,15 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import { useUser, useUserMutation } from 'hooks/useUser'
 import useNotificationsPrompt from 'hooks/useNotificationsPrompt'
-
+import useIos from 'hooks/useIos'
 import Section from 'components/base/Section'
 import Button from 'components/base/Button'
 import Alert from 'components/base/Alert'
 import UnloggedForm from 'components/misc/UnloggedForm'
 
 export default function Notifications() {
+  const ios = useIos()
+
   const { applicationServerKey } = useStaticQuery(
     graphql`
       query {
@@ -40,30 +42,54 @@ export default function Notifications() {
       {data && (
         <>
           {data.indicateurs_media[0] === 'mail' ? (
-            <p>
-              Vous recevez pour l'instant les{' '}
-              <strong>indicateurs par mail</strong>.
-              <br />
-              Si vous souhaitez changer pour activer les notifications sur cet
-              appareil, cliquez ci-dessous (vous ne recevrez plus de mail).
-            </p>
+            <>
+              <p>
+                Vous recevez pour l'instant les{' '}
+                <strong>indicateurs par mail</strong>.
+              </p>
+              {ios ? (
+                <p>
+                  Malheureusement les notifications ne sont pas disponibles sur
+                  iOS (iPhone et iPad). Vous pouvez ouvrir cette page sur un
+                  autre appareil si vous le souhaitez.
+                </p>
+              ) : (
+                <p>
+                  Si vous souhaitez changer pour activer les notifications sur
+                  cet appareil, cliquez ci-dessous (vous ne recevrez plus de
+                  mail).
+                </p>
+              )}
+            </>
           ) : success ? (
             <p>
               Vous recevrez maintenant les{' '}
               <strong>indicateurs par notifications</strong> sur cet appareil !
             </p>
           ) : (
-            <p>
-              Vous recevez pour l'instant les{' '}
-              <strong>indicateurs par notifications.</strong>
-              <br />
-              Si vous souhaitez les recevoir sur cet appareil en particulier,
-              cliquez ci-dessous (vous continuerez de les recevoir sur vos
-              autres appareils)
-            </p>
+            <>
+              <p>
+                Vous recevez pour l'instant les{' '}
+                <strong>indicateurs par notifications.</strong>
+              </p>
+              {ios ? (
+                <p>
+                  Malheureusement les notifications ne sont pas disponibles sur
+                  iOS (iPhone et iPad). Vous pouvez ouvrir cette page sur un
+                  autre appareil ou modifier votre profil pour choisir de les
+                  recevoir par mail.
+                </p>
+              ) : (
+                <p>
+                  Si vous souhaitez les recevoir sur cet appareil en
+                  particulier, cliquez ci-dessous (vous continuerez de les
+                  recevoir sur vos autres appareils)
+                </p>
+              )}
+            </>
           )}
           <Button.Wrapper vertical>
-            {!success && (
+            {!success && !ios && (
               <Button
                 fetching={notifications.prompting}
                 onClick={() => {
@@ -89,6 +115,11 @@ export default function Notifications() {
         </>
       )}
       {notifications.error && (
+        <Alert error>
+          Vous devez accepter les notifications web pour pouvoir continuer
+        </Alert>
+      )}
+      {mutation.isError && (
         <Alert error>
           Une erreur est survenue. Vos préférences n'ont pas été mises à jour
         </Alert>
