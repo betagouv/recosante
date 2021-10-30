@@ -4,6 +4,7 @@ import ReactTooltip from 'react-tooltip'
 
 const Wrapper = styled.button`
   position: fixed;
+  z-index: 150;
   top: 50%;
   right: 0;
   padding: 0.7rem 0.9rem;
