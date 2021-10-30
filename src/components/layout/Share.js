@@ -12,6 +12,7 @@ import Facebook from './share/Facebook'
 import Twitter from './share/Twitter'
 import Linkedin from './share/Linkedin'
 import Whatsapp from './share/Whatsapp'
+import Messenger from './share/Messenger'
 
 const ShareButtons = styled.div`
   display: flex;
@@ -86,6 +87,7 @@ export default function Share(props) {
         <Twitter title={props.messages.twitter[typeShare].title} url={url} />
         <Linkedin url={url} />
         <Whatsapp title={props.messages.whatsapp[typeShare].title} url={url} />
+        <Messenger url={url} />
       </ShareButtons>
       <Link url={url} />
     </Panel>
