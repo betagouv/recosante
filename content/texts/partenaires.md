@@ -62,7 +62,7 @@ press:
   - title: Top Santé
     image: ../assets/logos/Logo top santé.jpg
     link: https://www.topsante.com/medecine/environnement-et-sante/pollution/recosante-mieux-connaitre-la-qualite-de-l-air-646242
- - title: Fédération Française du Bâtiment
+  - title: Fédération Française du Bâtiment
     image: ../assets/logos/Logos institutionnel Pôle Habitat - avec baseline - CMJN - 300dpi.jpg
     link: https://www.ffbatiment.fr/
 ---
