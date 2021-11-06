@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   }
 `
 export default function Details(props) {
-  return props.data ? (
+  return props.data?.indice_atmo?.indice?.details ? (
     <Wrapper>
       {props.data.indice_atmo.indice.details.map((element) => (
         <Element

@@ -43,10 +43,10 @@ export default function Chart(props) {
           <Mauvais />,
           <TresMauvais />,
           <ExtremementMauvais />,
-        ][props?.data?.indice_atmo?.indice.value]
+        ][props?.data?.indice_atmo?.indice?.value]
       }
 
-      <Circle value={props?.data?.indice_atmo?.indice.value} />
+      <Circle value={props?.data?.indice_atmo?.indice?.value} />
     </Wrapper>
   )
 }
