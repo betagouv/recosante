@@ -37,6 +37,24 @@ export function useUserMutation() {
     }
   )
 }
+export function useUserDeletion() {
+  const [uid] = useQueryParam('user')
+  const queryClient = useQueryClient()
+  return useMutation(() => axios.post(`${apiUrl}/users/${uid}/_deactivate`), {
+    onSettled: () => {
+      queryClient.invalidateQueries(['user', uid])
+    },
+  })
+}
+export function useUserReactivation() {
+  const [uid] = useQueryParam('user')
+  const queryClient = useQueryClient()
+  return useMutation(() => axios.post(`${apiUrl}/users/${uid}/_reactivate`), {
+    onSettled: () => {
+      queryClient.invalidateQueries(['user', uid])
+    },
+  })
+}
 
 export function useSendProfileLink() {
   return useMutation((mail) =>

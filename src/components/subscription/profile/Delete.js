@@ -15,10 +15,10 @@ const Wrapper = styled.button`
   cursor: pointer;
 `
 export default function Delete() {
-  const { setModal } = useContext(ModalContext)
+  const { setDeleteProfile } = useContext(ModalContext)
 
   return (
-    <Wrapper role='button' onClick={() => setModal('suppressioncompte')}>
+    <Wrapper role='button' onClick={() => setDeleteProfile(true)}>
       Supprimer mon compte
     </Wrapper>
   )

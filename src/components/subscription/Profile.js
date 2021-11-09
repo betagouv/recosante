@@ -12,6 +12,7 @@ import Mail from './profile/Mail'
 import Address from './profile/Address'
 import Step from './profile/Step'
 import Delete from './profile/Delete'
+import InactiveProfile from './profile/InactiveProfile'
 
 const Title = styled.h1`
   margin-bottom: 4rem;
@@ -25,26 +26,30 @@ export default function Profile() {
     <>
       <Title>Préférences</Title>
       {user ? (
-        <>
-          <Mail />
-          <Address />
-          {indicateursSteps.map((step) => (
-            <Step
-              step={step}
-              key={step.name}
-              large={
-                step.name === 'indicateurs' || step.name === 'recommandations'
-              }
-            />
-          ))}
-          {data &&
-            data['recommandations'] &&
-            recommandationsSteps.map((step) => (
-              <Step step={step} key={step.name} />
+        !data || data.is_active ? (
+          <>
+            <Mail />
+            <Address />
+            {indicateursSteps.map((step) => (
+              <Step
+                step={step}
+                key={step.name}
+                large={
+                  step.name === 'indicateurs' || step.name === 'recommandations'
+                }
+              />
             ))}
+            {data &&
+              data['recommandations'] &&
+              recommandationsSteps.map((step) => (
+                <Step step={step} key={step.name} />
+              ))}
 
-          <Delete />
-        </>
+            <Delete />
+          </>
+        ) : (
+          <InactiveProfile />
+        )
       ) : (
         <UnloggedForm />
       )}

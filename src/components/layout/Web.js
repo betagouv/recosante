@@ -12,6 +12,7 @@ import Seo from './web/Seo'
 import Header from './Header'
 import Footer from './Footer'
 import WrapperModal from 'components/modals/WrapperModal'
+import DeleteModal from 'components/modals/DeleteModal'
 import SubscriptionModal from 'components/modals/SubscriptionModal'
 import ShareWrapper from 'components/wrappers/ShareWrapper'
 import EmbedWrapper from 'components/wrappers/EmbedWrapper'
@@ -52,6 +53,7 @@ export default function Web(props) {
                 <ShareWrapper place={props.place} />
                 <InstallButton />
                 <WrapperModal />
+                <DeleteModal />
                 <SubscriptionModal />
               </ModalProvider>
             </UserProvider>

@@ -4,6 +4,7 @@ import ModalContext from 'utils/ModalContext'
 
 export default function ModalProvider(props) {
   const [modal, setModal] = useState()
+  const [deleteProfile, setDeleteProfile] = useState()
   const [subscription, setSubscription] = useState()
   const [needConfirmation, setNeedConfirmation] = useState(true)
   return (
@@ -11,6 +12,8 @@ export default function ModalProvider(props) {
       value={{
         modal,
         setModal,
+        deleteProfile,
+        setDeleteProfile,
         subscription,
         setSubscription: (value) => {
           if (value) {

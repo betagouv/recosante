@@ -69,12 +69,6 @@ export default function WrapperModal() {
             title
           }
         }
-        suppressioncompte: mdx(slug: { eq: "suppressioncompte" }) {
-          body
-          frontmatter {
-            title
-          }
-        }
         donneesstatiques: mdx(slug: { eq: "donneesstatiques" }) {
           body
           frontmatter {
