@@ -32,9 +32,13 @@ export default function EpisodePollution(props) {
           __html: data?.episodes_pollution?.advice?.main,
         }}
       />
-      <Button.Wrapper center>
-        <Button to={data?.indice_atmo?.sources[0].url}>En savoir plus</Button>
-      </Button.Wrapper>
+      {data?.indice_atmo?.sources && (
+        <Button.Wrapper center>
+          <Button to={data?.indice_atmo?.sources[0]?.url}>
+            En savoir plus
+          </Button>
+        </Button.Wrapper>
+      )}
     </Modal>
   )
 }
