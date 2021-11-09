@@ -5,6 +5,7 @@ import Section from 'components/base/Section'
 import Background from 'components/misc/Background'
 import Header from './dashboard/Header'
 import Indicators from './dashboard/Indicators'
+import EpisodePollution from './dashboard/EpisodePollution'
 
 const Wrapper = styled.div`
   position: relative;
@@ -26,6 +27,7 @@ export default function Dashboard(props) {
       <StyledSection first>
         <Header place={props.place} />
         <Indicators place={props.place} />
+        <EpisodePollution place={props.place} />
       </StyledSection>
     </Wrapper>
   )
