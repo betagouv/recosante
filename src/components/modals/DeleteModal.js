@@ -17,7 +17,7 @@ export default function DeleteModal() {
 
   return (
     <Modal open={deleteProfile} setOpen={setDeleteProfile}>
-      <h3>Supprimer mon profil</h3>
+      <h3>Supprimer mon compte</h3>
       {mutation.isSuccess ? (
         <>
           <p>
@@ -30,7 +30,7 @@ export default function DeleteModal() {
       ) : (
         <>
           <p>
-            Souhaitez vous supprimer votre profil et toutes les données
+            Souhaitez vous supprimer votre compte et toutes les données
             associées ?
           </p>
           <Button.Wrapper center>
