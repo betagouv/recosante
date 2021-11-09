@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import useIndicators from 'hooks/useIndicators'
+import Button from 'components/base/Button'
 import Modal from 'components/base/Modal'
 
 const Title = styled.h3`
@@ -17,7 +18,7 @@ export default function EpisodePollution(props) {
 
   const [open, setOpen] = useState(false)
   useEffect(() => {
-    data?.episodes_pollution?.advice && setOpen(false)
+    data?.episodes_pollution?.advice && setOpen(true)
   }, [data])
 
   return (
@@ -31,6 +32,9 @@ export default function EpisodePollution(props) {
           __html: data?.episodes_pollution?.advice?.main,
         }}
       />
+      <Button.Wrapper center>
+        <Button to={data?.indice_atmo?.sources[0].url}>En savoir plus</Button>
+      </Button.Wrapper>
     </Modal>
   )
 }
