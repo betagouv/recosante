@@ -16,7 +16,7 @@ export default function DeleteModal() {
 
   return (
     <Modal open={deleteProfile} setOpen={setDeleteProfile}>
-      <h3>Supprimer de profil</h3>
+      <h3>Supprimer mon profil</h3>
       {mutation.isSuccess ? (
         <>
           <p>
