@@ -10,9 +10,10 @@ export default function DeleteModal() {
 
   const mutation = useUserDeletion()
 
+  const reset = mutation.reset
   useEffect(() => {
-    mutation.reset()
-  }, [deleteProfile])
+    reset()
+  }, [deleteProfile, reset])
 
   return (
     <Modal open={deleteProfile} setOpen={setDeleteProfile}>
