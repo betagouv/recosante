@@ -18,6 +18,7 @@ export const themes = {
       success: '#008941',
       error: '#e10600',
       disabled: '#d5dbef',
+      episode: '#FB8371',
       atmo: {
         1: '#4BF0E6',
         2: '#4FCBAD',
