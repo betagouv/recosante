@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import styled from 'styled-components'
 
+import ModalContext from 'utils/ModalContext'
 import useIndicators from 'hooks/useIndicators'
+import Button from 'components/base/Button'
 import Modal from 'components/base/Modal'
 
 const Title = styled.h3`
@@ -15,22 +17,29 @@ const Recommandation = styled.div`
 export default function EpisodePollution(props) {
   const { data } = useIndicators(props.place.code)
 
-  const [open, setOpen] = useState(false)
+  const { episodePollution, setEpisodePollution } = useContext(ModalContext)
   useEffect(() => {
-    data?.episodes_pollution?.advice && setOpen(false)
+    data?.episodes_pollution?.advice && setEpisodePollution(true)
   }, [data])
 
   return (
-    <Modal open={open} setOpen={setOpen}>
+    <Modal open={episodePollution} setOpen={setEpisodePollution}>
       <Title>
         Un <strong>{data?.episodes_pollution?.indice?.label}</strong> est prévu
-        aujourd'hui à {data?.indice_atmo?.validity?.area}
+        aujourd'hui pour {data?.episodes_pollution?.validity?.area}
       </Title>
       <Recommandation
         dangerouslySetInnerHTML={{
           __html: data?.episodes_pollution?.advice?.main,
         }}
       />
+      {data?.episodes_pollution?.sources && (
+        <Button.Wrapper center>
+          <Button to={data?.episodes_pollution?.sources[0]?.url}>
+            En savoir plus
+          </Button>
+        </Button.Wrapper>
+      )}
     </Modal>
   )
 }

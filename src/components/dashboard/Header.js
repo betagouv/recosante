@@ -1,7 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import EpisodePollution from './header/EpisodePollution'
+
 const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  ${(props) => props.theme.mq.medium} {
+    flex-direction: column;
+  }
+`
+const TitleWrapper = styled.div`
+  flex: 1;
   margin-bottom: 5rem;
 
   ${(props) => props.theme.mq.medium} {
@@ -53,26 +64,29 @@ const Details = styled.div`
 export default function Header(props) {
   return (
     <Wrapper>
-      <Title>
-        <Name>{props.place.nom}</Name>
-        <Date>
-          <Intro>, le </Intro>
-          {new Intl.DateTimeFormat('fr-FR', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-          }).format()}
-        </Date>
-      </Title>
-      <Details>
-        {props.place.codesPostaux.length > 2
-          ? props.place.codesPostaux[0] +
-            ' ... ' +
-            props.place.codesPostaux[props.place.codesPostaux.length - 1]
-          : props.place.codesPostaux.join(', ')}{' '}
-        - {props.place.departement.nom}
-      </Details>
+      <TitleWrapper>
+        <Title>
+          <Name>{props.place.nom}</Name>
+          <Date>
+            <Intro>, le </Intro>
+            {new Intl.DateTimeFormat('fr-FR', {
+              weekday: 'long',
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            }).format()}
+          </Date>
+        </Title>
+        <Details>
+          {props.place.codesPostaux.length > 2
+            ? props.place.codesPostaux[0] +
+              ' ... ' +
+              props.place.codesPostaux[props.place.codesPostaux.length - 1]
+            : props.place.codesPostaux.join(', ')}{' '}
+          - {props.place.departement.nom}
+        </Details>
+      </TitleWrapper>
+      <EpisodePollution place={props.place} />
     </Wrapper>
   )
 }
