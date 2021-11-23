@@ -35,9 +35,9 @@ export const themes = {
         5: '#EA3421',
       },
       radon: {
-        1: '#F0E65F',
+        1: '#FFFD53',
         2: '#FFFD53',
-        3: '#EA3421',
+        3: '#FFFD53',
       },
     },
     fonts: '"Marianne", Arial, sans-serif',
