@@ -41,9 +41,7 @@ const Link = styled.button`
 export default function Disclaimer(props) {
   return (
     <Wrapper>
-      <Title>
-        Vous recevrez <strong>prochainement</strong> un email par semaine.
-      </Title>
+      <Title>Vous recevrez un email par semaine.</Title>
       <Text>Vous pourrez vous désabonner à tout moment</Text>
       <Link onClick={() => props.setModal('newsletter')}>
         Voir un exemple d'email que je recevrai

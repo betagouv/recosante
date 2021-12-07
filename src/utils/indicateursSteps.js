@@ -102,9 +102,6 @@ const steps = [
         label: `M’abonner à la lettre d'information`,
         small: true,
         icon: <Newsletter />,
-        detail: {
-          label: `(Bientôt disponible)`,
-        },
       },
       {
         value: 'non',
