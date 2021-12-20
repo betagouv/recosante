@@ -40,6 +40,7 @@ export const themes = {
         3: '#EF8541',
       },
       vigilancemeteo: {
+        0: '#31AA34',
         1: '#75F94C',
         2: '#EF8541',
         3: '#FFFD53',
