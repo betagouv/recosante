@@ -4,6 +4,7 @@ import useIndicators from 'hooks/useIndicators'
 import MagicLink from 'components/base/MagicLink'
 import Card from 'components/misc/Card'
 import Chart from './vigilanceMeteo/Chart'
+import Details from './vigilanceMeteo/Details'
 
 export default function Raep(props) {
   const { data, isError, isLoading } = useIndicators(props.place.code)
@@ -20,24 +21,21 @@ export default function Raep(props) {
               {isError
                 ? 'Zut 🦙'
                 : data &&
-                  (data.vigilance_meteo.indice?.color ? (
-                    <>
-                      Vigilance
-                      <br />
-                      {data.vigilance_meteo.indice?.color.toLowerCase()}
-                    </>
-                  ) : (
-                    'Pas de données'
-                  ))}
+                  (data.vigilance_meteo.indice?.color
+                    ? data.vigilance_meteo.indice?.label
+                    : 'Pas de données')}
             </Card.Value>
           </Card.Info>
           <Chart data={data && !data.vigilance_meteo.error && data} />
         </Card.Header>
         <Card.Mobile indicateur='vigilancemeteo' place={props.place}>
+          <Card.Details>
+            <Details data={data && !data.vigilance_meteo.error && data} />
+          </Card.Details>
           <Card.Recommandation
             dangerouslySetInnerHTML={{
               __html: isError
-                ? `Nous ne sommes malheureusement pas en mesure d'afficher le risque d'allergie aux pollens pour l'instant. Veuillez réessayer dans quelques instants.`
+                ? `Nous ne sommes malheureusement pas en mesure d'afficher la vigilance météo pour l'instant. Veuillez réessayer dans quelques instants.`
                 : data &&
                   (data.vigilance_meteo.error
                     ? `Les données ne sont pas disponibles pour cette commune`
@@ -56,7 +54,7 @@ export default function Raep(props) {
         data.vigilance_meteo.sources && (
           <Card.Source>
             Prévision du{' '}
-            {new Date(data.vigilance_meteo.validity.start).toLocaleDateString(
+            {new Date(data.indice_atmo.validity.start).toLocaleDateString(
               'fr',
               {
                 year: 'numeric',
@@ -65,14 +63,11 @@ export default function Raep(props) {
               }
             )}{' '}
             au{' '}
-            {new Date(data.vigilance_meteo.validity.end).toLocaleDateString(
-              'fr',
-              {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              }
-            )}{' '}
+            {new Date(data.indice_atmo.validity.end).toLocaleDateString('fr', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}{' '}
             à {data.vigilance_meteo.validity.area}
             <br />
             Données fournies par{' '}

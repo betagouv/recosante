@@ -1,5 +1,5 @@
 ---
-title: Le dioxyde de soufre (<strong>SO<sup>2</sup></strong>)
+title: Le dioxyde de soufre (<strong>SO<sub>2</sub></strong>)
 ---
 
 Le dioxyde de soufre provient de la combustion de combustibles fossiles contenant du soufre.
