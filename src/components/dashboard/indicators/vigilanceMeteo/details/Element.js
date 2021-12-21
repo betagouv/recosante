@@ -29,7 +29,6 @@ const Icon = styled.div`
     props.theme.colors.vigilancemeteo[props.value]};
   border-radius: 0.25rem;
 `
-const Recommandation = styled.div``
 export default function Element(props) {
   const images = {
     Vent,
