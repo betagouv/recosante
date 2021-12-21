@@ -50,24 +50,11 @@ export default function Element(props) {
         </Icon>
         {props.indice.label}
       </Title>
-      <Recommandation
+      <Card.Recommandation
         dangerouslySetInnerHTML={{
           __html: props.indice.recommandation,
         }}
       />
-      <Card.Recommandation>
-        <ul>
-          <li>Protéger sa maison et les biens exposés au vent </li>
-          <li>Limiter ses déplacements au strict minimum </li>
-          <li>Être vigilant aux chutes d’arbres et d’objets </li>
-          <li>
-            Veiller à ce que les groupes électrogènes soient installés à
-            l’extérieur de la maison pour éviter une intoxication au monoxyde de
-            carbon en cas de coupure de courant
-          </li>
-          <li>Se tenir informé auprès des autorités</li>
-        </ul>
-      </Card.Recommandation>
     </Wrapper>
   )
 }
