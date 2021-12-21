@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import { useLocalUser, useUserMutation } from 'hooks/useUser'
+import { useAvailability } from 'hooks/useSearch'
 import TextInput from 'components/base/TextInput'
+import Alert from 'components/base/Alert'
 import SearchBar from 'components/search/SearchBar'
 import NavigationIdentity from './identity/NavigationIdentity'
 import Error from './identity/Error'
@@ -48,6 +50,9 @@ const StyledSearchBar = styled(SearchBar)`
   font-size: 1.25rem;
   ${(props) => props.error && `border-color: ${props.theme.colors.error}`}
 `
+const StyledAlert = styled(Alert)`
+  margin: -2rem 0 1rem;
+`
 const MailInput = styled(TextInput)`
   display: block;
   width: 22.25rem;
@@ -64,6 +69,7 @@ const MailInput = styled(TextInput)`
 export default function Identity(props) {
   const { user, mutateUser } = useLocalUser()
 
+  const { data: availability } = useAvailability(user.commune?.code)
   const mutation = useUserMutation()
 
   const [error, setError] = useState(false)
@@ -80,6 +86,13 @@ export default function Identity(props) {
           error={error && !user.commune}
         />
       </SearchBarWrapper>
+      {availability && !availability.availability && (
+        <StyledAlert error>
+          Les indicateurs de cette commune ne sont pas disponibles. Vous pouvez
+          quand même vous inscrire à la lettre d'information hebdomadaire si
+          vous le souhaitez
+        </StyledAlert>
+      )}
       <form
         onSubmit={(e) => {
           e.preventDefault()

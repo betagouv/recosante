@@ -54,7 +54,7 @@ export default function Raep(props) {
         data.vigilance_meteo.sources && (
           <Card.Source>
             Prévision du{' '}
-            {new Date(data.indice_atmo.validity.start).toLocaleDateString(
+            {new Date(data.vigilance_meteo.validity.start).toLocaleDateString(
               'fr',
               {
                 year: 'numeric',
@@ -63,11 +63,14 @@ export default function Raep(props) {
               }
             )}{' '}
             au{' '}
-            {new Date(data.indice_atmo.validity.end).toLocaleDateString('fr', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}{' '}
+            {new Date(data.vigilance_meteo.validity.end).toLocaleDateString(
+              'fr',
+              {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              }
+            )}{' '}
             à {data.vigilance_meteo.validity.area}
             <br />
             Données fournies par{' '}

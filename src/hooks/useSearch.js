@@ -53,3 +53,18 @@ export function useCode(code) {
     }
   )
 }
+export function useAvailability(code) {
+  return useQuery(
+    ['code', code],
+    () =>
+      axios
+        .get(
+          `https://api.recosante.beta.gouv.fr/city-availability?insee=${code}`
+        )
+        .then((res) => res.data),
+    {
+      enabled: code ? true : false,
+      refetchOnWindowFocus: false,
+    }
+  )
+}
