@@ -47,7 +47,7 @@ export default function UnloggedForm(props) {
         onChange={({ value }) => setMail(value)}
       />
 
-      <Submit>M'abonner</Submit>
+      <Submit>Recevoir le lien</Submit>
       {mutation.isError && <Alert error>Une erreur est survenue</Alert>}
       {mutation.isSuccess && (
         <Alert>
