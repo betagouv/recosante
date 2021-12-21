@@ -1,15 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import Card from 'components/misc/Card'
 import Vent from './images/Vent.png'
 import Orages from './images/Orages.png'
-import PluieInondation from './images/Pluie-Inondation.png'
+import Neige from './images/Neige.png'
+import Avalanche from './images/Avalanche.png'
+import Crues from './images/Crues.png'
+import GrandFroid from './images/GrandFroid.png'
+import PluieInondation from './images/PluieInondation.png'
 
 const Wrapper = styled.div``
-const Title = styled.h5`
+const Title = styled.h4`
   display: flex;
   align-items: center;
   font-weight: normal;
+  color: ${(props) => props.theme.colors.text};
 `
 const Icon = styled.div`
   display: flex;
@@ -28,7 +34,11 @@ export default function Element(props) {
   const images = {
     Vent,
     Orages,
-    ['Pluie-Inondation']: PluieInondation,
+    Neige,
+    Avalanche,
+    Crues,
+    'Grand Froid': GrandFroid,
+    'Pluie-Inondation': PluieInondation,
   }
   const value = ['Vert', 'Jaune', 'Orange', 'Rouge'].indexOf(props.indice.color)
 
@@ -45,6 +55,19 @@ export default function Element(props) {
           __html: props.indice.recommandation,
         }}
       />
+      <Card.Recommandation>
+        <ul>
+          <li>Protéger sa maison et les biens exposés au vent </li>
+          <li>Limiter ses déplacements au strict minimum </li>
+          <li>Être vigilant aux chutes d’arbres et d’objets </li>
+          <li>
+            Veiller à ce que les groupes électrogènes soient installés à
+            l’extérieur de la maison pour éviter une intoxication au monoxyde de
+            carbon en cas de coupure de courant
+          </li>
+          <li>Se tenir informé auprès des autorités</li>
+        </ul>
+      </Card.Recommandation>
     </Wrapper>
   )
 }
