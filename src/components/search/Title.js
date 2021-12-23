@@ -5,13 +5,42 @@ const simple = keyframes`
   from {
     opacity: 0;
   }
-  10% {
+  5% {
     opacity: 1;
   }
-  30% {
+  20% {
     opacity: 1;
   }
-  35% {
+  25% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+`
+const la = keyframes`
+  from {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  75% {
     opacity: 0;
   }
   to {
@@ -25,31 +54,26 @@ const le = keyframes`
   5% {
     opacity: 0;
   }
-  30% {
+  20% {
     opacity: 0;
   }
-  35% {
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  75% {
     opacity: 1;
   }
   to {
     opacity: 1;
-  }
-`
-const la = keyframes`
-  from {
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  30% {
-    opacity: 1;
-  }
-  35% {
-    opacity: 0;
-  }
-  to {
-    opacity: 0;
   }
 `
 const Wrapper = styled.h1`
@@ -81,7 +105,7 @@ const Pronoun = styled.span`
   position: ${(props) => (props.absolute ? 'absolute' : 'static')};
   top: 0;
   left: 0;
-  animation: ${(props) => (props.absolute ? le : la)} 15000ms infinite;
+  animation: ${(props) => (props.absolute ? le : la)} 20000ms infinite;
 `
 const Sentences = styled.strong`
   position: relative;
@@ -103,7 +127,7 @@ const Sentence = styled.span`
 const Letter = styled.span`
   will-change: opacity;
   opacity: 0;
-  animation: ${simple} 15000ms
+  animation: ${simple} 20000ms
     ${(props) => props.index * 5000 + props.position * 25}ms infinite;
 `
 export default function Title() {
@@ -112,7 +136,7 @@ export default function Title() {
     `risque d'allergie aux pollens`,
     // `indice UV`,
     // `qualité de l'eau de boisson`,
-    // `vigilance météorologique`,
+    `vigilance météo`,
     `niveau de risque radon`,
   ]
   return (
