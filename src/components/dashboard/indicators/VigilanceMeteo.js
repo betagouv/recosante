@@ -9,6 +9,13 @@ import Details from './vigilanceMeteo/Details'
 export default function Raep(props) {
   const { data, isError, isLoading } = useIndicators(props.place.code)
 
+  const labels = {
+    Vert: 'Pas de vigilance',
+    Jaune: 'Vigilance jaune',
+    Orange: 'Vigilance orange',
+    Rouge: 'Vigilance rouge',
+  }
+
   return (
     <Card columns={6}>
       <Card.Content>
@@ -22,7 +29,7 @@ export default function Raep(props) {
                 ? 'Zut 🦙'
                 : data &&
                   (data.vigilance_meteo.indice?.color
-                    ? data.vigilance_meteo.indice?.label
+                    ? labels[data.vigilance_meteo.indice.color]
                     : 'Pas de données')}
             </Card.Value>
           </Card.Info>

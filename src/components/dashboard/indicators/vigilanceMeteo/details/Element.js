@@ -15,6 +15,7 @@ const Title = styled.h4`
   display: flex;
   align-items: center;
   font-weight: normal;
+  line-height: 1.7;
   color: ${(props) => props.theme.colors.text};
 `
 const Icon = styled.div`
@@ -51,7 +52,7 @@ export default function Element(props) {
       </Title>
       <Card.Recommandation
         dangerouslySetInnerHTML={{
-          __html: props.indice.recommandation,
+          __html: props.indice.advice.main,
         }}
       />
     </Wrapper>
