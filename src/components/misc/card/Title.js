@@ -44,6 +44,7 @@ const Wrapper = styled.h2`
   ${(props) => props.theme.mq.small} {
     margin: 0 -1rem 1rem;
     font-size: 1rem;
+    text-align: center;
   }
 `
 const Superscript = styled.sup`

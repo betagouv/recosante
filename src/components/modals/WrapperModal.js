@@ -51,6 +51,12 @@ export default function WrapperModal() {
             title
           }
         }
+        vigilancemeteo: mdx(slug: { eq: "vigilancemeteo" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
         potentiel_radon: mdx(slug: { eq: "potentielradon" }) {
           body
           frontmatter {

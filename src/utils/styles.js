@@ -17,7 +17,7 @@ export const themes = {
       footer: '#6a6a6a',
       success: '#008941',
       error: '#e10600',
-      disabled: '#d5dbef',
+      disabled: '#CCCCE9',
       episode: '#FB8371',
       atmo: {
         1: '#4BF0E6',
@@ -38,6 +38,12 @@ export const themes = {
         1: '#EF8541',
         2: '#EF8541',
         3: '#EF8541',
+      },
+      vigilancemeteo: {
+        0: '#31AA34',
+        1: '#F0E65F',
+        2: '#EF8541',
+        3: '#FFFD53',
       },
     },
     fonts: '"Marianne", Arial, sans-serif',

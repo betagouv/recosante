@@ -1,8 +1,8 @@
 ---
-title: Le dioxyde d'azote (<strong>NO<sup>2</sup></strong>)
+title: Le dioxyde d'azote (<strong>NO<sub>2</sub></strong>)
 ---
 
-Le dioxyde d’azote (NO<sup>2</sup>) est issu de l’oxydation du monoxyde d’azote (NO). Il nait de la combustion à haute température de combustibles fossiles comme le charbon, le fuel, le pétrole
+Le dioxyde d’azote (NO<sub>2</sub>) est issu de l’oxydation du monoxyde d’azote (NO). Il nait de la combustion à haute température de combustibles fossiles comme le charbon, le fuel, le pétrole
 
 Il provient des véhicules automobiles (60 % des émissions de dioxyde d’azote) et des appareils à combustion (gazinière, chauffe-eau, etc.).
 
