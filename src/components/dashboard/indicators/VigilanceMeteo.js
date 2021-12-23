@@ -60,25 +60,32 @@ export default function Raep(props) {
         data.vigilance_meteo.validity &&
         data.vigilance_meteo.sources && (
           <Card.Source>
-            Prévision du{' '}
-            {new Date(data.vigilance_meteo.validity.start).toLocaleDateString(
-              'fr',
-              {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              }
+            Prévision{' '}
+            {data.vigilance_meteo.validity.start ? (
+              <>
+                du{' '}
+                {new Date(
+                  data.vigilance_meteo.validity.start
+                ).toLocaleDateString('fr', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}{' '}
+                au{' '}
+                {new Date(data.vigilance_meteo.validity.end).toLocaleDateString(
+                  'fr',
+                  {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  }
+                )}{' '}
+                à
+              </>
+            ) : (
+              <> pour </>
             )}{' '}
-            au{' '}
-            {new Date(data.vigilance_meteo.validity.end).toLocaleDateString(
-              'fr',
-              {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              }
-            )}{' '}
-            à {data.vigilance_meteo.validity.area}
+            {data.vigilance_meteo.validity.area}
             <br />
             Données fournies par{' '}
             <MagicLink to={data.vigilance_meteo.sources[0].url}>

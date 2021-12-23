@@ -50,11 +50,13 @@ export default function Element(props) {
         </Icon>
         {props.indice.label}
       </Title>
-      <Card.Recommandation
-        dangerouslySetInnerHTML={{
-          __html: props.indice.advice.main,
-        }}
-      />
+      {props.indice.advice && (
+        <Card.Recommandation
+          dangerouslySetInnerHTML={{
+            __html: props.indice.advice.main,
+          }}
+        />
+      )}
     </Wrapper>
   )
 }
