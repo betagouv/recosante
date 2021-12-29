@@ -22,7 +22,7 @@ const ButtonMore = styled.button`
 
   svg {
     width: 1rem;
-    height: auto;
+    height: 1rem;
   }
   path {
     fill: ${(props) => props.theme.colors.main};
