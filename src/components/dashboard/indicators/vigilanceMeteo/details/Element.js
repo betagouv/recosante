@@ -5,7 +5,7 @@ import Card from 'components/misc/Card'
 import Vent from './images/Vent.png'
 import Orages from './images/Orages.png'
 import Neige from './images/Neige.png'
-import Avalanche from './images/Avalanche.png'
+import Avalanches from './images/Avalanches.png'
 import Crues from './images/Crues.png'
 import GrandFroid from './images/GrandFroid.png'
 import PluieInondation from './images/PluieInondation.png'
@@ -35,7 +35,7 @@ export default function Element(props) {
     Vent,
     Orages,
     Neige,
-    Avalanche,
+    Avalanches,
     Crues,
     'Grand Froid': GrandFroid,
     'Pluie-Inondation': PluieInondation,
