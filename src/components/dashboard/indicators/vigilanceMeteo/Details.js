@@ -11,8 +11,8 @@ export default function Details(props) {
         .filter(({ indice }) => indice.color !== 'Vert')
         .sort((a, b) =>
           values.indexOf(a.indice.color) > values.indexOf(b.indice.color)
-            ? 1
-            : -1
+            ? -1
+            : 1
         )
         .map(({ indice }) => (
           <Element indice={indice} />
