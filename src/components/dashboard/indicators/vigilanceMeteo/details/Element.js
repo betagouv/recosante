@@ -2,13 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Card from 'components/misc/Card'
-import Vent from './images/Vent.png'
-import Orages from './images/Orages.png'
-import Neige from './images/Neige.png'
 import Avalanches from './images/Avalanches.png'
+import Canicule from './images/Canicule.png'
 import Crues from './images/Crues.png'
 import GrandFroid from './images/GrandFroid.png'
+import Neige from './images/Neige.png'
+import Orages from './images/Orages.png'
 import PluieInondation from './images/PluieInondation.png'
+import VaguesSubmersion from './images/VaguesSubmersion.png'
+import Vent from './images/Vent.png'
 
 const Wrapper = styled.div``
 const Title = styled.h4`
@@ -34,6 +36,8 @@ export default function Element(props) {
   const images = {
     Vent,
     Orages,
+    Canicule,
+    'Vagues Submersion': VaguesSubmersion,
     Neige,
     Avalanches,
     Crues,
