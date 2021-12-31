@@ -14,9 +14,15 @@ export default function Details(props) {
             ? -1
             : 1
         )
-        .map(({ indice }) => (
-          <Element indice={indice} />
-        ))}
+        .map(({ indice }, index) =>
+          props?.data?.vigilance_meteo?.indice?.details
+            .slice(0, index)
+            .includes(
+              ({ pastIndice }) => pastIndice.label === indice.label
+            ) ? null : (
+            <Element indice={indice} />
+          )
+        )}
     </div>
   )
 }
