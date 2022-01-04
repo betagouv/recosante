@@ -11,12 +11,12 @@ export default function ShareWrapper(props) {
         mail: {
           simulator: {
             subject: `Tu veux connaître la qualité de l'environnement autour de toi ?`,
-            body: `C'est facile grâce à Recosanté ! Tu peux choisir les indicateurs qui t'intéressent (qualité de l'air, risque d'allergie aux pollens, qualité de l'eau de boisson, etc.) et tu les reçois à la fréquence que tu choisis : tous les jours ou uniquement quand il y a une alerte. Recosanté propose aussi des recommandations associées pour limiter les effets de l'environnement sur la santé.
+            body: `C'est facile grâce à Recosanté ! Tu peux choisir les indicateurs qui t'intéressent (qualité de l'air, risque d'allergie aux pollens, qualité de l'eau de boisson, etc.) et tu les reçois à la fréquence que tu choisis : tous les jours ou uniquement quand il y a une vigilance. Recosanté propose aussi des recommandations associées pour limiter les effets de l'environnement sur la santé.
 Et en plus, c'est complètement gratuit. Pour t'inscrire : `,
           },
           result: {
             subject: `Tu veux connaître la qualité de l'environnement à ${props.place?.nom} ?`,
-            body: `En t'inscrivant à Recosanté, tu peux recevoir les indicateurs qui t'intéressent (qualité de l'air, risque d'allergie aux pollens, qualité de l'eau de boisson, etc.) pour connaître la qualité de l'environnement à ${props.place?.nom} tous les matins ou en cas d'alerte. C'est gratuit et l'inscription est très simple : `,
+            body: `En t'inscrivant à Recosanté, tu peux recevoir les indicateurs qui t'intéressent (qualité de l'air, risque d'allergie aux pollens, qualité de l'eau de boisson, etc.) pour connaître la qualité de l'environnement à ${props.place?.nom} tous les matins ou en cas de vigilance. C'est gratuit et l'inscription est très simple : `,
           },
         },
         facebook: {

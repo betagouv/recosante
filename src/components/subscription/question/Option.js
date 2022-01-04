@@ -90,9 +90,10 @@ const Detail = styled.div`
   cursor: ${(props) => (props.modal ? 'pointer' : 'normal')};
 
   ${(props) => props.theme.mq.small} {
-    top: calc(100% + 0.125rem);
-    left: auto;
-    right: 2rem;
+    position: relative;
+    top: 0.125rem;
+    left: 0;
+    right: 0;
   }
 `
 export default function Option(props) {
