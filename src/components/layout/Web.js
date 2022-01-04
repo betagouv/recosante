@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import axios from 'axios'
 
 import { GlobalStyle } from 'utils/styles'
 import useIframe from 'hooks/useIframe'
@@ -35,33 +34,6 @@ export default function Web(props) {
   useEffect(() => {
     window?._paq?.push(['setCookieSameSite', 'None'])
   }, [])
-
-  axios
-    .get(
-      'https://geo.api.gouv.fr/communes/?fields=departement,codesPostaux,population'
-    )
-    .then((res) => res.data)
-    .then((res) =>
-      res.forEach((place) => {
-        if (place.departement) {
-          const name1 = place.nom
-            .toLowerCase()
-            .replace(/\s/g, '-')
-            .replace(/'/g, '-')
-            .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '')
-
-          const name2 = place.nom
-            .toLowerCase()
-            .replace(/\s/g, '-')
-            .replace(/'/g, '-')
-
-          if (name1 !== name2) {
-            console.log(place.nom)
-          }
-        }
-      })
-    )
 
   return (
     <Wrapper>
