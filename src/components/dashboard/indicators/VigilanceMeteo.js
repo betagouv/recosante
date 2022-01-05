@@ -10,7 +10,7 @@ export default function Raep(props) {
   const { data, isError, isLoading } = useIndicators(props.place.code)
 
   const labels = {
-    Vert: 'Pas de vigilance',
+    Vert: 'Vigilance verte',
     Jaune: 'Vigilance jaune',
     Orange: 'Vigilance orange',
     Rouge: 'Vigilance rouge',
