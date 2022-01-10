@@ -43,7 +43,7 @@ export const themes = {
         0: '#31AA34',
         1: '#F0E65F',
         2: '#EF8541',
-        3: '#FFFD53',
+        3: '#EA3421',
       },
     },
     fonts: '"Marianne", Arial, sans-serif',
