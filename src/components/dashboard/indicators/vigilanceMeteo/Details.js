@@ -5,24 +5,26 @@ import Element from './details/Element'
 export default function Details(props) {
   const values = ['Vert', 'Jaune', 'Orange', 'Rouge']
 
+  const details = props?.data?.vigilance_meteo?.indice?.details
+    .filter(({ indice }) => indice.color !== 'Vert')
+    .sort((a, b) =>
+      values.indexOf(a.indice.color) > values.indexOf(b.indice.color) ? -1 : 1
+    )
   return (
     <div>
-      {props?.data?.vigilance_meteo?.indice?.details
-        .filter(({ indice }) => indice.color !== 'Vert')
-        .sort((a, b) =>
-          values.indexOf(a.indice.color) > values.indexOf(b.indice.color)
-            ? -1
-            : 1
+      {details?.map(({ indice }, index) => {
+        details
+          .slice(0, index)
+          .find((pastDetail) => pastDetail.indice.label === indice.label)
+
+        return details
+          .slice(0, index)
+          .find(
+            (pastDetail) => pastDetail.indice.label === indice.label
+          ) ? null : (
+          <Element indice={indice} key={indice.label} />
         )
-        .map(({ indice }, index) =>
-          props?.data?.vigilance_meteo?.indice?.details
-            .slice(0, index)
-            .includes(
-              ({ pastIndice }) => pastIndice.label === indice.label
-            ) ? null : (
-            <Element indice={indice} />
-          )
-        )}
+      })}
     </div>
   )
 }
