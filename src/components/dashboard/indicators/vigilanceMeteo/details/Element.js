@@ -21,16 +21,22 @@ const Title = styled.h4`
   color: ${(props) => props.theme.colors.text};
 `
 const Icon = styled.div`
-  display: flex;
-  align-item: center;
-  justify-content: center;
+  position: relative;
   height: 1.5rem;
   width: 1.5rem;
   margin-right: 0.5rem;
-  padding: 0.25rem;
   background-color: ${(props) =>
     props.theme.colors.vigilancemeteo[props.value]};
   border-radius: 0.25rem;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 0.25rem);
+    height: auto;
+  }
 `
 export default function Element(props) {
   const images = {
