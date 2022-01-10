@@ -37,7 +37,7 @@ export default function Element(props) {
     Vent,
     Orages,
     Canicule,
-    'Vagues Submersion': VaguesSubmersion,
+    'Vagues-Submersion': VaguesSubmersion,
     Neige,
     Avalanches,
     Crues,
