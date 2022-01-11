@@ -19,7 +19,7 @@ const ButtonMore = styled.button`
   background-color: ${(props) => props.theme.colors.background};
   border: 0.125rem solid ${(props) => props.theme.colors.main};
   border-radius: 0.5rem;
-
+  padding: 0;
   svg {
     width: 1rem;
     height: 1rem;
