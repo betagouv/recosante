@@ -40,11 +40,11 @@ const Icon = styled.div`
 `
 export default function Element(props) {
   const images = {
-    Vent,
+    'Vent violent': Vent,
     Orages,
     Canicule,
     'Vagues-Submersion': VaguesSubmersion,
-    Neige,
+    'Neige-verglas': Neige,
     Avalanches,
     Crues,
     'Grand Froid': GrandFroid,
