@@ -63,6 +63,7 @@ export default function Raep(props) {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',
+                  hour: '2-digit',
                 })}{' '}
                 au{' '}
                 {new Date(data.vigilance_meteo.validity.end).toLocaleDateString(
@@ -71,6 +72,7 @@ export default function Raep(props) {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric',
+                    hour: '2-digit',
                   }
                 )}{' '}
                 à
