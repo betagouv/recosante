@@ -18,10 +18,14 @@ const Wrapper = styled.div`
 `
 export default function Opening(props) {
   const { themes, theme } = useContext(StyleContext)
-  const data = Object.keys(props.openings).map((key) => ({
+  let data = Object.keys(props.openings).map((key) => ({
     date: key,
     [`taux d'ouverture`]: Math.round(props.openings[key]),
   }))
+
+  data.pop()
+
+  console.log(data[data.length - 1])
 
   const [width, setWidth] = useState(null)
   useEffect(() => {
@@ -31,8 +35,10 @@ export default function Opening(props) {
   return (
     <Section>
       <Section.Title center>
-        <strong>{Math.round(props.yesterday[1])}%</strong> d’ouverture de mail
-        (le {props.yesterday[0]})
+        <strong>
+          {Math.round(data[data.length - 1][`taux d'ouverture`])}%
+        </strong>{' '}
+        d’ouverture de mail (le {data[data.length - 1]['date']})
       </Section.Title>
       <Wrapper>
         <ResponsiveContainer>

@@ -30,15 +30,9 @@ export default function Statistiques() {
       {stats.decouverte && (
         <Satisfaction satisfaction={JSON.parse(stats.decouverte)} />
       )}
-      {openings &&
-        openings &&
-        openings.openings &&
-        openings.opening_yesterday && (
-          <MailOpening
-            openings={JSON.parse(openings.openings)}
-            yesterday={openings.opening_yesterday}
-          />
-        )}
+      {openings && openings && openings.openings && (
+        <MailOpening openings={JSON.parse(openings.openings)} />
+      )}
     </>
   ) : null
 }
