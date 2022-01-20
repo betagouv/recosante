@@ -9,6 +9,9 @@ data:
   - title: APSF
     image: ../assets/logos/pollinariums.png
     link: https://www.alertepollens.org/
+  - title: IRSN
+    image: ../assets/logos/IRSNlogoRVB.JPG
+    link: https://www.irsn.fr/FR/Pages/Home.aspx
 partners:
   - title: ATMO France
     image: ../assets/logos/atmo-france.png
