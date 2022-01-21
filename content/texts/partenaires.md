@@ -25,6 +25,9 @@ partners:
   - title: Santé Respiratoire France
     image: ../assets/logos/logo-srf.jpg
     link: https://sante-respiratoire.com/
+  - title: IRSN
+    image: ../assets/logos/IRSNlogoRVB.JPG
+    link: https://www.irsn.fr/FR/Pages/Home.aspx
 press:
   - title: FFAIR
     image: ../assets/logos/logoFFAAIR_bleu.jpg
@@ -71,6 +74,8 @@ press:
   - title: Ameli.fr, le site de l'Assurance Maladie
     image: ../assets/logos/logo-ameli.png
     link: https://www.ameli.fr/
+  - title: ../assets/logos/Logo-Ademe-2020.jpg
+    link: https://agirpourlatransition.ademe.fr/particuliers/actualites/sinformer-temps-reel-qualite-lair-mieux-proteger-sante-recosante  
     
 ---
 
