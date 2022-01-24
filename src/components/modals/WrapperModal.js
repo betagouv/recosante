@@ -57,6 +57,12 @@ export default function WrapperModal() {
             title
           }
         }
+        indiceuv: mdx(slug: { eq: "indiceuv" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
         potentiel_radon: mdx(slug: { eq: "potentielradon" }) {
           body
           frontmatter {
