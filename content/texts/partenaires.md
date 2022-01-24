@@ -12,6 +12,9 @@ data:
   - title: IRSN
     image: ../assets/logos/IRSNlogoRVB.JPG
     link: https://www.irsn.fr/FR/Pages/Home.aspx
+   - title: Météo France
+    image: ../assets/logos/logo RF+VF 1.jpg
+    link: https://meteofrance.com/
 partners:
   - title: ATMO France
     image: ../assets/logos/atmo-france.png
