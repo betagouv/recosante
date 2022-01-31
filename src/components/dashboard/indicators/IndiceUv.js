@@ -6,7 +6,7 @@ import Card from 'components/misc/Card'
 import Chart from './indiceUv/Chart'
 import Details from './vigilanceMeteo/Details'
 
-export default function Raep(props) {
+export default function IndiceUv(props) {
   const { data, isError, isLoading } = useIndicators(props.place.code)
 
   return (

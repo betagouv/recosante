@@ -26,8 +26,9 @@ const Path = styled.path`
 `
 
 export default function Chart(props) {
-  const visible = props.data && props.data > 0
-  const value = props.data ? props.data.indice_uv.indice.value : 0
+  let value = props.data?.indice_uv?.indice?.value || 0
+  value = Math.min(value, 11)
+  const visible = value > 0
   return (
     <Wrapper width='48' height='48' viewBox='0 0 48 48'>
       <Circle
