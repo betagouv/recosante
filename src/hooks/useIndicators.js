@@ -8,7 +8,7 @@ export default function useIndicators(code) {
     ['indicators', code],
     () =>
       axios
-        .get(`${apiUrl}/v1/?insee=${code}&show_raep=true`)
+        .get(`${apiUrl}/v1/?insee=${code}&show_raep=true&show_indice_uv=true`)
         .then((res) => res.data),
     {
       enabled: code ? true : false,
