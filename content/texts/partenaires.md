@@ -12,6 +12,9 @@ data:
   - title: IRSN
     image: ../assets/logos/IRSNlogoRVB.JPG
     link: https://www.irsn.fr/FR/Pages/Home.aspx
+  - title: Météo-France
+    image: ../assets/logos/logo-meteo-france.png
+    link: https://meteofrance.com/
 partners:
   - title: ATMO France
     image: ../assets/logos/atmo-france.png
@@ -28,6 +31,9 @@ partners:
   - title: IRSN
     image: ../assets/logos/IRSNlogoRVB.JPG
     link: https://www.irsn.fr/FR/Pages/Home.aspx
+  - title: Météo-France
+    image: ../assets/logos/logo-meteo-france.png
+    link: https://meteofrance.com/
   - title: Santé Publique France
     image: ../assets/logos/logo-sante-publique-france.png
     link: https://www.santepubliquefrance.fr/
