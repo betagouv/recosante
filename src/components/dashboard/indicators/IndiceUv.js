@@ -21,26 +21,26 @@ export default function IndiceUv(props) {
               {isError
                 ? 'Zut 🦙'
                 : data &&
-                  (data.indice_uv.indice?.label
+                  (data.indice_uv?.indice?.label
                     ? data.indice_uv.indice.label
                     : 'Pas de données')}
             </Card.Value>
           </Card.Info>
-          <Chart data={data && !data.indice_uv.error && data} />
+          <Chart data={data && !data.indice_uv?.error && data} />
         </Card.Header>
         <Card.Mobile indicateur='indiceuv' place={props.place}>
           <Card.Details>
-            <Details data={data && !data.indice_uv.error && data} />
+            <Details data={data && !data.indice_uv?.error && data} />
           </Card.Details>
           <Card.Recommandation
             dangerouslySetInnerHTML={{
               __html: isError
                 ? `Nous ne sommes malheureusement pas en mesure d'afficher l'indice UV pour l'instant. Veuillez réessayer dans quelques instants.`
                 : data &&
-                  (data.indice_uv.error
+                  (data.indice_uv?.error
                     ? `Les données ne sont pas disponibles pour cette commune`
-                    : data.indice_uv.advice &&
-                      data.indice_uv.advice.main),
+                    : data.indice_uv?.advice &&
+                      data.indice_uv?.advice.main),
             }}
           />
         </Card.Mobile>
@@ -48,7 +48,7 @@ export default function IndiceUv(props) {
           <Card.Subscribe indicateur='indiceuv' place={props.place} />
         </Card.SubscribeWrapper>
       </Card.Content>
-      {data && data.indice_uv && data.indice_uv.validity && (
+      {data && data.indice_uv?.validity && (
           <Card.Source>
             Prévision pour le{' '}
             {new Date(data.indice_uv.validity.start).toLocaleDateString(
