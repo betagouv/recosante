@@ -12,8 +12,8 @@ data:
   - title: IRSN
     image: ../assets/logos/IRSNlogoRVB.JPG
     link: https://www.irsn.fr/FR/Pages/Home.aspx
-   - title: Météo France
-    image: ../assets/logos/logo RF+VF 1.jpg
+  - title: Météo-France
+    image: ../assets/logos/logo-meteo-france.png
     link: https://meteofrance.com/
 partners:
   - title: ATMO France
@@ -31,6 +31,12 @@ partners:
   - title: IRSN
     image: ../assets/logos/IRSNlogoRVB.JPG
     link: https://www.irsn.fr/FR/Pages/Home.aspx
+  - title: Météo-France
+    image: ../assets/logos/logo-meteo-france.png
+    link: https://meteofrance.com/
+  - title: Santé Publique France
+    image: ../assets/logos/logo-sante-publique-france.png
+    link: https://www.santepubliquefrance.fr/
 press:
   - title: FFAIR
     image: ../assets/logos/logoFFAAIR_bleu.jpg
@@ -69,16 +75,17 @@ press:
     image: ../assets/logos/logo ARS PACA.jpg
     link: https://www.paca.ars.sante.fr/
   - title: Top Santé
-    image: ../assets/logos/Logo top santé.jpg
+    image: ../assets/logos/logo-top-sante.jpg
     link: https://www.topsante.com/medecine/environnement-et-sante/pollution/recosante-mieux-connaitre-la-qualite-de-l-air-646242
   - title: Fédération française du bâtiment
-    image: ../assets/logos/Logos institutionnel Pôle Habitat - avec baseline - CMJN - 300dpi.jpg
+    image: ../assets/logos/logo-ffb.jpg
     link: https://www.ffbatiment.fr/
   - title: Ameli.fr, le site de l'Assurance Maladie
     image: ../assets/logos/logo-ameli.png
     link: https://www.ameli.fr/
-  - title: ../assets/logos/Logo-Ademe-2020.jpg
-    link: https://agirpourlatransition.ademe.fr/particuliers/actualites/sinformer-temps-reel-qualite-lair-mieux-proteger-sante-recosante  
+  - title: ADEME
+    image: ../assets/logos/Logo-Ademe-2020.jpg
+    link: https://agirpourlatransition.ademe.fr/particuliers/actualites/sinformer-temps-reel-qualite-lair-mieux-proteger-sante-recosante
     
 ---
 
