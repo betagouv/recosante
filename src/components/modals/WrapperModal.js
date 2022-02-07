@@ -57,7 +57,7 @@ export default function WrapperModal() {
             title
           }
         }
-        indiceuv: mdx(slug: { eq: "indiceuv" }) {
+        indice_uv: mdx(slug: { eq: "indiceuv" }) {
           body
           frontmatter {
             title

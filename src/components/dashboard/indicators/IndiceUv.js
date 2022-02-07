@@ -4,7 +4,6 @@ import useIndicators from 'hooks/useIndicators'
 import MagicLink from 'components/base/MagicLink'
 import Card from 'components/misc/Card'
 import Chart from './indiceUv/Chart'
-import Details from './vigilanceMeteo/Details'
 
 export default function IndiceUv(props) {
   const { data, isError, isLoading } = useIndicators(props.place.code)
@@ -14,7 +13,7 @@ export default function IndiceUv(props) {
       <Card.Content>
         <Card.Header>
           <Card.Info>
-            <Card.Title isLoading={isLoading} indicateur='indiceuv'>
+            <Card.Title isLoading={isLoading} indicateur='indice_uv'>
               Indice UV
             </Card.Title>
             <Card.Value isError={isError}>
@@ -28,10 +27,7 @@ export default function IndiceUv(props) {
           </Card.Info>
           <Chart data={data && !data.indice_uv?.error && data} />
         </Card.Header>
-        <Card.Mobile indicateur='indiceuv' place={props.place}>
-          <Card.Details>
-            <Details data={data && !data.indice_uv?.error && data} />
-          </Card.Details>
+        <Card.Mobile indicateur='indice_uv' place={props.place}>
           <Card.Recommandation
             dangerouslySetInnerHTML={{
               __html: isError
@@ -45,7 +41,7 @@ export default function IndiceUv(props) {
           />
         </Card.Mobile>
         <Card.SubscribeWrapper>
-          <Card.Subscribe indicateur='indiceuv' place={props.place} />
+          <Card.Subscribe indicateur='indice_uv' place={props.place} />
         </Card.SubscribeWrapper>
       </Card.Content>
       {data && data.indice_uv?.validity && (
