@@ -8,10 +8,10 @@ const simple = keyframes`
   5% {
     opacity: 1;
   }
-  20% {
+  15% {
     opacity: 1;
   }
-  25% {
+  20% {
     opacity: 0;
   }
   to {
@@ -25,22 +25,22 @@ const la = keyframes`
   5% {
     opacity: 1;
   }
-  20% {
+  15% {
     opacity: 1;
   }
-  25% {
+  20% {
     opacity: 0;
   }
-  50% {
+  40% {
     opacity: 0;
+  }
+  45% {
+    opacity: 1;
   }
   55% {
     opacity: 1;
   }
-  70% {
-    opacity: 1;
-  }
-  75% {
+  60% {
     opacity: 0;
   }
   to {
@@ -54,22 +54,22 @@ const le = keyframes`
   5% {
     opacity: 0;
   }
-  20% {
+  15% {
     opacity: 0;
   }
-  25% {
+  20% {
     opacity: 1;
   }
-  50% {
+  40% {
     opacity: 1;
+  }
+  45% {
+    opacity: 0;
   }
   55% {
     opacity: 0;
   }
-  70% {
-    opacity: 0;
-  }
-  75% {
+  60% {
     opacity: 1;
   }
   to {
@@ -105,7 +105,7 @@ const Pronoun = styled.span`
   position: ${(props) => (props.absolute ? 'absolute' : 'static')};
   top: 0;
   left: 0;
-  animation: ${(props) => (props.absolute ? le : la)} 20000ms infinite;
+  animation: ${(props) => (props.absolute ? le : la)} 25000ms infinite;
 `
 const Sentences = styled.strong`
   position: relative;
@@ -127,16 +127,15 @@ const Sentence = styled.span`
 const Letter = styled.span`
   will-change: opacity;
   opacity: 0;
-  animation: ${simple} 20000ms
+  animation: ${simple} 25000ms
     ${(props) => props.index * 5000 + props.position * 25}ms infinite;
 `
 export default function Title() {
   const sentences = [
     `pollution de l'air`,
     `risque d'allergie aux pollens`,
-    // `indice UV`,
-    // `qualité de l'eau de boisson`,
     `vigilance météo`,
+    `rayonnement UV`,
     `niveau de risque radon`,
   ]
   return (
