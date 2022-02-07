@@ -33,7 +33,7 @@ Les sociétés CleverCloud (hébergeur), Scopyleft et Sendinblue interviennent �
 - **Traitement réalisé**&#8239;: hébergement du site
 - **Garanties**&#8239;: https://www.clever-cloud.com/en/privacy-policy
 
-- **Partenaire**&#8239;: Scopyleft
+- **Partenaire**&#8239;: Little Big Connection
 - **Pays destinataire**&#8239;: France
 - **Traitement réalisé**&#8239;: accès aux infrastructures de production pour leur gestion et leur administration&#8239;; accès et consultation des données de production pour analyser et corriger d’éventuelles anomalies ou évolutions demandées par les responsables de traitement
 - **Garanties**&#8239;: supports contractuels liés au marché public de la DINUM pour le développement et le design de services publics numériques en mode agile
