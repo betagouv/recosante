@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { navigate } from 'gatsby'
-
-import formatPlaceUrl from 'utils/formatPlaceUrl'
+import { formatPlaceUrl } from 'utils/formatPlaceUrl'
 import Section from 'components/base/Section'
 import Background from 'components/misc/Background'
 import Title from 'components/search/Title'
