@@ -64,7 +64,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
       })
     })
   })
-  const { formatPlaceUrl } = require('./src//utils/formatPlaceUrl')
+  const { formatPlaceUrl } = require('./src/utils/formatPlaceUrl')
   const places = axios
     .get(
       'https://geo.api.gouv.fr/communes/?fields=departement,codesPostaux,population'
