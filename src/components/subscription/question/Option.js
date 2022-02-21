@@ -64,6 +64,10 @@ const Button = styled.button`
     fill: ${(props) =>
       props.theme.colors[props.active ? 'main' : 'background']};
   }
+  .antistroke {
+    stroke: ${(props) =>
+      props.theme.colors[props.active ? 'main' : 'background']};
+  }
 `
 const Label = styled.span`
   display: block;

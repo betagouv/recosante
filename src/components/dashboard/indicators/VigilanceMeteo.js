@@ -45,7 +45,7 @@ export default function Raep(props) {
           />
         </Card.Mobile>
         <Card.SubscribeWrapper>
-          <Card.Subscribe indicateur='vigilancemeteo' place={props.place} />
+          <Card.Subscribe indicateur='vigilance_meteo' place={props.place} />
         </Card.SubscribeWrapper>
       </Card.Content>
       {data &&

@@ -3,7 +3,7 @@ import React from 'react'
 import IndiceAtmo from './icons/IndiceAtmo'
 import Raep from './icons/Raep'
 import IndiceUv from './icons/IndiceUv'
-import VigilanceMeteorologique from './icons/IndiceAtmo'
+import VigilanceMeteo from './icons/VigilanceMeteo'
 import Quotidien from './icons/Quotidien'
 import Alerte from './icons/Alerte'
 import Email from './icons/Email'
@@ -28,18 +28,14 @@ const steps = [
         icon: <Raep />,
       },
       {
+        value: 'vigilance_meteo',
+        label: `Vigilance météorologique`,
+        icon: <VigilanceMeteo />,
+      },
+      {
         value: 'indice_uv',
         label: `Indice UV`,
         icon: <IndiceUv />,
-        disabled: true,
-        detail: {
-          label: '(Bientôt disponible)',
-        },
-      },
-      {
-        value: 'vigilance_meteorologique',
-        label: `Vigilance météorologique`,
-        icon: <VigilanceMeteorologique />,
         disabled: true,
         detail: {
           label: '(Bientôt disponible)',
