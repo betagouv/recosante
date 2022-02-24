@@ -40,25 +40,25 @@ partners:
 press:
   - title: FFAIR
     image: ../assets/logos/logoFFAAIR_bleu.jpg
-    link: https://www.ffaair.org/
+    link: https://www.ffaair.org/actualites/pollution-de-l-air-apprenez-a-limiter-ses-impacts-sur-votre-sante/
   - title: SPLF
     image: ../assets/logos/LOGO_SPLF_CMJN_SMAL.jpg
-    link: https://splf.fr/
+    link: https://splf.fr/recosante/
   - title: Le magazine de la santé
     image: ../assets/logos/LOGO_MLS_2L .png
     link: https://www.france.tv/france-5/le-magazine-de-la-sante/
   - title: ARCAA
     image: ../assets/logos/ARCAA.jpg
-    link: https://arcaa.info/
+    link: https://blog.arcaa.info/reco-sante/
   - title: R-lab
     image: ../assets/logos/logo R lab.jpg
-    link: https://rlabconseil.com/
+    link: https://monairmesallergies.com/recosante/
   - title: Centre de lutte contre le cancer Léon Bérard
     image: ../assets/logos/Logo-centre-leon-berard-lyon.jpg
     link: https://www.centreleonberard.fr/
   - title: Utrail
     image: ../assets/logos/logoutrail.png
-    link: https://www2.u-trail.com/
+    link: https://www2.u-trail.com/qualite-de-lair-recosante-un-service-du-ministere-de-la-sante-pour-mieux-courir/
   - title: camptocamp
     image: ../assets/logos/Logo camptocamp.png
     link: https://forum.camptocamp.org/
@@ -67,13 +67,13 @@ press:
     link: https://www.doctissimo.fr/sante/news/pollution-de-l-air-nouvel-outil-pour-apprendre-a-mieux-s-en-proteger
   - title: Journal des femmes
     image: ../assets/logos/logo-jdfsante.png
-    link: https://sante.journaldesfemmes.fr/
+    link: https://sante.journaldesfemmes.fr/fiches-sante-du-quotidien/2751285-pollution-de-l-air-definition-cause-consequence-solutions-france/
   - title: Datagir
     image: ../assets/logos/datagir.jpg
     link: https://datagir.ademe.fr/
   - title: Agence régionale de santé PACA
     image: ../assets/logos/logo ARS PACA.jpg
-    link: https://www.paca.ars.sante.fr/
+    link: https://www.paca.ars.sante.fr/qualite-de-lair-et-pollution-atmospherique-0
   - title: Top Santé
     image: ../assets/logos/logo-top-sante.jpg
     link: https://www.topsante.com/medecine/environnement-et-sante/pollution/recosante-mieux-connaitre-la-qualite-de-l-air-646242
@@ -82,7 +82,7 @@ press:
     link: https://www.ffbatiment.fr/
   - title: Ameli.fr, le site de l'Assurance Maladie
     image: ../assets/logos/logo-ameli.png
-    link: https://www.ameli.fr/
+    link: https://www.ameli.fr/assure/recosante
   - title: ADEME
     image: ../assets/logos/Logo-Ademe-2020.jpg
     link: https://agirpourlatransition.ademe.fr/particuliers/actualites/sinformer-temps-reel-qualite-lair-mieux-proteger-sante-recosante
