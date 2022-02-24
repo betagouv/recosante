@@ -8,50 +8,60 @@ import apiUrl from 'utils/apiUrl'
 
 export function useUser() {
   const [uid] = useQueryParam('user')
+  const [token] = useQueryParam('token')
   return useQuery(
-    ['user', uid],
-    () => axios.get(`${apiUrl}/users/${uid}`).then((res) => res.data),
+    ['user', uid, token],
+    () => axios.get(`${apiUrl}/users/${uid}?token=${token}`).then((res) => res.data),
     {
       enabled: uid ? true : false,
       refetchOnWindowFocus: false,
+      retry: (failureCount, error) => !error.response && failureCount <= 3 ? true : false,
     }
   )
 }
 
 export function useUserMutation() {
   const [uid] = useQueryParam('user')
+  const [token] = useQueryParam('token')
   const queryClient = useQueryClient()
   return useMutation(
-    (user) =>
+    (user) => {
+      let url =  `${apiUrl}/users/`
+      if (uid && token) {
+        url += `${uid}?token=${token}`
+      }
       axios.post(
-        `${apiUrl}/users/${uid || ''}`,
+        url,
         { ...user, commune: user.commune && { code: user.commune.code } },
         {
           headers: { Accept: ' application/json' },
         }
-      ),
+      )
+    },
     {
       onSettled: () => {
-        queryClient.invalidateQueries(['user', uid])
+        queryClient.invalidateQueries(['user', uid, token])
       },
     }
   )
 }
 export function useUserDeletion() {
   const [uid] = useQueryParam('user')
+  const [token] = useQueryParam('token')
   const queryClient = useQueryClient()
-  return useMutation(() => axios.post(`${apiUrl}/users/${uid}/_deactivate`), {
+  return useMutation(() => axios.post(`${apiUrl}/users/${uid}/_deactivate?token=${token}`), {
     onSettled: () => {
-      queryClient.invalidateQueries(['user', uid])
+      queryClient.invalidateQueries(['user', uid, token])
     },
   })
 }
 export function useUserReactivation() {
   const [uid] = useQueryParam('user')
+  const [token] = useQueryParam('token')
   const queryClient = useQueryClient()
-  return useMutation(() => axios.post(`${apiUrl}/users/${uid}/_reactivate`), {
+  return useMutation(() => axios.post(`${apiUrl}/users/${uid}/_reactivate?token=${token}`), {
     onSettled: () => {
-      queryClient.invalidateQueries(['user', uid])
+      queryClient.invalidateQueries(['user', uid, token])
     },
   })
 }

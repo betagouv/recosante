@@ -28,11 +28,12 @@ export default function Notifications() {
   )
 
   const [user] = useQueryParam('user')
-  const { data } = useUser()
+  const [token] = useQueryParam('token')
+  const { error, data }  = useUser()
   const mutation = useUserMutation()
   const [success, setSuccess] = useState(false)
 
-  return user ? (
+  return user && token && !error ? (
     <Section first small>
       <h1>
         Activer les <strong>notifications</strong>
@@ -108,7 +109,7 @@ export default function Notifications() {
                 Activer les notifications sur cet appareil
               </Button>
             )}
-            <Button to={`/profil/?user=${user}`} hollow>
+            <Button to={`/profil/?user=${user}&token=${token}`} hollow>
               Voir mon profil
             </Button>
           </Button.Wrapper>
@@ -127,7 +128,7 @@ export default function Notifications() {
     </Section>
   ) : (
     <Section first>
-      <UnloggedForm />
+      <UnloggedForm unauthorized={!!error} />
     </Section>
   )
 }
