@@ -86,7 +86,18 @@ press:
   - title: ADEME
     image: ../assets/logos/Logo-Ademe-2020.jpg
     link: https://agirpourlatransition.ademe.fr/particuliers/actualites/sinformer-temps-reel-qualite-lair-mieux-proteger-sante-recosante
-    
+  - title: Santé Magazine
+    image: ../assets/logos/Sante-Magazine-Logo.jpg
+    link: https://www.santemagazine.fr/actualites/actualites-sante/quest-ce-que-recosante-le-service-public-numerique-pour-sinformer-sur-son-environnement-901689
+ - title: Parents
+    image: ../assets/logos/parents.png
+    link: https://www.parents.fr/etre-parent/maman/sante-forme/avec-recosante-decouvrez-la-pollution-de-lair-pres-de-chez-vous-901615
+ - title: Dossier Familial
+    image: ../assets/logos/dossier-familial_.jpg
+    link: https://www.dossierfamilial.com/environnement/recosante-cest-quoi-902485
+  - title: Association pour la Prévention de la Pollution Atmosphérique
+    image: ../assets/logos/Logo-Officiel-Appa_Horizontal.png
+    link: https://www.appa.asso.fr/reco-sante/
 ---
 
 # Partenaires
