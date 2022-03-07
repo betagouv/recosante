@@ -26,11 +26,11 @@ export function useUserMutation() {
   const queryClient = useQueryClient()
   return useMutation(
     (user) => {
-      let url =  `${apiUrl}/users/`
+      let url = `${apiUrl}/users/`
       if (uid && token) {
         url += `${uid}?token=${token}`
       }
-      axios.post(
+      return axios.post(
         url,
         { ...user, commune: user.commune && { code: user.commune.code } },
         {
@@ -45,6 +45,7 @@ export function useUserMutation() {
     }
   )
 }
+
 export function useUserDeletion() {
   const [uid] = useQueryParam('user')
   const [token] = useQueryParam('token')
@@ -55,6 +56,7 @@ export function useUserDeletion() {
     },
   })
 }
+
 export function useUserReactivation() {
   const [uid] = useQueryParam('user')
   const [token] = useQueryParam('token')

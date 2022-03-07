@@ -93,7 +93,7 @@ export default function Success(props) {
 
       <ButtonWrapper newsletter={newsletter}>
         <StyledButton
-          to={`/profil?user=${props?.data?.data?.uid}${
+          to={`/profil?user=${props?.data?.data?.uid}&token=${props?.data?.data?.authentication_token}${
             iframe ? '&iframe=1' : ''
           }`}
           hollow
@@ -107,7 +107,7 @@ export default function Success(props) {
           </StyledButton>
         ) : (
           <StyledButton
-            to={`/profil?user=${props?.data?.data?.uid}${
+            to={`/profil?user=${props?.data?.data?.uid}&token=${props?.data?.data?.authentication_token}${
               iframe ? '&iframe=1' : ''
             }`}
           >
