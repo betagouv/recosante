@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+
+import ModalContext from 'utils/ModalContext'
 
 const Wrapper = styled.div`
   position: relative;
@@ -53,8 +55,16 @@ const Wrapper = styled.div`
       width: ${(props) => (props.value / 5) * 6}rem;
     }
   }
+  &:hover {
+    color: ${(props) => props.theme.colors.main};
+  }
+`
+const Superscript = styled.sup`
+  font-size: 0.625rem;
+  color: ${(props) => props.theme.colors.main};
 `
 export default function Element(props) {
+  const { setModal } = useContext(ModalContext)
   const labels = {
     ambroisies: 'Ambroisies',
     cypres: 'Cupressacées',
@@ -78,8 +88,9 @@ export default function Element(props) {
   }
 
   return (
-    <Wrapper index={props.index} visible={props.visible} value={props.value}>
+    <Wrapper index={props.index} visible={props.visible} value={props.value} onClick={() => setModal(props.label)}>
       {labels[props.label]}
+      <Superscript> (?)</Superscript>
     </Wrapper>
   )
 }
