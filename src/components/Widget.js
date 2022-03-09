@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import IframeResizer from 'iframe-resizer-react'
 
-import formatPlaceUrl from 'utils/formatPlaceUrl'
+import { formatPlaceUrl } from 'utils/formatPlaceUrl'
 import useWindowSize from 'hooks/useWindowSize'
 import Section from 'components/base/Section'
 import Code from 'components/widget/Code'
@@ -74,8 +74,8 @@ export default function Widget(props) {
         <Options setDefaultPlace={setDefaultPlace} />
       </Configurator>
       <StyledIframe
-        src={`${url}/${
-          defaultPlace ? formatPlaceUrl(defaultPlace) : ''
+        src={`${url}${
+          defaultPlace ? formatPlaceUrl(defaultPlace) : '/'
         }?iframe=1`}
         allowFullScreen={true}
         allow='geolocation'

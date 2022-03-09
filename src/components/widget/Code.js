@@ -4,7 +4,7 @@ import { useLocation } from '@reach/router'
 import copy from 'copy-to-clipboard'
 
 import StyleContext from 'utils/StyleContext'
-import formatPlaceUrl from 'utils/formatPlaceUrl'
+import { formatPlaceUrl } from 'utils/formatPlaceUrl'
 
 const Wrapper = styled.div`
   position: relative;
