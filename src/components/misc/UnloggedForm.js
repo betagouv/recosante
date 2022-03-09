@@ -35,6 +35,7 @@ export default function UnloggedForm(props) {
         mutation.mutate(mail)
       }}
     >
+      {props.unauthorized && <Text>Le délai pour utiliser ce lien a expiré.</Text>}
       <Text>
         Entrez votre adresse email pour recevoir un lien vous permettant de
         changer vos préférences

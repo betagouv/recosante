@@ -19,13 +19,14 @@ const Title = styled.h1`
 `
 export default function Profile() {
   const [user] = useQueryParam('user')
+  const [token] = useQueryParam('token')
 
-  const { data } = useUser()
+  const { error, data }  = useUser()
 
   return (
     <>
       <Title>Préférences</Title>
-      {user ? (
+      {user && token && !error ? (
         !data || data.is_active ? (
           <>
             <Mail />
@@ -51,7 +52,7 @@ export default function Profile() {
           <InactiveProfile />
         )
       ) : (
-        <UnloggedForm />
+        <UnloggedForm unauthorized={!!error} />
       )}
       <ToastContainer
         position='bottom-left'
