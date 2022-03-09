@@ -1,5 +1,7 @@
-import React, { useContext, useRef } from 'react'
+import React, { useEffect, useContext, useRef } from 'react'
 import styled from 'styled-components'
+import { navigate } from 'gatsby'
+import { useLocation } from '@reach/router'
 import { useStaticQuery, graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
@@ -95,6 +97,21 @@ export default function Newsletter(props) {
   const ref = useRef()
 
   const isOnScreen = useOnScreen(ref, '0px', 0.7)
+
+  const location = useLocation()
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const indicateurs = params.getAll('indicateur');
+    const isIndicateur = indicateurs.every(e => ['indice_atmo', 'raep', 'vigilance_meteo', 'indice_uv'].includes(e));
+    if (indicateurs.length > 0 && isIndicateur) {
+      mutateUser({
+        indicateurs: indicateurs,
+      })
+      setSubscription('indicators')
+      params.delete('indicateur')
+      navigate(`${location.pathname}${Array.from(params).length > 0 ? '?' + params.toString() : ''}`, { replace: true })
+    }
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
