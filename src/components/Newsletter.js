@@ -101,9 +101,8 @@ export default function Newsletter(props) {
   const location = useLocation()
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    const indicateurs = params.getAll('indicateur');
-    const isIndicateur = indicateurs.every(e => ['indice_atmo', 'raep', 'vigilance_meteo', 'indice_uv'].includes(e));
-    if (indicateurs.length > 0 && isIndicateur) {
+    const indicateurs = params.getAll('indicateur').filter(i => ['indice_atmo', 'raep', 'vigilance_meteo', 'indice_uv'].includes(i));
+    if (indicateurs.length > 0) {
       mutateUser({
         indicateurs: indicateurs,
       })
