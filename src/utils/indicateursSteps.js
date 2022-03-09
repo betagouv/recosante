@@ -36,10 +36,6 @@ const steps = [
         value: 'indice_uv',
         label: `Indice UV`,
         icon: <IndiceUv />,
-        disabled: true,
-        detail: {
-          label: '(Bientôt disponible)',
-        },
       },
     ],
     mandatory: true,
