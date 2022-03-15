@@ -43,7 +43,12 @@ export default function Disclaimer(props) {
     <Wrapper>
       <Title>Vous recevrez un email par semaine.</Title>
       <Text>Vous pourrez vous désabonner à tout moment</Text>
-      <Link onClick={() => props.setModal('newsletter')}>
+      <Link
+        onClick={() => {
+          window?._paq?.push(['trackEvent', 'Subscription', 'InfolettreDisclaimer'])
+          props.setModal('newsletter')
+        }}
+      >
         Voir un exemple d'email que je recevrai
       </Link>
     </Wrapper>

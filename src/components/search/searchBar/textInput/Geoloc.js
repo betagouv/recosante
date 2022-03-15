@@ -64,6 +64,7 @@ export default function Submit(props) {
     if (data && !done) {
       setDone(true)
       if (data[0]) {
+        window?._paq?.push(['trackEvent', 'Search', 'Geoloc', data[0].nom])
         handlePlaceSelection(data[0])
       } else {
         setError(true)

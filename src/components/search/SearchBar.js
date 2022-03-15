@@ -86,6 +86,7 @@ export default function SearchBar(props) {
           isFetching={isFetching}
           setCurrent={setCurrent}
           handleSuggestionClick={(place) => {
+            window?._paq?.push(['trackEvent', 'Search', 'PlaceInput', place.nom])
             setSearch(place.nom)
             props.handlePlaceSelection(place)
             setFocus(false)

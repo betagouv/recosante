@@ -75,7 +75,9 @@ export default function Success(props) {
     setNeedConfirmation(false)
   }, [setNeedConfirmation])
   const newsletter = props?.data?.data?.recommandations[0] === 'oui'
-
+  if (props.data) {
+    window?._paq?.push(['trackEvent', 'Subscription', 'Success'])
+  }
   return (
     <Wrapper visible={props.data}>
       <Title>
@@ -96,6 +98,9 @@ export default function Success(props) {
           to={`/profil?user=${props?.data?.data?.uid}&token=${props?.data?.data?.authentication_token}${
             iframe ? '&iframe=1' : ''
           }`}
+          onClick={() => {
+            window?._paq?.push(['trackEvent', 'Subscription', 'Profil', 'Informations'])
+          }}
           hollow
         >
           Modifier mes informations
@@ -110,6 +115,9 @@ export default function Success(props) {
             to={`/profil?user=${props?.data?.data?.uid}&token=${props?.data?.data?.authentication_token}${
               iframe ? '&iframe=1' : ''
             }`}
+            onClick={() => {
+              window?._paq?.push(['trackEvent', 'Subscription', 'Profil', 'Recommandations'])
+            }}
           >
             M’abonner aux recommandations
           </StyledButton>
