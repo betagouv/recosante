@@ -45,6 +45,120 @@ export default function WrapperModal() {
             title
           }
         }
+        ambroisies: mdx(slug: { eq: "pollens/ambroisies" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        armoises: mdx(slug: { eq: "pollens/armoises" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        aulne: mdx(slug: { eq: "pollens/aulne" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        bouleau: mdx(slug: { eq: "pollens/bouleau" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        charme: mdx(slug: { eq: "pollens/charme" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        chataignier: mdx(slug: { eq: "pollens/chataignier" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        chene: mdx(slug: { eq: "pollens/chene" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        cypres: mdx(slug: { eq: "pollens/cupressacees" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        frene: mdx(slug: { eq: "pollens/frene" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        graminees: mdx(slug: { eq: "pollens/graminees" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        noisetier: mdx(slug: { eq: "pollens/noisetier" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        olivier: mdx(slug: { eq: "pollens/olivier" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        peuplier: mdx(slug: { eq: "pollens/peuplier" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        plantain: mdx(slug: { eq: "pollens/plantain" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        platane: mdx(slug: { eq: "pollens/platane" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        rumex: mdx(slug: { eq: "pollens/rumex" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        saule: mdx(slug: { eq: "pollens/saule" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        tilleul: mdx(slug: { eq: "pollens/tilleul" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        urticacees: mdx(slug: { eq: "pollens/urticacees" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
         raep: mdx(slug: { eq: "raep" }) {
           body
           frontmatter {
