@@ -119,10 +119,11 @@ export default function Option(props) {
       </Button>
       {props.option.detail && (
         <Detail
-          onClick={() =>
+          onClick={() => {
+            window?._paq?.push(['trackEvent', 'Subscription', 'NotificationDetail'])
             props.option.detail.modal &&
             props.setModal(props.option.detail.modal)
-          }
+          }}
           modal={props.option.detail.modal}
         >
           {props.option.detail.label}

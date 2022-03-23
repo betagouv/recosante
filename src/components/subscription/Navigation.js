@@ -72,11 +72,12 @@ export default function Navigation(props) {
     <Wrapper prevButtonVisible={prevButtonVisible}>
       {prevButtonVisible && (
         <PreviousButton
-          onClick={() =>
+          onClick={() => {
+            window?._paq?.push(['trackEvent', 'Subscription', 'Prev', props.steps[props.currentStep].name])
             props.currentStep > 0
               ? props.setCurrentStep(props.currentStep - 1)
               : props.gotoDeepLastStep()
-          }
+          }}
           hollow
           noExpand
         >
@@ -92,7 +93,10 @@ export default function Navigation(props) {
             !user[props.steps[props.currentStep].name]?.length &&
             props.steps[props.currentStep].mandatory
           }
-          onClick={() => props.setCurrentStep(props.currentStep + 1)}
+          onClick={() => {
+            window?._paq?.push(['trackEvent', 'Subscription', 'Next', props.steps[props.currentStep].name])
+            props.setCurrentStep(props.currentStep + 1)
+          }}
           fetching={props.prompting}
           noExpand
         >

@@ -47,7 +47,11 @@ const NextButton = styled(Button)`
 export default function NavigationIdentity(props) {
   return (
     <Wrapper>
-      <NextButton type='submit' fetching={props.fetching} noExpand>
+      <NextButton type='submit' fetching={props.fetching} noExpand
+        onClick={() => {
+          window?._paq?.push(['trackEvent', 'Subscription', 'Validate'])
+        }}
+      >
         Valider{' '}
         <svg width='15' height='24' viewBox='0 0 15 24'>
           <path d='M14.6416 12.0001C14.6416 12.4302 14.4774 12.8603 14.1496 13.1882L3.83004 23.5077C3.17359 24.1641 2.10926 24.1641 1.45308 23.5077C0.796891 22.8515 0.796891 21.7874 1.45308 21.1309L10.5844 12.0001L1.4534 2.86922C0.79721 2.21277 0.79721 1.14876 1.4534 0.49263C2.10958 -0.164141 3.17391 -0.164141 3.83036 0.49263L14.1499 10.8119C14.4778 11.14 14.6416 11.5701 14.6416 12.0001Z' />
@@ -55,7 +59,10 @@ export default function NavigationIdentity(props) {
       </NextButton>
       <PreviousButton
         type='button'
-        onClick={props.setPreviousStep}
+        onClick={() => {
+          window?._paq?.push(['trackEvent', 'Subscription', 'Prev', 'identity'])
+          props.setPreviousStep()
+        }}
         hollow
         noExpand
       >

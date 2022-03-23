@@ -29,6 +29,7 @@ export default function ModalProvider(props) {
                 'Souhaitez-vous vraiment abandonner votre inscription ?'
               )
             ) {
+              window?._paq?.push(['trackEvent', 'Subscription', 'Close'])
               setSubscription(value)
             }
           }
