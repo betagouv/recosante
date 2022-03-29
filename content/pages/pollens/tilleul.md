@@ -2,7 +2,7 @@
 title: Tilleul
 ---
 
-Les tilleuls constituent un genre d’arbres de la famille des Malvacées. Ce sont des arbres à croissance rapide pouvant atteindre 30 à 40 m. Leurs feuilles sont généralement en forme de cœur.
+Les tilleuls constituent un genre d'arbres à croissance rapide pouvant atteindre 30 à 40 m. Leurs feuilles sont généralement en forme de cœur.
 
 Le tilleul est un arbre très répandu dans la végétalisation des villes et des villages. On le retrouve souvent dans les parcs et les jardins.
 
