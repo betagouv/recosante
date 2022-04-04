@@ -3,6 +3,7 @@ title: "Pollution de l’air en voiture : comment la limiter ?"
 order: 13
 image: ../assets/images/pollution-de-l-air-en-voiture-comment-la-limiter.jpg
 category: "Qualité de l’air intérieur"
+bon_geste: "Pour limiter la pollution de l’air, privilégier la marche, le vélo ou les transports en commun pour les trajets de moins de 2 km car le moteur du véhicule n'a pas le temps de chauffer."
 ---
 
 ## L'air intérieur des voitures est en général plus pollué qu'à l'extérieur
@@ -26,5 +27,3 @@ Une vérification de la pression des pneus et un entretien régulier permettent 
 Réduire sa vitesse permet aussi d’économiser du carburant : 10 km/h en moins permettent d’économiser jusqu’à 5 litres de carburant et de réduire de 12,5 % (soit 12 kg) les émissions de CO2 sur 500 km. 
 
 Enfin, ne pas abuser de la climatisation : elle peut entraîner une surconsommation importante de carburant, de 10 % sur route à 25 % en ville.
-
-[En savoir plus](https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco)  

@@ -3,6 +3,7 @@ title: "Comment adapter sa pratique sportive selon la qualité de l’air ?"
 order: 19
 image: ../assets/images/comment-adapter-sa-pratique-sportive-selon-la-qualite-de-l-air.jpg
 category: "Pollution de l’air extérieur"
+bon_geste: "Lors d’un épisode de pollution, pour pratiquer une activité sportive en extérieur, privilégier les zones éloignées des sources de pollution (axes routiers) et les moments de la journée où le niveau de pollution est le plus faible."
 ---
 
 ## Quel lien entre la pratique sportive et la qualité de l’air ?
@@ -34,5 +35,3 @@ Une personne sensible est une personne se reconnaissant comme sensible lors des 
 Si vous êtes une personne vulnérable ou sensible, il est recommandé de limiter les activités physiques et sportives d’intensité élevée en cas de pic de pollution. Les activités d’intensité faible ou modérée peuvent être maintenues, à l’intérieur comme à l’extérieur.
 
 Bon à savoir : une activité sportive intense est définie comme une pratique qui nécessite de respirer la bouche ouverte ! 
-
-[En savoir plus](https://solidarites-sante.gouv.fr/sante-et-environnement/air-exterieur/qualite-de-l-air-exterieur-10984/article/recommandations-en-cas-d-episode-de-pollution)  

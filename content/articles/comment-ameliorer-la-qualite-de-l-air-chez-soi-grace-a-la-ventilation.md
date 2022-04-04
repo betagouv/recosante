@@ -3,6 +3,7 @@ title: "Comment améliorer la qualité de l’air chez soi grâce à la ventilat
 order: 5
 image: ../assets/images/comment-ameliorer-la-qualite-de-l-air-chez-soi-grace-a-la-ventilation.jpg
 category: "Qualité de l’air intérieur"
+bon_geste: "Ne jamais obstruer les bouches d’entrée et d’extraction d’air, ni éteindre le système de ventilation de son logement."
 ---
 
 ## Renouveler l’air est indispensable
@@ -23,5 +24,3 @@ Les principaux systèmes de ventilation sont les suivants :
 Pour nettoyer votre système de ventilation, il faut déclipser la partie amovible et lavable, et la repositionner après son nettoyage à l’aide d’eau chaude savonnée. Il ne faut pas mouiller les parties fixes des entrées d’air car cela risque de nuire à leur bon fonctionnement.
  
 Faire appel à un professionnel qualifié pour vérifier ou entretenir l’intégralité du système de ventilation.
-
-[En savoir plus](https://librairie.ademe.fr/cadic/1761/guide-pratique-ventilation-logement-confortable-sain.pdf?modal=false)  

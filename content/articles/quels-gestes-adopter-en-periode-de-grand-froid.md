@@ -3,6 +3,7 @@ title: "Quels gestes adopter en période de grand froid ?"
 order: 7
 image: ../assets/images/quels-gestes-adopter-en-periode-de-grand-froid.jpg
 category: "Phénomènes météorologiques"
+bon_geste: "Ne pas surchauffer son logement mais s’habiller chaudement, avec plusieurs couches de vêtements."
 ---
 
 ## Les caractéristiques d’une période de grand froid
@@ -22,5 +23,3 @@ Si les périodes de grand froid sont accompagnées de chutes de neige ou de verg
 Pour protéger sa santé des épisodes de grand froid, il est fortement recommandé de rester à son domicile autant que possible et de redoubler de vigilance en cas de sortie. Chez soi, maintenir une température entre 19°C et 21°C, sans utiliser en continu un chauffage mobile d’appoint à combustible. S’assurer aussi d’une bonne ventilation de son logement et aérer au moins deux fois par jour pour ne pas détériorer la qualité de l’air intérieur. 
 
 En cas de sortie, bien se couvrir (plusieurs couches de vêtements et un coupe-vent imperméable), sans oublier les extrémités, la tête, le nez et la bouche. Choisir des chaussures adaptées à la neige et le verglas si besoin, et limiter les efforts physiques.
-
-[En savoir plus](https://www.santepubliquefrance.fr/determinants-de-sante/climat/grand-froid)  

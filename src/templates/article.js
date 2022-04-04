@@ -1,15 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import Web from 'components/layout/Web'
 import Section from 'components/base/Section'
 import useIframe from 'hooks/useIframe'
 import Search from 'components/Search'
 import Newsletter from 'components/Newsletter'
-import Data from 'components/Data'
-import About from 'components/About'
 
 const Title = styled.h1`
   color: ${(props) => props.theme.colors.main};
@@ -21,9 +19,34 @@ const Category = styled.span`
   background-color: ${(props) => props.theme.colors.main};
   padding: 0.5rem 1rem;
 `
-const FeatureImage = styled(GatsbyImage)`
+const Thumbnail = styled(GatsbyImage)`
   width: 100%;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+`
+const BonGeste = styled.div`
+  display: flex;
+  background-color: #eef1f7;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  ${(props) => props.theme.mq.small} {
+    flex-direction: column;
+  }
+`
+const ImageWrapper = styled.div`
+  text-align: center;
+  margin-right: 2rem;
+  ${(props) => props.theme.mq.small} {
+    margin: 0 0 2rem;
+  }
+`
+const Content = styled.div`
+  flex: 1;
+  h2 {
+    color: ${(props) => props.theme.colors.main};
+  }
+  p {
+    margin: 0;
+  }
 `
 
 export default function Article(props) {
@@ -43,7 +66,26 @@ export default function Article(props) {
           }}
         />
         {props.data.mdx.frontmatter.image &&
-          <FeatureImage image={getImage(props.data.mdx.frontmatter.image)} alt={props.data.mdx.frontmatter.title} />
+          <Thumbnail image={getImage(props.data.mdx.frontmatter.image)} alt={props.data.mdx.frontmatter.title} />
+        }
+        {props.data.mdx.frontmatter.bon_geste &&
+          <BonGeste>
+            <ImageWrapper>
+              <StaticImage
+                src={'./images/bon-geste.png'}
+                alt='Le bon geste'
+                height={128}
+              />
+            </ImageWrapper>
+            <Content>
+              <h2>Le <strong>bon geste</strong></h2>
+              <p
+                dangerouslySetInnerHTML={{
+                __html: props.data.mdx.frontmatter.bon_geste,
+                }
+              }/>
+            </Content>
+          </BonGeste>
         }
         <MDXRenderer>{props.data.mdx.body}</MDXRenderer>
       </Section>
@@ -51,8 +93,6 @@ export default function Article(props) {
         <>
           <Search />
           <Newsletter />
-          <Data />
-          <About />
         </>
       )}
     </Web>
@@ -71,6 +111,7 @@ export const articleQuery = graphql`
             gatsbyImageData(width: 768)
           }
         }
+        bon_geste
       }
     }
   }

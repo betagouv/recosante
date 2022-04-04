@@ -1,8 +1,9 @@
 ---
-title: "Cmment chauffer son intérieur en toute sécurité ?"
+title: "Comment chauffer son intérieur en toute sécurité ?"
 order: 6
 image: ../assets/images/comment-chauffer-son-interieur-en-toute-securite.jpg
 category: "Qualité de l’air intérieur"
+bon_geste: "Tous les ans, avant l’hiver, faire vérifier son installation de chauffage utilisant un combustible par un·e professionel·le qualifié·e."
 ---
 
 ## Les appareils de chauffage peuvent nécessiter un entretien régulier
@@ -24,5 +25,3 @@ Afin d’éviter tout risque d’intoxication, il suffit de respecter des gestes
 Pour limiter sa consommation d’énergie, il est recommandé de régler la température dans son logement. La température idéale d’une maison ou d’un appartement se situe entre 19 et 21 °C dans les pièces occupées la journée, et à 17 °C la nuit et en journée dans les pièces peu occupées. Lorsque vous vous absentez, il est préférable de baisser le chauffage.
 
 Pour faciliter la gestion de la température du logement, il est possible d’installer des robinets thermostatiques permettant de réguler la chaleur émise par les radiateurs.
-
-[En savoir plus](https://librairie.ademe.fr/cadic/2222/guide-pratique-chauffer-mieux-moins-cher.pdf?modal=false)  

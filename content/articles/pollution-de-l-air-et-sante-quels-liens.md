@@ -3,6 +3,7 @@ title: "Pollution de l’air et santé : quels liens ?"
 order: 3
 image: ../assets/images/pollution-de-l-air-et-sante-quels-liens.jpg
 category: "Pollution de l’air extérieur"
+bon_geste: "Privilégier les transports en commun et les mobilités actives (marche à pied, vélo, etc.) plutôt que la voiture afin de limiter les émissions de polluants dans l'air."
 ---
 
 ## La pollution atmosphérique, qu'est-ce que c'est ?
@@ -28,5 +29,3 @@ Les effets des polluants dépendent de plusieurs éléments : leur composition, 
 Une concentration importante de polluants atmosphériques peut provoquer des effets immédiats : gêne respiratoire, toux, irritation des yeux, allergies, etc.
 
 Pourtant, les impacts sanitaires de la pollution de l'air sont en majorité liés à une exposition de long terme aux polluants atmosphériques. Celle-ci peut aggraver les symptômes des personnes souffrant de pathologies chroniques et peut provoquer des cancers, des maladies cardiovasculaires, respiratoires ou neurologiques, ou encore des troubles de la reproduction.
-
-[En savoir plus](https://www.santepubliquefrance.fr/presse/2021/pollution-de-l-air-ambiant-nouvelles-estimations-de-son-impact-sur-la-sante-des-francais)  

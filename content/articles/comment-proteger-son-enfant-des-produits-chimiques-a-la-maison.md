@@ -3,6 +3,7 @@ title: "Comment protéger son enfant des produits chimiques à la maison ?"
 order: 16
 image: ../assets/images/comment-proteger-son-enfant-des-produits-chimiques-a-la-maison.jpg
 category: "Autres types de pollution"
+bon_geste: "En cas d'ingestion de produit chimique par un enfant, contacter directement le <a href=\"https://centres-antipoison.net/\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">centre anti-poison</a> le plus proche."
 ---
 
 ## Limiter l’utilisation de certains produits
@@ -29,4 +30,3 @@ En cas d’ingestion d’un produit chimique, il ne faut surtout pas faire vomir
 
 Le premier réflexe à avoir en cas d'ingestion d'un produit dangereux est d'appeler en urgence le centre antipoison de votre région. Vous pouvez également contacter le SAMU (15),  les pompiers (18) ou les urgences (112). Ils sauront vous indiquer la marche à suivre le temps de leur arrivée.
 
-[En savoir plus](https://www.1000-premiers-jours.fr/fr/en_pratique)  

@@ -3,6 +3,7 @@ title: "Comment réduire les effets des pollens sur votre santé ?"
 order: 17
 image: ../assets/images/comment-reduire-les-effets-des-pollens-sur-votre-sante.jpg
 category: "Exposition aux pollens"
+bon_geste: "En période de pollinisation, il est recommandé de se laver régulièrement le nez avec du sérum physiologique."
 ---
 
 ## L’exposition aux pollens en France
@@ -38,17 +39,15 @@ Les symptômes de l’asthme sont :
 En période de vigilance pollinique, il existe des gestes simples à adopter pour réduire son exposition aux pollens.
 
 Chez soi :
-se rincer les cheveux le soir, car les pollens se déposent en grand nombre sur les cheveux ; 
-favoriser l’ouverture des fenêtres avant le lever et après le coucher du soleil, car l’émission des pollens dans l’air débute dès le lever du soleil ; 
-éviter l’exposition aux autres substances irritantes ou allergisantes en air intérieur (tabac, produits d’entretien, parfums d’intérieur, encens, etc.). 
+- se rincer les cheveux le soir, car les pollens se déposent en grand nombre sur les cheveux ;
+- favoriser l’ouverture des fenêtres avant le lever et après le coucher du soleil, car l’émission des pollens dans l’air débute dès le lever du soleil ;
+- éviter l’exposition aux autres substances irritantes ou allergisantes en air intérieur (tabac, produits d’entretien, parfums d’intérieur, encens, etc.).
  
 À l’extérieur : 
-porter des lunettes ;
-éviter les activités extérieures qui entraînent une surexposition aux pollens (tonte du gazon, entretien du jardin, activités sportives, etc.) ; en cas de nécessité, privilégier la fin de journée et le port de lunettes de protection et de masque ;
-éviter de faire sécher le linge à l’extérieur, car les pollens se déposent sur le linge humide ;
-à pied ou à vélo, emprunter de préférence les axes routiers les moins fréquentés pour éviter l’exposition à la pollution atmosphérique ;
-en cas de déplacement en voiture, garder les vitres fermées.
+- porter des lunettes ;
+- éviter les activités extérieures qui entraînent une surexposition aux pollens (tonte du gazon, entretien du jardin, activités sportives, etc.) ; en cas de nécessité, privilégier la fin de journée et le port de lunettes de protection et de masque ;
+- éviter de faire sécher le linge à l’extérieur, car les pollens se déposent sur le linge humide ;
+- à pied ou à vélo, emprunter de préférence les axes routiers les moins fréquentés pour éviter l’exposition à la pollution atmosphérique ;
+- en cas de déplacement en voiture, garder les vitres fermées.
  
 Les symptômes allergiques peuvent être soulagés grâce à des médicaments prescrits par votre médecin généraliste ou allergologue. Pour connaître les périodes polliniques en fonction des espèces, il est possible de s’abonner aux indicateurs environnementaux directement sur le site [Recosanté](https://recosante.beta.gouv.fr/?indicateur=raep).
-
-[En savoir plus](https://www.ameli.fr/assure/sante/themes/allergies/vivre-allergique)  

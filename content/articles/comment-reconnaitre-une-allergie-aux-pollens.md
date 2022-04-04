@@ -3,6 +3,7 @@ title: "Comment reconnaître une allergie aux pollens ?"
 order: 17
 image: ../assets/images/comment-reconnaitre-une-allergie-aux-pollens.jpg
 category: "Exposition aux pollens"
+bon_geste: "En cas de gêne répétitive et saisonnière et dans un contexte de fatigue inhabituelle, demander conseil à un professionnel de santé."
 ---
 
 ## L’exposition aux pollens en France
@@ -38,5 +39,3 @@ Les symptômes de l’asthme sont :
 Si vous ressentez un de ces symptômes, il est recommandé d’en parler à votre médecin qui pourra vous prescrire un bilan allergologique à réaliser avec un allergologue ou un pneumologue. Si nécessaire, un traitement pourra être mis en place lors des périodes polliniques.
 
 Identifier les allergènes permet de limiter les sources d’exposition en adoptant des gestes simples. 
-
-[En savoir plus](https://www.pollens.fr/le-reseau/allergie)  

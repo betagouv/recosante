@@ -3,6 +3,7 @@ title: "Les produits d’entretien polluent-ils l’air intérieur ?"
 order: 15
 image: ../assets/images/les-produits-d-entretien-polluent-ils-l-air-interieur.jpg
 category: "Qualité de l’air intérieur"
+bon_geste: "Nettoyer le plus souvent possible à l’aide d’un appareil à vapeur d'eau, de chiffons humides ou en microfibres."
 ---
 
 ## Les produits ménagers sont une des sources de pollution de l’air intérieur
@@ -28,6 +29,4 @@ Même les produits ménagers bénéficiant d’un label écologique contiennent 
 
 Pour nettoyer, privilégier des produits de composition simple comme le savon noir, le bicarbonate de soude, le vinaigre blanc, le citron…
 
-On peut aussi se dispenser de produits avec un  nettoyage à la vapeur et l’utilisation de chiffons humides ou en microfibres.  Et n’oubliez pas : le propre n’a pas d’odeur !
-
-[En savoir plus](https://multimedia.ademe.fr/infographies/infographie_produits_menagers/index.html)  
+On peut aussi se dispenser de produits avec un nettoyage à la vapeur et l’utilisation de chiffons humides ou en microfibres. Et n’oubliez pas : le propre n’a pas d’odeur !

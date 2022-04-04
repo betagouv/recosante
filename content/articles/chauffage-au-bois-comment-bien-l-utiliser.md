@@ -3,6 +3,7 @@ title: "Chauffage au bois : comment bien l’utiliser ?"
 order: 12
 image: ../assets/images/chauffage-au-bois-comment-bien-l-utiliser.jpg
 category: "Qualité de l’air intérieur"
+bon_geste: "Bien choisir son combustible et respecter les consignes d’utilisation pour se chauffer efficacement."
 ---
 
 ## Le chauffage au bois : quels avantages et quels inconvénients ?
@@ -41,5 +42,3 @@ D’autres conseils simples permettent de choisir correctement son combustible 
 Les vieux appareils de chauffage, spécifiquement à foyer ouvert, sont les plus polluants et les moins performants. Il est conseillé de les remplacer, notamment s’ils sont antérieurs à 2002. Le label Flamme Verte garantit la qualité, le rendement, et les hautes performances énergétiques et environnementales des appareils de chauffage au bois.
 
 Pour remplacer votre appareil de chauffage au bois, vous pouvez bénéficier de MaPrimeRenov, une aide à la rénovation énergétique, ainsi que d’une prime du Fonds air bois.
-
-[En savoir plus](https://librairie.ademe.fr/energies-renouvelables-reseaux-et-stockage/1864-chauffage-au-bois-mode-d-emploi-9791029708985.html)  

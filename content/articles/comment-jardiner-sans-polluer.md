@@ -3,6 +3,7 @@ title: "Comment jardiner sans polluer ?"
 order: 18
 image: ../assets/images/comment-jardiner-sans-polluer.jpg
 category: "Nuisibles"
+bon_geste: "Apporter les déchets verts en déchèterie s’il est impossible de les valoriser (paillage ou compost)."
 ---
 
 ## De nombreuses solutions existent pour remplacer les pesticides
@@ -28,5 +29,3 @@ Pour enrichir votre sol, rien de mieux qu’un compost réalisé à partir des d
 Pour réaliser du compost, c’est simple : déposer dans un bac, ou en tas dans votre jardin, les déchets de jardin et de cuisine (épluchures et fanes, marc de café, filtres en papier, pain, croûtes de fromages, fruits et légumes abîmés, etc.). Au bout de quelques mois, lorsque le compost est mûr, il suffit de l’incorporer au sol.
 
 Ne jamais brûler les déchets verts ! C’est interdit par la loi et passible d’une amende. La combustion de ces déchets dégage des substances toxiques qui polluent l’air. Selon l’Ademe, 50 kg de végétaux brûlés à l'air libre émettent autant de particules fines que 14 000 km parcourus avec une voiture à essence.
-
-[En savoir plus](https://agirpourlatransition.ademe.fr/particuliers/maison/jardinage)  

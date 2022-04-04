@@ -3,6 +3,7 @@ title: "Covid-19 : quels gestes adopter pour protéger sa santé et son environn
 order: 11
 image: ../assets/images/covid-19-quels-gestes-adopter-pour-proteger-sa-sante-et-son-environnement.jpg
 category: "Autres types de pollution"
+bon_geste: "Pour limiter la propagation du virus, aérer 10 minutes toutes les heures en ouvrant grand les fenêtres."
 ---
 
 ## Aérer permet de réduire le risque d’infection
@@ -36,5 +37,3 @@ Il est recommandé de bien suivre les consignes d’utilisation inscrites sur l�
 Masques, mouchoirs à usage unique, supports de nettoyage, etc. : les déchets contaminés ou susceptibles d’être contaminés par le coronavirus doivent faire l’objet d’une élimination particulière.
 
 Les déchets d’une personne malade ou susceptible d’être infectée doivent être jetés dans un sac plastique dédié, disposant d’un système de fermeture. Une fois plein, il est recommandé de placer ce sac plastique dans un second sac poubelle et de le stocker 24h avant de l’éliminer avec les ordures ménagères.
-
-[En savoir plus](https://www.santepubliquefrance.fr/dossiers/coronavirus-covid-19/coronavirus-outils-de-prevention-destines-aux-professionnels-de-sante-et-au-grand-public)  

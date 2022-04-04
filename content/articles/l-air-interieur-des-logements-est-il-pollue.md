@@ -3,6 +3,7 @@ title: "L'air intérieur des logements est-il pollué ?"
 order: 1
 image: ../assets/images/l-air-interieur-des-logements-est-il-pollue.jpg
 category: "Qualité de l’air intérieur"
+bon_geste: "Aérer au moins 10 minutes deux fois par jour en ouvrant les fenêtres pour créer un courant d'air dans chaque pièce du logement."
 ---
 
 ## L’air est plus pollué à l’intérieur qu’à l’extérieur
@@ -26,5 +27,3 @@ Pour diminuer l’exposition aux polluants de l’air intérieur, il suffit :
 - de réduire leurs sources d’émission, en limitant l’usage des produits de la vie quotidienne ;
 - d’aérer son logement en ouvrant les fenêtres ;
 - d’assurer le bon fonctionnement du système de ventilation conforme à la réglementation.
-
-[En savoir plus](https://agirpourlatransition.ademe.fr/particuliers/sites/default/files/2020-06/infographie_air_sain_chez_soi.png)  

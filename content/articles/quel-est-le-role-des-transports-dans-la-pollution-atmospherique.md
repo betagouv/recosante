@@ -3,6 +3,7 @@ title: "Quel est le rôle des transports dans la pollution atmosphérique ?"
 order: 8
 image: ../assets/images/quel-est-le-role-des-transports-dans-la-pollution-atmospherique.jpg
 category: "Pollution de l’air extérieur"
+bon_geste: "À pied, privilégier un itinéraire par des rues peu passantes et éviter les axes routiers durant les heures de pointe (généralement entre 7h et 10h, puis entre 17h et 20h)."
 ---
 
 ## Le secteur des transports, premier responsable des émissions de gaz à effet de serre
@@ -26,5 +27,3 @@ Par ailleurs, ces améliorations ont été accentuées par les mesures prises en
 Lors des déplacements, l’exposition à la pollution de l’air dépend du parcours emprunté et de la durée du trajet, des niveaux de polluants, mais aussi du taux d’inhalation de l’air en fonction de l’effort produit.
 
 De manière générale, l’air est plus pollué le long des axes routiers où la circulation automobile est la plus dense. Il est conseillé d’éviter, dans la mesure du possible, d’emprunter des rues encombrées par le trafic, surtout lors des heures de pointe (le matin et en fin de journée).
-
-[En savoir plus](https://monimpacttransport.fr/?transportations=6_1_9_3_11_13_14_12_2_8_7_5_4)  

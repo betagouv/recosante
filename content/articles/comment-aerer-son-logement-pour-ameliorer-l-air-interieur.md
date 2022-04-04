@@ -3,6 +3,7 @@ title: "Comment aérer son logement pour améliorer l’air intérieur ?"
 order: 2
 image: ../assets/images/comment-aerer-son-logement-pour-ameliorer-l-air-interieur.jpg
 category: "Qualité de l’air intérieur"
+bon_geste: "Adapter l’heure d’ouverture des fenêtres en prenant en compte la période de pollinisation ou de pollution extérieure (trafic routier, épandage, etc.)."
 ---
 
 ## Deux actions complémentaires : l'aération et la ventilation 
@@ -28,5 +29,3 @@ Il est important d’aérer son logement tous les jours en ouvrant les fenêtres
 En hiver, pour ne pas perdre trop de chaleur pendant ce temps d’aération, il est recommandé de réduire les radiateurs ou les convecteurs situés sous les fenêtres.
  
 En cas d’épisode de pollution atmosphérique (notamment à l’ozone et aux particules fines), il est préférable d’aérer tôt le matin ou tard le soir afin d’éviter les heures de pointe où l’air est le plus pollué.
-
-[En savoir plus](https://www.appa.asso.fr/wp-content/uploads/2021/07/A%C3%A9ration-ventilation.pdf)  

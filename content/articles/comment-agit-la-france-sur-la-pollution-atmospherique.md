@@ -3,6 +3,7 @@ title: "Comment agit la France sur la pollution atmosphérique ?"
 order: 4
 image: ../assets/images/comment-agit-la-france-sur-la-pollution-atmospherique.jpg
 category: "Pollution de l’air extérieur"
+bon_geste: "À pied, préférer les voies piétonnes ou les rues moins encombrées par le trafic."
 ---
 
 ## Quels sont les polluants réglementés en France ?
@@ -29,6 +30,4 @@ L’indice ATMO est un indicateur journalier de la qualité de l’air calculé 
 
 Depuis 20 ans, la qualité de l’air tend à s’améliorer, en lien avec la réduction des émissions de polluants, principalement du dioxyde de soufre (SO2), du monoxyde de carbone (CO) et du plomb (Pb).
 
-Chaque année, un bilan de la qualité de l’air extérieur en France est publié par le Commissariat général au développement durable. Le bilan de 2020 confirme la réduction des émissions de polluants atmosphériques : les concentrations moyennes annuelles de polluants diminuent et les dépassements des seuils règlementaires de qualité de l'air pour la protection de la santé affectent moins de zones. Les pollutions à l’ozone restent toutefois préoccupantes avec 54 agglomérations en dépassement en 2020. 
-
-[En savoir plus](https://atmo-france.org/les-polluants-reglementes-et-leurs-effets-sur-la-sante-et-lenvironnement/)  
+Chaque année, un bilan de la qualité de l’air extérieur en France est publié par le Commissariat général au développement durable. Le bilan de 2020 confirme la réduction des émissions de polluants atmosphériques : les concentrations moyennes annuelles de polluants diminuent et les dépassements des seuils règlementaires de qualité de l'air pour la protection de la santé affectent moins de zones. Les pollutions à l’ozone restent toutefois préoccupantes avec 54 agglomérations en dépassement en 2020.

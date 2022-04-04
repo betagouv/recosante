@@ -3,6 +3,7 @@ title: "Quels réflexes à prendre pour protéger son enfant du grand froid ?"
 order: 10
 image: ../assets/images/quels-reflexes-a-prendre-pour-proteger-son-enfant-du-grand-froid.jpg
 category: "Phénomènes météorologiques"
+bon_geste: "Transporter de préférence son enfant dans un landau ou une poussette plutôt que dans un porte-bébé afin qu’il puisse bouger régulièrement."
 ---
 
 ## Les bébés sont vulnérables face au grand froid
@@ -27,5 +28,3 @@ Les parties du corps les plus sensibles au froid sont les pieds, les mains, le c
 Privilégiez des habits chauds et plusieurs couches de vêtements. Il est aussi important de bien couvrir la tête et les mains en portant un bonnet et des gants. 
 
 Enfin, optez pour de bonnes chaussures pour éviter les chutes en cas de verglas ou neige.
-
-[En savoir plus](https://www.1000-premiers-jours.fr/fr/proteger-bebe-des-temperatures-extremes)  

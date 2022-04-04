@@ -3,6 +3,7 @@ title: "Comment la météo influence-t-elle la qualité de l'air ?"
 order: 14
 image: ../assets/images/comment-la-meteo-influence-t-elle-la-qualite-de-l-air.jpg
 category: "Pollution de l’air extérieur"
+bon_geste: "Lors d’un épisode de pollution, éviter les sorties durant l’après-midi lorsque l’ensoleillement est maximum."
 ---
 
 ## L’hiver favorise la concentration des particules fines et des oxydes d’azote
@@ -26,5 +27,3 @@ Les précipitations, généralement associées à une atmosphère instable, perm
 Concernant le vent, ce sont sa force et sa direction qui influencent la qualité de l’air. Plus la vitesse du vent est faible, plus les polluants risquent de s’accumuler. À l’inverse, un vent fort permet de disperser les polluants. Cependant, dans certains cas, un vent fort et de direction clairement définie peut diriger un panache vers une zone spécifique et y concentrer ainsi la pollution.
 
 En conclusion : un ciel bleu n’est pas toujours synonyme de bonne qualité de l’air.
-
-[En savoir plus](https://www.atmo-bfc.org/qui-sommes-nous/actualites/le-role-de-la-meteo-sur-la-qualite-de-l-air)  
