@@ -2,7 +2,7 @@
 title: "Pollution de l’air et santé : quels liens ?"
 order: 3
 image: ../assets/images/pollution-de-l-air-et-sante-quels-liens.jpg
-category: "Pollution de l’air extérieur"
+category: "Qualité de l’air extérieur"
 bon_geste: "Privilégier les transports en commun et les mobilités actives (marche à pied, vélo, etc.) plutôt que la voiture afin de limiter les émissions de polluants dans l'air."
 ---
 
