@@ -2,7 +2,7 @@
 title: "Que faire en présence de radon dans son logement ?"
 order: 9
 image: ../assets/images/que-faire-en-presence-de-radon-dans-son-logement.jpg
-category: "Autres types de pollution"
+category: "Qualité de l’air intérieur"
 bon_geste: "Pour évacuer le radon des pièces de votre logement, aérer au moins 10 minutes par jour, hiver comme été."
 ---
 
