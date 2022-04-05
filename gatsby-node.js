@@ -38,6 +38,32 @@ exports.sourceNodes = async ({
     })
 
 exports.createPages = ({ graphql, actions: { createPage } }) => {
+  const articles = graphql(
+    `
+      {
+        allMdx(filter: { fileAbsolutePath: { regex: "/articles/" } }) {
+          edges {
+            node {
+              slug
+            }
+          }
+        }
+      }
+    `
+  ).then((result) => {
+    if (result.errors) {
+      Promise.reject(result.errors)
+    }
+    result.data.allMdx.edges.forEach((article) => {
+      createPage({
+        path: `articles/${article.node.slug}`,
+        component: require.resolve('./src/templates/article.js'),
+        context: {
+          slug: article.node.slug,
+        },
+      })
+    })
+  })
   const pages = graphql(
     `
       {
@@ -82,5 +108,5 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
       })
     )
 
-  return Promise.all([pages, places])
+  return Promise.all([articles, pages, places])
 }
