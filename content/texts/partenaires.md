@@ -98,6 +98,37 @@ press:
   - title: Association pour la Prévention de la Pollution Atmosphérique
     image: ../assets/logos/Logo-Officiel-Appa_Horizontal.png
     link: https://www.appa.asso.fr/reco-sante/
+  - title: Ajaccio
+    image: ../assets/logos/Logo_Ajaccio.png
+    link: https://www.ajaccio.fr/RECOSANTE-Connaitre-son-environnement-Agir-pour-sa-sante_a9795.html
+  - title: Alliance des collectivités pour la qualité de l'air
+    image: ../assets/logos/Logo_Alliance_qualité_air.png
+    link: https://alliancequaliteair.fr/recosante-sensibilisation-qualiteair/
+  - title: Axa prévention
+    image: ../assets/logos/Logo_Axa.png
+    link: https://www.axaprevention.fr/environnement-climat/pollution-de-l-air-comprendre-et-prevenir
+  - title: Consommation Logement et Cadre de Vie
+    image: ../assets/logos/Logo_CLCV.png
+    link: https://puydedome.clcv.org/page/4/
+  - title: Clermont Auvergne Métropole
+    image: ../assets/logos/Logo_Clermont.jpeg
+    link: https://www.clermontmetropole.eu/preserver-recycler/transition-energetique-et-ecologique/qualite-de-lair/
+  - title: Geco Air
+    image: ../assets/logos/Logo_Gecoair.png
+    link: https://www.gecoair.fr/
+  - title: Mpedia
+    image: ../assets/logos/Logo_Mpedia.jpeg
+    link: https://www.mpedia.fr/outil-recosante-proteger-pollution-air/?lo=57764
+  - title: Paris Centre
+    image: ../assets/logos/Logo_Paris_centre.png
+    link: https://mairiepariscentre.paris.fr/
+  - title: Villes OMS
+    image: ../assets/logos/Logo_villes_OMS.jpeg
+    link: https://www.villes-sante.com/
+   - title: Association française du vitiligo
+    image: ../assets/logos/vitiligo.png
+    link: https://www.afvitiligo.com/2022/04/04/soleil-observez-le-rayonnement-uv-pres-de-chez-vous/ 
+    
 ---
 
 # Partenaires
