@@ -125,7 +125,7 @@ press:
   - title: Villes OMS
     image: ../assets/logos/Logo_villes_OMS.jpeg
     link: https://www.villes-sante.com/
-   - title: Association française du vitiligo
+  - title: Association française du vitiligo
     image: ../assets/logos/vitiligo.png
     link: https://www.afvitiligo.com/2022/04/04/soleil-observez-le-rayonnement-uv-pres-de-chez-vous/
 ---
