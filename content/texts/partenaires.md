@@ -128,6 +128,12 @@ press:
   - title: Association française du vitiligo
     image: ../assets/logos/vitiligo.png
     link: https://www.afvitiligo.com/2022/04/04/soleil-observez-le-rayonnement-uv-pres-de-chez-vous/
+  - title: Cardiologie Pratique
+    image: ../assets/logos/logo_cardiologie.svg
+    link: https://www.cardiologie-pratique.com/actualites/actu-pharma/0031741-recosante-recommandations-quotidiennes-sur-qualite-lair
+  - title: OPA Pratique
+    image: ../assets/logos/logo_opa_pratique.svg
+    link: https://www.opa-pratique.com/actualites/actu-pharma/006635-recosante-recommandations-quotidiennes-sur-qualite-lair
 ---
 
 # Partenaires
