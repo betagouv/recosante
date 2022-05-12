@@ -34,7 +34,7 @@ export default function Website(props) {
     value: props.integration_website / totalIntegration
   }]
   const channelData = [{
-    name: "Moteur de recherche",
+    name: "Moteurs de recherche",
     value: props.channel_search / totalChannel
   }, {
     name: "Accès direct",
@@ -84,7 +84,7 @@ export default function Website(props) {
                 strokeWidth={3}
               />
               <Line
-                name='visites du tableau de bord'
+                name='utilisations du tableau de bord'
                 dataKey='place'
                 stroke={colors[1]}
                 strokeWidth={3}

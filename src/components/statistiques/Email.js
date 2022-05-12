@@ -34,10 +34,10 @@ export default function Email(props) {
     value: props.frequence_alerte / props.total_actifs
   }]
   const mediaData = [{
-    name: "Email",
+    name: "Par email",
     value: props.media_mail / props.total_actifs
   }, {
-    name: "Notification",
+    name: "Par notification",
     value: props.media_notifications_web / props.total_actifs
   }]
   const formatAsDecimal = (num) => (
@@ -199,7 +199,7 @@ export default function Email(props) {
       </Section>
       <Section>
         <MainTitle>
-          L’abonnement à la lettre d’information
+          L’abonnement à la lettre d’information hebdomadaire
         </MainTitle>
         <StyledSection>
           <Text center>
