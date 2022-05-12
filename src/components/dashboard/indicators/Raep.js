@@ -58,7 +58,7 @@ export default function Raep(props) {
             month: 'long',
             day: 'numeric',
           })}{' '}
-          à {data.raep.validity.area}
+          dans {data.raep.validity.area}
           <br />
           Données fournies par{' '}
           <MagicLink to={data.raep.sources[0].url}>

@@ -58,7 +58,7 @@ export default function IndiceAtmo(props) {
                 day: 'numeric',
               }
             )}{' '}
-            à {data.indice_atmo.validity.area}
+            dans {data.indice_atmo.validity.area}
             <br />
             Données fournies par{' '}
             {data.indice_atmo.sources && (
