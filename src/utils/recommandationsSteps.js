@@ -47,7 +47,7 @@ const steps = [
   {
     name: 'enfants',
     title: 'Enfants',
-    label: 'Je renseigne si je vis avec des enfants.',
+    label: 'Je renseigne si je vis avec des enfants de moins de 6 ans.',
     options: [
       {
         value: 'oui',
@@ -56,7 +56,7 @@ const steps = [
       },
       {
         value: 'non',
-        label: `Pas<br/>d'enfant`,
+        label: `Pas<br/>d’enfant`,
         icon: <NoEnfant />,
       },
     ],
@@ -69,17 +69,17 @@ const steps = [
     options: [
       {
         value: 'bois',
-        label: `Cheminée ou poêle à bois`,
+        label: `Cheminée, insert ou poêle à bois`,
         icon: <Bois />,
       },
       {
         value: 'chaudiere',
-        label: `Chaudière au fioul, au gaz ou électrique`,
+        label: `Chaudière au fioul ou au gaz`,
         icon: <Chaudiere />,
       },
       {
         value: 'appoint',
-        label: `Chauffage mobile d’appoint`,
+        label: `Chauffage mobile d’appoint au fioul`,
         icon: <Appoint />,
       },
     ],
