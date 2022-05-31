@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Wrapper = styled.circle`
   transform: rotate(${(props) => 34 * (props.value - 1)}deg);
   transform-origin: 71px 71.5px;
-  opacity: ${(props) => (props.value ? 1 : 0)};
+  opacity: ${(props) => (props.value > 0 && props.value < 7) ? 1 : 0};
   fill: ${(props) => props.theme.colors.atmo[props.value]};
   transition: transform ${(props) => (props.value ? props.value * 300 : 0)}ms
       ${(props) => (props.value ? 300 : 0)}ms ease-out,

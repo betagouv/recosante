@@ -22,7 +22,8 @@ const Wrapper = styled.div`
     left: 0;
     width: 1.5rem;
     height: 1.5rem;
-    background-color: ${(props) => props.theme.colors.atmo[props.value]};
+    background-color: ${(props) => (props.value > 0 && props.value < 7) ? props.theme.colors.atmo[props.value] : props.theme.colors.main};
+    opacity: ${(props) => (props.value > 0 && props.value < 7) ? 1 : 0.15};
     border-radius: 0.25rem;
   }
 
