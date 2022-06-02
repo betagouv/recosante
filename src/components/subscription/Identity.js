@@ -5,6 +5,7 @@ import { useLocalUser, useUserMutation } from 'hooks/useUser'
 import { useAvailability } from 'hooks/useSearch'
 import TextInput from 'components/base/TextInput'
 import Alert from 'components/base/Alert'
+import MagicLink from 'components/base/MagicLink'
 import SearchBar from 'components/search/SearchBar'
 import NavigationIdentity from './identity/NavigationIdentity'
 import Error from './identity/Error'
@@ -66,6 +67,17 @@ const MailInput = styled(TextInput)`
     width: 100%;
   }
 `
+const DataDisclaimer = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: lighter;
+  color: ${(props) => props.theme.colors.footer};
+`
+
 export default function Identity(props) {
   const { user, mutateUser } = useLocalUser()
 
@@ -113,6 +125,7 @@ export default function Identity(props) {
           onChange={({ value }) => mutateUser({ mail: value })}
           required
         />
+        <DataDisclaimer>Les <MagicLink to='https://recosante.beta.gouv.fr/politiquedeconfidentialite'>données collectées</MagicLink> lors de votre inscription sont utilisées dans le cadre d’une mission de service public dont les responsables de traitement sont la DGS et la DGPR. Recosanté suit l’ouverture et les interactions avec les emails reçus. Vous pouvez à tout moment vous opposer à ces traitements en vous désinscrivant.</DataDisclaimer>
         <NavigationIdentity
           setPreviousStep={props.setPreviousStep}
           fetching={mutation.isLoading}
