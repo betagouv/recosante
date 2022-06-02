@@ -102,7 +102,7 @@ press:
     image: ../assets/logos/Logo_Ajaccio.png
     link: https://www.ajaccio.fr/RECOSANTE-Connaitre-son-environnement-Agir-pour-sa-sante_a9795.html
   - title: Alliance des collectivités pour la qualité de l'air
-    image: ../assets/logos/Logo_Alliance_qualité_air.png
+    image: ../assets/logos/logo-alliance-qualite-air.png
     link: https://alliancequaliteair.fr/recosante-sensibilisation-qualiteair/
   - title: Axa prévention
     image: ../assets/logos/Logo_Axa.png
