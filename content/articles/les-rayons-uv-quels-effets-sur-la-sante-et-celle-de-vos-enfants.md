@@ -2,6 +2,7 @@
 title: "­Les rayons UV : quels effets sur la santé et celle de vos enfants ?"
 order: 22
 image: ../assets/images/les-rayons-uv-quels-effets-sur-la-sante-et-celle-de-vos-enfants.jpg
+category: "Phénomènes météorologiques"
 bon_geste: "Protéger le plus possible les enfants âgés de moins de 10 ans, en particulier de 1 à 3 ans d’une exposition aux rayons UV."
 ---
 

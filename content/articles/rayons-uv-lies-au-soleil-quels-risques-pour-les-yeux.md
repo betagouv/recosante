@@ -2,6 +2,7 @@
 title: "­Rayons UV liés au soleil : quels risques pour les yeux ?"
 order: 29
 image: ../assets/images/rayons-uv-lies-au-soleil-quels-risques-pour-les-yeux.jpg
+category: "Phénomènes météorologiques"
 bon_geste: "Bien choisir la protection de ses lunettes de soleil en fonction de son exposition aux rayons UV."
 ---
 

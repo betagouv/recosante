@@ -2,6 +2,7 @@
 title: "Qu’est-ce que la vigilance météorologique ?"
 order: 21
 image: ../assets/images/qu-est-ce-que-la-vigilance-meteorologique.jpg
+category: "Phénomènes météorologiques"
 bon_geste: "En cas de Vigilance météorologique, se tenir régulièrement au courant de l’évolution de la situation et respecter impérativement les consignes de sécurité émises par les pouvoirs publics."
 ---
 
