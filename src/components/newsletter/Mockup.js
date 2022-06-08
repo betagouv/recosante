@@ -52,11 +52,19 @@ export default function Mockup(props) {
           />
         </Background>
         <Tablet isOnScreen={props.isOnScreen}>
+        {props.type === 'uv' ? (
           <StaticImage
-            src={'./mockup/tablet.png'}
+            src='./mockup/tablet-uv.png'
             alt='Tablette'
             placeholder='none'
           />
+        ) : (
+          <StaticImage
+            src='./mockup/tablet.png'
+            alt='Tablette'
+            placeholder='none'
+          />
+        )}
         </Tablet>
       </Wrapper>
     </>
