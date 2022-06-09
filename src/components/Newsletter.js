@@ -121,7 +121,7 @@ export default function Newsletter(props) {
             <StyledButton
               onClick={() => {
                 mutateUser({
-                  indicateurs: ['indice_atmo', 'raep'],
+                  indicateurs: props.indicateurs || ['indice_atmo', 'raep'],
                 })
                 setSubscription('indicators')
                 window?._paq?.push(['trackEvent', 'Subscription', 'Infolettre'])
@@ -132,10 +132,10 @@ export default function Newsletter(props) {
           </Button.Wrapper>
         </Content>
         <MockupWrapper>
-          <Mockup isOnScreen={isOnScreen} />
+          <Mockup type={props.type} isOnScreen={isOnScreen} />
         </MockupWrapper>
       </StyledSection>
-      <Notifications />
+      {props.type !== 'uv' && <Notifications />}
     </>
   )
 }
