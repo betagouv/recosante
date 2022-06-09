@@ -39,7 +39,7 @@ export default function Links() {
       <ItemWrapper>
         <Item to='/mentions-legales'>accessibilité : non conforme</Item>
         <Item to='/mentions-legales'>mentions légales</Item>
-        <Item to='/politiquedeconfidentialite'>données personnelles</Item>
+        <Item to='/donnees-personnelles'>données personnelles</Item>
         <Item to='/cookies'>gestion des cookies</Item>
         <Item to='/partenaires'>partenaires</Item>
         <Item to='/stats'>statistiques</Item>

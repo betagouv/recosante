@@ -1,5 +1,5 @@
 ---
-title: Politique de Confidentialité
+title: Gestion des données personnelles
 ---
 
 ## Responsables de traitement

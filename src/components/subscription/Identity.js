@@ -125,7 +125,7 @@ export default function Identity(props) {
           onChange={({ value }) => mutateUser({ mail: value })}
           required
         />
-        <DataDisclaimer>Les <MagicLink to='https://recosante.beta.gouv.fr/politiquedeconfidentialite'>données collectées</MagicLink> lors de votre inscription sont utilisées dans le cadre d’une mission de service public dont les responsables de traitement sont la DGS et la DGPR. Recosanté suit l’ouverture et les interactions avec les emails reçus. Vous pouvez à tout moment vous opposer à ces traitements en vous désinscrivant.</DataDisclaimer>
+        <DataDisclaimer>Les <MagicLink to='https://recosante.beta.gouv.fr/donnees-personnelles'>données collectées</MagicLink> lors de votre inscription sont utilisées dans le cadre d’une mission de service public dont les responsables de traitement sont la DGS et la DGPR. Recosanté suit l’ouverture et les interactions avec les emails reçus. Vous pouvez à tout moment vous opposer à ces traitements en vous désinscrivant.</DataDisclaimer>
         <NavigationIdentity
           setPreviousStep={props.setPreviousStep}
           fetching={mutation.isLoading}
