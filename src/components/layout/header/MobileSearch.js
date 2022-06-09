@@ -23,6 +23,9 @@ const Open = styled.button`
 
   ${(props) => props.theme.mq.small} {
     display: block;
+    opacity: ${(props) => (props.open ? 0 : 1)};
+    pointer-events: ${(props) => (props.open ? 'none' : 'inherit')};
+    transition: opacity 600ms;
   }
 `
 const Wrapper = styled.div`
@@ -60,7 +63,7 @@ export default function MobileSearch() {
 
   return location.pathname !== '/' ? (
     <>
-      <Open onClick={() => setOpen(true)}>
+      <Open open={open} onClick={() => setOpen(true)}>
         <svg x='0px' y='0px' viewBox='0 0 512.005 512.005'>
           <path
             d='M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667
