@@ -69,7 +69,7 @@ export default function Search(props) {
         </SearchBarSizer>
         <Suggestions />
       </StyledSection>
-      {props.iframe && <WidgetFooter><WidgetLink to='https://recosante.beta.gouv.fr/politiquedeconfidentialite'>En savoir plus sur la gestion de vos données personnelles</WidgetLink></WidgetFooter>}
+      {props.iframe && <WidgetFooter><WidgetLink to='https://recosante.beta.gouv.fr/donnees-personnelles'>En savoir plus sur la gestion de vos données personnelles</WidgetLink></WidgetFooter>}
     </Wrapper>
   )
 }
