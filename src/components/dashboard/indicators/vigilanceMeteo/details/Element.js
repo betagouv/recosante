@@ -34,8 +34,9 @@ const Icon = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: calc(100% - 0.25rem);
     width: calc(100% - 0.25rem);
-    height: auto;
+    object-fit: contain;
   }
 `
 export default function Element(props) {
