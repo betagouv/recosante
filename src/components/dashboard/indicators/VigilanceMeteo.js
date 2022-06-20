@@ -75,10 +75,10 @@ export default function Raep(props) {
                     hour: '2-digit',
                   }
                 )}{' '}
-                à
+                dans
               </>
             ) : (
-              <> pour </>
+              <> dans </>
             )}{' '}
             {data.vigilance_meteo.validity.area}
             <br />

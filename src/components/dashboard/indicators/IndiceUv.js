@@ -55,7 +55,7 @@ export default function IndiceUv(props) {
                 day: 'numeric',
               }
             )}{' '}
-            à {data.indice_uv.validity.area}
+            dans {data.indice_uv.validity.area}
             <br />
             Données fournies par{' '}
             {data.indice_uv.sources && (
