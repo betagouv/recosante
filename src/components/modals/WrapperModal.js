@@ -177,6 +177,12 @@ export default function WrapperModal() {
             title
           }
         }
+        baignades: mdx(slug: { eq: "baignades" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
         potentiel_radon: mdx(slug: { eq: "potentielradon" }) {
           body
           frontmatter {
@@ -190,6 +196,12 @@ export default function WrapperModal() {
           }
         }
         notifications: mdx(slug: { eq: "notifications-modal" }) {
+          body
+          frontmatter {
+            title
+          }
+        }
+        donneesrestreintes: mdx(slug: { eq: "donneesrestreintes" }) {
           body
           frontmatter {
             title
