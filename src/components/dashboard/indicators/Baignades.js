@@ -37,12 +37,14 @@ export default function IndiceAtmo(props) {
                   : data &&
                   (data.baignades.error
                     ? `Les données ne sont pas disponibles pour cette commune`
-                    : (data.baignades.indice?.label === 'Pas de sites'
-                      ? `Il n’y a pas de sites de baignade en eau de mer ou en eau douce recensés pour cette commune.`
-                      : data.baignades.indice?.summary['Interdiction'] > 0 ?
-                        `Pour plus de renseignements sur les interdictions de baignade, veuillez contacter la mairie ou l’Agence régionale de santé (ARS).` :
-                        data.baignades.advice &&
-                        data.baignades.advice.main)),
+                    : (data.baignades.indice?.label === 'Hors-saison'
+                      ? `La saison de baignade n’a pas encore officiellement débuté dans cette commune.`
+                      : (data.baignades.indice?.label === 'Pas de sites'
+                        ? `Il n’y a pas de sites de baignade en eau de mer ou en eau douce recensés pour cette commune.`
+                        : data.baignades.indice?.summary['Interdiction'] > 0 ?
+                          `Pour plus de renseignements sur les interdictions de baignade, veuillez contacter la mairie ou l’Agence régionale de santé (ARS).` :
+                          data.baignades.advice &&
+                          data.baignades.advice.main))),
               }}
             />
           </Card.Mobile>
