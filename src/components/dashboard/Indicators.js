@@ -6,6 +6,7 @@ import IndiceAtmo from './indicators/IndiceAtmo'
 import Raep from './indicators/Raep'
 import VigilanceMeteo from './indicators/VigilanceMeteo'
 import IndiceUv from './indicators/IndiceUv'
+import Baignades from './indicators/Baignades'
 import PotentielRadon from './indicators/PotentielRadon'
 
 const StyledMasonry = styled(Masonry)`
@@ -30,6 +31,7 @@ export default function Indicators(props) {
       <Raep place={props.place} />
       <VigilanceMeteo place={props.place} />
       <IndiceUv place={props.place} />
+      <Baignades place={props.place} />
       <PotentielRadon place={props.place} />
     </StyledMasonry>
   )

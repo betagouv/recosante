@@ -59,6 +59,11 @@ export const themes = {
         10: '#D8001D',
         11: '#B600AE',
       },
+      baignades: {
+        0: '#80FFFF',
+        1: '#80FF80',
+        2: '#FF8080',
+      },
     },
     fonts: '"Marianne", Arial, sans-serif',
     mq: {

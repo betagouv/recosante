@@ -28,7 +28,11 @@ export default function Subscribe(props) {
     <Wrapper
       onClick={() => {
         if (props.disabled) {
-          setModal('donneesstatiques')
+          if (props.indicateur.includes('baignades')) {
+            setModal('donneesrestreintes')
+          } else {
+            setModal('donneesstatiques')
+          }
         } else {
           mutateUser({ indicateurs: [props.indicateur], commune: props.place })
           setSubscription('indicators')

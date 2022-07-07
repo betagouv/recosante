@@ -18,7 +18,7 @@ export default function IndiceUv(props) {
             </Card.Title>
             <Card.Value isError={isError}>
               {isError
-                ? 'Zut 🦙'
+                ? 'Oups 🦔'
                 : data &&
                   (data.indice_uv?.indice?.label
                     ? data.indice_uv.indice.label

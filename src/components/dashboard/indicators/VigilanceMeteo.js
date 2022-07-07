@@ -19,7 +19,7 @@ export default function Raep(props) {
             </Card.Title>
             <Card.Value isError={isError}>
               {isError
-                ? 'Zut 🦙'
+                ? 'Arf 🦖'
                 : data &&
                   (data.vigilance_meteo.indice?.label
                     ? data.vigilance_meteo.indice.label
