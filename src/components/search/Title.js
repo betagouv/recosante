@@ -31,16 +31,28 @@ const la = keyframes`
   20% {
     opacity: 0;
   }
-  40% {
+  30% {
     opacity: 0;
+  }
+  35% {
+    opacity: 1;
   }
   45% {
     opacity: 1;
   }
   55% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+  70% {
     opacity: 1;
   }
-  60% {
+  80% {
+    opacity: 1;
+  }
+  85% {
     opacity: 0;
   }
   to {
@@ -60,22 +72,35 @@ const le = keyframes`
   20% {
     opacity: 1;
   }
-  40% {
+  30% {
     opacity: 1;
+  }
+  35% {
+    opacity: 0;
   }
   45% {
     opacity: 0;
   }
   55% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  70% {
     opacity: 0;
   }
-  60% {
+  80% {
+    opacity: 0;
+  }
+  85% {
     opacity: 1;
   }
   to {
     opacity: 1;
   }
 `
+
 const Wrapper = styled.h1`
   display: flex;
   flex-wrap: wrap;
@@ -105,7 +130,7 @@ const Pronoun = styled.span`
   position: ${(props) => (props.absolute ? 'absolute' : 'static')};
   top: 0;
   left: 0;
-  animation: ${(props) => (props.absolute ? le : la)} 25000ms infinite;
+  animation: ${(props) => (props.absolute ? le : la)} 30000ms infinite;
 `
 const Sentences = styled.strong`
   position: relative;
@@ -127,7 +152,7 @@ const Sentence = styled.span`
 const Letter = styled.span`
   will-change: opacity;
   opacity: 0;
-  animation: ${simple} 25000ms
+  animation: ${simple} 30000ms
     ${(props) => props.index * 5000 + props.position * 25}ms infinite;
 `
 export default function Title() {
@@ -136,6 +161,7 @@ export default function Title() {
     `risque d'allergie aux pollens`,
     `vigilance météo`,
     `rayonnement UV`,
+    `qualité des eaux de baignade`,
     `niveau de risque radon`,
   ]
   return (

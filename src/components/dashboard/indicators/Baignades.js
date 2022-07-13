@@ -33,7 +33,7 @@ export default function IndiceAtmo(props) {
             <Card.Recommandation
               dangerouslySetInnerHTML={{
                 __html: isError
-                  ? `Nous ne sommes malheureusement pas en mesure d’afficher la qualité des eaux de baignades pour l’instant. Veuillez réessayer dans quelques instants.`
+                  ? `Nous ne sommes malheureusement pas en mesure d’afficher la qualité des eaux de baignade pour l’instant. Veuillez réessayer dans quelques instants.`
                   : data &&
                   (data.baignades.error
                     ? `Les données ne sont pas disponibles pour cette commune`
