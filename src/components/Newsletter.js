@@ -118,7 +118,7 @@ export default function Newsletter(props) {
         <Content ref={ref} seo={props.seo}>
           <MDXRenderer>{(props.data || data).mdx.body}</MDXRenderer>
           <Button.Wrapper>
-            {props.type == 'baignades' ? (
+            {props.type === 'baignades' ? (
               <StyledButton to='/'>
                 Consulter la qualité de l’eau de baignade
               </StyledButton>
