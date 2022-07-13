@@ -52,7 +52,7 @@ const WidgetLink = styled(MagicLink)`
 
 export default function Search(props) {
   return (
-    <Wrapper iframe={props.iframe}>
+    <Wrapper iframe={props.iframe} className={props.className}>
       <Background />
       <StyledSection first>
         <Cloud />

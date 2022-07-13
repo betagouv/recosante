@@ -118,24 +118,29 @@ export default function Newsletter(props) {
         <Content ref={ref} seo={props.seo}>
           <MDXRenderer>{(props.data || data).mdx.body}</MDXRenderer>
           <Button.Wrapper>
-            <StyledButton
-              onClick={() => {
-                mutateUser({
-                  indicateurs: props.indicateurs || ['indice_atmo', 'raep'],
-                })
-                setSubscription('indicators')
-                window?._paq?.push(['trackEvent', 'Subscription', 'Infolettre'])
-              }}
-            >
-              M'abonner à Recosanté
-            </StyledButton>
+            {props.type == 'baignades' ? (
+              <StyledButton to='/'>
+                Consulter la qualité de l’eau de baignade
+              </StyledButton>
+            ) : (
+              <StyledButton
+                onClick={() => {
+                  mutateUser({
+                    indicateurs: props.indicateurs || ['indice_atmo', 'raep'],
+                  })
+                  setSubscription('indicators')
+                  window?._paq?.push(['trackEvent', 'Subscription', 'Infolettre'])
+                }}
+              >
+                M'abonner à Recosanté
+              </StyledButton>)}
           </Button.Wrapper>
         </Content>
         <MockupWrapper>
           <Mockup type={props.type} isOnScreen={isOnScreen} />
         </MockupWrapper>
       </StyledSection>
-      {props.type !== 'uv' && <Notifications />}
+      {(props.type !== 'uv' && props.type !== 'baignades') && <Notifications />}
     </>
   )
 }

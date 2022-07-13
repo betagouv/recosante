@@ -10,11 +10,11 @@ const StyledButton = styled(Button)`
   font-size: 1.25rem;
 `
 
-export default function AboutUV() {
+export default function AboutBaignades() {
   const data = useStaticQuery(
     graphql`
       query {
-        mdx(slug: { eq: "about-uv" }) {
+        mdx(slug: { eq: "about-baignades" }) {
           body
         }
       }
@@ -22,13 +22,8 @@ export default function AboutUV() {
   )
 
   return (
-    <Section id='about-uv' small>
+    <Section id='about-baignades' small>
       <MDXRenderer>{data.mdx.body}</MDXRenderer>
-      <Button.Wrapper center>
-        <StyledButton hollow to='/'>
-          Consulter l’indice UV de ma commune
-        </StyledButton>
-      </Button.Wrapper>
     </Section>
   )
 }
