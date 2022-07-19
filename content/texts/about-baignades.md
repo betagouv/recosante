@@ -1,6 +1,6 @@
 ## **Une eau de baignade de qualité, qu’est-ce que ça veut dire ?**
 
-Une eau de baignade est de qualité suffisante lorsque s’y baigner comporte peu de risque pour la santé des baigneurs. Afin de l'évaluer, des contrôles sanitaires sont mis en œuvre par les Agences régionales de santé (ARS) durant toute la saison balnéaire (3 à 5 mois en métropole et toute l’année dans les départements et régions d’outre-mer).
+Une eau de baignade est de qualité suffisante lorsque s’y baigner ne comporte pas, ou peu, de risque pour la santé. Afin de l'évaluer, des contrôles sanitaires sont mis en œuvre par les agences régionales de santé (ARS) durant toute la saison balnéaire (3 à 5 mois en métropole et toute l’année dans les départements et régions d’outre-mer).
 
 ## **Dans quels cas la baignade peut-elle être interdite ?**
 
