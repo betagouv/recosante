@@ -32,32 +32,6 @@ const StyledMagicLink = styled(MagicLink)`
     text-decoration: underline;
   }
 `
-const Interdiction = styled.div`
-  position: relative;
-  margin-top: 0.5rem;
-  padding-left: 3.5rem;
-  line-height: 3rem;
-  color: ${(props) => props.theme.colors.error};
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3rem;
-    height: 3rem;
-    background: ${(props) => 'url(' + InterdictionImage + ')'};
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: center;
-  }
-
-  > div {
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 1.25rem;
-  }
-`
 const Sample = styled.div`
   position: relative;
   padding-left: 3.5rem;
@@ -113,6 +87,44 @@ const Ranking = styled.div`
 const Year = styled.span`
   font-weight: lighter;
 `
+const Interdiction = styled.div`
+  position: relative;
+  margin-top: 0.5rem;
+  padding-left: 3.5rem;
+  line-height: 3rem;
+  color: ${(props) => props.theme.colors.error};
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    height: 3rem;
+    background: ${(props) => 'url(' + InterdictionImage + ')'};
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+  }
+
+  > div {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.25rem;
+  }
+`
+const Pollution = styled.div`
+  position: relative;
+  margin-top: 0.5rem;
+  line-height: 1.5rem;
+  color: ${(props) => props.theme.colors.error};
+
+  > div {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.25rem;
+  }
+`
 
 export default function Element(props) {
   const value = ['Bon résultat', 'Résultat moyen', 'Mauvais résultat'].indexOf(
@@ -139,6 +151,12 @@ export default function Element(props) {
           {props.interdiction.date && (<> <Date>({props.interdiction.date})</Date></>)}
         </div>
       </Interdiction>)}
+      {props?.pollution && (<Pollution>
+        <div>
+          Épisode de pollution en cours
+          {props.pollution.date && (<> <Date>(depuis le {props.pollution.date})</Date></>)}
+        </div>
+      </Pollution>)}
     </Wrapper>
   ) : null
 }
