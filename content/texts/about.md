@@ -6,4 +6,4 @@ Le service est en phase de construction, il évolue de façon continue selon les
 
 Les données collectées lors de l'inscription sont utilisées exclusivement pour envoyer les recommandations.
 
-Recosanté est développé de manière ouverte. L'ensemble du code est [disponible librement](https://github.com/betagouv/ecosante).
+Recosanté est développé de manière ouverte. L'ensemble du code est [disponible librement](https://github.com/betagouv/recosante).
