@@ -12,7 +12,7 @@ Direction interministérielle du numérique
 
 ## Directeur de la publication
 
-Monsieur Nadi Bou Hanna, directeur interministériel du numérique.
+Monsieur Xavier Albouy, directeur (par intérim) interministériel du numérique.
 
 ## Hébergement de la Plateforme
 
