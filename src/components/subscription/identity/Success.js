@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import useIframe from 'hooks/useIframe'
 import ModalContext from 'utils/ModalContext'
 import Button from 'components/base/Button'
+import Select from 'components/base/FancySelect'
+import { useUserMutation } from 'hooks/useUser'
 
 const Wrapper = styled.div`
   position: absolute;
@@ -78,6 +80,11 @@ export default function Success(props) {
   if (props.data) {
     window?._paq?.push(['trackEvent', 'Subscription', 'Success'])
   }
+
+  const mutation = useUserMutation()
+  const uid = props?.data?.data?.uid
+  const authentication_token = props?.data?.data?.authentication_token
+
   return (
     <Wrapper visible={props.data}>
       <Title>
@@ -92,37 +99,59 @@ export default function Success(props) {
         )}
         .
       </Title>
-
-      <ButtonWrapper newsletter={newsletter}>
-        <StyledButton
-          to={`/profil?user=${props?.data?.data?.uid}&token=${props?.data?.data?.authentication_token}${
-            iframe ? '&iframe=1' : ''
-          }`}
-          onClick={() => {
-            window?._paq?.push(['trackEvent', 'Subscription', 'Profil', 'Informations'])
-          }}
-          hollow
-        >
-          Modifier mes informations
-        </StyledButton>
-        {newsletter ? (
-          <StyledButton onClick={() => setSubscription(null)}>
-            <Small>Revenir à l'accueil</Small>
-            <Large>Fermer cette fenêtre</Large>
-          </StyledButton>
-        ) : (
-          <StyledButton
-            to={`/profil?user=${props?.data?.data?.uid}&token=${props?.data?.data?.authentication_token}${
-              iframe ? '&iframe=1' : ''
-            }`}
-            onClick={() => {
-              window?._paq?.push(['trackEvent', 'Subscription', 'Profil', 'Recommandations'])
-            }}
-          >
-            M’abonner aux recommandations
-          </StyledButton>
-        )}
-      </ButtonWrapper>
+      {uid && authentication_token && (
+        <>
+          <p>
+            Une dernière chose... Dites-nous comment on s’est connu ?<br />
+            Je vous ai découvert{' '}
+            <Select
+              fancy
+              value={mutation?.data?.data?.connaissance_produit[0]}
+              onChange={(value) => {
+                mutation.mutate({ connaissance_produit: [value], uid: uid, authentication_token: authentication_token })
+              }}
+              options={[
+                { value: '', label: '', disabled: true },
+                { value: 'reseaux_sociaux', label: 'sur les réseaux sociaux' },
+                { value: 'publicite', label: 'dans une publicité' },
+                { value: 'ami', label: 'grâce à un·e proche' },
+                { value: 'association', label: `via une association` },
+                { value: 'medecin', label: 'grâce à mon médecin' },
+                { value: 'pro', label: 'durant mon activité professionnelle' },
+                { value: 'autrement', label: `par un autre moyen` },
+              ]}
+            />{' '}!
+          </p>
+          <ButtonWrapper newsletter={newsletter}>
+            <StyledButton
+              to={`/profil/?user=${uid}&token=${authentication_token}${iframe ? '&iframe=1' : ''
+                }`}
+              onClick={() => {
+                window?._paq?.push(['trackEvent', 'Subscription', 'Profil', 'Informations'])
+              }}
+              hollow
+            >
+              Modifier mes informations
+            </StyledButton>
+            {newsletter ? (
+              <StyledButton onClick={() => setSubscription(null)}>
+                <Small>Revenir à l'accueil</Small>
+                <Large>Fermer cette fenêtre</Large>
+              </StyledButton>
+            ) : (
+              <StyledButton
+                to={`/profil/?user=${uid}&token=${authentication_token}${iframe ? '&iframe=1' : ''
+                  }`}
+                onClick={() => {
+                  window?._paq?.push(['trackEvent', 'Subscription', 'Profil', 'Recommandations'])
+                }}
+              >
+                M’abonner aux recommandations
+              </StyledButton>
+            )}
+          </ButtonWrapper>
+        </>
+      )}
     </Wrapper>
   )
 }
