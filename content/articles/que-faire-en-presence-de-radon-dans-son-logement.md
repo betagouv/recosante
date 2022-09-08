@@ -18,7 +18,7 @@ Le radon est la deuxième cause de cancer du poumon, après le tabac.
 
 L’Institut de radioprotection et de sûreté nucléaire (IRSN) a réalisé une [carte du potentiel radon par commune](https://www.irsn.fr/FR/connaissances/Environnement/expertises-radioactivite-naturelle/radon/Pages/5-cartographie-potentiel-radon-commune.aspx). Toutefois, cette cartographie ne présage pas des concentrations présentes dans votre habitation qui dépendent de multiples autres facteurs, comme les caractéristiques du logement (matériaux en granite, sous-sol en terre battue, équipements de chauffage, etc.) ou l’absence d’aération de l’habitation.
 
-## L’exposition à la pollution de l'air est plus forte le long des axes routiers
+## Des actions correctives existent
 
 Si des mesures de réduction de l’exposition à ce gaz sont conseillées quelle que soit la concentration constatée à l’issue du dépistage (la liste des sociétés vendant des kits de mesurage est disponible sur les sites de l'[IRSN](https://www.irsn.fr/FR/Pages/Home.aspx) et de l’[Autorité de sûreté nuclaire](https://www.asn.fr/espace-professionnels/agrements-controles-et-mesures/organismes-agrees-pour-la-mesure-du-radon)), il est particulièrement recommandé de mettre en place une des deux solutions suivantes à partir d’une concentration de radon supérieure à 300 Bq/m3 et inférieure à 999 Bq/m3 :
 - évacuer le radon présent dans l’habitation en aérant et en entretenant son système de ventilation régulièrement ;
