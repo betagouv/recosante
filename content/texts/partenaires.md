@@ -34,7 +34,7 @@ partners:
   - title: Météo-France
     image: ../assets/logos/logo-meteo-france.png
     link: https://meteofrance.com/
-  - title: Santé Publique France
+  - title: Santé publique France
     image: ../assets/logos/logo-sante-publique-france.png
     link: https://www.santepubliquefrance.fr/
 press:
