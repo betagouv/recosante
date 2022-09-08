@@ -12,4 +12,5 @@ Dans l’évaluation de cette qualité, il convient de distinguer :
 
 Des mesures de gestion telles que des interdictions de baignades temporaires ou permanentes peuvent être prises de manière à éviter que les baigneurs soient exposés à une pollution.
 
-[En savoir plus](https://baignades.sante.gouv.fr/baignades/editorial/fr/controle/organisation.html)
+[En savoir plus](https://baignades.sante.gouv.fr/baignades/editorial/fr/controle/organisation.html)  
+[Consulter les recommandations associées](/recommandations#baignades)
