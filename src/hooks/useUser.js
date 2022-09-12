@@ -21,18 +21,21 @@ export function useUser() {
 }
 
 export function useUserMutation() {
-  const [uid] = useQueryParam('user')
-  const [token] = useQueryParam('token')
+  let [uid] = useQueryParam('user')
+  let [token] = useQueryParam('token')
   const queryClient = useQueryClient()
   return useMutation(
     (user) => {
       let url = `${apiUrl}/users/`
+      const {uid: newUid, authentication_token: newToken, ...newUser} = { ...user, commune: user.commune && { code: user.commune.code } }
+      uid ??= newUid
+      token ??= newToken
       if (uid && token) {
         url += `${uid}?token=${token}`
       }
       return axios.post(
         url,
-        { ...user, commune: user.commune && { code: user.commune.code } },
+        newUser,
         {
           headers: { Accept: ' application/json' },
         }
