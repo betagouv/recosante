@@ -107,6 +107,20 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           })
       })
     )
+  const recommandations = axios
+    .get(
+      `${process.env.GATSBY_API_BASE_URL ||
+      'https://api.recosante.beta.gouv.fr'
+      }/v1/recommandations`
+    )
+    .then((res) => res.data)
+    .then((res) => {
+      createPage({
+        path: `/recommandations`,
+        component: require.resolve('./src/templates/recommandations.js'),
+        context: { recommandations: res},
+      })
+    })
 
-  return Promise.all([articles, pages, places])
+  return Promise.all([articles, pages, places, recommandations])
 }

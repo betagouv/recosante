@@ -44,6 +44,7 @@ export default function Links() {
         <Item to='/partenaires'>partenaires</Item>
         <Item to='/stats'>statistiques</Item>
         <Item to='/articles'>articles</Item>
+        <Item to='/recommandations'>recommandations</Item>
       </ItemWrapper>
     </Wrapper>
   )
