@@ -7,7 +7,7 @@ import Chart from './raep/Chart'
 import Details from './raep/Details'
 
 export default function Raep(props) {
-  const { data, isError, isLoading } = useIndicators(props.place.code)
+  const { data, isError, isLoading } = useIndicators(props.place.code, props.date)
 
   return (
     <Card columns={6}>

@@ -11,10 +11,10 @@ const Wrapper = styled.svg`
 
 const Circle = styled.circle`
   stroke: ${(props) => props.theme.colors.indiceuv[props.value]};
-  stroke-dashoffset: ${(props) => 2 * Math.PI * props.r * (1 - props.value / props.maxValue) };
+  stroke-dashoffset: ${(props) => 2 * Math.PI * props.r * (1 - props.value / props.maxValue)};
   stroke-width: ${(props) => 2 * props.r}};
   stroke-dasharray: ${(props) => 2 * Math.PI * props.r};
-  transition: stroke-dashoffset 3s ease-in-out;
+  transition: stroke-dashoffset ${(props) => ( props.value ? 3 : 0)}s ease-in-out;
 `
 
 const Path = styled.path`
@@ -22,10 +22,13 @@ const Path = styled.path`
     props.visible ? props.theme.colors.indiceuv[props.value]
       : props.theme.colors.main};
   opacity: ${(props) =>
-    props.visible  ? 1 : 0.15};
-  transition:
-    opacity 1000ms 2000ms ease-in-out,
-    stroke 500ms 2000ms ease-in-out;
+    props.visible ? 1 : 0.15};
+  transition: opacity ${(props) => (props.visible ? 1000 : 0)}ms
+                      ${(props) => (props.visible ? 2000 : 0)}ms
+                      ease-in-out,
+              stroke  ${(props) => (props.visible ? 500 : 0)}ms
+                      ${(props) => (props.visible ? 2000 : 0)}ms
+                      ease-in-out;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;

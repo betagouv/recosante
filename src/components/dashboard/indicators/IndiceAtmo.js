@@ -7,7 +7,7 @@ import Chart from './indiceAtmo/Chart'
 import Details from './indiceAtmo/Details'
 
 export default function IndiceAtmo(props) {
-  const { data, isError, isLoading } = useIndicators(props.place.code)
+  const { data, isError, isLoading } = useIndicators(props.place.code, props.date)
 
   return (
     (!data || data.indice_atmo !== {}) && (
