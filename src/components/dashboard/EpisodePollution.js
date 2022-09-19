@@ -15,18 +15,18 @@ const Recommandation = styled.div`
   font-weight: 300;
 `
 export default function EpisodePollution(props) {
-  const { data } = useIndicators(props.place.code)
+  const { data } = useIndicators(props.place.code, props.date)
 
   const { episodePollution, setEpisodePollution } = useContext(ModalContext)
   useEffect(() => {
     data?.episodes_pollution?.advice && setEpisodePollution(true)
-  }, [data])
+  }, [data]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <Modal open={episodePollution} setOpen={setEpisodePollution}>
       <Title>
-        Un <strong>{data?.episodes_pollution?.indice?.label}</strong> est prévu
-        aujourd'hui pour {data?.episodes_pollution?.validity?.area}
+        Un <strong>{data?.episodes_pollution?.indice?.label}</strong> est prévu{' '}
+        {props.date ? 'demain' : 'aujourd’hui'} pour {data?.episodes_pollution?.validity?.area}
       </Title>
       <Recommandation
         dangerouslySetInnerHTML={{

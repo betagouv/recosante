@@ -27,13 +27,13 @@ const Title = styled.p`
   text-align: center;
 `
 export default function EpisodePollution(props) {
-  const { data } = useIndicators(props.place.code)
+  const { data } = useIndicators(props.place.code, props.date)
 
   const { setEpisodePollution } = useContext(ModalContext)
 
   return data?.episodes_pollution?.advice ? (
     <Wrapper>
-      <Title>Un épisode de pollution est prévu aujourd'hui</Title>
+      <Title>Un épisode de pollution est prévu{' '}{props.date ? 'demain' : 'aujourd’hui'}</Title>
       <Button onClick={() => setEpisodePollution(true)}>En savoir plus</Button>
     </Wrapper>
   ) : null

@@ -6,8 +6,8 @@ import Card from 'components/misc/Card'
 import Chart from './vigilanceMeteo/Chart'
 import Details from './vigilanceMeteo/Details'
 
-export default function Raep(props) {
-  const { data, isError, isLoading } = useIndicators(props.place.code)
+export default function VigilanceMeteo(props) {
+  const { data, isError, isLoading } = useIndicators(props.place.code, props.date)
 
   return (
     <Card columns={6}>

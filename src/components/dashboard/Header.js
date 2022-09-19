@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import EpisodePollution from './header/EpisodePollution'
+import Select from 'components/base/FancySelect'
 
 const Wrapper = styled.div`
   display: flex;
@@ -29,7 +30,7 @@ const Title = styled.h1`
 const Name = styled.span`
   color: ${(props) => props.theme.colors.main};
 `
-const Date = styled.span`
+const DateWrapper = styled.span`
   font-size: 2rem;
   font-weight: 300;
   color: ${(props) => props.theme.colors.text};
@@ -62,20 +63,44 @@ const Details = styled.div`
   }
 `
 export default function Header(props) {
+  const today = new Date()
+  const tomorrow = new Date(today)
+  tomorrow.setDate(tomorrow.getDate() + 1)
+  const formatDateLabel = (date) => {
+    return new Intl.DateTimeFormat('fr-FR', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }).format(date)
+  }
+  const formatDateValue = (date) => {
+    return new Intl.DateTimeFormat("fr-CA", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).format(date)
+  }
+  const options = [
+    { value: formatDateValue(today), label: formatDateLabel(today)},
+    { value: formatDateValue(tomorrow), label: formatDateLabel(tomorrow)}
+  ]
   return (
     <Wrapper>
       <TitleWrapper>
         <Title>
           <Name>{props.place.nom}</Name>
-          <Date>
+          <DateWrapper>
             <Intro>, le </Intro>
-            {new Intl.DateTimeFormat('fr-FR', {
-              weekday: 'long',
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            }).format()}
-          </Date>
+            <Select
+              fancy
+              value={props.date || options[0].value}
+              onChange={(value) => {
+                  props.onDateChange(value !== options[0].value && value)
+              }}
+              options={options}
+            />
+          </DateWrapper>
         </Title>
         <Details>
           {props.place.codesPostaux.length > 2
@@ -86,7 +111,7 @@ export default function Header(props) {
           - {props.place.departement.nom}
         </Details>
       </TitleWrapper>
-      <EpisodePollution place={props.place} />
+      <EpisodePollution place={props.place} date={props.date}/>
     </Wrapper>
   )
 }

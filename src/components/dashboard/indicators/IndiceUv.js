@@ -6,7 +6,7 @@ import Card from 'components/misc/Card'
 import Chart from './indiceUv/Chart'
 
 export default function IndiceUv(props) {
-  const { data, isError, isLoading } = useIndicators(props.place.code)
+  const { data, isError, isLoading } = useIndicators(props.place.code, props.date)
 
   return (
     <Card columns={6}>

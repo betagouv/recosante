@@ -27,10 +27,10 @@ export default function Indicators(props) {
       }}
       columnClassName='my-masonry-grid_column'
     >
-      <IndiceAtmo place={props.place} />
-      <Raep place={props.place} />
-      <VigilanceMeteo place={props.place} />
-      <IndiceUv place={props.place} />
+      <IndiceAtmo place={props.place} date={props.date} />
+      <Raep place={props.place} date={props.date} />
+      <VigilanceMeteo place={props.place} date={props.date} />
+      <IndiceUv place={props.place} date={props.date} />
       <Baignades place={props.place} />
       <PotentielRadon place={props.place} />
     </StyledMasonry>

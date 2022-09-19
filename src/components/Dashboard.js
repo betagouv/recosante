@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import Section from 'components/base/Section'
@@ -21,13 +21,14 @@ const StyledSection = styled(Section)`
   margin: 0 auto;
 `
 export default function Dashboard(props) {
+  const [ date, setDate ] = useState()
   return (
     <Wrapper>
       <Background />
       <StyledSection first>
-        <Header place={props.place} />
-        <Indicators place={props.place} />
-        <EpisodePollution place={props.place} />
+        <Header place={props.place} date={date} onDateChange={setDate} />
+        <Indicators place={props.place} date={date} />
+        <EpisodePollution place={props.place} date={date} />
       </StyledSection>
     </Wrapper>
   )
