@@ -1,18 +1,16 @@
 import React from 'react'
 
-import { useUserReactivation } from 'hooks/useUser'
 import Button from 'components/base/Button'
 
 export default function InactiveProfile() {
-  const mutation = useUserReactivation()
-
   return (
     <div>
       <p>
-        Votre profil est désactivé. Vous pouvez le réactiver en cliquant ici.
+        Votre compte est désactivé.
       </p>
-
-      <Button onClick={() => mutation.mutate()}>Réactiver mon profil</Button>
+      <Button.Wrapper left>
+        <Button to='/'>Retourner à l'accueil</Button>
+      </Button.Wrapper>
     </div>
   )
 }
