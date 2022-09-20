@@ -45,6 +45,10 @@ const Input = styled.select`
     outline: none;
     box-shadow: 0px 0.25rem 0px 0px ${(props) => props.theme.colors.main};
   }
+
+  & option {
+    color: #000;
+  }
 `
 export default function FancySelect(props) {
   return (
