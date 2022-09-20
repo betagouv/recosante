@@ -96,7 +96,8 @@ export default function Header(props) {
               fancy
               value={props.date || options[0].value}
               onChange={(value) => {
-                  props.onDateChange(value !== options[0].value && value)
+                props.onDateChange(value !== options[0].value && value)
+                window?._paq?.push(['trackEvent', 'Search', 'DateChange'])
               }}
               options={options}
             />
