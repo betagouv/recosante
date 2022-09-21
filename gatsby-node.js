@@ -102,7 +102,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
             path: formatPlaceUrl(place),
             component: require.resolve('./src/templates/place.js'),
             context: { place },
-            defer: place.population < 20000,
+            defer: false,
           })
       })
     )
