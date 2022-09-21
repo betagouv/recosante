@@ -19,7 +19,7 @@ export default function Delete() {
 
   return (
     <Wrapper role='button' onClick={() => setDeleteProfile(true)}>
-      Supprimer mon compte
+      Me désinscrire
     </Wrapper>
   )
 }
