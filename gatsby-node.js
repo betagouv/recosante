@@ -6,9 +6,8 @@ exports.sourceNodes = async ({
 }) =>
   axios
     .get(
-      `${
-        process.env.GATSBY_API_BASE_URL ||
-        'https://staging.api.recosante.beta.gouv.fr'
+      `${process.env.GATSBY_API_BASE_URL ||
+      'https://api.recosante.beta.gouv.fr'
       }/_application_server_key`
     )
     .then((res) => res.data)
