@@ -44,7 +44,7 @@ export default function Code(props) {
       `<script id="${props.id || 'widget-recosante'}" src="${
         window.location.origin
       }/iframe.js" data-search="${
-        props.typeShare === 'result' ? location.pathname : ''
+        props.typeShare === 'result' ? location.pathname.substring(1) : ''
       }?theme=${theme}"></script>`
     )
   }, [location.pathname, props.id, props.typeShare, theme])
