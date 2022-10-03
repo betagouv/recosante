@@ -73,7 +73,7 @@ export default function Code(props) {
       `<script id="widget-recosante" src="${
         window.location.origin
       }/iframe.js" data-search="${
-        props.defaultPlace ? formatPlaceUrl(props.defaultPlace) : ''
+        props.defaultPlace ? formatPlaceUrl(props.defaultPlace).substring(1) : ''
       }?theme=${theme}"></script>`
     )
   }, [location.pathname, props.defaultPlace, theme])

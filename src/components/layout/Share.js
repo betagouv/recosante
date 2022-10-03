@@ -47,7 +47,7 @@ export default function Share(props) {
   useEffect(() => {
     setUrl(
       `${window.location.origin}/${
-        typeShare === 'result' ? location.pathname + location.search : ''
+        typeShare === 'result' ? location.pathname.substring(1) + location.search : ''
       }`
     )
   }, [location.search, location.pathname, typeShare])
