@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import EpisodePollution from './header/EpisodePollution'
 import Select from 'components/base/FancySelect'
+import Button from 'components/base/Button'
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,11 +15,7 @@ const Wrapper = styled.div`
 `
 const TitleWrapper = styled.div`
   flex: 1;
-  margin-bottom: 5rem;
-
-  ${(props) => props.theme.mq.medium} {
-    margin-bottom: 2rem;
-  }
+  margin-bottom: 2rem;
 `
 const Title = styled.h1`
   margin: 0 0 0 -0.15rem;
@@ -52,6 +49,7 @@ const Intro = styled.span`
 const Details = styled.div`
   font-size: 1.25rem;
   font-weight: 300;
+  margin-bottom: 1rem;
 
   ${(props) => props.theme.mq.medium} {
     display: block;
@@ -62,6 +60,17 @@ const Details = styled.div`
     font-size: 0.875rem;
   }
 `
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 -0.5rem;
+  > * {
+    margin: 0 0.5rem 0;
+  }
+`
+
 export default function Header(props) {
   const today = new Date()
   const tomorrow = new Date(today)
@@ -81,10 +90,13 @@ export default function Header(props) {
       day: "2-digit"
     }).format(date)
   }
+  const todayValue = formatDateValue(today)
+  const tomorrowValue = formatDateValue(tomorrow)
   const options = [
-    { value: formatDateValue(today), label: formatDateLabel(today)},
-    { value: formatDateValue(tomorrow), label: formatDateLabel(tomorrow)}
+    { value: todayValue, label: formatDateLabel(today) },
+    { value: tomorrowValue, label: formatDateLabel(tomorrow) }
   ]
+  const date = props.date || todayValue
   return (
     <Wrapper>
       <TitleWrapper>
@@ -94,10 +106,9 @@ export default function Header(props) {
             <Intro>, le </Intro>
             <Select
               fancy
-              value={props.date || options[0].value}
+              value={date}
               onChange={(value) => {
-                props.onDateChange(value !== options[0].value && value)
-                window?._paq?.push(['trackEvent', 'Search', 'DateChange'])
+                props.setDate(value !== todayValue && value)
               }}
               options={options}
             />
@@ -106,13 +117,30 @@ export default function Header(props) {
         <Details>
           {props.place.codesPostaux.length > 2
             ? props.place.codesPostaux[0] +
-              ' ... ' +
-              props.place.codesPostaux[props.place.codesPostaux.length - 1]
+            ' ... ' +
+            props.place.codesPostaux[props.place.codesPostaux.length - 1]
             : props.place.codesPostaux.join(', ')}{' '}
           - {props.place.departement.nom}
         </Details>
+        <ButtonWrapper>
+          <Button
+            hollow={date !== todayValue}
+            onClick={() => {
+              props.setDate(false)
+            }}>
+            Aujourd’hui
+          </Button>
+          <Button
+            hollow={date !== tomorrowValue}
+            onClick={() => {
+              props.setDate(tomorrowValue)
+            }}
+          >
+            Demain
+          </Button>
+        </ButtonWrapper>
       </TitleWrapper>
-      <EpisodePollution place={props.place} date={props.date}/>
+      <EpisodePollution place={props.place} date={props.date} />
     </Wrapper>
   )
 }

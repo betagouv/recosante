@@ -21,12 +21,12 @@ const StyledSection = styled(Section)`
   margin: 0 auto;
 `
 export default function Dashboard(props) {
-  const [ date, setDate ] = useState()
+  const [date, setDate] = useState()
   return (
     <Wrapper>
       <Background />
       <StyledSection first>
-        <Header place={props.place} date={date} onDateChange={setDate} />
+        <Header place={props.place} date={date} setDate={setDate} />
         <Indicators place={props.place} date={date} />
         <EpisodePollution place={props.place} date={date} />
       </StyledSection>
