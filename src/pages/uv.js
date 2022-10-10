@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Web from 'components/layout/Web'
 import Newsletter from '../components/Newsletter'
-import AboutUV from 'components/AboutUV'
+import AboutUv from 'components/AboutUv'
 
 export default function Uv() {
   const data = useStaticQuery(
@@ -19,7 +19,7 @@ export default function Uv() {
   return (
     <Web title={`UV`}>
       <Newsletter first data={data} type={'uv'} indicateurs={['indice_uv']} seo />
-      <AboutUV />
+      <AboutUv />
     </Web>
   )
 }

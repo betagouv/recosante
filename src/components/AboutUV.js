@@ -10,7 +10,7 @@ const StyledButton = styled(Button)`
   font-size: 1.25rem;
 `
 
-export default function AboutUV() {
+export default function AboutUv() {
   const data = useStaticQuery(
     graphql`
       query {
