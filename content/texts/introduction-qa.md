@@ -1,3 +1,3 @@
-# **Vous êtes sensible à la pollution de l'air ?**<br/>Recevez des recommandations pour vous protéger de ses impacts sur votre santé
+# **Vous souhaitez connaître la qualité de l'air autour de chez vous ?**
 
-Grâce à Recosanté, recevez **chaque matin** ou seulement **en cas de vigilance**, et ce **gratuitement**, l’**indice de qualité de l’air** dans votre commune et des **recommandations** sur les gestes simples à adopter pour mieux vous protéger des polluants atmosphériques.
+Recevez **gratuitement** l'indice de qualité de l'air et des recommandations pour vous aider à réduire les impacts des polluants atmosphériques sur votre santé.
