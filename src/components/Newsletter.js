@@ -140,7 +140,7 @@ export default function Newsletter(props) {
           <Mockup type={props.type} isOnScreen={isOnScreen} />
         </MockupWrapper>
       </StyledSection>
-      {(props.type !== 'uv' && props.type !== 'baignades') && <Notifications />}
+      {(props.type !== 'qa' && props.type !== 'uv' && props.type !== 'baignades') && <Notifications />}
     </>
   )
 }

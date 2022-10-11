@@ -64,13 +64,19 @@ export default function Mockup(props) {
               alt='Tablette'
               placeholder='none'
             />
+          ) : (props.type === 'qa' ? (
+              <StaticImage
+                src='./mockup/tablet-qa.png'
+                alt='Tablette'
+                placeholder='none'
+              />
           ) : (
             <StaticImage
               src='./mockup/tablet.png'
               alt='Tablette'
               placeholder='none'
             />
-          ))}
+          )))}
         </Tablet>
       </Wrapper>
     </>

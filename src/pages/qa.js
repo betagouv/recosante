@@ -3,13 +3,13 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Web from 'components/layout/Web'
 import Newsletter from '../components/Newsletter'
-import AboutUv from 'components/AboutUv'
+import AboutQa from 'components/AboutQa'
 
-export default function Uv() {
+export default function Qa() {
   const data = useStaticQuery(
     graphql`
       query {
-        mdx(slug: { eq: "introduction-uv" }) {
+        mdx(slug: { eq: "introduction-qa" }) {
           body
         }
       }
@@ -17,9 +17,9 @@ export default function Uv() {
   )
 
   return (
-    <Web title={`UV`}>
-      <Newsletter first data={data} type={'uv'} indicateurs={['indice_uv']} seo />
-      <AboutUv />
+    <Web title={`Qualité de l’air`}>
+      <Newsletter first data={data} type={'qa'} indicateurs={['indice_atmo']} seo />
+      <AboutQa />
     </Web>
   )
 }
