@@ -97,6 +97,10 @@ export default function Header(props) {
     { value: tomorrowValue, label: formatDateLabel(tomorrow) }
   ]
   const date = props.date || todayValue
+  const changeDate = (date) => {
+    props.setDate(date)
+    window?._paq?.push(['trackEvent', 'Search', 'DateChange'])
+  }
   return (
     <Wrapper>
       <TitleWrapper>
@@ -108,7 +112,7 @@ export default function Header(props) {
               fancy
               value={date}
               onChange={(value) => {
-                props.setDate(value !== todayValue && value)
+                changeDate(value !== todayValue && value)
               }}
               options={options}
             />
@@ -126,14 +130,14 @@ export default function Header(props) {
           <Button
             hollow={date !== todayValue}
             onClick={() => {
-              props.setDate(false)
+              changeDate(false)
             }}>
             Aujourd’hui
           </Button>
           <Button
             hollow={date !== tomorrowValue}
             onClick={() => {
-              props.setDate(tomorrowValue)
+              changeDate(tomorrowValue)
             }}
           >
             Demain
