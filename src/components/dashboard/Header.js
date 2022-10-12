@@ -96,7 +96,7 @@ export default function Header(props) {
     { value: todayValue, label: formatDateLabel(today) },
     { value: tomorrowValue, label: formatDateLabel(tomorrow) }
   ]
-  const date = props.date || todayValue
+  const date = (props.date === tomorrowValue) ? tomorrowValue : todayValue
   const changeDate = (date) => {
     props.setDate(date)
     window?._paq?.push(['trackEvent', 'Search', 'DateChange'])
