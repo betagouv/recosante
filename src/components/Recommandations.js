@@ -94,7 +94,7 @@ export default function Recommandations(props) {
     "raep_4-5": recommandationsMinRaep(4)
   }
   const comparePhenomenes = (p1, p2) => (p1.vigilance_phenomene_ids > p2.vigilance_phenomene_ids ? 1 : -1);
-  const recommandationsVigilanceCouleur = (vigilance_couleur_id) => recommandationsByType["vigilance_meteo"]?.filter(r => r.vigilance_couleur_ids.includes(vigilance_couleur_id)).sort(comparePhenomenes);
+  const recommandationsVigilanceCouleur = (vigilance_couleur_id) => recommandationsByType["vigilance_meteo"]?.filter(r => r.vigilance_couleur_ids?.includes(vigilance_couleur_id)).sort(comparePhenomenes);
   recommandations["vigilance_meteo"] = {
     "vigilance_verte": recommandationsVigilanceCouleur(1),
     "vigilance_jaune": recommandationsVigilanceCouleur(2),
