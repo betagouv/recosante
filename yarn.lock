@@ -6041,10 +6041,10 @@ gatsby-plugin-manifest@^4.0.0:
     semver "^7.3.5"
     sharp "^0.29.1"
 
-gatsby-plugin-matomo@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.npmjs.org/gatsby-plugin-matomo/-/gatsby-plugin-matomo-0.10.0.tgz"
-  integrity sha512-ghtWLfs4tkanB6B6rMZPcH8y5F99GTV0hpupxDWkxk1RrCRyGEDhHJ6QpmDp62Tkkss1EfoXXPia8E3IV+qP9g==
+gatsby-plugin-matomo@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-matomo/-/gatsby-plugin-matomo-0.13.0.tgz#abf1bd561f3ca35c57b8bbbd5d8e87579ba17886"
+  integrity sha512-zwmxcwOoDi3hjNQoUJehoC5XwQKgR+bArAAvArGJWHlJqv7G688tlmKgbIGqEUj3aFSdyWAzAM7QhEt68buMNw==
 
 gatsby-plugin-mdx@^3.0.0:
   version "3.0.0"
