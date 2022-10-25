@@ -52,14 +52,41 @@ export default function Element(props) {
     'Pluie-Inondation': PluieInondation,
   }
   const value = ['Vert', 'Jaune', 'Orange', 'Rouge'].indexOf(props.indice.color)
-
+  const tomorrow = new Date()
+  tomorrow.setHours(24, 0, 0, 0)
   return (
     <Wrapper>
       <Title>
         <Icon value={value}>
           <img src={images[props.indice.label]} alt={props.indice.label} />
         </Icon>
-        {props.indice.label}
+        {props.indice.label}{' '}
+        {props.validity.map((v, i) => (
+          v.start ? (
+            (!v.end || v.end >= tomorrow) ? (
+              <React.Fragment key={v.start + '-' + v.end}>
+                {i > 0 ? ' et ' : ''}
+                à partir de{' '}
+                {v.start.toLocaleTimeString('fr', {
+                  hour: '2-digit'
+                })}
+              </React.Fragment>
+            ) : (
+              <React.Fragment key={v.start + '-' + v.end}>
+                {i > 0 ? ' et ' : ''}
+                de{' '}
+                {v.start.toLocaleTimeString('fr', {
+                  hour: '2-digit'
+                })}{' '}
+                à{' '}
+                {v.end.toLocaleTimeString('fr', {
+                  hour: '2-digit'
+                })}
+              </React.Fragment>
+            )) : (
+            <></>
+          )
+        ))}
       </Title>
       {props.indice.advice && (
         <Card.Recommandation
