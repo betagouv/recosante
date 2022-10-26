@@ -22,7 +22,7 @@ export default function Details(props) {
       })
       return details
     }, {})
-  console.log("details", details)
+
   return (
     <div>
       {values.reverse().map((c) => (
