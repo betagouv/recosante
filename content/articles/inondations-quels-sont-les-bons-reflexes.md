@@ -1,7 +1,7 @@
 ---
 title: "­Inondations : quels sont les bons réflexes ?"
 order: 43
-image: ../assets/images/­inondations-quels-sont-les-bons-reflexes.jpg
+image: ../assets/images/inondations-quels-sont-les-bons-reflexes.jpg
 category: "Phénomènes météorologiques"
 bon_geste: "En cas d’inondation, ne pas se déplacer et rester abrité en hauteur."
 ---
