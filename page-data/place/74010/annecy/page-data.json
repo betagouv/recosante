@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/74010/annecy/",
+    "result": {"pageContext":{"place":{"codesPostaux":["74600","74960","74370","74000","74940"],"population":130721,"nom":"Annecy","code":"74010","departement":{"code":"74","nom":"Haute-Savoie"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

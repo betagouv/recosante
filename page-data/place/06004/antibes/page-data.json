@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/06004/antibes/",
+    "result": {"pageContext":{"place":{"codesPostaux":["06160","06600"],"population":73438,"nom":"Antibes","code":"06004","departement":{"code":"06","nom":"Alpes-Maritimes"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

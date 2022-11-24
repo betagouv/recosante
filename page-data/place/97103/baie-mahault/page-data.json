@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/97103/baie-mahault/",
+    "result": {"pageContext":{"place":{"codesPostaux":["97122"],"population":30837,"nom":"Baie-Mahault","code":"97103","departement":{"code":"971","nom":"Guadeloupe"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

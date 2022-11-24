@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/33039/begles/",
+    "result": {"pageContext":{"place":{"codesPostaux":["33130"],"population":30642,"nom":"Bègles","code":"33039","departement":{"code":"33","nom":"Gironde"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

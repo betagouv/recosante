@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/83118/saint-raphael/",
+    "result": {"pageContext":{"place":{"codesPostaux":["83700","83530"],"population":36027,"nom":"Saint-Raphaël","code":"83118","departement":{"code":"83","nom":"Var"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

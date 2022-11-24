@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/49301/sevremoine/",
+    "result": {"pageContext":{"place":{"codesPostaux":["49450","49710","49230","49660"],"population":25162,"nom":"Sèvremoine","code":"49301","departement":{"code":"49","nom":"Maine-et-Loire"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

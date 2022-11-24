@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/69259/venissieux/",
+    "result": {"pageContext":{"place":{"codesPostaux":["69200"],"population":67285,"nom":"Vénissieux","code":"69259","departement":{"code":"69","nom":"Rhône"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

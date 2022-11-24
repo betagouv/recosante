@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/19031/brive-la-gaillarde/",
+    "result": {"pageContext":{"place":{"codesPostaux":["19100"],"population":46330,"nom":"Brive-la-Gaillarde","code":"19031","departement":{"code":"19","nom":"Corrèze"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

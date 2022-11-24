@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/76575/saint-etienne-du-rouvray/",
+    "result": {"pageContext":{"place":{"codesPostaux":["76800"],"population":28352,"nom":"Saint-Étienne-du-Rouvray","code":"76575","departement":{"code":"76","nom":"Seine-Maritime"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

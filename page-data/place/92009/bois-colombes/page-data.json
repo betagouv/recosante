@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/92009/bois-colombes/",
+    "result": {"pageContext":{"place":{"codesPostaux":["92270"],"population":28841,"nom":"Bois-Colombes","code":"92009","departement":{"code":"92","nom":"Hauts-de-Seine"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

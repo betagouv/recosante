@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/33281/merignac/",
+    "result": {"pageContext":{"place":{"codesPostaux":["33700"],"population":72197,"nom":"Mérignac","code":"33281","departement":{"code":"33","nom":"Gironde"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

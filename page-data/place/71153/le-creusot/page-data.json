@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/71153/le-creusot/",
+    "result": {"pageContext":{"place":{"codesPostaux":["71200"],"population":21269,"nom":"Le Creusot","code":"71153","departement":{"code":"71","nom":"Saône-et-Loire"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

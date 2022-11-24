@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/34145/lunel/",
+    "result": {"pageContext":{"place":{"codesPostaux":["34400"],"population":26385,"nom":"Lunel","code":"34145","departement":{"code":"34","nom":"Hérault"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

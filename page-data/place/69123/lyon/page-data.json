@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/69123/lyon/",
+    "result": {"pageContext":{"place":{"codesPostaux":["69001","69002","69003","69004","69005","69006","69007","69008","69009"],"population":522969,"nom":"Lyon","code":"69123","departement":{"code":"69","nom":"Rhône"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

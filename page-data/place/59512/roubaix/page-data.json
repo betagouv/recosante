@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/59512/roubaix/",
+    "result": {"pageContext":{"place":{"codesPostaux":["59100"],"population":98828,"nom":"Roubaix","code":"59512","departement":{"code":"59","nom":"Nord"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

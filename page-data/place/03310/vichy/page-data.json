@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/03310/vichy/",
+    "result": {"pageContext":{"place":{"codesPostaux":["03200"],"population":24980,"nom":"Vichy","code":"03310","departement":{"code":"03","nom":"Allier"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

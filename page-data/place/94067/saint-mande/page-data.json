@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/94067/saint-mande/",
+    "result": {"pageContext":{"place":{"codesPostaux":["94160"],"population":22377,"nom":"Saint-Mandé","code":"94067","departement":{"code":"94","nom":"Val-de-Marne"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

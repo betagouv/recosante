@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/87085/limoges/",
+    "result": {"pageContext":{"place":{"codesPostaux":["87100","87280","87000"],"population":130876,"nom":"Limoges","code":"87085","departement":{"code":"87","nom":"Haute-Vienne"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

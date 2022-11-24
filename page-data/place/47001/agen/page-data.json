@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/47001/agen/",
+    "result": {"pageContext":{"place":{"codesPostaux":["47000"],"population":32602,"nom":"Agen","code":"47001","departement":{"code":"47","nom":"Lot-et-Garonne"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

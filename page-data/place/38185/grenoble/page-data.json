@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/38185/grenoble/",
+    "result": {"pageContext":{"place":{"codesPostaux":["38000","38100"],"population":158198,"nom":"Grenoble","code":"38185","departement":{"code":"38","nom":"Isère"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

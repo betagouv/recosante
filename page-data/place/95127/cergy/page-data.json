@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/95127/cergy/",
+    "result": {"pageContext":{"place":{"codesPostaux":["95000","95800"],"population":65911,"nom":"Cergy","code":"95127","departement":{"code":"95","nom":"Val-d'Oise"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

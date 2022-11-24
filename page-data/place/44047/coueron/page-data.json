@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/44047/coueron/",
+    "result": {"pageContext":{"place":{"codesPostaux":["44220"],"population":22309,"nom":"Couëron","code":"44047","departement":{"code":"44","nom":"Loire-Atlantique"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

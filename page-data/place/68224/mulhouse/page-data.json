@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/68224/mulhouse/",
+    "result": {"pageContext":{"place":{"codesPostaux":["68200","68100"],"population":108312,"nom":"Mulhouse","code":"68224","departement":{"code":"68","nom":"Haut-Rhin"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

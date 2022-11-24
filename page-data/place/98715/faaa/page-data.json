@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/98715/faaa/",
+    "result": {"pageContext":{"place":{"codesPostaux":["98704"],"population":29506,"nom":"Faaa","code":"98715","departement":{"code":"987","nom":"Polynésie française"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

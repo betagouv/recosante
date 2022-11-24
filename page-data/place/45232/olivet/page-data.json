@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/45232/olivet/",
+    "result": {"pageContext":{"place":{"codesPostaux":["45160"],"population":22386,"nom":"Olivet","code":"45232","departement":{"code":"45","nom":"Loiret"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

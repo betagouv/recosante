@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/50129/cherbourg-en-cotentin/",
+    "result": {"pageContext":{"place":{"codesPostaux":["50130","50100","50460","50120","50470","50110"],"population":78549,"nom":"Cherbourg-en-Cotentin","code":"50129","departement":{"code":"50","nom":"Manche"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/80021/amiens/",
+    "result": {"pageContext":{"place":{"codesPostaux":["80080","80090","80000"],"population":134706,"nom":"Amiens","code":"80021","departement":{"code":"80","nom":"Somme"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

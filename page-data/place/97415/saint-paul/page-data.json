@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/97415/saint-paul/",
+    "result": {"pageContext":{"place":{"codesPostaux":["97423","97434","97435","97460","97411","97422"],"population":103208,"nom":"Saint-Paul","code":"97415","departement":{"code":"974","nom":"La Réunion"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

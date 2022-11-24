@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/39198/dole/",
+    "result": {"pageContext":{"place":{"codesPostaux":["39100"],"population":23711,"nom":"Dole","code":"39198","departement":{"code":"39","nom":"Jura"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

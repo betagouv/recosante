@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/67218/illkirch-graffenstaden/",
+    "result": {"pageContext":{"place":{"codesPostaux":["67400"],"population":26698,"nom":"Illkirch-Graffenstaden","code":"67218","departement":{"code":"67","nom":"Bas-Rhin"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

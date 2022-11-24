@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/92071/sceaux/",
+    "result": {"pageContext":{"place":{"codesPostaux":["92330"],"population":20004,"nom":"Sceaux","code":"92071","departement":{"code":"92","nom":"Hauts-de-Seine"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

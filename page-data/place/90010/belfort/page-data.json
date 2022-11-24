@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/90010/belfort/",
+    "result": {"pageContext":{"place":{"codesPostaux":["90000"],"population":46443,"nom":"Belfort","code":"90010","departement":{"code":"90","nom":"Territoire de Belfort"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

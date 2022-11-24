@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/65440/tarbes/",
+    "result": {"pageContext":{"place":{"codesPostaux":["65000"],"population":42758,"nom":"Tarbes","code":"65440","departement":{"code":"65","nom":"Hautes-Pyrénées"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

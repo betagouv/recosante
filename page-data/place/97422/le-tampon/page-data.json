@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/97422/le-tampon/",
+    "result": {"pageContext":{"place":{"codesPostaux":["97430","97418"],"population":79824,"nom":"Le Tampon","code":"97422","departement":{"code":"974","nom":"La Réunion"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

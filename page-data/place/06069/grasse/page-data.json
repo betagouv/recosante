@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/06069/grasse/",
+    "result": {"pageContext":{"place":{"codesPostaux":["06130","06520"],"population":48870,"nom":"Grasse","code":"06069","departement":{"code":"06","nom":"Alpes-Maritimes"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

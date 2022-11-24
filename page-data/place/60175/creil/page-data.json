@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/60175/creil/",
+    "result": {"pageContext":{"place":{"codesPostaux":["60100"],"population":36169,"nom":"Creil","code":"60175","departement":{"code":"60","nom":"Oise"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

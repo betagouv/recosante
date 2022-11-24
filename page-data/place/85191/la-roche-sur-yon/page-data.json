@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/85191/la-roche-sur-yon/",
+    "result": {"pageContext":{"place":{"codesPostaux":["85000"],"population":55147,"nom":"La Roche-sur-Yon","code":"85191","departement":{"code":"85","nom":"Vendée"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

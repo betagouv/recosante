@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/97118/petit-bourg/",
+    "result": {"pageContext":{"place":{"codesPostaux":["97170"],"population":24753,"nom":"Petit-Bourg","code":"97118","departement":{"code":"971","nom":"Guadeloupe"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

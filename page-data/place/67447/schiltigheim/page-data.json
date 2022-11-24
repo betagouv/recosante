@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/67447/schiltigheim/",
+    "result": {"pageContext":{"place":{"codesPostaux":["67300"],"population":33780,"nom":"Schiltigheim","code":"67447","departement":{"code":"67","nom":"Bas-Rhin"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

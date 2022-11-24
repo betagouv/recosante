@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/76540/rouen/",
+    "result": {"pageContext":{"place":{"codesPostaux":["76100","76000"],"population":112321,"nom":"Rouen","code":"76540","departement":{"code":"76","nom":"Seine-Maritime"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}

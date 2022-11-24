@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-place-js",
+    "path": "/place/91692/les-ulis/",
+    "result": {"pageContext":{"place":{"codesPostaux":["91940"],"population":25024,"nom":"Les Ulis","code":"91692","departement":{"code":"91","nom":"Essonne"}}}},
+    "staticQueryHashes": ["1139396248","2192045344","2215960698","2478502915","2822877365","3118684659","3412710006","3556536444","4202862713","807395231"]}
