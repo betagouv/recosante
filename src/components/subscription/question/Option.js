@@ -119,12 +119,17 @@ export default function Option(props) {
       </Button>
       {props.option.detail && (
         <Detail
+          tabIndex={props.option.detail.modal ? 0 : -1}
           onClick={() => {
-            window?._paq?.push(['trackEvent', 'Subscription', 'NotificationDetail'])
             props.option.detail.modal &&
             props.setModal(props.option.detail.modal)
           }}
           modal={props.option.detail.modal}
+          onKeyPress={(e) => {
+            if (e.key === 'Enter') {
+              e.currentTarget.click()
+            }
+          }}
         >
           {props.option.detail.label}
         </Detail>

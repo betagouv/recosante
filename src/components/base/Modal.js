@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useCallback } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -40,7 +40,9 @@ const Content = styled.div`
   opacity: ${(props) => (props.open ? 1 : 0)};
   transform: scale(${(props) => (props.open ? 1 : 0.7)})
     translateY(${(props) => (props.open ? 0 : '10em')});
-  transition: all ${(props) => (props.open ? '300ms' : 0)} ease-in-out;
+  transition: opacity ${(props) => (props.open ? 300 : 0)}ms ease-in-out,
+    transform ${(props) => (props.open ? 300 : 0)}ms ease-in-out;
+  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
 
   ${(props) => props.theme.mq.small} {
     ${(props) =>
@@ -76,11 +78,30 @@ const Scroll = styled.div`
     padding: 1.5rem 1rem;
   }
 `
-export default function Modal(props) {
+export default React.forwardRef(function Modal(props, ref) {
+
+  const escKeyDown = useCallback((e) => {
+    if (e.key === 'Escape') {
+      props.setOpen(false)
+    }
+  }, [props]);
+
+  useEffect(() => {
+    if (props.open) {
+      document.addEventListener("keydown", escKeyDown)
+    } else {
+      document.removeEventListener("keydown", escKeyDown)
+    }
+    return () => {
+      document.removeEventListener("keydown", escKeyDown);
+    };
+  }, [props.open, escKeyDown]);
+
   return (
     <Wrapper open={props.open}>
       <Background open={props.open} onClick={() => props.setOpen(false)} />
       <Content
+        ref={ref}
         open={props.open}
         large={props.large}
         textColor={props.textColor}
@@ -91,4 +112,4 @@ export default function Modal(props) {
       </Content>
     </Wrapper>
   )
-}
+})

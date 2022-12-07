@@ -11,6 +11,7 @@ const Wrapper = styled.button`
   border: none;
   opacity: ${(props) => (props.visible ? 1 : 0)};
   pointer-events: ${(props) => (props.visible ? 'inherit' : 'none')};
+  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
   transition: opacity ${(props) => (props.visible ? 600 : 0)}ms;
   cursor: pointer;
 
