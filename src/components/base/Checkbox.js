@@ -34,7 +34,7 @@ const Check = styled.svg`
     stroke-width: 600;
     stroke-dasharray: 4322.794921875;
     stroke-dashoffset: ${(props) => (props.checked ? 0 : 4322.794921875)};
-    transition: stroke-dashoffset ${(props) => (props.checked ? '200ms' : '0')}
+    transition: stroke-dashoffset ${(props) => (props.checked ? 200 : 0)}ms
       ease-out;
   }
 `

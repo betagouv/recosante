@@ -23,7 +23,7 @@ const Background = styled.div`
   background-color: rgba(${(props) => props.theme.colors.background}, 0.2);
   backdrop-filter: blur(1rem);
   opacity: ${(props) => (props.open ? 1 : 0)};
-  transition: all ${(props) => (props.open ? '300ms' : 0)};
+  transition: all ${(props) => (props.open ? 300 : 0)}ms;
 `
 const Content = styled.div`
   position: relative;
