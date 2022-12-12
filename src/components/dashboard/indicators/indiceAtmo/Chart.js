@@ -24,7 +24,7 @@ export default function Chart(props) {
     <Wrapper width='142' height='143' viewBox='0 0 142 143'>
       <mask
         id='mask0'
-        mask-type='alpha'
+        style={{ maskType: "alpha" }}
         maskUnits='userSpaceOnUse'
         x='0'
         y='0'

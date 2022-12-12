@@ -157,7 +157,7 @@ export default function Cloud() {
       />
       <mask
         id='rainbow'
-        mask-type='alpha'
+        style={{ maskType: "alpha" }}
         maskUnits='userSpaceOnUse'
         x='22'
         y='-11'
