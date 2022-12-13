@@ -38,7 +38,8 @@ const StyledLink = styled(MagicLink)`
   color: ${(props) => props.theme.colors.second};
   text-decoration: none;
 `
-const Icon = styled.div`
+const Icon = styled.span`
+  display: inline-block;
   position: relative;
   width: 3rem;
   height: 3rem;
@@ -68,7 +69,7 @@ const Eye = styled.svg`
   width: 1.5rem;
 `
 const Install = styled.svg``
-const Label = styled.div`
+const Label = styled.span`
   font-size: 0.75rem;
   font-weight: bold;
   text-align: center;
