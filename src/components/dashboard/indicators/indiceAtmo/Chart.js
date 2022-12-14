@@ -20,6 +20,7 @@ const Path = styled.path`
   opacity: 0.15;
 `
 export default function Chart(props) {
+  let value = props.data?.indice_atmo?.indice?.value || 0
   return (
     <Wrapper width='142' height='143' viewBox='0 0 142 143'>
       <mask
@@ -43,10 +44,10 @@ export default function Chart(props) {
           <Mauvais />,
           <TresMauvais />,
           <ExtremementMauvais />,
-        ][props?.data?.indice_atmo?.indice?.value]
+        ][value]
       }
 
-      <Circle value={props?.data?.indice_atmo?.indice?.value} />
+      <Circle value={value} />
     </Wrapper>
   )
 }
