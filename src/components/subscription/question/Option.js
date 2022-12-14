@@ -30,7 +30,7 @@ const Button = styled.button`
   background-color: ${(props) =>
     props.theme.colors[props.active ? 'main' : 'background']};
   opacity: ${(props) => (props.disabled ? 0.3 : 1)};
-  cursor: ${(props) => (props.disabled ? 'normal' : 'pointer')};
+  cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};
   transition: all 200ms ease-out;
 
   &:hover {
@@ -91,7 +91,7 @@ const Detail = styled.div`
   text-align: center;
   color: ${(props) => props.theme.colors[props.modal ? 'main' : 'text']};
   text-decoration: ${(props) => (props.modal ? 'underline' : 'none')};
-  cursor: ${(props) => (props.modal ? 'pointer' : 'normal')};
+  cursor: ${(props) => (props.modal ? 'pointer' : 'default')};
 
   ${(props) => props.theme.mq.small} {
     position: relative;
