@@ -11,7 +11,7 @@ const Wrapper = styled.button`
   background: transparent;
   border: none;
   opacity: ${(props) => (props.static ? 0.5 : 1)};
-  cursor: ${(props) => (props.static ? 'normal' : 'pointer')};
+  cursor: ${(props) => (props.static ? 'default' : 'pointer')};
 `
 const Superscript = styled.sup`
   display: inline-block;
