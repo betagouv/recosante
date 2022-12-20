@@ -49,7 +49,7 @@ export default function Chart(props) {
         opacity="0.15"
       />
       <Circle
-        value={value}
+        data-value={value}
         maxValue={maxValue}
         cx='24'
         cy='24'

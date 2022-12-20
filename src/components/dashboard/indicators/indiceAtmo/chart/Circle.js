@@ -18,7 +18,7 @@ const Wrapper = styled.circle`
 export default function Circle(props) {
   return (
     <Wrapper
-      value={props.value}
+      data-value={props.value}
       cx='7'
       cy='66'
       r='15.6471'
