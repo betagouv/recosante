@@ -45,7 +45,7 @@ export default function Chart(props) {
         height='10.2128'
         rx='4'
         visible={props.data}
-        value={value}
+        data-value={value}
         index={0}
       />
       <Rect
@@ -55,7 +55,7 @@ export default function Chart(props) {
         height='10.2128'
         rx='4'
         visible={props.data}
-        value={value}
+        data-value={value}
         index={1}
       />
       <Rect
@@ -65,7 +65,7 @@ export default function Chart(props) {
         height='10.2128'
         rx='4'
         visible={props.data}
-        value={value}
+        data-value={value}
         index={2}
       />
     </Wrapper>
