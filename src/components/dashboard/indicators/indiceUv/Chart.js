@@ -58,62 +58,62 @@ export default function Chart(props) {
       />
       <Path // 4
         visible={value > 3}
-        value={value}
+        data-value={value}
         d='M15.6553 38.4141L13.0001 43.0529'
       />
       <Path // 10
         visible={value > 9}
-        value={value}
+        data-value={value}
         d='M35 4.94727L32.3448 9.58602'
       />
       <Path // 5
         visible={value > 4}
-        value={value}
+        data-value={value}
         d='M9.58691 32.3447L4.94815 34.9999'
       />
       <Path // 11
         visible={value > 10}
-        value={value}
+        data-value={value}
         d='M43.0527 13L38.414 15.6552'
       />
       <Path // 0
         visible={value > 0}
-        value={value}
+        data-value={value}
         d='M46 24L40.6896 24'
       />
       <Path // 6
         visible={value > 5}
-        value={value}
+        data-value={value}
         d='M7.31055 24H2.00019'
       />
       <Path // 1
         visible={value > 0}
-        value={value}
+        data-value={value}
         d='M43.0527 35L38.414 32.3448'
       />
       <Path // 7
         visible={value > 6}
-        value={value}
+        data-value={value}
         d='M9.58691 15.6548L4.94815 12.9996'
       />
       <Path // 2
         visible={value > 1}
-        value={value}
+        data-value={value}
         d='M35 43.0527L32.3448 38.414'
       />
       <Path // 8
         visible={value > 7}
-        value={value}
+        data-value={value}
         d='M15.6553 9.58594L13.0001 4.94717'
       />
       <Path // 9
         visible={value > 8}
-        value={value}
+        data-value={value}
         d='M24 7.31055L24 2.00019'
       />
       <Path // 3 
         visible={value > 2}
-        value={value}
+        data-value={value}
         d='M24 46V40.6896'
       />
     </Wrapper>
