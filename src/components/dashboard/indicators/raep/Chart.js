@@ -8,11 +8,11 @@ const Wrapper = styled.svg`
 `
 const Circle = styled.circle`
   fill: ${(props) =>
-    props.visible && props.index < props.value
-      ? props.theme.colors.raep[props.value]
+    props.visible && props.index < props['data-value']
+      ? props.theme.colors.raep[props['data-value']]
       : props.theme.colors.main};
   opacity: ${(props) =>
-    props.visible && props.index < props.value ? 1 : 0.15};
+    props.visible && props.index < props['data-value'] ? 1 : 0.15};
   transition: opacity ${(props) => (props.visible ? 1200 : 0)}ms
       ${(props) => (props.visible ? props.index * 300 + 600 : 0)}ms,
     fill ${(props) => (props.visible ? 400 : 0)}ms

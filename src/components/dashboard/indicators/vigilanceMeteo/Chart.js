@@ -8,8 +8,8 @@ const Wrapper = styled.svg`
 `
 const Path = styled.path`
   fill: ${(props) =>
-    props.visible && props.index < props.value
-      ? props.theme.colors.vigilancemeteo[props.value]
+    props.visible && props.index < props['data-value']
+      ? props.theme.colors.vigilancemeteo[props['data-value']]
       : props.theme.colors.disabled};
   transition: opacity ${(props) => (props.visible ? 1200 : 0)}ms
       ${(props) => (props.visible ? props.index * 300 + 300 : 0)}ms,

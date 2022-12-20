@@ -8,12 +8,12 @@ const Wrapper = styled.svg`
 `
 const Path = styled.path`
   stroke: ${(props) =>
-    props.visible && props.index <= props.value
-      ? props.value > 2 ?
+    props.visible && props.index <= props['data-value']
+      ? props['data-value'] > 2 ?
         props.summary[props.index] > 0 ?
           props.theme.colors.baignades[props.index]
           : props.theme.colors.disabled
-        : props.theme.colors.baignades[props.value]
+        : props.theme.colors.baignades[props['data-value']]
       : props.theme.colors.disabled};
   transition: opacity ${(props) => (props.visible ? 1200 : 0)}ms
                       ${(props) => (props.visible ? props.index * 300 + 300 : 0)}ms,

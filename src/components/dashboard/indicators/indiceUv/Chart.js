@@ -10,16 +10,16 @@ const Wrapper = styled.svg`
 `
 
 const Circle = styled.circle`
-  stroke: ${(props) => props.theme.colors.indiceuv[props.value]};
-  stroke-dashoffset: ${(props) => 2 * Math.PI * props.r * (1 - props.value / props.maxValue)};
+  stroke: ${(props) => props.theme.colors.indiceuv[props['data-value']]};
+  stroke-dashoffset: ${(props) => 2 * Math.PI * props.r * (1 - props['data-value'] / props.maxValue)};
   stroke-width: ${(props) => 2 * props.r}};
   stroke-dasharray: ${(props) => 2 * Math.PI * props.r};
-  transition: stroke-dashoffset ${(props) => ( props.value ? 3 : 0)}s ease-in-out;
+  transition: stroke-dashoffset ${(props) => ( props['data-value'] ? 3 : 0)}s ease-in-out;
 `
 
 const Path = styled.path`
   stroke: ${(props) =>
-    props.visible ? props.theme.colors.indiceuv[props.value]
+    props.visible ? props.theme.colors.indiceuv[props['data-value']]
       : props.theme.colors.main};
   opacity: ${(props) =>
     props.visible ? 1 : 0.15};

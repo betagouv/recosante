@@ -6,15 +6,15 @@ const Wrapper = styled.svg`
   height: 8rem;
 `
 const Path = styled.path`
-  fill: ${(props) => props.theme.colors.radon[props.value]};
+  fill: ${(props) => props.theme.colors.radon[props['data-value']]};
 `
 const Rect = styled.rect`
   fill: ${(props) =>
-    props.visible && props.index < props.value
-      ? props.theme.colors.radon[props.value]
+    props.visible && props.index < props['data-value']
+      ? props.theme.colors.radon[props['data-value']]
       : props.theme.colors.main};
   opacity: ${(props) =>
-    props.visible && props.index < props.value ? 1 : 0.15};
+    props.visible && props.index < props['data-value'] ? 1 : 0.15};
   transition: opacity ${(props) => (props.visible ? 1200 : 0)}ms
       ${(props) => (props.visible ? props.index * 300 + 1800 : 0)}ms,
     fill ${(props) => (props.visible ? 400 : 0)}ms
