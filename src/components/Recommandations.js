@@ -193,7 +193,7 @@ export default function Recommandations(props) {
                         {t === "indice_atmo" &&
                           (r.categorie || (r.categorie = "Toute catégorie")) && uniqueCategories[c] && !uniqueCategories[c].includes(r.categorie) && uniqueCategories[c].push(r.categorie) &&
                           <SousCritere>{r.categorie}</SousCritere>}
-                        {t === "vigilance_meteo" && <SousCritere>{phenomenes[r.vigilance_phenomene_ids]}</SousCritere>}
+                        {t === "vigilance_meteo" && phenomenes[r.vigilance_phenomene_ids] && <SousCritere>{phenomenes[r.vigilance_phenomene_ids]}</SousCritere>}
                         <Recommandation
                           dangerouslySetInnerHTML={{
                             __html: r.recommandation
