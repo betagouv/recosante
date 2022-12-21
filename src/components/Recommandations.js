@@ -187,7 +187,7 @@ export default function Recommandations(props) {
                 <Type>{types[t]}</Type>
                 {Object.keys(recommandations[t]).map((c) => (
                   <section id={t + '-' + c} key={t + '-' + c}>
-                    <Critere>{criteres[c]}</Critere>
+                    {criteres[c] && <Critere>{criteres[c]}</Critere>}
                     {recommandations[t][c]?.map((r, i) => (
                       <React.Fragment key={t + '-' + c + '-' + i}>
                         {t === "indice_atmo" &&
