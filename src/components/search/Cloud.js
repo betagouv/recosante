@@ -156,7 +156,7 @@ export default function Cloud() {
         fill='white'
       />
       <mask
-        class='rainbow'
+        id='rainbow'
         style={{ maskType: "alpha" }}
         maskUnits='userSpaceOnUse'
         x='22'
@@ -169,7 +169,7 @@ export default function Cloud() {
           fill='white'
         />
       </mask>
-      <g mask='url(.rainbow)'>
+      <g mask='url(#rainbow)'>
         <Ray
           animated={animated}
           animation={animation}
