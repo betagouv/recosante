@@ -87,7 +87,7 @@ export default function Recommandations(props) {
     "qa_mauvaise": recommandationsQa("qa_mauvaise"),
     "qa_evenement": recommandationsQa("qa_evenement"),
   }
-  const recommandationsMinRaep= (min_raep) => recommandationsByType["pollens"]?.filter(r => r.min_raep === min_raep);
+  const recommandationsMinRaep = (min_raep) => recommandationsByType["pollens"]?.filter(r => r.min_raep === min_raep);
   recommandations["pollens"] = {
     "raep_0": recommandationsMinRaep(0),
     "raep_1-3": recommandationsMinRaep(1),
@@ -101,7 +101,7 @@ export default function Recommandations(props) {
     "vigilance_orange": recommandationsVigilanceCouleur(3),
     "vigilance_rouge": recommandationsVigilanceCouleur(4)
   }
-  const recommandationsMinIndiceUV= (min_indice_uv) => recommandationsByType["indice_uv"]?.filter(r => r.min_indice_uv === min_indice_uv);
+  const recommandationsMinIndiceUV = (min_indice_uv) => recommandationsByType["indice_uv"]?.filter(r => r.min_indice_uv === min_indice_uv);
   recommandations["indice_uv"] = {
     "indice_uv_0": recommandationsMinIndiceUV(0),
     "indice_uv_1-2": recommandationsMinIndiceUV(1),
