@@ -32,8 +32,8 @@ const Check = styled.svg`
     stroke: ${(props) => props.theme.colors.main};
     stroke-width: 600;
     stroke-dasharray: 4322.794921875;
-    stroke-dashoffset: ${(props) => (props.checked ? 0 : 4322.794921875)};
-    transition: stroke-dashoffset ${(props) => (props.checked ? 200 : 0)}ms
+    stroke-dashoffset: ${(props) => (props['data-checked'] ? 0 : 4322.794921875)};
+    transition: stroke-dashoffset ${(props) => (props['data-checked'] ? 200 : 0)}ms
       ease-out;
   }
 `
@@ -41,7 +41,7 @@ export default function Checkbox(props) {
   return (
     <Wrapper checkbox={props.checkbox} active={props.active} className={'box'}>
       <Check
-        checked={props.active}
+        data-checked={props.active}
         width='3213'
         height='2768'
         viewBox='0 0 3213 2768'
