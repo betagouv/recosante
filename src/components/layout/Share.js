@@ -5,7 +5,6 @@ import { useLocation } from '@reach/router'
 import UXContext from 'utils/UXContext'
 import Select from 'components/base/FancySelect'
 import Panel from 'components/base/Panel'
-import Integration from './share/Integration'
 import Link from './share/Link'
 import Mail from './share/Mail'
 import Facebook from './share/Facebook'
@@ -39,7 +38,6 @@ export default function Share(props) {
     toggleShareOpen,
     typeShare,
     setTypeShare,
-    toggleEmbedOpen,
   } = useContext(UXContext)
 
   let location = useLocation()
@@ -77,7 +75,6 @@ export default function Share(props) {
         />
       </h2>
       <ShareButtons>
-        <Integration onClick={() => toggleEmbedOpen()} />
         <Mail
           subject={props.messages.mail[typeShare].subject}
           body={props.messages.mail[typeShare].body}

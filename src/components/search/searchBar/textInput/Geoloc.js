@@ -29,7 +29,6 @@ const Wrapper = styled.button`
   pointer-events: ${(props) => (props.visible ? 'inherit' : 'none')};
   transition: opacity ${(props) => (props.visible ? 600 : 0)}ms;
   cursor: ${(props) => (props.fetching ? 'wait' : 'pointer')};
-
   svg {
     display: block;
     width: 1.0625em;

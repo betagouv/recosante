@@ -56,7 +56,7 @@ const Wrapper = styled(MagicLink)`
         : props.theme.colors.background};
     opacity: ${(props) => (props.hollow ? 0.1 : 0.2)};
   }
-  &:hover {
+  &:hover, &:focus {
     &:before {
       transform: translateX(100%) rotate(-45deg);
       transition: transform 500ms ease-out;

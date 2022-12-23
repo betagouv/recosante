@@ -16,8 +16,7 @@ const Wrapper = styled.button`
   overflow: hidden;
   cursor: pointer;
 
-  &:hover,
-  &:focus {
+  &:hover {
     outline: none;
   }
 
