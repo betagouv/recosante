@@ -80,6 +80,7 @@ export default function Cloud() {
 
   return (
     <Wrapper
+      aria-hidden={true}
       onClick={() => {
         window._paq?.push(['trackEvent', 'Misc', 'Nuage'])
         if (!animated) {
