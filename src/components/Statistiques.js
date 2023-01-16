@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Section from 'components/base/Section'
-import useStatistiques from 'src/hooks/useStatistiques'
-import Email from 'src/components/statistiques/Email'
-import Web from 'src/components/statistiques/Web'
+import useStatistiques from 'hooks/useStatistiques'
+import Email from 'components/statistiques/Email'
+import Web from 'components/statistiques/Web'
 
 export const MainTitle = styled.h1`
   color: ${(props) => props.theme.colors.main};
