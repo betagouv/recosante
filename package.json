@@ -24,6 +24,7 @@
     "gatsby-plugin-use-query-params": "^1.0.1",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-external-links": "^0.0.4",
+    "gatsby-remark-images": "^6.24.0",
     "gatsby-source-filesystem": "^4.25.0",
     "gatsby-transformer-json": "^4.25.0",
     "gatsby-transformer-sharp": "^4.0.0",
