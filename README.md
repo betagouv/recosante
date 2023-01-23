@@ -27,6 +27,7 @@ Le site web est structuré de la manière suivante :
 - des pages d’information sur les données
 - une page d’intégration du widget
 - des landing pages ciblées
+- une page d’édition de son profil accessible via lien magique
 
 La technologie employée nous permet de mêler des pages générées statiquement (pages invariantes et pages des communes de plus de 20 000 habitants) à celles générées dynamiquement (pages des communes de moins de 20 000 habitants car plus rarement recherchées).
 
