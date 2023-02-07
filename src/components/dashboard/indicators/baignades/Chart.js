@@ -35,7 +35,7 @@ export default function Chart(props) {
   )
   const summary = [indice?.summary['Bons résultats'], indice?.summary['Résultats moyens'], indice?.summary['Mauvais résultats']]
   return (
-    <Wrapper width='48' height='48' viewBox='0 0 48 48'>
+    <Wrapper aria-hidden={true} width='48' height='48' viewBox='0 0 48 48'>
       <Path
         visible={props.data}
         data-value={props.data ? value : 0}

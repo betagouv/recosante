@@ -25,7 +25,7 @@ const Circle = styled.circle`
 export default function Chart(props) {
   let value = props.data?.raep?.indice?.value || 0
   return (
-    <Wrapper width='77' height='111' viewBox='0 0 77 111'>
+    <Wrapper aria-hidden={true} width='77' height='111' viewBox='0 0 77 111'>
       <Circle
         visible={props.data}
         data-value={value}

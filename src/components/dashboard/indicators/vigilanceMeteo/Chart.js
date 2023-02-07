@@ -26,13 +26,7 @@ export default function Chart(props) {
   )
 
   return (
-    <Wrapper
-      width='162'
-      height='106'
-      viewBox='0 0 162 106'
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
-    >
+    <Wrapper aria-hidden={true} width='162' height='106' viewBox='0 0 162 106' fill='none' xmlns='http://www.w3.org/2000/svg'>
       <Path
         visible={props.data}
         data-value={props.data ? value : 0}

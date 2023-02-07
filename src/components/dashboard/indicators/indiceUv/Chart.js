@@ -40,7 +40,7 @@ export default function Chart(props) {
   const maxValue = 11
   value = Math.min(value, maxValue)
   return (
-    <Wrapper width='48' height='48' viewBox='0 0 48 48'>
+    <Wrapper aria-hidden={true} width='48' height='48' viewBox='0 0 48 48'>
       <circle
         cx='24'
         cy='24'
