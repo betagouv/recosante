@@ -58,7 +58,7 @@ export default function Element(props) {
     <Wrapper>
       <Title>
         <Icon value={value}>
-          <img src={images[props.indice.label]} alt={props.indice.label} />
+          <img src={images[props.indice.label]} alt='' />
         </Icon>
         {props.indice.label}{' '}
         {props.validity.map((v, i) => (

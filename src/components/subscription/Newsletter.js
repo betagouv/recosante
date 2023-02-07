@@ -66,11 +66,7 @@ export default React.forwardRef(function Newsletter(props, ref) {
     <FocusTrap active={visible} focusTrapOptions={{allowOutsideClick: true, escapeDeactivates: false}}>
       <Wrapper visible={visible}>
         <Image>
-          <StaticImage
-            src={'./newsletter/newsletter-preview.png'}
-            alt='Newsletter'
-            height={400}
-          />
+          <StaticImage src={'./newsletter/newsletter-preview.png'} alt='' height={400} />
         </Image>
         <Content ref={ref}>
           <MDXRenderer>{data.mdx.body}</MDXRenderer>

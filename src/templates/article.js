@@ -66,16 +66,12 @@ export default function Article(props) {
           }}
         />
         {props.data.mdx.frontmatter.image &&
-          <Thumbnail image={getImage(props.data.mdx.frontmatter.image)} alt={props.data.mdx.frontmatter.title} />
+          <Thumbnail image={getImage(props.data.mdx.frontmatter.image)} alt='' />
         }
         {props.data.mdx.frontmatter.bon_geste &&
           <BonGeste>
             <ImageWrapper>
-              <StaticImage
-                src={'./images/bon-geste.png'}
-                alt='Le bon geste'
-                height={128}
-              />
+              <StaticImage src={'./images/bon-geste.png'} alt='' height={128} />
             </ImageWrapper>
             <Content>
               <h2>Le <strong>bon geste</strong></h2>
