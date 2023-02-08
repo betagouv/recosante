@@ -10,7 +10,7 @@ const Wrapper = styled.button`
   text-decoration: underline;
   background: transparent;
   border: none;
-  opacity: ${(props) => (props.static ? 0.5 : 1)};
+  opacity: ${(props) => (props.static ? 0.6 : 1)};
   cursor: ${(props) => (props.static ? 'default' : 'pointer')};
 `
 const Superscript = styled.sup`
