@@ -19,7 +19,7 @@ const Input = styled.input`
 
   &::placeholder {
     color: ${(props) => props.theme.colors.text};
-    opacity: 0.4;
+    opacity: 0.8;
   }
   &:focus {
     outline: none;
