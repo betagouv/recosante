@@ -66,6 +66,11 @@ const MailInput = styled(TextInput)`
   ${(props) => props.theme.mq.small} {
     width: 100%;
   }
+
+  &::placeholder {
+    color: ${(props) => props.theme.colors.text};
+    opacity: 0.8;
+  }
 `
 const DataDisclaimer = styled.div`
   position: absolute;
