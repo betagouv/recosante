@@ -18,7 +18,6 @@ export const themes = {
       success: '#008941',
       error: '#e10600',
       disabled: '#CCCCE9',
-      focus: '#0a76f6',
       episode: '#FB8371',
       atmo: {
         1: '#4BF0E6',
@@ -137,12 +136,6 @@ export const GlobalStyle = createGlobalStyle`
   *, *:before, *:after {
     margin-top: 0;
     box-sizing: inherit;
-  }
-
-  *:focus {
-    outline-offset: 4px;
-    outline-width: 2px;
-    outline-color: ${(props) => props.theme.colors.focus};
   }
 
   h1, h2, h3, h4, h5, h6 {
