@@ -54,7 +54,7 @@ export default function Partners() {
       <Title>Les données sont fournies par</Title>
       <Logos>
         {data.mdx.frontmatter.data.map((logo) => (
-          <Logo to={logo.link} key={logo.link}>
+          <Logo to={logo.link} key={logo.link} aria-label={logo.title}>
             <GatsbyImage image={getImage(logo.image)} alt={logo.title} />
           </Logo>
         ))}
