@@ -43,6 +43,7 @@ const Step = styled.div`
   color: ${(props) => props.theme.colors.main};
   text-align: center;
   opacity: ${(props) => (props.current ? 1 : 0.6)};
+  font-weight: ${(props) => (props.current ? 500 : 300)};
 `
 export default function Progress(props) {
   const percent = useProgressionPercent(props)
