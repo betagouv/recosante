@@ -22,7 +22,7 @@ const Options = styled.div`
   }
 `
 const NoIcon = styled.svg`
-  width: auto;
+  width: 48px;
   height: 0rem;
 `
 const Type = styled.h2`
