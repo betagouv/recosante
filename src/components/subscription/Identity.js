@@ -18,11 +18,12 @@ const Wrapper = styled.div`
     padding-top: 1.5rem;
   }
 `
-const Label = styled.label`
+const Label = styled.h1`
   display: block;
   margin-bottom: 3rem;
   font-weight: 300;
   text-align: center;
+  font-size: inherit;
 
   ${(props) => props.theme.mq.smallish} {
     margin-bottom: 6rem;
