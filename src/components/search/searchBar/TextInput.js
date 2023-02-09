@@ -80,6 +80,7 @@ export default React.forwardRef(function TextInput(props, ref) {
       <Submit
         visible={props.suggestion && props.suggestionVisible && props.search}
         setFocus={props.setFocus}
+        aria-label={'Valider cette ville'}
       />
       <Geoloc
         visible={!(props.suggestion && props.suggestionVisible && props.search)}
