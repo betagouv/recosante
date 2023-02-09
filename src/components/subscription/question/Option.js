@@ -99,6 +99,11 @@ const Detail = styled.div`
     left: 0;
     right: 0;
   }
+
+  p {
+    margin: 0;
+    font-size: inherit;
+  }
 `
 export default function Option(props) {
   return (
@@ -131,7 +136,7 @@ export default function Option(props) {
             }
           }}
         >
-          {props.option.detail.label}
+          <p>{props.option.detail.label}</p>
         </Detail>
       )}
     </Wrapper>

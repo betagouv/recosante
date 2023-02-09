@@ -13,6 +13,11 @@ const Title = styled.div`
   ${(props) => props.theme.mq.small} {
     text-align: center;
   }
+
+  p {
+    margin: 0;
+    font-size: inherit;
+  }
 `
 const Logos = styled.div`
   display: flex;
@@ -51,7 +56,7 @@ export default function Partners() {
   )
   return (
     <Wrapper>
-      <Title>Les données sont fournies par</Title>
+      <Title><p>Les données sont fournies par</p></Title>
       <Logos>
         {data.mdx.frontmatter.data.map((logo) => (
           <Logo to={logo.link} key={logo.link} aria-label={logo.title}>
