@@ -131,6 +131,7 @@ export default function Identity(props) {
         <MailInput
           type='email'
           name='email'
+          title='Entrez votre email'
           placeholder='Entrez votre email'
           value={user.mail}
           onChange={({ value }) => mutateUser({ mail: value })}
