@@ -67,6 +67,7 @@ export default function FancySelect(props) {
         onChange={(e) => {
           props.onChange(e.currentTarget.value)
         }}
+        title={props.title}
       >
         {props.options.map((option, index) => (
           <option

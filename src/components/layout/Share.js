@@ -79,6 +79,7 @@ export default function Share(props) {
               disabled: !props.place,
             },
           ]}
+          title='Choisissez de partager l’accueil de Recosanté ou le tableau de bord d’une ville'
         />
       </h2>
       <ShareButtons>

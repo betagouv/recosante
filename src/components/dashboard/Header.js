@@ -125,6 +125,7 @@ export default function Header(props) {
                 changeDate((dateParam || value !== todayValue) && value)
               }}
               options={options}
+              title='Changer la date'
             />
           </DateWrapper>
         </Title>
