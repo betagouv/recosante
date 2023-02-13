@@ -82,11 +82,12 @@ export default function Code(props) {
 
   return (
     <Wrapper>
-      <Label>
+      <Label for='widget-script'>
         Copiez ce code puis ajoutez-le où vous souhaitez qu'il s'affiche sur
         votre site web
       </Label>
       <Text
+        id='widget-script'
         readOnly={true}
         value={script}
         onClick={() => {
