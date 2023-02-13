@@ -5,7 +5,7 @@ import ModalContext from 'utils/ModalContext'
 import Modal from 'components/base/Modal'
 import Indicators from 'components/Indicators'
 
-export default function WrapperModal() {
+export default function SubscriptionModal() {
   const { subscription, setSubscription } = useContext(ModalContext)
 
   return (

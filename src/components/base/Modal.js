@@ -13,6 +13,7 @@ const Wrapper = styled.div`
   align-items: center;
   transform: translate3d(0, 0, 1em);
   pointer-events: ${(props) => (props.open ? 'inherit' : 'none')};
+  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
 `
 const Background = styled.div`
   position: absolute;
@@ -42,7 +43,6 @@ const Content = styled.div`
     translateY(${(props) => (props.open ? 0 : '10em')});
   transition: opacity ${(props) => (props.open ? 300 : 0)}ms ease-in-out,
     transform ${(props) => (props.open ? 300 : 0)}ms ease-in-out;
-  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
 
   ${(props) => props.theme.mq.small} {
     ${(props) =>
