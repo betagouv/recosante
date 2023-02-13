@@ -49,7 +49,14 @@ export default function Share(props) {
       }`
     )
   }, [location.search, location.pathname, typeShare])
-
+  const [title, setTitle] = useState()
+  useEffect(() => {
+    setTitle(
+      `URL du site web Recosanté${
+        typeShare === 'result' && props.place ? ' - ' + props.place.nom : ''
+      }`
+    )
+  }, [props.place, typeShare])
   return (
     <Panel
       small={props.small}
@@ -86,7 +93,7 @@ export default function Share(props) {
         <Whatsapp title={props.messages.whatsapp[typeShare].title} url={url} />
         <Messenger url={url} />
       </ShareButtons>
-      <Link url={url} />
+      <Link title={title} url={url} />
     </Panel>
   )
 }

@@ -55,6 +55,7 @@ export default function Code(props) {
   return (
     <Wrapper>
       <Text
+        title={props.title}
         readOnly={true}
         value={props.url}
         onClick={() => {
