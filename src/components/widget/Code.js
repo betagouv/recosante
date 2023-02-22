@@ -82,7 +82,7 @@ export default function Code(props) {
 
   return (
     <Wrapper>
-      <Label for='widget-script'>
+      <Label htmlFor='widget-script'>
         Copiez ce code puis ajoutez-le où vous souhaitez qu'il s'affiche sur
         votre site web
       </Label>
