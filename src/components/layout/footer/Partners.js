@@ -19,14 +19,19 @@ const Title = styled.div`
     font-size: inherit;
   }
 `
-const Logos = styled.div`
+const Logos = styled.ul`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   margin: 0 -1rem;
+  padding: 0;
 
   ${(props) => props.theme.mq.small} {
     justify-content: center;
+  }
+
+  li {
+    list-style: none;
   }
 `
 const Logo = styled(MagicLink)`
@@ -59,9 +64,11 @@ export default function Partners() {
       <Title><p>Les données sont fournies par</p></Title>
       <Logos>
         {data.mdx.frontmatter.data.map((logo) => (
-          <Logo to={logo.link} key={logo.link} aria-label={logo.title}>
-            <GatsbyImage image={getImage(logo.image)} alt={logo.title} />
-          </Logo>
+          <li key={logo.link}>
+            <Logo to={logo.link} aria-label={logo.title}>
+              <GatsbyImage image={getImage(logo.image)} alt={logo.title} />
+            </Logo>
+          </li>
         ))}
       </Logos>
     </Wrapper>

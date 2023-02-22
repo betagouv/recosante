@@ -30,7 +30,6 @@ const Wrapper = styled.button`
   }
 `
 export default function Submit(props) {
-  console.log(props)
   return (
     <Wrapper
       visible={props.visible}

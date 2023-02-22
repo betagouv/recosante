@@ -144,7 +144,7 @@ export default function Recommandations(props) {
     "indice_uv_1-2": "Faible (de UV 1 à UV 2)",
     "indice_uv_3-5": "Modéré (de UV 3 à UV 5)",
     "indice_uv_6-7": "Fort (de UV 6 à UV 7)",
-    "indice_uv_8-10":  "Très fort (de UV 8 à UV 10)",
+    "indice_uv_8-10": "Très fort (de UV 8 à UV 10)",
     "indice_uv_11+": "Extrême (UV 11 et plus)"
   }
   let uniqueCategories = {
