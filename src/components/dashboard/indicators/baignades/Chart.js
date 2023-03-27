@@ -30,7 +30,7 @@ const Path = styled.path`
 
 export default function Chart(props) {
   const indice = props?.data?.baignades?.indice
-  const value = ['Bons résultats', 'Résultats moyens', 'Mauvais résultats', 'Résultats mixtes'].indexOf(
+  const value = ['Bonne', 'Moyenne', 'Mauvaise', 'Variable'].indexOf(
     indice?.label
   )
   const summary = [indice?.summary['Bons résultats'], indice?.summary['Résultats moyens'], indice?.summary['Mauvais résultats']]

@@ -43,6 +43,7 @@ export default function Details(props) {
           label={element.label}
           url={element.url}
           interdiction={element.interdiction}
+          pollution={element.pollution}
           sample={!offSeason ? element.sample : null}
           ranking={element.ranking}
         />
