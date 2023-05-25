@@ -1,5 +1,9 @@
 # Recosanté
 
+## Transfert
+
+:warning: Vous pouvez retrouver la dernière version du projet RECOSANTE sur ce dépôt : https://github.com/socialgouv/recosante
+
 ## Présentation
 
 Recosanté (recosante.beta.gouv.fr) propose un service d’information sur la santé environnement organisé en trois supports :
