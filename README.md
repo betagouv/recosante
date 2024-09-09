@@ -1,5 +1,9 @@
 # Recosanté
 
+## Le dépôt recosanté est maintenant disponible sur : https://github.com/SocialGouv/recosante/
+
+---
+
 ## Présentation
 
 Recosanté (recosante.beta.gouv.fr) propose un service d’information sur la santé environnement organisé en trois supports :
