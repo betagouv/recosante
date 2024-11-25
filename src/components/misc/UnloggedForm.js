@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { useLocation } from '@reach/router'
 
-import { useSendProfileLink } from 'hooks/useUser'
+import { useSendAuthLink } from 'hooks/useUser'
 import Button from 'components/base/Button'
 import Alert from 'components/base/Alert'
 import MailInput from './unloggedForm/MailInput'
@@ -24,7 +25,8 @@ const Submit = styled(Button)`
 `
 const Text = styled.p``
 export default function UnloggedForm(props) {
-  const mutation = useSendProfileLink()
+  const { pathname } = useLocation()
+  const mutation = useSendAuthLink(pathname)
 
   const [mail, setMail] = useState('')
   return (
@@ -37,8 +39,7 @@ export default function UnloggedForm(props) {
     >
       {props.unauthorized && <Text>Le délai pour utiliser ce lien a expiré.</Text>}
       <Text>
-        Entrez votre adresse email pour recevoir un lien vous permettant de
-        changer vos préférences
+        Entrez votre adresse email pour recevoir un lien vous permettant {pathname.includes('notifications') ? 'd’activer les notifications' : 'de modifier vos préférences'}
       </Text>
       <MailInput
         type='email'
@@ -52,8 +53,7 @@ export default function UnloggedForm(props) {
       {mutation.isError && <Alert error>Une erreur est survenue</Alert>}
       {mutation.isSuccess && (
         <Alert>
-          Vous avez reçu un email contenant un lien pour modifier vos
-          préférences
+          Vous avez reçu un email contenant un lien pour {pathname.includes('notifications') ? 'activer les notifications' : 'modifier vos préférences'}
         </Alert>
       )}
     </Wrapper>

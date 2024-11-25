@@ -71,6 +71,18 @@ export function useUserReactivation() {
   })
 }
 
+export function useSendAuthLink(path) {
+  return useMutation((mail) =>
+    axios.post(
+      `${apiUrl}/users/_send_auth_link`,
+      { mail, redirect_path: path },
+      {
+        headers: { Accept: ' application/json' },
+      }
+    )
+  )
+}
+
 export function useSendProfileLink() {
   return useMutation((mail) =>
     axios.post(
